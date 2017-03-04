@@ -111,6 +111,9 @@ REPLACE `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Qua
 -- Removing Idols, Totems & Librams From Loot Table
 DELETE FROM `creature_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197, 23201, 23203, 22401, 22400, 22395, 22345, 23200, 23199);
 
+-- Removing In Game Items That Were Released After Patch 1.9
+DELETE FROM `creature_loot_template` WHERE `item` IN (24102, 23320, 24101, 22891, 22890);
+
 -- Setting "Dreamscale Breastplate" Loot Type to BoP (should be shanged back in 1.10)
 UPDATE `item_template` SET `bonding` = '1' WHERE `entry` = '20380';
 
