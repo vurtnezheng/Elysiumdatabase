@@ -48,6 +48,9 @@ UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
 166					-- Patch 1.9
 );
 
+-- Removing "Plans: Titanic Leggings" Item
+DELETE FROM item_template WHERE entry = 22388;
+
 -- Enable Alterac Valley 1.5
 UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1;
 
