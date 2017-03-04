@@ -8,6 +8,9 @@ REPLACE INTO `spell_mod` (`Id`, `AttributesEx3`, `Comment`) VALUES
 (24383, 1048576, 'Swiftness of Zanza - persist through death (before 1.12)');
 DELETE FROM `spell_disabled` WHERE `entry` = 24417;
 
+-- Enabling Disabled Spells
+DELETE FROM spell_disabled WHERE entry IN (25117, 25118, 25119, 25120, 25123, 25122, 25121, 25660, 25704, 25722, 25804, 25691, 26276);
+
 -- Spawn of Azuregos, Kazzak 1.3
 UPDATE `creature` SET `spawnFlags` = 0 WHERE id IN (6109, 12397);
 
