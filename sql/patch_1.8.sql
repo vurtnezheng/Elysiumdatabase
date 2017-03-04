@@ -23,6 +23,12 @@ REPLACE INTO `spell_disabled` VALUES
 
 UPDATE `item_template` SET `spellid_1` = '9344' WHERE `entry` = '20705' -- Should be applied to the all 1.7 
 
+-- Disabling AQ Opening Quest Chain & Re-enabling Holiday Quests
+
+UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8286, 8287, 8288, 8301, 8302, 8303, 8305);
+UPDATE quest_template SET MinLevel = 61 WHERE entry = 5527;
+UPDATE quest_template SET MinLevel = 61 WHERE entry BETWEEN 8461 AND 9665 AND entry NOT IN (8619, 8635, 8636, 8642, 8643, 8644, 8645, 8646, 8647, 8648, 8649, 8650, 8651, 8652, 8653, 8670, 8671, 8672, 8673, 8674, 8675, 8676, 8677, 8679, 8680, 8681, 8682, 8683, 8684, 8685, 8686, 8688, 8713, 8714, 8715, 8716, 8717, 8718, 8719, 8720, 8721, 8722, 8723, 8724, 8725, 8726, 8727, 8746, 8763, 8767, 8768, 8769, 8803, 8827, 8860, 8861, 8866, 8867, 8868, 8870, 8871, 8872, 8873, 8875, 8883, 8897, 8898, 8899, 8900, 8901, 8902, 8903, 8979, 8980, 8981, 8982, 8983, 8984, 9024, 9025, 9026);
+
 -- Item Removal of all items 20726 and higher except for the items in this list: 
 -- https://docs.google.com/spreadsheets/d/1gzSPcLJLossaG8dkotxJXSzm82Dyp6cNc3K8eoKNBEM/edit#gid=0
 
