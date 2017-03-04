@@ -19,7 +19,7 @@ DELETE FROM spell_disabled WHERE entry IN (25117, 25118, 25119, 25120, 25123, 25
 UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8286, 8288, 8301, 8302, 8303, 8305, 8519, 8742, 8745, 8743, 8730, 8576, 8733);
 
 -- Temporarily!!! Disabling Post-War-Effort Quests
-UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8800, 8573, 8574, 8572, 8548, 8507, 8731, 8732, 8508, 8508);
+UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8800, 8573, 8574, 8572, 8548, 8507, 8731, 8732, 8508, 9338);
 
 -- Disabling 1.11 Enchantment Quests
 UPDATE quest_template SET MinLevel = 61 WHERE entry IN (9210, 9208, 9209);
