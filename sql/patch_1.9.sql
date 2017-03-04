@@ -120,6 +120,50 @@ UPDATE `item_template` SET `bonding` = '1' WHERE `entry` = '20380';
 -- NPC "Lupos" Now Does Physical Damage, Instead Of Shadow
 UPDATE `creature_template` SET `PetSpellDataId` = '0' WHERE `entry` = '521';
 
+-- Modifying BRD Boss Loot Tables
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9027','11446','25','0','1','1','16');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9027','14047','23','0','1','4','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9027','18945','4','0','1','6','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9027','22528','9','0','2','4','70');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9027','321228','15','1','-321228','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9028','11446','25','0','1','1','16');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9028','11610','100','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9028','14047','14','0','1','2','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9028','18945','10','0','1','10','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9028','22528','9','0','2','4','70');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9028','321229','100','1','-321229','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9029','11446','25','0','1','1','16');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9029','14047','12','0','1','2','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9029','18945','14','0','1','10','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9029','22528','8','0','2','4','70');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9029','321230','100','1','-321230','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9030','11446','25','0','1','1','16');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9030','14047','21','0','1','4','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9030','18945','12','0','1','10','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9030','22528','8','0','2','4','70');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9030','321231','100','1','-321231','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','1074','7','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','4337','5','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','4585','20','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','10285','8','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','11446','25','0','1','1','16');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','18945','9','0','1','9','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','22525','57','0','2','4','70');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','22528','8','0','2','4','70');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','321232','100','1','-321232','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9031','321233','15','2','-321233','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','1074','6','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','4337','6','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','4585','21','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','10285','9','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','11446','25','0','1','1','16');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','12205','24','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','14227','5','0','1','1','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','18945','8','0','1','10','0');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','22528','8','0','2','4','70');
+REPLACE `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('9032','321234','100','1','-321234','1','0');
+
+
 -- Disable unavailable instances
 -- ATTENTION! Requires update once events are implemented!
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN 
