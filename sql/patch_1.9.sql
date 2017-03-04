@@ -76,6 +76,9 @@ DELETE FROM item_template WHERE entry = 22388;
 -- Enable Alterac Valley 1.5
 UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1;
 
+-- Changing War Effort NPCs Model Size
+UPDATE `creature_template` SET `scale` = '1.35' WHERE `entry` IN (15535, 15528, 15532, 15739, 15477);
+
 -- Disable unavailable instances
 -- ATTENTION! Requires update once events are implemented!
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN 
