@@ -11,6 +11,9 @@ DELETE FROM `spell_disabled` WHERE `entry` = 24417;
 -- Enabling Disabled Spells
 DELETE FROM spell_disabled WHERE entry IN (25117, 25118, 25119, 25120, 25123, 25122, 25121, 25660, 25704, 25722, 25804, 25691, 26276);
 
+-- Temporarily!!! Disabling AQ Opening Quest Chain
+UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8286, 8288, 8301, 8302, 8303, 8305, 8519);
+
 -- Spawn of Azuregos, Kazzak 1.3
 UPDATE `creature` SET `spawnFlags` = 0 WHERE id IN (6109, 12397);
 
