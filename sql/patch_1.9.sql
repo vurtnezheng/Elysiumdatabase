@@ -114,6 +114,9 @@ DELETE FROM `creature_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197
 -- Setting "Dreamscale Breastplate" Loot Type to BoP (should be shanged back in 1.10)
 UPDATE `item_template` SET `bonding` = '1' WHERE `entry` = '20380';
 
+-- NPC "Lupos" Now Does Physical Damage, Instead Of Shadow
+UPDATE `creature_template` SET `PetSpellDataId` = '0' WHERE `entry` = '521';
+
 -- Disable unavailable instances
 -- ATTENTION! Requires update once events are implemented!
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN 
