@@ -41,6 +41,9 @@ DELETE FROM `creature_loot_template` WHERE `entry` = 2919 AND `item` IN (3771, 3
 -- add missing Plans: Dark Iron Boots to the Thorium Brotherhood rep vendor
 REPLACE INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('12944', '20040', '0', '0');
 
+-- "Thunderfury" Stats Have Been Corrected (main hand untill 1.12)
+UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
+
 -- Nexus Crystal #20725 to Large Brilliant Shard #14344 DB_world Replacement
 
 DELETE FROM disenchant_loot_template WHERE entry = 49 AND item = 20725;

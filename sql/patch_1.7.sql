@@ -45,6 +45,9 @@ UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
 -- Enable Alterac Valley 1.5
 UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1;
 
+-- "Thunderfury" Stats Have Been Corrected (main hand untill 1.12)
+UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
+
 -- Disable unavailable instances
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN 
 (
