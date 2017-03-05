@@ -18,6 +18,9 @@ DELETE FROM spell_disabled WHERE entry IN (25117, 25118, 25119, 25120, 25123, 25
 -- Temporarily!!! Disabling AQ Opening Quest Chain
 UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8286, 8288, 8301, 8302, 8303, 8305, 8519, 8742, 8745, 8743, 8730, 8576, 8733);
 
+-- EPL & Tier 0.5 Quests Have Been Disabled
+UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8977, 8922, 8921, 8924, 8925, 8928, 8977, 8926, 8929, 8945, 8946, 8947, 8948, 8949, 8950, 9015, 8951, 8960, 8961, 8952, 8960, 8961, 8923, 8913, 8914, 8915, 8916, 8917, 8918, 8919, 8930, 8927, 8938, 8939, 8941, 9014, 9013, 9012, 9011, 9010, 9009, 9008, 8944, 8943, 8942, 8978, 9228, 9222, 9224, 9225, 9227, 9221, 9223, 9226);
+
 -- Temporarily!!! Disabling Post-War-Effort Quests
 UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8800, 8573, 8574, 8572, 8548, 8507, 8731, 8732, 8508, 9338);
 
