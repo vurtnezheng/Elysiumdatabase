@@ -119,8 +119,11 @@ DELETE FROM `creature_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197
 DELETE FROM `reference_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197, 23201, 23203, 22401, 22400, 22395, 22345, 23200, 23199, 22891, 22890, 22891);
 
 -- Removing In Game Items That Were Released After Patch 1.9
-DELETE FROM `creature_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056);
-DELETE FROM `reference_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056);
+DELETE FROM `creature_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056, 22389, 22329);
+DELETE FROM `reference_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056, 22389, 22329);
+
+-- GO "Sothos and Jarien's Heirlooms" Has Been Removed
+DELETE FROM `gameobject` WHERE `id` = 181083;
 
 -- Setting "Dreamscale Breastplate" Loot Type to BoP (should be shanged back in 1.10)
 UPDATE `item_template` SET `bonding` = '1' WHERE `entry` = '20380';
