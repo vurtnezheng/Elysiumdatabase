@@ -176,75 +176,6 @@ UPDATE item_template SET shadow_res = 0 WHERE entry = 16803;
 UPDATE item_template SET stat_type1 = 3, stat_value1 = 23, stat_type2 = 5, stat_value2 = 13, stat_type3 = 6, stat_value3 = 6, stat_type4 = 7, stat_value4 = 15, stat_type5 = 0, stat_value5 = 0, spellid_1 = 15464 WHERE entry = 16937;
 UPDATE item_template SET stat_type1 = 3, stat_value1 = 31, stat_type2 = 5, stat_value2 = 15, stat_type3 = 6, stat_value3 = 8, stat_type4 = 7, stat_value4 = 16, stat_type5 = 0, stat_value5 = 0 WHERE entry = 16938;
 
-
--- Replacing Old 1.6 Mounts
-DELETE FROM npc_vendor WHERE entry IN (3685, 3362, 7952, 4885, 2357, 1460, 384, 4885, 2357, 1460, 1261, 4730, 7955); 
-DELETE FROM npc_vendor WHERE item IN (15293, 15292, 12330, 12351, 8586, 13317, 12353, 12353, 12354, 13328, 13329, 12302, 12303, 13326, 13327);
-
-INSERT INTO npc_vendor VALUES
-('384', '2411', '0', '0'),
-('384', '2414', '0', '0'),
-('384', '5655', '0', '0'),
-('384', '5656', '0', '0'),
-('384', '18776', '0', '0'),
-('384', '18777', '0', '0'),
-('384', '18778', '0', '0'),
-('1261', '5864', '0', '0'),
-('1261', '5872', '0', '0'),
-('1261', '5873', '0', '0'),
-('1261', '18785', '0', '0'),
-('1261', '18786', '0', '0'),
-('1261', '18787', '0', '0'),
-('1460', '2411', '0', '0'),
-('1460', '2414', '0', '0'),
-('1460', '5655', '0', '0'),
-('1460', '5656', '0', '0'),
-('1460', '18776', '0', '0'),
-('1460', '18777', '0', '0'),
-('1460', '18778', '0', '0'),
-('2357', '2414', '0', '0'),
-('2357', '5655', '0', '0'),
-('2357', '5656', '0', '0'),
-('2357', '18776', '0', '0'),
-('2357', '18777', '0', '0'),
-('2357', '18778', '0', '0'),
-('3362', '1132', '0', '0'),
-('3362', '5665', '0', '0'),
-('3362', '5668', '0', '0'),
-('3362', '18796', '0', '0'),
-('3362', '18797', '0', '0'),
-('3362', '18798', '0', '0'),
-('3685', '15277', '0', '0'),
-('3685', '15290', '0', '0'),
-('3685', '18793', '0', '0'),
-('3685', '18794', '0', '0'),
-('3685', '18795', '0', '0'),
-('4730', '8629', '0', '0'),
-('4730', '8631', '0', '0'),
-('4730', '8632', '0', '0'),
-('4730', '18766', '0', '0'),
-('4730', '18767', '0', '0'),
-('4730', '18902', '0', '0'),
-('4885', '2414', '0', '0'),
-('4885', '5655', '0', '0'),
-('4885', '5656', '0', '0'),
-('4885', '18776', '0', '0'),
-('4885', '18777', '0', '0'),
-('4885', '18778', '0', '0'),
-('7952', '8588', '0', '0'),
-('7952', '8591', '0', '0'),
-('7952', '8592', '0', '0'),
-('7952', '18788', '0', '0'),
-('7952', '18789', '0', '0'),
-('7952', '18790', '0', '0'),
-('7955', '8563', '0', '0'),
-('7955', '8595', '0', '0'),
-('7955', '13321', '0', '0'),
-('7955', '13322', '0', '0'),
-('7955', '18772', '0', '0'),
-('7955', '18773', '0', '0'),
-('7955', '18774', '0', '0');
-
 -- Re-enable Holiday Quests for 1.8 Patch
 
 DELETE FROM `quest_template` WHERE `entry` IN (8635, 8636, 8642, 8643, 8644, 8645, 8646, 8647, 8648, 8649, 8650, 8651, 8652, 8653, 8654, 8670, 8671, 8672, 8673, 8674, 8675, 8676, 8677, 8679, 8680, 8681, 8682, 8683, 8684, 8685, 8686, 8688, 8713, 8714, 8715, 8716, 8717, 8718, 8719, 8720, 8721, 8722, 8723, 8724, 8725, 8726, 8727, 8746, 8763, 8767, 8768, 8769, 8803, 8827, 8860, 8861, 8866, 8867, 8868, 8870, 8871, 8872, 8873, 8875, 8883, 8897, 8898, 8899, 8900, 8901, 8902, 8903, 8979, 8980, 8981, 8982, 8983, 8984, 9024, 9025, 9026, 9027, 9028, 9029, 9319, 9322, 9323, 9324, 9325, 9326, 9330, 9331, 9332, 9339, 9365, 9368); 
@@ -413,3 +344,77 @@ UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN
 UPDATE `areatrigger_teleport` SET `required_level` = 45 WHERE `target_map` = 429;    -- Dire Maul 1.3
 UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 469;    -- Blackwing Lair 1.6
 UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 309;    -- Zul'Gurub 1.7
+
+-- Transition Patch For Pre-1.4 Mounts
+	-- Undead
+insert into npc_vendor value (4731,11559,0,0);
+	-- Tauren
+insert into npc_vendor value (3685,11547,0,0);
+insert into npc_vendor value (3685,11548,0,0);
+	-- Orc
+insert into npc_vendor value (3362,11549,0,0);
+insert into npc_vendor value (3362,11550,0,0);
+	-- Troll
+insert into npc_vendor value (7952,11545,0,0);
+insert into npc_vendor value (7952,11546,0,0);
+	-- Human
+insert into npc_vendor value (384,11551,0,0);
+insert into npc_vendor value (4885,11551,0,0);
+insert into npc_vendor value (2357,11551,0,0);
+insert into npc_vendor value (1460,11551,0,0);
+insert into npc_vendor value (384,11552,0,0);
+insert into npc_vendor value (4885,11552,0,0);
+insert into npc_vendor value (2357,11552,0,0);
+insert into npc_vendor value (1460,11552,0,0);
+	-- Dwarf
+insert into npc_vendor value (1261,11553,0,0);
+insert into npc_vendor value (1261,11554,0,0);
+	-- Elf
+insert into npc_vendor value (4730,11555,0,0);
+insert into npc_vendor value (4730,11556,0,0);
+	-- Gnome
+insert into npc_vendor value (7955,11557,0,0);
+insert into npc_vendor value (7955,11558,0,0);
+--  -----------------------------------------------------------
+--  Insert mounts quests (transforms pre 1.4 mount to post 1.4)
+--  -----------------------------------------------------------
+insert into creature_questrelation value    (3685,7663);
+insert into creature_involvedrelation value (3685,7663);
+insert into creature_questrelation value    (3685,7662);
+insert into creature_involvedrelation value (3685,7662);
+insert into creature_questrelation value    (3362,7660);
+insert into creature_involvedrelation value (3362,7660);
+insert into creature_questrelation value    (3362,7661);
+insert into creature_involvedrelation value (3362,7661);
+insert into creature_questrelation value    (7952,7664);
+insert into creature_involvedrelation value (7952,7664);
+insert into creature_questrelation value    (7952,7665);
+insert into creature_involvedrelation value (7952,7665);
+insert into creature_questrelation value    ( 384,7677);
+insert into creature_involvedrelation value ( 384,7677);
+insert into creature_questrelation value    ( 384,7678);
+insert into creature_involvedrelation value ( 384,7678);
+insert into creature_questrelation value    (4885,7677);
+insert into creature_involvedrelation value (4885,7677);
+insert into creature_questrelation value    (4885,7678);
+insert into creature_involvedrelation value (4885,7678);
+insert into creature_questrelation value    (2357,7677);
+insert into creature_involvedrelation value (2357,7677);
+insert into creature_questrelation value    (2357,7678);
+insert into creature_involvedrelation value (2357,7678);
+insert into creature_questrelation value    (1460,7677);
+insert into creature_involvedrelation value (1460,7677);
+insert into creature_questrelation value    (1460,7678);
+insert into creature_involvedrelation value (1460,7678);
+insert into creature_questrelation value    (1261,7673);
+insert into creature_involvedrelation value (1261,7673);
+insert into creature_questrelation value    (1261,7674);
+insert into creature_involvedrelation value (1261,7674);
+insert into creature_questrelation value    (4730,7671);
+insert into creature_involvedrelation value (4730,7671);
+insert into creature_questrelation value    (4730,7672);
+insert into creature_involvedrelation value (4730,7672);
+insert into creature_questrelation value    (7955,7675);
+insert into creature_involvedrelation value (7955,7675);
+insert into creature_questrelation value    (7955,7676);
+insert into creature_involvedrelation value (7955,7676);
