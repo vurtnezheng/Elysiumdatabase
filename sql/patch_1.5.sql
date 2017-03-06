@@ -555,3 +555,8 @@ insert into creature_questrelation value    (7955,7675);
 insert into creature_involvedrelation value (7955,7675);
 insert into creature_questrelation value    (7955,7676);
 insert into creature_involvedrelation value (7955,7676);
+
+-- Golemagg Loot Drop Rates & Faction Drop
+update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
+update reference_loot_template set condition_id = 3 where entry = 326158 and item = 18824;
+update reference_loot_template set condition_id = 2 where entry = 326158 and item = 18829;
