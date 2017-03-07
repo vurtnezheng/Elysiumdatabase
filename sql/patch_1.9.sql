@@ -630,79 +630,68 @@ UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 309
 
 -- Transition Patch For Pre-1.4 Mounts
 delete from npc_vendor where entry IN (4731, 3685, 3362, 7952, 384, 4885, 2357, 1460, 1261, 4730, 7955);
-delete from npc_vendor where item IN (11559, 11547, 11548, 11550, 11545, 11546, 11551, 11552, 11553, 11554, 11555, 11556, 11557, 11558);
-	-- Undead
-insert into npc_vendor value (4731,11559,0,0);
-	-- Tauren
-insert into npc_vendor value (3685,11547,0,0);
-insert into npc_vendor value (3685,11548,0,0);
-	-- Orc
-insert into npc_vendor value (3362,11549,0,0);
-insert into npc_vendor value (3362,11550,0,0);
-	-- Troll
-insert into npc_vendor value (7952,11545,0,0);
-insert into npc_vendor value (7952,11546,0,0);
-	-- Human
-insert into npc_vendor value (384,11551,0,0);
-insert into npc_vendor value (4885,11551,0,0);
-insert into npc_vendor value (2357,11551,0,0);
-insert into npc_vendor value (1460,11551,0,0);
-insert into npc_vendor value (384,11552,0,0);
-insert into npc_vendor value (4885,11552,0,0);
-insert into npc_vendor value (2357,11552,0,0);
-insert into npc_vendor value (1460,11552,0,0);
-	-- Dwarf
-insert into npc_vendor value (1261,11553,0,0);
-insert into npc_vendor value (1261,11554,0,0);
-	-- Elf
-insert into npc_vendor value (4730,11555,0,0);
-insert into npc_vendor value (4730,11556,0,0);
-	-- Gnome
-insert into npc_vendor value (7955,11557,0,0);
-insert into npc_vendor value (7955,11558,0,0);
---  -----------------------------------------------------------
---  Insert mounts quests (transforms pre 1.4 mount to post 1.4)
---  -----------------------------------------------------------
-REPLACE creature_questrelation value    (3685,7663);
-REPLACE creature_involvedrelation value (3685,7663);
-REPLACE creature_questrelation value    (3685,7662);
-REPLACE creature_involvedrelation value (3685,7662);
-REPLACE creature_questrelation value    (3362,7660);
-REPLACE creature_involvedrelation value (3362,7660);
-REPLACE creature_questrelation value    (3362,7661);
-REPLACE creature_involvedrelation value (3362,7661);
-REPLACE creature_questrelation value    (7952,7664);
-REPLACE creature_involvedrelation value (7952,7664);
-REPLACE creature_questrelation value    (7952,7665);
-REPLACE creature_involvedrelation value (7952,7665);
-REPLACE creature_questrelation value    ( 384,7677);
-REPLACE creature_involvedrelation value ( 384,7677);
-REPLACE creature_questrelation value    ( 384,7678);
-REPLACE creature_involvedrelation value ( 384,7678);
-REPLACE creature_questrelation value    (4885,7677);
-REPLACE creature_involvedrelation value (4885,7677);
-REPLACE creature_questrelation value    (4885,7678);
-REPLACE creature_involvedrelation value (4885,7678);
-REPLACE creature_questrelation value    (2357,7677);
-REPLACE creature_involvedrelation value (2357,7677);
-REPLACE creature_questrelation value    (2357,7678);
-REPLACE creature_involvedrelation value (2357,7678);
-REPLACE creature_questrelation value    (1460,7677);
-REPLACE creature_involvedrelation value (1460,7677);
-REPLACE creature_questrelation value    (1460,7678);
-REPLACE creature_involvedrelation value (1460,7678);
-REPLACE creature_questrelation value    (1261,7673);
-REPLACE creature_involvedrelation value (1261,7673);
-REPLACE creature_questrelation value    (1261,7674);
-REPLACE creature_involvedrelation value (1261,7674);
-REPLACE creature_questrelation value    (4730,7671);
-REPLACE creature_involvedrelation value (4730,7671);
-REPLACE creature_questrelation value    (4730,7672);
-REPLACE creature_involvedrelation value (4730,7672);
-REPLACE creature_questrelation value    (7955,7675);
-REPLACE creature_involvedrelation value (7955,7675);
-REPLACE creature_questrelation value    (7955,7676);
-REPLACE creature_involvedrelation value (7955,7676);
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','2411','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','5864','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','5872','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','5873','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','18785','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','18786','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','18787','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','2411','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','1132','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','5665','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','5668','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','18796','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','18797','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','18798','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','15277','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','15290','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','18793','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','18794','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','18795','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','8629','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','8631','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','8632','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','18766','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','18767','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','18902','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','8588','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','8591','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','8592','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','18788','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','18789','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','18790','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','8563','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','8595','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','13321','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','13322','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18772','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18773','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18774','0','0');
 
 -- Golemagg Loot Drop Rates & Faction Drop
 update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
