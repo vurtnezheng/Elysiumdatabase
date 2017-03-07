@@ -221,26 +221,6 @@ UPDATE `item_template` SET `stat_type1` = 0, `stat_value1` = 0, `stat_type2` = 0
 -- "Dracorian Gauntlets" Stats Have Been Corrected
 UPDATE `item_template` SET `stat_type1` = 6, `stat_value1` = 18, `stat_type2` = 7, `stat_value2` = 10, `stat_type3` = 5, `stat_value3` = 11, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 231, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 0, `spelltrigger_1` = 0, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 0, `spelltrigger_2` = 0, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 13344;
 
--- Minor Tweak for War Effort Reputation Quests
-UPDATE creature_questrelation set id='15739' where quest='8817';
-UPDATE creature_questrelation set id='15739' where quest='8825';
-UPDATE creature_questrelation set id='15767' where quest='8842';
-UPDATE creature_questrelation set id='15767' where quest='8843';
-UPDATE creature_questrelation set id='15736' where quest='8815';
-UPDATE creature_questrelation set id='15736' where quest='8823';
-UPDATE creature_questrelation set id='15765' where quest='8840';
-UPDATE creature_questrelation set id='15765' where quest='8841';
-UPDATE creature_questrelation set id='15738' where quest='8816';
-UPDATE creature_questrelation set id='15738' where quest='8824';
-UPDATE creature_questrelation set id='15768' where quest='8832';
-UPDATE creature_questrelation set id='15768' where quest='8833';
-UPDATE creature_questrelation set id='15737' where quest='8818';
-UPDATE creature_questrelation set id='15737' where quest='8826';
-UPDATE creature_questrelation set id='15761' where quest='8844';
-UPDATE creature_questrelation set id='15761' where quest='8845';
-UPDATE creature_template set npcflag='3' where entry='15736';
-UPDATE creature_template set npcflag='3' where entry='15737';
-
 -- Fishing Pools Are Available Again
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('35505','180582','0','699.816','1845.44','-0.446223','-2.44346','0','0','0.939693','-0.34202','3600','100','1','0');
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('35482','180582','0','-335.832','1723.09','0','-1.8326','0','0','0.793353','-0.608761','3600','100','1','0');
