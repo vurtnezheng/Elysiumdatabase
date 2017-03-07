@@ -629,6 +629,8 @@ UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 469
 UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 309;    -- Zul'Gurub 1.7
 
 -- Transition Patch For Pre-1.4 Mounts
+delete from npc_vendor where entry IN (4731, 3685, 3362, 7952, 384, 4885, 2357, 1460, 1261, 4730, 7955);
+delete from npc_vendor where item IN (11559, 11547, 11548, 11550, 11545, 11546, 11551, 11552, 11553, 11554, 11555, 11556, 11557, 11558);
 	-- Undead
 insert into npc_vendor value (4731,11559,0,0);
 	-- Tauren
@@ -661,47 +663,46 @@ insert into npc_vendor value (7955,11558,0,0);
 --  -----------------------------------------------------------
 --  Insert mounts quests (transforms pre 1.4 mount to post 1.4)
 --  -----------------------------------------------------------
-insert into creature_questrelation value    (3685,7663);
-insert into creature_involvedrelation value (3685,7663);
-insert into creature_questrelation value    (3685,7662);
-insert into creature_involvedrelation value (3685,7662);
-insert into creature_questrelation value    (3362,7660);
-insert into creature_involvedrelation value (3362,7660);
-insert into creature_questrelation value    (3362,7661);
-insert into creature_involvedrelation value (3362,7661);
-insert into creature_questrelation value    (7952,7664);
-insert into creature_involvedrelation value (7952,7664);
-insert into creature_questrelation value    (7952,7665);
-insert into creature_involvedrelation value (7952,7665);
-insert into creature_questrelation value    ( 384,7677);
-insert into creature_involvedrelation value ( 384,7677);
-insert into creature_questrelation value    ( 384,7678);
-insert into creature_involvedrelation value ( 384,7678);
-insert into creature_questrelation value    (4885,7677);
-insert into creature_involvedrelation value (4885,7677);
-insert into creature_questrelation value    (4885,7678);
-insert into creature_involvedrelation value (4885,7678);
-insert into creature_questrelation value    (2357,7677);
-insert into creature_involvedrelation value (2357,7677);
-insert into creature_questrelation value    (2357,7678);
-insert into creature_involvedrelation value (2357,7678);
-insert into creature_questrelation value    (1460,7677);
-insert into creature_involvedrelation value (1460,7677);
-insert into creature_questrelation value    (1460,7678);
-insert into creature_involvedrelation value (1460,7678);
-insert into creature_questrelation value    (1261,7673);
-insert into creature_involvedrelation value (1261,7673);
-insert into creature_questrelation value    (1261,7674);
-insert into creature_involvedrelation value (1261,7674);
-insert into creature_questrelation value    (4730,7671);
-insert into creature_involvedrelation value (4730,7671);
-insert into creature_questrelation value    (4730,7672);
-insert into creature_involvedrelation value (4730,7672);
-insert into creature_questrelation value    (7955,7675);
-insert into creature_involvedrelation value (7955,7675);
-insert into creature_questrelation value    (7955,7676);
-insert into creature_involvedrelation value (7955,7676);
-
+REPLACE creature_questrelation value    (3685,7663);
+REPLACE creature_involvedrelation value (3685,7663);
+REPLACE creature_questrelation value    (3685,7662);
+REPLACE creature_involvedrelation value (3685,7662);
+REPLACE creature_questrelation value    (3362,7660);
+REPLACE creature_involvedrelation value (3362,7660);
+REPLACE creature_questrelation value    (3362,7661);
+REPLACE creature_involvedrelation value (3362,7661);
+REPLACE creature_questrelation value    (7952,7664);
+REPLACE creature_involvedrelation value (7952,7664);
+REPLACE creature_questrelation value    (7952,7665);
+REPLACE creature_involvedrelation value (7952,7665);
+REPLACE creature_questrelation value    ( 384,7677);
+REPLACE creature_involvedrelation value ( 384,7677);
+REPLACE creature_questrelation value    ( 384,7678);
+REPLACE creature_involvedrelation value ( 384,7678);
+REPLACE creature_questrelation value    (4885,7677);
+REPLACE creature_involvedrelation value (4885,7677);
+REPLACE creature_questrelation value    (4885,7678);
+REPLACE creature_involvedrelation value (4885,7678);
+REPLACE creature_questrelation value    (2357,7677);
+REPLACE creature_involvedrelation value (2357,7677);
+REPLACE creature_questrelation value    (2357,7678);
+REPLACE creature_involvedrelation value (2357,7678);
+REPLACE creature_questrelation value    (1460,7677);
+REPLACE creature_involvedrelation value (1460,7677);
+REPLACE creature_questrelation value    (1460,7678);
+REPLACE creature_involvedrelation value (1460,7678);
+REPLACE creature_questrelation value    (1261,7673);
+REPLACE creature_involvedrelation value (1261,7673);
+REPLACE creature_questrelation value    (1261,7674);
+REPLACE creature_involvedrelation value (1261,7674);
+REPLACE creature_questrelation value    (4730,7671);
+REPLACE creature_involvedrelation value (4730,7671);
+REPLACE creature_questrelation value    (4730,7672);
+REPLACE creature_involvedrelation value (4730,7672);
+REPLACE creature_questrelation value    (7955,7675);
+REPLACE creature_involvedrelation value (7955,7675);
+REPLACE creature_questrelation value    (7955,7676);
+REPLACE creature_involvedrelation value (7955,7676);
 
 -- Golemagg Loot Drop Rates & Faction Drop
 update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
@@ -716,7 +717,7 @@ update creature_loot_template set ChanceOrQuestChance=25 where item=12337;
 
 -- Argent Dawn @ Pre-1.11
 delete from game_event where entry=155;
-insert into game_event value (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0);
+insert into game_event value (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0, 0);
 delete from game_event_creature where event=155;
 insert into game_event_creature value (54765,155);
 insert into game_event_creature value (54163,155);
