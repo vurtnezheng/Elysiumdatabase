@@ -133,6 +133,14 @@ UPDATE item_template SET nature_res = 0 WHERE entry = 16803;
 UPDATE item_template SET frost_res = 0 WHERE entry = 16803;
 UPDATE item_template SET shadow_res = 0 WHERE entry = 16803;
 
+UPDATE item_template SET stat_type4 = 0, stat_value4 = 0 WHERE entry = 16800;
+UPDATE item_template SET stat_type3 = 7, stat_value3 = 13 WHERE entry = 16800;
+UPDATE item_template SET stat_type1 = 5, stat_value1 = 14 WHERE entry = 16800;
+UPDATE item_template SET stat_type2 = 6, stat_value2 = 11 WHERE entry = 16800;
+UPDATE item_template SET nature_res = 0 WHERE entry = 16800;
+UPDATE item_template SET frost_res = 0 WHERE entry = 16800;
+UPDATE item_template SET shadow_res = 10 WHERE entry = 16800;
+
 -- Fixed Dragonstalker missing agility on shoulders/legs, and shoulders having 1% too much hit
 
 UPDATE item_template SET stat_type1 = 3, stat_value1 = 23, stat_type2 = 5, stat_value2 = 13, stat_type3 = 6, stat_value3 = 6, stat_type4 = 7, stat_value4 = 15, stat_type5 = 0, stat_value5 = 0, spellid_1 = 15464 WHERE entry = 16937;
