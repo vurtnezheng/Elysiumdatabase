@@ -38,8 +38,6 @@ SELECT @refTable := -mincountOrRef FROM creature_loot_template WHERE entry = 104
 INSERT INTO reference_loot_template VALUES(@refTable,18723,0,2,1,1,0);
 
 
-
-
 -- Nexus Crystal #20725 to Large Brilliant Shard #14344 DB_world Replacement
 
 DELETE FROM disenchant_loot_template WHERE entry = 49 AND item = 20725;
