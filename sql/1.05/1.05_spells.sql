@@ -44,7 +44,9 @@ INSERT INTO `spell_disabled` VALUES
 (25722),
 (25804),
 (25691),
-(26276);
+(26276),
+(26278),
+(26277);
 
 -- BRE version 1.10 (max stack = 1)
 
