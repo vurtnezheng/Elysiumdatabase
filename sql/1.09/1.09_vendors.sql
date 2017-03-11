@@ -41,3 +41,10 @@ REPLACE `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('15179','
 REPLACE `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('15179','14341','0','0');
 REPLACE `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('15179','18256','0','0');
 REPLACE `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('15179','22310','0','0');
+
+-- New Recipes to NPC "Kania"
+
+DELETE FROM `npc_vendor` WHERE `entry` = 15419 AND `item` IN (20732, 20733);
+
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('15419','20732','0','0');
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('15419','20733','0','0');
