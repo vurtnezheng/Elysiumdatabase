@@ -13,11 +13,6 @@ REPLACE INTO `spell_mod` (`Id`, `AttributesEx3`, `Comment`) VALUES
 (24383, 1048576, 'Swiftness of Zanza - persist through death (before 1.12)');
 DELETE FROM `spell_disabled` WHERE `entry` = 24417;
 
--- Disable not in the game recipe + resulting food spell
-
-INSERT INTO spell_disabled VALUES (24800);
-INSERT INTO spell_disabled VALUES (24801);
-
 -- Disable 1.9 Oils & Rumsey Rum Spell
 
 INSERT INTO `spell_disabled` VALUES 
