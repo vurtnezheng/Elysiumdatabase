@@ -1,7 +1,9 @@
 
+UPDATE quest_template SET MinLevel = 61 WHERE entry IN (9416, 9422, 9665, 9664, 9248);
+
 -- Temporarily!!! Disabling AQ Opening Quest Chain
 
-UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8286, 8288, 8301, 8302, 8303, 8305, 8519, 8742, 8745, 8743, 8730, 8576, 8733);
+-- UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8286, 8288, 8301, 8302, 8303, 8305, 8519, 8742, 8745, 8743, 8730, 8576, 8733);
 
 -- EPL & Tier 0.5 Quests Have Been Disabled
 
@@ -9,7 +11,7 @@ UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8977, 8922, 8921, 8924, 
 
 -- Temporarily!!! Disabling Post-War-Effort Quests
 
-UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8800, 8573, 8574, 8572, 8548, 8507, 8731, 8732, 8508, 9338);
+-- UPDATE quest_template SET MinLevel = 61 WHERE entry IN (8800, 8573, 8574, 8572, 8548, 8507, 8731, 8732, 8508, 9338);
 
 -- Disabling 1.11 Enchantment Quests
 
