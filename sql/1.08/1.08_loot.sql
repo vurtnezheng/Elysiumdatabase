@@ -7,12 +7,32 @@ DELETE FROM disenchant_loot_template WHERE entry = 49 AND item = 20725;
 UPDATE disenchant_loot_template SET item = 14344 WHERE entry IN (65, 64);
 
 -- Removing Idols, Totems & Librams From Loot Table
+
 DELETE FROM `creature_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197, 23201, 23203, 22401, 22400, 22395, 22345, 23200, 23199, 22891, 22890, 22891, 22306, 22311, 22313, 22302, 22304, 22305, 22303, 22301, 22722, 22721, 22714, 22204, 22257, 23320, 22720, 22718, 22711, 22712, 22715, 22713);
 DELETE FROM `reference_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197, 23201, 23203, 22401, 22400, 22395, 22345, 23200, 23199, 22891, 22890, 22891, 22311, 22313, 22302, 22304, 22305, 22303, 22301, 22722, 22721, 22714, 22204, 22257, 23320, 22720, 22718, 22711, 22712, 22715, 22716, 22713);
 
 -- Removing In Game Items That Were Released After Patch 1.9
-DELETE FROM `creature_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056, 22389, 22329);
-DELETE FROM `reference_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056, 22389, 22329);
+
+DELETE FROM `creature_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056, 22389, 22329, 22433, 21547, 22402,22408, 22409, 22410, 22411, 22242, 22241, 22240, 22275, 22232, 22231, 22223, 22212, 22208, 22207, 22205, 22204, 22256, 22255, 22254, 22394, 22311, 22305, 22313, 22321, 22225, 22269, 22268, 22267, 22266, 22271, 22253, 22306, 22311, 22313, 22302, 22304, 22305, 22303, 22301);
+DELETE FROM `reference_loot_template` WHERE `item` IN (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056, 22389, 22329, 22433, 21547, 22402,22408, 22409, 22410, 22411, 22242, 22241, 22240, 22275, 22232, 22231, 22223, 22212, 22208, 22207, 22205, 22204, 22256, 22255, 22254, 22394, 22311, 22305, 22313, 22321, 22225, 22269, 22268, 22267, 22266, 22271, 22253, 22306, 22311, 22313, 22302, 22304, 22305, 22303, 22301);
+
+-- Removing ZG 1.11 Drop
+
+DELETE FROM `creature_loot_template` WHERE `item` IN (22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
+DELETE FROM `reference_loot_template` WHERE `item` IN (22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
+
+-- Removing 1.11 Relics From Drop
+
+DELETE FROM `creature_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197, 23201, 23203, 22401, 22400, 22395, 22345, 23200, 23199);
+DELETE FROM `reference_loot_template` WHERE `item` IN (23198, 22397, 22398, 23197, 23201, 23203, 22401, 22400, 22395, 22345, 23200, 23199);
+
+-- GO "Sothos and Jarien's Heirlooms" Has Been Removed
+
+DELETE FROM `gameobject` WHERE `id` = 181083;
+
+-- Setting "Dreamscale Breastplate" Loot Type to BoP (should be shanged back in 1.10)
+
+UPDATE `item_template` SET `bonding` = '1' WHERE `entry` = '20380';
 
 -- Golemagg Loot Drop Rates & Faction Drop
 update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
@@ -26,6 +46,7 @@ update creature_loot_template set ChanceOrQuestChance=15 where item=12336;
 update creature_loot_template set ChanceOrQuestChance=25 where item=12337;
 
 -- Argent Dawn item
+
 delete from conditions where condition_entry=70;
 insert into conditions value (70,12,155,0);
 update creature_loot_template set condition_id=70 where item in (22527,22529,22528,22525,22526);
@@ -33,6 +54,7 @@ update creature_loot_template set condition_id=70 where item in (22527,22529,225
 DELETE FROM `creature_loot_template` WHERE `entry` = 2919 AND `item` IN (3771, 3864, 3914, 4552, 4554, 4637, 4784, 7067, 7075, 7848, 7909, 7910, 7912, 7992, 8029, 8150, 10312, 307929, 307930, 307931, 307932, 307933);
 
 -- Raid & Dungeon Loot Replacements
+
 DELETE FROM `creature_loot_template` WHERE `entry` IN (12118, 11982, 12259, 12057, 12056, 12264, 12098, 11988,11502, 1853, 11882, 15308, 15213, 11883, 15541, 15542, 14479, 15200, 11804, 11803, 11881, 15201, 11880);
 insert into `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('1853','12843','100','0','1','1','17');
 insert into `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) values('1853','13501','10','0','1','1','25');

@@ -13,7 +13,7 @@ UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 509
 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN 
 (
-533,    -- Naxxramas 1.12
+533    -- Naxxramas 1.12
 );
 
 -- Enable Alterac Valley 1.5
