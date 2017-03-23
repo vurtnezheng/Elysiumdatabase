@@ -17,3 +17,4 @@ UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 1;
 -- Enable available instances
 
 UPDATE `areatrigger_teleport` SET `required_level` = 45 WHERE `target_map` = 429;    -- Dire Maul 1.3
+UPDATE `areatrigger_teleport` SET `required_level` = '45' WHERE `id` IN (3190, 3191, 3193, 3194, 3195, 3196, 3197);
