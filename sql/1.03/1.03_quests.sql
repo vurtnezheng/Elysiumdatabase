@@ -182,3 +182,15 @@ DELETE FROM creature_involvedrelation WHERE quest NOT IN (SELECT entry FROM ques
 DELETE FROM creature_questrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
 DELETE FROM gameobject_involvedrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
 DELETE FROM gameobject_questrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
+
+-- Missing DM Quests
+
+DELETE FROM `creature_involvedrelation` WHERE `id` IN (11801, 14358);
+
+insert into `creature_involvedrelation` (`id`, `quest`) values('11801','1123');
+insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5526');
+insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5527');
+insert into `creature_involvedrelation` (`id`, `quest`) values('11801','6762');
+insert into `creature_involvedrelation` (`id`, `quest`) values('11801','6845');
+insert into `creature_involvedrelation` (`id`, `quest`) values('14358','7461');
+
