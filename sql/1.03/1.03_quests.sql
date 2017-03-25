@@ -198,3 +198,17 @@ insert into `creature_involvedrelation` (`id`, `quest`) values('14358','7461');
 -- Add Treasure of Shen'Dralar start to Ancient
 insert into `creature_questrelation` (`id`, `quest`) values('14358','7877');
 
+-- Add book turn-ins
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES
+--  Lorekeeper Kildrath
+(14383,   7498),
+(14383,   7499),
+(14383,   7500),
+-- Lorekeeper Mykos
+(14382,   7501),
+(14382,   7502),
+(14382,   7503),
+-- Lorekeeper Javon
+(14381,   7504),
+(14381,   7505),
+(14381,   7506);

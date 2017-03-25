@@ -469,3 +469,110 @@ UPDATE creature_loot_template SET creature_loot_template.maxcount    =    1 WHER
 UPDATE creature_loot_template SET creature_loot_template.maxcount    =    1 WHERE creature_loot_template.entry = 14325;
 UPDATE creature_loot_template SET creature_loot_template.maxcount    =    1 WHERE creature_loot_template.entry = 11496;
 UPDATE creature_loot_template SET creature_loot_template.maxcount    =    1 WHERE creature_loot_template.entry = 11486;
+
+
+-- Double loot fixes
+-- DM Alzzin the Wildshaper loot
+DELETE FROM `creature_loot_template` WHERE `entry` = 11492;
+
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11492, 8948,   5.9524, 0,  2,  4,  0),
+(11492, 14047,  16.7659,    0,  2,  4,  0),
+(11492, 324906, 2,  1,  -324906,    1,  0),
+(11492, 324907, 2,  2,  -324907,    1,  0),
+(11492, 324908, 100,    3,  -324908,    1,  0),
+(11492, 324909, 100,    4,  -324909,    1,  0);
+
+-- Fix his reference loot templates
+DELETE FROM `reference_loot_template` WHERE `entry` = 324909;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324909,    18309,  0,  4,  1,  1,  0),
+(324909,    18310,  0,  4,  1,  1,  0),
+(324909,    18312,  0,  4,  1,  1,  0),
+(324909,    18314,  0,  4,  1,  1,  0),
+(324909,    18315,  0,  4,  1,  1,  0),
+(324909,    18318,  0,  4,  1,  1,  0),
+(324909,    18321,  0,  4,  1,  1,  0),
+(324909,    18326,  0,  4,  1,  1,  0),
+(324909,    18327,  0,  4,  1,  1,  0),
+(324909,    18328,  0,  4,  1,  1,  0);
+
+DELETE FROM `reference_loot_template` WHERE `entry` = 324908;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324908,    18309,  0,  3,  1,  1,  0),
+(324908,    18310,  0,  3,  1,  1,  0),
+(324908,    18312,  0,  3,  1,  1,  0),
+(324908,    18314,  0,  3,  1,  1,  0),
+(324908,    18315,  0,  3,  1,  1,  0),
+(324908,    18318,  0,  3,  1,  1,  0),
+(324908,    18321,  0,  3,  1,  1,  0),
+(324908,    18326,  0,  3,  1,  1,  0),
+(324908,    18327,  0,  3,  1,  1,  0),
+(324908,    18328,  0,  3,  1,  1,  0);
+
+-- Fix Warpwood table
+DELETE FROM `creature_loot_template` WHERE `entry` = 11489;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11489, 10286,  5,  0,  1,  1,  0),
+(11489, 22529,  43, 0,  2,  4,  70),
+(11489, 324898, 2,  2,  -324898,    1,  0),
+(11489, 324899, 6,  3,  -324899,    1,  0),
+(11489, 324900, 100,    4,  -324900,    1,  0);
+
+-- Fix his boss loot reference table
+DELETE FROM `reference_loot_template` WHERE `entry` = 324900;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324900,    18352,  0,  4,  1,  1,  0),
+(324900,    18353,  0,  4,  1,  1,  0),
+(324900,    18390,  0,  4,  1,  1,  0),
+(324900,    18393,  0,  4,  1,  1,  0);
+
+-- Fix Magister Kalendris' table
+DELETE FROM `creature_loot_template` WHERE `entry` = 11487;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11487, 14047,  19, 0,  2,  4,  0),
+(11487, 22309,  15, 0,  1,  1,  0),
+(11487, 324890, 2,  2,  -324911,    1,  0),
+(11487, 324891, 6,  3,  -324899,    1,  0),
+(11487, 324892, 100,    4,  -324892,    1,  0);
+
+-- Fix his unique boss loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 324892;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324892,    18350,  0,  4,  1,  1,  0),
+(324892,    18351,  0,  4,  1,  1,  0),
+(324892,    18371,  0,  4,  1,  1,  0),
+(324892,    18374,  0,  4,  1,  1,  0),
+(324892,    18397,  0,  4,  1,  1,  0);
+
+-- Fix Illyana Ravenoak table
+DELETE FROM `creature_loot_template` WHERE `entry` = 11488;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11488, 14047,  16, 0,  2,  4,  0),
+(11488, 324894, 2,  2,  -324911,    1,  0),
+(11488, 324895, 6,  3,  -324899,    1,  0),
+(11488, 324896, 100,    4,  -324896,    1,  0);
+
+-- Add her unique loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 324896;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324896,    18347,  0,  4,  1,  1,  0),
+(324896,    18349,  0,  4,  1,  1,  0),
+(324896,    18383,  0,  4,  1,  1,  0),
+(324896,    18386,  0,  4,  1,  1,  0);
+
+-- END Double Loot Fixes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
