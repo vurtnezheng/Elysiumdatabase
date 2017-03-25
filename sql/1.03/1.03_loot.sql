@@ -367,7 +367,7 @@ REPLACE INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (318124,    18083,  0,  1,  1,  1,  0);
 
 -- Add Eidolon Talisman to Spirits in DM West
-INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+REPLACE INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
 (11471, 18340,  0.695, 0,  1,  1,  0),
 (11472, 18340,  0.695, 0,  1,  1,  0),
 (11473, 18340,  0.695, 0,  1,  1,  0),
@@ -562,6 +562,156 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (324896,    18386,  0,  4,  1,  1,  0);
 
 -- END Double Loot Fixes
+
+
+-- Update Guard Mol'Dar loot
+--     Runecloth x2-4
+UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14326;
+--     No evidence of him dropping Warbeads
+DELETE FROM `creature_loot_template` WHERE `item` = 21982 AND `entry` = 14326;
+--     Repair his boss loot table
+DELETE FROM `reference_loot_template` WHERE `entry` = 328276;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(328276,    18450,  0,  1,  1,  1,  0),
+(328276,    18451,  0,  1,  1,  1,  0),
+(328276,    18458,  0,  1,  1,  1,  0),
+(328276,    18459,  0,  1,  1,  1,  0),
+(328276,    18460,  0,  1,  1,  1,  0),
+(328276,    18462,  0,  1,  1,  1,  0),
+(328276,    18463,  0,  1,  1,  1,  0),
+(328276,    18464,  0,  1,  1,  1,  0),
+(328276,    18493,  0,  1,  1,  1,  0),
+(328276,    18494,  0,  1,  1,  1,  0),
+(328276,    18496,  0,  1,  1,  1,  0),
+(328276,    18497,  0,  1,  1,  1,  0),
+(328276,    18498,  0,  1,  1,  1,  0);
+
+-- Update Guard Slip'Kik loot
+--     Runecloth x2-4
+UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14323;
+--     No evidence of him dropping Warbeads
+DELETE FROM `creature_loot_template` WHERE `item` = 21982 AND `entry` = 14323;
+--     Repair boss loot table
+DELETE FROM `creature_loot_template` WHERE `item` = 328266 AND `entry` = 14323;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(14323, 328276,  100, 3,  -328276,  1,  0);
+
+-- Update Guard Fengus loot
+--     Delete odd entries
+DELETE FROM `creature_loot_template` WHERE `condition_id` = 738 AND `entry` = 14321;
+--     Runecloth x2-4
+UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14321;
+--     Remove double Libram loot
+DELETE FROM `creature_loot_template` WHERE `item` = 328259 AND `entry` = 14321;
+--     Repair boss loot table
+DELETE FROM `reference_loot_template` WHERE `entry` = 328262;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(328262,    18450,  0,  4,  1,  1,  0),
+(328262,    18451,  0,  4,  1,  1,  0),
+(328262,    18458,  0,  4,  1,  1,  0),
+(328262,    18459,  0,  4,  1,  1,  0),
+(328262,    18460,  0,  4,  1,  1,  0),
+(328262,    18462,  0,  4,  1,  1,  0),
+(328262,    18463,  0,  4,  1,  1,  0),
+(328262,    18464,  0,  4,  1,  1,  0);
+
+-- Update Captain Kromcrush
+-- Just replace everything, too much junk
+DELETE FROM `creature_loot_template` WHERE `entry` = 14325;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(14325, 14047,  25, 0,  2,  4,  0),
+(14325, 18250,  13, 0,  1,  1,  0),
+(14325, 18640,  2,  0,  1,  1,  0),
+(14325, 328273, 2,  2,  -328273,    1,  0),
+(14325, 328274, 6,  3,  -328274,    1,  0),
+(14325, 328275, 100,    4,  -328275,    1,  0);
+
+-- Add his missing boss loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 328275;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(328275,    18502,  0,  4,  1,  1,  0),
+(328275,    18503,  0,  4,  1,  1,  0),
+(328275,    18505,  0,  4,  1,  1,  0),
+(328275,    18507,  0,  4,  1,  1,  0);
+
+-- Update King Gordok
+DELETE FROM `creature_loot_template` WHERE `entry` = 11501;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11501, 14047,  13, 0,  2,  5,  0),
+(11501, 18640,  2,  0,  1,  1,  0),
+(11501, 18780,  9,  0,  1,  1,  0),
+(11501, 19258,  7,  0,  1,  1,  0),
+(11501, 21982,  -50,    0,  1,  1,  0),
+(11501, 324918, 2,  2,  -324918,    1,  0),
+(11501, 324919, 100,    3,  -324919,    2,  0),
+(11501, 324921, 6,  5,  -324921,    1,  0);
+
+-- Repair unique loot table
+DELETE FROM `reference_loot_template` WHERE `entry` = 324919;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324919,    18520,  0,  3,  1,  1,  0),
+(324919,    18521,  0,  3,  1,  1,  0),
+(324919,    18522,  0,  3,  1,  1,  0),
+(324919,    18523,  0,  3,  1,  1,  0),
+(324919,    18524,  0,  3,  1,  1,  0),
+(324919,    18525,  0,  3,  1,  1,  0),
+(324919,    18526,  0,  3,  1,  1,  0),
+(324919,    18527,  0,  3,  1,  1,  0);
+
+-- Update Immol'Thar
+DELETE FROM `creature_loot_template` WHERE `entry` =  11496;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11496, 324913, 2,  2,  -324913,    1,  0),
+(11496, 324914, 100,    3,  -324914,    2,  0),
+(11496, 324916, 6,  5,  -324916,    1,  0);
+
+-- Repair unique loot table
+DELETE FROM `reference_loot_template` WHERE `entry` = 324914;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324914,    18370,  0,  3,  1,  1,  0),
+(324914,    18372,  0,  3,  1,  1,  0),
+(324914,    18377,  0,  3,  1,  1,  0),
+(324914,    18379,  0,  3,  1,  1,  0),
+(324914,    18381,  0,  3,  1,  1,  0),
+(324914,    18384,  0,  3,  1,  1,  0),
+(324914,    18385,  0,  3,  1,  1,  0),
+(324914,    18389,  0,  3,  1,  1,  0),
+(324914,    18391,  0,  3,  1,  1,  0),
+(324914,    18394,  0,  3,  1,  1,  0);
+
+-- Update Prince Tortheldrin
+DELETE FROM `creature_loot_template` WHERE `entry` = 11486;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11486, 14047,  11, 0,  2,  5,  0),
+(11486, 21525,  100,    4,  1,  1,  110),
+(11486, 324886, 100,    1,  -324886,    2,  0),
+(11486, 324888, 6,  3,  -324888,    1,  0);
+
+-- Repair unique boss loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 324886;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324886,    18373,  0,  1,  1,  1,  0),
+(324886,    18375,  0,  1,  1,  1,  0),
+(324886,    18376,  0,  1,  1,  1,  0),
+(324886,    18378,  0,  1,  1,  1,  0),
+(324886,    18380,  0,  1,  1,  1,  0),
+(324886,    18382,  0,  1,  1,  1,  0),
+(324886,    18388,  0,  1,  1,  1,  0),
+(324886,    18392,  0,  1,  1,  1,  0),
+(324886,    18395,  0,  1,  1,  1,  0),
+(324886,    18396,  0,  1,  1,  1,  0);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

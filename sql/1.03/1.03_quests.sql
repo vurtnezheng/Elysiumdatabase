@@ -199,6 +199,7 @@ insert into `creature_involvedrelation` (`id`, `quest`) values('14358','7461');
 insert into `creature_questrelation` (`id`, `quest`) values('14358','7877');
 
 -- Add book turn-ins
+DELETE FROM `creature_involvedrelation` WHERE `quest` IN (7498, 7499, 7500, 7501, 7502, 7503, 7504, 7505, 7506);
 INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES
 --  Lorekeeper Kildrath
 (14383,   7498),
