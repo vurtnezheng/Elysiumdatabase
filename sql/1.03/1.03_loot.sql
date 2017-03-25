@@ -359,3 +359,16 @@ replace into reference_loot_template value (330068, 15931, 0, 1, 1, 1, 0);
 replace into reference_loot_template value (330068, 15943, 0, 1, 1, 1, 0);
 replace into reference_loot_template value (330068, 15986, 0, 1, 1, 1, 0);
 replace into reference_loot_template value (330068, 15987, 0, 1, 1, 1, 0);
+
+-- Witch Doctor Zum'Rah loot table
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 100 WHERE `entry` = 7271 AND `item` = 318124;
+-- Add Jumanza Grips
+REPLACE INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(318124,    18083,  0,  1,  1,  1,  0);
+
+-- Add Eidolon Talisman to Spirits in DM West
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11471, 18340,  0.695, 0,  1,  1,  0),
+(11472, 18340,  0.695, 0,  1,  1,  0),
+(11473, 18340,  0.695, 0,  1,  1,  0),
+(11475, 18340,  0.695, 0,  1,  1,  0);

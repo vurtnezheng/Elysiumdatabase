@@ -188,6 +188,7 @@ DELETE FROM gameobject_questrelation WHERE quest NOT IN (SELECT entry FROM quest
 DELETE FROM `creature_involvedrelation` WHERE `id` IN (11801, 14358);
 
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','1123');
+insert into `creature_questrelation`    (`id`, `quest`) values('11801','5526');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5526');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5527');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','6762');
