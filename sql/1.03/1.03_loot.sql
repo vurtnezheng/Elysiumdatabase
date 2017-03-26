@@ -701,28 +701,71 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (324886,    18395,  0,  1,  1,  1,  0),
 (324886,    18396,  0,  1,  1,  1,  0);
 
+-- Update Knot Thimblejack's Cache loot
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 16591;
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(16591, 12006,  100,    1,  -12006, 2,  0),
+(16591, 18240,  35, 0,  1,  2,  0),
+(16591, 18414,  2,  1,  1,  1,  0),
+(16591, 18415,  0,  1,  1,  1,  0),
+(16591, 18416,  0,  1,  1,  1,  0),
+(16591, 18417,  0,  1,  1,  1,  0),
+(16591, 18418,  0,  1,  1,  1,  0),
+(16591, 18514,  0,  1,  1,  1,  0),
+(16591, 18515,  0,  1,  1,  1,  0),
+(16591, 18516,  0,  1,  1,  1,  0),
+(16591, 18517,  2,  1,  1,  1,  0),
+(16591, 18518,  2,  1,  1,  1,  0),
+(16591, 18519,  2,  1,  1,  1,  0);
 
+-- Update Gordok Tribute loot
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 16577;
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(16577, 8766,   100,    0,  15, 20, 0),
+(16577, 8952,   100,    0,  15, 20, 0),
+(16577, 12008,  100,    1,  -12008, 2,  0),
+(16577, 12015,  100,    2,  -12015, 1,  0),
+(16577, 12016,  100,    3,  -12016, 1,  0),
+(16577, 12017,  100,    4,  -12017, 1,  0);
 
+-- Update green loot reference
+DELETE FROM `reference_loot_template` WHERE `entry` = 12008;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12008, 13444,  0,  1,  2,  5,  0),
+(12008, 13446,  0,  1,  2,  5,  0),
+(12008, 18475,  0,  1,  1,  1,  0),
+(12008, 18476,  0,  1,  1,  1,  0),
+(12008, 18477,  0,  1,  1,  1,  0),
+(12008, 18478,  0,  1,  1,  1,  0),
+(12008, 18479,  0,  1,  1,  1,  0),
+(12008, 18480,  0,  1,  1,  1,  0),
+(12008, 18481,  0,  1,  1,  1,  0),
+(12008, 18482,  0,  1,  1,  1,  0),
+(12008, 18655,  0,  1,  1,  1,  0);
 
+-- Tribute templates
+-- Unsure whether loot is correctly removed if some bosses killed
 
+-- Tribute run template 1
+DELETE FROM `reference_loot_template` WHERE `entry` = 12015;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12015, 18500,  0,  2,  1,  1,  0),
+(12015, 18528,  0,  2,  1,  1,  0),
+(12015, 18529,  0,  2,  1,  1,  0);
 
+-- Tribute run template 2
+DELETE FROM `reference_loot_template` WHERE `entry` = 12016;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12016, 18499,  0,  3,  1,  1,  0),
+(12016, 18530,  0,  3,  1,  1,  0),
+(12016, 18531,  0,  3,  1,  1,  0),
+(12016, 18532,  0,  3,  1,  1,  0);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Tribute run template 3
+DELETE FROM `reference_loot_template` WHERE `entry` = 12017;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12017, 18495,  0,  4,  1,  1,  0),
+(12017, 18533,  0,  4,  1,  1,  0),
+(12017, 18534,  0,  4,  1,  1,  0),
+(12017, 18537,  0,  4,  1,  1,  0),
+(12017, 18538,  1,  4,  1,  1,  0);
