@@ -188,7 +188,7 @@ DELETE FROM gameobject_questrelation WHERE quest NOT IN (SELECT entry FROM quest
 DELETE FROM `creature_involvedrelation` WHERE `id` IN (11801, 14358);
 
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','1123');
-insert into `creature_questrelation`    (`id`, `quest`) values('11801','5526');
+REPLACE into `creature_questrelation`    (`id`, `quest`) values('11801','5526');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5526');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5527');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','6762');
@@ -196,7 +196,7 @@ insert into `creature_involvedrelation` (`id`, `quest`) values('11801','6845');
 insert into `creature_involvedrelation` (`id`, `quest`) values('14358','7461');
 
 -- Add Treasure of Shen'Dralar start to Ancient
-insert into `creature_questrelation` (`id`, `quest`) values('14358','7877');
+REPLACE into `creature_questrelation` (`id`, `quest`) values('14358','7877');
 
 -- Add book turn-ins
 DELETE FROM `creature_involvedrelation` WHERE `quest` IN (7498, 7499, 7500, 7501, 7502, 7503, 7504, 7505, 7506);
@@ -213,3 +213,13 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES
 (14381,   7504),
 (14381,   7505),
 (14381,   7506);
+
+-- Unfinished Gordok Business
+REPLACE INTO `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `QuestLevel`, `Type`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill`, `RequiredSkillValue`, `RepObjectiveFaction`, `RepObjectiveValue`, `RequiredMinRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepFaction`, `RequiredMaxRepValue`, `SuggestedPlayers`, `LimitTime`, `QuestFlags`, `SpecialFlags`, `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `NextQuestInChain`, `SrcItemId`, `SrcItemCount`, `SrcSpell`, `Title`, `Details`, `Objectives`, `OfferRewardText`, `RequestItemsText`, `EndText`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `ReqItemId1`, `ReqItemId2`, `ReqItemId3`, `ReqItemId4`, `ReqItemCount1`, `ReqItemCount2`, `ReqItemCount3`, `ReqItemCount4`, `ReqSourceId1`, `ReqSourceId2`, `ReqSourceId3`, `ReqSourceId4`, `ReqSourceCount1`, `ReqSourceCount2`, `ReqSourceCount3`, `ReqSourceCount4`, `ReqCreatureOrGOId1`, `ReqCreatureOrGOId2`, `ReqCreatureOrGOId3`, `ReqCreatureOrGOId4`, `ReqCreatureOrGOCount1`, `ReqCreatureOrGOCount2`, `ReqCreatureOrGOCount3`, `ReqCreatureOrGOCount4`, `ReqSpellCast1`, `ReqSpellCast2`, `ReqSpellCast3`, `ReqSpellCast4`, `RewChoiceItemId1`, `RewChoiceItemId2`, `RewChoiceItemId3`, `RewChoiceItemId4`, `RewChoiceItemId5`, `RewChoiceItemId6`, `RewChoiceItemCount1`, `RewChoiceItemCount2`, `RewChoiceItemCount3`, `RewChoiceItemCount4`, `RewChoiceItemCount5`, `RewChoiceItemCount6`, `RewItemId1`, `RewItemId2`, `RewItemId3`, `RewItemId4`, `RewItemCount1`, `RewItemCount2`, `RewItemCount3`, `RewItemCount4`, `RewRepFaction1`, `RewRepFaction2`, `RewRepFaction3`, `RewRepFaction4`, `RewRepFaction5`, `RewRepValue1`, `RewRepValue2`, `RewRepValue3`, `RewRepValue4`, `RewRepValue5`, `RewOrReqMoney`, `RewMoneyMaxLevel`, `RewSpell`, `RewSpellCast`, `RewMailTemplateId`, `RewMailDelaySecs`, `PointMapId`, `PointX`, `PointY`, `PointOpt`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `IncompleteEmote`, `CompleteEmote`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `StartScript`, `CompleteScript`) VALUES
+(7703,  2,  2557,   57, 60, 81, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  'Unfinished Gordok Business',   'Now you da king, so maybe you get prized Gordok artifact back from creepy elf who calls himself Prince!  Da king before you failed, just like all da other kings since Tortheldrin - da creepy elf - stole it from old timey Gordok king!$B$BArtifact is called da Gauntlet of Gordok Might.  Old timey stories say only da one true king da Gordok can get it back.  Old timey story also say creepy elf is still around here - you find it and it will become mighty gauntlet you wear forever!  Yar, I show you!',  'Find the Gauntlet of Gordok Might and return it to Captain Kromcrush in Dire Maul.$B$BAccording to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.',  'Wow... you ARE da true $gking:queen;! I never think I see this gauntlet in my life! It look like it got no mojo left anymore... maybe that creepy elf try and ruin gauntlet. Well, I say HAR HAR to him!$b$bLook - this mark on da gauntlet an old old OLD timey magic mark, older than da Gordok they say. Well, as Captain of da Gordok, we all learn one thing over and over - how to make mark come to life and give power back to gauntlet!$b$bI do it for you, $gking:queen;! Here, take da gauntlet and rule FOREVER!', 'Hah, you no find it, do you boss? Maybe old timey story a bad story... hard to believe that creepy elf can steal from Gordok king!',   '', '', '', '', '', 18336,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  18366,  18367,  18368,  18369,  0,  0,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  8580,   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0);
+
+-- Starts and ends at Captain Kromrush
+REPLACE INTO `creature_questrelation` (`id`, `quest`) VALUES
+(14325, 7703);
+REPLACE INTO `creature_involvedrelation` (`id`, `quest`) VALUES
+(14325, 7703);
