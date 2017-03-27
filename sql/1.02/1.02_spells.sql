@@ -8,12 +8,12 @@ REPLACE INTO `spell_mod` (`Id`, `AttributesEx3`, `Comment`) VALUES
 
 -- Disable not in the game recipe + resulting food spell
 
-INSERT INTO spell_disabled VALUES (24800);
-INSERT INTO spell_disabled VALUES (24801);
+REPLACE INTO spell_disabled VALUES (24800);
+REPLACE INTO spell_disabled VALUES (24801);
 
 -- Disable 1.9 Oils & Rumsey Rum Spell
 
-INSERT INTO `spell_disabled` VALUES 
+REPLACE INTO `spell_disabled` VALUES 
 (25117),
 (25118),
 (25119),
@@ -29,3 +29,7 @@ INSERT INTO `spell_disabled` VALUES
 (26276),
 (26278),
 (26277);
+
+REPLACE INTO `spell_disabled` VALUES
+(23214), -- Paladin Charger
+(23161); -- Warlock Dreadsteed

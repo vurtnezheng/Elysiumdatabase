@@ -271,6 +271,7 @@ DELETE FROM quest_template WHERE entry IN (
 8416, -- http://wowwiki.wikia.com/Quest:Inert_Scourgestones
 8418  -- http://wowwiki.wikia.com/Quest:Forging_the_Mightstone
 );
+
 -- [Glyph Chasing]
 DELETE from quest_template WHERE entry=8309;
 
@@ -293,3 +294,8 @@ UPDATE quest_template    SET ReqItemId3 = 18331, ReqItemCount3 = 1,    ReqItemId
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19720, ReqItemCount4 = 1    WHERE entry = 8188;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19717, ReqItemCount4 = 1    WHERE entry = 8190;
 UPDATE quest_template SET ReqItemId1 = 0, ReqItemCount1 = 0 WHERE entry IN (8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192);
+
+-- Enable Warlock Epic Mount Quest Chain
+UPDATE `quest_template` SET `MinLevel` = 60 WHERE `entry` = 7562;
+-- Enable Paladin Epic Mount Quest Chain
+UPDATE `quest_template` SET `MinLevel` = 60 WHERE `entry` = 7638;
