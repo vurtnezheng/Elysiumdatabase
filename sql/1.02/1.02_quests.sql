@@ -157,3 +157,8 @@ DELETE FROM creature_involvedrelation WHERE quest NOT IN (SELECT entry FROM ques
 DELETE FROM creature_questrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
 DELETE FROM gameobject_involvedrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
 DELETE FROM gameobject_questrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
+
+-- Disable Warlock Epic Mount Quest Chain
+UPDATE `quest_template` SET `MinLevel` = 61 WHERE `entry` = 7562;
+-- Disable Paladin Epic Mount Quest Chain
+UPDATE `quest_template` SET `MinLevel` = 61 WHERE `entry` = 7638;

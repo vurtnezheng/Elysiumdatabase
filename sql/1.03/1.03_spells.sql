@@ -29,3 +29,7 @@ REPLACE INTO `spell_disabled` VALUES
 (26276),
 (26278),
 (26277);
+
+REPLACE INTO `spell_disabled` VALUES
+(23214), -- Paladin Charger
+(23161); -- Warlock Dreadsteed

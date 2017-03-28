@@ -52,3 +52,5 @@ INSERT INTO `spell_disabled` VALUES
 
 REPLACE INTO spell_mod VALUES('21153', '-1', '-1', '-1', '-1', '-1', '-1', '1', '1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '4', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '0', 'Bonereaver\'s Edge: make positive and set max stack to 1 (1.10 version)');
 
+-- Enable Warlock Dreadsteed & Paladin Charger spells
+DELETE FROM `spell_disabled` WHERE `entry` IN (23214, 23161);
