@@ -1,0 +1,9 @@
+copy /a ..\sql\1.02\*.sql /b 1.02_full_update.sql
+copy /a ..\sql\1.03\*.sql /b 1.03_full_update.sql
+copy /a ..\sql\1.05\*.sql /b 1.05_full_update.sql
+copy /a ..\sql\1.06\*.sql /b 1.06_full_update.sql
+copy /a ..\sql\1.07\*.sql /b 1.07_full_update.sql
+copy /a ..\sql\1.08\*.sql /b 1.08_full_update.sql
+copy /a ..\sql\1.09\*.sql /b 1.09_full_update.sql
+copy /a ..\sql\1.10\*.sql /b 1.10_full_update.sql
+copy /a ..\sql\1.11\*.sql /b 1.11_full_update.sql
