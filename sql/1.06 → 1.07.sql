@@ -159,6 +159,153 @@ INSERT INTO `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `Ques
 INSERT INTO `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `QuestLevel`, `Type`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill`, `RequiredSkillValue`, `RepObjectiveFaction`, `RepObjectiveValue`, `RequiredMinRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepFaction`, `RequiredMaxRepValue`, `SuggestedPlayers`, `LimitTime`, `QuestFlags`, `SpecialFlags`, `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `NextQuestInChain`, `SrcItemId`, `SrcItemCount`, `SrcSpell`, `Title`, `Details`, `Objectives`, `OfferRewardText`, `RequestItemsText`, `EndText`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `ReqItemId1`, `ReqItemId2`, `ReqItemId3`, `ReqItemId4`, `ReqItemCount1`, `ReqItemCount2`, `ReqItemCount3`, `ReqItemCount4`, `ReqSourceId1`, `ReqSourceId2`, `ReqSourceId3`, `ReqSourceId4`, `ReqSourceCount1`, `ReqSourceCount2`, `ReqSourceCount3`, `ReqSourceCount4`, `ReqCreatureOrGOId1`, `ReqCreatureOrGOId2`, `ReqCreatureOrGOId3`, `ReqCreatureOrGOId4`, `ReqCreatureOrGOCount1`, `ReqCreatureOrGOCount2`, `ReqCreatureOrGOCount3`, `ReqCreatureOrGOCount4`, `ReqSpellCast1`, `ReqSpellCast2`, `ReqSpellCast3`, `ReqSpellCast4`, `RewChoiceItemId1`, `RewChoiceItemId2`, `RewChoiceItemId3`, `RewChoiceItemId4`, `RewChoiceItemId5`, `RewChoiceItemId6`, `RewChoiceItemCount1`, `RewChoiceItemCount2`, `RewChoiceItemCount3`, `RewChoiceItemCount4`, `RewChoiceItemCount5`, `RewChoiceItemCount6`, `RewItemId1`, `RewItemId2`, `RewItemId3`, `RewItemId4`, `RewItemCount1`, `RewItemCount2`, `RewItemCount3`, `RewItemCount4`, `RewRepFaction1`, `RewRepFaction2`, `RewRepFaction3`, `RewRepFaction4`, `RewRepFaction5`, `RewRepValue1`, `RewRepValue2`, `RewRepValue3`, `RewRepValue4`, `RewRepValue5`, `RewOrReqMoney`, `RewMoneyMaxLevel`, `RewSpell`, `RewSpellCast`, `RewMailTemplateId`, `RewMailDelaySecs`, `PointMapId`, `PointX`, `PointY`, `PointOpt`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `IncompleteEmote`, `CompleteEmote`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `StartScript`, `CompleteScript`) values('8272','0','2597','61','0','41','0','0','0','0','0','0','0','0','0','0','0','0','0','0','7142','0','0','0','0','0','0','Hero of the Frostwolf','','',NULL,NULL,NULL,'','','','','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','19107','19106','19108','20648','0','0','1','1','1','1','0','0','0','0','0','0','0','0','0','0','729','76','0','0','0','10','10','0','0','0','0','570','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');
 INSERT INTO `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `QuestLevel`, `Type`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill`, `RequiredSkillValue`, `RepObjectiveFaction`, `RepObjectiveValue`, `RequiredMinRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepFaction`, `RequiredMaxRepValue`, `SuggestedPlayers`, `LimitTime`, `QuestFlags`, `SpecialFlags`, `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `NextQuestInChain`, `SrcItemId`, `SrcItemCount`, `SrcSpell`, `Title`, `Details`, `Objectives`, `OfferRewardText`, `RequestItemsText`, `EndText`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `ReqItemId1`, `ReqItemId2`, `ReqItemId3`, `ReqItemId4`, `ReqItemCount1`, `ReqItemCount2`, `ReqItemCount3`, `ReqItemCount4`, `ReqSourceId1`, `ReqSourceId2`, `ReqSourceId3`, `ReqSourceId4`, `ReqSourceCount1`, `ReqSourceCount2`, `ReqSourceCount3`, `ReqSourceCount4`, `ReqCreatureOrGOId1`, `ReqCreatureOrGOId2`, `ReqCreatureOrGOId3`, `ReqCreatureOrGOId4`, `ReqCreatureOrGOCount1`, `ReqCreatureOrGOCount2`, `ReqCreatureOrGOCount3`, `ReqCreatureOrGOCount4`, `ReqSpellCast1`, `ReqSpellCast2`, `ReqSpellCast3`, `ReqSpellCast4`, `RewChoiceItemId1`, `RewChoiceItemId2`, `RewChoiceItemId3`, `RewChoiceItemId4`, `RewChoiceItemId5`, `RewChoiceItemId6`, `RewChoiceItemCount1`, `RewChoiceItemCount2`, `RewChoiceItemCount3`, `RewChoiceItemCount4`, `RewChoiceItemCount5`, `RewChoiceItemCount6`, `RewItemId1`, `RewItemId2`, `RewItemId3`, `RewItemId4`, `RewItemCount1`, `RewItemCount2`, `RewItemCount3`, `RewItemCount4`, `RewRepFaction1`, `RewRepFaction2`, `RewRepFaction3`, `RewRepFaction4`, `RewRepFaction5`, `RewRepValue1`, `RewRepValue2`, `RewRepValue3`, `RewRepValue4`, `RewRepValue5`, `RewOrReqMoney`, `RewMoneyMaxLevel`, `RewSpell`, `RewSpellCast`, `RewMailTemplateId`, `RewMailDelaySecs`, `PointMapId`, `PointX`, `PointY`, `PointOpt`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `IncompleteEmote`, `CompleteEmote`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `StartScript`, `CompleteScript`) values('8273','0','47','42','47','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','2782','0','0','0','0','0','0','Oran\'s Gratitude','','','Now isn\'t this interesting? You say you found this tablet on a small, deserted island at The Overlook Cliffs in The Hinterlands, $C? Very interesting indeed. <Oran carefully puts the tablet away and rubs her hands together.>$B$BI thank you for your efforts in this matter. Our Dark Lady shall be very pleased with this discovery. Here, allow me to reward you proportionately.',NULL,NULL,'','','','','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','20643','20642','0','0','0','0','1','1','0','0','0','0','0','0','0','0','0','0','0','0','68','0','0','0','0','75','0','0','0','0','7000','3600','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');
 
+-- Enable available questenders
+
+DELETE FROM `creature_involvedrelation` WHERE `quest` BETWEEN 8041 AND 8273;
+
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('6707','8249');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('6768','8233');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('6768','8236');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('7825','8273');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8379','8234');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8379','8235');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8379','8251');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8379','8252');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8379','8253');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8395','8250');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8405','8151');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8405','8153');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8405','8231');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8405','8232');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8405','8254');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8405','8255');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8405','8256');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('8579','8181');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('10922','8257');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('12919','8227');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('13417','8258');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14624','8241');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14624','8242');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14829','8222');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14829','8223');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14875','8182');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14875','8183');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8041');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8042');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8043');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8044');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8045');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8046');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8047');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8048');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8053');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8054');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8055');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8058');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8078');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14902','8079');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8049');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8050');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8051');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8052');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8059');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8060');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8061');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8068');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8069');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8070');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8071');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8076');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8077');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8101');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8102');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8103');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8104');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8106');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8107');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8108');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14903','8109');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8056');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8057');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8064');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8065');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8074');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8075');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8110');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8111');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8112');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8113');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8116');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8117');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8118');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14904','8119');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8062');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8063');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8066');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8067');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8072');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8073');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8141');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8142');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8143');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8144');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8145');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8146');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8147');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14905','8148');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14910','8201');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14921','8196');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14921','8243');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14921','8246');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14983','8105');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14983','8114');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14983','8115');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14983','8166');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14983','8167');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14983','8168');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14984','8080');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14984','8154');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14984','8155');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('14984','8156');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15011','8149');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15012','8150');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15021','8120');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15021','8121');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15021','8122');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15021','8169');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15021','8170');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15021','8171');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15022','8123');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15022','8160');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15022','8161');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15022','8162');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8184');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8185');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8186');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8187');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8188');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8189');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8190');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8191');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15042','8192');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15070','8195');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15070','8238');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15070','8239');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15070','8240');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15077','8193');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15078','8194');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15079','8221');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15079','8224');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15079','8225');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15116','8229');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15119','8228');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15126','8263');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15126','8264');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15126','8265');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15127','8260');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15127','8261');
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) values('15127','8262');
+
 -- Enable available loot
 
 DELETE FROM `creature_loot_template` WHERE `item` BETWEEN 19574 AND 20266;
@@ -1835,10 +1982,5 @@ INSERT INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, 
 INSERT INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `dmg_min3`, `dmg_max3`, `dmg_type3`, `dmg_min4`, `dmg_max4`, `dmg_type4`, `dmg_min5`, `dmg_max5`, `dmg_type5`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `Duration`, `ExtraFlags`, `OtherTeamEntry`) values('20264','4','4','Peacekeeper Gauntlets','32757','4','0','1','95509','19101','10','1535','-1','68','60','0','0','0','0','0','0','0','0','1','0','5','12','7','7','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','482','0','0','0','0','0','0','0','0','0','18038','1','0','0','-1','0','-1','21619','1','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','0','0','0','1','','0','0','0','0','0','5','0','0','0','0','55','0','0','0','','65','0','0','0','0','0','1');
 INSERT INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `dmg_min3`, `dmg_max3`, `dmg_type3`, `dmg_min4`, `dmg_max4`, `dmg_type4`, `dmg_min5`, `dmg_max5`, `dmg_type5`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `Duration`, `ExtraFlags`, `OtherTeamEntry`) values('20265','4','4','Peacekeeper Boots','32758','3','0','1','107856','21571','8','-1','-1','68','60','0','0','0','0','0','0','0','0','1','0','5','12','7','10','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','486','0','0','0','0','0','0','0','0','0','18379','1','0','0','-1','0','-1','9408','1','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','0','0','0','1','','0','0','0','0','0','5','0','0','0','0','65','0','0','0','','49','0','0','0','0','0','1');
 INSERT INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `dmg_min3`, `dmg_max3`, `dmg_type3`, `dmg_min4`, `dmg_max4`, `dmg_type4`, `dmg_min5`, `dmg_max5`, `dmg_type5`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `Duration`, `ExtraFlags`, `OtherTeamEntry`) values('20266','4','4','Peacekeeper Leggings','32756','3','0','1','144352','28870','7','-1','-1','68','60','0','0','0','0','0','0','0','0','1','0','5','18','7','14','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','618','0','0','0','0','0','0','0','0','0','18030','1','0','0','-1','0','-1','21364','1','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','0','0','0','1','','0','0','0','0','0','5','0','0','0','0','100','0','0','0','','49','0','0','0','0','0','1');
-
-
--- Enable available spells
-
--- Enable available gameobjects
 
 
