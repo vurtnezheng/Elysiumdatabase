@@ -36,11 +36,13 @@ DELETE FROM `gameobject` WHERE `id` = 181083;
 UPDATE `item_template` SET `bonding` = '1' WHERE `entry` = '20380';
 
 -- Golemagg Loot Drop Rates & Faction Drop
+
 update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
 update reference_loot_template set condition_id = 3 where entry = 326158 and item = 18824;
 update reference_loot_template set condition_id = 2 where entry = 326158 and item = 18829;
 
 -- LBRS Gems Pre-1.11
+
 update creature_loot_template set ChanceOrQuestChance=1 where item=12219;
 update creature_loot_template set ChanceOrQuestChance=20 where item=12335;
 update creature_loot_template set ChanceOrQuestChance=15 where item=12336;

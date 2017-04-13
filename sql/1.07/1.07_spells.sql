@@ -12,6 +12,11 @@ DELETE FROM `spell_disabled` WHERE `entry` = 24417;
 INSERT INTO spell_disabled VALUES (24800);
 INSERT INTO spell_disabled VALUES (24801);
 
+-- Disabling Spell "Savage Guard"
+
+DELETE FROM `spell_disabled` WHERE `entry` = 28161;
+INSERT INTO `spell_disabled` VALUES (28161);
+
 -- Disable 1.9 Oils & Rumsey Rum Spell
 
 INSERT INTO `spell_disabled` VALUES 
