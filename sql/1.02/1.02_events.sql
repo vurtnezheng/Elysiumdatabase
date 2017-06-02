@@ -26,16 +26,10 @@ UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN
 168 		-- Patch 1.11 ? 1.12
 );
 
--- Disable Gurubashi Chest event @(pre-1.04)
-
-UPDATE game_event set start_time="2016-08-04 03:00:00" where entry=16;
-UPDATE game_event set start_time="2016-08-04 06:00:00" where entry=38;
-UPDATE game_event set start_time="2016-08-04 05:55:00" where entry=39;
-
 -- Cloth turning NPC (reput ... => mount)
 
 delete from game_event where entry=159;
-replace into game_event value (159, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "DM Release : Cloth turning NPC", 0);
+replace into game_event value (159, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "DM Release : Cloth turning NPC", 0, 1);
 delete from game_event_creature where event=159;
 replace into game_event_creature value (79821,159);
 replace into game_event_creature value (1819,159);
@@ -49,7 +43,7 @@ replace into game_event_creature value (31903,159);
 -- Argent Dawn @ (pre-1.11)
 
 delete from game_event where entry=155;
-insert into game_event value (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0);
+insert into game_event value (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0, 1);
 delete from game_event_creature where event=155;
 insert into game_event_creature value (54765,155);
 insert into game_event_creature value (54163,155);
