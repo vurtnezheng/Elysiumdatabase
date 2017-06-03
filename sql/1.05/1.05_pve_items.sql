@@ -3,7 +3,7 @@
 
 -- Disable Spells of Patch 1.9 Consumables
 
--- Item Removal of all items 19326 and higher except for the items in this list: https://docs.google.com/spreadsheets/d/1ZZaQ8sE0ztrcC4UeZkSOUEiP5TyMDRIWGcn3t_lCW7Y/edit#gid=0. 
+-- Item Removal of all items 19326 and higher except for the items in this list: https://docs.google.com/spreadsheets/d/1ZZaQ8sE0ztrcC4UeZkSOUEiP5TyMDRIWGcn3t_lCW7Y/edit#gid=0.
 -- !!! BULLSHIT! Should remove from loot, not from the template.
 
 DELETE FROM item_template WHERE entry >= 19326 AND entry NOT IN (20744, 20745, 20746, 20747, 20748, 20749, 20750, 20752, 20753, 20754, 20755, 20756, 20757, 20758, 20769, 21023, 21071, 21072, 21099, 21114, 21151, 21153, 21177, 21174, 21211, 21213, 21217, 21219, 21235, 21308, 21314, 21315, 21340, 21342, 21358, 21371, 21524, 21525, 21545, 21546, 21547, 21557, 21558, 21559, 21571, 21574, 21576, 21721, 21745, 21747, 21815, 21829, 21833, 22243, 22244, 22246, 22248, 22249, 22250, 22307, 22308, 22309, 22393, 22739, 22895, 22897, 23002, 23007, 23015, 23022, 23160, 23161, 23192, 23246, 23247, 22843, 22852, 22855, 22856, 22857, 22858, 22859, 22860, 22862, 22863, 22864, 22865, 22867, 22868, 22869, 22870, 22872, 22873, 22874, 22875, 22876, 22877, 22878, 22879, 22880, 22881, 22882, 22883, 22884, 22885, 22886, 22887, 23243, 23244, 23251, 23252, 23253, 23254, 23255, 23256, 23257, 23258, 23259, 23260, 23261, 23262, 23263, 23264, 23272, 23273, 23274, 23275, 23276, 23277, 23278, 23279, 23280, 23281, 23282, 23283, 23284, 23285, 23286, 23287, 23288, 23289, 23290, 23291, 23292, 23293, 23294, 23295, 23296, 23297, 23298, 23299, 23300, 23301, 23302, 23303, 23304, 23305, 23306, 23307, 23308, 23309, 23310, 23311, 23312, 23313, 23314, 23315, 23316, 23317, 23318, 23319);
@@ -656,7 +656,7 @@ UPDATE item_template SET `stat_value1`=2, `stat_type2`=6, `stat_value2`=2, `armo
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=2, `stat_value3`=8, `armor`=40 WHERE entry=7511;
 -- STATS CHANGED: Nether-lace Robe (ilevel 31 entry 7512). 1/1 versions
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=2, `stat_value3`=8, `armor`=40 WHERE entry=7512;
--- STATS REMOVED for item Ragefire Wand (http://wow.allakhazam.com/dyn/items/wminlev19.html) 
+-- STATS REMOVED for item Ragefire Wand (http://wow.allakhazam.com/dyn/items/wminlev19.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=7513;
 -- DAMAGE CHANGED: Ragefire Wand (ilevel 40 entry 7513). 1/4 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev19.html
@@ -675,7 +675,7 @@ UPDATE item_template SET `dmg_min1`=32, `dmg_max1`=60 WHERE entry=7513;
 UPDATE item_template SET `spellid_1`=7685 WHERE entry=7513;
 -- QUALITY CHANGED: Ragefire Wand (ilevel 40 entry 7513)
 UPDATE item_template SET Quality=2 WHERE entry=7513;
--- STATS REMOVED for item Icefury Wand (http://wow.allakhazam.com/db/item.html?witem=7514) 
+-- STATS REMOVED for item Icefury Wand (http://wow.allakhazam.com/db/item.html?witem=7514)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=7514;
 -- DAMAGE CHANGED: Icefury Wand (ilevel 40 entry 7514). 1/3 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=7514
@@ -1092,7 +1092,7 @@ UPDATE item_template SET `spellid_1`=9329 WHERE entry=10823;
 -- 1.12 spell 9346 (Increases damage and healing done by magical spells and effects by up to 18.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=10844;
--- STATS REMOVED for item Nether Force Wand (http://wow.allakhazam.com/db/item.html?witem=11263) 
+-- STATS REMOVED for item Nether Force Wand (http://wow.allakhazam.com/db/item.html?witem=11263)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11263;
 -- DAMAGE CHANGED: Nether Force Wand (ilevel 40 entry 11263). 1/4 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=11263
@@ -1180,7 +1180,7 @@ UPDATE item_template SET Quality=2 WHERE entry=11626;
 UPDATE item_template SET `stat_value1`=15, `stat_value2`=0, `stat_value3`=0, `stat_type4`=6, `stat_value4`=5, `armor`=198 WHERE entry=11627;
 -- QUALITY CHANGED: Fleetfoot Greaves (ilevel 53 entry 11627)
 UPDATE item_template SET Quality=2 WHERE entry=11627;
--- STATS REMOVED for item Houndmaster's Rifle (http://wow.allakhazam.com/dyn/items/wname3.html) 
+-- STATS REMOVED for item Houndmaster's Rifle (http://wow.allakhazam.com/dyn/items/wname3.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11629;
 -- STATS CHANGED: Stoneshell Guard (ilevel 52 entry 11631). 1/1 versions
 UPDATE item_template SET `stat_value1`=5, `stat_value2`=0, `armor`=1706 WHERE entry=11631;
@@ -1360,7 +1360,7 @@ UPDATE item_template SET `holy_res`=15, `nature_res`=0, `arcane_res`=0 WHERE ent
 UPDATE item_template SET `stat_value1`=20, `armor`=483 WHERE entry=11802;
 -- QUALITY CHANGED: Lavacrest Leggings (ilevel 58 entry 11802)
 UPDATE item_template SET Quality=2 WHERE entry=11802;
--- STATS REMOVED for item Force of Magma (http://wow.allakhazam.com/dyn/items/itype17.html) 
+-- STATS REMOVED for item Force of Magma (http://wow.allakhazam.com/dyn/items/itype17.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11803;
 -- DAMAGE CHANGED: Force of Magma (ilevel 56 entry 11803). 1/3 versions
 -- Source: http://wow.allakhazam.com/dyn/items/itype17.html
@@ -1487,7 +1487,7 @@ UPDATE item_template SET `spellid_1`=12854 WHERE entry=11904;
 -- 1.12 spell 14565 (+30 Attack Power when fighting Beasts.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=11906;
--- STATS REMOVED for item Blood-etched Blade (http://wow.allakhazam.com/dyn/items/wname15.html) 
+-- STATS REMOVED for item Blood-etched Blade (http://wow.allakhazam.com/dyn/items/wname15.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11922;
 -- DAMAGE CHANGED: Blood-etched Blade (ilevel 57 entry 11922). 1/2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wname15.html
@@ -1779,7 +1779,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=12637;
 -- 1.12 spell 14249 (Increased Defense +13.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_3`=0, `spelltrigger_3`=0, `spellid_2`=21416, `spelltrigger_2`=1 WHERE entry=12641;
--- STATS REMOVED for item Blackcrow (http://wow.allakhazam.com/dyn/items/iname26.html) 
+-- STATS REMOVED for item Blackcrow (http://wow.allakhazam.com/dyn/items/iname26.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=12651;
 -- SPELLS CHANGED: Leggings of Arcana (ilevel 62 entry 12756). 1 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=12756
@@ -2052,7 +2052,7 @@ UPDATE item_template SET `armor`=39 WHERE entry=13203;
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=13203;
 -- QUALITY CHANGED: Armswake Cloak (ilevel 60 entry 13203)
 UPDATE item_template SET Quality=2 WHERE entry=13203;
--- STATS REMOVED for item Bashguuder (http://wow.allakhazam.com/dyn/items/iminlev21.html) 
+-- STATS REMOVED for item Bashguuder (http://wow.allakhazam.com/dyn/items/iminlev21.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=13204;
 -- DAMAGE CHANGED: Bashguuder (ilevel 60 entry 13204). 1/3 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev21.html
@@ -2088,7 +2088,7 @@ UPDATE item_template SET `spellid_1`=17319 WHERE entry=13209;
 UPDATE item_template SET `stat_value1`=7, `stat_value2`=0, `stat_value3`=0, `stat_type4`=4, `stat_value4`=6, `armor`=141 WHERE entry=13211;
 -- QUALITY CHANGED: Slashclaw Bracers (ilevel 60 entry 13211)
 UPDATE item_template SET Quality=2 WHERE entry=13211;
--- STATS REMOVED for item Halycon's Spiked Collar (http://wow.allakhazam.com/dyn/items/iname2.html) 
+-- STATS REMOVED for item Halycon's Spiked Collar (http://wow.allakhazam.com/dyn/items/iname2.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=13212;
 -- SPELLS CHANGED: Halycon's Spiked Collar (ilevel 60 entry 13212). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname2.html
@@ -2211,7 +2211,7 @@ UPDATE item_template SET `spellid_1`=9325 WHERE entry=13349;
 -- 1.12 spell 13830 (Increases damage done by Fire spells and effects by up to 29.)
 -- 1.04 spell 23483 (Increases damage done by Fire spells and effects by up to 21.)
 UPDATE item_template SET `spellid_1`=23483 WHERE entry=13369;
--- STATS REMOVED for item Slavedriver's Cane (http://wow.allakhazam.com/dyn/items/iname17.html) 
+-- STATS REMOVED for item Slavedriver's Cane (http://wow.allakhazam.com/dyn/items/iname17.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0, stat_value2=0, stat_type2=0 WHERE entry=13372;
 -- DAMAGE CHANGED: Slavedriver's Cane (ilevel 60 entry 13372). 1/4 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname17.html
@@ -3024,7 +3024,7 @@ UPDATE item_template SET `spellid_1`=14254 WHERE entry=15999;
 -- 1.12 spell 23074 (Activates your Arcanite Dragonling to fight for you for 60 sec. It requires an hour to cool down before it can be used again.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0 WHERE entry=16022;
--- STATS REMOVED for item Fordring's Seal (http://wow.allakhazam.com/dyn/items/iminlev11.html) 
+-- STATS REMOVED for item Fordring's Seal (http://wow.allakhazam.com/dyn/items/iminlev11.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0, stat_value2=0, stat_type2=0 WHERE entry=16058;
 -- SPELLS CHANGED: Fordring's Seal (ilevel 63 entry 16058). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev11.html
@@ -4990,7 +4990,7 @@ UPDATE item_template SET `spellid_1`=9331 WHERE entry=17069;
 -- 1.12 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0, `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
--- STATS REMOVED for item Blastershot Launcher (http://wow.allakhazam.com/item.html?witem=17072) 
+-- STATS REMOVED for item Blastershot Launcher (http://wow.allakhazam.com/item.html?witem=17072)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=17072;
 -- DAMAGE CHANGED: Blastershot Launcher (ilevel 70 entry 17072). 1/1 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=17072
@@ -5787,3 +5787,6 @@ UPDATE item_template SET `spellid_1`=9415 WHERE entry=18546;
 -- 1.12 spell 13387 (Increased Defense +8.)
 -- 1.04 spell 21408 (Increased Defense +12.)
 UPDATE item_template SET `spellid_1`=21408 WHERE entry=18547;
+
+-- Flarecore Gloves are Soulbound https://github.com/elysium-project/itemization/issues/13
+UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 17018;
