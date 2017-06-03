@@ -8,9 +8,11 @@ UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
 -- Twilight Cultist Ring of Lordship
 DELETE FROM item_template WHERE entry=20451;
 
+-- Dark Iron Boots added in 1.7
+DELETE FROM `npc_vendor` WHERE `item` = 20040;
+
 -- Delete 1.8 Specific Recipes
 DELETE FROM item_template WHERE entry IN (20382, 20509, 20511, 20508, 20507, 20510, 20506);
-
 
 -- Old PvP set Patch Vendor Pre-1.11
 -- Delete 1.11 PvP Items
