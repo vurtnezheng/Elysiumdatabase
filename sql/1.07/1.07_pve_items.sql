@@ -162,3 +162,9 @@ UPDATE item_template SET shadow_res = 10 WHERE entry = 16800;
 
 UPDATE item_template SET stat_type1 = 3, stat_value1 = 23, stat_type2 = 5, stat_value2 = 13, stat_type3 = 6, stat_value3 = 6, stat_type4 = 7, stat_value4 = 15, stat_type5 = 0, stat_value5 = 0, spellid_1 = 15464 WHERE entry = 16937;
 UPDATE item_template SET stat_type1 = 3, stat_value1 = 31, stat_type2 = 5, stat_value2 = 15, stat_type3 = 6, stat_value3 = 8, stat_type4 = 7, stat_value4 = 16, stat_type5 = 0, stat_value5 = 0 WHERE entry = 16938;
+
+-- Fang of the Mystics (ilevel 70 entry 17070). 1 versions
+-- Source: http://wow.allakhazam.com/dyn/items/wratio15.html
+-- Mod dmg
+-- 1.10 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
+UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;

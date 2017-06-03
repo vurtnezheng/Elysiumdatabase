@@ -25,3 +25,9 @@ UPDATE `item_template` SET `stat_type1` = 0, `stat_value1` = 0, `stat_type2` = 0
 
 -- Flarecore Gloves are Soulbound https://github.com/elysium-project/itemization/issues/13
 UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 17018;
+
+-- Fang of the Mystics (ilevel 70 entry 17070). 1 versions
+-- Source: http://wow.allakhazam.com/dyn/items/wratio15.html
+-- Mod dmg
+-- 1.10 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
+UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;

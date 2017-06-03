@@ -4978,18 +4978,13 @@ UPDATE item_template SET `dmg_min1`=49, `dmg_max1`=91 WHERE entry=17069;
 -- 1.12 spell 9332 (+22 Attack Power.)
 -- 1.04 spell 9331 (+20 Attack Power.)
 UPDATE item_template SET `spellid_1`=9331 WHERE entry=17069;
--- SPELLS REMOVED: Fang of the Mystics (ilevel 70 entry 17070). 1 versions
+
+-- Fang of the Mystics (ilevel 70 entry 17070). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wratio15.html
--- * Modified spell 1
--- 1.12 spell 18384 (Improves your chance to get a critical strike with spells by 1%.)
--- 1.04 spell 0 ()
--- * Modified spell 2
--- 1.12 spell 21362 (Restores 4 mana per 5 sec.)
--- 1.04 spell 0 ()
--- * Modified spell 3
--- 1.12 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
--- 1.04 spell 0 ()
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0, `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
+-- Mod dmg
+-- 1.10 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
+UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
+
 -- STATS REMOVED for item Blastershot Launcher (http://wow.allakhazam.com/item.html?witem=17072)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=17072;
 -- DAMAGE CHANGED: Blastershot Launcher (ilevel 70 entry 17072). 1/1 versions
