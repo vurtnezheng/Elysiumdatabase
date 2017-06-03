@@ -4,49 +4,49 @@
 --  -----------------------------------------------------------
 --  Insert mounts quests (transforms pre 1.4 mount to post 1.4)
 --  -----------------------------------------------------------
-insert into creature_questrelation value    (3685,7663);
-insert into creature_involvedrelation value (3685,7663);
-insert into creature_questrelation value    (3685,7662);
-insert into creature_involvedrelation value (3685,7662);
-insert into creature_questrelation value    (3362,7660);
-insert into creature_involvedrelation value (3362,7660);
-insert into creature_questrelation value    (3362,7661);
-insert into creature_involvedrelation value (3362,7661);
-insert into creature_questrelation value    (7952,7664);
-insert into creature_involvedrelation value (7952,7664);
-insert into creature_questrelation value    (7952,7665);
-insert into creature_involvedrelation value (7952,7665);
-insert into creature_questrelation value    ( 384,7677);
-insert into creature_involvedrelation value ( 384,7677);
-insert into creature_questrelation value    ( 384,7678);
-insert into creature_involvedrelation value ( 384,7678);
-insert into creature_questrelation value    (4885,7677);
-insert into creature_involvedrelation value (4885,7677);
-insert into creature_questrelation value    (4885,7678);
-insert into creature_involvedrelation value (4885,7678);
-insert into creature_questrelation value    (2357,7677);
-insert into creature_involvedrelation value (2357,7677);
-insert into creature_questrelation value    (2357,7678);
-insert into creature_involvedrelation value (2357,7678);
-insert into creature_questrelation value    (1460,7677);
-insert into creature_involvedrelation value (1460,7677);
-insert into creature_questrelation value    (1460,7678);
-insert into creature_involvedrelation value (1460,7678);
-insert into creature_questrelation value    (1261,7673);
-insert into creature_involvedrelation value (1261,7673);
-insert into creature_questrelation value    (1261,7674);
-insert into creature_involvedrelation value (1261,7674);
-insert into creature_questrelation value    (4730,7671);
-insert into creature_involvedrelation value (4730,7671);
-insert into creature_questrelation value    (4730,7672);
-insert into creature_involvedrelation value (4730,7672);
-insert into creature_questrelation value    (7955,7675);
-insert into creature_involvedrelation value (7955,7675);
-insert into creature_questrelation value    (7955,7676);
-insert into creature_involvedrelation value (7955,7676);
+REPLACE INTO creature_questrelation value    (3685,7663);
+REPLACE INTO creature_involvedrelation value (3685,7663);
+REPLACE INTO creature_questrelation value    (3685,7662);
+REPLACE INTO creature_involvedrelation value (3685,7662);
+REPLACE INTO creature_questrelation value    (3362,7660);
+REPLACE INTO creature_involvedrelation value (3362,7660);
+REPLACE INTO creature_questrelation value    (3362,7661);
+REPLACE INTO creature_involvedrelation value (3362,7661);
+REPLACE INTO creature_questrelation value    (7952,7664);
+REPLACE INTO creature_involvedrelation value (7952,7664);
+REPLACE INTO creature_questrelation value    (7952,7665);
+REPLACE INTO creature_involvedrelation value (7952,7665);
+REPLACE INTO creature_questrelation value    ( 384,7677);
+REPLACE INTO creature_involvedrelation value ( 384,7677);
+REPLACE INTO creature_questrelation value    ( 384,7678);
+REPLACE INTO creature_involvedrelation value ( 384,7678);
+REPLACE INTO creature_questrelation value    (4885,7677);
+REPLACE INTO creature_involvedrelation value (4885,7677);
+REPLACE INTO creature_questrelation value    (4885,7678);
+REPLACE INTO creature_involvedrelation value (4885,7678);
+REPLACE INTO creature_questrelation value    (2357,7677);
+REPLACE INTO creature_involvedrelation value (2357,7677);
+REPLACE INTO creature_questrelation value    (2357,7678);
+REPLACE INTO creature_involvedrelation value (2357,7678);
+REPLACE INTO creature_questrelation value    (1460,7677);
+REPLACE INTO creature_involvedrelation value (1460,7677);
+REPLACE INTO creature_questrelation value    (1460,7678);
+REPLACE INTO creature_involvedrelation value (1460,7678);
+REPLACE INTO creature_questrelation value    (1261,7673);
+REPLACE INTO creature_involvedrelation value (1261,7673);
+REPLACE INTO creature_questrelation value    (1261,7674);
+REPLACE INTO creature_involvedrelation value (1261,7674);
+REPLACE INTO creature_questrelation value    (4730,7671);
+REPLACE INTO creature_involvedrelation value (4730,7671);
+REPLACE INTO creature_questrelation value    (4730,7672);
+REPLACE INTO creature_involvedrelation value (4730,7672);
+REPLACE INTO creature_questrelation value    (7955,7675);
+REPLACE INTO creature_involvedrelation value (7955,7675);
+REPLACE INTO creature_questrelation value    (7955,7676);
+REPLACE INTO creature_involvedrelation value (7955,7676);
 
 -- Remove Class Quests for the Warrior, Shaman, Paladin, and Warlock
-DELETE FROM quest_template WHERE entry IN (
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (
 -- Warrior:
 8417, -- http://wowwiki.wikia.com/Quest:A_Troubled_Spirit
 8423, -- http://wowwiki.wikia.com/Quest:Warrior_Kinship
@@ -68,17 +68,13 @@ DELETE FROM quest_template WHERE entry IN (
 );
 
 -- [Glyph Chasing]
-DELETE from quest_template WHERE entry=8309;
+UPDATE quest_template SET Method = (Method | 1) WHERE entry=8309;
 
 -- Fix Alterac Valley Kazzak quest: non existant reward removed.
 UPDATE quest_template SET RewChoiceItemId4 = 0 WHERE entry IN (7202, 7181);
 
 -- Sunken Temple Level 50 Quests
-DELETE FROM quest_template WHERE entry IN (8418, 8413, 8422, 8425);
-
--- Disable not in the game recipe + resulting food spell.
-INSERT INTO spell_disabled SET entry=24800;
-INSERT INTO spell_disabled SET entry=24801;
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (8418, 8413, 8422, 8425);
 
 -- http://wowwiki.wikia.com/wiki/Patch_1.11.0
 -- Class specific enchantments given by Zanza the Restless no longer require Arcanum (Librams) from Dire Maul.
