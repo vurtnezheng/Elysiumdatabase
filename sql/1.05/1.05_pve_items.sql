@@ -5784,4 +5784,4 @@ UPDATE item_template SET `spellid_1`=9415 WHERE entry=18546;
 UPDATE item_template SET `spellid_1`=21408 WHERE entry=18547;
 
 -- Flarecore Gloves are Soulbound https://github.com/elysium-project/itemization/issues/13
-UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 17018;
+UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 16979;

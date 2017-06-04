@@ -347,7 +347,7 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 (18369, 4,  1,  'Gordok\'s Handwraps',  16710,  3,  0,  1,  49577,  9915,   10, -1, -1, 60, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  0,  7,  10, 5,  10, 6,  9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  53, 0,  0,  0,  0,  0,  0,  0,  0,  0,  18384,  1,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  0,  0,  0,  1,  '', 0,  0,  0,  0,  0,  7,  0,  0,  0,  0,  30, 0,  0,  0,  '', 49, 0,  0,  0,  0,  0,  1);
 
 -- Flarecore Gloves are Soulbound https://github.com/elysium-project/itemization/issues/13
-UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 17018;
+UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 16979;
 
 -- Fang of the Mystics (ilevel 70 entry 17070). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wratio15.html
