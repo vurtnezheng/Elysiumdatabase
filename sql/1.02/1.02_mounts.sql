@@ -42,42 +42,43 @@ replace into npc_vendor value (7955,13327,0,0);
 update creature set modelid=0 where id in (14561,14560,14559);
 update creature set id=306 where id=14561;
 update creature set id=305 where id=14560;
-delete from creature where id=14559;
+
 -- Dwarf
 update creature set modelid=0 where id in (14546,14548,14547);
 update creature set id=4780 where id=14546;
 update creature set id=4778 where id=14548;
-delete from creature where id=14547;
+
 -- Elf
 update creature set modelid=0 where id in (14556,14555,14602);
 update creature set id=10322 where id=14556;
 update creature set id=7322 where id=14555;
-delete from creature where id=14602;
+
 -- Gnome
 update creature set modelid=0 where id in (14551,14552,14553);
 update creature set id=11150 where id=14551;
 update creature set id=10179 where id=14552;
-delete from creature where id=14553;
+
 -- Tauren
 update creature set modelid=0 where id in (14542,14549,14550);
 update creature set id=12148 where id=14542;
 update creature set id=12151 where id=14549;
-delete from creature where id=14550;
+
 -- Orc
 update creature set modelid=0 where id in (14540,14539,14541);
 update creature set id=4270 where id=14540;
 update creature set id=359 where id=14539;
-delete from creature where id=14541;
+
 -- Troll
 update creature set modelid=0 where id in (14545,14543,14544);
 update creature set id=7704 where id=14545;
 update creature set id=7706 where id=14543;
-delete from creature where id=14544;
--- Undead
-delete from creature where id=14558;
+
  -- Pre 1.4 Mount FIX
 update creature_template set modelid_1=9695 where entry=10322;
 update item_template set name="Reins of the Ancient Frostsaber" where entry=12302;
+
+-- Remove NPCs
+UPDATE creature SET spawnFlags = spawnFlags | 2 WHERE id IN (14559, 14547, 14602, 14553, 14550, 14541, 14544, 14558);
 
 -- Delete Post-1.04 mounts
 

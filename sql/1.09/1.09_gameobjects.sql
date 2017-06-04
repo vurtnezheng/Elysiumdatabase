@@ -1,10 +1,10 @@
 
 -- GO "Sothos and Jarien's Heirlooms" Has Been Removed
 
-DELETE FROM `gameobject` WHERE `id` = 181083;
+UPDATE `gameobject` SET `spawnFlags` = `spawnFlags` | 2 WHERE `id` = 181083;
 
--- Fishing Pools Are Available Again
-
+-- Fishing Pools Are Available Again (Handled by 1.9 patch event)
+/*
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('35505','180582','0','699.816','1845.44','-0.446223','-2.44346','0','0','0.939693','-0.34202','3600','100','1','0');
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('35482','180582','0','-335.832','1723.09','0','-1.8326','0','0','0.793353','-0.608761','3600','100','1','0');
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('35453','180582','0','-459.576','1677.06','0','-1.90241','0','0','0.814116','-0.580703','3600','100','1','0');
@@ -395,3 +395,4 @@ REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('47512','180902','0','-14345','481.232','0','-0.191986','0','0','0.095846','-0.995396','3600','100','1','0');
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('47513','180902','0','-13693.8','670.814','0','0.139626','0','0','0.069756','0.997564','3600','100','1','0');
 REPLACE `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `spawnFlags`) VALUES ('50321','180902','0','-13853.3','707.847','0','0.436332','0','0','0.21644','0.976296','180','100','1','0');
+*/

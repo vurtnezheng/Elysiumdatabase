@@ -1,15 +1,15 @@
-
+CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
 -- "Thunderfury" Stats Have Been Corrected (main hand untill 1.12)
 
 UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
 
 -- Twilight Cultist Ring of Lordship
 
-DELETE FROM item_template WHERE entry=20451;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20451;
 
 -- Delete 1.8 Specific Recipes
 
-DELETE FROM item_template WHERE entry IN (20382, 20509, 20511, 20508, 20507, 20510, 20506);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20382, 20509, 20511, 20508, 20507, 20510, 20506);
 
 -- "Bonereaver's Edge" Stats Has Been Corrected
 
@@ -168,3 +168,15 @@ UPDATE item_template SET stat_type1 = 3, stat_value1 = 31, stat_type2 = 5, stat_
 -- Mod dmg
 -- 1.10 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
 UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
+
+-- Remove items for players
+DELETE FROM creature_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM reference_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM disenchant_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM fishing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM gameobject_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM item_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM mail_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM pickpocketing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM skinning_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM npc_vendor WHERE item IN (SELECT * FROM forbidden_items);

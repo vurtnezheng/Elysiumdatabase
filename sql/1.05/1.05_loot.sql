@@ -59,9 +59,6 @@ update creature_loot_template set ChanceOrQuestChance=100 where item=330067 and 
 -- Thunderfury bindings
 DELETE FROM creature_loot_template WHERE item IN (18563, 18564);
 
--- 1.6 Items (recipes, patterns, plans)
-DELETE FROM item_template WHERE entry IN (19447, 19446, 19442, 19216, 19217, 19328, 19329, 19203, 19205, 19204, 19202, 19215, 19327, 19326, 19218, 19445, 22392, 19449, 19448, 19444, 19331, 19332, 19220, 19219, 19330, 19333, 19208, 19211, 19209, 19207, 19206, 19210, 19212, 20761);
-
 -- Disable loot:
 update creature_loot_template set ChanceOrQuestChance=0 where item=20424;
 
@@ -92,10 +89,6 @@ DELETE FROM `reference_loot_template` WHERE `item` IN (22722, 22721, 22720, 2271
 
 DELETE FROM `creature_loot_template` WHERE `item`  IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
 DELETE FROM `reference_loot_template` WHERE `item` IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
-
--- GO "Sothos and Jarien's Heirlooms" Has Been Removed
-
-DELETE FROM `gameobject` WHERE `id` = 181083;
 
 -- Setting "Dreamscale Breastplate" Loot Type to BoP (should be shanged back in 1.10)
 

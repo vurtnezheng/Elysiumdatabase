@@ -14,7 +14,8 @@ UPDATE `item_template` SET `stat_type1` = 7, `stat_value1` = 10, `stat_type2` = 
 
 -- Removing "Plans: Titanic Leggings" Item
 
-DELETE FROM item_template WHERE entry = 22388;
+DELETE FROM creature_loot_template WHERE item = 22388;
+DELETE FROM reference_loot_template WHERE item = 22388;
 
 -- Correcting Wrong Zandalar Gear Sets Stats
 

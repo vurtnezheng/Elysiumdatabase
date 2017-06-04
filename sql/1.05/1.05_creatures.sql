@@ -1,5 +1,5 @@
 
-DELETE FROM `creature` WHERE `id` = 15306;
+UPDATE `creature` SET `spawnFlags` = `spawnFlags` | 2 WHERE `id` = 15306;
 
 -- Malekis FootWrap Add To Loot Table
 
@@ -39,11 +39,11 @@ INSERT INTO reference_loot_template VALUES(@refTable,18723,0,2,1,1,0);
 
 -- Removing Zandalar Repeatable Quests
 
-DELETE FROM `creature` WHERE `id` IN (15183, 15070, 15306);
+UPDATE `creature` SET `spawnFlags` = `spawnFlags` | 2  WHERE `id` IN (15183, 15070, 15306);
 
 -- Spawn of Azuregos, Kazzak 1.3
 
-UPDATE `creature` SET `spawnFlags` = 0 WHERE id IN (6109, 12397);
+UPDATE `creature` SET `spawnFlags` = `spawnFlags` & ~2 WHERE id IN (6109, 12397);
 
 
 -- Pre 1.6-BWL Access Fix
