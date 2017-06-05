@@ -10,8 +10,8 @@ DELETE FROM `reference_loot_template` WHERE `item` IN (24102, 23320, 24101, 2289
 
 -- Removing ZG 1.11 Drop
 
-DELETE FROM `creature_loot_template` WHERE `item` IN (22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
-DELETE FROM `reference_loot_template` WHERE `item` IN (22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
+DELETE FROM `creature_loot_template` WHERE `item` IN (22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
+DELETE FROM `reference_loot_template` WHERE `item` IN (22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
 
 -- Removing 1.11 Relics From Drop
 
