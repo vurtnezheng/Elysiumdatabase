@@ -35,4 +35,4 @@ UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
 -- Argent Dawn @ Pre-1.11
 
 delete from game_event where entry=155;
-insert into game_event value (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0);
+insert into game_event value (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0, 1);

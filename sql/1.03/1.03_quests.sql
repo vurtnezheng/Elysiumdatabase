@@ -1,58 +1,9 @@
 
 -- http://wowwiki.wikia.com/Plans:_Nightfall
-
-DELETE FROM quest_template WHERE entry=19212;
+UPDATE quest_template SET Method = (Method | 1) WHERE entry=19212;
 
 -- Darkmoon Faire quests
-
-DELETE FROM creature_involvedrelation WHERE quest IN (
-7928, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Warlords_Deck
-7927, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Portals_Deck
-7929, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Elementals_Deck
-7907, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Beast_Deck
-7935, -- 10 Tickets - Last Month's Mutton
-7932, -- 12 Tickets - Lesser Darkmoon Prize
-7981, -- 1200 Tickets - Amulet of the Darkmoon
-7940, -- 1200 Tickets - Orb of the Darkmoon
-7933, -- 40 Tickets - Greater Darkmoon Prize
-7930, -- 5 Tickets - Darkmoon Flower
-7931, -- 5 Tickets - Minor Darkmoon Prize
-7934, -- 50 Tickets - Darkmoon Storage Box
-7936, -- 50 Tickets - Last Year's Mutton
-7885, -- Armor Kits
-7892, -- Big Black Mace
-7881, -- Carnival Boots
-7882, -- Carnival Jerkins
-7889, -- Coarse Weightstone
-7894, -- Copper Modulator
-7884, -- Crocolisk Boy and the Bearded Murloc
-7903, -- Evil Bat Eyes
-8222, -- Glowing Scorpid Blood
-7896, -- Green Fireworks
-7891, -- Green Iron Bracers
-7890, -- Heavy Grinding Stone
-7897, -- Mechanical Repair Kits
-7941, -- More Armor Kits
-7943, -- More Bat Eyes
-7939, -- More Dense Grinding Stones
-8223, -- More Glowing Scorpid Blood
-7942, -- More Thorium Widgets
-7893, -- Rituals of Strength
-7899, -- Small Furry Paws
-7901, -- Soft Bushy Tails
-7946, -- Spawn of Jubjub
-7883, -- The World's Largest Gnome!
-7898, -- Thorium Widget
-7900, -- Torn Bear Pelts
-7902, -- Vibrant Plumes
-7895, -- Whirring Bronze Gizmo
-7937, -- Your Fortune Awaits You...
-7938, -- Your Fortune Awaits You...
-7944, -- Your Fortune Awaits You...
-7945 -- Your Fortune Awaits You...
-);
-
-DELETE FROM creature_questrelation WHERE quest IN (
+UPDATE quest_template SET Method = (Method | 1) WHERE quest IN (
 7928, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Warlords_Deck
 7927, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Portals_Deck
 7929, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Elementals_Deck
@@ -100,42 +51,40 @@ DELETE FROM creature_questrelation WHERE quest IN (
 );
 
 -- Remove Class Quests for the Warrior, Shaman, Paladin, and Warlock
-
-DELETE FROM quest_template WHERE entry IN (
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (
 -- Warrior:
-8417, -- http://wowwiki.wikia.com/Quest:A_Troubled_Spirit 
-8423, -- http://wowwiki.wikia.com/Quest:Warrior_Kinship 
-8424, -- http://wowwiki.wikia.com/Quest:War_on_the_Shadowsworn 
-8425, -- http://wowwiki.wikia.com/Quest:Voodoo_Feathers 
+8417, -- http://wowwiki.wikia.com/Quest:A_Troubled_Spirit
+8423, -- http://wowwiki.wikia.com/Quest:Warrior_Kinship
+8424, -- http://wowwiki.wikia.com/Quest:War_on_the_Shadowsworn
+8425, -- http://wowwiki.wikia.com/Quest:Voodoo_Feathers
 -- Warlock:
-8419, -- http://wowwiki.wikia.com/Quest:An_Imp%27s_Request 
-8421, -- http://wowwiki.wikia.com/Quest:The_Wrong_Stuff 
-8422, -- http://wowwiki.wikia.com/Quest:Trolls_of_a_Feather 
+7562, -- Warlock Epic Mount
+8419, -- http://wowwiki.wikia.com/Quest:An_Imp%27s_Request
+8421, -- http://wowwiki.wikia.com/Quest:The_Wrong_Stuff
+8422, -- http://wowwiki.wikia.com/Quest:Trolls_of_a_Feather
 -- Shaman:
-8410, -- http://wowwiki.wikia.com/Quest:Elemental_Mastery 
-8412, -- http://wowwiki.wikia.com/Quest:Spirit_Totem 
-8413, -- http://wowwiki.wikia.com/Quest:Da_Voodoo 
+8410, -- http://wowwiki.wikia.com/Quest:Elemental_Mastery
+8412, -- http://wowwiki.wikia.com/Quest:Spirit_Totem
+8413, -- http://wowwiki.wikia.com/Quest:Da_Voodoo
 -- Paladin:
-8415, -- http://wowwiki.wikia.com/Quest:Chillwind_Camp 
-8414, -- http://wowwiki.wikia.com/Quest:Dispelling_Evil 
-8416, -- http://wowwiki.wikia.com/Quest:Inert_Scourgestones 
+7638, -- Paladin Epic Mount
+8415, -- http://wowwiki.wikia.com/Quest:Chillwind_Camp
+8414, -- http://wowwiki.wikia.com/Quest:Dispelling_Evil
+8416, -- http://wowwiki.wikia.com/Quest:Inert_Scourgestones
 8418  -- http://wowwiki.wikia.com/Quest:Forging_the_Mightstone
 );
 
 -- [Glyph Chasing]
-
-DELETE from quest_template WHERE entry=8309;
+UPDATE quest_template SET Method = (Method | 1) WHERE entry=8309;
 
 -- Fix Alterac Valley Kazzak quest: non existant reward removed.
-
 UPDATE quest_template SET RewChoiceItemId4 = 0 WHERE entry IN (7202, 7181);
 
--- Sunken Temple Level 50 Quests 
-
-DELETE FROM quest_template WHERE entry IN (8418, 8413, 8422, 8425);
+-- Sunken Temple Level 50 Quests
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (8418, 8413, 8422, 8425);
 
 -- http://wowwiki.wikia.com/wiki/Patch_1.11.0
--- Class specific enchantments given by Zanza the Restless no longer require Arcanum (Librams) from Dire Maul. 
+-- Class specific enchantments given by Zanza the Restless no longer require Arcanum (Librams) from Dire Maul.
 -- The requirements have been changed to items found within Zul'Gurub. Speak with Zanza the Restless for more information.
 
 UPDATE quest_template    SET ReqItemId3 = 18331, ReqItemCount3 = 1,    ReqItemId4 = 19716, ReqItemCount4 = 1    WHERE entry = 8192;
@@ -147,11 +96,10 @@ UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId
 UPDATE quest_template    SET ReqItemId3 = 18331, ReqItemCount3 = 1,    ReqItemId4 = 19721, ReqItemCount4 = 1    WHERE entry = 8185;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19720, ReqItemCount4 = 1    WHERE entry = 8188;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19717, ReqItemCount4 = 1    WHERE entry = 8190;
-DELETE FROM item_template WHERE entry=22637;
+
 UPDATE quest_template SET ReqItemId1 = 0, ReqItemCount1 = 0 WHERE entry IN (8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192);
 
 -- DM Books Quests
-
 DELETE FROM `quest_template` WHERE `entry` IN (7500, 7503, 7504, 7505, 7502, 7499, 7506, 7498, 7501);
 
 insert into `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `QuestLevel`, `Type`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill`, `RequiredSkillValue`, `RepObjectiveFaction`, `RepObjectiveValue`, `RequiredMinRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepFaction`, `RequiredMaxRepValue`, `SuggestedPlayers`, `LimitTime`, `QuestFlags`, `SpecialFlags`, `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `NextQuestInChain`, `SrcItemId`, `SrcItemCount`, `SrcSpell`, `Title`, `Details`, `Objectives`, `OfferRewardText`, `RequestItemsText`, `EndText`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `ReqItemId1`, `ReqItemId2`, `ReqItemId3`, `ReqItemId4`, `ReqItemCount1`, `ReqItemCount2`, `ReqItemCount3`, `ReqItemCount4`, `ReqSourceId1`, `ReqSourceId2`, `ReqSourceId3`, `ReqSourceId4`, `ReqSourceCount1`, `ReqSourceCount2`, `ReqSourceCount3`, `ReqSourceCount4`, `ReqCreatureOrGOId1`, `ReqCreatureOrGOId2`, `ReqCreatureOrGOId3`, `ReqCreatureOrGOId4`, `ReqCreatureOrGOCount1`, `ReqCreatureOrGOCount2`, `ReqCreatureOrGOCount3`, `ReqCreatureOrGOCount4`, `ReqSpellCast1`, `ReqSpellCast2`, `ReqSpellCast3`, `ReqSpellCast4`, `RewChoiceItemId1`, `RewChoiceItemId2`, `RewChoiceItemId3`, `RewChoiceItemId4`, `RewChoiceItemId5`, `RewChoiceItemId6`, `RewChoiceItemCount1`, `RewChoiceItemCount2`, `RewChoiceItemCount3`, `RewChoiceItemCount4`, `RewChoiceItemCount5`, `RewChoiceItemCount6`, `RewItemId1`, `RewItemId2`, `RewItemId3`, `RewItemId4`, `RewItemCount1`, `RewItemCount2`, `RewItemCount3`, `RewItemCount4`, `RewRepFaction1`, `RewRepFaction2`, `RewRepFaction3`, `RewRepFaction4`, `RewRepFaction5`, `RewRepValue1`, `RewRepValue2`, `RewRepValue3`, `RewRepValue4`, `RewRepValue5`, `RewOrReqMoney`, `RewMoneyMaxLevel`, `RewSpell`, `RewSpellCast`, `RewMailTemplateId`, `RewMailDelaySecs`, `PointMapId`, `PointX`, `PointY`, `PointOpt`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `IncompleteEmote`, `CompleteEmote`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `StartScript`, `CompleteScript`) values('7498','2','2557','54','60','81','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','18356','1','0','Garona: A Study on Stealth and Treachery','The tome carries the mark of the Athenaeum.','Return the book to its rightful owners.','Excellent work, $R. Should you find any more tomes, do not hesitate to return them to us.$B$BAs time passes, we tend to change around and even add new rewards for the return of missing tomes.','You have recovered a tome!','','','','','','18356','0','0','0','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','18465','0','0','0','1','0','0','0','809','0','0','0','0','500','0','0','0','0','0','4230','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0','0','0','0','0','0');
@@ -165,26 +113,16 @@ insert into `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `Ques
 insert into `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `QuestLevel`, `Type`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill`, `RequiredSkillValue`, `RepObjectiveFaction`, `RepObjectiveValue`, `RequiredMinRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepFaction`, `RequiredMaxRepValue`, `SuggestedPlayers`, `LimitTime`, `QuestFlags`, `SpecialFlags`, `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `NextQuestInChain`, `SrcItemId`, `SrcItemCount`, `SrcSpell`, `Title`, `Details`, `Objectives`, `OfferRewardText`, `RequestItemsText`, `EndText`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `ReqItemId1`, `ReqItemId2`, `ReqItemId3`, `ReqItemId4`, `ReqItemCount1`, `ReqItemCount2`, `ReqItemCount3`, `ReqItemCount4`, `ReqSourceId1`, `ReqSourceId2`, `ReqSourceId3`, `ReqSourceId4`, `ReqSourceCount1`, `ReqSourceCount2`, `ReqSourceCount3`, `ReqSourceCount4`, `ReqCreatureOrGOId1`, `ReqCreatureOrGOId2`, `ReqCreatureOrGOId3`, `ReqCreatureOrGOId4`, `ReqCreatureOrGOCount1`, `ReqCreatureOrGOCount2`, `ReqCreatureOrGOCount3`, `ReqCreatureOrGOCount4`, `ReqSpellCast1`, `ReqSpellCast2`, `ReqSpellCast3`, `ReqSpellCast4`, `RewChoiceItemId1`, `RewChoiceItemId2`, `RewChoiceItemId3`, `RewChoiceItemId4`, `RewChoiceItemId5`, `RewChoiceItemId6`, `RewChoiceItemCount1`, `RewChoiceItemCount2`, `RewChoiceItemCount3`, `RewChoiceItemCount4`, `RewChoiceItemCount5`, `RewChoiceItemCount6`, `RewItemId1`, `RewItemId2`, `RewItemId3`, `RewItemId4`, `RewItemCount1`, `RewItemCount2`, `RewItemCount3`, `RewItemCount4`, `RewRepFaction1`, `RewRepFaction2`, `RewRepFaction3`, `RewRepFaction4`, `RewRepFaction5`, `RewRepValue1`, `RewRepValue2`, `RewRepValue3`, `RewRepValue4`, `RewRepValue5`, `RewOrReqMoney`, `RewMoneyMaxLevel`, `RewSpell`, `RewSpellCast`, `RewMailTemplateId`, `RewMailDelaySecs`, `PointMapId`, `PointX`, `PointY`, `PointOpt`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `IncompleteEmote`, `CompleteEmote`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `StartScript`, `CompleteScript`) values('7506','2','2557','54','60','81','1024','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','18364','1','0','The Emerald Dream...','The tome carries the mark of the Athenaeum.','Return the book to its rightful owners.','Excellent work, $R. Should you find any more tomes, do not hesitate to return them to us.$B$BAs time passes, we tend to change around and even add new rewards for the return of missing tomes.','You have recovered a tome!','','','','','','18364','0','0','0','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','18470','0','0','0','1','0','0','0','809','0','0','0','0','500','0','0','0','0','0','4230','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0','0','0','0','0','0');
 
 -- Quests Next in Chain After “Shards of the Felvine” & “The Treasure of the Shen’dralar”
-
 DELETE FROM `quest_template` WHERE `entry` IN (5526, 7877);
 
 insert into `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `QuestLevel`, `Type`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill`, `RequiredSkillValue`, `RepObjectiveFaction`, `RepObjectiveValue`, `RequiredMinRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepFaction`, `RequiredMaxRepValue`, `SuggestedPlayers`, `LimitTime`, `QuestFlags`, `SpecialFlags`, `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `NextQuestInChain`, `SrcItemId`, `SrcItemCount`, `SrcSpell`, `Title`, `Details`, `Objectives`, `OfferRewardText`, `RequestItemsText`, `EndText`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `ReqItemId1`, `ReqItemId2`, `ReqItemId3`, `ReqItemId4`, `ReqItemCount1`, `ReqItemCount2`, `ReqItemCount3`, `ReqItemCount4`, `ReqSourceId1`, `ReqSourceId2`, `ReqSourceId3`, `ReqSourceId4`, `ReqSourceCount1`, `ReqSourceCount2`, `ReqSourceCount3`, `ReqSourceCount4`, `ReqCreatureOrGOId1`, `ReqCreatureOrGOId2`, `ReqCreatureOrGOId3`, `ReqCreatureOrGOId4`, `ReqCreatureOrGOCount1`, `ReqCreatureOrGOCount2`, `ReqCreatureOrGOCount3`, `ReqCreatureOrGOCount4`, `ReqSpellCast1`, `ReqSpellCast2`, `ReqSpellCast3`, `ReqSpellCast4`, `RewChoiceItemId1`, `RewChoiceItemId2`, `RewChoiceItemId3`, `RewChoiceItemId4`, `RewChoiceItemId5`, `RewChoiceItemId6`, `RewChoiceItemCount1`, `RewChoiceItemCount2`, `RewChoiceItemCount3`, `RewChoiceItemCount4`, `RewChoiceItemCount5`, `RewChoiceItemCount6`, `RewItemId1`, `RewItemId2`, `RewItemId3`, `RewItemId4`, `RewItemCount1`, `RewItemCount2`, `RewItemCount3`, `RewItemCount4`, `RewRepFaction1`, `RewRepFaction2`, `RewRepFaction3`, `RewRepFaction4`, `RewRepFaction5`, `RewRepValue1`, `RewRepValue2`, `RewRepValue3`, `RewRepValue4`, `RewRepValue5`, `RewOrReqMoney`, `RewMoneyMaxLevel`, `RewSpell`, `RewSpellCast`, `RewMailTemplateId`, `RewMailDelaySecs`, `PointMapId`, `PointX`, `PointY`, `PointOpt`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `IncompleteEmote`, `CompleteEmote`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `StartScript`, `CompleteScript`) values('5526','2','493','56','60','81','0','0','0','0','0','0','0','0','0','0','0','0','0','0','5527','0','0','0','18539','1','0','Shards of the Felvine','Your knowledge of Eldre\'Thalas - Dire Maul - in Feralas will now come into play, $N.  In the eastern part of the ruined city is where Alzzin the Wildshaper has exerted his corrupt dominion.  Go there with all due haste and brave whatever challenges await you.$B$BThe Fruit of Fertility, now corrupted as the Felvine, should be close to Alzzin.  When he falls, capture whatever essence of the Felvine you can.  Seal it in the Reliquary, and bring it to me.$B$BGood luck, and Cenarion\'s speed.','Find the Felvine in Dire Maul and acquire a shard from it.  Chances are you\'ll only be able to procure one with the demise of Alzzin the Wildshaper.  Use the Reliquary of Purity to securely seal the shard inside, and return it to Rabine Saturna in Nighthaven, Moonglade.','It is done, brave $C, and with that the Cenarion Circle is in your debt. Though the war is far from over, a great battle has been won against those who would bring about our doom.$b$bPlease - accept this as a token of our enduring gratitude. Know that you are welcomed here as a hero of the Cenarion Circle for your great deed, $N. Thank you.','With the Sealed Reliquary of Purity in our possession, it will be possible not only to remove a corrupting threat from the world but also to study it under our judicious watch. Perhaps we can even devise new means to combat the taint of corruption that ever threatens Azeroth.$b$bI know Milli would have had it no other way...','','','','','','18540','0','0','0','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','18535','18536','0','0','0','0','1','1','0','0','0','0','0','0','0','0','0','0','0','0','609','0','0','0','0','150','0','0','0','0','0','8700','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0','0','0','0','0','0');
 insert into `quest_template` (`entry`, `Method`, `ZoneOrSort`, `MinLevel`, `QuestLevel`, `Type`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill`, `RequiredSkillValue`, `RepObjectiveFaction`, `RepObjectiveValue`, `RequiredMinRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepFaction`, `RequiredMaxRepValue`, `SuggestedPlayers`, `LimitTime`, `QuestFlags`, `SpecialFlags`, `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `NextQuestInChain`, `SrcItemId`, `SrcItemCount`, `SrcSpell`, `Title`, `Details`, `Objectives`, `OfferRewardText`, `RequestItemsText`, `EndText`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `ReqItemId1`, `ReqItemId2`, `ReqItemId3`, `ReqItemId4`, `ReqItemCount1`, `ReqItemCount2`, `ReqItemCount3`, `ReqItemCount4`, `ReqSourceId1`, `ReqSourceId2`, `ReqSourceId3`, `ReqSourceId4`, `ReqSourceCount1`, `ReqSourceCount2`, `ReqSourceCount3`, `ReqSourceCount4`, `ReqCreatureOrGOId1`, `ReqCreatureOrGOId2`, `ReqCreatureOrGOId3`, `ReqCreatureOrGOId4`, `ReqCreatureOrGOCount1`, `ReqCreatureOrGOCount2`, `ReqCreatureOrGOCount3`, `ReqCreatureOrGOCount4`, `ReqSpellCast1`, `ReqSpellCast2`, `ReqSpellCast3`, `ReqSpellCast4`, `RewChoiceItemId1`, `RewChoiceItemId2`, `RewChoiceItemId3`, `RewChoiceItemId4`, `RewChoiceItemId5`, `RewChoiceItemId6`, `RewChoiceItemCount1`, `RewChoiceItemCount2`, `RewChoiceItemCount3`, `RewChoiceItemCount4`, `RewChoiceItemCount5`, `RewChoiceItemCount6`, `RewItemId1`, `RewItemId2`, `RewItemId3`, `RewItemId4`, `RewItemCount1`, `RewItemCount2`, `RewItemCount3`, `RewItemCount4`, `RewRepFaction1`, `RewRepFaction2`, `RewRepFaction3`, `RewRepFaction4`, `RewRepFaction5`, `RewRepValue1`, `RewRepValue2`, `RewRepValue3`, `RewRepValue4`, `RewRepValue5`, `RewOrReqMoney`, `RewMoneyMaxLevel`, `RewSpell`, `RewSpellCast`, `RewMailTemplateId`, `RewMailDelaySecs`, `PointMapId`, `PointX`, `PointY`, `PointOpt`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `IncompleteEmote`, `CompleteEmote`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `StartScript`, `CompleteScript`) values('7877','2','2557','57','60','81','0','0','0','0','0','0','0','0','0','0','0','0','8','0','7461','0','0','0','0','0','0','The Treasure of the Shen\'dralar','In the library, Athenaeum, you will find an ancient chest hidden beneath the stairway. Take from it that which you desire.','Return to the Athenaeum and find the Treasure of the Shen\'dralar. Claim your reward!','You open the chest to find...','','','','','','','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','18420','18421','18424','0','0','0','1','1','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','27000','570','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0','0','0','0','0','0');
 
--- Run query to remove unsing triggers from DB
-
-DELETE FROM areatrigger_involvedrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
-DELETE FROM creature_involvedrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
-DELETE FROM creature_questrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
-DELETE FROM gameobject_involvedrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
-DELETE FROM gameobject_questrelation WHERE quest NOT IN (SELECT entry FROM quest_template);
-
 -- Missing DM Quests
-
 DELETE FROM `creature_involvedrelation` WHERE `id` IN (11801, 14358);
 
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','1123');
-REPLACE into `creature_questrelation`    (`id`, `quest`) values('11801','5526');
+replace into `creature_questrelation`    (`id`, `quest`) values('11801','5526');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5526');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','5527');
 insert into `creature_involvedrelation` (`id`, `quest`) values('11801','6762');
@@ -219,8 +157,3 @@ REPLACE INTO `creature_questrelation` (`id`, `quest`) VALUES
 (14325, 7703);
 REPLACE INTO `creature_involvedrelation` (`id`, `quest`) VALUES
 (14325, 7703);
-
--- Disable Warlock Epic Mount Quest Chain
-UPDATE `quest_template` SET `MinLevel` = 61 WHERE `entry` = 7562;
--- Disable Paladin Epic Mount Quest Chain
-UPDATE `quest_template` SET `MinLevel` = 61 WHERE `entry` = 7638;

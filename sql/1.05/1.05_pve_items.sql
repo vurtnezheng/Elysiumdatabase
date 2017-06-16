@@ -1,17 +1,18 @@
+CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
 -- Patch 1.4—1.5 World DB Itemization Changes.
 -- To be applied on QA first for testing.
 
 -- Disable Spells of Patch 1.9 Consumables
 
--- Item Removal of all items 19326 and higher except for the items in this list: https://docs.google.com/spreadsheets/d/1ZZaQ8sE0ztrcC4UeZkSOUEiP5TyMDRIWGcn3t_lCW7Y/edit#gid=0. 
--- !!! BULLSHIT! Should remove from loot, not from the template.
+-- Item Removal of all items 19326 and higher except for the items in this list: https://docs.google.com/spreadsheets/d/1ZZaQ8sE0ztrcC4UeZkSOUEiP5TyMDRIWGcn3t_lCW7Y/edit#gid=0.
+-- !!! BONUSHIT! Should remove from loot, not from the template.
 
-DELETE FROM item_template WHERE entry >= 19326 AND entry NOT IN (20744, 20745, 20746, 20747, 20748, 20749, 20750, 20752, 20753, 20754, 20755, 20756, 20757, 20758, 20769, 21023, 21071, 21072, 21099, 21114, 21151, 21153, 21177, 21174, 21211, 21213, 21217, 21219, 21235, 21308, 21314, 21315, 21340, 21342, 21358, 21371, 21524, 21525, 21545, 21546, 21547, 21557, 21558, 21559, 21571, 21574, 21576, 21721, 21745, 21747, 21815, 21829, 21833, 22243, 22244, 22246, 22248, 22249, 22250, 22307, 22308, 22309, 22393, 22739, 22895, 22897, 23002, 23007, 23015, 23022, 23160, 23161, 23192, 23246, 23247, 22843, 22852, 22855, 22856, 22857, 22858, 22859, 22860, 22862, 22863, 22864, 22865, 22867, 22868, 22869, 22870, 22872, 22873, 22874, 22875, 22876, 22877, 22878, 22879, 22880, 22881, 22882, 22883, 22884, 22885, 22886, 22887, 23243, 23244, 23251, 23252, 23253, 23254, 23255, 23256, 23257, 23258, 23259, 23260, 23261, 23262, 23263, 23264, 23272, 23273, 23274, 23275, 23276, 23277, 23278, 23279, 23280, 23281, 23282, 23283, 23284, 23285, 23286, 23287, 23288, 23289, 23290, 23291, 23292, 23293, 23294, 23295, 23296, 23297, 23298, 23299, 23300, 23301, 23302, 23303, 23304, 23305, 23306, 23307, 23308, 23309, 23310, 23311, 23312, 23313, 23314, 23315, 23316, 23317, 23318, 23319);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry >= 19326 AND entry NOT IN (20744, 20745, 20746, 20747, 20748, 20749, 20750, 20752, 20753, 20754, 20755, 20756, 20757, 20758, 20769, 21023, 21071, 21072, 21099, 21114, 21151, 21153, 21177, 21174, 21211, 21213, 21217, 21219, 21235, 21308, 21314, 21315, 21340, 21342, 21358, 21371, 21524, 21525, 21545, 21546, 21547, 21557, 21558, 21559, 21571, 21574, 21576, 21721, 21745, 21747, 21815, 21829, 21833, 22243, 22244, 22246, 22248, 22249, 22250, 22307, 22308, 22309, 22393, 22739, 22895, 22897, 23002, 23007, 23015, 23022, 23160, 23161, 23192, 23246, 23247, 22843, 22852, 22855, 22856, 22857, 22858, 22859, 22860, 22862, 22863, 22864, 22865, 22867, 22868, 22869, 22870, 22872, 22873, 22874, 22875, 22876, 22877, 22878, 22879, 22880, 22881, 22882, 22883, 22884, 22885, 22886, 22887, 23243, 23244, 23251, 23252, 23253, 23254, 23255, 23256, 23257, 23258, 23259, 23260, 23261, 23262, 23263, 23264, 23272, 23273, 23274, 23275, 23276, 23277, 23278, 23279, 23280, 23281, 23282, 23283, 23284, 23285, 23286, 23287, 23288, 23289, 23290, 23291, 23292, 23293, 23294, 23295, 23296, 23297, 23298, 23299, 23300, 23301, 23302, 23303, 23304, 23305, 23306, 23307, 23308, 23309, 23310, 23311, 23312, 23313, 23314, 23315, 23316, 23317, 23318, 23319);
 
 -- Remove items on this list from DB: https://docs.google.com/spreadsheets/d/1YZww0pjVdVCZOaQs4dtx86Hd1CHCRnRhUvEn5iEEYbY/edit#gid=0
--- REEEEEE!
+-- WEEEEEE!
 
-DELETE FROM item_template WHERE entry IN (19202, 19203, 19204, 19205, 19206, 19207, 19208, 19209, 19210, 19211, 19212, 19215, 19216, 19217, 19218, 19219, 19220, 19221, 19326, 19327, 19328, 19329, 19330, 19331, 19332, 19333, 19444,19445, 19446, 19447, 19448, 19449, 20040, 20382, 20506, 20507, 20508, 20509, 20510, 20511);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19202, 19203, 19204, 19205, 19206, 19207, 19208, 19209, 19210, 19211, 19212, 19215, 19216, 19217, 19218, 19219, 19220, 19221, 19326, 19327, 19328, 19329, 19330, 19331, 19332, 19333, 19442, 19444, 19445, 19446, 19447, 19448, 19449, 20040, 20382, 20506, 20507, 20508, 20509, 20510, 20511, 20761, 22392);
 
 -- "Thunderfury" Stats Have Been Corrected (main hand untill 1.12)
 UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
@@ -208,7 +209,7 @@ INSERT INTO item_template VALUES
 ('19145', '4', '1', 'Robe of Volatile Power', '31663', '4', '0', '1', '185169', '37033', '20', '-1', '-1', '66', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '15', '7', '10', '6', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '102', '0', '0', '0', '0', '0', '0', '0', '0', '0', '18382', '1', '0', '0', '-1', '0', '-1', '14047', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '100', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1'),
 ('19146', '4', '2', 'Wristguards of Stability', '6763', '4', '0', '1', '100919', '20183', '9', '-1', '-1', '65', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '24', '7', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '86', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '8', '0', '0', '0', '0', '40', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1');
 
-DELETE FROM item_template WHERE entry=22637;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22637;
 -- "Bonereaver's Edge" Stats Has Been Corrected
 UPDATE `item_template` SET `stat_type1` = 0, `stat_value1` = 0, `stat_type2` = 0, `stat_value2` = 0, `stat_type3` = 0, `stat_value3` = 0, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 206, `dmg_max1` = 310, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 0, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 21153, `spelltrigger_1` = 2, `spellcharges_1` = 0, `spellppmRate_1` = 3, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 7597, `spelltrigger_2` = 1, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 17076;
 
@@ -267,7 +268,7 @@ UPDATE item_template SET `spellid_1`=21411 WHERE entry=943;
 -- 1.04 spell 17894 (Increases damage done by Frost spells and effects by up to 31.)
 UPDATE item_template SET `spellid_1`=17870, `spellid_2`=17894 WHERE entry=944;
 -- NOT FOUND: Support Girdle (ilevel 22 entry 1215)
-DELETE FROM item_template WHERE entry=1215;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=1215;
 -- SPELLS CHANGED: Lesser Firestone (ilevel 28 entry 1254). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname23.html
 -- * Modified spell 2
@@ -294,7 +295,7 @@ UPDATE item_template SET `spellid_1`=7708 WHERE entry=1484;
 -- 1.04 spell 9416 (Increases damage and healing done by magical spells and effects by up to 11.)
 UPDATE item_template SET `spellid_1`=9416 WHERE entry=1664;
 -- NOT FOUND: Drake-scale Vest (ilevel 46 entry 1677)
-DELETE FROM item_template WHERE entry=1677;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=1677;
 -- SPELLS CHANGED: Robe of the Magi (ilevel 40 entry 1716). 3 versions
 -- Source: http://www.thottbot.com/?n=224623 / http://wow.allakhazam.com/db/item.html?witem=1716
 -- Source: http://www.thottbot.com/?n=108214
@@ -405,7 +406,7 @@ UPDATE item_template SET `stat_value1`=0, `stat_type3`=3, `stat_value3`=11 WHERE
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=2620;
 -- NOT FOUND: Monster - Item, Lantern - Round (ilevel 1 entry 2715)
-DELETE FROM item_template WHERE entry=2715;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=2715;
 -- SPELLS CHANGED: Holy Shroud (ilevel 32 entry 2721). 3 versions
 -- Source: http://www.thottbot.com/?i=7288 / http://wow.allakhazam.com/db/price.html?witem=2721
 -- Source: http://www.thottbot.com/?n=7753
@@ -443,7 +444,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=2824;
 -- 1.04 spell 7699 (Increases damage done by Frost spells and effects by up to 4.)
 UPDATE item_template SET `spellid_1`=7685, `spellid_2`=7699 WHERE entry=2879;
 -- NOT FOUND: Wendigo Collar (ilevel 15 entry 2899)
-DELETE FROM item_template WHERE entry=2899;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=2899;
 -- STATS CHANGED: Seal of Wrynn (ilevel 31 entry 2933). 1/1 versions
 UPDATE item_template SET `stat_value1`=2, `stat_value2`=6, `stat_value3`=0, `stat_value4`=0, `stat_value5`=0 WHERE entry=2933;
 -- QUALITY CHANGED: Seal of Wrynn (ilevel 31 entry 2933)
@@ -567,21 +568,21 @@ UPDATE item_template SET `stat_value1`=0, `stat_value2`=0, `armor`=40 WHERE entr
 -- QUALITY CHANGED: Murloc Scale Belt (ilevel 18 entry 5780)
 UPDATE item_template SET Quality=1 WHERE entry=5780;
 -- NOT FOUND: Ruffian Belt (ilevel 23 entry 5975)
-DELETE FROM item_template WHERE entry=5975;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=5975;
 -- STATS CHANGED: Wandering Boots (ilevel 24 entry 6095). 1/2 versions
 UPDATE item_template SET `stat_value1`=0, `stat_type3`=3, `stat_value3`=4 WHERE entry=6095;
 -- NOT FOUND: Squire's Pants (ilevel 1 entry 6118)
-DELETE FROM item_template WHERE entry=6118;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6118;
 -- NOT FOUND: Neophyte's Robe (ilevel 1 entry 6119)
-DELETE FROM item_template WHERE entry=6119;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6119;
 -- NOT FOUND: Acolyte's Robe (ilevel 1 entry 6129)
-DELETE FROM item_template WHERE entry=6129;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6129;
 -- NOT FOUND: Thug Shirt (ilevel 1 entry 6136)
-DELETE FROM item_template WHERE entry=6136;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6136;
 -- NOT FOUND: White Tuxedo Shirt (ilevel 25 entry 6833)
-DELETE FROM item_template WHERE entry=6833;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6833;
 -- NOT FOUND: Dress Shoes (ilevel 1 entry 6836)
-DELETE FROM item_template WHERE entry=6836;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6836;
 -- SPELLS CHANGED: Orb of Soran'ruk (ilevel 25 entry 6898). 3 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=6898
 -- Source: http://wow.allakhazam.com/dyn/items/iname23.html
@@ -656,7 +657,7 @@ UPDATE item_template SET `stat_value1`=2, `stat_type2`=6, `stat_value2`=2, `armo
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=2, `stat_value3`=8, `armor`=40 WHERE entry=7511;
 -- STATS CHANGED: Nether-lace Robe (ilevel 31 entry 7512). 1/1 versions
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=2, `stat_value3`=8, `armor`=40 WHERE entry=7512;
--- STATS REMOVED for item Ragefire Wand (http://wow.allakhazam.com/dyn/items/wminlev19.html) 
+-- STATS REMOVED for item Ragefire Wand (http://wow.allakhazam.com/dyn/items/wminlev19.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=7513;
 -- DAMAGE CHANGED: Ragefire Wand (ilevel 40 entry 7513). 1/4 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev19.html
@@ -675,7 +676,7 @@ UPDATE item_template SET `dmg_min1`=32, `dmg_max1`=60 WHERE entry=7513;
 UPDATE item_template SET `spellid_1`=7685 WHERE entry=7513;
 -- QUALITY CHANGED: Ragefire Wand (ilevel 40 entry 7513)
 UPDATE item_template SET Quality=2 WHERE entry=7513;
--- STATS REMOVED for item Icefury Wand (http://wow.allakhazam.com/db/item.html?witem=7514) 
+-- STATS REMOVED for item Icefury Wand (http://wow.allakhazam.com/db/item.html?witem=7514)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=7514;
 -- DAMAGE CHANGED: Icefury Wand (ilevel 40 entry 7514). 1/3 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=7514
@@ -758,7 +759,7 @@ UPDATE item_template SET `spellid_1`=9396 WHERE entry=7749;
 -- 1.04 spell 13596 (Increases damage done by Arcane spells and effects by up to 10.)
 UPDATE item_template SET `spellid_1`=13596 WHERE entry=7757;
 -- NOT FOUND: Easter Dress (ilevel 30 entry 7809)
-DELETE FROM item_template WHERE entry=7809;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=7809;
 -- WARNING: NOT FOUND FOR DESC "Removes existing root spells and makes you immune to root for 5 sec." (guessed 9774)
 -- SPELLS CHANGED: Archaic Defender (ilevel 36 entry 9385). 4 versions
 -- Source: http://wow.allakhazam.com/dyn/items/itype17.html
@@ -1067,7 +1068,7 @@ UPDATE item_template SET `stat_value1`=0, `stat_type4`=4, `stat_value4`=8 WHERE 
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=12732, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=10659;
 -- NOT FOUND: Boar Champion's Belt (ilevel 42 entry 10768)
-DELETE FROM item_template WHERE entry=10768;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=10768;
 -- DAMAGE CHANGED: Vanquisher's Sword (ilevel 44 entry 10823). 1/5 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname13.html
 -- Source: http://wow.allakhazam.com/dyn/items/wname7.html
@@ -1092,7 +1093,7 @@ UPDATE item_template SET `spellid_1`=9329 WHERE entry=10823;
 -- 1.12 spell 9346 (Increases damage and healing done by magical spells and effects by up to 18.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=10844;
--- STATS REMOVED for item Nether Force Wand (http://wow.allakhazam.com/db/item.html?witem=11263) 
+-- STATS REMOVED for item Nether Force Wand (http://wow.allakhazam.com/db/item.html?witem=11263)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11263;
 -- DAMAGE CHANGED: Nether Force Wand (ilevel 40 entry 11263). 1/4 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=11263
@@ -1180,7 +1181,7 @@ UPDATE item_template SET Quality=2 WHERE entry=11626;
 UPDATE item_template SET `stat_value1`=15, `stat_value2`=0, `stat_value3`=0, `stat_type4`=6, `stat_value4`=5, `armor`=198 WHERE entry=11627;
 -- QUALITY CHANGED: Fleetfoot Greaves (ilevel 53 entry 11627)
 UPDATE item_template SET Quality=2 WHERE entry=11627;
--- STATS REMOVED for item Houndmaster's Rifle (http://wow.allakhazam.com/dyn/items/wname3.html) 
+-- STATS REMOVED for item Houndmaster's Rifle (http://wow.allakhazam.com/dyn/items/wname3.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11629;
 -- STATS CHANGED: Stoneshell Guard (ilevel 52 entry 11631). 1/1 versions
 UPDATE item_template SET `stat_value1`=5, `stat_value2`=0, `armor`=1706 WHERE entry=11631;
@@ -1219,7 +1220,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=11634;
 -- QUALITY CHANGED: Silkweb Gloves (ilevel 54 entry 11634)
 UPDATE item_template SET Quality=2 WHERE entry=11634;
 -- NOT FOUND: Ban'thok Sash (ilevel 54 entry 11662)
-DELETE FROM item_template WHERE entry=11662;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=11662;
 -- STATS CHANGED: Ogreseer Fists (ilevel 54 entry 11665). 1/1 versions
 UPDATE item_template SET `stat_value1`=0, `stat_value3`=10, `stat_type4`=4, `stat_value4`=4, `armor`=88 WHERE entry=11665;
 -- SPELLS REMOVED: Ogreseer Fists (ilevel 54 entry 11665). 1 versions
@@ -1272,7 +1273,7 @@ UPDATE item_template SET `dmg_min1`=55, `dmg_max1`=103 WHERE entry=11702;
 -- QUALITY CHANGED: Grizzle's Skinner (ilevel 55 entry 11702)
 UPDATE item_template SET Quality=2 WHERE entry=11702;
 -- NOT FOUND: Stonewall Girdle (ilevel 55 entry 11703)
-DELETE FROM item_template WHERE entry=11703;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=11703;
 -- STATS CHANGED: Savage Gladiator Chain (ilevel 57 entry 11726). 1/2 versions
 UPDATE item_template SET `stat_value2`=0, `stat_value3`=0 WHERE entry=11726;
 -- SPELLS CHANGED: Savage Gladiator Chain (ilevel 57 entry 11726). 2 versions
@@ -1360,7 +1361,7 @@ UPDATE item_template SET `holy_res`=15, `nature_res`=0, `arcane_res`=0 WHERE ent
 UPDATE item_template SET `stat_value1`=20, `armor`=483 WHERE entry=11802;
 -- QUALITY CHANGED: Lavacrest Leggings (ilevel 58 entry 11802)
 UPDATE item_template SET Quality=2 WHERE entry=11802;
--- STATS REMOVED for item Force of Magma (http://wow.allakhazam.com/dyn/items/itype17.html) 
+-- STATS REMOVED for item Force of Magma (http://wow.allakhazam.com/dyn/items/itype17.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11803;
 -- DAMAGE CHANGED: Force of Magma (ilevel 56 entry 11803). 1/3 versions
 -- Source: http://wow.allakhazam.com/dyn/items/itype17.html
@@ -1487,7 +1488,7 @@ UPDATE item_template SET `spellid_1`=12854 WHERE entry=11904;
 -- 1.12 spell 14565 (+30 Attack Power when fighting Beasts.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=11906;
--- STATS REMOVED for item Blood-etched Blade (http://wow.allakhazam.com/dyn/items/wname15.html) 
+-- STATS REMOVED for item Blood-etched Blade (http://wow.allakhazam.com/dyn/items/wname15.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=11922;
 -- DAMAGE CHANGED: Blood-etched Blade (ilevel 57 entry 11922). 1/2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wname15.html
@@ -1608,19 +1609,19 @@ UPDATE item_template SET `dmg_min1`=104, `dmg_max1`=157 WHERE entry=12400;
 -- 1.04 spell 16451 (Imprisons enemy target, preventing all action but making it invulnerable for up to 10 sec.)
 UPDATE item_template SET `spellid_1`=16451 WHERE entry=12400;
 -- NOT FOUND: Imperial Plate Chest (ilevel 60 entry 12422)
-DELETE FROM item_template WHERE entry=12422;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12422;
 -- NOT FOUND: Imperial Plate Belt (ilevel 53 entry 12424)
-DELETE FROM item_template WHERE entry=12424;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12424;
 -- NOT FOUND: Imperial Plate Bracers (ilevel 54 entry 12425)
-DELETE FROM item_template WHERE entry=12425;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12425;
 -- NOT FOUND: Imperial Plate Boots (ilevel 59 entry 12426)
-DELETE FROM item_template WHERE entry=12426;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12426;
 -- NOT FOUND: Imperial Plate Helm (ilevel 59 entry 12427)
-DELETE FROM item_template WHERE entry=12427;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12427;
 -- NOT FOUND: Imperial Plate Shoulders (ilevel 53 entry 12428)
-DELETE FROM item_template WHERE entry=12428;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12428;
 -- NOT FOUND: Imperial Plate Leggings (ilevel 61 entry 12429)
-DELETE FROM item_template WHERE entry=12429;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12429;
 -- SPELLS CHANGED: Bloodfire Talons (ilevel 53 entry 12464). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev10.html
 -- Source: http://www.thottbot.com/?i=Bloodfire%20Talons
@@ -1629,7 +1630,7 @@ DELETE FROM item_template WHERE entry=12429;
 -- 1.04 spell 9415 (Increases damage and healing done by magical spells and effects by up to 9.)
 UPDATE item_template SET `spellid_1`=9415 WHERE entry=12464;
 -- NOT FOUND: Desertwalker Cane (ilevel 47 entry 12471)
-DELETE FROM item_template WHERE entry=12471;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12471;
 -- SPELLS REMOVED: The Judge's Gavel (ilevel 52 entry 12528). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/itype17.html
 -- Source: http://wow.allakhazam.com/dyn/items/wratio5.html
@@ -1681,7 +1682,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=12554;
 -- STATS CHANGED: Ebonsteel Spaulders (ilevel 59 entry 12557). 1/2 versions
 UPDATE item_template SET `stat_value1`=17, `stat_value2`=10, `stat_value3`=0, `stat_type4`=6, `stat_value4`=9, `armor`=463 WHERE entry=12557;
 -- NOT FOUND: Grand Marshal's Longsword (ilevel 78 entry 12584)
-DELETE FROM item_template WHERE entry=12584;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12584;
 -- STATS CHANGED: Dustfeather Sash (ilevel 61 entry 12589). 1/1 versions
 UPDATE item_template SET `stat_value1`=21 WHERE entry=12589;
 -- SPELLS REMOVED: Dustfeather Sash (ilevel 61 entry 12589). 1 versions
@@ -1725,11 +1726,11 @@ UPDATE item_template SET Quality=2 WHERE entry=12608;
 -- 2005-02-24 01:16:42 to 2005-02-25 05:27:10 (days delta 1) on for example: http://wow.allakhazam.com/dyn/items/iname5.html
 UPDATE item_template SET `armor`=0, `holy_res`=20, `arcane_res`=0 WHERE entry=12609;
 -- NOT FOUND: Enchanted Thorium Breastplate (ilevel 63 entry 12618)
-DELETE FROM item_template WHERE entry=12618;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12618;
 -- NOT FOUND: Enchanted Thorium Leggings (ilevel 63 entry 12619)
-DELETE FROM item_template WHERE entry=12619;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12619;
 -- NOT FOUND: Enchanted Thorium Helm (ilevel 62 entry 12620)
-DELETE FROM item_template WHERE entry=12620;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12620;
 -- SPELLS CHANGED: Wildthorn Mail (ilevel 54 entry 12624). 4 versions
 -- Source: http://www.thottbot.com/?i=23247 / http://wow.allakhazam.com/dyn/items/iminlev5.html
 -- Source: http://www.thottbot.com/?i=23247
@@ -1740,7 +1741,7 @@ DELETE FROM item_template WHERE entry=12620;
 -- 1.04 spell 17991 (Increases damage done by Nature spells and effects by up to 30.)
 UPDATE item_template SET `spellid_1`=17991 WHERE entry=12624;
 -- NOT FOUND: Dawnbringer Shoulders (ilevel 58 entry 12625)
-DELETE FROM item_template WHERE entry=12625;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12625;
 -- SPELLS CHANGED: Storm Gauntlets (ilevel 59 entry 12632). 3 versions
 -- Source: http://www.thottbot.com/?i=24655 / http://wow.allakhazam.com/dyn/items/iminlev10.html
 -- Source: http://www.thottbot.com/?i=24655
@@ -1779,7 +1780,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=12637;
 -- 1.12 spell 14249 (Increased Defense +13.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_3`=0, `spelltrigger_3`=0, `spellid_2`=21416, `spelltrigger_2`=1 WHERE entry=12641;
--- STATS REMOVED for item Blackcrow (http://wow.allakhazam.com/dyn/items/iname26.html) 
+-- STATS REMOVED for item Blackcrow (http://wow.allakhazam.com/dyn/items/iname26.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=12651;
 -- SPELLS CHANGED: Leggings of Arcana (ilevel 62 entry 12756). 1 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=12756
@@ -1788,7 +1789,7 @@ UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=12651;
 -- 1.04 spell 9415 (Increases damage and healing done by magical spells and effects by up to 9.)
 UPDATE item_template SET `spellid_1`=9415 WHERE entry=12756;
 -- NOT FOUND: Inlaid Thorium Hammer (ilevel 54 entry 12772)
-DELETE FROM item_template WHERE entry=12772;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12772;
 -- STATS CHANGED: Mixologist's Tunic (ilevel 55 entry 12793). 1/3 versions
 UPDATE item_template SET `stat_value1`=15, `stat_value2`=14, `stat_value3`=5, `armor`=144 WHERE entry=12793;
 -- QUALITY CHANGED: Mixologist's Tunic (ilevel 55 entry 12793)
@@ -1815,7 +1816,7 @@ UPDATE item_template SET `spellid_1`=13390 WHERE entry=12939;
 -- STATS CHANGED: Legplates of the Chromatic Defier (ilevel 62 entry 12945). 1/2 versions
 UPDATE item_template SET `stat_value1`=9, `stat_value2`=30, `stat_value3`=8, `fire_res`=0, `nature_res`=0, `frost_res`=0, `shadow_res`=0, `arcane_res`=0 WHERE entry=12945;
 -- NOT FOUND: Alex's Ring of Audacity (ilevel 60 entry 12947)
-DELETE FROM item_template WHERE entry=12947;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12947;
 -- STATS CHANGED: Spiritshroud Leggings (ilevel 63 entry 12965). 1/2 versions
 UPDATE item_template SET `stat_value1`=21, `stat_value2`=21, `stat_value3`=10, `stat_type4`=3, `stat_value4`=5 WHERE entry=12965;
 -- SPELLS REMOVED: Spiritshroud Leggings (ilevel 63 entry 12965). 2 versions
@@ -1913,7 +1914,7 @@ UPDATE item_template SET `spellid_1`=21411 WHERE entry=13072;
 -- 1.04 spell 18369 (Increased Defense +9.)
 UPDATE item_template SET `spellid_1`=18369 WHERE entry=13074;
 -- NOT FOUND: Direwing Legguards (ilevel 63 entry 13075)
-DELETE FROM item_template WHERE entry=13075;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13075;
 -- SPELLS CHANGED: Medallion of Grand Marshal Morris (ilevel 57 entry 13091). 2 versions
 -- Source: http://www.thottbot.com/?n=39395 / http://wow.allakhazam.com/item.html?witem=13091
 -- Source: http://wow.allakhazam.com/dyn/items/iname2.html
@@ -2052,7 +2053,7 @@ UPDATE item_template SET `armor`=39 WHERE entry=13203;
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=13203;
 -- QUALITY CHANGED: Armswake Cloak (ilevel 60 entry 13203)
 UPDATE item_template SET Quality=2 WHERE entry=13203;
--- STATS REMOVED for item Bashguuder (http://wow.allakhazam.com/dyn/items/iminlev21.html) 
+-- STATS REMOVED for item Bashguuder (http://wow.allakhazam.com/dyn/items/iminlev21.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=13204;
 -- DAMAGE CHANGED: Bashguuder (ilevel 60 entry 13204). 1/3 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev21.html
@@ -2088,7 +2089,7 @@ UPDATE item_template SET `spellid_1`=17319 WHERE entry=13209;
 UPDATE item_template SET `stat_value1`=7, `stat_value2`=0, `stat_value3`=0, `stat_type4`=4, `stat_value4`=6, `armor`=141 WHERE entry=13211;
 -- QUALITY CHANGED: Slashclaw Bracers (ilevel 60 entry 13211)
 UPDATE item_template SET Quality=2 WHERE entry=13211;
--- STATS REMOVED for item Halycon's Spiked Collar (http://wow.allakhazam.com/dyn/items/iname2.html) 
+-- STATS REMOVED for item Halycon's Spiked Collar (http://wow.allakhazam.com/dyn/items/iname2.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=13212;
 -- SPELLS CHANGED: Halycon's Spiked Collar (ilevel 60 entry 13212). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname2.html
@@ -2151,7 +2152,7 @@ UPDATE item_template SET Quality=2 WHERE entry=13255;
 -- STATS CHANGED: Demonic Runed Spaulders (ilevel 59 entry 13257). 1/2 versions
 UPDATE item_template SET `stat_value2`=0, `stat_type4`=6, `stat_value4`=12 WHERE entry=13257;
 -- NOT FOUND: Ashbringer (ilevel 76 entry 13262)
-DELETE FROM item_template WHERE entry=13262;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13262;
 -- STATS CHANGED: Ogreseer Tower Boots (ilevel 59 entry 13282). 1/2 versions
 UPDATE item_template SET `stat_value1`=7, `stat_value2`=20, `stat_value3`=0, `stat_type4`=4, `stat_value4`=5 WHERE entry=13282;
 -- STATS CHANGED: Magus Ring (ilevel 59 entry 13283). 1/2 versions
@@ -2211,7 +2212,7 @@ UPDATE item_template SET `spellid_1`=9325 WHERE entry=13349;
 -- 1.12 spell 13830 (Increases damage done by Fire spells and effects by up to 29.)
 -- 1.04 spell 23483 (Increases damage done by Fire spells and effects by up to 21.)
 UPDATE item_template SET `spellid_1`=23483 WHERE entry=13369;
--- STATS REMOVED for item Slavedriver's Cane (http://wow.allakhazam.com/dyn/items/iname17.html) 
+-- STATS REMOVED for item Slavedriver's Cane (http://wow.allakhazam.com/dyn/items/iname17.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0, stat_value2=0, stat_type2=0 WHERE entry=13372;
 -- DAMAGE CHANGED: Slavedriver's Cane (ilevel 60 entry 13372). 1/4 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname17.html
@@ -2244,7 +2245,7 @@ UPDATE item_template SET `stat_value1`=10, `stat_value2`=0, `stat_type3`=6, `sta
 -- 1.04 spell 13670 (Increases your chance to dodge an attack by 2%.)
 UPDATE item_template SET `spellid_1`=13670 WHERE entry=13383;
 -- NOT FOUND: Rainbow Girdle (ilevel 58 entry 13384)
-DELETE FROM item_template WHERE entry=13384;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13384;
 -- STATS CHANGED: The Postmaster's Tunic (ilevel 61 entry 13388). 1/3 versions
 UPDATE item_template SET `stat_value2`=0, `stat_value3`=30, `stat_type4`=3, `stat_value4`=5 WHERE entry=13388;
 -- SPELLS REMOVED: The Postmaster's Tunic (ilevel 61 entry 13388). 3 versions
@@ -2442,7 +2443,7 @@ UPDATE item_template SET `spellid_1`=9318, `spellid_2`=9358 WHERE entry=13954;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0, `spellid_1`=13390, `spelltrigger_1`=1 WHERE entry=13955;
 -- NOT FOUND: Clutch of Andros (ilevel 61 entry 13956)
-DELETE FROM item_template WHERE entry=13956;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13956;
 -- STATS CHANGED: Voone's Vice Grips (ilevel 60 entry 13963). 1/3 versions
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=6, `stat_type3`=6, `stat_value3`=6 WHERE entry=13963;
 -- SPELLS CHANGED: Witchblade (ilevel 62 entry 13964). 2 versions
@@ -2624,7 +2625,7 @@ UPDATE item_template SET `stat_value1`=0, `frost_res`=15 WHERE entry=14340;
 -- 1.04 spell 17901 (Increases damage done by Frost spells and effects by up to 41.)
 UPDATE item_template SET `spellid_1`=17901 WHERE entry=14340;
 -- NOT FOUND: Elunarian Silk Robes (ilevel 64 entry 14464)
-DELETE FROM item_template WHERE entry=14464;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14464;
 -- STATS CHANGED: Death's Clutch (ilevel 62 entry 14503). 1/2 versions
 UPDATE item_template SET `stat_value1`=12, `stat_value2`=11, `stat_value3`=11, `stat_value4`=12, `stat_value5`=0 WHERE entry=14503;
 -- STATS CHANGED: Maelstrom Leggings (ilevel 62 entry 14522). 1/2 versions
@@ -2663,7 +2664,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=14538;
 -- QUALITY CHANGED: Deadwalker Mantle (ilevel 62 entry 14538)
 UPDATE item_template SET Quality=2 WHERE entry=14538;
 -- NOT FOUND: Bone Ring Helm (ilevel 62 entry 14539)
-DELETE FROM item_template WHERE entry=14539;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14539;
 -- SPELLS REMOVED: Barovian Family Sword (ilevel 61 entry 14541). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname17.html
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev8.html
@@ -2880,11 +2881,11 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=14641;
 -- QUALITY CHANGED: Cadaverous Walkers (ilevel 61 entry 14641)
 UPDATE item_template SET Quality=2 WHERE entry=14641;
 -- NOT FOUND: Warstrike Chestguard (ilevel 64 entry 14811)
-DELETE FROM item_template WHERE entry=14811;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14811;
 -- NOT FOUND: Warstrike Buckler (ilevel 64 entry 14812)
-DELETE FROM item_template WHERE entry=14812;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14812;
 -- NOT FOUND: Warstrike Gauntlets (ilevel 62 entry 14815)
-DELETE FROM item_template WHERE entry=14815;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14815;
 -- STATS CHANGED: Warstrike Shoulder Pads (ilevel 62 entry 14817). 1/1 versions
 UPDATE item_template SET `stat_value1`=13, `stat_value2`=5 WHERE entry=14817;
 -- STATS CHANGED: Green Dragonscale Breastplate (ilevel 52 entry 15045). 1/3 versions
@@ -2978,15 +2979,15 @@ UPDATE item_template SET `spellid_1`=7709 WHERE entry=15108;
 -- 1.04 spell 7686 (Increases damage done by Fire spells and effects by up to 6.)
 UPDATE item_template SET `spellid_1`=7707, `spellid_2`=7686 WHERE entry=15109;
 -- NOT FOUND: Private's Tabard (ilevel 20 entry 15196)
-DELETE FROM item_template WHERE entry=15196;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15196;
 -- NOT FOUND: Knight's Colors (ilevel 40 entry 15198)
-DELETE FROM item_template WHERE entry=15198;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15198;
 -- NOT FOUND: Stone Guard's Herald (ilevel 40 entry 15199)
-DELETE FROM item_template WHERE entry=15199;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15199;
 -- STATS CHANGED: Senior Sergeant's Insignia (ilevel 35 entry 15200). 1/1 versions
 UPDATE item_template SET `stat_value1`=4, `stat_type3`=5, `stat_value3`=4 WHERE entry=15200;
 -- NOT FOUND: Shucking Gloves (ilevel 17 entry 15405)
-DELETE FROM item_template WHERE entry=15405;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15405;
 -- SPELLS CHANGED: Ornate Adamantium Breastplate (ilevel 63 entry 15413). 3 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev5.html
 -- Source: http://www.thottbot.com/?i=17848
@@ -3009,7 +3010,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=15814;
 -- STATS CHANGED: Ring of Protection (ilevel 60 entry 15855). 1/1 versions
 UPDATE item_template SET `stat_value1`=6, `armor`=300 WHERE entry=15855;
 -- NOT FOUND: Elunarian Sphere (ilevel 64 entry 15968)
-DELETE FROM item_template WHERE entry=15968;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15968;
 -- SPELLS CHANGED: Spellpower Goggles Xtreme Plus (ilevel 54 entry 15999). 2 versions
 -- Source: http://www.thottbot.com/?i=17294 / http://wow.allakhazam.com/db/price.html?witem=15999
 -- Source: http://www.thottbot.com/?i=17294
@@ -3024,7 +3025,7 @@ UPDATE item_template SET `spellid_1`=14254 WHERE entry=15999;
 -- 1.12 spell 23074 (Activates your Arcanite Dragonling to fight for you for 60 sec. It requires an hour to cool down before it can be used again.)
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0 WHERE entry=16022;
--- STATS REMOVED for item Fordring's Seal (http://wow.allakhazam.com/dyn/items/iminlev11.html) 
+-- STATS REMOVED for item Fordring's Seal (http://wow.allakhazam.com/dyn/items/iminlev11.html)
 UPDATE item_template SET stat_value1=0, stat_type1=0, stat_value2=0, stat_type2=0 WHERE entry=16058;
 -- SPELLS CHANGED: Fordring's Seal (ilevel 63 entry 16058). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev11.html
@@ -3033,9 +3034,9 @@ UPDATE item_template SET stat_value1=0, stat_type1=0, stat_value2=0, stat_type2=
 -- 1.04 spell 9318 (Increases healing done by spells and effects by up to 33.)
 UPDATE item_template SET `spellid_1`=9318 WHERE entry=16058;
 -- NOT FOUND: Test Arcane Res Legs Mail (ilevel 35 entry 16165)
-DELETE FROM item_template WHERE entry=16165;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16165;
 -- NOT FOUND: Senior Sergeant's Insignia (ilevel 63 entry 16335)
-DELETE FROM item_template WHERE entry=16335;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16335;
 -- STATS CHANGED: Sergeant's Cape (ilevel 63 entry 16342). 3/4 versions
 -- CONFLICT:
 -- 2005-03-01 11:51:15 to 2005-03-01 11:51:15 (days delta 0) on for example: http://wow.allakhazam.com/item.html?witem=16341
@@ -3044,295 +3045,295 @@ DELETE FROM item_template WHERE entry=16335;
 -- 2005-02-17 08:57:09 to 2005-02-17 08:57:09 (days delta 0) on for example: http://wow.allakhazam.com/item.html?witem=16342
 UPDATE item_template SET `stat_value1`=8, `stat_type2`=6, `stat_value2`=8, `armor`=43 WHERE entry=16342;
 -- NOT FOUND: High Warlord's Blade (ilevel 78 entry 16345)
-DELETE FROM item_template WHERE entry=16345;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16345;
 -- NOT FOUND: Knight-Lieutenant's Silk Boots (ilevel 63 entry 16369)
-DELETE FROM item_template WHERE entry=16369;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16369;
 -- NOT FOUND: Knight-Lieutenant's Silk Gloves (ilevel 63 entry 16391)
-DELETE FROM item_template WHERE entry=16391;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16391;
 -- NOT FOUND: Knight-Lieutenant's Leather Boots (ilevel 63 entry 16392)
-DELETE FROM item_template WHERE entry=16392;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16392;
 -- NOT FOUND: Knight-Lieutenant's Dragonhide Footwraps (ilevel 63 entry 16393)
-DELETE FROM item_template WHERE entry=16393;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16393;
 -- NOT FOUND: Knight-Lieutenant's Leather Gauntlets (ilevel 63 entry 16396)
-DELETE FROM item_template WHERE entry=16396;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16396;
 -- NOT FOUND: Knight-Lieutenant's Dragonhide Gloves (ilevel 63 entry 16397)
-DELETE FROM item_template WHERE entry=16397;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16397;
 -- NOT FOUND: Knight-Lieutenant's Chain Boots (ilevel 63 entry 16401)
-DELETE FROM item_template WHERE entry=16401;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16401;
 -- NOT FOUND: Knight-Lieutenant's Chain Gauntlets (ilevel 63 entry 16403)
-DELETE FROM item_template WHERE entry=16403;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16403;
 -- NOT FOUND: Knight-Lieutenant's Plate Boots (ilevel 63 entry 16405)
-DELETE FROM item_template WHERE entry=16405;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16405;
 -- NOT FOUND: Knight-Lieutenant's Plate Gauntlets (ilevel 63 entry 16406)
-DELETE FROM item_template WHERE entry=16406;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16406;
 -- NOT FOUND: Knight-Lieutenant's Lamellar Sabatons (ilevel 63 entry 16409)
-DELETE FROM item_template WHERE entry=16409;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16409;
 -- NOT FOUND: Knight-Lieutenant's Lamellar Gauntlets (ilevel 63 entry 16410)
-DELETE FROM item_template WHERE entry=16410;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16410;
 -- NOT FOUND: Knight-Captain's Silk Raiment (ilevel 63 entry 16413)
-DELETE FROM item_template WHERE entry=16413;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16413;
 -- NOT FOUND: Knight-Captain's Silk Leggings (ilevel 63 entry 16414)
-DELETE FROM item_template WHERE entry=16414;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16414;
 -- NOT FOUND: Lieutenant Commander's Silk Spaulders (ilevel 63 entry 16415)
-DELETE FROM item_template WHERE entry=16415;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16415;
 -- NOT FOUND: Lieutenant Commander's Crown (ilevel 63 entry 16416)
-DELETE FROM item_template WHERE entry=16416;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16416;
 -- NOT FOUND: Knight-Captain's Leather Armor (ilevel 63 entry 16417)
-DELETE FROM item_template WHERE entry=16417;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16417;
 -- NOT FOUND: Lieutenant Commander's Leather Veil (ilevel 63 entry 16418)
-DELETE FROM item_template WHERE entry=16418;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16418;
 -- NOT FOUND: Knight-Captain's Leather Legguards (ilevel 63 entry 16419)
-DELETE FROM item_template WHERE entry=16419;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16419;
 -- NOT FOUND: Lieutenant Commander's Leather Spaulders (ilevel 63 entry 16420)
-DELETE FROM item_template WHERE entry=16420;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16420;
 -- NOT FOUND: Knight-Captain's Dragonhide Tunic (ilevel 63 entry 16421)
-DELETE FROM item_template WHERE entry=16421;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16421;
 -- NOT FOUND: Knight-Captain's Dragonhide Leggings (ilevel 63 entry 16422)
-DELETE FROM item_template WHERE entry=16422;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16422;
 -- NOT FOUND: Lieutenant Commander's Dragonhide Epaulets (ilevel 63 entry 16423)
-DELETE FROM item_template WHERE entry=16423;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16423;
 -- NOT FOUND: Lieutenant Commander's Dragonhide Shroud (ilevel 63 entry 16424)
-DELETE FROM item_template WHERE entry=16424;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16424;
 -- NOT FOUND: Knight-Captain's Chain Hauberk (ilevel 63 entry 16425)
-DELETE FROM item_template WHERE entry=16425;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16425;
 -- NOT FOUND: Knight-Captain's Chain Leggings (ilevel 63 entry 16426)
-DELETE FROM item_template WHERE entry=16426;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16426;
 -- NOT FOUND: Lieutenant Commander's Chain Pauldrons (ilevel 63 entry 16427)
-DELETE FROM item_template WHERE entry=16427;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16427;
 -- NOT FOUND: Lieutenant Commander's Chain Helmet (ilevel 63 entry 16428)
-DELETE FROM item_template WHERE entry=16428;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16428;
 -- NOT FOUND: Lieutenant Commander's Plate Helm (ilevel 63 entry 16429)
-DELETE FROM item_template WHERE entry=16429;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16429;
 -- NOT FOUND: Knight-Captain's Plate Chestguard (ilevel 63 entry 16430)
-DELETE FROM item_template WHERE entry=16430;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16430;
 -- NOT FOUND: Knight-Captain's Plate Leggings (ilevel 63 entry 16431)
-DELETE FROM item_template WHERE entry=16431;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16431;
 -- NOT FOUND: Lieutenant Commander's Plate Pauldrons (ilevel 63 entry 16432)
-DELETE FROM item_template WHERE entry=16432;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16432;
 -- NOT FOUND: Knight-Captain's Lamellar Breastplate (ilevel 63 entry 16433)
-DELETE FROM item_template WHERE entry=16433;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16433;
 -- NOT FOUND: Lieutenant Commander's Lamellar Headguard (ilevel 63 entry 16434)
-DELETE FROM item_template WHERE entry=16434;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16434;
 -- NOT FOUND: Knight-Captain's Lamellar Leggings (ilevel 63 entry 16435)
-DELETE FROM item_template WHERE entry=16435;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16435;
 -- NOT FOUND: Lieutenant Commander's Lamellar Shoulders (ilevel 63 entry 16436)
-DELETE FROM item_template WHERE entry=16436;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16436;
 -- NOT FOUND: Marshal's Silk Footwraps (ilevel 71 entry 16437)
-DELETE FROM item_template WHERE entry=16437;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16437;
 -- NOT FOUND: Marshal's Silk Gloves (ilevel 71 entry 16440)
-DELETE FROM item_template WHERE entry=16440;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16440;
 -- NOT FOUND: Field Marshal's Coronet (ilevel 74 entry 16441)
-DELETE FROM item_template WHERE entry=16441;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16441;
 -- NOT FOUND: Marshal's Silk Leggings (ilevel 71 entry 16442)
-DELETE FROM item_template WHERE entry=16442;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16442;
 -- NOT FOUND: Field Marshal's Silk Vestments (ilevel 74 entry 16443)
-DELETE FROM item_template WHERE entry=16443;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16443;
 -- NOT FOUND: Field Marshal's Silk Spaulders (ilevel 74 entry 16444)
-DELETE FROM item_template WHERE entry=16444;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16444;
 -- NOT FOUND: Marshal's Leather Footguards (ilevel 71 entry 16446)
-DELETE FROM item_template WHERE entry=16446;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16446;
 -- NOT FOUND: Marshal's Dragonhide Gauntlets (ilevel 71 entry 16448)
-DELETE FROM item_template WHERE entry=16448;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16448;
 -- NOT FOUND: Field Marshal's Dragonhide Spaulders (ilevel 74 entry 16449)
-DELETE FROM item_template WHERE entry=16449;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16449;
 -- NOT FOUND: Marshal's Dragonhide Legguards (ilevel 71 entry 16450)
-DELETE FROM item_template WHERE entry=16450;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16450;
 -- NOT FOUND: Field Marshal's Dragonhide Helmet (ilevel 74 entry 16451)
-DELETE FROM item_template WHERE entry=16451;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16451;
 -- NOT FOUND: Field Marshal's Dragonhide Breastplate (ilevel 74 entry 16452)
-DELETE FROM item_template WHERE entry=16452;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16452;
 -- NOT FOUND: Field Marshal's Leather Chestpiece (ilevel 74 entry 16453)
-DELETE FROM item_template WHERE entry=16453;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16453;
 -- NOT FOUND: Marshal's Leather Handgrips (ilevel 71 entry 16454)
-DELETE FROM item_template WHERE entry=16454;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16454;
 -- NOT FOUND: Field Marshal's Leather Mask (ilevel 74 entry 16455)
-DELETE FROM item_template WHERE entry=16455;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16455;
 -- NOT FOUND: Marshal's Leather Leggings (ilevel 71 entry 16456)
-DELETE FROM item_template WHERE entry=16456;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16456;
 -- NOT FOUND: Field Marshal's Leather Epaulets (ilevel 74 entry 16457)
-DELETE FROM item_template WHERE entry=16457;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16457;
 -- NOT FOUND: Marshal's Dragonhide Boots (ilevel 71 entry 16459)
-DELETE FROM item_template WHERE entry=16459;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16459;
 -- NOT FOUND: Marshal's Chain Boots (ilevel 71 entry 16462)
-DELETE FROM item_template WHERE entry=16462;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16462;
 -- NOT FOUND: Marshal's Chain Grips (ilevel 71 entry 16463)
-DELETE FROM item_template WHERE entry=16463;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16463;
 -- NOT FOUND: Field Marshal's Chain Helm (ilevel 74 entry 16465)
-DELETE FROM item_template WHERE entry=16465;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16465;
 -- NOT FOUND: Field Marshal's Chain Breastplate (ilevel 74 entry 16466)
-DELETE FROM item_template WHERE entry=16466;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16466;
 -- NOT FOUND: Marshal's Chain Legguards (ilevel 71 entry 16467)
-DELETE FROM item_template WHERE entry=16467;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16467;
 -- NOT FOUND: Field Marshal's Chain Spaulders (ilevel 74 entry 16468)
-DELETE FROM item_template WHERE entry=16468;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16468;
 -- NOT FOUND: Marshal's Lamellar Gloves (ilevel 71 entry 16471)
-DELETE FROM item_template WHERE entry=16471;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16471;
 -- NOT FOUND: Marshal's Lamellar Boots (ilevel 71 entry 16472)
-DELETE FROM item_template WHERE entry=16472;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16472;
 -- NOT FOUND: Field Marshal's Lamellar Chestplate (ilevel 74 entry 16473)
-DELETE FROM item_template WHERE entry=16473;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16473;
 -- NOT FOUND: Field Marshal's Lamellar Faceguard (ilevel 74 entry 16474)
-DELETE FROM item_template WHERE entry=16474;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16474;
 -- NOT FOUND: Marshal's Lamellar Legplates (ilevel 71 entry 16475)
-DELETE FROM item_template WHERE entry=16475;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16475;
 -- NOT FOUND: Field Marshal's Lamellar Pauldrons (ilevel 74 entry 16476)
-DELETE FROM item_template WHERE entry=16476;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16476;
 -- NOT FOUND: Field Marshal's Plate Armor (ilevel 74 entry 16477)
-DELETE FROM item_template WHERE entry=16477;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16477;
 -- NOT FOUND: Field Marshal's Plate Helm (ilevel 74 entry 16478)
-DELETE FROM item_template WHERE entry=16478;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16478;
 -- NOT FOUND: Marshal's Plate Legguards (ilevel 71 entry 16479)
-DELETE FROM item_template WHERE entry=16479;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16479;
 -- NOT FOUND: Field Marshal's Plate Shoulderguards (ilevel 74 entry 16480)
-DELETE FROM item_template WHERE entry=16480;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16480;
 -- NOT FOUND: Marshal's Plate Boots (ilevel 71 entry 16483)
-DELETE FROM item_template WHERE entry=16483;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16483;
 -- NOT FOUND: Marshal's Plate Gauntlets (ilevel 71 entry 16484)
-DELETE FROM item_template WHERE entry=16484;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16484;
 -- NOT FOUND: Blood Guard's Silk Footwraps (ilevel 63 entry 16485)
-DELETE FROM item_template WHERE entry=16485;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16485;
 -- NOT FOUND: Blood Guard's Silk Gloves (ilevel 63 entry 16487)
-DELETE FROM item_template WHERE entry=16487;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16487;
 -- NOT FOUND: Champion's Silk Hood (ilevel 63 entry 16489)
-DELETE FROM item_template WHERE entry=16489;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16489;
 -- NOT FOUND: Legionnaire's Silk Pants (ilevel 63 entry 16490)
-DELETE FROM item_template WHERE entry=16490;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16490;
 -- NOT FOUND: Legionnaire's Silk Robes (ilevel 63 entry 16491)
-DELETE FROM item_template WHERE entry=16491;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16491;
 -- NOT FOUND: Champion's Silk Shoulderpads (ilevel 63 entry 16492)
-DELETE FROM item_template WHERE entry=16492;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16492;
 -- NOT FOUND: Blood Guard's Dragonhide Boots (ilevel 63 entry 16494)
-DELETE FROM item_template WHERE entry=16494;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16494;
 -- NOT FOUND: Blood Guard's Dragonhide Gauntlets (ilevel 63 entry 16496)
-DELETE FROM item_template WHERE entry=16496;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16496;
 -- NOT FOUND: Blood Guard's Leather Treads (ilevel 63 entry 16498)
-DELETE FROM item_template WHERE entry=16498;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16498;
 -- NOT FOUND: Blood Guard's Leather Vices (ilevel 63 entry 16499)
-DELETE FROM item_template WHERE entry=16499;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16499;
 -- NOT FOUND: Champion's Dragonhide Spaulders (ilevel 63 entry 16501)
-DELETE FROM item_template WHERE entry=16501;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16501;
 -- NOT FOUND: Legionnaire's Dragonhide Trousers (ilevel 63 entry 16502)
-DELETE FROM item_template WHERE entry=16502;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16502;
 -- NOT FOUND: Champion's Dragonhide Helm (ilevel 63 entry 16503)
-DELETE FROM item_template WHERE entry=16503;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16503;
 -- NOT FOUND: Legionnaire's Dragonhide Breastplate (ilevel 63 entry 16504)
-DELETE FROM item_template WHERE entry=16504;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16504;
 -- NOT FOUND: Legionnaire's Leather Hauberk (ilevel 63 entry 16505)
-DELETE FROM item_template WHERE entry=16505;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16505;
 -- NOT FOUND: Champion's Leather Headguard (ilevel 63 entry 16506)
-DELETE FROM item_template WHERE entry=16506;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16506;
 -- NOT FOUND: Champion's Leather Mantle (ilevel 63 entry 16507)
-DELETE FROM item_template WHERE entry=16507;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16507;
 -- NOT FOUND: Legionnaire's Leather Leggings (ilevel 63 entry 16508)
-DELETE FROM item_template WHERE entry=16508;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16508;
 -- NOT FOUND: Blood Guard's Plate Boots (ilevel 63 entry 16509)
-DELETE FROM item_template WHERE entry=16509;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16509;
 -- NOT FOUND: Blood Guard's Plate Gloves (ilevel 63 entry 16510)
-DELETE FROM item_template WHERE entry=16510;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16510;
 -- NOT FOUND: Legionnaire's Plate Armor (ilevel 63 entry 16513)
-DELETE FROM item_template WHERE entry=16513;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16513;
 -- NOT FOUND: Champion's Plate Headguard (ilevel 63 entry 16514)
-DELETE FROM item_template WHERE entry=16514;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16514;
 -- NOT FOUND: Legionnaire's Plate Legguards (ilevel 63 entry 16515)
-DELETE FROM item_template WHERE entry=16515;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16515;
 -- NOT FOUND: Champion's Plate Pauldrons (ilevel 63 entry 16516)
-DELETE FROM item_template WHERE entry=16516;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16516;
 -- NOT FOUND: Blood Guard's Mail Walkers (ilevel 63 entry 16518)
-DELETE FROM item_template WHERE entry=16518;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16518;
 -- NOT FOUND: Blood Guard's Mail Grips (ilevel 63 entry 16519)
-DELETE FROM item_template WHERE entry=16519;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16519;
 -- NOT FOUND: Champion's Mail Helm (ilevel 63 entry 16521)
-DELETE FROM item_template WHERE entry=16521;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16521;
 -- NOT FOUND: Legionnaire's Mail Chestpiece (ilevel 63 entry 16522)
-DELETE FROM item_template WHERE entry=16522;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16522;
 -- NOT FOUND: Legionnaire's Mail Leggings (ilevel 63 entry 16523)
-DELETE FROM item_template WHERE entry=16523;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16523;
 -- NOT FOUND: Champion's Mail Shoulders (ilevel 63 entry 16524)
-DELETE FROM item_template WHERE entry=16524;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16524;
 -- NOT FOUND: Legionnaire's Chain Breastplate (ilevel 63 entry 16525)
-DELETE FROM item_template WHERE entry=16525;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16525;
 -- NOT FOUND: Champion's Chain Headguard (ilevel 63 entry 16526)
-DELETE FROM item_template WHERE entry=16526;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16526;
 -- NOT FOUND: Legionnaire's Chain Leggings (ilevel 63 entry 16527)
-DELETE FROM item_template WHERE entry=16527;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16527;
 -- NOT FOUND: Champion's Chain Pauldrons (ilevel 63 entry 16528)
-DELETE FROM item_template WHERE entry=16528;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16528;
 -- NOT FOUND: Blood Guard's Chain Gauntlets (ilevel 63 entry 16530)
-DELETE FROM item_template WHERE entry=16530;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16530;
 -- NOT FOUND: Blood Guard's Chain Boots (ilevel 63 entry 16531)
-DELETE FROM item_template WHERE entry=16531;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16531;
 -- NOT FOUND: Warlord's Silk Cowl (ilevel 74 entry 16533)
-DELETE FROM item_template WHERE entry=16533;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16533;
 -- NOT FOUND: General's Silk Trousers (ilevel 71 entry 16534)
-DELETE FROM item_template WHERE entry=16534;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16534;
 -- NOT FOUND: Warlord's Silk Raiment (ilevel 74 entry 16535)
-DELETE FROM item_template WHERE entry=16535;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16535;
 -- NOT FOUND: Warlord's Silk Amice (ilevel 74 entry 16536)
-DELETE FROM item_template WHERE entry=16536;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16536;
 -- NOT FOUND: General's Silk Boots (ilevel 71 entry 16539)
-DELETE FROM item_template WHERE entry=16539;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16539;
 -- NOT FOUND: General's Silk Handguards (ilevel 71 entry 16540)
-DELETE FROM item_template WHERE entry=16540;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16540;
 -- NOT FOUND: Warlord's Plate Armor (ilevel 74 entry 16541)
-DELETE FROM item_template WHERE entry=16541;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16541;
 -- NOT FOUND: Warlord's Plate Headpiece (ilevel 74 entry 16542)
-DELETE FROM item_template WHERE entry=16542;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16542;
 -- NOT FOUND: General's Plate Leggings (ilevel 71 entry 16543)
-DELETE FROM item_template WHERE entry=16543;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16543;
 -- NOT FOUND: Warlord's Plate Shoulders (ilevel 74 entry 16544)
-DELETE FROM item_template WHERE entry=16544;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16544;
 -- NOT FOUND: General's Plate Boots (ilevel 71 entry 16545)
-DELETE FROM item_template WHERE entry=16545;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16545;
 -- NOT FOUND: General's Plate Gauntlets (ilevel 71 entry 16548)
-DELETE FROM item_template WHERE entry=16548;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16548;
 -- NOT FOUND: Warlord's Dragonhide Hauberk (ilevel 74 entry 16549)
-DELETE FROM item_template WHERE entry=16549;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16549;
 -- NOT FOUND: Warlord's Dragonhide Helmet (ilevel 74 entry 16550)
-DELETE FROM item_template WHERE entry=16550;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16550;
 -- NOT FOUND: Warlord's Dragonhide Epaulets (ilevel 74 entry 16551)
-DELETE FROM item_template WHERE entry=16551;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16551;
 -- NOT FOUND: General's Dragonhide Leggings (ilevel 71 entry 16552)
-DELETE FROM item_template WHERE entry=16552;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16552;
 -- NOT FOUND: General's Dragonhide Boots (ilevel 71 entry 16554)
-DELETE FROM item_template WHERE entry=16554;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16554;
 -- NOT FOUND: General's Dragonhide Gloves (ilevel 71 entry 16555)
-DELETE FROM item_template WHERE entry=16555;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16555;
 -- NOT FOUND: General's Leather Treads (ilevel 71 entry 16558)
-DELETE FROM item_template WHERE entry=16558;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16558;
 -- NOT FOUND: General's Leather Mitts (ilevel 71 entry 16560)
-DELETE FROM item_template WHERE entry=16560;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16560;
 -- NOT FOUND: Warlord's Leather Helm (ilevel 74 entry 16561)
-DELETE FROM item_template WHERE entry=16561;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16561;
 -- NOT FOUND: Warlord's Leather Spaulders (ilevel 74 entry 16562)
-DELETE FROM item_template WHERE entry=16562;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16562;
 -- NOT FOUND: Warlord's Leather Breastplate (ilevel 74 entry 16563)
-DELETE FROM item_template WHERE entry=16563;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16563;
 -- NOT FOUND: General's Leather Legguards (ilevel 71 entry 16564)
-DELETE FROM item_template WHERE entry=16564;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16564;
 -- NOT FOUND: Warlord's Chain Chestpiece (ilevel 74 entry 16565)
-DELETE FROM item_template WHERE entry=16565;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16565;
 -- NOT FOUND: Warlord's Chain Helmet (ilevel 74 entry 16566)
-DELETE FROM item_template WHERE entry=16566;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16566;
 -- NOT FOUND: General's Chain Legguards (ilevel 71 entry 16567)
-DELETE FROM item_template WHERE entry=16567;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16567;
 -- NOT FOUND: Warlord's Chain Shoulders (ilevel 74 entry 16568)
-DELETE FROM item_template WHERE entry=16568;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16568;
 -- NOT FOUND: General's Chain Boots (ilevel 71 entry 16569)
-DELETE FROM item_template WHERE entry=16569;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16569;
 -- NOT FOUND: General's Chain Gloves (ilevel 71 entry 16571)
-DELETE FROM item_template WHERE entry=16571;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16571;
 -- NOT FOUND: General's Mail Boots (ilevel 71 entry 16573)
-DELETE FROM item_template WHERE entry=16573;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16573;
 -- NOT FOUND: General's Mail Gauntlets (ilevel 71 entry 16574)
-DELETE FROM item_template WHERE entry=16574;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16574;
 -- NOT FOUND: Warlord's Mail Armor (ilevel 74 entry 16577)
-DELETE FROM item_template WHERE entry=16577;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16577;
 -- NOT FOUND: Warlord's Mail Helm (ilevel 74 entry 16578)
-DELETE FROM item_template WHERE entry=16578;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16578;
 -- NOT FOUND: General's Mail Leggings (ilevel 71 entry 16579)
-DELETE FROM item_template WHERE entry=16579;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16579;
 -- NOT FOUND: Warlord's Mail Spaulders (ilevel 74 entry 16580)
-DELETE FROM item_template WHERE entry=16580;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16580;
 -- STATS CHANGED: Magister's Gloves (ilevel 59 entry 16684). 1/2 versions
 UPDATE item_template SET `stat_value3`=6, `stat_type4`=3, `stat_value4`=6 WHERE entry=16684;
 -- STATS CHANGED: Magister's Belt (ilevel 58 entry 16685). 1/2 versions
@@ -4920,9 +4921,9 @@ UPDATE item_template SET `stat_value2`=23, `stat_type3`=6, `stat_value3`=10, `fi
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=16966;
 -- NOT FOUND: Juno's Shadow (ilevel 58 entry 17061)
-DELETE FROM item_template WHERE entry=17061;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17061;
 -- NOT FOUND: Band of Accuria (ilevel 78 entry 17063)
-DELETE FROM item_template WHERE entry=17063;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17063;
 -- SPELLS REMOVED: Shard of the Scale (ilevel 71 entry 17064). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- * Modified spell 1
@@ -4951,7 +4952,7 @@ UPDATE item_template SET `armor`=2291, `holy_res`=10 WHERE entry=17066;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17066;
 -- NOT FOUND: Ancient Cornerstone Grimoire (ilevel 76 entry 17067)
-DELETE FROM item_template WHERE entry=17067;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17067;
 -- DAMAGE CHANGED: Deathbringer (ilevel 75 entry 17068). 1/3 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=17068
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev0.html
@@ -4978,19 +4979,14 @@ UPDATE item_template SET `dmg_min1`=49, `dmg_max1`=91 WHERE entry=17069;
 -- 1.12 spell 9332 (+22 Attack Power.)
 -- 1.04 spell 9331 (+20 Attack Power.)
 UPDATE item_template SET `spellid_1`=9331 WHERE entry=17069;
--- SPELLS REMOVED: Fang of the Mystics (ilevel 70 entry 17070). 1 versions
+
+-- Fang of the Mystics (ilevel 70 entry 17070). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wratio15.html
--- * Modified spell 1
--- 1.12 spell 18384 (Improves your chance to get a critical strike with spells by 1%.)
--- 1.04 spell 0 ()
--- * Modified spell 2
--- 1.12 spell 21362 (Restores 4 mana per 5 sec.)
--- 1.04 spell 0 ()
--- * Modified spell 3
--- 1.12 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
--- 1.04 spell 0 ()
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0, `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
--- STATS REMOVED for item Blastershot Launcher (http://wow.allakhazam.com/item.html?witem=17072) 
+-- Mod dmg
+-- 1.10 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
+UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
+
+-- STATS REMOVED for item Blastershot Launcher (http://wow.allakhazam.com/item.html?witem=17072)
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=17072;
 -- DAMAGE CHANGED: Blastershot Launcher (ilevel 70 entry 17072). 1/1 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=17072
@@ -5018,7 +5014,7 @@ UPDATE item_template SET `dmg_min1`=142, `dmg_max1`=214 WHERE entry=17074;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=17075;
 -- NOT FOUND: Bonereaver's Edge (ilevel 77 entry 17076)
-DELETE FROM item_template WHERE entry=17076;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17076;
 -- STATS CHANGED: Sapphiron Drape (ilevel 72 entry 17078). 2/2 versions
 -- CONFLICT:
 -- 2005-03-01 11:52:40 to 2005-03-18 17:18:54 (days delta 17) on for example: http://wow.allakhazam.com/db/item.html?witem=17078
@@ -5038,7 +5034,7 @@ UPDATE item_template SET `spellid_1`=9397 WHERE entry=17078;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=17082;
 -- NOT FOUND: Cloak of the Shrouded Mists (ilevel 74 entry 17102)
-DELETE FROM item_template WHERE entry=17102;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17102;
 -- STATS CHANGED: Azuresong Mageblade (ilevel 71 entry 17103). 2/2 versions
 -- CONFLICT:
 -- 2005-02-18 01:43:14 to 2005-04-01 01:41:30 (days delta 45) on for example: http://wow.allakhazam.com/dyn/items/wminlev7.html
@@ -5056,7 +5052,7 @@ UPDATE item_template SET `dmg_min1`=74, `dmg_max1`=138 WHERE entry=17103;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=17103;
 -- NOT FOUND: Spinal Reaper (ilevel 76 entry 17104)
-DELETE FROM item_template WHERE entry=17104;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17104;
 -- STATS CHANGED: Aurastone Hammer (ilevel 69 entry 17105). 1/3 versions
 UPDATE item_template SET `shadow_res`=10 WHERE entry=17105;
 -- DAMAGE CHANGED: Aurastone Hammer (ilevel 69 entry 17105). 1/3 versions
@@ -5076,9 +5072,9 @@ UPDATE item_template SET `dmg_min1`=89, `dmg_max1`=166 WHERE entry=17105;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=21618, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=17105;
 -- NOT FOUND: Malistar's Defender (ilevel 75 entry 17106)
-DELETE FROM item_template WHERE entry=17106;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17106;
 -- NOT FOUND: Dragon's Blood Cape (ilevel 73 entry 17107)
-DELETE FROM item_template WHERE entry=17107;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17107;
 -- STATS CHANGED: Choker of Enlightenment (ilevel 65 entry 17109). 1/2 versions
 UPDATE item_template SET `stat_value3`=0 WHERE entry=17109;
 -- SPELLS CHANGED: Choker of Enlightenment (ilevel 65 entry 17109). 2 versions
@@ -5101,7 +5097,7 @@ UPDATE item_template SET `stat_value1`=10, `stat_value2`=10, `stat_value3`=10, `
 -- 1.04 spell 21623 (Restores 2 mana per 5 sec.)
 UPDATE item_template SET `spellid_1`=21623 WHERE entry=17110;
 -- NOT FOUND: Blazefury Medallion (ilevel 68 entry 17111)
-DELETE FROM item_template WHERE entry=17111;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17111;
 -- DAMAGE CHANGED: Amberseal Keeper (ilevel 67 entry 17113). 1/1 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=17113
 UPDATE item_template SET `dmg_min1`=168, `dmg_max1`=252 WHERE entry=17113;
@@ -5112,9 +5108,9 @@ UPDATE item_template SET `dmg_min1`=168, `dmg_max1`=252 WHERE entry=17113;
 -- 1.04 spell 9415 (Increases damage and healing done by magical spells and effects by up to 9.)
 UPDATE item_template SET `spellid_2`=9415 WHERE entry=17113;
 -- NOT FOUND: Sulfuras, Hand of Ragnaros (ilevel 80 entry 17182)
-DELETE FROM item_template WHERE entry=17182;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17182;
 -- NOT FOUND: Sulfuron Hammer (ilevel 67 entry 17193)
-DELETE FROM item_template WHERE entry=17193;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17193;
 -- SPELLS REMOVED: Thunderstrike (ilevel 63 entry 17223). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname17.html
 -- * Modified spell 1
@@ -5125,105 +5121,105 @@ DELETE FROM item_template WHERE entry=17193;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0 WHERE entry=17223;
 -- NOT FOUND: Knight-Lieutenant's Dreadweave Boots (ilevel 63 entry 17562)
-DELETE FROM item_template WHERE entry=17562;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17562;
 -- NOT FOUND: Knight-Lieutenant's Dreadweave Gloves (ilevel 63 entry 17564)
-DELETE FROM item_template WHERE entry=17564;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17564;
 -- NOT FOUND: Lieutenant Commander's Headguard (ilevel 63 entry 17566)
-DELETE FROM item_template WHERE entry=17566;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17566;
 -- NOT FOUND: Knight-Captain's Dreadweave Leggings (ilevel 63 entry 17567)
-DELETE FROM item_template WHERE entry=17567;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17567;
 -- NOT FOUND: Knight-Captain's Dreadweave Robe (ilevel 63 entry 17568)
-DELETE FROM item_template WHERE entry=17568;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17568;
 -- NOT FOUND: Lieutenant Commander's Dreadweave Mantle (ilevel 63 entry 17569)
-DELETE FROM item_template WHERE entry=17569;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17569;
 -- NOT FOUND: Champion's Dreadweave Hood (ilevel 63 entry 17570)
-DELETE FROM item_template WHERE entry=17570;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17570;
 -- NOT FOUND: Legionnaire's Dreadweave Leggings (ilevel 63 entry 17571)
-DELETE FROM item_template WHERE entry=17571;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17571;
 -- NOT FOUND: Legionnaire's Dreadweave Robe (ilevel 63 entry 17572)
-DELETE FROM item_template WHERE entry=17572;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17572;
 -- NOT FOUND: Champion's Dreadweave Shoulders (ilevel 63 entry 17573)
-DELETE FROM item_template WHERE entry=17573;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17573;
 -- NOT FOUND: Blood Guard's Dreadweave Boots (ilevel 63 entry 17576)
-DELETE FROM item_template WHERE entry=17576;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17576;
 -- NOT FOUND: Blood Guard's Dreadweave Gloves (ilevel 63 entry 17577)
-DELETE FROM item_template WHERE entry=17577;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17577;
 -- NOT FOUND: Field Marshal's Coronal (ilevel 74 entry 17578)
-DELETE FROM item_template WHERE entry=17578;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17578;
 -- NOT FOUND: Marshal's Dreadweave Leggings (ilevel 71 entry 17579)
-DELETE FROM item_template WHERE entry=17579;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17579;
 -- NOT FOUND: Field Marshal's Dreadweave Shoulders (ilevel 74 entry 17580)
-DELETE FROM item_template WHERE entry=17580;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17580;
 -- NOT FOUND: Field Marshal's Dreadweave Robe (ilevel 74 entry 17581)
-DELETE FROM item_template WHERE entry=17581;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17581;
 -- NOT FOUND: Marshal's Dreadweave Boots (ilevel 71 entry 17583)
-DELETE FROM item_template WHERE entry=17583;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17583;
 -- NOT FOUND: Marshal's Dreadweave Gloves (ilevel 71 entry 17584)
-DELETE FROM item_template WHERE entry=17584;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17584;
 -- NOT FOUND: General's Dreadweave Boots (ilevel 71 entry 17586)
-DELETE FROM item_template WHERE entry=17586;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17586;
 -- NOT FOUND: General's Dreadweave Gloves (ilevel 71 entry 17588)
-DELETE FROM item_template WHERE entry=17588;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17588;
 -- NOT FOUND: Warlord's Dreadweave Mantle (ilevel 74 entry 17590)
-DELETE FROM item_template WHERE entry=17590;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17590;
 -- NOT FOUND: Warlord's Dreadweave Hood (ilevel 74 entry 17591)
-DELETE FROM item_template WHERE entry=17591;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17591;
 -- NOT FOUND: Warlord's Dreadweave Robe (ilevel 74 entry 17592)
-DELETE FROM item_template WHERE entry=17592;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17592;
 -- NOT FOUND: General's Dreadweave Pants (ilevel 71 entry 17593)
-DELETE FROM item_template WHERE entry=17593;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17593;
 -- NOT FOUND: Knight-Lieutenant's Satin Boots (ilevel 63 entry 17594)
-DELETE FROM item_template WHERE entry=17594;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17594;
 -- NOT FOUND: Knight-Lieutenant's Satin Gloves (ilevel 63 entry 17596)
-DELETE FROM item_template WHERE entry=17596;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17596;
 -- NOT FOUND: Lieutenant Commander's Diadem (ilevel 63 entry 17598)
-DELETE FROM item_template WHERE entry=17598;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17598;
 -- NOT FOUND: Knight-Captain's Satin Leggings (ilevel 63 entry 17599)
-DELETE FROM item_template WHERE entry=17599;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17599;
 -- NOT FOUND: Knight-Captain's Satin Robes (ilevel 63 entry 17600)
-DELETE FROM item_template WHERE entry=17600;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17600;
 -- NOT FOUND: Lieutenant Commander's Satin Amice (ilevel 63 entry 17601)
-DELETE FROM item_template WHERE entry=17601;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17601;
 -- NOT FOUND: Field Marshal's Headdress (ilevel 74 entry 17602)
-DELETE FROM item_template WHERE entry=17602;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17602;
 -- NOT FOUND: Marshal's Satin Pants (ilevel 71 entry 17603)
-DELETE FROM item_template WHERE entry=17603;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17603;
 -- NOT FOUND: Field Marshal's Satin Mantle (ilevel 74 entry 17604)
-DELETE FROM item_template WHERE entry=17604;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17604;
 -- NOT FOUND: Field Marshal's Satin Vestments (ilevel 74 entry 17605)
-DELETE FROM item_template WHERE entry=17605;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17605;
 -- NOT FOUND: Marshal's Satin Sandals (ilevel 71 entry 17607)
-DELETE FROM item_template WHERE entry=17607;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17607;
 -- NOT FOUND: Marshal's Satin Gloves (ilevel 71 entry 17608)
-DELETE FROM item_template WHERE entry=17608;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17608;
 -- NOT FOUND: Champion's Satin Cowl (ilevel 63 entry 17610)
-DELETE FROM item_template WHERE entry=17610;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17610;
 -- NOT FOUND: Legionnaire's Satin Trousers (ilevel 63 entry 17611)
-DELETE FROM item_template WHERE entry=17611;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17611;
 -- NOT FOUND: Legionnaire's Satin Vestments (ilevel 63 entry 17612)
-DELETE FROM item_template WHERE entry=17612;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17612;
 -- NOT FOUND: Champion's Satin Shoulderpads (ilevel 63 entry 17613)
-DELETE FROM item_template WHERE entry=17613;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17613;
 -- NOT FOUND: Blood Guard's Satin Boots (ilevel 63 entry 17616)
-DELETE FROM item_template WHERE entry=17616;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17616;
 -- NOT FOUND: Blood Guard's Satin Gloves (ilevel 63 entry 17617)
-DELETE FROM item_template WHERE entry=17617;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17617;
 -- NOT FOUND: General's Satin Boots (ilevel 71 entry 17618)
-DELETE FROM item_template WHERE entry=17618;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17618;
 -- NOT FOUND: General's Satin Gloves (ilevel 71 entry 17620)
-DELETE FROM item_template WHERE entry=17620;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17620;
 -- NOT FOUND: Warlord's Satin Mantle (ilevel 74 entry 17622)
-DELETE FROM item_template WHERE entry=17622;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17622;
 -- NOT FOUND: Warlord's Satin Cowl (ilevel 74 entry 17623)
-DELETE FROM item_template WHERE entry=17623;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17623;
 -- NOT FOUND: Warlord's Satin Robes (ilevel 74 entry 17624)
-DELETE FROM item_template WHERE entry=17624;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17624;
 -- NOT FOUND: General's Satin Leggings (ilevel 71 entry 17625)
-DELETE FROM item_template WHERE entry=17625;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17625;
 -- NOT FOUND: Frostwolf Insignia Rank 1 (ilevel 60 entry 17690)
-DELETE FROM item_template WHERE entry=17690;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17690;
 -- NOT FOUND: Stormpike Insignia Rank 1 (ilevel 60 entry 17691)
-DELETE FROM item_template WHERE entry=17691;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17691;
 -- SPELLS CHANGED: Gloves of the Greatfather (ilevel 38 entry 17721). 3 versions
 -- Source: http://www.thottbot.com/?i=19479 / http://wow.allakhazam.com/db/item.html?witem=17721
 -- Source: http://www.thottbot.com/?i=19479
@@ -5268,25 +5264,25 @@ UPDATE item_template SET `spellid_2`=21345 WHERE entry=17743;
 -- Source: http://wow.allakhazam.com/item.html?witem=17780
 UPDATE item_template SET `dmg_min1`=33, `dmg_max1`=69 WHERE entry=17780;
 -- NOT FOUND: Stormpike Insignia Rank 2 (ilevel 60 entry 17900)
-DELETE FROM item_template WHERE entry=17900;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17900;
 -- NOT FOUND: Stormpike Insignia Rank 3 (ilevel 60 entry 17901)
-DELETE FROM item_template WHERE entry=17901;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17901;
 -- NOT FOUND: Stormpike Insignia Rank 4 (ilevel 60 entry 17902)
-DELETE FROM item_template WHERE entry=17902;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17902;
 -- NOT FOUND: Stormpike Insignia Rank 5 (ilevel 60 entry 17903)
-DELETE FROM item_template WHERE entry=17903;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17903;
 -- NOT FOUND: Stormpike Insignia Rank 6 (ilevel 60 entry 17904)
-DELETE FROM item_template WHERE entry=17904;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17904;
 -- NOT FOUND: Frostwolf Insignia Rank 2 (ilevel 60 entry 17905)
-DELETE FROM item_template WHERE entry=17905;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17905;
 -- NOT FOUND: Frostwolf Insignia Rank 3 (ilevel 60 entry 17906)
-DELETE FROM item_template WHERE entry=17906;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17906;
 -- NOT FOUND: Frostwolf Insignia Rank 4 (ilevel 60 entry 17907)
-DELETE FROM item_template WHERE entry=17907;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17907;
 -- NOT FOUND: Frostwolf Insignia Rank 5 (ilevel 60 entry 17908)
-DELETE FROM item_template WHERE entry=17908;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17908;
 -- NOT FOUND: Frostwolf Insignia Rank 6 (ilevel 60 entry 17909)
-DELETE FROM item_template WHERE entry=17909;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17909;
 -- SPELLS REMOVED: Fist of Stone (ilevel 53 entry 17943). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev21.html
 -- * Modified spell 1
@@ -5294,9 +5290,9 @@ DELETE FROM item_template WHERE entry=17909;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=17943;
 -- NOT FOUND: Ragnaros Core (ilevel 65 entry 17982)
-DELETE FROM item_template WHERE entry=17982;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17982;
 -- NOT FOUND: Royal Seal of Alexis (ilevel 62 entry 18022)
-DELETE FROM item_template WHERE entry=18022;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18022;
 -- STATS CHANGED: Coal Miner Boots (ilevel 57 entry 18043). 1/1 versions
 UPDATE item_template SET `stat_value1`=13, `stat_value2`=0, `armor`=102 WHERE entry=18043;
 -- QUALITY CHANGED: Coal Miner Boots (ilevel 57 entry 18043)
@@ -5339,7 +5335,7 @@ UPDATE item_template SET Quality=2 WHERE entry=18048;
 -- 1.04 spell 9417 (Increases damage and healing done by magical spells and effects by up to 12.)
 UPDATE item_template SET `spellid_1`=9417 WHERE entry=18082;
 -- NOT FOUND: Jumanza Grips (ilevel 47 entry 18083)
-DELETE FROM item_template WHERE entry=18083;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18083;
 -- SPELLS REMOVED: Dragonrider Boots (ilevel 63 entry 18102). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname8.html
 -- * Modified spell 1
@@ -5347,19 +5343,19 @@ DELETE FROM item_template WHERE entry=18083;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18102;
 -- NOT FOUND: Band of Rumination (ilevel 63 entry 18103)
-DELETE FROM item_template WHERE entry=18103;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18103;
 -- NOT FOUND: Feralsurge Girdle (ilevel 63 entry 18104)
-DELETE FROM item_template WHERE entry=18104;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18104;
 -- NOT FOUND: Force Reactive Disk (ilevel 65 entry 18168)
-DELETE FROM item_template WHERE entry=18168;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18168;
 -- NOT FOUND: Eskhandar's Left Claw (ilevel 66 entry 18202)
-DELETE FROM item_template WHERE entry=18202;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18202;
 -- NOT FOUND: Eskhandar's Right Claw (ilevel 66 entry 18203)
-DELETE FROM item_template WHERE entry=18203;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18203;
 -- NOT FOUND: Eskhandar's Pelt (ilevel 66 entry 18204)
-DELETE FROM item_template WHERE entry=18204;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18204;
 -- NOT FOUND: Eskhandar's Collar (ilevel 71 entry 18205)
-DELETE FROM item_template WHERE entry=18205;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18205;
 -- STATS CHANGED: Drape of Benediction (ilevel 67 entry 18208). 1/1 versions
 UPDATE item_template SET `stat_value1`=10, `stat_value2`=9, `stat_value3`=4 WHERE entry=18208;
 -- SPELLS CHANGED: Drape of Benediction (ilevel 67 entry 18208). 1 versions
@@ -5396,11 +5392,11 @@ UPDATE item_template SET `spellid_1`=21596 WHERE entry=18298;
 -- 1.04 spell 9395 (Increases damage and healing done by magical spells and effects by up to 5.)
 UPDATE item_template SET `spellid_1`=9395 WHERE entry=18301;
 -- NOT FOUND: Band of Vigor (ilevel 58 entry 18302)
-DELETE FROM item_template WHERE entry=18302;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18302;
 -- NOT FOUND: Breakwater Legguards (ilevel 58 entry 18305)
-DELETE FROM item_template WHERE entry=18305;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18305;
 -- NOT FOUND: Gloves of Shadowy Mist (ilevel 58 entry 18306)
-DELETE FROM item_template WHERE entry=18306;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18306;
 -- SPELLS REMOVED: Riptide Shoes (ilevel 58 entry 18307). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev8.html
 -- * Modified spell 1
@@ -5408,7 +5404,7 @@ DELETE FROM item_template WHERE entry=18306;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18307;
 -- NOT FOUND: Gloves of Restoration (ilevel 59 entry 18309)
-DELETE FROM item_template WHERE entry=18309;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18309;
 -- SPELLS REMOVED: Energized Chestplate (ilevel 59 entry 18312). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev5.html
 -- * Modified spell 1
@@ -5416,9 +5412,9 @@ DELETE FROM item_template WHERE entry=18309;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18312;
 -- NOT FOUND: Helm of Awareness (ilevel 58 entry 18313)
-DELETE FROM item_template WHERE entry=18313;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18313;
 -- NOT FOUND: Ring of Demonic Potency (ilevel 59 entry 18315)
-DELETE FROM item_template WHERE entry=18315;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18315;
 -- SPELLS REMOVED: Merciful Greaves (ilevel 59 entry 18318). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname8.html
 -- * Modified spell 1
@@ -5439,15 +5435,15 @@ UPDATE item_template SET `spellid_1`=25109 WHERE entry=18321;
 -- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
 UPDATE item_template SET `spellid_1`=25110 WHERE entry=18322;
 -- NOT FOUND: Satyr's Bow (ilevel 58 entry 18323)
-DELETE FROM item_template WHERE entry=18323;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18323;
 -- NOT FOUND: Felhide Cap (ilevel 58 entry 18325)
-DELETE FROM item_template WHERE entry=18325;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18325;
 -- NOT FOUND: Razor Gauntlets (ilevel 59 entry 18326)
-DELETE FROM item_template WHERE entry=18326;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18326;
 -- NOT FOUND: Whipvine Cord (ilevel 59 entry 18327)
-DELETE FROM item_template WHERE entry=18327;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18327;
 -- NOT FOUND: Orphic Bracers (ilevel 59 entry 18337)
-DELETE FROM item_template WHERE entry=18337;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18337;
 -- SPELLS CHANGED: Wand of Arcane Potency (ilevel 59 entry 18338). 1 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=18338
 -- * Modified spell 1
@@ -5455,15 +5451,15 @@ DELETE FROM item_template WHERE entry=18337;
 -- 1.04 spell 13597 (Increases damage done by Arcane spells and effects by up to 11.)
 UPDATE item_template SET `spellid_1`=13597 WHERE entry=18338;
 -- NOT FOUND: Eidolon Cloak (ilevel 59 entry 18339)
-DELETE FROM item_template WHERE entry=18339;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18339;
 -- NOT FOUND: Eidolon Talisman (ilevel 59 entry 18340)
-DELETE FROM item_template WHERE entry=18340;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18340;
 -- NOT FOUND: Petrified Band (ilevel 59 entry 18343)
-DELETE FROM item_template WHERE entry=18343;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18343;
 -- NOT FOUND: Gauntlets of Accuracy (ilevel 61 entry 18349)
-DELETE FROM item_template WHERE entry=18349;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18349;
 -- NOT FOUND: Amplifying Cloak (ilevel 61 entry 18350)
-DELETE FROM item_template WHERE entry=18350;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18350;
 -- SPELLS REMOVED: Magically Sealed Bracers (ilevel 61 entry 18351). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname9.html
 -- * Modified spell 1
@@ -5471,7 +5467,7 @@ DELETE FROM item_template WHERE entry=18350;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18351;
 -- NOT FOUND: Petrified Bark Shield (ilevel 61 entry 18352)
-DELETE FROM item_template WHERE entry=18352;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18352;
 -- SPELLS REMOVED: Pimgib's Collar (ilevel 60 entry 18354). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev12.html
 -- * Modified spell 1
@@ -5479,9 +5475,9 @@ DELETE FROM item_template WHERE entry=18352;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18354;
 -- NOT FOUND: Gordok's Gloves (ilevel 60 entry 18368)
-DELETE FROM item_template WHERE entry=18368;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18368;
 -- NOT FOUND: Gordok's Handwraps (ilevel 60 entry 18369)
-DELETE FROM item_template WHERE entry=18369;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18369;
 -- SPELLS REMOVED: Vigilance Charm (ilevel 62 entry 18370). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iminlev12.html
 -- * Modified spell 1
@@ -5489,7 +5485,7 @@ DELETE FROM item_template WHERE entry=18369;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18370;
 -- NOT FOUND: Mindtap Talisman (ilevel 61 entry 18371)
-DELETE FROM item_template WHERE entry=18371;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18371;
 -- SPELLS REMOVED: Blade of the New Moon (ilevel 62 entry 18372). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev15.html
 -- * Modified spell 1
@@ -5497,9 +5493,9 @@ DELETE FROM item_template WHERE entry=18371;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18372;
 -- NOT FOUND: Chestplate of Tranquility (ilevel 62 entry 18373)
-DELETE FROM item_template WHERE entry=18373;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18373;
 -- NOT FOUND: Flamescarred Shoulders (ilevel 62 entry 18374)
-DELETE FROM item_template WHERE entry=18374;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18374;
 -- SPELLS REMOVED: Bracers of the Eclipse (ilevel 62 entry 18375). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname9.html
 -- * Modified spell 1
@@ -5507,9 +5503,9 @@ DELETE FROM item_template WHERE entry=18374;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18375;
 -- NOT FOUND: Quickdraw Gloves (ilevel 62 entry 18377)
-DELETE FROM item_template WHERE entry=18377;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18377;
 -- NOT FOUND: Silvermoon Leggings (ilevel 62 entry 18378)
-DELETE FROM item_template WHERE entry=18378;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18378;
 -- SPELLS REMOVED: Odious Greaves (ilevel 62 entry 18379). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/itype8.html
 -- * Modified spell 1
@@ -5517,13 +5513,13 @@ DELETE FROM item_template WHERE entry=18378;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18379;
 -- NOT FOUND: Eldritch Reinforced Legplates (ilevel 62 entry 18380)
-DELETE FROM item_template WHERE entry=18380;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18380;
 -- NOT FOUND: Evil Eye Pendant (ilevel 62 entry 18381)
-DELETE FROM item_template WHERE entry=18381;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18381;
 -- NOT FOUND: Force Imbued Gauntlets (ilevel 61 entry 18383)
-DELETE FROM item_template WHERE entry=18383;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18383;
 -- NOT FOUND: Bile-etched Spaulders (ilevel 62 entry 18384)
-DELETE FROM item_template WHERE entry=18384;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18384;
 -- SPELLS CHANGED: Robe of Everlasting Night (ilevel 62 entry 18385). 1 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=18385
 -- * Modified spell 1
@@ -5531,11 +5527,11 @@ DELETE FROM item_template WHERE entry=18384;
 -- 1.04 spell 14254 (Increases damage and healing done by magical spells and effects by up to 19.)
 UPDATE item_template SET `spellid_1`=14254 WHERE entry=18385;
 -- NOT FOUND: Padre's Trousers (ilevel 61 entry 18386)
-DELETE FROM item_template WHERE entry=18386;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18386;
 -- NOT FOUND: Brightspark Gloves (ilevel 60 entry 18387)
-DELETE FROM item_template WHERE entry=18387;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18387;
 -- NOT FOUND: Stoneshatter (ilevel 62 entry 18388)
-DELETE FROM item_template WHERE entry=18388;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18388;
 -- SPELLS CHANGED: Cloak of the Cosmos (ilevel 62 entry 18389). 1 versions
 -- Source: http://wow.allakhazam.com/db/item.html?witem=18389
 -- * Modified spell 1
@@ -5549,7 +5545,7 @@ UPDATE item_template SET `spellid_1`=23796 WHERE entry=18389;
 -- 1.04 spell 9317 (Increases healing done by spells and effects by up to 31.)
 UPDATE item_template SET `spellid_1`=9317 WHERE entry=18391;
 -- NOT FOUND: Warpwood Binding (ilevel 61 entry 18393)
-DELETE FROM item_template WHERE entry=18393;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18393;
 -- SPELLS REMOVED: Demon Howl Wristguards (ilevel 62 entry 18394). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname9.html
 -- * Modified spell 1
@@ -5557,7 +5553,7 @@ DELETE FROM item_template WHERE entry=18393;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18394;
 -- NOT FOUND: Emerald Flame Ring (ilevel 62 entry 18395)
-DELETE FROM item_template WHERE entry=18395;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18395;
 -- SPELLS CHANGED: Mind Carver (ilevel 62 entry 18396). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev7.html
 -- Source: http://wow.allakhazam.com/item.html?witem=18396
@@ -5566,11 +5562,11 @@ DELETE FROM item_template WHERE entry=18395;
 -- 1.04 spell 9397 (Increases damage and healing done by magical spells and effects by up to 7.)
 UPDATE item_template SET `spellid_1`=9397 WHERE entry=18396;
 -- NOT FOUND: Tidal Loop (ilevel 63 entry 18398)
-DELETE FROM item_template WHERE entry=18398;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18398;
 -- NOT FOUND: Ring of Living Stone (ilevel 57 entry 18400)
-DELETE FROM item_template WHERE entry=18400;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18400;
 -- NOT FOUND: Onyxia Tooth Pendant (ilevel 74 entry 18404)
-DELETE FROM item_template WHERE entry=18404;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18404;
 -- SPELLS REMOVED: Onyxia Blood Talisman (ilevel 74 entry 18406). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- * Modified spell 1
@@ -5609,35 +5605,35 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18411;
 -- 1.04 spell 13386 (Increased Defense +7.)
 UPDATE item_template SET `spellid_1`=13386 WHERE entry=18413;
 -- NOT FOUND: Bonecrusher (ilevel 63 entry 18420)
-DELETE FROM item_template WHERE entry=18420;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18420;
 -- NOT FOUND: Backwood Helm (ilevel 63 entry 18421)
-DELETE FROM item_template WHERE entry=18421;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18421;
 -- NOT FOUND: Kreeg's Mug (ilevel 60 entry 18425)
-DELETE FROM item_template WHERE entry=18425;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18425;
 -- NOT FOUND: Sergeant's Cloak (ilevel 35 entry 18427)
-DELETE FROM item_template WHERE entry=18427;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18427;
 -- NOT FOUND: Senior Sergeant's Insignia (ilevel 50 entry 18428)
-DELETE FROM item_template WHERE entry=18428;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18428;
 -- NOT FOUND: First Sergeant's Plate Bracers (ilevel 50 entry 18430)
-DELETE FROM item_template WHERE entry=18430;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18430;
 -- NOT FOUND: First Sergeant's Mail Wristguards (ilevel 50 entry 18432)
-DELETE FROM item_template WHERE entry=18432;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18432;
 -- STATS CHANGED: First Sergeant's Leather Armguards (ilevel 50 entry 18435). 1/1 versions
 UPDATE item_template SET `stat_value2`=0, `stat_type3`=5, `stat_value3`=6 WHERE entry=18435;
 -- NOT FOUND: First Sergeant's Dragonhide Armguards (ilevel 50 entry 18436)
-DELETE FROM item_template WHERE entry=18436;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18436;
 -- NOT FOUND: First Sergeant's Silk Cuffs (ilevel 50 entry 18437)
-DELETE FROM item_template WHERE entry=18437;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18437;
 -- NOT FOUND: Sergeant Major's Chain Armguards (ilevel 63 entry 18448)
-DELETE FROM item_template WHERE entry=18448;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18448;
 -- NOT FOUND: Robe of Combustion (ilevel 60 entry 18450)
-DELETE FROM item_template WHERE entry=18450;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18450;
 -- NOT FOUND: Hyena Hide Belt (ilevel 60 entry 18451)
-DELETE FROM item_template WHERE entry=18451;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18451;
 -- NOT FOUND: Sergeant Major's Leather Armsplints (ilevel 63 entry 18452)
-DELETE FROM item_template WHERE entry=18452;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18452;
 -- NOT FOUND: Sergeant Major's Dragonhide Armsplints (ilevel 63 entry 18454)
-DELETE FROM item_template WHERE entry=18454;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18454;
 -- STATS CHANGED: Sergeant Major's Silk Cuffs (ilevel 63 entry 18456). 1/1 versions
 UPDATE item_template SET `stat_value1`=18 WHERE entry=18456;
 -- SPELLS REMOVED: Modest Armguards (ilevel 60 entry 18458). 1 versions
@@ -5653,7 +5649,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18458;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18459;
 -- NOT FOUND: Gordok Nose Ring (ilevel 60 entry 18464)
-DELETE FROM item_template WHERE entry=18464;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18464;
 -- SPELLS CHANGED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18465). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- Source: http://wow.allakhazam.com/db/item.html?witem=18471
@@ -5662,7 +5658,7 @@ DELETE FROM item_template WHERE entry=18464;
 -- 1.04 spell 9344 (Increases damage and healing done by magical spells and effects by up to 15.)
 UPDATE item_template SET `spellid_1`=9344 WHERE entry=18465;
 -- NOT FOUND: Royal Seal of Eldre'Thalas (ilevel 62 entry 18466)
-DELETE FROM item_template WHERE entry=18466;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18466;
 -- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18467). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- * Modified spell 1
@@ -5670,7 +5666,7 @@ DELETE FROM item_template WHERE entry=18466;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18467;
 -- NOT FOUND: Royal Seal of Eldre'Thalas (ilevel 62 entry 18468)
-DELETE FROM item_template WHERE entry=18468;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18468;
 -- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18469). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- * Modified spell 1
@@ -5681,7 +5677,7 @@ DELETE FROM item_template WHERE entry=18468;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=18469;
 -- NOT FOUND: Royal Seal of Eldre'Thalas (ilevel 62 entry 18470)
-DELETE FROM item_template WHERE entry=18470;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18470;
 -- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18471). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- * Modified spell 1
@@ -5689,7 +5685,7 @@ DELETE FROM item_template WHERE entry=18470;
 -- 1.04 spell 0 ()
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18471;
 -- NOT FOUND: Royal Seal of Eldre'Thalas (ilevel 62 entry 18472)
-DELETE FROM item_template WHERE entry=18472;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18472;
 -- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18473). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- * Modified spell 1
@@ -5787,3 +5783,18 @@ UPDATE item_template SET `spellid_1`=9415 WHERE entry=18546;
 -- 1.12 spell 13387 (Increased Defense +8.)
 -- 1.04 spell 21408 (Increased Defense +12.)
 UPDATE item_template SET `spellid_1`=21408 WHERE entry=18547;
+
+-- Flarecore Gloves are Soulbound https://github.com/elysium-project/itemization/issues/13
+UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 16979;
+
+-- Remove items for players
+DELETE FROM creature_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM reference_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM disenchant_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM fishing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM gameobject_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM item_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM mail_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM pickpocketing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM skinning_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM npc_vendor WHERE item IN (SELECT * FROM forbidden_items);

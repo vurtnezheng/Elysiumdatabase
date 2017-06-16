@@ -11,17 +11,13 @@ DELETE FROM `reference_loot_template` WHERE `item` IN (24102, 23320, 24101, 2289
 
 -- Removing ZG 1.11 Drop
 
-DELETE FROM `creature_loot_template` WHERE `item` IN (22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
-DELETE FROM `reference_loot_template` WHERE `item` IN (22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
+DELETE FROM `creature_loot_template` WHERE `item` IN (22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
+DELETE FROM `reference_loot_template` WHERE `item` IN (22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
 
 -- Removing 1.11 Relics From Drop
 
 DELETE FROM `creature_loot_template` WHERE `item`  IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
 DELETE FROM `reference_loot_template` WHERE `item` IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
-
--- GO "Sothos and Jarien's Heirlooms" Has Been Removed
-
-DELETE FROM `gameobject` WHERE `id` = 181083;
 
 -- Setting "Dreamscale Breastplate" Loot Type to BoP (should be shanged back in 1.10)
 

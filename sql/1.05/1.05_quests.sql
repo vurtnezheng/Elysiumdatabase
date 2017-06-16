@@ -2,11 +2,9 @@
 -- To be applied on QA first for testing.
 
 -- Autocompleting Quests Fix
-
-DELETE FROM `quest_template` WHERE `entry` IN (8282, 8278, 8277, 8324);
+UPDATE quest_template SET Method = (Method | 1) WHERE `entry` IN (8282, 8278, 8277, 8324);
 
 -- Re-enable Holiday Quests for 1.5 Patch
-
 DELETE FROM `quest_template` WHERE `entry` IN (8635, 8636, 8642, 8643, 8644, 8645, 8646, 8647, 8648, 8649, 8650, 8651, 8652, 8653, 8654, 8670, 8671, 8672, 8673, 8674, 8675, 8676, 8677, 8679, 8680, 8681, 8682, 8683, 8684, 8685, 8686, 8688, 8713, 8714, 8715, 8716, 8717, 8718, 8719, 8720, 8721, 8722, 8723, 8724, 8725, 8726, 8727, 8746, 8763, 8767, 8768, 8769, 8803, 8827, 8860, 8861, 8866, 8867, 8868, 8870, 8871, 8872, 8873, 8875, 8883, 8897, 8898, 8899, 8900, 8901, 8902, 8903, 8979, 8980, 8981, 8982, 8983, 8984, 9024, 9025, 9026, 9027, 9028, 9029, 9319, 9322, 9323, 9324, 9325, 9326, 9330, 9331, 9332, 9339, 9365, 9368);
 
 INSERT INTO quest_template VALUES
@@ -110,100 +108,53 @@ INSERT INTO quest_template VALUES
 --  -----------------------------------------------------------
 --  Insert mounts quests (transforms pre 1.4 mount to post 1.4)
 --  -----------------------------------------------------------
-insert into creature_questrelation value    (3685,7663);
-insert into creature_involvedrelation value (3685,7663);
-insert into creature_questrelation value    (3685,7662);
-insert into creature_involvedrelation value (3685,7662);
-insert into creature_questrelation value    (3362,7660);
-insert into creature_involvedrelation value (3362,7660);
-insert into creature_questrelation value    (3362,7661);
-insert into creature_involvedrelation value (3362,7661);
-insert into creature_questrelation value    (7952,7664);
-insert into creature_involvedrelation value (7952,7664);
-insert into creature_questrelation value    (7952,7665);
-insert into creature_involvedrelation value (7952,7665);
-insert into creature_questrelation value    ( 384,7677);
-insert into creature_involvedrelation value ( 384,7677);
-insert into creature_questrelation value    ( 384,7678);
-insert into creature_involvedrelation value ( 384,7678);
-insert into creature_questrelation value    (4885,7677);
-insert into creature_involvedrelation value (4885,7677);
-insert into creature_questrelation value    (4885,7678);
-insert into creature_involvedrelation value (4885,7678);
-insert into creature_questrelation value    (2357,7677);
-insert into creature_involvedrelation value (2357,7677);
-insert into creature_questrelation value    (2357,7678);
-insert into creature_involvedrelation value (2357,7678);
-insert into creature_questrelation value    (1460,7677);
-insert into creature_involvedrelation value (1460,7677);
-insert into creature_questrelation value    (1460,7678);
-insert into creature_involvedrelation value (1460,7678);
-insert into creature_questrelation value    (1261,7673);
-insert into creature_involvedrelation value (1261,7673);
-insert into creature_questrelation value    (1261,7674);
-insert into creature_involvedrelation value (1261,7674);
-insert into creature_questrelation value    (4730,7671);
-insert into creature_involvedrelation value (4730,7671);
-insert into creature_questrelation value    (4730,7672);
-insert into creature_involvedrelation value (4730,7672);
-insert into creature_questrelation value    (7955,7675);
-insert into creature_involvedrelation value (7955,7675);
-insert into creature_questrelation value    (7955,7676);
-insert into creature_involvedrelation value (7955,7676);
+REPLACE INTO creature_questrelation value    (3685,7663);
+REPLACE INTO creature_involvedrelation value (3685,7663);
+REPLACE INTO creature_questrelation value    (3685,7662);
+REPLACE INTO creature_involvedrelation value (3685,7662);
+REPLACE INTO creature_questrelation value    (3362,7660);
+REPLACE INTO creature_involvedrelation value (3362,7660);
+REPLACE INTO creature_questrelation value    (3362,7661);
+REPLACE INTO creature_involvedrelation value (3362,7661);
+REPLACE INTO creature_questrelation value    (7952,7664);
+REPLACE INTO creature_involvedrelation value (7952,7664);
+REPLACE INTO creature_questrelation value    (7952,7665);
+REPLACE INTO creature_involvedrelation value (7952,7665);
+REPLACE INTO creature_questrelation value    ( 384,7677);
+REPLACE INTO creature_involvedrelation value ( 384,7677);
+REPLACE INTO creature_questrelation value    ( 384,7678);
+REPLACE INTO creature_involvedrelation value ( 384,7678);
+REPLACE INTO creature_questrelation value    (4885,7677);
+REPLACE INTO creature_involvedrelation value (4885,7677);
+REPLACE INTO creature_questrelation value    (4885,7678);
+REPLACE INTO creature_involvedrelation value (4885,7678);
+REPLACE INTO creature_questrelation value    (2357,7677);
+REPLACE INTO creature_involvedrelation value (2357,7677);
+REPLACE INTO creature_questrelation value    (2357,7678);
+REPLACE INTO creature_involvedrelation value (2357,7678);
+REPLACE INTO creature_questrelation value    (1460,7677);
+REPLACE INTO creature_involvedrelation value (1460,7677);
+REPLACE INTO creature_questrelation value    (1460,7678);
+REPLACE INTO creature_involvedrelation value (1460,7678);
+REPLACE INTO creature_questrelation value    (1261,7673);
+REPLACE INTO creature_involvedrelation value (1261,7673);
+REPLACE INTO creature_questrelation value    (1261,7674);
+REPLACE INTO creature_involvedrelation value (1261,7674);
+REPLACE INTO creature_questrelation value    (4730,7671);
+REPLACE INTO creature_involvedrelation value (4730,7671);
+REPLACE INTO creature_questrelation value    (4730,7672);
+REPLACE INTO creature_involvedrelation value (4730,7672);
+REPLACE INTO creature_questrelation value    (7955,7675);
+REPLACE INTO creature_involvedrelation value (7955,7675);
+REPLACE INTO creature_questrelation value    (7955,7676);
+REPLACE INTO creature_involvedrelation value (7955,7676);
 
-DELETE FROM quest_template WHERE entry IN (
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (
 19212  -- http://wowwiki.wikia.com/Plans:_Nightfall
 );
 
 -- Darkmoon faire quests
-DELETE FROM creature_involvedrelation WHERE quest IN (
-7928, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Warlords_Deck
-7927, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Portals_Deck
-7929, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Elementals_Deck
-7907, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Beast_Deck
-7935, -- 10 Tickets - Last Month's Mutton
-7932, -- 12 Tickets - Lesser Darkmoon Prize
-7981, -- 1200 Tickets - Amulet of the Darkmoon
-7940, -- 1200 Tickets - Orb of the Darkmoon
-7933, -- 40 Tickets - Greater Darkmoon Prize
-7930, -- 5 Tickets - Darkmoon Flower
-7931, -- 5 Tickets - Minor Darkmoon Prize
-7934, -- 50 Tickets - Darkmoon Storage Box
-7936, -- 50 Tickets - Last Year's Mutton
-7885, -- Armor Kits
-7892, -- Big Black Mace
-7881, -- Carnival Boots
-7882, -- Carnival Jerkins
-7889, -- Coarse Weightstone
-7894, -- Copper Modulator
-7884, -- Crocolisk Boy and the Bearded Murloc
-7903, -- Evil Bat Eyes
-8222, -- Glowing Scorpid Blood
-7896, -- Green Fireworks
-7891, -- Green Iron Bracers
-7890, -- Heavy Grinding Stone
-7897, -- Mechanical Repair Kits
-7941, -- More Armor Kits
-7943, -- More Bat Eyes
-7939, -- More Dense Grinding Stones
-8223, -- More Glowing Scorpid Blood
-7942, -- More Thorium Widgets
-7893, -- Rituals of Strength
-7899, -- Small Furry Paws
-7901, -- Soft Bushy Tails
-7946, -- Spawn of Jubjub
-7883, -- The World's Largest Gnome!
-7898, -- Thorium Widget
-7900, -- Torn Bear Pelts
-7902, -- Vibrant Plumes
-7895, -- Whirring Bronze Gizmo
-7937, -- Your Fortune Awaits You...
-7938, -- Your Fortune Awaits You...
-7944, -- Your Fortune Awaits You...
-7945 -- Your Fortune Awaits You...
-);
-
-DELETE FROM creature_questrelation WHERE quest IN (
+UPDATE quest_template SET Method = (Method | 1) WHERE quest IN (
 7928, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Warlords_Deck
 7927, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Portals_Deck
 7929, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Elementals_Deck
@@ -251,7 +202,7 @@ DELETE FROM creature_questrelation WHERE quest IN (
 );
 
 -- Remove Class Quests for the Warrior, Shaman, Paladin, and Warlock
-DELETE FROM quest_template WHERE entry IN (
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (
 -- Warrior:
 8417, -- http://wowwiki.wikia.com/Quest:A_Troubled_Spirit
 8423, -- http://wowwiki.wikia.com/Quest:Warrior_Kinship
@@ -273,13 +224,13 @@ DELETE FROM quest_template WHERE entry IN (
 );
 
 -- [Glyph Chasing]
-DELETE from quest_template WHERE entry=8309;
+UPDATE quest_template SET Method = (Method | 1) WHERE entry=8309;
 
 -- Fix Alterac Valley Kazzak quest: non existant reward removed.
 UPDATE quest_template SET RewChoiceItemId4 = 0 WHERE entry IN (7202, 7181);
 
 -- Sunken Temple Level 50 Quests
-DELETE FROM quest_template WHERE entry IN (8418, 8413, 8422, 8425);
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (8418, 8413, 8422, 8425);
 
 -- http://wowwiki.wikia.com/wiki/Patch_1.11.0
 -- Class specific enchantments given by Zanza the Restless no longer require Arcanum (Librams) from Dire Maul.
@@ -293,9 +244,10 @@ UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId
 UPDATE quest_template    SET ReqItemId3 = 18331, ReqItemCount3 = 1,    ReqItemId4 = 19721, ReqItemCount4 = 1    WHERE entry = 8185;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19720, ReqItemCount4 = 1    WHERE entry = 8188;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19717, ReqItemCount4 = 1    WHERE entry = 8190;
+
 UPDATE quest_template SET ReqItemId1 = 0, ReqItemCount1 = 0 WHERE entry IN (8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192);
 
 -- Enable Warlock Epic Mount Quest Chain
-UPDATE `quest_template` SET `MinLevel` = 60 WHERE `entry` = 7562;
+UPDATE `quest_template` SET `Method` = `Method` & 6 WHERE `entry` = 7562;
 -- Enable Paladin Epic Mount Quest Chain
-UPDATE `quest_template` SET `MinLevel` = 60 WHERE `entry` = 7638;
+UPDATE `quest_template` SET `Method` = `Method` & 6 WHERE `entry` = 7638;

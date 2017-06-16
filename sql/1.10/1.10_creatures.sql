@@ -1,8 +1,8 @@
--- Patch 1.10 World DB Itemization Changes. 
+-- Patch 1.10 World DB Itemization Changes.
 -- To be applied on QA first for testing.
 
 -- Zanza's Potent Potables
-REPLACE INTO `spell_mod` (`Id`, `AttributesEx3`, `Comment`) VALUES 
+REPLACE INTO `spell_mod` (`Id`, `AttributesEx3`, `Comment`) VALUES
 (24382, 1048576, 'Spirit of Zanza - persist through death (before 1.12)'),
 (24417, 1048576, 'Sheen of Zanza - persist through death (before 1.12)'),
 (24383, 1048576, 'Swiftness of Zanza - persist through death (before 1.12)');
@@ -50,7 +50,7 @@ UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
 
 -- Disable unavailable instances
 -- ATTENTION! Requires update once events are implemented!
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN 
+UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN
 (
 533,    -- Naxxramas 1.12
 531,    -- AQ40 (Temple of AQ) 1.9
@@ -173,9 +173,6 @@ delete from conditions where condition_entry=70;
 insert into conditions value (70,12,155,0);
 update creature_loot_template set condition_id=70 where item in (22527,22529,22528,22525,22526);
 
--- Old PvP set Patch Vendor Pre-1.11
--- Delete 1.11 PvP Items
-delete from item_template where entry in (22843,22852,22855,22856,22857,22858,22859,22860,22862,22863,22864,22865,22867,22868,22869,22870,22872,22873,22874,22875,22876,22877,22878,22879,22880,22881,22882,22883,22884,22885,22886,22887,23243,23244,23251,23252,23253,23254,23255,23256,23257,23258,23259,23260,23261,23262,23263,23264,23272,23273,23274,23275,23276,23277,23278,23279,23280,23281,23282,23283,23284,23285,23286,23287,23288,23289,23290,23291,23292,23293,23294,23295,23296,23297,23298,23299,23300,23301,23302,23303,23304,23305,23306,23307,23308,23309,23310,23311,23312,23313,23314,23315,23316,23317,23318,23319,23451,23452,23453,23454,23455,23456,23464,23465,23466,23467,23468,23469);
 -- Vendor Pre 1.11 PvP items
 delete from npc_vendor where entry in (12785,12795);
 insert into npc_vendor value (12785, 16369, 0, 0);
@@ -372,7 +369,7 @@ insert into npc_vendor value (12795, 17624, 0, 0);
 insert into npc_vendor value (12795, 17625, 0, 0);
 
 -- http://wowwiki.wikia.com/wiki/Patch_1.11.0
--- Class specific enchantments given by Zanza the Restless no longer require Arcanum (Librams) from Dire Maul. 
+-- Class specific enchantments given by Zanza the Restless no longer require Arcanum (Librams) from Dire Maul.
 -- The requirements have been changed to items found within Zul'Gurub. Speak with Zanza the Restless for more information.
 UPDATE quest_template    SET ReqItemId3 = 18331, ReqItemCount3 = 1,    ReqItemId4 = 19716, ReqItemCount4 = 1    WHERE entry = 8192;
 UPDATE quest_template    SET ReqItemId3 = 18329, ReqItemCount3 = 1,    ReqItemId4 = 19723, ReqItemCount4 = 1    WHERE entry = 8186;
@@ -383,5 +380,5 @@ UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId
 UPDATE quest_template    SET ReqItemId3 = 18331, ReqItemCount3 = 1,    ReqItemId4 = 19721, ReqItemCount4 = 1    WHERE entry = 8185;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19720, ReqItemCount4 = 1    WHERE entry = 8188;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19717, ReqItemCount4 = 1    WHERE entry = 8190;
-DELETE FROM item_template WHERE entry=22637;
+
 UPDATE quest_template SET ReqItemId1 = 0, ReqItemCount1 = 0 WHERE entry IN (8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192);

@@ -18,7 +18,7 @@ INSERT INTO spell_disabled VALUES (24801);
 
 -- Disable 1.9 Oils & Rumsey Rum Spell
 
-INSERT INTO `spell_disabled` VALUES 
+INSERT INTO `spell_disabled` VALUES
 (25117),
 (25118),
 (25119),
@@ -33,4 +33,6 @@ INSERT INTO `spell_disabled` VALUES
 (25691),
 (26276),
 (26278),
-(26277);
+(26277),
+(24800),
+(24801);

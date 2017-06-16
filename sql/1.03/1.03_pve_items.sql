@@ -1,5 +1,6 @@
+CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
 
--- Update Wrong Stats On Currently Existing 1.2 Gear: 
+-- Update Wrong Stats On Currently Existing 1.2 Gear:
 
 UPDATE `item_template` SET `stat_type1` = 7, `stat_value1` = 23, `stat_type2` = 4, `stat_value2` = 24, `stat_type3` = 6, `stat_value3` = 7, `stat_type4` = 3, `stat_value4` = 12, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 655, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 13665, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 0, `spelltrigger_2` = 0, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 16867;
 
@@ -92,7 +93,7 @@ UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
 update item_template set quality=2,stat_value2=12,spellid_1=0,spelltrigger_1=0,spellid_2=0,spelltrigger_2=0 where entry=11662;
 update item_template set quality=2,stat_value1=5,armor=455 where entry=11703;
 update item_template set stat_type1=6,stat_value1=16,stat_type2=3,stat_value2=7,spellid_1=0,spelltrigger_1=0,spellid_2=0,spelltrigger_2=0 where entry=13178; -- Pre 1.4 Weapon speed fix
- 
+
 -- Pre 1.4 Weapon speed fix
 
 update item_template set delay=2700 where entry=13204;
@@ -110,7 +111,7 @@ update item_template set delay=1800 where entry=18044;
 
 -- Thorium brotherhood pattern pre-1.04
 
-delete from item_template where entry in (19206,19207,20039,20040,18945,18263,18265,19219,19220,19330,19331,19332,19333);
+REPLACE INTO forbidden_items SELECT entry FROM item_template where entry in (19206,19207,20039,20040,18945,18263,18265,19219,19220,19330,19331,19332,19333);
 
 -- Pre-1.04 STATS CHANGED: Shadowcraft Boots (ilevel 59 entry 16711).
 
@@ -124,7 +125,7 @@ UPDATE item_template SET RequiredLevel=58, dmg_min1=89, dmg_max1=167, delay=2800
 -- Snowblind Shoes: Azuregos loot added in 1.5
 -- Source: http://wowwiki.wikia.com/Snowblind_Shoes
 
-DELETE FROM item_template WHERE entry=19131;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19131;
 
 UPDATE item_template SET bonding=1 WHERE entry IN (14512,14513,14514);
 
@@ -177,27 +178,27 @@ UPDATE item_template SET stat_type1='7', stat_value1='12', stat_type2='6', stat_
 -- Remove recipes that teach how to craft inexistant items
 -- Recipes to delete :
 
-delete from item_template where spellid_1 in (21164,22760,22798,22933,23007,23089,23091,23093,23094,23400,23490,23491,23630,23631,23634,23635,23640,23641,23651,23654,23655,23656,23657,23668,23669,23670,23671,23672,23673,23711,23712,23713,23714,23715,23716,23717,23718,24094,24095,24096,24126,24127,24128,24129,24130,24142,24143,24144,24145,24146,24147,24358,24359,24400,24656,24657,24704,24855,24856,24859,24860,24861,24862,24908,24909,24911,24915,24916,24917,24941,26280,26411,26413,27591,27592,27593,27594,27595,27596,27833,27834,27835,28211,28212,28213,28214,28215,28228,28229,28230,28231,28232,28233,28245,28248,28249,28251,28252,28253,28254,28255,28256,28257,28258,28259,28260,28261,28262,28263,28464,28465,28466,28475,28476,28477,28483,28484,28485);
-  
+REPLACE INTO forbidden_items SELECT entry FROM item_template where spellid_1 in (21164,22760,22798,22933,23007,23089,23091,23093,23094,23400,23490,23491,23630,23631,23634,23635,23640,23641,23651,23654,23655,23656,23657,23668,23669,23670,23671,23672,23673,23711,23712,23713,23714,23715,23716,23717,23718,24094,24095,24096,24126,24127,24128,24129,24130,24142,24143,24144,24145,24146,24147,24358,24359,24400,24656,24657,24704,24855,24856,24859,24860,24861,24862,24908,24909,24911,24915,24916,24917,24941,26280,26411,26413,27591,27592,27593,27594,27595,27596,27833,27834,27835,28211,28212,28213,28214,28215,28228,28229,28230,28231,28232,28233,28245,28248,28249,28251,28252,28253,28254,28255,28256,28257,28258,28259,28260,28261,28262,28263,28464,28465,28466,28475,28476,28477,28483,28484,28485);
+
 -- Remove some class spell books
 
-DELETE FROM item_template WHERE entry IN (22890,22891,24102,24101,23320);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (22890,22891,24102,24101,23320);
 
 -- Onyxia head removed
 
-delete from item_template where entry in (18422,18423);
+REPLACE INTO forbidden_items SELECT entry FROM item_template where entry in (18422,18423);
 
 -- 1.6 Items (recipes, patterns, plans)
 
-DELETE FROM item_template WHERE entry IN (19447, 19446, 19442, 19216, 19217, 19328, 19329, 19203, 19205, 19204, 19202, 19215, 19327, 19326, 19218, 19445, 22392, 19449, 19448, 19444, 19331, 19332, 19220, 19219, 19330, 19333, 19208, 19211, 19209, 19207, 19206, 19210, 19212, 20761);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19447, 19446, 19442, 19216, 19217, 19328, 19329, 19203, 19205, 19204, 19202, 19215, 19327, 19326, 19218, 19445, 22392, 19449, 19448, 19444, 19331, 19332, 19220, 19219, 19330, 19333, 19208, 19211, 19209, 19207, 19206, 19210, 19212, 20761);
 
 -- Twilight Cultist Ring of Lordship
 
-DELETE FROM item_template WHERE entry=20451;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20451;
 
 -- Delete 1.8 Specific Recipes
 
-DELETE FROM item_template WHERE entry IN (20382, 20509, 20511, 20508, 20507, 20510, 20506);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20382, 20509, 20511, 20508, 20507, 20510, 20506);
 
 -- "Bonereaver's Edge" Stats Has Been Corrected
 
@@ -205,13 +206,12 @@ UPDATE `item_template` SET `stat_type1` = 0, `stat_value1` = 0, `stat_type2` = 0
 
 -- Onyxia should drop http://db.vanillagaming.org/?item=18205
 -- Magmadar should drop http://db.vanillagaming.org/?item=18203
-
 DELETE FROM `item_template` WHERE `entry` IN (18203, 18205);
 
 INSERT INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `dmg_min3`, `dmg_max3`, `dmg_type3`, `dmg_min4`, `dmg_max4`, `dmg_type4`, `dmg_min5`, `dmg_max5`, `dmg_type5`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `Duration`, `ExtraFlags`, `OtherTeamEntry`) values('18203','2','13','Eskhandar\'s Right Claw','30595','4','0','1','454525','90905','21','-1','-1','66','60','0','0','0','0','0','0','0','1','1','0','3','4','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','50','94','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1500','0','0','22640','2','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','0','0','0','1','','0','0','0','0','0','1','7','0','0','261','75','0','0','0','','65','0','0','0','0','0','1');
 insert into `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `dmg_min3`, `dmg_max3`, `dmg_type3`, `dmg_min4`, `dmg_max4`, `dmg_type4`, `dmg_min5`, `dmg_max5`, `dmg_type5`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `Duration`, `ExtraFlags`, `OtherTeamEntry`) values('18205','4','0','Eskhandar\'s Collar','16132','4','0','1','133150','33287','2','-1','-1','71','60','0','0','0','0','0','0','0','1','1','0','7','17','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','13669','1','0','0','0','0','0','7597','1','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','-1','0','-1','0','0','0','0','0','0','0','1','','0','0','0','0','0','0','0','0','0','261','0','0','0','0','','65','0','0','0','0','0','1');
 
--- These Items from Kazzak should be ingame (along with current): 
+-- These Items from Kazzak should be ingame (along with current):
 
 DELETE FROM `item_template` WHERE `entry` IN (18545, 18202, 18543, 18204);
 
@@ -345,3 +345,24 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 (18367, 4,  3,  'Gordok\'s Gauntlets',  30720,  3,  0,  1,  73814,  14762,  10, -1, -1, 60, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  0,  7,  10, 5,  10, 6,  9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  221,    0,  0,  0,  0,  0,  0,  0,  0,  0,  18384,  1,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  0,  0,  0,  1,  '', 0,  0,  0,  0,  0,  5,  0,  0,  0,  0,  40, 0,  0,  0,  '', 49, 0,  0,  0,  0,  0,  1),
 (18368, 4,  2,  'Gordok\'s Gloves', 30719,  3,  0,  1,  61742,  12348,  10, -1, -1, 60, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  0,  7,  10, 5,  10, 6,  9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  106,    0,  0,  0,  0,  0,  0,  0,  0,  0,  18384,  1,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  0,  0,  0,  1,  '', 0,  0,  0,  0,  0,  8,  0,  0,  0,  0,  35, 0,  0,  0,  '', 49, 0,  0,  0,  0,  0,  1),
 (18369, 4,  1,  'Gordok\'s Handwraps',  16710,  3,  0,  1,  49577,  9915,   10, -1, -1, 60, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  0,  7,  10, 5,  10, 6,  9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  53, 0,  0,  0,  0,  0,  0,  0,  0,  0,  18384,  1,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  -1, 0,  -1, 0,  0,  0,  0,  0,  0,  0,  1,  '', 0,  0,  0,  0,  0,  7,  0,  0,  0,  0,  30, 0,  0,  0,  '', 49, 0,  0,  0,  0,  0,  1);
+
+-- Flarecore Gloves are Soulbound https://github.com/elysium-project/itemization/issues/13
+UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 16979;
+
+-- Fang of the Mystics (ilevel 70 entry 17070). 1 versions
+-- Source: http://wow.allakhazam.com/dyn/items/wratio15.html
+-- Mod dmg
+-- 1.10 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
+UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
+
+-- Remove items for players
+DELETE FROM creature_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM reference_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM disenchant_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM fishing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM gameobject_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM item_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM mail_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM pickpocketing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM skinning_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM npc_vendor WHERE item IN (SELECT * FROM forbidden_items);
