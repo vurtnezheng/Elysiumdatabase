@@ -247,6 +247,276 @@ INSERT INTO reference_loot_template VALUES(@refTable,18723,0,2,1,1,0);
 update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
 update reference_loot_template set condition_id = 3 where entry = 326158 and item = 18824;
 update reference_loot_template set condition_id = 2 where entry = 326158 and item = 18829;
+-- Eirs 1.3—1.5 loot fixes
+-- Double loot fixes
+-- DM Alzzin the Wildshaper loot
+DELETE FROM `creature_loot_template` WHERE `entry` = 11492;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11492, 8948,   5.9524, 0,  2,  4,  0),
+(11492, 14047,  16.7659,    0,  2,  4,  0),
+(11492, 324906, 2,  1,  -324906,    1,  0),
+(11492, 324907, 2,  2,  -324907,    1,  0),
+(11492, 324908, 100,    3,  -324908,    1,  0),
+(11492, 324909, 100,    4,  -324909,    1,  0);
+-- Fix his reference loot templates
+DELETE FROM `reference_loot_template` WHERE `entry` = 324909;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324909,    18309,  0,  4,  1,  1,  0),
+(324909,    18310,  0,  4,  1,  1,  0),
+(324909,    18312,  0,  4,  1,  1,  0),
+(324909,    18314,  0,  4,  1,  1,  0),
+(324909,    18315,  0,  4,  1,  1,  0),
+(324909,    18318,  0,  4,  1,  1,  0),
+(324909,    18321,  0,  4,  1,  1,  0),
+(324909,    18326,  0,  4,  1,  1,  0),
+(324909,    18327,  0,  4,  1,  1,  0),
+(324909,    18328,  0,  4,  1,  1,  0);
+DELETE FROM `reference_loot_template` WHERE `entry` = 324908;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324908,    18309,  0,  3,  1,  1,  0),
+(324908,    18310,  0,  3,  1,  1,  0),
+(324908,    18312,  0,  3,  1,  1,  0),
+(324908,    18314,  0,  3,  1,  1,  0),
+(324908,    18315,  0,  3,  1,  1,  0),
+(324908,    18318,  0,  3,  1,  1,  0),
+(324908,    18321,  0,  3,  1,  1,  0),
+(324908,    18326,  0,  3,  1,  1,  0),
+(324908,    18327,  0,  3,  1,  1,  0),
+(324908,    18328,  0,  3,  1,  1,  0);
+-- Fix Warpwood table
+DELETE FROM `creature_loot_template` WHERE `entry` = 11489;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11489, 10286,  5,  0,  1,  1,  0),
+(11489, 22529,  43, 0,  2,  4,  70),
+(11489, 324898, 2,  2,  -324898,    1,  0),
+(11489, 324899, 6,  3,  -324899,    1,  0),
+(11489, 324900, 100,    4,  -324900,    1,  0);
+-- Fix his boss loot reference table
+DELETE FROM `reference_loot_template` WHERE `entry` = 324900;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324900,    18352,  0,  4,  1,  1,  0),
+(324900,    18353,  0,  4,  1,  1,  0),
+(324900,    18390,  0,  4,  1,  1,  0),
+(324900,    18393,  0,  4,  1,  1,  0);
+-- Fix Magister Kalendris' table
+DELETE FROM `creature_loot_template` WHERE `entry` = 11487;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11487, 14047,  19, 0,  2,  4,  0),
+(11487, 22309,  15, 0,  1,  1,  0),
+(11487, 324890, 2,  2,  -324911,    1,  0),
+(11487, 324891, 6,  3,  -324899,    1,  0),
+(11487, 324892, 100,    4,  -324892,    1,  0);
+-- Fix his unique boss loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 324892;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324892,    18350,  0,  4,  1,  1,  0),
+(324892,    18351,  0,  4,  1,  1,  0),
+(324892,    18371,  0,  4,  1,  1,  0),
+(324892,    18374,  0,  4,  1,  1,  0),
+(324892,    18397,  0,  4,  1,  1,  0);
+-- Fix Illyana Ravenoak table
+DELETE FROM `creature_loot_template` WHERE `entry` = 11488;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11488, 14047,  16, 0,  2,  4,  0),
+(11488, 324894, 2,  2,  -324911,    1,  0),
+(11488, 324895, 6,  3,  -324899,    1,  0),
+(11488, 324896, 100,    4,  -324896,    1,  0);
+-- Add her unique loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 324896;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324896,    18347,  0,  4,  1,  1,  0),
+(324896,    18349,  0,  4,  1,  1,  0),
+(324896,    18383,  0,  4,  1,  1,  0),
+(324896,    18386,  0,  4,  1,  1,  0);
+-- END Double Loot Fixes
+-- Update Guard Mol'Dar loot
+--     Runecloth x2-4
+UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14326;
+--     No evidence of him dropping Warbeads
+DELETE FROM `creature_loot_template` WHERE `item` = 21982 AND `entry` = 14326;
+--     Repair his boss loot table
+DELETE FROM `reference_loot_template` WHERE `entry` = 328276;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(328276,    18450,  0,  1,  1,  1,  0),
+(328276,    18451,  0,  1,  1,  1,  0),
+(328276,    18458,  0,  1,  1,  1,  0),
+(328276,    18459,  0,  1,  1,  1,  0),
+(328276,    18460,  0,  1,  1,  1,  0),
+(328276,    18462,  0,  1,  1,  1,  0),
+(328276,    18463,  0,  1,  1,  1,  0),
+(328276,    18464,  0,  1,  1,  1,  0),
+(328276,    18493,  0,  1,  1,  1,  0),
+(328276,    18494,  0,  1,  1,  1,  0),
+(328276,    18496,  0,  1,  1,  1,  0),
+(328276,    18497,  0,  1,  1,  1,  0),
+(328276,    18498,  0,  1,  1,  1,  0);
+-- Update Guard Slip'Kik loot
+--     Runecloth x2-4
+UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14323;
+--     No evidence of him dropping Warbeads
+DELETE FROM `creature_loot_template` WHERE `item` = 21982 AND `entry` = 14323;
+--     Repair boss loot table
+DELETE FROM `creature_loot_template` WHERE `item` = 328266 AND `entry` = 14323;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(14323, 328276,  100, 3,  -328276,  1,  0);
+-- Update Guard Fengus loot
+--     Delete odd entries
+DELETE FROM `creature_loot_template` WHERE `condition_id` = 738 AND `entry` = 14321;
+--     Runecloth x2-4
+UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14321;
+--     Remove double Libram loot
+DELETE FROM `creature_loot_template` WHERE `item` = 328259 AND `entry` = 14321;
+--     Repair boss loot table
+DELETE FROM `reference_loot_template` WHERE `entry` = 328262;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(328262,    18450,  0,  4,  1,  1,  0),
+(328262,    18451,  0,  4,  1,  1,  0),
+(328262,    18458,  0,  4,  1,  1,  0),
+(328262,    18459,  0,  4,  1,  1,  0),
+(328262,    18460,  0,  4,  1,  1,  0),
+(328262,    18462,  0,  4,  1,  1,  0),
+(328262,    18463,  0,  4,  1,  1,  0),
+(328262,    18464,  0,  4,  1,  1,  0);
+-- Update Captain Kromcrush
+-- Just replace everything, too much junk
+DELETE FROM `creature_loot_template` WHERE `entry` = 14325;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(14325, 14047,  25, 0,  2,  4,  0),
+(14325, 18250,  13, 0,  1,  1,  0),
+(14325, 18640,  2,  0,  1,  1,  0),
+(14325, 328273, 2,  2,  -328273,    1,  0),
+(14325, 328274, 6,  3,  -328274,    1,  0),
+(14325, 328275, 100,    4,  -328275,    1,  0);
+-- Add His Missing Boss Loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 328275;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(328275,    18502,  0,  4,  1,  1,  0),
+(328275,    18503,  0,  4,  1,  1,  0),
+(328275,    18505,  0,  4,  1,  1,  0),
+(328275,    18507,  0,  4,  1,  1,  0);
+-- Update King Gordok
+DELETE FROM `creature_loot_template` WHERE `entry` = 11501;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11501, 14047,  13, 0,  2,  5,  0),
+(11501, 18640,  2,  0,  1,  1,  0),
+(11501, 18780,  9,  0,  1,  1,  0),
+(11501, 19258,  7,  0,  1,  1,  0),
+(11501, 21982,  -50,    0,  1,  1,  0),
+(11501, 324918, 2,  2,  -324918,    1,  0),
+(11501, 324919, 100,    3,  -324919,    2,  0),
+(11501, 324921, 6,  5,  -324921,    1,  0);
+-- Repair unique loot table
+DELETE FROM `reference_loot_template` WHERE `entry` = 324919;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324919,    18520,  0,  3,  1,  1,  0),
+(324919,    18521,  0,  3,  1,  1,  0),
+(324919,    18522,  0,  3,  1,  1,  0),
+(324919,    18523,  0,  3,  1,  1,  0),
+(324919,    18524,  0,  3,  1,  1,  0),
+(324919,    18525,  0,  3,  1,  1,  0),
+(324919,    18526,  0,  3,  1,  1,  0),
+(324919,    18527,  0,  3,  1,  1,  0);
+-- Update Immol'Thar
+DELETE FROM `creature_loot_template` WHERE `entry` =  11496;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11496, 324913, 2,  2,  -324913,    1,  0),
+(11496, 324914, 100,    3,  -324914,    2,  0),
+(11496, 324916, 6,  5,  -324916,    1,  0);
+-- Repair Unique Loot Table
+DELETE FROM `reference_loot_template` WHERE `entry` = 324914;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324914,    18370,  0,  3,  1,  1,  0),
+(324914,    18372,  0,  3,  1,  1,  0),
+(324914,    18377,  0,  3,  1,  1,  0),
+(324914,    18379,  0,  3,  1,  1,  0),
+(324914,    18381,  0,  3,  1,  1,  0),
+(324914,    18384,  0,  3,  1,  1,  0),
+(324914,    18385,  0,  3,  1,  1,  0),
+(324914,    18389,  0,  3,  1,  1,  0),
+(324914,    18391,  0,  3,  1,  1,  0),
+(324914,    18394,  0,  3,  1,  1,  0);
+-- Update Prince Tortheldrin
+DELETE FROM `creature_loot_template` WHERE `entry` = 11486;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(11486, 14047,  11, 0,  2,  5,  0),
+(11486, 21525,  100,    4,  1,  1,  110),
+(11486, 324886, 100,    1,  -324886,    2,  0),
+(11486, 324888, 6,  3,  -324888,    1,  0);
+-- Repair Unique Boss Loot
+DELETE FROM `reference_loot_template` WHERE `entry` = 324886;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(324886,    18373,  0,  1,  1,  1,  0),
+(324886,    18375,  0,  1,  1,  1,  0),
+(324886,    18376,  0,  1,  1,  1,  0),
+(324886,    18378,  0,  1,  1,  1,  0),
+(324886,    18380,  0,  1,  1,  1,  0),
+(324886,    18382,  0,  1,  1,  1,  0),
+(324886,    18388,  0,  1,  1,  1,  0),
+(324886,    18392,  0,  1,  1,  1,  0),
+(324886,    18395,  0,  1,  1,  1,  0),
+(324886,    18396,  0,  1,  1,  1,  0);
+-- Update Knot Thimblejack's Cache loot
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 16591;
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(16591, 12006,  100,    1,  -12006, 2,  0),
+(16591, 18240,  35, 0,  1,  2,  0),
+(16591, 18414,  2,  1,  1,  1,  0),
+(16591, 18415,  0,  1,  1,  1,  0),
+(16591, 18416,  0,  1,  1,  1,  0),
+(16591, 18417,  0,  1,  1,  1,  0),
+(16591, 18418,  0,  1,  1,  1,  0),
+(16591, 18514,  0,  1,  1,  1,  0),
+(16591, 18515,  0,  1,  1,  1,  0),
+(16591, 18516,  0,  1,  1,  1,  0),
+(16591, 18517,  2,  1,  1,  1,  0),
+(16591, 18518,  2,  1,  1,  1,  0),
+(16591, 18519,  2,  1,  1,  1,  0);
+-- Update Gordok Tribute loot
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 16577;
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(16577, 8766,   100,    0,  15, 20, 0),
+(16577, 8952,   100,    0,  15, 20, 0),
+(16577, 12008,  100,    1,  -12008, 2,  0),
+(16577, 12015,  100,    2,  -12015, 1,  0),
+(16577, 12016,  100,    3,  -12016, 1,  0),
+(16577, 12017,  100,    4,  -12017, 1,  0);
+-- Update green loot reference
+DELETE FROM `reference_loot_template` WHERE `entry` = 12008;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12008, 13444,  0,  1,  2,  5,  0),
+(12008, 13446,  0,  1,  2,  5,  0),
+(12008, 18475,  0,  1,  1,  1,  0),
+(12008, 18476,  0,  1,  1,  1,  0),
+(12008, 18477,  0,  1,  1,  1,  0),
+(12008, 18478,  0,  1,  1,  1,  0),
+(12008, 18479,  0,  1,  1,  1,  0),
+(12008, 18480,  0,  1,  1,  1,  0),
+(12008, 18481,  0,  1,  1,  1,  0),
+(12008, 18482,  0,  1,  1,  1,  0),
+(12008, 18655,  0,  1,  1,  1,  0);
+-- Tribute templates
+-- Unsure whether loot is correctly removed if some bosses killed
+-- Tribute run template 1
+DELETE FROM `reference_loot_template` WHERE `entry` = 12015;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12015, 18500,  0,  2,  1,  1,  0),
+(12015, 18528,  0,  2,  1,  1,  0),
+(12015, 18529,  0,  2,  1,  1,  0);
+-- Tribute run template 2
+DELETE FROM `reference_loot_template` WHERE `entry` = 12016;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12016, 18499,  0,  3,  1,  1,  0),
+(12016, 18530,  0,  3,  1,  1,  0),
+(12016, 18531,  0,  3,  1,  1,  0),
+(12016, 18532,  0,  3,  1,  1,  0);
+-- Tribute run template 3
+DELETE FROM `reference_loot_template` WHERE `entry` = 12017;
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+(12017, 18495,  0,  4,  1,  1,  0),
+(12017, 18533,  0,  4,  1,  1,  0),
+(12017, 18534,  0,  4,  1,  1,  0),
+(12017, 18537,  0,  4,  1,  1,  0),
+(12017, 18538,  1,  4,  1,  1,  0);
 
 -- Add new available items 
 
