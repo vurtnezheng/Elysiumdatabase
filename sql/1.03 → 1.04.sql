@@ -174,6 +174,52 @@ UPDATE item_template SET Quality=1 WHERE entry=5780;
 
 -- Enable available quests 
 
+	-- Enable Warlock Epic Mount Quest Chain
+UPDATE `quest_template` SET `Method` = `Method` & 6 WHERE `entry` = 7562;
+	-- Enable Paladin Epic Mount Quest Chain
+UPDATE `quest_template` SET `Method` = `Method` & 6 WHERE `entry` = 7638;
+	-- Add Mounts Quests (Transforms pre 1.4-mounts to post-1.4)
+REPLACE INTO creature_questrelation value    (3685,7663);
+REPLACE INTO creature_involvedrelation value (3685,7663);
+REPLACE INTO creature_questrelation value    (3685,7662);
+REPLACE INTO creature_involvedrelation value (3685,7662);
+REPLACE INTO creature_questrelation value    (3362,7660);
+REPLACE INTO creature_involvedrelation value (3362,7660);
+REPLACE INTO creature_questrelation value    (3362,7661);
+REPLACE INTO creature_involvedrelation value (3362,7661);
+REPLACE INTO creature_questrelation value    (7952,7664);
+REPLACE INTO creature_involvedrelation value (7952,7664);
+REPLACE INTO creature_questrelation value    (7952,7665);
+REPLACE INTO creature_involvedrelation value (7952,7665);
+REPLACE INTO creature_questrelation value    ( 384,7677);
+REPLACE INTO creature_involvedrelation value ( 384,7677);
+REPLACE INTO creature_questrelation value    ( 384,7678);
+REPLACE INTO creature_involvedrelation value ( 384,7678);
+REPLACE INTO creature_questrelation value    (4885,7677);
+REPLACE INTO creature_involvedrelation value (4885,7677);
+REPLACE INTO creature_questrelation value    (4885,7678);
+REPLACE INTO creature_involvedrelation value (4885,7678);
+REPLACE INTO creature_questrelation value    (2357,7677);
+REPLACE INTO creature_involvedrelation value (2357,7677);
+REPLACE INTO creature_questrelation value    (2357,7678);
+REPLACE INTO creature_involvedrelation value (2357,7678);
+REPLACE INTO creature_questrelation value    (1460,7677);
+REPLACE INTO creature_involvedrelation value (1460,7677);
+REPLACE INTO creature_questrelation value    (1460,7678);
+REPLACE INTO creature_involvedrelation value (1460,7678);
+REPLACE INTO creature_questrelation value    (1261,7673);
+REPLACE INTO creature_involvedrelation value (1261,7673);
+REPLACE INTO creature_questrelation value    (1261,7674);
+REPLACE INTO creature_involvedrelation value (1261,7674);
+REPLACE INTO creature_questrelation value    (4730,7671);
+REPLACE INTO creature_involvedrelation value (4730,7671);
+REPLACE INTO creature_questrelation value    (4730,7672);
+REPLACE INTO creature_involvedrelation value (4730,7672);
+REPLACE INTO creature_questrelation value    (7955,7675);
+REPLACE INTO creature_involvedrelation value (7955,7675);
+REPLACE INTO creature_questrelation value    (7955,7676);
+REPLACE INTO creature_involvedrelation value (7955,7676);
+
 -- Enable available questgivers
 
 -- Enable available loot
