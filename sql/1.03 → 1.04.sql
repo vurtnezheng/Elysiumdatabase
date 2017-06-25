@@ -212,5 +212,10 @@ UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
 162					-- Patch 1.4 | 1.5
 );
 
+-- Enable available spells
+
+	-- Enable Warlock Dreadsteed & Paladin Charger spells
+DELETE FROM `spell_disabled` WHERE `entry` IN (23214, 23161);
+
 -- Enable available vendors 
 
