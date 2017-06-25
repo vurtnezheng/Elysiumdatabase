@@ -224,10 +224,10 @@ REPLACE INTO creature_involvedrelation value (7955,7676);
 
 -- Enable available loot
 
--- Add new available items (Molten Core / Sholomance / Stratholme)
+-- Add new available items 
 
+	-- Molten Core / Sholomance / Stratholme Loot
 DELETE FROM `item_template` WHERE `entry` IN (19145, 19146, 19136, 19144, 19143, 19142, 19019, 18713, 18715, 18806, 18812, 18809, 19137, 18716, 18735, 18726, 18723, 18692);
-
 INSERT INTO item_template VALUES
 ('18692', '4', '4', 'Death Knight Sabatons', '31133', '3', '0', '1', '71877', '14375', '8', '-1', '-1', '59', '54', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '11', '7', '11', '5', '11', '6', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '424', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '6', '0', '0', '0', '0', '65', '0', '0', '0', '', '48', '0', '0', '0', '0', '0', '1'),
 ('18713', '2', '2', 'Rhok\'delar, Longbow of the Ancient Keepers', '31338', '4', '32768', '1', '0', '0', '15', '4', '-1', '75', '60', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '89', '166', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2900', '2', '100', '7597', '1', '0', '0', '-1', '0', '-1', '21432', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '-1', '1', '', '0', '0', '0', '0', '0', '2', '0', '0', '0', '0', '90', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
@@ -247,6 +247,74 @@ INSERT INTO item_template VALUES
 ('19144', '4', '3', 'Sabatons of the Flamewalker', '31662', '4', '0', '1', '229869', '45973', '8', '-1', '-1', '68', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '7', '27', '5', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '298', '0', '0', '0', '0', '0', '0', '0', '0', '0', '9336', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '70', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1'),
 ('19145', '4', '1', 'Robe of Volatile Power', '31663', '4', '0', '1', '185169', '37033', '20', '-1', '-1', '66', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '15', '7', '10', '6', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '102', '0', '0', '0', '0', '0', '0', '0', '0', '0', '18382', '1', '0', '0', '-1', '0', '-1', '14047', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '100', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1'),
 ('19146', '4', '2', 'Wristguards of Stability', '6763', '4', '0', '1', '100919', '20183', '9', '-1', '-1', '65', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '24', '7', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '86', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '8', '0', '0', '0', '0', '40', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1');
+	
+-- Enable / Update new available vendors	
+
+	-- Replace Pre-1.4 Mounts, I guess...
+delete from npc_vendor where entry IN (4731, 3685, 3362, 7952, 384, 4885, 2357, 1460, 1261, 4730, 7955);
+delete from npc_vendor where item IN (15293, 15292, 12330, 12351, 8586, 13317, 12353, 12353, 12354, 13328, 13329, 12302, 12303, 13326, 13327);
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','2411','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('384','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','5864','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','5872','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','5873','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','18785','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','18786','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1261','18787','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','2411','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('1460','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('2357','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','1132','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','5665','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','5668','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','18796','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','18797','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3362','18798','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','15277','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','15290','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','18793','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','18794','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('3685','18795','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','8629','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','8631','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','8632','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','18766','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','18767','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4730','18902','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','2414','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','5655','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','5656','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','18776','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','18777','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('4885','18778','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','8588','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','8591','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','8592','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','18788','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','18789','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7952','18790','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','8563','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','8595','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','13321','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','13322','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18772','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18773','0','0');
+insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18774','0','0');
 
 -- Enable available game events 
 
