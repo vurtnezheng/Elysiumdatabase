@@ -220,13 +220,37 @@ REPLACE INTO creature_involvedrelation value (7955,7675);
 REPLACE INTO creature_questrelation value    (7955,7676);
 REPLACE INTO creature_involvedrelation value (7955,7676);
 
--- Enable available questgivers
 
 -- Enable available loot
 
+	-- Malekis FootWrap Add To Loot Table
+SET @refTable = -1;
+SELECT * FROM creature_loot_template WHERE entry = 10438;
+SELECT @refTable := -mincountOrRef FROM creature_loot_template WHERE entry = 10438 and mincountOrRef < 0 and groupid = 1;
+INSERT INTO reference_loot_template VALUES(@refTable,18735,0,1,1,1,0);
+	-- Onslaught Gridle Add To Loot Table
+SET @refTable = -1;
+SELECT * FROM creature_loot_template WHERE entry = 11502;
+SELECT @refTable := -mincountOrRef FROM creature_loot_template WHERE entry = 11502 and mincountOrRef < 0 and groupid = 10;
+INSERT INTO reference_loot_template VALUES(@refTable,19137,0,10,1,1,0);
+	-- Crystal Adorned Crown Add To Loot Table
+SET @refTable = -1;
+SELECT * FROM creature_loot_template WHERE entry = 6109;
+SELECT @refTable := -mincountOrRef FROM creature_loot_template WHERE entry = 6109 and mincountOrRef < 0 and groupid = 10;
+INSERT INTO reference_loot_template VALUES(@refTable,19132,0,10,1,1,0);
+	-- Animated Chain Necklace Add To Loot Table
+SET @refTable = -1;
+SELECT * FROM creature_loot_template WHERE entry = 10439;
+SELECT @refTable := -mincountOrRef FROM creature_loot_template WHERE entry = 10439 and mincountOrRef < 0 and groupid = 2;
+INSERT INTO reference_loot_template VALUES(@refTable,18723,0,2,1,1,0);
+	-- Golemagg Loot Drop Rates & Faction Drop
+update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
+update reference_loot_template set condition_id = 3 where entry = 326158 and item = 18824;
+update reference_loot_template set condition_id = 2 where entry = 326158 and item = 18829;
+
 -- Add new available items 
 
-	-- Molten Core / Sholomance / Stratholme Loot
+	-- Molten Core / Sholomance / Stratholme Items
 DELETE FROM `item_template` WHERE `entry` IN (19145, 19146, 19136, 19144, 19143, 19142, 19019, 18713, 18715, 18806, 18812, 18809, 19137, 18716, 18735, 18726, 18723, 18692);
 INSERT INTO item_template VALUES
 ('18692', '4', '4', 'Death Knight Sabatons', '31133', '3', '0', '1', '71877', '14375', '8', '-1', '-1', '59', '54', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '11', '7', '11', '5', '11', '6', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '424', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '6', '0', '0', '0', '0', '65', '0', '0', '0', '', '48', '0', '0', '0', '0', '0', '1'),
@@ -330,6 +354,3 @@ UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
 
 	-- Enable Warlock Dreadsteed & Paladin Charger spells
 DELETE FROM `spell_disabled` WHERE `entry` IN (23214, 23161);
-
--- Enable available vendors 
-
