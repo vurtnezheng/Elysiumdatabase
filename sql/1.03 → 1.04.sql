@@ -839,6 +839,26 @@ UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
 );
 
 -- Enable available spells
-
 	-- Enable Warlock Dreadsteed & Paladin Charger spells
 DELETE FROM `spell_disabled` WHERE `entry` IN (23214, 23161);
+
+
+-- Forbidden Items (temp)
+
+CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
+	-- Dark Iron Boots, 1.8 Specific Recipes
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20040, 20382, 20509, 20511, 20508, 20507, 20510, 20506);
+
+-- *_loot_template final cleanup
+
+DELETE FROM creature_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM reference_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM disenchant_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM fishing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM gameobject_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM item_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM mail_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM pickpocketing_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM skinning_loot_template WHERE item IN (SELECT * FROM forbidden_items);
+DELETE FROM npc_vendor WHERE item IN (SELECT * FROM forbidden_items);
+
