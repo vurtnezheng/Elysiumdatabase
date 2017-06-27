@@ -828,6 +828,45 @@ insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955'
 insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18773','0','0');
 insert into `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) values('7955','18774','0','0');
 
+	-- Alterac Valley Vendors
+DELETE FROM npc_vendor WHERE entry IN (21563, 13218);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 17348, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 17349, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 17351, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 17352, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19029, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19031, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19046, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19083, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19085, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19087, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19088, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19089, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19090, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19095, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19096, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19099, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19101, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19103, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19301, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19307, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19308, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19309, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19310, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19311, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19312, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19315, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19316, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19317, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19318, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19319, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19320, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19321, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19323, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19324, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 19325, 0, 0);
+-- (Patch 1.9) INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (13218, 21563, 0, 0);
+
 -- Enable available game events 
 
 UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
@@ -846,8 +885,8 @@ DELETE FROM `spell_disabled` WHERE `entry` IN (23214, 23161);
 -- Forbidden Items (temp)
 
 CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
-	-- Dark Iron Boots, 1.8 Specific Recipes
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20040, 20382, 20509, 20511, 20508, 20507, 20510, 20506);
+	-- Dark Iron Boots, 1.8 Specific Recipes, AV Vendor Item
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20040, 20382, 20509, 20511, 20508, 20507, 20510, 20506, 21563);
 
 -- *_loot_template final cleanup
 
