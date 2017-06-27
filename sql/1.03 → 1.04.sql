@@ -228,7 +228,7 @@ REPLACE INTO creature_involvedrelation value (7955,7676);
 
 -- Enable available loot
 
-	-- Malekis FootWrap Add To Loot Table
+	/* -- Malekis FootWrap Add To Loot Table
 SET @refTable = -1;
 SELECT * FROM creature_loot_template WHERE entry = 10438;
 SELECT @refTable := -mincountOrRef FROM creature_loot_template WHERE entry = 10438 and mincountOrRef < 0 and groupid = 1;
@@ -248,6 +248,7 @@ SET @refTable = -1;
 SELECT * FROM creature_loot_template WHERE entry = 10439;
 SELECT @refTable := -mincountOrRef FROM creature_loot_template WHERE entry = 10439 and mincountOrRef < 0 and groupid = 2;
 INSERT INTO reference_loot_template VALUES(@refTable,18723,0,2,1,1,0);
+*/
 	-- Golemagg Loot Drop Rates & Faction Drop
 update reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
 update reference_loot_template set condition_id = 3 where entry = 326158 and item = 18824;
@@ -356,14 +357,10 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (328276,    18497,  0,  1,  1,  1,  0),
 (328276,    18498,  0,  1,  1,  1,  0);
 -- Update Guard Slip'Kik loot
---     Runecloth x2-4
-UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14323;
 --     No evidence of him dropping Warbeads
 DELETE FROM `creature_loot_template` WHERE `item` = 21982 AND `entry` = 14323;
---     Repair boss loot table
-DELETE FROM `creature_loot_template` WHERE `item` = 328266 AND `entry` = 14323;
-INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
-(14323, 328276,  100, 3,  -328276,  1,  0);
+--     Runecloth x2-4
+UPDATE `creature_loot_template` SET `maxcount` = 4 WHERE `item` = 14047 AND `entry` = 14323;
 -- Update Guard Fengus loot
 --     Delete odd entries
 DELETE FROM `creature_loot_template` WHERE `condition_id` = 738 AND `entry` = 14321;
@@ -660,7 +657,7 @@ INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (6109, 315718, 100, 10, -315718, 1, 0);
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (6109, 315719, 100, 11, -315719, 1, 0);
 -- Molten Core Loot
-DELETE FROM `creature_loot_template` WHERE `entry` = 11502;
+DELETE FROM `creature_loot_template` WHERE `entry` IN (12118, 11982, 12259, 12057, 12264, 12056, 11988, 12098, 12018, 11502);
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (11502, 7078, 40, 0, 1, 9, 0);
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (11502, 17204, 3, 0, 1, 1, 72);
 INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (11502, 19017, -100, 0, 1, 1, 0);
