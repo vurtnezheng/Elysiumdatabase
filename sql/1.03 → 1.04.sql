@@ -171,6 +171,11 @@ spellid_3 = VALUES(spellid_3), spelltrigger_3 = VALUES(spelltrigger_3);
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=0, `armor`=40 WHERE entry=5780; 
 	-- QUALITY CHANGED: Murloc Scale Belt (ilevel 18 entry 5780)
 UPDATE item_template SET Quality=1 WHERE entry=5780;
+	-- Flarecore Gloves are Soulbound till Patch 1.7
+UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 17018;
+	-- Fang of the Mystics (not quite sure)
+UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
+
 
 -- Enable available quests 
 
