@@ -47,7 +47,7 @@ UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
 
 -- Loot Changes for 1.10
 
-	-- Golemagg Loot Drop Rates & Faction Drop (should be enabled by default???)
+	-- Golemagg Loot Drop Rates & Faction Drop
 UPDATE reference_loot_template set ChanceOrQuestChance = 20 where entry = 326158 and item in (18842, 17103, 17072);
 UPDATE reference_loot_template set condition_id = 3 where entry = 326158 and item = 18824;
 UPDATE reference_loot_template set condition_id = 2 where entry = 326158 and item = 18829;
@@ -106,6 +106,8 @@ UPDATE quest_template    SET ReqItemId3 = 18331, ReqItemCount3 = 1,    ReqItemId
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19720, ReqItemCount4 = 1    WHERE entry = 8188;
 UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId4 = 19717, ReqItemCount4 = 1    WHERE entry = 8190;
 UPDATE quest_template    SET ReqItemId1 = 0,     ReqItemCount1 = 0     WHERE entry IN (8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192);
+
+
 
 /* 
 
