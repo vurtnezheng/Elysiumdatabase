@@ -17,7 +17,7 @@ UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (155, 168); -- Argent Da
 
 -- Should be enabled by default in 1.12, if not, fix it:
 
-/* UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
+UPDATE `game_event` SET `disabled` = 0 WHERE `entry` IN
 (
 14, 15, 40,			-- Stranglethorn Fishing Extravaganza 1.7
 4, 5, 100, 101, 	-- DarkMoon Faire 1.6
@@ -38,7 +38,7 @@ UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (155, 168); -- Argent Da
 158,				-- 1.10 Patch : Recipes (unchecked)
 160,				-- 1.10 Patch : t0.5 Quest Chain (unchecked)
 167					-- Patch 1.10
-);*/
+);
 
 -- UPDATE stats for currently existing items:
 
