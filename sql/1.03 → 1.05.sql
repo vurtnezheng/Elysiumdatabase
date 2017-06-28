@@ -178,7 +178,63 @@ UPDATE item_template SET `dmg_min1`='54', `dmg_max1`='101', `spellid_3`=0, `spel
 	-- Necromantic Band ID: 18760
 UPDATE `item_template` SET `stat_type1` = 0, `stat_value1` = 0, `stat_type2` = 0, `stat_value2` = 0, `stat_type3` = 0, `stat_value3` = 0, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 0, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 20885, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 0, `spelltrigger_2` = 0, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 18760;
 
+-- Add new creatures
+	-- Cloth Quartermasters
+DELETE FROM creature WHERE id IN (14727, 14726, 14728, 14729, 14725, 14723, 14722, 14724);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (79821, 14722, 0, 14753, 0, -8942.03, 785.805, 97.4045, 0.20944, 325, 0, 0, 2016, 0, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (1819, 14723, 0, 14754, 0, -4735.8, -1055.28, 502.296, 3.80482, 310, 0, 0, 2016, 0, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (37, 14724, 0, 14752, 0, -4823.65, -1299.36, 501.951, 0.959931, 25000, 0, 0, 2016, 0, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (46559, 14725, 1, 14755, 0, 10076, 2260.77, 1333.08, 0.436332, 300, 0, 0, 2016, 0, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (3421, 14726, 1, 14757, 0, 1794.68, -4572.71, 22.8627, 0.925025, 300, 0, 0, 2016, 0, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (3422, 14727, 1, 14759, 0, 1451.64, -4209.35, 43.6451, 5.53269, 300, 0, 0, 2016, 0, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (24867, 14728, 1, 14758, 0, -1147.28, 67.3353, 145.949, 3.24631, 250, 0, 0, 2016, 0, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (31903, 14729, 0, 14756, 0, 1690.83, 185.738, -62.0883, 5.58505, 300, 0, 0, 2016, 0, 0, 0, 0);
+
 -- Enable available quests 
+
+-- Cloth Quartermasters Quests
+DELETE FROM creature_questrelation WHERE id IN (14727, 14726, 14728, 14729, 14725, 14723, 14722, 14724);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14722, 7791);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14722, 7793);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14722, 7794);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14722, 7795);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14722, 7796);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14723, 7804);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14723, 7805);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14723, 7806);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14723, 7807);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14723, 7808);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14724, 7802);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14724, 7803);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14724, 7809);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14724, 7811);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14724, 7812);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14725, 7797);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14725, 7798);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14725, 7799);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14725, 7800);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14725, 7801);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14726, 7826);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14726, 7827);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14726, 7831);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14726, 7836);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14726, 7837);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14727, 7824);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14727, 7832);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14727, 7833);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14727, 7834);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14727, 7835);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14728, 7820);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14728, 7821);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14728, 7822);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14728, 7823);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14728, 7825);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7813);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7814);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7817);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7818);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7819);
+
 
 	-- Enable Warlock Epic Mount Quest Chain
 UPDATE `quest_template` SET `Method` = `Method` & 6 WHERE `entry` = 7562;
