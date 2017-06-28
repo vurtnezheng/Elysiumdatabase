@@ -997,7 +997,11 @@ DELETE FROM `spell_disabled` WHERE `entry` IN (23214, 23161);
 -- Forbidden Items (temp)
 
 CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
-	-- Dark Iron Boots, 1.8 Specific Recipes, AV Vendor Item
+
+	-- Onyxia Head
+REPLACE INTO forbidden_items SELECT entry FROM item_template where entry in (18422,18423);
+
+	-- Dark Iron Boots 1.7 or 1.6 (20040), 1.8 Specific Recipes, AV Vendor Item (21563)
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20040, 20382, 20509, 20511, 20508, 20507, 20510, 20506, 21563);
 
 -- *_loot_template final cleanup
