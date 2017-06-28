@@ -3,7 +3,7 @@
 UPDATE quest_template SET Method = (Method | 1) WHERE entry=19212;
 
 -- Darkmoon Faire quests
-UPDATE quest_template SET Method = (Method | 1) WHERE quest IN (
+UPDATE quest_template SET Method = (Method | 1) WHERE entry IN (
 7928, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Warlords_Deck
 7927, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Portals_Deck
 7929, -- http://wowwiki.wikia.com/wiki/Quest:Darkmoon_Elementals_Deck
