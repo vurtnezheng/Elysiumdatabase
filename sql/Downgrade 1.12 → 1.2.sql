@@ -49,8 +49,9 @@ UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 1; 
 --   166				-- Patch 1.9
 --   167				-- Patch 1.10
 --   168 				-- Patch 1.11 ? 1.12
-
-UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (4, 5, 100, 101, 13, 16, 38, 39, 14, 15, 40, 156, 159, 35, 36, 37,42, 43, 44, 66, 18, 54, 155, 158, 160, 161, 162, 163, 164, 165, 166, 167, 168);
+UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (4, 5, 100, 101, 13, 16, 38, 39, 14, 15, 40, 155, 156, 159, 35, 36, 37,42, 43, 44, 66, 18, 54, 155, 158, 160, 161, 162, 163, 164, 165, 166, 167, 168);
+-- Argent Dawn @ (pre-1.11) Hm...?
+REPLACE INTO game_event VALUE (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0, 1);
 
 -- * Forbidden items
 
@@ -439,12 +440,14 @@ INSERT INTO npc_vendor value (12795, 17625, 0, 0);
 
 CREATE TEMPORARY TABLE forbidden_creatures (entry mediumint);
 
--- Disable [Azuregos and Kazzak, Pacth 1.3]
+-- Disable [Azuregos and Kazzak till Pacth 1.3
 REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (6109, 12397);
 -- Disable Quest NPCs (proper description is needed)
 REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (15189, 15190, 15181, 15183, 15270, 15194, 15070, 14921);
 -- Remove post-1.4 mounts related NPCs, need proper description
 REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (14559, 14547, 14602, 14553, 14550, 14541, 14544, 14558);
+-- Cloth Donation Quartermasters till Patch 1.4
+REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (14727, 14726, 14728, 14729, 14725, 14723, 14722, 14724);
 
 -- Pre-1.4 Stables
 -- Human
@@ -1079,9 +1082,34 @@ INSERT INTO item_enchantment_template value (8652, 881, 10);
 INSERT INTO item_enchantment_template value (8652, 882, 10);
 INSERT INTO item_enchantment_template value (8652, 1052, 10);
 INSERT INTO item_enchantment_template value (8652, 1053, 10);
-
 			
 -- * Spells			 	
 
-
+-- Zanza's Potent Potables
+REPLACE INTO `spell_mod` (`Id`, `AttributesEx3`, `Comment`) VALUES 
+(24382, 1048576, 'Spirit of Zanza - persist through death (before 1.12)'),
+(24417, 1048576, 'Sheen of Zanza - persist through death (before 1.12)'),
+(24383, 1048576, 'Swiftness of Zanza - persist through death (before 1.12)');
+-- Disable recipes + resulting food spells, 1.9 oils & [Rumsey Rum] spell
+REPLACE INTO `spell_disabled` VALUES (24800);
+REPLACE INTO `spell_disabled` VALUES (24801);
+REPLACE INTO `spell_disabled` VALUES (25117);
+REPLACE INTO `spell_disabled` VALUES (25118);
+REPLACE INTO `spell_disabled` VALUES (25119);
+REPLACE INTO `spell_disabled` VALUES (25120);
+REPLACE INTO `spell_disabled` VALUES (25123);
+REPLACE INTO `spell_disabled` VALUES (25122);
+REPLACE INTO `spell_disabled` VALUES (25121);
+REPLACE INTO `spell_disabled` VALUES (25660);
+REPLACE INTO `spell_disabled` VALUES (25704);
+REPLACE INTO `spell_disabled` VALUES (25722);
+REPLACE INTO `spell_disabled` VALUES (25804);
+REPLACE INTO `spell_disabled` VALUES (25691);
+REPLACE INTO `spell_disabled` VALUES (26276);
+REPLACE INTO `spell_disabled` VALUES (26278);
+REPLACE INTO `spell_disabled` VALUES (26277);
+-- Paladin Charger
+REPLACE INTO `spell_disabled` VALUES (23214); 
+-- Warlock Dreadsteed
+REPLACE INTO `spell_disabled` VALUES (23161); 
 
