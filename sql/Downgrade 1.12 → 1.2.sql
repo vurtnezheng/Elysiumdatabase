@@ -484,12 +484,28 @@ UPDATE creature_template set modelid_1=9695 where entry=10322;
 -- Creatures final cleanup
 UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 2) WHERE id IN (SELECT * FROM forbidden_creatures);
 
-			
 -- * Forbidden quests 	
 
+CREATE TEMPORARY TABLE forbidden_quests (entry mediumint);
+
+-- http://wowwiki.wikia.com/Plans:_Nightfall till patch 1.6
+REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (19212);
+-- [Glyph Chasing], Sunken Temple Level 50 Quests
+REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8309, 8418, 8413, 8422, 8425);
+
+-- Final quests cleanup
+UPDATE `quest_template` SET `Method` = (Method | 1) WHERE entry IN (SELECT * FROM forbidden_quests);
+-- This is not good for DB... Need to figure out something else:
+DELETE FROM areatrigger_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM creature_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM creature_questrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM gameobject_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM gameobject_questrelation WHERE quest IN (SELECT * from forbidden_quests);
 
 -- * Quests			
 
+-- Fix Alterac Valley Kazzak quest: non-existant reward removed.
+UPDATE quest_template SET RewChoiceItemId4 = 0 WHERE entry IN (7202, 7181);
 		
 -- * Professions	
 
