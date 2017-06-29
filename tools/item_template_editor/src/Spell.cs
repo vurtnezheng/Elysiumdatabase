@@ -76,7 +76,14 @@ namespace ItemTemplateCreator
                             continue;
                         }
 
-                        ID2Name.Add(ID, SpellParams[1]);
+                        string spellName = SpellParams[1];
+                        // fix for duplicate names
+                        if (ID2Name.ContainsValue(spellName))
+                        {
+                            spellName += String.Format("[{0}]", ID);
+                        }
+
+                        ID2Name.Add(ID, spellName);
                     }
 
                     IsDictInitialized = true;

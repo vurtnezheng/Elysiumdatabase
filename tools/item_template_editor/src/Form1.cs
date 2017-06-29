@@ -364,7 +364,14 @@ namespace ItemTemplateCreator
             _loadedEntry = itemEntry.Value.ToString(CultureInfo.InvariantCulture);
 
             CachedItems = new Item[1];
-            CachedItems[0] = Item.Load(int.Parse(_loadedEntry));
+            Item loaded = Item.Load(int.Parse(_loadedEntry));
+            if (loaded == null)
+            {
+                MessageBox.Show(String.Format("No item exists with ID {0}", int.Parse(_loadedEntry)));
+                return;
+            }
+            else
+                CachedItems[0] = loaded;
 
             ShowItem(CachedItems[0]);
         }
@@ -945,26 +952,37 @@ namespace ItemTemplateCreator
 
         private void spellName1_TextChanged(object sender, EventArgs e)
         {
+            // don't update spell id based on text while loading item
+            if (ShowItemMiniMutex) return;
+
             spellId1.Value = Spell.GetSpellID(spellName1.Text);
         }
 
         private void spellName2_TextChanged(object sender, EventArgs e)
         {
+            // don't update spell id based on text while loading item
+            if (ShowItemMiniMutex) return;
             spellId2.Value = Spell.GetSpellID(spellName2.Text);
         }
 
         private void spellName3_TextChanged(object sender, EventArgs e)
         {
+            // don't update spell id based on text while loading item
+            if (ShowItemMiniMutex) return;
             spellId3.Value = Spell.GetSpellID(spellName3.Text);
         }
 
         private void spellName4_TextChanged(object sender, EventArgs e)
         {
+            // don't update spell id based on text while loading item
+            if (ShowItemMiniMutex) return;
             spellId4.Value = Spell.GetSpellID(spellName4.Text);
         }
 
         private void spellName5_TextChanged(object sender, EventArgs e)
         {
+            // don't update spell id based on text while loading item
+            if (ShowItemMiniMutex) return;
             spellId5.Value = Spell.GetSpellID(spellName5.Text);
         }
 
