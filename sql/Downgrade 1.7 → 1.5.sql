@@ -9,7 +9,7 @@ UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 469
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 309;    -- Zul'Gurub 1.7 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 531;    -- AQ 40 1.9 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 509;    -- AQ 20 1.9 
-UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1       -- AV 1.5 
+UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1;      -- AV 1.5 
 
 -- Disable unavailable game events:
 
@@ -261,9 +261,9 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7817);
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7818);
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7819);
 
-- Kill me
+-- Kill me
 
-CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
+CREATE TABLE IF NOT EXISTS forbidden_items (entry mediumint);
 -- Patch 1.4—1.5 World DB Itemization Changes.
 -- To be applied on QA first for testing.
 
@@ -6062,7 +6062,7 @@ REPLACE INTO `item_template` VALUE (15197,4,0,'Scout\'s Tabard',31255,1,0,1,1000
 
 -- Forbidden Items & quests for 1.5
 
-CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
+CREATE TABLE IF NOT EXISTS forbidden_items (entry mediumint,  PRIMARY KEY (`entry`));
 
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry BETWEEN 19574 AND 20266;
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (12056, 12057, 22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
@@ -6083,7 +6083,7 @@ DELETE FROM pickpocketing_loot_template WHERE item IN (SELECT * FROM forbidden_i
 DELETE FROM skinning_loot_template WHERE item IN (SELECT * FROM forbidden_items);
 DELETE FROM npc_vendor WHERE item IN (SELECT * FROM forbidden_items);
 
-CREATE TEMPORARY TABLE forbidden_quests (entry mediumint);
+CREATE TABLE IF NOT EXISTS forbidden_quests (entry mediumint);
 -- Patch 1.5+ quests
 REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8115, 8122);	
 -- Arathi Basin tabard quests
