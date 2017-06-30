@@ -86,6 +86,8 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (22
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
 -- Thunderfury Bindings
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (18563, 18564);
+-- Arathi Basin Epic Rewards
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (20214, 20220, 20212, 20203, 20175, 20194, 20176, 20158, 20068);
 
 -- * Items and loot	  
 
@@ -655,6 +657,11 @@ REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (
 8416, -- http://wowwiki.wikia.com/Quest:Inert_Scourgestones
 8418  -- http://wowwiki.wikia.com/Quest:Forging_the_Mightstone
 );
+-- Arathi Basin tabard quests
+REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8115, 8122);	
+-- Patch 1.5+ quest range
+REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry BETWEEN 8041 AND 8273;
+
 
 -- Final quests cleanup
 UPDATE `quest_template` SET `Method` = (Method | 1) WHERE entry IN (SELECT * FROM forbidden_quests);
