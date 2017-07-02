@@ -5889,6 +5889,9 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20048);
 -- NOT FOUND: Highlander's Lamellar Greaves (ilevel 63 entry 20049)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20049);
+-- NOT FOUND: Blackhand's Command (BWLattunement Quest)
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18987);
+
 -- STATS CHANGED: Highlander's Chain Greaves (ilevel 63 entry 20050). 1/2 versions
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=34, `stat_value3`=0, `stat_type4`=4, `stat_value4`=39, `armor`=0 WHERE entry=20050;
 -- SPELLS REMOVED: Highlander's Chain Greaves (ilevel 63 entry 20050). 2 versions
@@ -8551,7 +8554,7 @@ REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8
 REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry BETWEEN 8041 AND 8273;
 
 -- T0.5 quests
-REPLACE INTO `forbidden_quests` VALUES (8949,8950,9015);
+REPLACE INTO `forbidden_quests` SELECT entry FROM quest_template WHERE entry IN (8949,8950,9015);
 
 -- Forbid quests which have had the rewards or requirements forbidden
 REPLACE INTO `forbidden_quests` (SELECT `entry` FROM `quest_template` 
