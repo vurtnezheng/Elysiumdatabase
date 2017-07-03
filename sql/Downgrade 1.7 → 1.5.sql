@@ -7734,3 +7734,5 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (24048, 14561, 1, 14583, 0, -3848.26, -4393.54, 10.2239, 5.44543, 360, 0, 0, 64, 53, 0, 0, 0);
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (81385, 14561, 0, 14583, 0, -9444.04, -1412.16, 46.9049, 1.72788, 180, 0, 0, 64, 53, 0, 0, 0);
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (46180, 14602, 1, 14632, 0, 10132.9, 2527.95, 1325.16, 4.01426, 300, 0, 0, 64, 0, 0, 0);
+ 
+ -- Remove old stables
