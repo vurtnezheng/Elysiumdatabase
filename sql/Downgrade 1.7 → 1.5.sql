@@ -7605,6 +7605,9 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (13841, 8271), (1384
 -- AQ quest starter item
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20461);
 
+-- Despawn [The Severed Head of Nefarian]
+UPDATE gameobject SET spawntimesecs = -1 WHERE guid = 1264334;
+
 -- NOT FOUND: Blackhand's Command (BWL Attunement Quest)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18987);
 
