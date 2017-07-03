@@ -245,16 +245,8 @@ UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=5522;
 UPDATE item_template SET `stat_value1`=0, `stat_value2`=0, `armor`=40 WHERE entry=5780;
 -- QUALITY CHANGED: Murloc Scale Belt (ilevel 18 entry 5780)
 UPDATE item_template SET Quality=1 WHERE entry=5780;
--- NOT FOUND: Ruffian Belt (ilevel 23 entry 5975)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 5975);
 -- STATS CHANGED: Wandering Boots (ilevel 24 entry 6095). 1/2 versions
 UPDATE item_template SET `stat_value1`=0, `stat_type3`=3, `stat_value3`=4 WHERE entry=6095;
--- NOT FOUND: Acolyte's Robe (ilevel 1 entry 6129)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 6129);
--- NOT FOUND: Thug Shirt (ilevel 1 entry 6136)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 6136);
--- NOT FOUND: Dress Shoes (ilevel 1 entry 6836)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 6836);
 -- SPELLS CHANGED: Crimson Silk Gloves (ilevel 42 entry 7064). 4 versions
 -- Source: http://www.thottbot.com/?i=Thick%20Leather
 -- Source: http://wow.allakhazam.com/db/price.html?witem=7064
@@ -466,32 +458,14 @@ UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0, `spellid_1`=13386, `
 -- DAMAGE CHANGED: Reforged Blade of Heroes (ilevel 38 entry 9718). 1/2 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=9718
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev7.html
-UPDATE item_template SET `dmg_type2`=0, `dmg_min2`=0, `dmg_max2`=0 WHERE entry=9718;
--- SPELLS CHANGED: Shadoweave Robe (ilevel 43 entry 10004). 2 versions
--- Source: http://www.thottbot.com/?i=Heavy%20Silken%20Thread / http://wow.allakhazam.com/item.html?witem=10004
--- Source: http://www.thottbot.com/?i=Heavy%20Silken%20Thread
--- * Modified spell 1
--- 1.12 spell 9328 (Increases damage done by Shadow spells and effects by up to 21.)
--- 1.04 spell 9414 (Increases damage done by Shadow spells and effects by up to 14.)
-UPDATE item_template SET `spellid_1`=9414 WHERE entry=10004;
--- SPELLS CHANGED: Shadoweave Shoulders (ilevel 47 entry 10028). 2 versions
--- Source: http://www.thottbot.com/?i=Heavy%20Silken%20Thread / http://wow.allakhazam.com/item.html?witem=10028
--- Source: http://www.thottbot.com/?i=Heavy%20Silken%20Thread
--- * Modified spell 1
--- 1.12 spell 9325 (Increases damage done by Shadow spells and effects by up to 17.)
--- 1.04 spell 9412 (Increases damage done by Shadow spells and effects by up to 11.)
-UPDATE item_template SET `spellid_1`=9412 WHERE entry=10028;
 -- STATS CHANGED: Dreamweave Circlet (ilevel 50 entry 10041). 1/4 versions
 UPDATE item_template SET `stat_value2`=6, `armor`=53 WHERE entry=10041;
 -- SPELLS CHANGED: Dreamweave Circlet (ilevel 50 entry 10041). 4 versions
--- Source: http://www.thottbot.com/?i=Wildvine
--- Source: http://wow.allakhazam.com/db/price.html?witem=10041
--- Source: http://www.thottbot.com/?i=Wildvine / http://wow.allakhazam.com/item.html?witem=10041
--- Source: http://www.thottbot.com/?i=4373
+-- 15 spell damage/healing @ https://web.archive.org/web/20050831033125/http://www.thottbot.com:80/?i=4373
 -- * Modified spell 1
 -- 1.12 spell 14248 (Increases damage and healing done by magical spells and effects by up to 21.)
--- 1.04 spell 9415 (Increases damage and healing done by magical spells and effects by up to 9.)
-UPDATE item_template SET `spellid_1`=9415 WHERE entry=10041;
+-- 1.05 spell 9344 (Increases damage and healing done by magical spells and effects by up to 15.)
+UPDATE item_template SET `spellid_1`=9344 WHERE entry=10041;
 -- QUALITY CHANGED: Dreamweave Circlet (ilevel 50 entry 10041)
 UPDATE item_template SET Quality=2 WHERE entry=10041;
 -- SPELLS CHANGED: Cindercloth Boots (ilevel 49 entry 10044). 4 versions
@@ -1107,8 +1081,6 @@ UPDATE item_template SET `spellid_1`=18369 WHERE entry=12618;
 -- 1.12 spell 13388 (Increased Defense +9.)
 -- 1.04 spell 21409 (Increased Defense +13.)
 UPDATE item_template SET `spellid_1`=21409 WHERE entry=12620;
--- NOT FOUND: Dawnbringer Shoulders (ilevel 58 entry 12625)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 12625);
 -- SPELLS REMOVED: Whitesoul Helm (ilevel 60 entry 12633). 6 versions
 -- Source: http://www.thottbot.com/?i=Thorium%20Bar
 -- Source: http://www.thottbot.com/?i=Whitesoul%20Helm
@@ -1146,8 +1118,6 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=12637;
 UPDATE item_template SET `spellid_3`=0, `spelltrigger_3`=0, `spellid_2`=21416, `spelltrigger_2`=1 WHERE entry=12641;
 -- STATS REMOVED for item Blackcrow (http://wow.allakhazam.com/item.html?witem=12651) 
 UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=12651;
--- NOT FOUND: Inlaid Thorium Hammer (ilevel 54 entry 12772)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 12772);
 -- STATS CHANGED: Mixologist's Tunic (ilevel 55 entry 12793). 1/3 versions
 UPDATE item_template SET `stat_value1`=15, `stat_value2`=14, `stat_value3`=5, `armor`=144 WHERE entry=12793;
 -- QUALITY CHANGED: Mixologist's Tunic (ilevel 55 entry 12793)
@@ -1679,26 +1649,6 @@ UPDATE item_template SET `spellid_1`=0 WHERE entry=14023;
 -- 1.12 spell 9295 (Increases damage done by Fire spells and effects by up to 17.)
 -- 1.04 spell 23482 (Increases damage done by Fire spells and effects by up to 17.)
 UPDATE item_template SET `spellid_1`=23482 WHERE entry=14043;
--- SPELLS CHANGED: Felcloth Boots (ilevel 57 entry 14108). 4 versions
--- Source: http://wow.allakhazam.com/item.html?witem=14108
--- Source: http://www.thottbot.com/?i=Rugged%20Leather / http://wow.allakhazam.com/item.html?witem=14108
--- Source: http://www.thottbot.com/?i=Felcloth%20Boots
--- Source: http://www.thottbot.com/?i=Rune%20Thread
--- * Modified spell 1
--- 1.12 spell 9295 (Increases damage done by Fire spells and effects by up to 17.)
--- 1.04 spell 9399 (Increases damage done by Fire spells and effects by up to 11.)
-UPDATE item_template SET `spellid_1`=9399 WHERE entry=14108;
--- SPELLS CHANGED: Robe of Winter Night (ilevel 57 entry 14136). 3 versions
--- Source: http://www.thottbot.com/?i=Felcloth / http://wow.allakhazam.com/item.html?witem=14136
--- Source: http://www.thottbot.com/?i=8129
--- Source: http://www.thottbot.com/?i=Rune%20Thread
--- * Modified spell 1
--- 1.12 spell 18018 (Increases damage done by Shadow spells and effects by up to 40.)
--- 1.04 spell 18016 (Increases damage done by Shadow spells and effects by up to 37.)
--- * Modified spell 2
--- 1.12 spell 17900 (Increases damage done by Frost spells and effects by up to 40.)
--- 1.04 spell 17898 (Increases damage done by Frost spells and effects by up to 37.)
-UPDATE item_template SET `spellid_1`=18016, `spellid_2`=17898 WHERE entry=14136;
 -- SPELLS CHANGED: Robe of the Void (ilevel 62 entry 14153). 5 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=14153
 -- Source: http://www.thottbot.com/?i=5907 / http://wow.allakhazam.com/item.html?witem=14153
@@ -1731,8 +1681,6 @@ UPDATE item_template SET `stat_value1`=0, `stat_value2`=0, `armor`=624, `frost_r
 -- 1.12 spell 13385 (Increased Defense +7.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=14525;
--- NOT FOUND: Bone Ring Helm (ilevel 62 entry 14539)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 14539);
 -- STATS CHANGED: Darkshade Gloves (ilevel 62 entry 14543). 2/2 versions
 -- CONFLICT:
 -- 2005-04-19 15:57:26 to 2005-04-19 15:57:26 (days delta 0) on for example: http://www.thottbot.com/?n=30382
@@ -1973,459 +1921,6 @@ UPDATE item_template SET `dmg_min1`=115, `dmg_max1`=173 WHERE entry=16345;
 -- 1.12 spell 9335 (+28 Attack Power.)
 -- 1.04 spell 9141 (+12 Attack Power.)
 UPDATE item_template SET `spellid_2`=9141 WHERE entry=16345;
--- NOT FOUND: Knight-Lieutenant's Silk Boots (ilevel 63 entry 16369)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16369);
--- NOT FOUND: Knight-Lieutenant's Silk Gloves (ilevel 63 entry 16391)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16391);
--- NOT FOUND: Knight-Lieutenant's Leather Boots (ilevel 63 entry 16392)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16392);
--- NOT FOUND: Knight-Lieutenant's Leather Gauntlets (ilevel 63 entry 16396)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16396);
--- NOT FOUND: Knight-Lieutenant's Chain Boots (ilevel 63 entry 16401)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16401);
--- NOT FOUND: Knight-Lieutenant's Chain Gauntlets (ilevel 63 entry 16403)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16403);
--- NOT FOUND: Knight-Lieutenant's Plate Boots (ilevel 63 entry 16405)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16405);
--- NOT FOUND: Knight-Lieutenant's Plate Gauntlets (ilevel 63 entry 16406)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16406);
--- SPELLS REMOVED: Knight-Lieutenant's Lamellar Gauntlets (ilevel 63 entry 16410). 1 versions
--- Source: http://www.thottbot.com/?i=Knight-Lieutenant%27s%20Lamellar%20Gauntlets
--- * Modified spell 1
--- 1.12 spell 23300 (Increases the Holy damage bonus of your Judgement of the Crusader by 20.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=16410;
--- NOT FOUND: Knight-Captain's Silk Raiment (ilevel 63 entry 16413)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16413);
--- SPELLS REMOVED: Knight-Captain's Silk Leggings (ilevel 63 entry 16414). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype7.html
--- * Modified spell 1
--- 1.12 spell 14254 (Increases damage and healing done by magical spells and effects by up to 19.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=16414;
--- NOT FOUND: Lieutenant Commander's Silk Spaulders (ilevel 63 entry 16415)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16415);
--- NOT FOUND: Lieutenant Commander's Crown (ilevel 63 entry 16416)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16416);
--- NOT FOUND: Lieutenant Commander's Leather Veil (ilevel 63 entry 16418)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16418);
--- NOT FOUND: Lieutenant Commander's Leather Spaulders (ilevel 63 entry 16420)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16420);
--- SPELLS CHANGED: Knight-Captain's Dragonhide Tunic (ilevel 63 entry 16421). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname5.html
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=16421;
--- SPELLS CHANGED: Lieutenant Commander's Dragonhide Epaulets (ilevel 63 entry 16423). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname3.html
--- * Modified spell 1
--- 1.12 spell 9398 (Increases damage and healing done by magical spells and effects by up to 8.)
--- 1.04 spell 25109 (Increases damage and healing done by magical spells and effects by up to 8.)
-UPDATE item_template SET `spellid_1`=25109 WHERE entry=16423;
--- SPELLS REMOVED: Knight-Captain's Chain Hauberk (ilevel 63 entry 16425). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype5.html
--- * Modified spell 1
--- 1.12 spell 9334 (+26 Attack Power.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16425;
--- SPELLS REMOVED: Knight-Captain's Chain Leggings (ilevel 63 entry 16426). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype7.html
--- * Modified spell 1
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 13669 (Increases your chance to dodge an attack by 1%.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16426;
--- NOT FOUND: Lieutenant Commander's Chain Pauldrons (ilevel 63 entry 16427)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16427);
--- NOT FOUND: Lieutenant Commander's Chain Helmet (ilevel 63 entry 16428)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16428);
--- NOT FOUND: Lieutenant Commander's Plate Pauldrons (ilevel 63 entry 16432)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16432);
--- NOT FOUND: Marshal's Silk Footwraps (ilevel 71 entry 16437)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16437);
--- NOT FOUND: Marshal's Silk Gloves (ilevel 71 entry 16440)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16440);
--- NOT FOUND: Field Marshal's Coronet (ilevel 74 entry 16441)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16441);
--- STATS CHANGED: Marshal's Silk Leggings (ilevel 71 entry 16442). 1/1 versions
-UPDATE item_template SET `stat_value1`=23, `stat_value2`=19, `stat_value3`=16, `armor`=88 WHERE entry=16442;
--- SPELLS CHANGED: Marshal's Silk Leggings (ilevel 71 entry 16442). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname7.html
--- * Modified spell 1
--- 1.12 spell 14798 (Increases damage and healing done by magical spells and effects by up to 30.)
--- 1.04 spell 14127 (Increases damage and healing done by magical spells and effects by up to 28.)
--- * Modified spell 2
--- 1.12 spell 18384 (Improves your chance to get a critical strike with spells by 1%.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=14127, `spellid_2`=0 WHERE entry=16442;
--- STATS CHANGED: Field Marshal's Silk Vestments (ilevel 74 entry 16443). 1/1 versions
-UPDATE item_template SET `stat_value1`=30, `stat_value2`=25, `stat_value3`=0, `armor`=100 WHERE entry=16443;
--- SPELLS CHANGED: Field Marshal's Silk Vestments (ilevel 74 entry 16443). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname20.html
--- * Modified spell 2
--- 1.12 spell 18050 (Increases damage and healing done by magical spells and effects by up to 33.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16443;
--- NOT FOUND: Field Marshal's Silk Spaulders (ilevel 74 entry 16444)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16444);
--- NOT FOUND: Marshal's Leather Footguards (ilevel 71 entry 16446)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16446);
--- NOT FOUND: Marshal's Dragonhide Gauntlets (ilevel 71 entry 16448)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16448);
--- NOT FOUND: Field Marshal's Dragonhide Spaulders (ilevel 74 entry 16449)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16449);
--- STATS CHANGED: Marshal's Dragonhide Legguards (ilevel 71 entry 16450). 1/1 versions
-UPDATE item_template SET `stat_value1`=16, `stat_value2`=16, `stat_value3`=15, `stat_value4`=13, `stat_value5`=15, `armor`=173 WHERE entry=16450;
--- SPELLS CHANGED: Marshal's Dragonhide Legguards (ilevel 71 entry 16450). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype7.html
--- * Modified spell 1
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 13669 (Increases your chance to dodge an attack by 1%.)
--- * Modified spell 2
--- 1.12 spell 0
--- 1.04 spell 9332 (+22 Attack Power.)
-UPDATE item_template SET `spellid_1`=13669, `spellid_2`=9332, `spelltrigger_2`=1 WHERE entry=16450;
--- STATS CHANGED: Field Marshal's Dragonhide Helmet (ilevel 74 entry 16451). 1/1 versions
-UPDATE item_template SET `stat_value1`=16, `stat_value2`=16, `stat_value3`=15, `stat_value5`=13, `armor`=160 WHERE entry=16451;
--- SPELLS CHANGED: Field Marshal's Dragonhide Helmet (ilevel 74 entry 16451). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname1.html
--- * Modified spell 1
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 9346 (Increases damage and healing done by magical spells and effects by up to 18.)
--- * Modified spell 2
--- 1.12 spell 9346 (Increases damage and healing done by magical spells and effects by up to 18.)
--- 1.04 spell 14027 (+24 Attack Power.)
-UPDATE item_template SET `spellid_1`=9346, `spellid_2`=14027 WHERE entry=16451;
--- STATS CHANGED: Field Marshal's Dragonhide Breastplate (ilevel 74 entry 16452). 1/1 versions
-UPDATE item_template SET `stat_value1`=19, `stat_value2`=18, `armor`=197 WHERE entry=16452;
--- SPELLS CHANGED: Field Marshal's Dragonhide Breastplate (ilevel 74 entry 16452). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype5.html
--- * Modified spell 1
--- 1.12 spell 14248 (Increases damage and healing done by magical spells and effects by up to 21.)
--- 1.04 spell 14089 (+36 Attack Power.)
-UPDATE item_template SET `spellid_1`=14089 WHERE entry=16452;
--- STATS CHANGED: Field Marshal's Leather Chestpiece (ilevel 74 entry 16453). 1/1 versions
-UPDATE item_template SET `stat_value1`=35, `stat_value2`=20, `armor`=197 WHERE entry=16453;
--- SPELLS CHANGED: Field Marshal's Leather Chestpiece (ilevel 74 entry 16453). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname5.html
--- * Modified spell 2
--- 1.12 spell 15464 (Improves your chance to hit by 1%.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16453;
--- NOT FOUND: Marshal's Leather Handgrips (ilevel 71 entry 16454)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16454);
--- STATS CHANGED: Field Marshal's Leather Mask (ilevel 74 entry 16455). 1/1 versions
-UPDATE item_template SET `stat_value1`=35, `stat_value2`=0, `armor`=160 WHERE entry=16455;
--- SPELLS CHANGED: Field Marshal's Leather Mask (ilevel 74 entry 16455). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname1.html
--- * Modified spell 1
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 13669 (Increases your chance to dodge an attack by 1%.)
--- * Modified spell 3
--- 1.12 spell 0
--- 1.04 spell 9336 (+30 Attack Power.)
-UPDATE item_template SET `spellid_1`=13669, `spellid_3`=9336, `spelltrigger_3`=1 WHERE entry=16455;
--- STATS CHANGED: Marshal's Leather Leggings (ilevel 71 entry 16456). 1/1 versions
-UPDATE item_template SET `stat_value1`=0, `stat_value2`=24, `stat_type3`=4, `stat_value3`=12, `armor`=173 WHERE entry=16456;
--- SPELLS CHANGED: Marshal's Leather Leggings (ilevel 71 entry 16456). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname7.html
--- * Modified spell 1
--- 1.12 spell 15465 (Improves your chance to hit by 2%.)
--- 1.04 spell 7598 (Improves your chance to get a critical strike by 2%.)
--- * Modified spell 2
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 15464 (Improves your chance to hit by 1%.)
-UPDATE item_template SET `spellid_1`=7598, `spellid_2`=15464 WHERE entry=16456;
--- STATS CHANGED: Field Marshal's Leather Epaulets (ilevel 74 entry 16457). 1/1 versions
-UPDATE item_template SET `stat_value1`=26, `stat_value2`=15, `armor`=148 WHERE entry=16457;
--- SPELLS CHANGED: Field Marshal's Leather Epaulets (ilevel 74 entry 16457). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname3.html
--- * Modified spell 1
--- 1.12 spell 15464 (Improves your chance to hit by 1%.)
--- 1.04 spell 9332 (+22 Attack Power.)
-UPDATE item_template SET `spellid_1`=9332 WHERE entry=16457;
--- NOT FOUND: Marshal's Dragonhide Boots (ilevel 71 entry 16459)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16459);
--- NOT FOUND: Marshal's Chain Boots (ilevel 71 entry 16462)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16462);
--- NOT FOUND: Marshal's Chain Grips (ilevel 71 entry 16463)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16463);
--- NOT FOUND: Field Marshal's Chain Helm (ilevel 74 entry 16465)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16465);
--- STATS CHANGED: Field Marshal's Chain Breastplate (ilevel 74 entry 16466). 2/2 versions
--- CONFLICT:
--- 2005-05-20 00:28:35 to 2006-06-16 07:59:16 (days delta 399) on for example: http://wow.allakhazam.com/item.html?witem=16466
--- 2005-05-16 00:18:17 to 2005-05-16 00:18:17 (days delta 0) on for example: http://wow.allakhazam.com/dyn/items/iname5.html
-UPDATE item_template SET `stat_value1`=1000, `stat_value2`=1000, `stat_value3`=0, `stat_type4`=6, `stat_value4`=1000, `armor`=1000, `fire_res`=1000, `nature_res`=1000, `frost_res`=1000, `shadow_res`=1000 WHERE entry=16466;
--- SPELLS CHANGED: Field Marshal's Chain Breastplate (ilevel 74 entry 16466). 2 versions
--- Source: http://wow.allakhazam.com/item.html?witem=16466
--- Source: http://wow.allakhazam.com/dyn/items/iname5.html
--- * Modified spell 1
--- 1.12 spell 0
--- 1.04 spell 14049 (+40 Attack Power.)
-UPDATE item_template SET `spellid_1`=14049, `spelltrigger_1`=1 WHERE entry=16466;
--- STATS CHANGED: Marshal's Chain Legguards (ilevel 71 entry 16467). 2/2 versions
--- CONFLICT:
--- 2005-07-06 05:22:49 to 2006-06-16 07:59:16 (days delta 351) on for example: http://wow.allakhazam.com/dyn/items/iname7.html
--- 2005-05-16 00:18:17 to 2005-05-16 00:18:17 (days delta 0) on for example: http://wow.allakhazam.com/dyn/items/iname5.html
-UPDATE item_template SET `stat_value1`=1000, `stat_value2`=1000, `stat_value3`=0, `stat_type4`=6, `stat_value4`=1000, `armor`=1000, `fire_res`=1000, `nature_res`=1000, `frost_res`=1000, `shadow_res`=1000 WHERE entry=16467;
--- SPELLS CHANGED: Marshal's Chain Legguards (ilevel 71 entry 16467). 2 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname7.html
--- Source: http://wow.allakhazam.com/dyn/items/iname5.html
--- * Modified spell 2
--- 1.12 spell 0
--- 1.04 spell 13669 (Increases your chance to dodge an attack by 1%.)
--- * Modified spell 3
--- 1.12 spell 0
--- 1.04 spell 15464 (Improves your chance to hit by 1%.)
-UPDATE item_template SET `spellid_2`=13669, `spelltrigger_2`=1, `spellid_3`=15464, `spelltrigger_3`=1 WHERE entry=16467;
--- STATS CHANGED: Field Marshal's Chain Spaulders (ilevel 74 entry 16468). 1/1 versions
-UPDATE item_template SET `stat_value1`=26, `stat_value2`=15, `stat_value3`=0, `armor`=312 WHERE entry=16468;
--- SPELLS CHANGED: Field Marshal's Chain Spaulders (ilevel 74 entry 16468). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname3.html
--- * Modified spell 1
--- 1.12 spell 15464 (Improves your chance to hit by 1%.)
--- 1.04 spell 9332 (+22 Attack Power.)
-UPDATE item_template SET `spellid_1`=9332 WHERE entry=16468;
--- NOT FOUND: Marshal's Lamellar Gloves (ilevel 71 entry 16471)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16471);
--- NOT FOUND: Marshal's Lamellar Boots (ilevel 71 entry 16472)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16472);
--- STATS CHANGED: Field Marshal's Lamellar Chestplate (ilevel 74 entry 16473). 1/1 versions
-UPDATE item_template SET `stat_value1`=35, `stat_value2`=14, `stat_value3`=0, `stat_type4`=3, `stat_value4`=13, `armor`=738 WHERE entry=16473;
--- SPELLS CHANGED: Field Marshal's Lamellar Chestplate (ilevel 74 entry 16473). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype5.html
--- * Modified spell 2
--- 1.12 spell 15715 (Increases damage and healing done by magical spells and effects by up to 25.)
--- 1.04 spell 0
--- * Modified spell 3
--- 1.12 spell 21363 (Restores 5 mana per 5 sec.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0, `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=16473;
--- NOT FOUND: Field Marshal's Lamellar Faceguard (ilevel 74 entry 16474)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16474);
--- STATS CHANGED: Marshal's Lamellar Legplates (ilevel 71 entry 16475). 1/1 versions
-UPDATE item_template SET `stat_value1`=19, `stat_value2`=15, `stat_value3`=0, `armor`=646 WHERE entry=16475;
--- SPELLS CHANGED: Marshal's Lamellar Legplates (ilevel 71 entry 16475). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname7.html
--- * Modified spell 1
--- 1.12 spell 14054 (Increases damage and healing done by magical spells and effects by up to 27.)
--- 1.04 spell 15464 (Improves your chance to hit by 1%.)
--- * Modified spell 2
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 7598 (Improves your chance to get a critical strike by 2%.)
-UPDATE item_template SET `spellid_1`=15464, `spellid_2`=7598 WHERE entry=16475;
--- NOT FOUND: Field Marshal's Lamellar Pauldrons (ilevel 74 entry 16476)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16476);
--- STATS CHANGED: Field Marshal's Plate Armor (ilevel 74 entry 16477). 1/1 versions
-UPDATE item_template SET `stat_value1`=35, `stat_value2`=13, `stat_value3`=13, `armor`=738 WHERE entry=16477;
--- NOT FOUND: Field Marshal's Plate Helm (ilevel 74 entry 16478)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16478);
--- NOT FOUND: Marshal's Plate Legguards (ilevel 71 entry 16479)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16479);
--- NOT FOUND: Field Marshal's Plate Shoulderguards (ilevel 74 entry 16480)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16480);
--- NOT FOUND: Marshal's Plate Boots (ilevel 71 entry 16483)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16483);
--- NOT FOUND: Marshal's Plate Gauntlets (ilevel 71 entry 16484)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16484);
--- NOT FOUND: Blood Guard's Silk Footwraps (ilevel 63 entry 16485)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16485);
--- NOT FOUND: Blood Guard's Silk Gloves (ilevel 63 entry 16487)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16487);
--- NOT FOUND: Champion's Silk Hood (ilevel 63 entry 16489)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16489);
--- NOT FOUND: Champion's Silk Shoulderpads (ilevel 63 entry 16492)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16492);
--- NOT FOUND: Blood Guard's Dragonhide Boots (ilevel 63 entry 16494)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16494);
--- NOT FOUND: Blood Guard's Dragonhide Gauntlets (ilevel 63 entry 16496)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16496);
--- NOT FOUND: Blood Guard's Leather Treads (ilevel 63 entry 16498)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16498);
--- NOT FOUND: Blood Guard's Leather Vices (ilevel 63 entry 16499)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16499);
--- NOT FOUND: Champion's Dragonhide Spaulders (ilevel 63 entry 16501)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16501);
--- NOT FOUND: Legionnaire's Dragonhide Trousers (ilevel 63 entry 16502)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16502);
--- NOT FOUND: Champion's Dragonhide Helm (ilevel 63 entry 16503)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16503);
--- NOT FOUND: Legionnaire's Dragonhide Breastplate (ilevel 63 entry 16504)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16504);
--- NOT FOUND: Champion's Leather Headguard (ilevel 63 entry 16506)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16506);
--- NOT FOUND: Champion's Leather Mantle (ilevel 63 entry 16507)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16507);
--- NOT FOUND: Blood Guard's Plate Boots (ilevel 63 entry 16509)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16509);
--- NOT FOUND: Blood Guard's Plate Gloves (ilevel 63 entry 16510)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16510);
--- NOT FOUND: Champion's Plate Headguard (ilevel 63 entry 16514)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16514);
--- NOT FOUND: Champion's Plate Pauldrons (ilevel 63 entry 16516)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16516);
--- NOT FOUND: Blood Guard's Mail Walkers (ilevel 63 entry 16518)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16518);
--- NOT FOUND: Blood Guard's Mail Grips (ilevel 63 entry 16519)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16519);
--- NOT FOUND: Champion's Mail Helm (ilevel 63 entry 16521)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16521);
--- NOT FOUND: Champion's Chain Headguard (ilevel 63 entry 16526)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16526);
--- NOT FOUND: Champion's Chain Pauldrons (ilevel 63 entry 16528)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16528);
--- NOT FOUND: Blood Guard's Chain Gauntlets (ilevel 63 entry 16530)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16530);
--- NOT FOUND: Blood Guard's Chain Boots (ilevel 63 entry 16531)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16531);
--- NOT FOUND: Warlord's Silk Cowl (ilevel 74 entry 16533)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16533);
--- STATS CHANGED: General's Silk Trousers (ilevel 71 entry 16534). 1/1 versions
-UPDATE item_template SET `stat_value1`=23, `stat_value2`=19, `stat_value3`=16, `armor`=88 WHERE entry=16534;
--- SPELLS CHANGED: General's Silk Trousers (ilevel 71 entry 16534). 1 versions
--- Source: http://wow.allakhazam.com/item.html?witem=16534
--- * Modified spell 1
--- 1.12 spell 14798 (Increases damage and healing done by magical spells and effects by up to 30.)
--- 1.04 spell 14127 (Increases damage and healing done by magical spells and effects by up to 28.)
--- * Modified spell 2
--- 1.12 spell 18384 (Improves your chance to get a critical strike with spells by 1%.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=14127, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16534;
--- STATS CHANGED: Warlord's Silk Raiment (ilevel 74 entry 16535). 1/1 versions
-UPDATE item_template SET `stat_value1`=30, `stat_value2`=25, `stat_value3`=0, `armor`=100 WHERE entry=16535;
--- SPELLS CHANGED: Warlord's Silk Raiment (ilevel 74 entry 16535). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname20.html
--- * Modified spell 2
--- 1.12 spell 18050 (Increases damage and healing done by magical spells and effects by up to 33.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16535;
--- NOT FOUND: Warlord's Silk Amice (ilevel 74 entry 16536)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16536);
--- NOT FOUND: General's Silk Boots (ilevel 71 entry 16539)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16539);
--- NOT FOUND: General's Silk Handguards (ilevel 71 entry 16540)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16540);
--- STATS CHANGED: Warlord's Plate Armor (ilevel 74 entry 16541). 1/1 versions
-UPDATE item_template SET `stat_value1`=35, `stat_value2`=13, `stat_value3`=13, `armor`=738 WHERE entry=16541;
--- NOT FOUND: Warlord's Plate Headpiece (ilevel 74 entry 16542)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16542);
--- STATS CHANGED: General's Plate Leggings (ilevel 71 entry 16543). 1/1 versions
-UPDATE item_template SET `stat_value1`=20, `stat_value2`=16, `armor`=646 WHERE entry=16543;
--- NOT FOUND: Warlord's Plate Shoulders (ilevel 74 entry 16544)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16544);
--- NOT FOUND: General's Plate Boots (ilevel 71 entry 16545)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16545);
--- NOT FOUND: General's Plate Gauntlets (ilevel 71 entry 16548)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16548);
--- STATS CHANGED: Warlord's Dragonhide Hauberk (ilevel 74 entry 16549). 1/1 versions
-UPDATE item_template SET `stat_value1`=19, `stat_value2`=18, `armor`=197 WHERE entry=16549;
--- STATS CHANGED: Warlord's Dragonhide Helmet (ilevel 74 entry 16550). 1/1 versions
-UPDATE item_template SET `stat_value1`=16, `stat_value2`=16, `stat_value3`=15, `stat_value5`=13, `armor`=160 WHERE entry=16550;
--- SPELLS CHANGED: Warlord's Dragonhide Helmet (ilevel 74 entry 16550). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname1.html
--- * Modified spell 2
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 14027 (+24 Attack Power.)
-UPDATE item_template SET `spellid_2`=14027 WHERE entry=16550;
--- NOT FOUND: Warlord's Dragonhide Epaulets (ilevel 74 entry 16551)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16551);
--- NOT FOUND: General's Dragonhide Leggings (ilevel 71 entry 16552)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16552);
--- NOT FOUND: General's Dragonhide Boots (ilevel 71 entry 16554)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16554);
--- STATS CHANGED: General's Dragonhide Gloves (ilevel 71 entry 16555). 1/1 versions
-UPDATE item_template SET `stat_value1`=18, `stat_value2`=17, `armor`=123 WHERE entry=16555;
--- SPELLS CHANGED: General's Dragonhide Gloves (ilevel 71 entry 16555). 1 versions
--- Source: http://wow.allakhazam.com/db/item.html?witem=16555
--- * Modified spell 2
--- 1.12 spell 9417 (Increases damage and healing done by magical spells and effects by up to 12.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16555;
--- NOT FOUND: General's Leather Treads (ilevel 71 entry 16558)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16558);
--- NOT FOUND: General's Leather Mitts (ilevel 71 entry 16560)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16560);
--- NOT FOUND: Warlord's Leather Helm (ilevel 74 entry 16561)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16561);
--- NOT FOUND: Warlord's Leather Spaulders (ilevel 74 entry 16562)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16562);
--- STATS CHANGED: Warlord's Leather Breastplate (ilevel 74 entry 16563). 1/1 versions
-UPDATE item_template SET `stat_value1`=35, `stat_value2`=20, `armor`=197 WHERE entry=16563;
--- SPELLS CHANGED: Warlord's Leather Breastplate (ilevel 74 entry 16563). 1 versions
--- Source: http://wow.allakhazam.com/item.html?witem=16563
--- * Modified spell 1
--- 1.12 spell 15464 (Improves your chance to hit by 1%.)
--- 1.04 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- * Modified spell 2
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=7597, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=16563;
--- STATS CHANGED: General's Leather Legguards (ilevel 71 entry 16564). 1/1 versions
-UPDATE item_template SET `stat_value1`=24, `stat_value2`=0, `stat_type3`=4, `stat_value3`=12, `armor`=173 WHERE entry=16564;
--- SPELLS CHANGED: General's Leather Legguards (ilevel 71 entry 16564). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname7.html
--- * Modified spell 1
--- 1.12 spell 15465 (Improves your chance to hit by 2%.)
--- 1.04 spell 7598 (Improves your chance to get a critical strike by 2%.)
--- * Modified spell 2
--- 1.12 spell 7597 (Improves your chance to get a critical strike by 1%.)
--- 1.04 spell 15464 (Improves your chance to hit by 1%.)
-UPDATE item_template SET `spellid_1`=7598, `spellid_2`=15464 WHERE entry=16564;
--- NOT FOUND: Warlord's Chain Chestpiece (ilevel 74 entry 16565)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16565);
--- NOT FOUND: Warlord's Chain Helmet (ilevel 74 entry 16566)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16566);
--- NOT FOUND: General's Chain Legguards (ilevel 71 entry 16567)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16567);
--- NOT FOUND: Warlord's Chain Shoulders (ilevel 74 entry 16568)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16568);
--- NOT FOUND: General's Chain Boots (ilevel 71 entry 16569)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16569);
--- NOT FOUND: General's Chain Gloves (ilevel 71 entry 16571)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16571);
--- NOT FOUND: General's Mail Boots (ilevel 71 entry 16573)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16573);
--- NOT FOUND: General's Mail Gauntlets (ilevel 71 entry 16574)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16574);
--- STATS CHANGED: Warlord's Mail Armor (ilevel 74 entry 16577). 1/1 versions
-UPDATE item_template SET `stat_value3`=0, `armor`=416 WHERE entry=16577;
--- SPELLS CHANGED: Warlord's Mail Armor (ilevel 74 entry 16577). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype5.html
--- * Modified spell 2
--- 1.12 spell 18384 (Improves your chance to get a critical strike with spells by 1%.)
--- 1.04 spell 0
--- * Modified spell 3
--- 1.12 spell 9415 (Increases damage and healing done by magical spells and effects by up to 9.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0, `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=16577;
--- STATS CHANGED: Warlord's Mail Helm (ilevel 74 entry 16578). 1/1 versions
-UPDATE item_template SET `stat_value2`=11, `stat_value3`=10, `armor`=338 WHERE entry=16578;
--- SPELLS CHANGED: Warlord's Mail Helm (ilevel 74 entry 16578). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname1.html
--- * Modified spell 2
--- 1.12 spell 18384 (Improves your chance to get a critical strike with spells by 1%.)
--- 1.04 spell 0
--- * Modified spell 3
--- 1.12 spell 9415 (Increases damage and healing done by magical spells and effects by up to 9.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0, `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=16578;
--- NOT FOUND: General's Mail Leggings (ilevel 71 entry 16579)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 16579);
--- STATS CHANGED: Warlord's Mail Spaulders (ilevel 74 entry 16580). 1/1 versions
-UPDATE item_template SET `stat_value2`=17, `stat_value3`=11, `stat_value4`=8, `armor`=312 WHERE entry=16580;
--- SPELLS CHANGED: Warlord's Mail Spaulders (ilevel 74 entry 16580). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname3.html
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25109 (Increases damage and healing done by magical spells and effects by up to 8.)
-UPDATE item_template SET `spellid_1`=25109 WHERE entry=16580;
 -- STATS CHANGED: Magister's Gloves (ilevel 59 entry 16684). 1/2 versions
 UPDATE item_template SET `stat_value3`=6, `stat_type4`=3, `stat_value4`=6 WHERE entry=16684;
 -- STATS CHANGED: Magister's Leggings (ilevel 61 entry 16687). 1/3 versions
@@ -3946,8 +3441,6 @@ UPDATE item_template SET `stat_value2`=23, `stat_type3`=6, `stat_value3`=10, `fi
 -- 1.12 spell 18185 (Increased Defense +11.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=16966;
--- NOT FOUND: Juno's Shadow (ilevel 58 entry 17061)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17061);
 -- SPELLS CHANGED: Medallion of Steadfast Might (ilevel 68 entry 17065). 2 versions
 -- Source: http://www.thottbot.com/?n=508478 / http://wow.allakhazam.com/dyn/items/iname2.html
 -- Source: http://wow.allakhazam.com/item.html?witem=17065
@@ -4029,198 +3522,6 @@ UPDATE item_template SET `dmg_min1`=144, `dmg_max1`=229 WHERE entry=17113;
 -- 1.12 spell 21142 (Deals 5 Fire damage to anyone who strikes you with a melee attack.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_2`=21142, `spelltrigger_2`=1, `spellid_1`=21162, `spelltrigger_1`=2, `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17182;
--- NOT FOUND: Knight-Lieutenant's Dreadweave Boots (ilevel 63 entry 17562)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17562);
--- NOT FOUND: Knight-Lieutenant's Dreadweave Gloves (ilevel 63 entry 17564)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17564);
--- SPELLS CHANGED: Lieutenant Commander's Headguard (ilevel 63 entry 17566). 1 versions
--- Source: http://wow.allakhazam.com/db/itemset.html?setid=346
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17566;
--- SPELLS CHANGED: Knight-Captain's Dreadweave Leggings (ilevel 63 entry 17567). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname7.html
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17567;
--- SPELLS CHANGED: Knight-Captain's Dreadweave Robe (ilevel 63 entry 17568). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname20.html
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17568;
--- NOT FOUND: Lieutenant Commander's Dreadweave Mantle (ilevel 63 entry 17569)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17569);
--- SPELLS CHANGED: Champion's Dreadweave Hood (ilevel 63 entry 17570). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iminlev1.html
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17570;
--- NOT FOUND: Legionnaire's Dreadweave Leggings (ilevel 63 entry 17571)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17571);
--- NOT FOUND: Legionnaire's Dreadweave Robe (ilevel 63 entry 17572)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17572);
--- NOT FOUND: Blood Guard's Dreadweave Boots (ilevel 63 entry 17576)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17576);
--- NOT FOUND: Blood Guard's Dreadweave Gloves (ilevel 63 entry 17577)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17577);
--- STATS CHANGED: Field Marshal's Coronal (ilevel 74 entry 17578). 1/1 versions
-UPDATE item_template SET `stat_value1`=28, `armor`=81 WHERE entry=17578;
--- SPELLS CHANGED: Field Marshal's Coronal (ilevel 74 entry 17578). 1 versions
--- Source: http://wow.allakhazam.com/item.html?witem=17578
--- * Modified spell 1
--- 1.12 spell 17367 (Increases damage and healing done by magical spells and effects by up to 32.)
--- 1.04 spell 14799 (Increases damage and healing done by magical spells and effects by up to 20.)
-UPDATE item_template SET `spellid_1`=14799 WHERE entry=17578;
--- STATS CHANGED: Marshal's Dreadweave Leggings (ilevel 71 entry 17579). 1/1 versions
-UPDATE item_template SET `stat_value1`=23, `stat_value2`=16, `armor`=88 WHERE entry=17579;
--- SPELLS CHANGED: Marshal's Dreadweave Leggings (ilevel 71 entry 17579). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype7.html
--- * Modified spell 1
--- 1.12 spell 18054 (Increases damage and healing done by magical spells and effects by up to 37.)
--- 1.04 spell 14055 (Increases damage and healing done by magical spells and effects by up to 35.)
-UPDATE item_template SET `spellid_1`=14055 WHERE entry=17579;
--- STATS CHANGED: Field Marshal's Dreadweave Shoulders (ilevel 74 entry 17580). 1/1 versions
-UPDATE item_template SET `stat_value1`=22, `armor`=75 WHERE entry=17580;
--- SPELLS CHANGED: Field Marshal's Dreadweave Shoulders (ilevel 74 entry 17580). 1 versions
--- Source: http://wow.allakhazam.com/item.html?witem=17580
--- * Modified spell 1
--- 1.12 spell 15715 (Increases damage and healing done by magical spells and effects by up to 25.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17580;
--- STATS CHANGED: Field Marshal's Dreadweave Robe (ilevel 74 entry 17581). 1/1 versions
-UPDATE item_template SET `stat_value2`=25, `armor`=100 WHERE entry=17581;
--- SPELLS CHANGED: Field Marshal's Dreadweave Robe (ilevel 74 entry 17581). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname20.html
--- * Modified spell 1
--- 1.12 spell 17367 (Increases damage and healing done by magical spells and effects by up to 32.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17581;
--- NOT FOUND: Marshal's Dreadweave Boots (ilevel 71 entry 17583)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17583);
--- STATS CHANGED: Marshal's Dreadweave Gloves (ilevel 71 entry 17584). 1/1 versions
-UPDATE item_template SET `stat_value1`=16, `stat_value2`=0, `armor`=63 WHERE entry=17584;
--- SPELLS CHANGED: Marshal's Dreadweave Gloves (ilevel 71 entry 17584). 1 versions
--- Source: http://wow.allakhazam.com/db/item.html?witem=17584
--- * Modified spell 2
--- 1.12 spell 14798 (Increases damage and healing done by magical spells and effects by up to 30.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=17584;
--- NOT FOUND: General's Dreadweave Boots (ilevel 71 entry 17586)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17586);
--- NOT FOUND: General's Dreadweave Gloves (ilevel 71 entry 17588)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17588);
--- STATS CHANGED: Warlord's Dreadweave Mantle (ilevel 74 entry 17590). 1/1 versions
-UPDATE item_template SET `stat_value1`=22, `armor`=75 WHERE entry=17590;
--- SPELLS CHANGED: Warlord's Dreadweave Mantle (ilevel 74 entry 17590). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname3.html
--- * Modified spell 1
--- 1.12 spell 15715 (Increases damage and healing done by magical spells and effects by up to 25.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17590;
--- NOT FOUND: Warlord's Dreadweave Hood (ilevel 74 entry 17591)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17591);
--- NOT FOUND: Warlord's Dreadweave Robe (ilevel 74 entry 17592)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17592);
--- NOT FOUND: General's Dreadweave Pants (ilevel 71 entry 17593)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17593);
--- NOT FOUND: Knight-Lieutenant's Satin Boots (ilevel 63 entry 17594)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17594);
--- NOT FOUND: Knight-Lieutenant's Satin Gloves (ilevel 63 entry 17596)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17596);
--- NOT FOUND: Lieutenant Commander's Diadem (ilevel 63 entry 17598)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17598);
--- NOT FOUND: Knight-Captain's Satin Leggings (ilevel 63 entry 17599)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17599);
--- NOT FOUND: Knight-Captain's Satin Robes (ilevel 63 entry 17600)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17600);
--- NOT FOUND: Lieutenant Commander's Satin Amice (ilevel 63 entry 17601)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17601);
--- NOT FOUND: Field Marshal's Headdress (ilevel 74 entry 17602)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17602);
--- STATS CHANGED: Marshal's Satin Pants (ilevel 71 entry 17603). 1/1 versions
-UPDATE item_template SET `stat_value1`=23, `stat_value2`=16, `stat_type3`=6, `stat_value3`=19, `armor`=88 WHERE entry=17603;
--- SPELLS CHANGED: Marshal's Satin Pants (ilevel 71 entry 17603). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname7.html
--- * Modified spell 1
--- 1.12 spell 17367 (Increases damage and healing done by magical spells and effects by up to 32.)
--- 1.04 spell 14127 (Increases damage and healing done by magical spells and effects by up to 28.)
--- * Modified spell 2
--- 1.12 spell 21362 (Restores 4 mana per 5 sec.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=14127, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=17603;
--- NOT FOUND: Field Marshal's Satin Mantle (ilevel 74 entry 17604)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17604);
--- NOT FOUND: Field Marshal's Satin Vestments (ilevel 74 entry 17605)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17605);
--- NOT FOUND: Marshal's Satin Sandals (ilevel 71 entry 17607)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17607);
--- NOT FOUND: Marshal's Satin Gloves (ilevel 71 entry 17608)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17608);
--- SPELLS CHANGED: Champion's Satin Cowl (ilevel 63 entry 17610). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname1.html
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17610;
--- SPELLS CHANGED: Legionnaire's Satin Vestments (ilevel 63 entry 17612). 1 versions
--- Source: http://wow.allakhazam.com/item.html?witem=17612
--- * Modified spell 1
--- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17612;
--- NOT FOUND: Blood Guard's Satin Boots (ilevel 63 entry 17616)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17616);
--- NOT FOUND: Blood Guard's Satin Gloves (ilevel 63 entry 17617)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17617);
--- NOT FOUND: General's Satin Boots (ilevel 71 entry 17618)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17618);
--- NOT FOUND: General's Satin Gloves (ilevel 71 entry 17620)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 17620);
--- STATS CHANGED: Warlord's Satin Mantle (ilevel 74 entry 17622). 1/1 versions
-UPDATE item_template SET `stat_value2`=17, `armor`=75 WHERE entry=17622;
--- SPELLS CHANGED: Warlord's Satin Mantle (ilevel 74 entry 17622). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname3.html
--- * Modified spell 1
--- 1.12 spell 15715 (Increases damage and healing done by magical spells and effects by up to 25.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
-UPDATE item_template SET `spellid_1`=25110 WHERE entry=17622;
--- STATS CHANGED: Warlord's Satin Cowl (ilevel 74 entry 17623). 1/1 versions
-UPDATE item_template SET `stat_value1`=28, `stat_value2`=24, `armor`=81 WHERE entry=17623;
--- SPELLS CHANGED: Warlord's Satin Cowl (ilevel 74 entry 17623). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname1.html
--- * Modified spell 1
--- 1.12 spell 18050 (Increases damage and healing done by magical spells and effects by up to 33.)
--- 1.04 spell 14799 (Increases damage and healing done by magical spells and effects by up to 20.)
--- * Modified spell 2
--- 1.12 spell 21362 (Restores 4 mana per 5 sec.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=14799, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=17623;
--- STATS CHANGED: Warlord's Satin Robes (ilevel 74 entry 17624). 1/1 versions
-UPDATE item_template SET `stat_value2`=25, `armor`=100 WHERE entry=17624;
--- SPELLS CHANGED: Warlord's Satin Robes (ilevel 74 entry 17624). 1 versions
--- Source: http://wow.allakhazam.com/item.html?witem=17624
--- * Modified spell 1
--- 1.12 spell 18050 (Increases damage and healing done by magical spells and effects by up to 33.)
--- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
--- * Modified spell 2
--- 1.12 spell 21362 (Restores 4 mana per 5 sec.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=25110, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=17624;
--- STATS CHANGED: General's Satin Leggings (ilevel 71 entry 17625). 1/1 versions
-UPDATE item_template SET `stat_value1`=23, `stat_value2`=16, `stat_type3`=6, `stat_value3`=19, `armor`=88 WHERE entry=17625;
--- SPELLS CHANGED: General's Satin Leggings (ilevel 71 entry 17625). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype7.html
--- * Modified spell 1
--- 1.12 spell 17367 (Increases damage and healing done by magical spells and effects by up to 32.)
--- 1.04 spell 14127 (Increases damage and healing done by magical spells and effects by up to 28.)
--- * Modified spell 2
--- 1.12 spell 21362 (Restores 4 mana per 5 sec.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=14127, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=17625;
 -- SPELLS CHANGED: Helm of the Mountain (ilevel 53 entry 17734). 3 versions
 -- Source: http://www.thottbot.com/?n=111545 / http://wow.allakhazam.com/item.html?witem=17734
 -- Source: http://www.thottbot.com/?i=Helm%20of%20the%20Mountain
@@ -4368,14 +3669,8 @@ UPDATE item_template SET `spellid_1`=9407 WHERE entry=18208;
 -- 1.12 spell 21601 (Restores 7 health per 5 sec.)
 -- 1.04 spell 21596 (Restores 5 health per 5 sec.)
 UPDATE item_template SET `spellid_1`=21596 WHERE entry=18298;
--- NOT FOUND: Gloves of Shadowy Mist (ilevel 58 entry 18306)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18306);
 -- STATS CHANGED: Satyr's Bow (ilevel 58 entry 18323). 1/3 versions
 UPDATE item_template SET `stat_value1`=7 WHERE entry=18323;
--- NOT FOUND: Whipvine Cord (ilevel 59 entry 18327)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18327);
--- NOT FOUND: Gauntlets of Accuracy (ilevel 61 entry 18349)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18349);
 -- SPELLS CHANGED: Evil Eye Pendant (ilevel 62 entry 18381). 2 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=18381
 -- Source: http://www.thottbot.com/?n=614364
@@ -4414,103 +3709,12 @@ UPDATE item_template SET `spellid_2`=21408, `spellid_3`=21596 WHERE entry=18406;
 -- 1.12 spell 7518 (Increased Defense +5.)
 -- 1.04 spell 13386 (Increased Defense +7.)
 UPDATE item_template SET `spellid_1`=13386 WHERE entry=18413;
--- NOT FOUND: First Sergeant's Plate Bracers (ilevel 50 entry 18430)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18430);
--- NOT FOUND: First Sergeant's Mail Wristguards (ilevel 50 entry 18432)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18432);
--- STATS CHANGED: First Sergeant's Leather Armguards (ilevel 50 entry 18435). 1/1 versions
-UPDATE item_template SET `stat_value2`=0, `stat_type3`=5, `stat_value3`=6 WHERE entry=18435;
--- NOT FOUND: First Sergeant's Dragonhide Armguards (ilevel 50 entry 18436)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18436);
--- NOT FOUND: First Sergeant's Silk Cuffs (ilevel 50 entry 18437)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18437);
--- STATS CHANGED: Sergeant Major's Leather Armsplints (ilevel 63 entry 18452). 1/1 versions
-UPDATE item_template SET `stat_value2`=0, `stat_type3`=5, `stat_value3`=7, `armor`=50 WHERE entry=18452;
--- STATS CHANGED: Sergeant Major's Dragonhide Armsplints (ilevel 63 entry 18454). 1/1 versions
-UPDATE item_template SET `stat_value2`=0, `stat_type3`=3, `stat_value3`=7 WHERE entry=18454;
--- STATS CHANGED: Sergeant Major's Silk Cuffs (ilevel 63 entry 18456). 1/1 versions
-UPDATE item_template SET `stat_value1`=18 WHERE entry=18456;
--- SPELLS CHANGED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18465). 12 versions
--- Source: http://www.thottbot.com/?i=Royal%20Seal%20of%20Eldre%27Thalas / http://wow.allakhazam.com/item.html?witem=18473
--- Source: http://wow.allakhazam.com/item.html?witem=18471
--- Source: http://wow.allakhazam.com/item.html?witem=18470
--- Source: http://wow.allakhazam.com/item.html?witem=18465
--- Source: http://wow.allakhazam.com/profile.html?55827
--- Source: http://wow.allakhazam.com/item.html?witem=18472
--- Source: http://wow.allakhazam.com/item.html?witem=18468
--- Source: http://wow.allakhazam.com/profile.html?47143
--- Source: http://wow.allakhazam.com/item.html?witem=18469
--- Source: http://wow.allakhazam.com/item.html?witem=18471
--- Source: http://wow.allakhazam.com/item.html?witem=18472
--- Source: http://wow.allakhazam.com/item.html?witem=18470
--- * Modified spell 2
--- 1.12 spell 0
--- 1.04 spell 9408 (Increases healing done by spells and effects by up to 22.)
-UPDATE item_template SET `spellid_2`=9408, `spelltrigger_2`=1 WHERE entry=18465;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18466). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 14803 (+200 Armor.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18466;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18467). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype12.html
--- * Modified spell 1
--- 1.12 spell 14047 (Increases damage and healing done by magical spells and effects by up to 23.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18467;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18468). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 18378 (Restores 8 mana per 5 sec.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18468;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18469). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype12.html
--- * Modified spell 1
--- 1.12 spell 9318 (Increases healing done by spells and effects by up to 33.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 21618 (Restores 4 mana per 5 sec.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=18469;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18470). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 17371 (Increases healing done by spells and effects by up to 44.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18470;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18471). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype12.html
--- * Modified spell 1
--- 1.12 spell 14047 (Increases damage and healing done by magical spells and effects by up to 23.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18471;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18472). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 15693 (+150 Armor.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 9408 (Increases healing done by spells and effects by up to 22.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=18472;
--- SPELLS REMOVED: Royal Seal of Eldre'Thalas (ilevel 62 entry 18473). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype12.html
--- * Modified spell 1
--- 1.12 spell 21445 (+48 ranged Attack Power.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18473;
 -- SPELLS CHANGED: Oddly Magical Belt (ilevel 60 entry 18475). 1 versions
 -- Source: http://www.thottbot.com/?n=478397 / http://wow.allakhazam.com/db/item.html?witem=18475
 -- * Modified spell 1
 -- 1.12 spell 9345 (Increases damage and healing done by magical spells and effects by up to 16.)
 -- 1.04 spell 25110 (Increases damage and healing done by magical spells and effects by up to 16.)
 UPDATE item_template SET `spellid_1`=25110 WHERE entry=18475;
--- NOT FOUND: Bulky Iron Spaulders (ilevel 60 entry 18493)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18493);
--- NOT FOUND: Denwatcher's Shoulders (ilevel 60 entry 18494)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18494);
 -- SPELLS CHANGED: Redoubt Cloak (ilevel 63 entry 18495). 1 versions
 -- Source: http://www.thottbot.com/?n=478397 / http://wow.allakhazam.com/profile.html?55827
 -- * Modified spell 1
@@ -4590,14 +3794,6 @@ UPDATE item_template SET `dmg_min1`=87, `dmg_max1`=88 WHERE entry=18680;
 -- 1.12 spell 9327 (Increases damage done by Shadow spells and effects by up to 20.)
 -- 1.04 spell 25064 (Increases damage done by shadow spells and effects by up to 20.)
 UPDATE item_template SET `spellid_1`=25064 WHERE entry=18691;
--- NOT FOUND: Death Knight Sabatons (ilevel 59 entry 18692)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18692);
--- NOT FOUND: Coldstone Slippers (ilevel 55 entry 18697)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18697);
--- NOT FOUND: Icy Tomb Spaulders (ilevel 57 entry 18699)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18699);
--- NOT FOUND: Malefic Bracers (ilevel 58 entry 18700)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18700);
 -- SPELLS CHANGED: Rhok'delar, Longbow of the Ancient Keepers (ilevel 75 entry 18713). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev2.html
 -- Source: http://wow.allakhazam.com/item.html?witem=18713
@@ -4611,33 +3807,17 @@ UPDATE item_template SET `spellid_1`=23193 WHERE entry=18713;
 -- 1.12 spell 0
 -- 1.04 spell 23194 (Transforms into Rhok'delar, Longbow of the Ancient Keepers and Lok'delar, Stave of the Ancient Keepers.)
 UPDATE item_template SET `spellid_1`=23194 WHERE entry=18715;
--- NOT FOUND: Ash Covered Boots (ilevel 61 entry 18716)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18716);
--- NOT FOUND: Animated Chain Necklace (ilevel 62 entry 18723)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18723);
--- NOT FOUND: Magistrate's Cuffs (ilevel 59 entry 18726)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18726);
 -- SPELLS CHANGED: Crimson Felt Hat (ilevel 59 entry 18727). 1 versions
 -- Source: http://wow.allakhazam.com/profile.html?49695
 -- * Modified spell 1
 -- 1.12 spell 14798 (Increases damage and healing done by magical spells and effects by up to 30.)
 -- 1.04 spell 22747 (Increases damage and healing done by magical spells and effects by up to 30.)
 UPDATE item_template SET `spellid_1`=22747 WHERE entry=18727;
--- NOT FOUND: Maleki's Footwraps (ilevel 62 entry 18735)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18735);
 -- DAMAGE CHANGED: Carapace Spine Crossbow (ilevel 61 entry 18738). 1/3 versions
 -- Source: http://www.thottbot.com/?n=614959 / http://wow.allakhazam.com/profile.html?103342
 -- Source: http://www.thottbot.com/?n=614959
 -- Source: http://www.thottbot.com/?i=37177
 UPDATE item_template SET `dmg_min1`=72, `dmg_max1`=134 WHERE entry=18738;
--- NOT FOUND: Morlune's Bracer (ilevel 61 entry 18741)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18741);
--- NOT FOUND: Stratholme Militia Shoulderguard (ilevel 60 entry 18742)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18742);
--- NOT FOUND: Plaguebat Fur Gloves (ilevel 58 entry 18744)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18744);
--- NOT FOUND: Fel Hardened Bracers (ilevel 62 entry 18754)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18754);
 -- SPELLS REMOVED: Malicious Axe (ilevel 62 entry 18759). 3 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wratio1.html
 -- Source: http://wow.allakhazam.com/dyn/items/wname1.html
@@ -4652,14 +3832,6 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18759;
 -- 1.12 spell 20885 (Restores 8 health per 5 sec.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=18760;
--- NOT FOUND: Core Forged Greaves (ilevel 70 entry 18806)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18806);
--- NOT FOUND: Gloves of the Hypnotic Flame (ilevel 70 entry 18808)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18808);
--- NOT FOUND: Sash of Whispered Secrets (ilevel 71 entry 18809)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18809);
--- NOT FOUND: Wristguards of True Flight (ilevel 71 entry 18812)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18812);
 -- SPELLS CHANGED: Ring of Binding (ilevel 73 entry 18813). 2 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname11.html
 -- Source: http://www.thottbot.com/?n=480638
@@ -4763,8 +3935,6 @@ UPDATE item_template SET `stat_value1`=6 WHERE entry=18843;
 -- 1.12 spell 9335 (+28 Attack Power.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=18843;
--- NOT FOUND: High Warlord's Right Claw (ilevel 78 entry 18844)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18844);
 -- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18845). 1 versions
 -- Source: http://wow.allakhazam.com/dyn/items/iname12.html
 -- * Modified spell 1
@@ -4981,8 +4151,6 @@ UPDATE item_template SET `dmg_min1`=196, `dmg_max1`=295 WHERE entry=18877;
 -- 1.12 spell 13383 (Increased Defense +5.)
 -- 1.04 spell 13387 (Increased Defense +8.)
 UPDATE item_template SET `spellid_1`=13387 WHERE entry=18879;
--- NOT FOUND: Brushwood Blade (ilevel 10 entry 18957)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18957);
 -- NOT FOUND: Ring of Critical Testing 2 (ilevel 60 entry 18970)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18970);
 -- SPELLS REMOVED: Dimensional Ripper - Everlook (ilevel 55 entry 18984). 1 versions
@@ -4991,18 +4159,12 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 -- 1.12 spell 23442 (Rips the dimensional walls asunder and transports you to Everlook in Winterspring.  There are technical problems that sometimes occur, but that's what Goblin Engineering is all about!)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0 WHERE entry=18984;
+-- -----------------------------------
+-- (MOSTLY) 1.6 (BWL) AND BEYOND ITEMS, WITH A FEW EXCEPTIONS WHICH ARE ACCOUNTED FOR BELOW
+-- THIS SECTION
+-- -----------------------------------
 -- NOT FOUND: Thunderfury, Blessed Blade of the Windseeker (ilevel 80 entry 19019)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19019);
--- NOT FOUND: Elegant Dress (ilevel 30 entry 19028)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19028);
--- NOT FOUND: Emerald Peak Spaulders (ilevel 48 entry 19037)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19037);
--- NOT FOUND: Ring of Subtlety (ilevel 48 entry 19038)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19038);
--- NOT FOUND: Zorbin's Water Resistant Hat (ilevel 48 entry 19039)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19039);
--- NOT FOUND: Jangdor's Handcrafted Tunic (ilevel 48 entry 19042)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19042);
 -- NOT FOUND: Heavy Timbermaw Belt (ilevel 58 entry 19043)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19043);
 -- NOT FOUND: Might of the Timbermaw (ilevel 58 entry 19044)
@@ -5015,8 +4177,6 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19049);
 -- NOT FOUND: Mantle of the Timbermaw (ilevel 64 entry 19050)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19050);
--- NOT FOUND: Girdle of the Dawn (ilevel 58 entry 19051)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19051);
 -- STATS REMOVED for item Dawn Treaders (http://wow.allakhazam.com/dyn/items/wname5.html) 
 UPDATE item_template SET armor=0, stat_value1=0, stat_type1=0 WHERE entry=19052;
 -- SPELLS REMOVED: Dawn Treaders (ilevel 58 entry 19052). 1 versions
@@ -5035,78 +4195,12 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19058);
 -- NOT FOUND: Argent Shoulders (ilevel 64 entry 19059)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19059);
--- NOT FOUND: Stormpike Soldier's Cloak (ilevel 60 entry 19084)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19084);
--- NOT FOUND: Frostwolf Plate Belt (ilevel 60 entry 19087)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19087);
--- NOT FOUND: Frostwolf Mail Belt (ilevel 60 entry 19088)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19088);
--- NOT FOUND: Frostwolf Leather Belt (ilevel 60 entry 19089)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19089);
--- NOT FOUND: Frostwolf Cloth Belt (ilevel 60 entry 19090)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19090);
--- NOT FOUND: Stormpike Plate Girdle (ilevel 60 entry 19091)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19091);
--- NOT FOUND: Stormpike Mail Girdle (ilevel 60 entry 19092)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19092);
--- NOT FOUND: Stormpike Leather Girdle (ilevel 60 entry 19093)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19093);
--- NOT FOUND: Stormpike Cloth Girdle (ilevel 60 entry 19094)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19094);
--- NOT FOUND: Stormpike Soldier's Pendant (ilevel 60 entry 19097)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19097);
--- NOT FOUND: Frost Runed Headdress (ilevel 63 entry 19105)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19105);
--- NOT FOUND: Ice Barbed Spear (ilevel 63 entry 19106)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19106);
--- NOT FOUND: Deep Rooted Ring (ilevel 63 entry 19109)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19109);
--- NOT FOUND: Winteraxe Epaulets (ilevel 63 entry 19111)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19111);
--- NOT FOUND: Frozen Steel Vambraces (ilevel 63 entry 19112)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19112);
--- NOT FOUND: Yeti Hide Bracers (ilevel 63 entry 19113)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19113);
--- NOT FOUND: Flask of Forest Mojo (ilevel 51 entry 19115)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19115);
 -- NOT FOUND: Greenleaf Handwraps (ilevel 50 entry 19116)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19116);
 -- NOT FOUND: Owlbeast Hide Gloves (ilevel 50 entry 19119)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19119);
--- NOT FOUND: Everwarm Handwraps (ilevel 48 entry 19123)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19123);
--- NOT FOUND: Seared Mail Girdle (ilevel 49 entry 19125)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19125);
--- NOT FOUND: Slagplate Gauntlets (ilevel 49 entry 19126)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19126);
--- NOT FOUND: Snowblind Shoes (ilevel 69 entry 19131)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19131);
--- NOT FOUND: Crystal Adorned Crown (ilevel 68 entry 19132)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19132);
--- NOT FOUND: Flayed Doomguard Belt (ilevel 68 entry 19134)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19134);
 -- NOT FOUND: Blacklight Bracer (ilevel 66 entry 19135)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19135);
--- NOT FOUND: Mana Igniting Cord (ilevel 71 entry 19136)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19136);
--- NOT FOUND: Onslaught Girdle (ilevel 78 entry 19137)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19137);
--- NOT FOUND: Fire Runed Grimoire (ilevel 70 entry 19142)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19142);
--- NOT FOUND: Flameguard Gauntlets (ilevel 69 entry 19143)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19143);
--- NOT FOUND: Sabatons of the Flamewalker (ilevel 68 entry 19144)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19144);
--- NOT FOUND: Robe of Volatile Power (ilevel 66 entry 19145)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19145);
--- NOT FOUND: Wristguards of Stability (ilevel 65 entry 19146)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19146);
--- SPELLS REMOVED: Ring of Spell Power (ilevel 66 entry 19147). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype11.html
--- * Modified spell 1
--- 1.12 spell 18050 (Increases damage and healing done by magical spells and effects by up to 33.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=19147;
 -- NOT FOUND: Dark Iron Helm (ilevel 66 entry 19148)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19148);
 -- NOT FOUND: Lava Belt (ilevel 66 entry 19149)
@@ -5153,26 +4247,6 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19302);
 -- NOT FOUND: Darkmoon Necklace (ilevel 55 entry 19303)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19303);
--- NOT FOUND: Tome of Arcane Domination (ilevel 65 entry 19308)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19308);
--- NOT FOUND: Tome of Shadow Force (ilevel 65 entry 19309)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19309);
--- NOT FOUND: Tome of Fiery Arcana (ilevel 65 entry 19311)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19311);
--- NOT FOUND: Lei of the Lifegiver (ilevel 65 entry 19312)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19312);
--- NOT FOUND: Therazane's Touch (ilevel 65 entry 19315)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19315);
--- STATS CHANGED: The Immovable Object (ilevel 65 entry 19321). 1/1 versions
-UPDATE item_template SET `stat_value1`=0, `stat_type2`=5, `stat_value2`=70, `armor`=0 WHERE entry=19321;
--- SPELLS REMOVED: The Immovable Object (ilevel 65 entry 19321). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/wname10.html
--- * Modified spell 1
--- 1.12 spell 23516 (Increases the block value of your shield by 27.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=19321;
--- QUALITY CHANGED: The Immovable Object (ilevel 65 entry 19321)
-UPDATE item_template SET Quality=3 WHERE entry=19321;
 -- NOT FOUND: The Untamed Blade (ilevel 73 entry 19334)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19334);
 -- NOT FOUND: Spineshatter (ilevel 73 entry 19335)
@@ -5889,85 +4963,25 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20048);
 -- NOT FOUND: Highlander's Lamellar Greaves (ilevel 63 entry 20049)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20049);
--- NOT FOUND: Blackhand's Command (BWLattunement Quest)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18987);
-
+-- AB Rep rewards?? Not available yet. Added in 1.7
 -- STATS CHANGED: Highlander's Chain Greaves (ilevel 63 entry 20050). 1/2 versions
-UPDATE item_template SET `stat_value1`=0, `stat_value2`=34, `stat_value3`=0, `stat_type4`=4, `stat_value4`=39, `armor`=0 WHERE entry=20050;
--- SPELLS REMOVED: Highlander's Chain Greaves (ilevel 63 entry 20050). 2 versions
--- Source: http://wow.allakhazam.com/dyn/items/wminlev7.html
--- Source: http://wow.allakhazam.com/dyn/items/iminlev13.html
--- * Modified spell 1
--- 1.12 spell 23990 (Run speed increased slightly.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=20050;
--- QUALITY CHANGED: Highlander's Chain Greaves (ilevel 63 entry 20050)
-UPDATE item_template SET Quality=4 WHERE entry=20050;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20050);
 -- STATS CHANGED: Highlander's Mail Greaves (ilevel 63 entry 20051). 1/1 versions
-UPDATE item_template SET `stat_value1`=0, `stat_value2`=30, `stat_value3`=0, `stat_type4`=4, `stat_value4`=40, `armor`=0 WHERE entry=20051;
--- SPELLS REMOVED: Highlander's Mail Greaves (ilevel 63 entry 20051). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/wminlev7.html
--- * Modified spell 1
--- 1.12 spell 23990 (Run speed increased slightly.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 9331 (+20 Attack Power.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=20051;
--- QUALITY CHANGED: Highlander's Mail Greaves (ilevel 63 entry 20051)
-UPDATE item_template SET Quality=4 WHERE entry=20051;
--- STATS CHANGED: Highlander's Leather Boots (ilevel 63 entry 20052). 1/3 versions
-UPDATE item_template SET `stat_value1`=0, `stat_value2`=49, `stat_type3`=4, `stat_value3`=50, `armor`=0 WHERE entry=20052;
--- SPELLS REMOVED: Highlander's Leather Boots (ilevel 63 entry 20052). 3 versions
--- Source: http://wow.allakhazam.com/dyn/items/wratio7.html
--- Source: http://wow.allakhazam.com/dyn/items/wminlev7.html
--- Source: http://wow.allakhazam.com/dyn/items/iname13.html
--- * Modified spell 1
--- 1.12 spell 23990 (Run speed increased slightly.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 9329 (+16 Attack Power.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=20052;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20051);
 -- QUALITY CHANGED: Highlander's Leather Boots (ilevel 63 entry 20052)
-UPDATE item_template SET Quality=4 WHERE entry=20052;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20052);
 -- STATS CHANGED: Highlander's Lizardhide Boots (ilevel 63 entry 20053). 1/2 versions
-UPDATE item_template SET `stat_value1`=0, `stat_value2`=52, `stat_value3`=0, `stat_type4`=4, `stat_value4`=47, `armor`=0 WHERE entry=20053;
--- SPELLS REMOVED: Highlander's Lizardhide Boots (ilevel 63 entry 20053). 2 versions
--- Source: http://wow.allakhazam.com/dyn/items/wminlev7.html
--- Source: http://wow.allakhazam.com/dyn/items/iname13.html
--- * Modified spell 1
--- 1.12 spell 23990 (Run speed increased slightly.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 9329 (+16 Attack Power.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=20053;
--- QUALITY CHANGED: Highlander's Lizardhide Boots (ilevel 63 entry 20053)
-UPDATE item_template SET Quality=4 WHERE entry=20053;
--- STATS CHANGED: Highlander's Cloth Boots (ilevel 63 entry 20054). 1/3 versions
-UPDATE item_template SET `stat_value1`=0, `stat_value2`=0, `stat_type3`=4, `stat_value3`=78, `armor`=0 WHERE entry=20054;
--- SPELLS REMOVED: Highlander's Cloth Boots (ilevel 63 entry 20054). 3 versions
--- Source: http://wow.allakhazam.com/dyn/items/wratio7.html
--- Source: http://wow.allakhazam.com/dyn/items/iname13.html
--- Source: http://wow.allakhazam.com/dyn/items/wminlev7.html
--- * Modified spell 1
--- 1.12 spell 23990 (Run speed increased slightly.)
--- 1.04 spell 0
--- * Modified spell 2
--- 1.12 spell 9417 (Increases damage and healing done by magical spells and effects by up to 12.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=20054;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20053);
 -- QUALITY CHANGED: Highlander's Cloth Boots (ilevel 63 entry 20054)
-UPDATE item_template SET Quality=4 WHERE entry=20054;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20054);
 -- STATS CHANGED: Highlander's Chain Pauldrons (ilevel 65 entry 20055). 1/2 versions
-UPDATE item_template SET `stat_value1`=80, `stat_value2`=0, `stat_value3`=0, `stat_type4`=4, `stat_value4`=69, `armor`=0 WHERE entry=20055;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20055);
 -- NOT FOUND: Highlander's Mail Pauldrons (ilevel 65 entry 20056)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20056);
 -- STATS CHANGED: Highlander's Plate Spaulders (ilevel 65 entry 20057). 1/3 versions
-UPDATE item_template SET `stat_value1`=112, `stat_value2`=0, `stat_value3`=112, `armor`=0 WHERE entry=20057;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20057);
 -- STATS CHANGED: Highlander's Lamellar Spaulders (ilevel 65 entry 20058). 1/3 versions
-UPDATE item_template SET `stat_value1`=114, `stat_value2`=0, `stat_value3`=114, `stat_value4`=0, `armor`=0 WHERE entry=20058;
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20058);
 -- NOT FOUND: Highlander's Leather Shoulders (ilevel 65 entry 20059)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20059);
 -- NOT FOUND: Highlander's Lizardhide Shoulders (ilevel 65 entry 20060)
@@ -6430,8 +5444,6 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20646);
 -- NOT FOUND: Black Crystal Dagger (ilevel 59 entry 20647)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20647);
--- NOT FOUND: Cold Forged Hammer (ilevel 63 entry 20648)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20648);
 -- NOT FOUND: Sunprism Pendant (ilevel 60 entry 20649)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20649);
 -- NOT FOUND: Desert Wind Gauntlets (ilevel 60 entry 20650)
@@ -8525,14 +7537,82 @@ UPDATE `item_template` SET `stat_type1` = 5, `stat_value1` = 17, `stat_type2` = 
 -- Felheart Slippers ID: 16803
 UPDATE `item_template` SET `stat_type1` = 5, `stat_value1` = 10, `stat_type2` = 7, `stat_value2` = 27, `stat_type3` = 6, `stat_value3` = 8, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 70, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 7, `arcane_res` = 7, `spellid_1` = 9412, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 0, `spelltrigger_2` = 0, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 16803;
 
+
+-- Remove all AB rewards
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` IN (20068,20072,20150,20151,20152,20153,20154,20155,20156,20157,20158,20159,20160,20161,20162,20163,20164,20165,20166,20167,20168,20169,20170,20171,20172,20173,20174,20175,20176,20186,20187,20188,20189,20190,20191,20192,20193,20194,20195,20196,20197,20198,20199,20200,20201,20202,20203,20204,20205,20206,20207,20208,20209,20210,20211,20212,20214,20220,20222,20223,20224,20232,20234,20235,21115,21116,21120,20041,20042,20043,20045,20046,20047,20048,20049,20050,20052,20053,20054,20055,20057,20058,20059,20060,20061,20069,20070,20071,20073,20088,20089,20090,20091,20092,20093,20094,20095,20096,20097,20098,20099,20100,20101,20102,20103,20104,20105,20106,20107,20108,20109,20110,20111,20112,20113,20114,20115,20116,20117,20124,20125,20126,20127,20128,20129,20225,20226,20227,20237,20243,20244,21117,21118,21119);
+
+-- Some items that are available from 1.5 onwards but were incorrectly removed
+-- Alterac Valley reputation rewards
+-- https://web.archive.org/web/20050611003534/http://wow.allakhazam.com:80/news/sdetail5686.html
+-- Additionally, there are comments on individual items dating to just days after the release
+INSERT IGNORE INTO `item_template` 
+    VALUES  ('19084', '4', '1', 'Stormpike Soldier\'s Cloak', '27197', '3', '32768', '1', '75500', '15100', '16', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '7', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '43', '0', '0', '0', '5', '0', '0', '0', '0', '0', '14027', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19085', '4', '1', 'Frostwolf Advisor\'s Cloak', '31592', '3', '32768', '1', '75776', '15155', '16', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '7', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '43', '0', '0', '0', '5', '0', '0', '0', '0', '0', '9343', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19086', '4', '1', 'Stormpike Sage\'s Cloak', '15042', '3', '32768', '1', '76045', '15209', '16', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '7', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '43', '0', '0', '0', '5', '0', '0', '0', '0', '0', '9343', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19087', '4', '4', 'Frostwolf Plate Belt', '31598', '3', '32768', '1', '50881', '10176', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '3', '7', '7', '8', '4', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '353', '0', '0', '0', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '45', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19088', '4', '3', 'Frostwolf Mail Belt', '31599', '3', '32768', '1', '76597', '15319', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '3', '12', '7', '12', '5', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '199', '0', '0', '0', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '40', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19089', '4', '2', 'Frostwolf Leather Belt', '30839', '3', '32768', '1', '59304', '11860', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '3', '10', '7', '15', '4', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '95', '0', '0', '0', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '8', '0', '0', '0', '0', '35', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19090', '4', '1', 'Frostwolf Cloth Belt', '14686', '3', '32768', '1', '51428', '10285', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '5', '10', '7', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '48', '0', '0', '0', '5', '0', '0', '0', '0', '0', '9346', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '30', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19091', '4', '4', 'Stormpike Plate Girdle', '31597', '3', '32768', '1', '47443', '9488', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '3', '7', '7', '8', '4', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '353', '0', '0', '0', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '45', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19092', '4', '3', 'Stormpike Mail Girdle', '31600', '3', '32768', '1', '71165', '14233', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '3', '12', '7', '12', '5', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '199', '0', '0', '0', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '40', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19093', '4', '2', 'Stormpike Leather Girdle', '31601', '3', '32768', '1', '59304', '11860', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '3', '10', '7', '15', '4', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '95', '0', '0', '0', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '8', '0', '0', '0', '0', '35', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19094', '4', '1', 'Stormpike Cloth Girdle', '31602', '3', '32768', '1', '47443', '9488', '6', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '5', '10', '7', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '48', '0', '0', '0', '5', '0', '0', '0', '0', '0', '9346', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '30', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19095', '4', '0', 'Frostwolf Legionnaire\'s Pendant', '31603', '3', '32768', '1', '71648', '17912', '2', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '7', '15', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '9330', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19096', '4', '0', 'Frostwolf Advisor\'s Pendant', '9859', '3', '32768', '1', '71648', '17912', '2', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '7', '10', '5', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '21362', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
+            ('19097', '4', '0', 'Stormpike Soldier\'s Pendant', '31604', '3', '32768', '1', '71648', '17912', '2', '-1', '-1', '60', '55', '0', '0', '0', '0', '0', '0', '5', '0', '1', '0', '7', '15', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '9330', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1');
+-- Add summonable boss rewards with correct stats
+REPLACE INTO `item_template`
+    VALUES  ('19105', '4', '1', 'Frost Runed Headdress', '33462', '3', '0', '1', '87704', '17540', '1', '-1', '-1', '63', '58', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '10', '7', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '73', '0', '0', '0', '0', '0', '0', '0', '0', '0', '17901', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '50', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1'),
+            ('19109', '4', '0', 'Deep Rooted Ring', '31616', '3', '0', '1', '135681', '33920', '11', '-1', '-1', '63', '58', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '10', '7', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '9417', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1'),
+            ('19110', '2', '7', 'Cold Forged Blade', '31617', '3', '0', '1', '274611', '54922', '13', '-1', '-1', '63', '58', '43', '0', '0', '0', '0', '0', '0', '0', '1', '0', '7', '13', '3', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '75', '140', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2600', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '1', '3', '0', '0', '0', '90', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1'),
+            ('19111', '4', '3', 'Winteraxe Epaulets', '31618', '3', '0', '1', '124124', '24824', '3', '-1', '-1', '63', '58', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '10', '6', '6', '7', '20', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '278', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '70', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1'),
+            ('19112', '4', '4', 'Frozen Steel Vambraces', '31619', '3', '0', '1', '54922', '10984', '9', '-1', '-1', '63', '58', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '3', '11', '7', '7', '4', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '287', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '6', '0', '0', '0', '0', '45', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1'),
+            ('19113', '4', '2', 'Yeti Hide Bracers', '31620', '3', '0', '1', '68652', '13730', '9', '-1', '-1', '63', '58', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '3', '8', '7', '14', '4', '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '77', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '8', '0', '0', '0', '0', '35', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1');
+
+-- Misc craftables which should have been available since 1.2
+-- Dawnbringer Shoulders (ilevel 58 entry 12625)
+INSERT INTO `item_template` VALUES ('12625', '4', '4', 'Dawnbringer Shoulders', '25827', '3', '0', '1', '114235', '22847', '3', '-1', '-1', '58', '53', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '6', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '455', '0', '0', '0', '0', '0', '0', '0', '0', '0', '17371', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '2', '', '0', '0', '0', '0', '0', '6', '0', '0', '0', '0', '80', '0', '0', '0', '', '48', '0', '0', '0', '0', '0', '1');
+REPLACE INTO `item_template` VALUES ('12698', '9', '4', 'Plans: Dawnbringer Shoulders', '1102', '3', '64', '1', '22000', '5500', '0', '-1', '-1', '58', '0', '164', '290', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '-1', '16660', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', 'Teaches you how to make Dawnbringer Shoulders.', '0', '0', '0', '0', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1');
+-- Inlaid Thorium Hammer (ilevel 54 entry 12772)
+INSERT IGNORE INTO `item_template` VALUES ('12772', '2', '5', 'Inlaid Thorium Hammer', '23230', '2', '0', '1', '194358', '38871', '17', '-1', '-1', '54', '49', '160', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '23', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '100', '151', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '3000', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '2', '', '0', '0', '0', '0', '0', '2', '1', '0', '0', '0', '85', '0', '0', '0', '', '29', '0', '0', '0', '0', '0', '1');
+
+-- New Hinterlands quest (reward)
+INSERT IGNORE INTO `item_template` VALUES ('19115', '4', '0', 'Flask of Forest Mojo', '31623', '2', '0', '1', '44012', '11003', '23', '-1', '-1', '51', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '9415', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '', '29', '0', '0', '0', '0', '0', '1');
+
+-- AV Completion Reward. Normally not available until 1.6. On Nostalrius the Korrak
+-- quest gave rewards, but most players have completed it already with no reward.
+-- Therefore it makes sense to use the normal quest. The hammer is a 1.6 item, but
+-- if we do not add it here it will be unobtainable. Bit of a caveat.
+INSERT IGNORE INTO `item_template` VALUES ('20648', '2', '4', 'Cold Forged Hammer', '33072', '3', '0', '1', '293469', '58693', '21', '-1', '-1', '63', '0', '54', '0', '0', '0', '0', '0', '0', '1', '1', '0', '7', '5', '5', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '72', '135', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2500', '0', '0', '21625', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '1', '3', '0', '0', '0', '90', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1');
+UPDATE `quest_template` SET `MinLevel` = 51 WHERE `entry` IN (8271, 8272);
+DELETE FROM `creature_questrelation` WHERE `quest` IN (8271, 8272);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (13841, 8271), (13840, 8272);
+
+-- New Azuregos drops
+-- Should already be available on Darrowshire
+-- NOT FOUND: Snowblind Shoes (ilevel 69 entry 19131)
+-- REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19131);
+-- NOT FOUND: Crystal Adorned Crown (ilevel 68 entry 19132)
+-- REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19132);
+
+-- New Kazzak drops
+-- Should already be available on Darrowshire
+-- Fel Infused Leggings 19133
+-- Flayed Doomguard Belt 19134
+-- NOT FOUND: Flayed Doomguard Belt (ilevel 68 entry 19134)
+-- REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19134);
+
 -- AQ quest starter item
-REPLACE INTO `forbidden_items` VALUES (20461);
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20461);
+
+-- NOT FOUND: Blackhand's Command (BWL Attunement Quest)
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18987);
 
 -- Forbidden Items & quests for 1.5
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry BETWEEN 19574 AND 20266;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (12056, 12057, 22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (20214, 20220, 20212, 20203, 20175, 20194, 20176, 20158, 20068);
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN   (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (12056, 12057, 22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20214, 20220, 20212, 20203, 20175, 20194, 20176, 20158, 20068);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19202, 19203, 19204, 19205, 19206, 19207, 19208, 19209, 19210, 19211, 19212, 19215, 19216, 19217, 19218, 19219, 19220, 19221, 19326, 19327, 19328, 19329, 19330, 19331, 19332, 19333, 19442, 19444, 19445, 19446, 19447, 19448, 19449, 20040, 20382, 20506, 20507, 20508, 20509, 20510, 20511, 20761, 22392);
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22637;
 
@@ -8550,8 +7630,8 @@ DELETE FROM npc_vendor WHERE item IN (SELECT * FROM `forbidden_items`);
 CREATE TABLE IF NOT EXISTS forbidden_quests (entry mediumint);
 -- Patch 1.5+ quests
 REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8115, 8122);	
--- Arathi Basin tabard quests
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry BETWEEN 8041 AND 8273;
+-- Arathi Basin tabard quests and various rep quests
+REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry BETWEEN 8041 AND 8270;
 
 -- T0.5 quests
 REPLACE INTO `forbidden_quests` SELECT entry FROM quest_template WHERE entry IN (8949,8950,9015);
@@ -8581,8 +7661,8 @@ REPLACE INTO `forbidden_quests` (SELECT `entry` FROM `quest_template`
 
 UPDATE `quest_template` SET `Method` = (`Method` | 1) WHERE `entry` IN (SELECT * FROM `forbidden_quests`);
 
-DELETE FROM `creature_questrelation` WHERE `quest` BETWEEN 8041 AND 8273;
-DELETE FROM `creature_involvedrelation` WHERE `quest` BETWEEN 8041 AND 8273;
+DELETE FROM `creature_questrelation` WHERE `quest` BETWEEN 8041 AND 8270;
+DELETE FROM `creature_involvedrelation` WHERE `quest` BETWEEN 8041 AND 8270;
 
 -- Transition patch for old mounts (one week event!)
 
@@ -8615,5 +7695,3 @@ insert into npc_vendor value (4730,11556,0,0);
 	-- Gnome
 insert into npc_vendor value (7955,11557,0,0);
 insert into npc_vendor value (7955,11558,0,0);
-
-
