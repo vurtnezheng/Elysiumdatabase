@@ -121,7 +121,7 @@ UPDATE `item_template` SET `stat_type1` = 7, `stat_value1` = 15, `stat_type2` = 
 
 -- Add MC / Strat / Scholo Items
 
-DELETE FROM `item_template` WHERE `entry` IN (19145, 19146, 19136, 19144, 19143, 19142, 19019, 18713, 18715, 18806, 18812, 18809, 19137, 18716, 18735, 18726, 18723, 18692);
+DELETE FROM `item_template` WHERE `entry` IN (19145, 19146, 19136, 19144, 19143, 19142, 19019, 18713, 18715, 18806, 18808, 18812, 18809, 19137, 18716, 18735, 18726, 18723, 18692);
 
 INSERT INTO item_template VALUES
 ('18692', '4', '4', 'Death Knight Sabatons', '31133', '3', '0', '1', '71877', '14375', '8', '-1', '-1', '59', '54', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '11', '7', '11', '5', '11', '6', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '424', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '6', '0', '0', '0', '0', '65', '0', '0', '0', '', '48', '0', '0', '0', '0', '0', '1'),
@@ -132,6 +132,7 @@ INSERT INTO item_template VALUES
 ('18726', '4', '2', 'Magistrate\'s Cuffs', '31175', '3', '0', '1', '56480', '11296', '9', '-1', '-1', '59', '54', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '7', '15', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '73', '0', '0', '0', '0', '0', '0', '0', '0', '0', '21362', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '8', '0', '0', '0', '0', '35', '0', '0', '0', '', '48', '0', '0', '0', '0', '0', '1'),
 ('18735', '4', '1', 'Maleki\'s Footwraps', '31188', '3', '0', '1', '86266', '17253', '8', '-1', '-1', '62', '57', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '7', '9', '5', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '60', '0', '0', '0', '0', '0', '0', '0', '0', '0', '18009', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '40', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1'),
 ('18806', '4', '4', 'Core Forged Greaves', '31271', '4', '0', '1', '168806', '33761', '8', '-1', '-1', '70', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '7', '28', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '634', '0', '12', '0', '0', '8', '0', '0', '0', '0', '7517', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '6', '0', '0', '0', '0', '75', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1'),
+('18808', '4', '1', 'Gloves of the Hypnotic Flame', '31276', '4', '0', '1', '113326', '22665', '10', '-1', '-1', '70', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '19', '7', '18', '6', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '67', '0', '0', '0', '0', '0', '0', '0', '0', '0', '17747', '1', '0', '0', '-1', '0', '-1', '9415', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '35', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1'),
 ('18809', '4', '1', 'Sash of Whispered Secrets', '31278', '4', '0', '1', '108057', '21611', '6', '-1', '-1', '71', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '7', '20', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '61', '0', '0', '0', '0', '0', '0', '0', '0', '0', '18013', '1', '0', '0', '-1', '0', '-1', '21599', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '0', '35', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1'),
 ('18812', '4', '3', 'Wristguards of True Flight', '31280', '4', '0', '1', '162290', '32458', '9', '-1', '-1', '71', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '3', '19', '7', '11', '5', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '198', '0', '0', '0', '0', '0', '0', '0', '0', '0', '15464', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '50', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1'),
 ('19019', '2', '7', 'Thunderfury, Blessed Blade of the Windseeker', '30606', '5', '0', '1', '615704', '123140', '13', '-1', '-1', '80', '60', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '3', '5', '7', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '44', '115', '0', '16', '30', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '8', '9', '0', '0', '0', '1900', '0', '0', '21992', '2', '0', '5.52', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '125', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '1'),
@@ -3484,23 +3485,6 @@ UPDATE item_template SET `spellid_1`=21604 WHERE entry=17082;
 UPDATE item_template SET `dmg_min1`=89, `dmg_max1`=166 WHERE entry=17105;
 -- STATS CHANGED: Dragon's Blood Cape (ilevel 73 entry 17107). 1/1 versions
 UPDATE item_template SET `holy_res`=5, `arcane_res`=0 WHERE entry=17107;
--- STATS CHANGED: Seal of the Archmagus (ilevel 70 entry 17110). 3/4 versions
--- CONFLICT:
--- 2005-04-28 03:31:57 to 2005-09-15 17:07:26 (days delta 142) on for example: http://wow.allakhazam.com/dyn/items/iname11.html
--- 2005-04-08 04:32:09 to 2005-04-08 04:32:09 (days delta 0) on for example: http://wow.allakhazam.com/db/item.html?witem=17110
--- 2005-02-27 20:17:28 to 2005-03-18 17:18:58 (days delta 22) on for example: http://wow.allakhazam.com/item.html?witem=17110
--- 2005-02-23 02:20:49 to 2005-02-24 06:05:40 (days delta 1) on for example: http://wow.allakhazam.com/dyn/items/iname11.html
--- Warning: UNRESOLVED conflict
-UPDATE item_template SET `stat_value1`=10, `stat_value2`=10, `stat_value3`=10, `holy_res`=5, `fire_res`=5, `nature_res`=5, `frost_res`=5, `shadow_res`=5, `arcane_res`=0 WHERE entry=17110;
--- SPELLS CHANGED: Seal of the Archmagus (ilevel 70 entry 17110). 4 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname11.html
--- Source: http://wow.allakhazam.com/db/item.html?witem=17110
--- Source: http://wow.allakhazam.com/item.html?witem=17110
--- Source: http://wow.allakhazam.com/dyn/items/iname11.html
--- * Modified spell 1
--- 1.12 spell 21361 (Restores 3 mana per 5 sec.)
--- 1.04 spell 21360 (Restores 2 mana per 5 sec.)
-UPDATE item_template SET `spellid_1`=21360 WHERE entry=17110;
 -- DAMAGE CHANGED: Amberseal Keeper (ilevel 67 entry 17113). 2/4 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev10.html
 -- Source: http://wow.allakhazam.com/dyn/items/wratio10.html
@@ -3695,11 +3679,11 @@ UPDATE item_template SET `spellid_1`=13390 WHERE entry=18384;
 -- Source: http://wow.allakhazam.com/item.html?witem=18406
 -- * Modified spell 2
 -- 1.12 spell 13387 (Increased Defense +8.)
--- 1.04 spell 21408 (Increased Defense +12.)
+-- 1.04 spell 13387 (Increased Defense +12.)
 -- * Modified spell 3
 -- 1.12 spell 21601 (Restores 7 health per 5 sec.)
 -- 1.04 spell 21596 (Restores 5 health per 5 sec.)
-UPDATE item_template SET `spellid_2`=21408, `spellid_3`=21596 WHERE entry=18406;
+UPDATE item_template SET `spellid_2`=13387, `spellid_3`=21596 WHERE entry=18406;
 -- SPELLS CHANGED: Cloak of Warding (ilevel 62 entry 18413). 4 versions
 -- Source: http://www.thottbot.com/?i=8859
 -- Source: http://www.thottbot.com/?i=8859 / http://wow.allakhazam.com/item.html?witem=18413
@@ -3781,8 +3765,6 @@ UPDATE item_template SET `spellid_1`=21347 WHERE entry=18602;
 UPDATE item_template SET `spellid_3`=26225 WHERE entry=18608;
 -- NOT FOUND: Bloody Chain Boots (ilevel 8 entry 18612)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18612);
--- NOT FOUND: Sash of the Windreaver (ilevel 61 entry 18676)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18676);
 -- DAMAGE CHANGED: Ancient Bone Bow (ilevel 61 entry 18680). 1/3 versions
 -- Source: http://wow.allakhazam.com/dyn/items/wminlev2.html
 -- Source: http://wow.allakhazam.com/dyn/items/wratio2.html
@@ -7339,14 +7321,19 @@ REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 23668);
 -- NOT FOUND: The Shadowfoot Stabber (ilevel 57 entry 24222)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 24222);
+-- Shard of the Scale 16 mp5 (item 17064)
+-- https://web.archive.org/web/20050529050529/http://wow.allakhazam.com:80/item.html?witem=17064
+UPDATE `item_template` SET `spellid_1` = 23212 WHERE `entry` = 17064;
+-- Seal of the Archmagus (entry 17110), multiple stat updates
+REPLACE INTO `item_template` VALUES ('17110', '4', '0', 'Seal of the Archmagus', '29697', '4', '0', '1', '98595', '24648', '11', '-1', '-1', '70', '60', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '5', '11', '7', '11', '6', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '6', '6', '6', '6', '6', '0', '0', '0', '21361', '1', '0', '0', '0', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1');
 
 -- Flarecore Gloves are Soulbound https://github.com/elysium-project/itemization/issues/13
 UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 16979;
 
+-- Fix Holy resistance due to bugged auto parsing above
+UPDATE `item_template` SET `arcane_res` = `holy_res`, `holy_res` = 0 WHERE `holy_res` <> 0;
 -- Dimensional Ripper - Everlook ID: 18984
 UPDATE `item_template` SET `stat_type1` = 0, `stat_value1` = 0, `stat_type2` = 0, `stat_value2` = 0, `stat_type3` = 0, `stat_value3` = 0, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 0, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 23442, `spelltrigger_1` = 0, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = 14400000, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 0, `spelltrigger_2` = 0, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 18984;
-
-
 
 -- Nerfed PvP Weapons
 REPLACE INTO `item_template` VALUE (18877,2,8,'High Warlord\'s Greatsword',31998,4,32768,1,301699,60339,17,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,1,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18873,2,10,'Grand Marshal\'s Stave',31764,4,32768,1,297299,59459,17,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,36,5,20,6,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,125,203,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3000,0,0,17493,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,2,2,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18871,2,6,'High Warlord\'s Pig Sticker',31766,4,32768,1,295085,59017,17,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,2,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18869,2,6,'Grand Marshal\'s Glaive',31761,4,32768,1,284969,56993,17,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,2,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18868,2,5,'High Warlord\'s Pulverizer',31750,4,32768,1,313819,62763,17,-1,-1,78,60,0,0,199,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,2,1,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18866,2,4,'High Warlord\'s Bludgeon',31751,4,32768,1,249308,49861,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,2,3,0,0,0,105,0,0,0,'',0,0,0,0,0,0,1),(18860,2,3,'High Warlord\'s Street Sweeper',31747,4,32768,1,183012,36602,26,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,90,135,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,3,100,21436,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,-1,1,'',0,0,0,0,0,1,0,0,0,0,90,0,0,0,'',0,0,0,0,0,0,1),(18833,2,2,'Grand Marshal\'s Bullseye',31759,4,32768,1,173657,34731,15,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,55,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1800,2,100,21436,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,-1,1,'',0,0,0,0,0,2,0,0,0,0,90,0,0,0,'',0,0,0,0,0,0,1),(18855,2,3,'Grand Marshal\'s Hand Cannon',31758,4,32768,1,179726,35945,26,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,90,135,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,3,100,21436,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,-1,1,'',0,0,0,0,0,1,0,0,0,0,90,0,0,0,'',0,0,0,0,0,0,1),(18847,2,13,'Grand Marshal\'s Left Hand Blade',32032,4,32768,1,250218,50043,22,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,7,0,0,0,75,0,0,0,'',0,0,0,0,0,0,1),(18840,2,15,'High Warlord\'s Razor',31381,4,32768,1,244064,48812,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,79,120,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2000,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,3,0,0,0,75,0,0,0,'',0,0,0,0,0,0,1),(18838,2,15,'Grand Marshal\'s Dirk',31379,4,32768,1,242293,48458,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,79,120,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2000,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,3,0,0,0,75,0,0,0,'',0,0,0,0,0,0,1),(18837,2,18,'High Warlord\'s Crossbow',31749,4,32768,1,176297,35259,26,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,90,135,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,2,100,21436,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,-1,1,'',0,0,0,0,0,2,0,0,0,0,90,0,0,0,'',0,0,0,0,0,0,1),(18836,2,18,'Grand Marshal\'s Repeater',31757,4,32768,1,175650,35130,26,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,90,135,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,2,100,21436,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,-1,1,'',0,0,0,0,0,2,0,0,0,0,90,0,0,0,'',0,0,0,0,0,0,1),(18835,2,2,'High Warlord\'s Recurve',31748,4,32768,1,174986,34997,15,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,55,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1800,2,100,21436,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,-1,1,'',0,0,0,0,0,2,0,0,0,0,90,0,0,0,'',0,0,0,0,0,0,1),(18848,2,13,'High Warlord\'s Left Claw',31752,4,32768,1,251079,50215,22,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,7,0,0,0,75,0,0,0,'',0,0,0,0,0,0,1),(18831,2,1,'High Warlord\'s Battle Axe',31958,4,32768,1,287244,57448,17,-1,-1,78,60,0,0,197,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,1,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18830,2,1,'Grand Marshal\'s Sunderer',31302,4,32768,1,286137,57227,17,-1,-1,78,60,0,0,197,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,1,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18828,2,0,'High Warlord\'s Cleaver',31957,4,32768,1,251127,50225,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,3,0,0,0,105,0,0,0,'',0,0,0,0,0,0,1),(16345,2,7,'High Warlord\'s Blade',31997,4,32768,1,247416,49483,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,3,0,0,0,105,0,0,0,'',0,0,0,0,0,0,1),(18827,2,0,'Grand Marshal\'s Handaxe',31956,4,32768,1,250241,50048,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,3,0,0,0,105,0,0,0,'',0,0,0,0,0,0,1),(18843,2,13,'Grand Marshal\'s Right Hand Blade',32033,4,32768,1,246698,49339,21,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,7,0,0,0,75,0,0,0,'',0,0,0,0,0,0,1),(18865,2,4,'Grand Marshal\'s Punisher',31955,4,32768,1,248422,49684,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,2,3,0,0,0,105,0,0,0,'',0,0,0,0,0,0,1),(18867,2,5,'Grand Marshal\'s Battle Hammer',31954,4,32768,1,312712,62542,17,-1,-1,78,60,0,0,199,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,2,1,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18876,2,8,'Grand Marshal\'s Claymore',31996,4,32768,1,300592,60118,17,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,36,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3800,0,0,7597,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,1,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(18874,2,10,'High Warlord\'s War Staff',31765,4,32768,1,298407,59681,17,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,36,5,20,6,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,125,203,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3000,0,0,17493,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,2,2,0,0,0,120,0,0,0,'',0,0,0,0,0,0,1),(12584,2,7,'Grand Marshal\'s Longsword',31966,4,32768,1,248182,49636,13,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,3,0,0,0,105,0,0,0,'',0,0,0,0,0,0,1),(18844,2,13,'High Warlord\'s Right Claw',31754,4,32768,1,247584,49516,21,-1,-1,78,60,0,0,0,18,0,0,0,0,1,0,7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,115,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2900,0,0,7597,1,0,0,-1,0,-1,9141,1,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0,0,1,'',0,0,0,0,0,1,7,0,0,0,75,0,0,0,'',0,0,0,0,0,0,1);
@@ -7519,7 +7506,7 @@ spellid_3 = VALUES(spellid_3), spelltrigger_3 = VALUES(spelltrigger_3);
 
 -- Felheart Set (1.5)
 -- Felheart Belt ID: 16806
-UPDATE `item_template` SET `stat_type1` = 5, `stat_value1` = 14, `stat_type2` = 6, `stat_value2` = 13, `stat_type3` = 7, `stat_value3` = 14, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 57, `holy_res` = 0, `fire_res` = 7, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 21348, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 9412, `spelltrigger_2` = 1, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 16806;
+UPDATE `item_template` SET `stat_type1` = 5, `stat_value1` = 14, `stat_type2` = 6, `stat_value2` = 13, `stat_type3` = 7, `stat_value3` = 14, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 57, `holy_res` = 0, `fire_res` = 7, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 21347, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 9412, `spelltrigger_2` = 1, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 16806;
 -- Felheart Bracers ID: 16804
 UPDATE `item_template` SET `stat_type1` = 5, `stat_value1` = 11, `stat_type2` = 6, `stat_value2` = 8, `stat_type3` = 7, `stat_value3` = 18, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 44, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 21346, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 7708, `spelltrigger_2` = 1, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 16804;
 -- Felheart Gloves ID: 16805
@@ -7535,11 +7522,13 @@ UPDATE `item_template` SET `stat_type1` = 5, `stat_value1` = 17, `stat_type2` = 
 -- Felheart Slippers ID: 16803
 UPDATE `item_template` SET `stat_type1` = 5, `stat_value1` = 10, `stat_type2` = 7, `stat_value2` = 27, `stat_type3` = 6, `stat_value3` = 8, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 70, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 7, `arcane_res` = 7, `spellid_1` = 9412, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 0, `spelltrigger_2` = 0, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 16803;
 
-
 -- Remove all AB rewards
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` IN (20068,20072,20150,20151,20152,20153,20154,20155,20156,20157,20158,20159,20160,20161,20162,20163,20164,20165,20166,20167,20168,20169,20170,20171,20172,20173,20174,20175,20176,20186,20187,20188,20189,20190,20191,20192,20193,20194,20195,20196,20197,20198,20199,20200,20201,20202,20203,20204,20205,20206,20207,20208,20209,20210,20211,20212,20214,20220,20222,20223,20224,20232,20234,20235,21115,21116,21120,20041,20042,20043,20045,20046,20047,20048,20049,20050,20052,20053,20054,20055,20057,20058,20059,20060,20061,20069,20070,20071,20073,20088,20089,20090,20091,20092,20093,20094,20095,20096,20097,20098,20099,20100,20101,20102,20103,20104,20105,20106,20107,20108,20109,20110,20111,20112,20113,20114,20115,20116,20117,20124,20125,20126,20127,20128,20129,20225,20226,20227,20237,20243,20244,21117,21118,21119));
 
--- Some items that are available from 1.5 onwards but were incorrectly removed
+-- Remove all Darkmoon Faire Cards
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` IN (19227, 19230, 19231, 19232, 19233, 19234, 19235, 19236, 19258, 19259, 19260, 19261, 19262, 19263, 19264, 19265, 19268, 19269, 19270, 19271, 19272, 19273, 19274, 19275, 19276, 19278, 19279, 19280, 19281, 19282, 19283, 19284));
+
+--  items that are available from 1.5 onwards but were incorrectly removed
 -- Alterac Valley reputation rewards
 -- https://web.archive.org/web/20050611003534/http://wow.allakhazam.com:80/news/sdetail5686.html
 -- Additionally, there are comments on individual items dating to just days after the release
@@ -7575,8 +7564,19 @@ REPLACE INTO `item_template` VALUES ('12698', '9', '4', 'Plans: Dawnbringer Shou
 -- Inlaid Thorium Hammer (ilevel 54 entry 12772)
 INSERT IGNORE INTO `item_template` VALUES ('12772', '2', '5', 'Inlaid Thorium Hammer', '23230', '2', '0', '1', '194358', '38871', '17', '-1', '-1', '54', '49', '160', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '23', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '100', '151', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '3000', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '2', '', '0', '0', '0', '0', '0', '2', '1', '0', '0', '0', '85', '0', '0', '0', '', '29', '0', '0', '0', '0', '0', '1');
 
--- New Hinterlands quest (reward)
+-- New Hinterlands quest
+INSERT IGNORE INTO `quest_template` VALUES ('7847', '2', '47', '46', '51', '1', '0', '178', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7846', '0', '0', '0', '0', '0', '0', 'Return to Primal Torntusk', 'Return to my mate, Primal Torntusk at Revantusk Village. Tell her that I am coming home! She is sure to reward you.', 'Elder Torntusk at Jintha\'alor wants you to return to Primal Torntusk at Revantusk Village with news of his rescue.', 'You have done the Revantusk a great service, $N! We owe you a great debt of gratitude.', '', '', '', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '19114', '19115', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '22500', '4200', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT IGNORE INTO `item_template` VALUES ('19115', '4', '0', 'Flask of Forest Mojo', '31623', '2', '0', '1', '44012', '11003', '23', '-1', '-1', '51', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '9415', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '', '29', '0', '0', '0', '0', '0', '1');
+DELETE FROM `creature_involvedrelation` WHERE `quest` IN (7847);
+DELETE FROM `creature_questrelation` WHERE `quest` IN (7847);
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (14736, 7847);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14757, 7847);
+
+-- Missing drop (Sash of the Windreaver, 18676 drops from NPC 14454)
+DELETE FROM `item_template` WHERE `entry` = 18676;
+INSERT INTO `item_template` VALUES ('18676', '4', '3', 'Sash of the Windreaver', '31122', '3', '0', '1', '80404', '16080', '6', '-1', '-1', '61', '56', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '5', '7', '6', '7', '7', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '202', '0', '0', '0', '0', '0', '0', '0', '0', '0', '17819', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '2', '', '0', '0', '0', '0', '0', '5', '0', '0', '0', '0', '40', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1');
+DELETE FROM `creature_loot_template` WHERE `entry` = 14454 AND `item` = 18676;
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `minCountOrRef`, `maxcount`) VALUES (14454, 18676, 25, 0, 1, 1);
 
 -- AV Completion Reward. Normally not available until 1.6. On Nostalrius the Korrak
 -- quest gave rewards, but most players have completed it already with no reward.
@@ -7585,7 +7585,12 @@ INSERT IGNORE INTO `item_template` VALUES ('19115', '4', '0', 'Flask of Forest M
 INSERT IGNORE INTO `item_template` VALUES ('20648', '2', '4', 'Cold Forged Hammer', '33072', '3', '0', '1', '293469', '58693', '21', '-1', '-1', '63', '0', '54', '0', '0', '0', '0', '0', '0', '1', '1', '0', '7', '5', '5', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '72', '135', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2500', '0', '0', '21625', '1', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '1', '3', '0', '0', '0', '90', '0', '0', '0', '', '49', '0', '0', '0', '0', '0', '1');
 UPDATE `quest_template` SET `MinLevel` = 51 WHERE `entry` IN (8271, 8272);
 DELETE FROM `creature_questrelation` WHERE `quest` IN (8271, 8272);
-INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (13841, 8271), (13840, 8272);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (13816, 8271), (13817, 8272);
+DELETE FROM `creature_involvedrelation` WHERE `quest` IN (8271, 8272);
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (13816, 8271), (13817, 8272);
+
+-- Enable AV quest
+UPDATE `quest_template` SET `Method` = 2 WHERE `entry` IN (7161, 7162);
 
 -- New Azuregos drops
 -- Should already be available on Darrowshire
@@ -7601,6 +7606,96 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (13841, 8271), (1384
 -- NOT FOUND: Flayed Doomguard Belt (ilevel 68 entry 19134)
 -- REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19134);
 
+-- ------
+-- Add missing items to loot tables
+-- ------
+
+-- Scholomance drops
+-- Add Death Knight Sabatons to Marduk's pool. 40% chance (5% droprate out of 13% drop for pool)
+REPLACE INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `minCountOrRef`, `maxcount`) VALUES (323239, 18692, 40, 1, 1, 1);
+
+-- MC Drops
+-- Gloves of Hypnotic Flame from Majordomo Executus' Chest
+REPLACE INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `minCountOrRef`, `maxcount`) VALUES (12001, 18808, 0, 2, 1, 1);
+
+-- ------ BEGIN DEFENSE FIX ------ --
+-- FIX ALL DEFENSE VALUES. In 1.7, rather than re-assigning items with new spells that give less defence,
+-- Blizzard just straight up reduced the value of the spells. Therefore, all items with def should have
+-- 33% more than their 1.7+ counterparts.
+-- Get all items which have defense values in THIS patch AND 1.12, so we ignore items that gain any or
+-- lose def entirely later
+DROP TABLE IF EXISTS `defense_items_fix`;
+CREATE TABLE defense_items_fix(entry mediumint, spellid_1 mediumint, spellid_2 mediumint, spellid_3 mediumint, spellid_4 mediumint, spellid_5 mediumint);
+ 
+INSERT INTO `defense_items_fix` (
+    SELECT it.`entry`, it12.`spellid_1`, it12.`spellid_2`, it.`spellid_3`, it.`spellid_4`, it.`spellid_5`
+    FROM `item_template` it JOIN `item_template_112` it12 ON it.`entry` = it12.`entry`
+        WHERE 
+            (it.`spellid_1` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it.`spellid_2` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it.`spellid_3` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it.`spellid_4` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it.`spellid_5` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775))
+            AND 
+            (it12.`spellid_1` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it12.`spellid_2` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it12.`spellid_3` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it12.`spellid_4` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775) OR
+            it12.`spellid_5` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775))
+    );
+-- Set the spells to those which have 33% more (curr value/0.66, round down) than the spell in the 1.12
+-- database. Be reasonable about values. No armour is going to have 30 def on it
+DROP TABLE IF EXISTS `defense_replacement`;
+CREATE TABLE defense_replacement(current mediumint, replacement mediumint);
+INSERT INTO `defense_replacement` 
+    VALUES  (7511, 7511), (7513, 7513),     -- 1->1
+            (7514, 7515),                   -- 2->3
+            (7515, 7517), (7516, 7517),     -- 3->4
+            (7517, 13384),                  -- 4->6
+            (7518, 13385), (13383, 13385),  -- 5->7
+            (13384, 13388),                 -- 6->9
+            (13385, 13390), (13386, 13390), -- 7->10
+            (13387, 21408),                 -- 8->12
+            (13388, 14249), (18369, 14249), -- 9->13
+            (13390, 18196),                 -- 10->15
+            (18185, 21412), (21407, 21412), -- 11->16
+            (21408, 21413),                 -- 12->18
+            (14249, 21414), (21409, 21414), -- 13->19
+            (21410, 21417),                 -- 14->21
+            (18196, 21418), (21411, 21418), -- 15->22
+            (21412, 21421),                 -- 16->24
+            (13389, 21422);                 -- 17->25
+
+UPDATE `defense_items_fix`
+    SET `spellid_1` = (SELECT IFNULL(
+                            (SELECT `replacement` FROM `defense_replacement` WHERE `current` = `spellid_1`), 
+                            `spellid_1`)),
+        `spellid_2` = (SELECT IFNULL(
+                            (SELECT `replacement` FROM `defense_replacement` WHERE `current` = `spellid_2`), 
+                            `spellid_2`)),
+        `spellid_3` = (SELECT IFNULL(
+                            (SELECT `replacement` FROM `defense_replacement` WHERE `current` = `spellid_3`), 
+                            `spellid_3`)),
+        `spellid_4` = (SELECT IFNULL(
+                            (SELECT `replacement` FROM `defense_replacement` WHERE `current` = `spellid_4`), 
+                            `spellid_4`)),
+        `spellid_5` = (SELECT IFNULL(
+                            (SELECT `replacement` FROM `defense_replacement` WHERE `current` = `spellid_5`), 
+                            `spellid_5`));
+
+UPDATE `item_template` it INNER JOIN `defense_items_fix` dif ON it.`entry` = dif.`entry`
+    SET it.`spellid_1` = dif.`spellid_1`,
+        it.`spellid_2` = dif.`spellid_2`,
+        it.`spellid_3` = dif.`spellid_3`,
+        it.`spellid_4` = dif.`spellid_4`,
+        it.`spellid_5` = dif.`spellid_5`
+    WHERE it.`entry` = dif.`entry`;
+
+DROP TABLE `defense_replacement`;
+DROP TABLE `defense_items_fix`;
+
+-- ------ END DEFENSE FIX ------ --
+
 -- AQ quest starter item
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20461);
 
@@ -7609,6 +7704,9 @@ UPDATE gameobject SET `spawnFlags` = `spawnFlags` | 2 WHERE guid = 1264334;
 
 -- NOT FOUND: Blackhand's Command (BWL Attunement Quest)
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18987);
+
+-- Thunderfury Bindings
+REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` IN (18563, 18564));
 
 -- Forbidden Items & quests for 1.5
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry BETWEEN 19574 AND 20266;
@@ -7656,36 +7754,36 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (11556, 6241);
 -- New stables (post 1.4). Fashion look for your new friends.
 
 DELETE FROM creature WHERE id IN (14561,14560,14559,14546,14548,14547,14556,14555,14602,14551,14552,14553,14542,14549,14550,14540,14539,14541,14545,14543,14544);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6617, 14539, 1, 14575, 0, 2153.65, -4657.14, 49.9992, 1.51844, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6614, 14540, 1, 14573, 0, 2161.67, -4648.08, 50.3632, 4.18879, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6618, 14541, 1, 14574, 0, 2155.59, -4649.18, 50.0618, 5.3058, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (26644, 14542, 1, 14349, 0, -2285.41, -389.98, -9.20741, 5.95157, 250, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6405, 14543, 1, 14344, 0, -846.074, -4884.12, 21.2854, 2.54818, 120, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6409, 14544, 1, 14342, 0, -855.627, -4884.4, 22.1798, 1.32645, 120, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6404, 14545, 1, 14339, 0, -849.765, -4885.79, 21.8995, 1.15192, 120, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (4156, 14546, 0, 14347, 0, -5529.51, -1376.1, 398.789, 3.57943, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (4149, 14547, 0, 14346, 0, -5536.3, -1335.36, 398.769, 1.80959, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (4155, 14548, 0, 14576, 0, -5532.46, -1358.99, 398.694, 3.04284, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (26654, 14549, 1, 14578, 0, -2283.82, -394.645, -9.14653, 0.907571, 250, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (26657, 14550, 1, 14579, 0, -2279.3, -388.407, -9.33995, 5.68977, 250, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (176, 14551, 0, 14377, 0, -5447.83, -617.37, 394.511, 3.19395, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (174, 14552, 0, 14376, 0, -5452.32, -613.089, 394.51, 4.29351, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (173, 14553, 0, 14374, 0, -5449.28, -614.756, 394.539, 3.68265, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (48577, 14555, 1, 14332, 0, 10126.5, 2527.85, 1323.9, 3.1765, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (49183, 14556, 1, 14331, 0, 10130.5, 2532.53, 1323.62, 4.10152, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (14808, 14559, 0, 14582, 0, -777.081, -608.085, 15.2348, 2.32129, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (24014, 14559, 1, 14582, 0, -3841.59, -4395.53, 10.5345, 2.32129, 360, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (81391, 14559, 0, 14582, 0, -9456.64, -1386.59, 47.1554, 1.39626, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (8465, 14560, 1, 14338, 0, -3848.56, -4402.28, 10.3649, 2.37365, 360, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (14807, 14560, 0, 14338, 0, -774.887, -606.126, 15.2348, 2.30383, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (81388, 14560, 0, 14338, 0, -9438.08, -1411.84, 47.0352, 1.65806, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (14806, 14561, 0, 14583, 0, -781.823, -611.991, 15.2348, 2.25148, 300, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (24048, 14561, 1, 14583, 0, -3848.26, -4393.54, 10.2239, 5.44543, 360, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (81385, 14561, 0, 14583, 0, -9444.04, -1412.16, 46.9049, 1.72788, 180, 0, 0, 64, 53, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (46180, 14602, 1, 14632, 0, 10132.9, 2527.95, 1325.16, 4.01426, 300, 0, 0, 64, 0, 0, 0);
- 
- -- Remove old stables
- DELETE FROM `creature` where guid IN (81385, 81388, 4155, 4156, 176, 174, 49183, 48577, 6614, 6617, 6405, 6404, 26644, 26654);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6617, 14539, 1, 14575, 0, 2153.65, -4657.14, 49.9992, 1.51844, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6614, 14540, 1, 14573, 0, 2161.67, -4648.08, 50.3632, 4.18879, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6618, 14541, 1, 14574, 0, 2155.59, -4649.18, 50.0618, 5.3058, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (26644, 14542, 1, 14349, 0, -2285.41, -389.98, -9.20741, 5.95157, 250, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6405, 14543, 1, 14344, 0, -846.074, -4884.12, 21.2854, 2.54818, 120, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6409, 14544, 1, 14342, 0, -855.627, -4884.4, 22.1798, 1.32645, 120, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (6404, 14545, 1, 14339, 0, -849.765, -4885.79, 21.8995, 1.15192, 120, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (4156, 14546, 0, 14347, 0, -5529.51, -1376.1, 398.789, 3.57943, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (4149, 14547, 0, 14346, 0, -5536.3, -1335.36, 398.769, 1.80959, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (4155, 14548, 0, 14576, 0, -5532.46, -1358.99, 398.694, 3.04284, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (26654, 14549, 1, 14578, 0, -2283.82, -394.645, -9.14653, 0.907571, 250, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (26657, 14550, 1, 14579, 0, -2279.3, -388.407, -9.33995, 5.68977, 250, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (176, 14551, 0, 14377, 0, -5447.83, -617.37, 394.511, 3.19395, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (174, 14552, 0, 14376, 0, -5452.32, -613.089, 394.51, 4.29351, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (173, 14553, 0, 14374, 0, -5449.28, -614.756, 394.539, 3.68265, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (48577, 14555, 1, 14332, 0, 10126.5, 2527.85, 1323.9, 3.1765, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (49183, 14556, 1, 14331, 0, 10130.5, 2532.53, 1323.62, 4.10152, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (14808, 14559, 0, 14582, 0, -777.081, -608.085, 15.2348, 2.32129, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (24014, 14559, 1, 14582, 0, -3841.59, -4395.53, 10.5345, 2.32129, 360, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (81391, 14559, 0, 14582, 0, -9456.64, -1386.59, 47.1554, 1.39626, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (8465, 14560, 1, 14338, 0, -3848.56, -4402.28, 10.3649, 2.37365, 360, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (14807, 14560, 0, 14338, 0, -774.887, -606.126, 15.2348, 2.30383, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (81388, 14560, 0, 14338, 0, -9438.08, -1411.84, 47.0352, 1.65806, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (14806, 14561, 0, 14583, 0, -781.823, -611.991, 15.2348, 2.25148, 300, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (24048, 14561, 1, 14583, 0, -3848.26, -4393.54, 10.2239, 5.44543, 360, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (81385, 14561, 0, 14583, 0, -9444.04, -1412.16, 46.9049, 1.72788, 180, 0, 0, 64, 53, 0, 0, 0);
+INSERT IGNORE INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (46180, 14602, 1, 14632, 0, 10132.9, 2527.95, 1325.16, 4.01426, 300, 0, 0, 64, 0, 0, 0, 0);
+
+-- Remove old stables
+DELETE FROM `creature` where guid IN (81385, 81388, 4155, 4156, 176, 174, 49183, 48577, 6614, 6617, 6405, 6404, 26644, 26654);
 
 -- Forbid quests which have had the rewards or requirements forbidden
 REPLACE INTO `forbidden_quests` (SELECT `entry` FROM `quest_template` 
@@ -7712,32 +7810,31 @@ DELETE FROM `creature_involvedrelation` WHERE `quest` BETWEEN 8041 AND 8270;
 
 -- Transition patch for old mounts (one week event!)
 	-- Undead
-insert into npc_vendor value (4731,11559,0,0);
+insert ignore into npc_vendor value (4731,11559,0,0);
 	-- Tauren
-insert into npc_vendor value (3685,11547,0,0);
-insert into npc_vendor value (3685,11548,0,0);
+insert ignore into npc_vendor value (3685,11547,0,0);
+insert ignore into npc_vendor value (3685,11548,0,0);
 	-- Orc
-insert into npc_vendor value (3362,11549,0,0);
-insert into npc_vendor value (3362,11550,0,0);
+insert ignore into npc_vendor value (3362,11549,0,0);
+insert ignore into npc_vendor value (3362,11550,0,0);
 	-- Troll
-insert into npc_vendor value (7952,11545,0,0);
-insert into npc_vendor value (7952,11546,0,0);
+insert ignore into npc_vendor value (7952,11545,0,0);
+insert ignore into npc_vendor value (7952,11546,0,0);
 	-- Human
-insert into npc_vendor value (384,11551,0,0);
-insert into npc_vendor value (4885,11551,0,0);
-insert into npc_vendor value (2357,11551,0,0);
-insert into npc_vendor value (1460,11551,0,0);
-insert into npc_vendor value (384,11552,0,0);
-insert into npc_vendor value (4885,11552,0,0);
-insert into npc_vendor value (2357,11552,0,0);
-insert into npc_vendor value (1460,11552,0,0);
+insert ignore into npc_vendor value (384,11551,0,0);
+insert ignore into npc_vendor value (4885,11551,0,0);
+insert ignore into npc_vendor value (2357,11551,0,0);
+insert ignore into npc_vendor value (1460,11551,0,0);
+insert ignore into npc_vendor value (384,11552,0,0);
+insert ignore into npc_vendor value (4885,11552,0,0);
+insert ignore into npc_vendor value (2357,11552,0,0);
+insert ignore into npc_vendor value (1460,11552,0,0);
 -- Dwarf
-insert into npc_vendor value (1261,11553,0,0);
-insert into npc_vendor value (1261,11554,0,0);
+insert ignore into npc_vendor value (1261,11553,0,0);
+insert ignore into npc_vendor value (1261,11554,0,0);
 	-- Elf
-insert into npc_vendor value (4730,11555,0,0);
-insert into npc_vendor value (4730,11556,0,0);
+insert ignore into npc_vendor value (4730,11555,0,0);
+insert ignore into npc_vendor value (4730,11556,0,0);
 	-- Gnome
-insert into npc_vendor value (7955,11557,0,0);
-insert into npc_vendor value (7955,11558,0,0);
-
+insert ignore into npc_vendor value (7955,11557,0,0);
+insert ignore into npc_vendor value (7955,11558,0,0);
