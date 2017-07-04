@@ -8,4 +8,3 @@ DELETE FROM creature_involvedrelation WHERE quest NOT IN (SELECT * from active_q
 DELETE FROM creature_questrelation WHERE quest NOT IN (SELECT * from active_quests);
 DELETE FROM gameobject_involvedrelation WHERE quest NOT IN (SELECT * from active_quests);
 DELETE FROM gameobject_questrelation WHERE quest NOT IN (SELECT * from active_quests);
--- Optional DELETE FROM quest_template WHERE quest NOT IN (SELECT * from active_quests);
