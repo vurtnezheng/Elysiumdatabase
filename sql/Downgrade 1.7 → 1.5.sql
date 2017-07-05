@@ -115,6 +115,9 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (192
 -- "Thunderfury" Stats Have Been Corrected (main hand untill 1.12)
 UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
 
+-- Black Lotus BoP
+UPDATE `item_template` SET `bonding` = 1 WHERE `entry` = 13468;
+
 -- Update `The Immovable Object` Item Stats
 
 UPDATE `item_template` SET `stat_type1` = 7, `stat_value1` = 15, `stat_type2` = 0, `stat_value2` = 0, `stat_type3` = 0, `stat_value3` = 0, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 0, `dmg_max1` = 0, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 2468, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 23516, `spelltrigger_1` = 1, `spellcharges_1` = 0, `spellppmRate_1` = 0, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 0, `spelltrigger_2` = 0, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 19321;
@@ -145,7 +148,7 @@ INSERT INTO item_template VALUES
 ('19146', '4', '2', 'Wristguards of Stability', '6763', '4', '0', '1', '100919', '20183', '9', '-1', '-1', '65', '60', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '4', '24', '7', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '86', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '-1', '0', '-1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '8', '0', '0', '0', '0', '40', '0', '0', '0', '', '65', '0', '0', '0', '0', '0', '1');
 
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22637;
--- "Bonereaver's Edge" Stats Has Been Corrected
+-- Bonereaver's Edge ID: 17076
 UPDATE `item_template` SET `stat_type1` = 0, `stat_value1` = 0, `stat_type2` = 0, `stat_value2` = 0, `stat_type3` = 0, `stat_value3` = 0, `stat_type4` = 0, `stat_value4` = 0, `stat_type5` = 0, `stat_value5` = 0, `stat_type6` = 0, `stat_value6` = 0, `stat_type7` = 0, `stat_value7` = 0, `stat_type8` = 0, `stat_value8` = 0, `stat_type9` = 0, `stat_value9` = 0, `stat_type10` = 0, `stat_value10` = 0, `dmg_min1` = 206, `dmg_max1` = 310, `dmg_type1` = 0, `dmg_min2` = 0, `dmg_max2` = 0, `dmg_type2` = 0, `dmg_min3` = 0, `dmg_max3` = 0, `dmg_type3` = 0, `dmg_min4` = 0, `dmg_max4` = 0, `dmg_type4` = 0, `dmg_min5` = 0, `dmg_max5` = 0, `dmg_type5` = 0, `armor` = 0, `holy_res` = 0, `fire_res` = 0, `nature_res` = 0, `frost_res` = 0, `shadow_res` = 0, `arcane_res` = 0, `spellid_1` = 21153, `spelltrigger_1` = 2, `spellcharges_1` = 0, `spellppmRate_1` = 3, `spellcooldown_1` = -1, `spellcategory_1` = 0, `spellcategorycooldown_1` = -1, `spellid_2` = 7597, `spelltrigger_2` = 1, `spellcharges_2` = 0, `spellppmRate_2` = 0, `spellcooldown_2` = -1, `spellcategory_2` = 0, `spellcategorycooldown_2` = -1, `spellid_3` = 0, `spelltrigger_3` = 0, `spellcharges_3` = 0, `spellppmRate_3` = 0, `spellcooldown_3` = -1, `spellcategory_3` = 0, `spellcategorycooldown_3` = -1, `spellid_4` = 0, `spelltrigger_4` = 0, `spellcharges_4` = 0, `spellppmRate_4` = 0, `spellcooldown_4` = -1, `spellcategory_4` = 0, `spellcategorycooldown_4` = -1, `spellid_5` = 0, `spelltrigger_5` = 0, `spellcharges_5` = 0, `spellppmRate_5` = 0, `spellcooldown_5` = 0, `spellcategory_5` = 0, `spellcategorycooldown_5` = 0 WHERE `entry` = 17076;
 
 -- Finished initial loading
@@ -920,7 +923,7 @@ UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=11924;
 -- * Modified spell 2
 -- 1.12 spell 18196 (Increased Defense +15.)
 -- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0, `spellid_1`=21418, `spelltrigger_1`=1 WHERE entry=11927;
+UPDATE item_template SET `spellid_2`=21418, `spelltrigger_2`=1 WHERE entry=11927;
 -- STATS CHANGED: Thaurissan's Royal Scepter (ilevel 60 entry 11928). 1/2 versions
 UPDATE item_template SET `stat_value1`=15 WHERE entry=11928;
 -- SPELLS REMOVED: Thaurissan's Royal Scepter (ilevel 60 entry 11928). 2 versions
@@ -3464,8 +3467,6 @@ UPDATE item_template SET `dmg_min1`=54, `dmg_max1`=101 WHERE entry=17070;
 -- 1.12 spell 18056 (Increases damage and healing done by magical spells and effects by up to 40.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_3`=0, `spelltrigger_3`=0 WHERE entry=17070;
--- STATS REMOVED for item Bonereaver's Edge (http://wow.allakhazam.com/item.html?witem=17076) 
-UPDATE item_template SET stat_value1=0, stat_type1=0 WHERE entry=17076;
 -- SPELLS CHANGED: Shard of the Flame (ilevel 74 entry 17082). 4 versions
 -- Source: http://wow.allakhazam.com/item.html?witem=17082
 -- Source: http://www.thottbot.com/?i=36927 / http://wow.allakhazam.com/item.html?witem=17082
@@ -7461,11 +7462,11 @@ VALUES
 ('16966','7','40','4','17','0','0','0','0','0','0','0','0','857','10','10','0','0','0','21407','1','0','0','0','0'),
 -- arcanist (1.5)
 ('16795','7','14','5','35','6','8','0','0','0','0','0','0','83','10','0','0','0','0','9344','1','0','0','0','0'),
-('16796','5','24','6','13','7','23','0','0','0','0','0','0','89','0','0','0','10','10','18384','1','9404','1','0','0'),
-('16797','5','24','6','9','7','10','0','0','0','0','0','0','76','5','0','0','0','0','13605','1','0','0','0','0'),
-('16798','5','33','6','16','7','7','3','7','0','0','0','0','102','0','0','0','0','0','13599','1','9401','0','9404','0'),
-('16799','5','20','7','6','6','8','0','0','0','0','0','0','44','7','0','4','0','0','9396','1','21624','1','0','0'),
-('16800','7','13','5','15','6','14','0','0','0','0','0','0','70','0','0','0','10','10','18384','1','9402','1','0','0'),
+('16796','5','24','6','13','7','23','0','0','0','0','0','0','89','0','0','0','10','0','18384','1','9404','1','0','0'),
+('16797','5','24','6','5','7','10','0','0','0','0','0','0','76','0','0','0','10','0','21618','1','9402','1','0','0'),
+('16798','5','33','6','14','7','19','0','0','0','0','0','0','102','10','0','0','0','0','9345','1','0','0','0','0'),
+('16799','5','20','7','6','6','8','0','0','0','0','0','0','44','7','0','4','0','4','9396','1','21624','1','0','0'),
+('16800','7','13','5','15','6','14','0','0','0','0','0','0','70','0','0','0','10','0','18384','1','9402','1','0','0'),
 ('16801','5','18','6','10','7','17','0','0','0','0','0','0','63','7','0','0','0','0','21618','1','0','0','0','0'),
 ('16802','5','26','6','10','7','10','0','0','0','0','0','0','57','7','0','0','0','0','9415','1','0','0','0','0'),
 -- felheart (1.5)
