@@ -35,6 +35,12 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (181074, 22317, 17, 1, 1, 1, 0);
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (181074, 22318, 26, 1, 1, 1, 0);
 INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (181074, 22330, 19, 1, 1, 1, 0);
+-- OPEN GATES OF AQ
+UPDATE `gameobject` SET `state` = 0 WHERE id = 176146;
+-- If not working: DELETE FROM gameobject WHERE id = 176146;
+-- Quest #8800 is linked to Vargus, npc #15176
+DELETE FROM creature_involvedrelation WHERE quest = 8800 AND id = 15176;
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (15176, 8800);
 -- FINAL QUEST CLEANUP
 UPDATE `quest_template` SET `Method` = (Method | 1) WHERE entry IN (SELECT * FROM forbidden_quests);
 DELETE FROM areatrigger_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
