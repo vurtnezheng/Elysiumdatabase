@@ -27,27 +27,14 @@ DELETE FROM creature_loot_template WHERE item IN (16051, 16050, 16055);
 DELETE FROM reference_loot_template WHERE item IN (16051, 16050, 16055);
 -- NPC BODLEY has a ton of random gossip options, one of which gives you the left piece of lord valthalak's amulet. All gossip options need to be removed.
 UPDATE creature_template SET gossip_menu_id = 0 WHERE entry = 16033; 
-
--- TODO: 
-/*
-FLAVOR MISSING:
-After accepting quest 9015, 5 Spectral Stalker should spawn and attack. NPC #16093 - "After accepting this quest, 5 Spectral Stalkers will spawn and attack you. They are non-elites and easily dispatched, especially at 70."
-
-ISSUES WITH QUEST 9015 - THE CHALLENGE
-- Justice Grimstone continues the normal BRD ring of law script after the banner has been thrown down. The banner should interrupt the regular ring of law script.
-- Adds had blue drops on their loot table, needs to be removed.
-- There is an unknown that attacks the player for 1 damage, can't be targetted or killed. Might be a trigger NPC?
-- Items should be held in a chest that spawns next to the provacation banner in a object called "Arena Spoils" which doesn't currently exist in the DB. The items in that chest are #22305, 22317, 22318, 22330
-- Adds should be randomized
-- All explained here: https://web.archive.org/web/20060523124717/http://wow.allakhazam.com:80/db/quest.html?wquest=9015
-- You can complete the quest but its very buggy.
-
-5 QUEST BOSSES ALIVE
-Isalien is shown without using Brazier
-Kormok is shown without using brazier
-Valthalak is shown without using brazier 
-*/
-
+-- ADD GO "Arena Spoils" & ITS LOOT
+DELETE FROM `gameobject_template` WHERE entry = 181074;
+INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `faction`, `flags`, `size`, `data0`, `data1`, `data2`, `data3`, `data4`, `data5`, `data6`, `data7`, `data8`, `data9`, `data10`, `data11`, `data12`, `data13`, `data14`, `data15`, `data16`, `data17`, `data18`, `data19`, `data20`, `data21`, `data22`, `data23`, `mingold`, `maxgold`, `ScriptName`) VALUES (181074, 3, 10, 'Arena Spoils', 0, 0, 1, 57, 181074, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
+DELETE FROM `gameobject_loot_template` WHERE entry = 181074;
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (181074, 22305, 38, 1, 1, 1, 0);
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (181074, 22317, 17, 1, 1, 1, 0);
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (181074, 22318, 26, 1, 1, 1, 0);
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (181074, 22330, 19, 1, 1, 1, 0);
 -- FINAL QUEST CLEANUP
 UPDATE `quest_template` SET `Method` = (Method | 1) WHERE entry IN (SELECT * FROM forbidden_quests);
 DELETE FROM areatrigger_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
