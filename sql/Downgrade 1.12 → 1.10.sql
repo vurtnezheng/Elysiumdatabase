@@ -108,6 +108,8 @@ UPDATE quest_template    SET ReqItemId3 = 18330, ReqItemCount3 = 1,    ReqItemId
 UPDATE quest_template    SET ReqItemId1 = 0,     ReqItemCount1 = 0     WHERE entry IN (8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192);
 
 -- DISABLE QUESTS
+CREATE TABLE IF NOT EXISTS forbidden_quests(entry mediumint);
+
 -- Superior Armaments (patch 1.11)
 -- Epic Armaments (patch 1.11):
 -- EPL towers (patch 1.12)
