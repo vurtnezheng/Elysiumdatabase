@@ -1,4 +1,4 @@
-# The Rules of Itemization Club
+# The Rules of Itemization Club (Freestyle Hackfixing)
 
 1st RULE: You do not talk about Itemization.
 
@@ -12,6 +12,6 @@
 
 7th RULE: Itemization development will never end.
 
-7th RULE: DO NOT delete data from *_templates.
+8th RULE: DO NOT delete data from *_templates.
 
 
