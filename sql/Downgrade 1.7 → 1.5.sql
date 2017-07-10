@@ -7653,7 +7653,7 @@ INSERT INTO `defense_replacement`
             (7514, 7515),                   -- 2->3
             (7515, 7517), (7516, 7517),     -- 3->4
             (7517, 13384),                  -- 4->6
-            (7518, 13385), (13383, 13385),  -- 5->7
+            (7518, 13387), (13383, 13387),  -- 5->8 // Doesn't follow the rule, seems to be an exception. See: Might set
             (13384, 13388),                 -- 6->9
             (13385, 13390), (13386, 13390), -- 7->10
             (13387, 21408),                 -- 8->12
@@ -7691,6 +7691,22 @@ UPDATE `item_template` it INNER JOIN `defense_items_fix` dif ON it.`entry` = dif
         it.`spellid_4` = dif.`spellid_4`,
         it.`spellid_5` = dif.`spellid_5`
     WHERE it.`entry` = dif.`entry`;
+
+-- Deathbone MP5, artifact from above def conversion. Not added until later
+UPDATE `item_template` SET `spellid_2` = 0 WHERE `entry` = 14624;
+
+-- Fix triggers where spell indexes were changed in the above conversion
+UPDATE `item_template` SET `spelltrigger_1` = 0 WHERE `spellid_1` = 0;
+UPDATE `item_template` SET `spelltrigger_2` = 0 WHERE `spellid_2` = 0;
+UPDATE `item_template` SET `spelltrigger_3` = 0 WHERE `spellid_3` = 0;
+UPDATE `item_template` SET `spelltrigger_4` = 0 WHERE `spellid_4` = 0;
+UPDATE `item_template` SET `spelltrigger_5` = 0 WHERE `spellid_5` = 0;
+
+UPDATE `item_template` SET `spelltrigger_1` = 1 WHERE `spellid_1` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
+UPDATE `item_template` SET `spelltrigger_2` = 1 WHERE `spellid_2` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
+UPDATE `item_template` SET `spelltrigger_3` = 1 WHERE `spellid_3` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
+UPDATE `item_template` SET `spelltrigger_4` = 1 WHERE `spellid_4` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
+UPDATE `item_template` SET `spelltrigger_5` = 1 WHERE `spellid_5` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
 
 DROP TABLE `defense_replacement`;
 DROP TABLE `defense_items_fix`;
