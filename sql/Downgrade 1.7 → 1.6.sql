@@ -1,11 +1,10 @@
 
--- Temporary downgrading (!!!) patch [1.7 → 1.5] to fix the current ELysium PvP state
+-- Temporary downgrading patch [1.7 → 1.6] to move Elysium PvP to varsion 1.6
 
 -- Areatriggers, battlegrounds, etc.:
 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 533;    -- Naxxramas 1.12
 UPDATE `areatrigger_teleport` SET `required_level` = 45 WHERE `target_map` = 429;    -- Dire Maul 1.3 
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 469;    -- Blackwing Lair 1.6 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 309;    -- Zul'Gurub 1.7 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 531;    -- AQ 40 1.9 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 509;    -- AQ 20 1.9 
@@ -17,7 +16,6 @@ UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (155, 168); -- Argent Da
 UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN
 (
 66,					-- Dragons of Nightmare 1.8
-163,				-- Patch 1.6
 164,				-- Patch 1.7
 165,				-- Patch 1.8
 154,				-- Silithus @ 1.9 (unchecked)
@@ -27,8 +25,6 @@ UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN
 167					-- Patch 1.10
 );
 
-
--- Add new creatures
 	-- Cloth Quartermasters
 DELETE FROM creature WHERE id IN (14727, 14726, 14728, 14729, 14725, 14723, 14722, 14724);
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (79821, 14722, 0, 14753, 0, -8942.03, 785.805, 97.4045, 0.20944, 325, 0, 0, 2016, 0, 0, 0, 0);
@@ -48,10 +44,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (31903, 14729, 0, 14756, 0, 1690.83, 185.738, -62.0883, 5.58505, 300, 0, 0, 2016, 0, 0, 0, 0);
 -- INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES (2530210, 14729, 0, 0, 597, 1690.83, 185.738, -62.1713, 6.08779, 25, 5, 0, 2016, 0, 0, 0, 0);
 
-
--- Enable available quests 
-
--- Cloth Quartermasters Quests
+-- Enable available quests  Cloth Quartermasters Quests
 DELETE FROM creature_questrelation WHERE id IN (14727, 14726, 14728, 14729, 14725, 14723, 14722, 14724);
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14722, 7791);
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14722, 7793);
@@ -94,21 +87,13 @@ INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7817);
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7818);
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (14729, 7819);
 
--- Kill me
-
 CREATE TABLE IF NOT EXISTS forbidden_items (entry mediumint);
--- Patch 1.4—1.5 World DB Itemization Changes.
--- To be applied on QA first for testing.
-
--- Disable Spells of Patch 1.9 Consumables
 
 -- Item Removal of all items 19326 and higher except for the items in this list: https://docs.google.com/spreadsheets/d/1ZZaQ8sE0ztrcC4UeZkSOUEiP5TyMDRIWGcn3t_lCW7Y/edit#gid=0.
--- !!! BONUSHIT! Should remove from loot, not from the template.
 
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry >= 19326 AND entry NOT IN (20744, 20745, 20746, 20747, 20748, 20749, 20750, 20752, 20753, 20754, 20755, 20756, 20757, 20758, 20769, 21023, 21071, 21072, 21099, 21114, 21151, 21153, 21177, 21174, 21211, 21213, 21217, 21219, 21235, 21308, 21314, 21315, 21340, 21342, 21358, 21371, 21524, 21525, 21545, 21546, 21547, 21557, 21558, 21559, 21571, 21574, 21576, 21721, 21745, 21747, 21815, 21829, 21833, 22243, 22244, 22246, 22248, 22249, 22250, 22307, 22308, 22309, 22393, 22739, 22895, 22897, 23002, 23007, 23015, 23022, 23160, 23161, 23192, 23246, 23247, 22843, 22852, 22855, 22856, 22857, 22858, 22859, 22860, 22862, 22863, 22864, 22865, 22867, 22868, 22869, 22870, 22872, 22873, 22874, 22875, 22876, 22877, 22878, 22879, 22880, 22881, 22882, 22883, 22884, 22885, 22886, 22887, 23243, 23244, 23251, 23252, 23253, 23254, 23255, 23256, 23257, 23258, 23259, 23260, 23261, 23262, 23263, 23264, 23272, 23273, 23274, 23275, 23276, 23277, 23278, 23279, 23280, 23281, 23282, 23283, 23284, 23285, 23286, 23287, 23288, 23289, 23290, 23291, 23292, 23293, 23294, 23295, 23296, 23297, 23298, 23299, 23300, 23301, 23302, 23303, 23304, 23305, 23306, 23307, 23308, 23309, 23310, 23311, 23312, 23313, 23314, 23315, 23316, 23317, 23318, 23319);
 
 -- Remove items on this list from DB: https://docs.google.com/spreadsheets/d/1YZww0pjVdVCZOaQs4dtx86Hd1CHCRnRhUvEn5iEEYbY/edit#gid=0
--- WEEEEEE!
 
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19202, 19203, 19204, 19205, 19206, 19207, 19208, 19209, 19210, 19211, 19212, 19215, 19216, 19217, 19218, 19219, 19220, 19221, 19326, 19327, 19328, 19329, 19330, 19331, 19332, 19333, 19442, 19444, 19445, 19446, 19447, 19448, 19449, 20040, 20382, 20506, 20507, 20508, 20509, 20510, 20511, 20761, 22392);
 
@@ -4135,24 +4120,6 @@ UPDATE item_template SET `dmg_min1`=196, `dmg_max1`=295 WHERE entry=18877;
 -- 1.04 spell 13387 (Increased Defense +8.)
 UPDATE item_template SET `spellid_1`=13387 WHERE entry=18879;
 -- NOT FOUND: Ring of Critical Testing 2 (ilevel 60 entry 18970)
--- -----------------------------------
--- (MOSTLY) 1.6 (BWL) AND BEYOND ITEMS, WITH A FEW EXCEPTIONS WHICH ARE ACCOUNTED FOR BELOW
--- THIS SECTION
--- -----------------------------------
--- NOT FOUND: Thunderfury, Blessed Blade of the Windseeker (ilevel 80 entry 19019)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19019);
--- NOT FOUND: Heavy Timbermaw Belt (ilevel 58 entry 19043)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19043);
--- NOT FOUND: Might of the Timbermaw (ilevel 58 entry 19044)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19044);
--- NOT FOUND: Wisdom of the Timbermaw (ilevel 58 entry 19047)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19047);
--- NOT FOUND: Heavy Timbermaw Boots (ilevel 64 entry 19048)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19048);
--- NOT FOUND: Timbermaw Brawlers (ilevel 64 entry 19049)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19049);
--- NOT FOUND: Mantle of the Timbermaw (ilevel 64 entry 19050)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 19050);
 -- STATS REMOVED for item Dawn Treaders (http://wow.allakhazam.com/dyn/items/wname5.html) 
 UPDATE item_template SET armor=0, stat_value1=0, stat_type1=0 WHERE entry=19052;
 -- SPELLS REMOVED: Dawn Treaders (ilevel 58 entry 19052). 1 versions
@@ -7653,7 +7620,7 @@ INSERT INTO `defense_replacement`
             (7514, 7515),                   -- 2->3
             (7515, 7517), (7516, 7517),     -- 3->4
             (7517, 13384),                  -- 4->6
-            (7518, 13387), (13383, 13387),  -- 5->8 // Doesn't follow the rule, seems to be an exception. See: Might set
+            (7518, 13385), (13383, 13385),  -- 5->7
             (13384, 13388),                 -- 6->9
             (13385, 13390), (13386, 13390), -- 7->10
             (13387, 21408),                 -- 8->12
@@ -7692,22 +7659,6 @@ UPDATE `item_template` it INNER JOIN `defense_items_fix` dif ON it.`entry` = dif
         it.`spellid_5` = dif.`spellid_5`
     WHERE it.`entry` = dif.`entry`;
 
--- Deathbone MP5, artifact from above def conversion. Not added until later
-UPDATE `item_template` SET `spellid_2` = 0 WHERE `entry` = 14624;
-
--- Fix triggers where spell indexes were changed in the above conversion
-UPDATE `item_template` SET `spelltrigger_1` = 0 WHERE `spellid_1` = 0;
-UPDATE `item_template` SET `spelltrigger_2` = 0 WHERE `spellid_2` = 0;
-UPDATE `item_template` SET `spelltrigger_3` = 0 WHERE `spellid_3` = 0;
-UPDATE `item_template` SET `spelltrigger_4` = 0 WHERE `spellid_4` = 0;
-UPDATE `item_template` SET `spelltrigger_5` = 0 WHERE `spellid_5` = 0;
-
-UPDATE `item_template` SET `spelltrigger_1` = 1 WHERE `spellid_1` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
-UPDATE `item_template` SET `spelltrigger_2` = 1 WHERE `spellid_2` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
-UPDATE `item_template` SET `spelltrigger_3` = 1 WHERE `spellid_3` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
-UPDATE `item_template` SET `spelltrigger_4` = 1 WHERE `spellid_4` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
-UPDATE `item_template` SET `spelltrigger_5` = 1 WHERE `spellid_5` IN (7511, 7513, 7514, 7515, 7516, 7517, 7518, 13383, 13384, 13385, 13386, 13387, 13388, 13389, 13390, 14249, 15804, 17513, 18185, 18196, 18369, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 24774, 24775);
-
 DROP TABLE `defense_replacement`;
 DROP TABLE `defense_items_fix`;
 
@@ -7715,15 +7666,6 @@ DROP TABLE `defense_items_fix`;
 
 -- AQ quest starter item
 REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 20461);
-
--- Despawn [The Severed Head of Nefarian]
-UPDATE gameobject SET `spawnFlags` = `spawnFlags` | 2 WHERE guid = 1264334;
-
--- NOT FOUND: Blackhand's Command (BWL Attunement Quest)
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` = 18987);
-
--- Thunderfury Bindings
-REPLACE INTO `forbidden_items` (SELECT `entry` FROM `item_template` WHERE `entry` IN (18563, 18564));
 
 -- Forbidden Items & quests for 1.5
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry BETWEEN 19574 AND 20266;
@@ -7824,34 +7766,3 @@ UPDATE `quest_template` SET `Method` = (`Method` | 1) WHERE `entry` IN (SELECT *
 
 DELETE FROM `creature_questrelation` WHERE `quest` BETWEEN 8041 AND 8270;
 DELETE FROM `creature_involvedrelation` WHERE `quest` BETWEEN 8041 AND 8270;
-
--- Transition patch for old mounts (one week event!)
-	-- Undead
-insert ignore into npc_vendor value (4731,11559,0,0);
-	-- Tauren
-insert ignore into npc_vendor value (3685,11547,0,0);
-insert ignore into npc_vendor value (3685,11548,0,0);
-	-- Orc
-insert ignore into npc_vendor value (3362,11549,0,0);
-insert ignore into npc_vendor value (3362,11550,0,0);
-	-- Troll
-insert ignore into npc_vendor value (7952,11545,0,0);
-insert ignore into npc_vendor value (7952,11546,0,0);
-	-- Human
-insert ignore into npc_vendor value (384,11551,0,0);
-insert ignore into npc_vendor value (4885,11551,0,0);
-insert ignore into npc_vendor value (2357,11551,0,0);
-insert ignore into npc_vendor value (1460,11551,0,0);
-insert ignore into npc_vendor value (384,11552,0,0);
-insert ignore into npc_vendor value (4885,11552,0,0);
-insert ignore into npc_vendor value (2357,11552,0,0);
-insert ignore into npc_vendor value (1460,11552,0,0);
--- Dwarf
-insert ignore into npc_vendor value (1261,11553,0,0);
-insert ignore into npc_vendor value (1261,11554,0,0);
-	-- Elf
-insert ignore into npc_vendor value (4730,11555,0,0);
-insert ignore into npc_vendor value (4730,11556,0,0);
-	-- Gnome
-insert ignore into npc_vendor value (7955,11557,0,0);
-insert ignore into npc_vendor value (7955,11558,0,0);
