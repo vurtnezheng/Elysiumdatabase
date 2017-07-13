@@ -82,7 +82,7 @@ UPDATE `creature_template` SET `spell1` = 17547, `spell2` = 20252, `spell3` = 19
 -- Malgen's Aimed Shot, Frost Trap and Pet, Gnashjaw
 UPDATE `creature_template` SET `spell2` = 20902, `spell4` = 13809, `PetSpellDataId` = 19561 WHERE `entry` = 16052;
 -- NPC Bodley EquipID
-UPDATE creature_templame SET equipment_id = 16033 WHERE entry = 16033;
+UPDATE creature_template SET equipment_id = 16033 WHERE entry = 16033;
 DELETE FROM `creature_equip_template` WHERE entry = 16033;
 INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `equipentry3`) VALUES (16033, 13069, 0, 0);
 -- Wrong quest ordering
