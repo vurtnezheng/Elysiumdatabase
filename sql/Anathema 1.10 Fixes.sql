@@ -85,6 +85,9 @@ UPDATE `creature_template` SET `spell2` = 20902, `spell4` = 13809, `PetSpellData
 UPDATE creature_template SET equipment_id = 16033 WHERE entry = 16033;
 DELETE FROM `creature_equip_template` WHERE entry = 16033;
 INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `equipentry3`) VALUES (16033, 13069, 0, 0);
+UPDATE creature_template_addon SET b2_0_sheath = 1 WHERE entry = 16033;
+UPDATE creature_template_addon SET auras = 22650 WHERE entry = 16033;
+INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_flags, emote, moveflags, auras) VALUES (94490, 0, 0, 1, 16, 0, 0, '22650');
 -- Wrong quest ordering
 UPDATE quest_template SET NextQuestId = 0 WHERE entry IN (8962, 8963, 8964, 8965);
 
