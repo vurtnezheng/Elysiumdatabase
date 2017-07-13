@@ -16,6 +16,7 @@ UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1; 
 UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (155, 168); -- Argent Dawn @ 1.11 & Patch 1.11 * 1.12 (not quite sure what 168 does :D)
 UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN
 (
+4, 5, 100, 101      -- Darkmoon Faire 1.6
 66,					-- Dragons of Nightmare 1.8
 163,				-- Patch 1.6
 164,				-- Patch 1.7
@@ -171,13 +172,6 @@ UPDATE item_template SET `spellid_1`=13386 WHERE entry=868;
 -- 1.12 spell 13390 (Increased Defense +10.)
 -- 1.04 spell 21411 (Increased Defense +15.)
 UPDATE item_template SET `spellid_1`=21411 WHERE entry=943;
--- SPELLS CHANGED: Lesser Firestone (ilevel 28 entry 1254). 2 versions
--- Source: http://wow.allakhazam.com/dyn/items/itype23.html
--- Source: http://wow.allakhazam.com/item.html?witem=1254
--- * Modified spell 2
--- 1.12 spell 23480 (Increases damage done by Fire spells and effects by up to 10.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=1254;
 -- SPELLS REMOVED: Double Link Tunic (ilevel 30 entry 1717). 4 versions
 -- Source: http://www.thottbot.com/?n=7530
 -- Source: http://www.thottbot.com/?n=8946 / http://wow.allakhazam.com/profile.html?26338
@@ -3777,19 +3771,6 @@ UPDATE item_template SET `dmg_min1`=87, `dmg_max1`=88 WHERE entry=18680;
 -- 1.12 spell 9327 (Increases damage done by Shadow spells and effects by up to 20.)
 -- 1.04 spell 25064 (Increases damage done by shadow spells and effects by up to 20.)
 UPDATE item_template SET `spellid_1`=25064 WHERE entry=18691;
--- SPELLS CHANGED: Rhok'delar, Longbow of the Ancient Keepers (ilevel 75 entry 18713). 2 versions
--- Source: http://wow.allakhazam.com/dyn/items/wminlev2.html
--- Source: http://wow.allakhazam.com/item.html?witem=18713
--- * Modified spell 1
--- 1.12 spell 0
--- 1.04 spell 23193 (Transforms into Lok'delar, Stave of the Ancient Keepers.)
-UPDATE item_template SET `spellid_1`=23193 WHERE entry=18713;
--- SPELLS CHANGED: Lok'delar, Stave of the Ancient Keepers (ilevel 75 entry 18715). 1 versions
--- Source: http://wow.allakhazam.com/item.html?witem=18715
--- * Modified spell 1
--- 1.12 spell 0
--- 1.04 spell 23194 (Transforms into Rhok'delar, Longbow of the Ancient Keepers and Lok'delar, Stave of the Ancient Keepers.)
-UPDATE item_template SET `spellid_1`=23194 WHERE entry=18715;
 -- SPELLS CHANGED: Crimson Felt Hat (ilevel 59 entry 18727). 1 versions
 -- Source: http://wow.allakhazam.com/profile.html?49695
 -- * Modified spell 1
@@ -3918,18 +3899,6 @@ UPDATE item_template SET `stat_value1`=6 WHERE entry=18843;
 -- 1.12 spell 9335 (+28 Attack Power.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=18843;
--- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18845). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 5579 (Dispels all Immobilizing, Slowing and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18845;
--- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18846). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 5579 (Dispels all Immobilizing, Slowing and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18846;
 -- STATS CHANGED: Grand Marshal's Left Hand Blade (ilevel 78 entry 18847). 1/2 versions
 UPDATE item_template SET `stat_value1`=6 WHERE entry=18847;
 -- SPELLS REMOVED: Grand Marshal's Left Hand Blade (ilevel 78 entry 18847). 2 versions
@@ -3954,80 +3923,6 @@ UPDATE item_template SET `stat_value1`=6 WHERE entry=18848;
 -- 1.12 spell 9335 (+28 Attack Power.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0, `spellid_2`=0, `spelltrigger_2`=0 WHERE entry=18848;
--- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18849). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23273 (Dispels all Charm, Fear and Polymorph effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18849;
--- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18850). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23274 (Dispels all Fear, Polymorph and Slowing effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18850;
--- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18851). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23276 (Dispels all Fear, Polymorph and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18851;
--- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18852). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23273 (Dispels all Charm, Fear and Polymorph effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18852;
--- SPELLS REMOVED: Insignia of the Horde (ilevel 0 entry 18853). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23277 (Dispels all Charm, Fear and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18853;
--- SPELLS REMOVED: Insignia of the Alliance (ilevel 0 entry 18856). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 5579 (Dispels all Immobilizing, Slowing and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18856;
--- SPELLS REMOVED: Insignia of the Alliance (ilevel 0 entry 18857). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23273 (Dispels all Charm, Fear and Polymorph effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18857;
--- SPELLS REMOVED: Insignia of the Alliance (ilevel 0 entry 18858). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23273 (Dispels all Charm, Fear and Polymorph effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18858;
--- SPELLS REMOVED: Insignia of the Alliance (ilevel 0 entry 18859). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23274 (Dispels all Fear, Polymorph and Slowing effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18859;
--- STATS CHANGED: Flamewaker Legplates (ilevel 61 entry 18861). 1/1 versions
-UPDATE item_template SET `stat_value2`=12 WHERE entry=18861;
--- SPELLS REMOVED: Insignia of the Alliance (ilevel 0 entry 18862). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23276 (Dispels all Fear, Polymorph and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18862;
--- SPELLS REMOVED: Insignia of the Alliance (ilevel 0 entry 18863). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23277 (Dispels all Charm, Fear and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18863;
--- SPELLS REMOVED: Insignia of the Alliance (ilevel 0 entry 18864). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 23276 (Dispels all Fear, Polymorph and Stun effects.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=18864;
 -- STATS CHANGED: Grand Marshal's Punisher (ilevel 78 entry 18865). 1/4 versions
 UPDATE item_template SET `stat_value1`=6 WHERE entry=18865;
 -- DAMAGE CHANGED: Grand Marshal's Punisher (ilevel 78 entry 18865). 1/4 versions
@@ -7589,6 +7484,8 @@ DELETE FROM `creature_questrelation` WHERE `quest` IN (8271, 8272);
 INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (13816, 8271), (13817, 8272);
 DELETE FROM `creature_involvedrelation` WHERE `quest` IN (8271, 8272);
 INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (13816, 8271), (13817, 8272);
+-- Remove Korrak completion rewards
+UPDATE `quest_template` SET `RewChoiceItemId1` = 0, `RewChoiceItemId2` = 0, `RewChoiceItemId3` = 0 WHERE `entry` IN (7202, 7181);
 
 -- Enable AV quest
 UPDATE `quest_template` SET `Method` = 2 WHERE `entry` IN (7161, 7162);
