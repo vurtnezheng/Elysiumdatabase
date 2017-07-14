@@ -86,10 +86,17 @@ UPDATE creature_template SET equipment_id = 16033 WHERE entry = 16033;
 DELETE FROM `creature_equip_template` WHERE entry = 16033;
 INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `equipentry3`) VALUES (16033, 13069, 0, 0);
 UPDATE creature_template_addon SET b2_0_sheath = 1 WHERE entry = 16033;
-UPDATE creature_template_addon SET auras = 22650 WHERE entry = 16033;
-INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_flags, emote, moveflags, auras) VALUES (94490, 0, 0, 1, 16, 0, 0, '22650');
+UPDATE creature_template_addon SET auras = 27614 WHERE entry = 16033;
+DELETE FROM creature_addon WHERE guid = 94490;
+INSERT INTO creature_addon (guid, mount, bytes1, b2_0_sheath, b2_1_flags, emote, moveflags, auras) VALUES (94490, 0, 0, 1, 16, 0, 0, '27614 22650');
+UPDATE creature_addon SET auras = 27614 WHERE guid = 94490;
 -- Wrong quest ordering
 UPDATE quest_template SET NextQuestId = 0 WHERE entry IN (8962, 8963, 8964, 8965);
+-- Add Enchant_2H_Weapon_-_Agility to NPC Meliosh
+DELETE FROM npc_vendor WHERE item = 22392;
+INSERT INTO npc_vendor (entry, item, maxcount, incrtime) VALUES (11557, 22392, 0, 0);
+-- Delete the rest of 1.3 mounts (wtf!?)
+DELETE FROM npc_vendor WHERE item IN (12353,12354,13326,13327,12302,12303,13328,13329,12351,12330,15292,15293,8586,13317);
 
 
 -- FINAL QUEST CLEANUP
