@@ -97,7 +97,11 @@ DELETE FROM npc_vendor WHERE item = 22392;
 INSERT INTO npc_vendor (entry, item, maxcount, incrtime) VALUES (11557, 22392, 0, 0);
 -- Delete the rest of 1.3 mounts (wtf!?)
 DELETE FROM npc_vendor WHERE item IN (12353,12354,13326,13327,12302,12303,13328,13329,12351,12330,15292,15293,8586,13317);
-
+-- Add Ironvine set to NPC Vargus #15176
+DELETE FROM npc_vendor WHERE item IN (22768, 22766, 22767);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (15176, 22766, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (15176, 22767, 0, 0);
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (15176, 22768, 0, 0);
 
 -- FINAL QUEST CLEANUP
 UPDATE `quest_template` SET `Method` = (Method | 1) WHERE entry IN (SELECT * FROM forbidden_quests);
