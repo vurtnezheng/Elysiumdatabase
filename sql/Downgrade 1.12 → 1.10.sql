@@ -67,7 +67,7 @@ CREATE TEMPORARY TABLE forbidden_items (entry mediumint);
 	-- ZG 1.11 Drop
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
 	-- 1.11 Relics From Drop
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN   (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN   (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22396, 22345, 23200, 23199);
 
 -- *_loot_template final cleanup
 
