@@ -73,4 +73,10 @@ REPLACE INTO `forbidden_quests` (SELECT `entry` FROM `quest_template`
         `RewItemId4` IN (SELECT * FROM `forbidden_items`));
 UPDATE `quest_template` SET `Method` = (`Method` | 1) WHERE `entry` IN (SELECT * FROM `forbidden_quests`);
 
+DELETE FROM areatrigger_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM creature_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM creature_questrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM gameobject_involvedrelation WHERE quest IN (SELECT * from forbidden_quests);
+DELETE FROM gameobject_questrelation WHERE quest IN (SELECT * from forbidden_quests);
+
 UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 2) WHERE id IN (SELECT * FROM forbidden_creatures);
