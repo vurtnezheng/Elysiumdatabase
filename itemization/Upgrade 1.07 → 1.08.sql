@@ -65,6 +65,9 @@ REPLACE `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Qua
 
 -- * VENDORS
 
+-- [Plans: Dark Iron Boots] / Thorium Brotherhood NPC#12944
+REPLACE INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('12944', '20040', '0', '0');
+
 -- * CREATURES
 
 -- * QUESTS
