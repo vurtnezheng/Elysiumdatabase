@@ -1,3 +1,4 @@
+-- Black Lotus, Plaguebloom, Dreamfoil, Gromsblood, Mountain Silversage, Ghost Mushroom and Icecap will spawn in far greater abundance.
 DELETE FROM gameobject WHERE id IN (142144, 142145, 176584, 176586, 176587, 176589,  180166, 180168, 176637, 176639, 176640, 176641);
       
 INSERT INTO 
