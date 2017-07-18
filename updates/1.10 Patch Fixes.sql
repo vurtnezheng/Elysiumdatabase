@@ -30,6 +30,45 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN ('IT
 
 -- * ITEMS AND LOOT
 
+-- Idol of Ferocity, Idol of Rejuvenation, Idol of Health, Libram of Truth, Libram of Hope, Totem of Life, Totem of Rebirth
+DELETE FROM creature_loot_template WHERE item IN (22397,22398,22399,20400,22401,22396,22345);
+DELETE FROM reference_loot_template WHERE item IN (22397,22398,22399,20400,22401,22396,22345);
+INSERT INTO 
+	`creature_loot_template` 
+	(`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
+VALUES 
+	(9025, 22397, 0, 1, 1, 1, 0),
+	(15299, 22399, 0, 1, 1, 1, 0),
+	(16080, 22398, 0, 1, 1, 1, 0),
+	(16097, 22345, 0, 1, 1, 1, 0),
+	(16097, 22401, 0, 1, 1, 1, 0),
+	(34048, 22396, 0, 1, 1, 1, 0),
+	(322418, 22400, 0, 1, 1, 1, 0);
+-- Titanic Leggings
+DELETE FROM reference_loot_template WHERE item = 22388;
+INSERT INTO `reference_loot_template` 
+	(`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
+VALUES 
+	(34009, 22388, 0, 1, 1, 1, 78),
+	(315710, 22388, 0, 2, 1, 1, 78),
+	(315712, 22388, 0, 4, 1, 1, 78),
+	(315714, 22388, 0, 6, 1, 1, 78),
+	(322541, 22388, 0, 6, 1, 1, 78),
+	(322543, 22388, 0, 8, 1, 1, 78),
+	(324923, 22388, 0, 2, 1, 1, 78),
+	(324925, 22388, 0, 4, 1, 1, 78),
+	(324927, 22388, 0, 6, 1, 1, 78),
+	(325071, 22388, 0, 2, 1, 1, 78),
+	(325073, 22388, 0, 4, 1, 1, 78),
+	(328658, 22388, 0, 2, 1, 1, 78),
+	(328660, 22388, 0, 4, 1, 1, 78),
+	(328670, 22388, 0, 2, 1, 1, 78),
+	(328672, 22388, 0, 4, 1, 1, 78),
+	(328682, 22388, 0, 2, 1, 1, 78),
+	(328684, 22388, 0, 4, 1, 1, 78),
+	(328694, 22388, 0, 2, 1, 1, 78),
+	(328696, 22388, 0, 4, 1, 1, 78);
+
 -- * VENDORS
 
 -- * CREATURES
