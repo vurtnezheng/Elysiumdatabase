@@ -31,8 +31,8 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN ('IT
 -- * ITEMS AND LOOT
 
 -- Idol of Ferocity, Idol of Rejuvenation, Idol of Health, Libram of Truth, Libram of Hope, Totem of Life, Totem of Rebirth, Totem of Rage
-DELETE FROM creature_loot_template WHERE item IN (22397,22398,22399,20400,22401,22396,22345,22395);
-DELETE FROM reference_loot_template WHERE item IN (22397,22398,22399,20400,22401,22396,22345,22395);
+DELETE FROM creature_loot_template WHERE item IN (22397,22398,22399,22400,22401,22396,22345,22395);
+DELETE FROM reference_loot_template WHERE item IN (22397,22398,22399,22400,22401,22396,22345,22395);
 INSERT INTO 
 	`creature_loot_template` 
 	(`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
