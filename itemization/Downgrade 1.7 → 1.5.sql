@@ -103,16 +103,6 @@ CREATE TABLE IF NOT EXISTS forbidden_items (entry mediumint);
 
 -- Disable Spells of Patch 1.9 Consumables
 
--- Item Removal of all items 19326 and higher except for the items in this list: https://docs.google.com/spreadsheets/d/1ZZaQ8sE0ztrcC4UeZkSOUEiP5TyMDRIWGcn3t_lCW7Y/edit#gid=0.
--- !!! BONUSHIT! Should remove from loot, not from the template.
-
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry >= 19326 AND entry NOT IN (20744, 20745, 20746, 20747, 20748, 20749, 20750, 20752, 20753, 20754, 20755, 20756, 20757, 20758, 20769, 21023, 21071, 21072, 21099, 21114, 21151, 21153, 21177, 21174, 21211, 21213, 21217, 21219, 21235, 21308, 21314, 21315, 21340, 21342, 21358, 21371, 21524, 21525, 21545, 21546, 21547, 21557, 21558, 21559, 21571, 21574, 21576, 21721, 21745, 21747, 21815, 21829, 21833, 22243, 22244, 22246, 22248, 22249, 22250, 22307, 22308, 22309, 22393, 22739, 22895, 22897, 23002, 23007, 23015, 23022, 23160, 23161, 23192, 23246, 23247, 22843, 22852, 22855, 22856, 22857, 22858, 22859, 22860, 22862, 22863, 22864, 22865, 22867, 22868, 22869, 22870, 22872, 22873, 22874, 22875, 22876, 22877, 22878, 22879, 22880, 22881, 22882, 22883, 22884, 22885, 22886, 22887, 23243, 23244, 23251, 23252, 23253, 23254, 23255, 23256, 23257, 23258, 23259, 23260, 23261, 23262, 23263, 23264, 23272, 23273, 23274, 23275, 23276, 23277, 23278, 23279, 23280, 23281, 23282, 23283, 23284, 23285, 23286, 23287, 23288, 23289, 23290, 23291, 23292, 23293, 23294, 23295, 23296, 23297, 23298, 23299, 23300, 23301, 23302, 23303, 23304, 23305, 23306, 23307, 23308, 23309, 23310, 23311, 23312, 23313, 23314, 23315, 23316, 23317, 23318, 23319);
-
--- Remove items on this list from DB: https://docs.google.com/spreadsheets/d/1YZww0pjVdVCZOaQs4dtx86Hd1CHCRnRhUvEn5iEEYbY/edit#gid=0
--- WEEEEEE!
-
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19202, 19203, 19204, 19205, 19206, 19207, 19208, 19209, 19210, 19211, 19212, 19215, 19216, 19217, 19218, 19219, 19220, 19221, 19326, 19327, 19328, 19329, 19330, 19331, 19332, 19333, 19442, 19444, 19445, 19446, 19447, 19448, 19449, 20040, 20382, 20506, 20507, 20508, 20509, 20510, 20511, 20761, 22392);
-
 -- "Thunderfury" Stats Have Been Corrected (main hand untill 1.12)
 UPDATE item_template SET InventoryType = 21 WHERE entry = 19019;
 
@@ -1633,12 +1623,6 @@ UPDATE item_template SET `stat_type2`=6, `stat_value2`=7 WHERE entry=13967;
 -- 1.12 spell 15464 (Improves your chance to hit by 1%.)
 -- 1.04 spell 0
 UPDATE item_template SET `spellid_1`=0, `spelltrigger_1`=0 WHERE entry=13967;
--- SPELLS REMOVED: Barov Peasant Caller (ilevel 62 entry 14023). 1 versions
--- Source: http://wow.allakhazam.com/dyn/items/iname12.html
--- * Modified spell 1
--- 1.12 spell 18308 (Calls forth 3 servants of the House Barov that will fight, cook, and clean for you.)
--- 1.04 spell 0
-UPDATE item_template SET `spellid_1`=0 WHERE entry=14023;
 -- SPELLS CHANGED: Cindercloth Gloves (ilevel 54 entry 14043). 3 versions
 -- Source: http://www.thottbot.com/?i=4376 / http://wow.allakhazam.com/item.html?witem=14043
 -- Source: http://www.thottbot.com/?i=4282 / http://wow.allakhazam.com/item.html?witem=14043
@@ -7627,8 +7611,39 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry BETWEEN
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (12056, 12057, 22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20214, 20220, 20212, 20203, 20175, 20194, 20176, 20158, 20068);
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
+-- Remove items in this list https://docs.google.com/spreadsheets/d/1YZww0pjVdVCZOaQs4dtx86Hd1CHCRnRhUvEn5iEEYbY/edit#gid=0
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19202, 19203, 19204, 19205, 19206, 19207, 19208, 19209, 19210, 19211, 19212, 19215, 19216, 19217, 19218, 19219, 19220, 19221, 19326, 19327, 19328, 19329, 19330, 19331, 19332, 19333, 19442, 19444, 19445, 19446, 19447, 19448, 19449, 20040, 20382, 20506, 20507, 20508, 20509, 20510, 20511, 20761, 22392);
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22637;
+
+-- Item Removal of all items 19326 and higher except for the items in this list: 
+-- https://docs.google.com/spreadsheets/d/1ZZaQ8sE0ztrcC4UeZkSOUEiP5TyMDRIWGcn3t_lCW7Y/edit#gid=0.
+-- Also exclude AV reward mace, BG marks
+REPLACE INTO forbidden_items SELECT entry FROM item_template 
+    WHERE entry >= 19326
+        AND entry NOT IN (20744, 20745, 20746, 20747, 20748, 20749, 
+            20750, 20752, 20753, 20754, 20755, 20756, 20757, 20758, 
+            20769, 21023, 21071, 21072, 21099, 21114, 21151, 21153, 
+            21177, 21174, 21211, 21213, 21217, 21219, 21235, 21308, 
+            21314, 21315, 21340, 21342, 21358, 21371, 21524, 21525, 
+            21545, 21546, 21547, 21557, 21558, 21559, 21571, 21574, 
+            21576, 21721, 21745, 21747, 21815, 21829, 21833, 22243, 
+            22244, 22246, 22248, 22249, 22250, 22307, 22308, 22309, 
+            22393, 22739, 22895, 22897, 23002, 23007, 23015, 23022, 
+            23160, 23161, 23192, 23246, 23247, 22843, 22852, 22855, 
+            22856, 22857, 22858, 22859, 22860, 22862, 22863, 22864, 
+            22865, 22867, 22868, 22869, 22870, 22872, 22873, 22874, 
+            22875, 22876, 22877, 22878, 22879, 22880, 22881, 22882, 
+            22883, 22884, 22885, 22886, 22887, 23243, 23244, 23251, 
+            23252, 23253, 23254, 23255, 23256, 23257, 23258, 23259, 
+            23260, 23261, 23262, 23263, 23264, 23272, 23273, 23274, 
+            23275, 23276, 23277, 23278, 23279, 23280, 23281, 23282, 
+            23283, 23284, 23285, 23286, 23287, 23288, 23289, 23290, 
+            23291, 23292, 23293, 23294, 23295, 23296, 23297, 23298, 
+            23299, 23300, 23301, 23302, 23303, 23304, 23305, 23306, 
+            23307, 23308, 23309, 23310, 23311, 23312, 23313, 23314, 
+            23315, 23316, 23317, 23318, 23319, -- End general list
+            20558, 20559, 20560, -- BG honor marks
+            20648);  -- AV reward mace
 
 DELETE FROM creature_loot_template WHERE item IN (SELECT * FROM `forbidden_items`);
 DELETE FROM reference_loot_template WHERE item IN (SELECT * FROM `forbidden_items`);
