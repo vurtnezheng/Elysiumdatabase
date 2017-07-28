@@ -78,7 +78,8 @@ REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry
 
 -- * QUESTS
 
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN ('QUEST_IDS_YOU_WANT_TO_REMOVE');	
+REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8743);	
+-- Item 21176 must be removed from players who have gotten them after event.
 
 -- * PROFESSIONS 
 
