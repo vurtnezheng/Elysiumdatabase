@@ -38,7 +38,8 @@ REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry
 
 -- * QUESTS
 
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN ('QUEST_IDS_YOU_WANT_TO_REMOVE');	
+-- Zul'Gurub Quest, all quests from NPC http://db.vanillagaming.org/?npc=15500, http://db.vanillagaming.org/?npc=15499 and http://db.vanillagaming.org/?npc=15498
+REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (9023, 8695, 8692, 8693, 8690, 8696, 8557, 8691, 8689, 8694, 8711, 8707, 8709, 8705, 8706, 8710, 8708, 8712, 8558, 8700, 8699, 8701, 8703, 8697, 8702, 8698, 8556, 8704);	
 
 -- * PROFESSIONS 
 
