@@ -32,6 +32,13 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN ('IT
 
 -- * VENDORS
 
+-- http://db.vanillagaming.org/?npc=15419 is not supposed to sell http://db.vanillagaming.org/?item=20732 or http://db.vanillagaming.org/?item=20733 until 1.9 even though the wow-wiki says 1.8
+DELETE FROM npc_vendor WHERE item IN (20732, 20733) AND entry = 15419;
+-- http://db.vanillagaming.org/?npc=15179 is not supposed to sell http://db.vanillagaming.org/?item=22310 till 1.10
+DELETE FROM npc_vendor WHERE item = 22310 AND entry = 15179;
+-- http://db.vanillagaming.org/?npc=12944 is not supposed to sell http://db.vanillagaming.org/?item=20761 until 1.9
+DELETE FROM npc_vendor WHERE item = 22761 AND entry = 12944;
+
 -- * CREATURES
 
 REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN ('CREATURE_IDS_YOU_WANT_TO_REMOVE');
