@@ -1,5 +1,17 @@
+-- [1.6 → 1.7] 
 
--- Temporary transition patch [1.6 → 1.7] 
+-- * INDEX
+-- - 1. ENCOUNTER				 
+-- - 2. EVENTS 					          
+-- - 3. FORBIDDEN ITEMS 		  
+-- - 4. ITEMS AND LOOT		 	      
+-- - 5. VENDORS 				
+-- - 6. CREATURES				
+-- - 7. QUESTS					
+-- - 8. PROFESSIONS				
+-- - 9. SPELLS			 		
+-- - 10. GAMEOBJECTS	
+-- - 11. CLEANUP TOOLS		
 
 -- Enable available instances
 
