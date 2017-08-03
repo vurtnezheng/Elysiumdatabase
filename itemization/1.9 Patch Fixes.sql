@@ -32,7 +32,7 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN ('IT
 
 -- * VENDORS
 -- [Plans: Dark Iron Boots] / Thorium Brotherhood NPC#12944 (1.9)
-DELETE FROM `npc_vendor` WHERE entry = 12944 ANS item = 20049;
+DELETE FROM `npc_vendor` WHERE entry = 12944 AND item = 20040;
 INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('12944', '20040', '0', '0');
 
 -- * CREATURES

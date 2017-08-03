@@ -30,6 +30,7 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN ('IT
 
 -- * ITEMS AND LOOT
 
+
 -- Idol of Ferocity, Idol of Rejuvenation, Idol of Health, Libram of Truth, Libram of Hope, Totem of Life, Totem of Rebirth, Totem of Rage
 DELETE FROM creature_loot_template WHERE item IN (22397,22398,22399,22400,22401,22396,22345,22395);
 DELETE FROM reference_loot_template WHERE item IN (22397,22398,22399,22400,22401,22396,22345,22395);
@@ -47,28 +48,37 @@ VALUES
 	(322418, 22400, 0, 1, 1, 1, 0);
 -- Titanic Leggings
 DELETE FROM reference_loot_template WHERE item = 22388;
-INSERT INTO `reference_loot_template` 
+DELETE FROM creature_loot_template WHERE item = 22388;
+INSERT INTO 
+	`creature_loot_template` 
 	(`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
 VALUES 
-	(34009, 22388, 0, 1, 1, 1, 78),
-	(315710, 22388, 0, 2, 1, 1, 78),
-	(315712, 22388, 0, 4, 1, 1, 78),
-	(315714, 22388, 0, 6, 1, 1, 78),
-	(322541, 22388, 0, 6, 1, 1, 78),
-	(322543, 22388, 0, 8, 1, 1, 78),
-	(324923, 22388, 0, 2, 1, 1, 78),
-	(324925, 22388, 0, 4, 1, 1, 78),
-	(324927, 22388, 0, 6, 1, 1, 78),
-	(325071, 22388, 0, 2, 1, 1, 78),
-	(325073, 22388, 0, 4, 1, 1, 78),
-	(328658, 22388, 0, 2, 1, 1, 78),
-	(328660, 22388, 0, 4, 1, 1, 78),
-	(328670, 22388, 0, 2, 1, 1, 78),
-	(328672, 22388, 0, 4, 1, 1, 78),
-	(328682, 22388, 0, 2, 1, 1, 78),
-	(328684, 22388, 0, 4, 1, 1, 78),
-	(328694, 22388, 0, 2, 1, 1, 78),
-	(328696, 22388, 0, 4, 1, 1, 78);
+	(8528, 22388, 0.02, 0, 1, 1, 0),
+	(8532, 22388, 0.02, 0, 1, 1, 0),
+	(8920, 22388, 0.02, 0, 1, 1, 0),
+	(10317, 22388, 0.02, 0, 1, 1, 0),
+	(10382, 22388, 0.02, 0, 1, 1, 0),
+	(10400, 22388, 0.02, 0, 1, 1, 0),
+	(10406, 22388, 0.02, 0, 1, 1, 0),
+	(10420, 22388, 0.02, 0, 1, 1, 0),
+	(10471, 22388, 0.02, 0, 1, 1, 0),
+	(10476, 22388, 0.02, 0, 1, 1, 0),
+	(10477, 22388, 0.02, 0, 1, 1, 0),
+	(10489, 22388, 0.02, 0, 1, 1, 0),
+	(10495, 22388, 0.02, 0, 1, 1, 0),
+	(10499, 22388, 0.02, 0, 1, 1, 0),
+	(10678, 22388, 0.02, 0, 1, 1, 0),
+	(10717, 22388, 0.02, 0, 1, 1, 0),
+	(10916, 22388, 0.02, 0, 1, 1, 0),
+	(11728, 22388, 0.02, 0, 1, 1, 0),
+	(15325, 22388, 0.02, 0, 1, 1, 0),
+	(16453, 22388, 0.06, 0, 1, 1, 0);
+INSERT INTO 
+	`reference_loot_template` 
+	(`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`)
+VALUES 
+	(34002, 22388, 0, 1, 1, 1, 0);
+
 
 -- * VENDORS
 

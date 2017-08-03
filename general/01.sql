@@ -1,4 +1,4 @@
--- 1.12 Patch Updates
+-- General DB fixes (temp).
 
 -- * INDEX
 -- - 1. ENCOUNTER				 
