@@ -72,8 +72,8 @@ REPLACE `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Qua
 
 -- * VENDORS
 
--- [Plans: Dark Iron Boots] / Thorium Brotherhood NPC#12944
-REPLACE INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('12944', '20040', '0', '0');
+-- [Plans: Dark Iron Boots] / Thorium Brotherhood NPC#12944 (1.9)
+-- REPLACE INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES ('12944', '20040', '0', '0');
 -- "Aendel Windspear" 
 DELETE FROM npc_vendor WHERE item IN (20382, 20509, 20511, 20508, 20507, 20510, 20506);
 INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES (15293, 20382, 0, 0);
