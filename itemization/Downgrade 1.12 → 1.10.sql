@@ -125,6 +125,18 @@ REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry
 
 -- * QUESTS
 
+-- NPC Vargus <Blacksmith> new quests (1.9): Champion's Battlegear, Stalwart's Battlegear, Veteran's Battlegear, Volunteer's Battlegear
+DELETE FROM creature_questrelation WHERE id = 15176;
+INSERT INTO 
+	`creature_questrelation` 
+	(`id`, `quest`) 
+VALUES 
+	(15176, 8548),
+	(15176, 8572),
+	(15176, 8573),
+	(15176, 8574);
+
+
 -- http://wowwiki.wikia.com/wiki/Patch_1.11.0
 -- Class specific enchantments given by Zanza the Restless no longer require Arcanum (Librams) from Dire Maul.
 -- The requirements have been changed to items found within Zul'Gurub. Speak with Zanza the Restless for more information.
