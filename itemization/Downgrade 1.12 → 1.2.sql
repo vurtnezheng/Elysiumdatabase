@@ -62,4388 +62,2313 @@ UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (4, 5, 100, 101, 13, 16,
 REPLACE INTO game_event VALUE (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0, 1);
 
 -- * FORBIDDEN ITEMS 
-
--- Need proper description:
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (18252,18290,18292,18291,18260,18259,18265,18257,18264,17203,17204,18705,18704,18703,18646,18665,18422,18423,15410);
--- Remove recipes that teach how to craft inexistant items:
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE spellid_1 IN (21164,22760,22798,22933,23007,23089,23091,23093,23094,23400,23490,23491,23630,23631,23634,23635,23640,23641,23651,23654,23655,23656,23657,23668,23669,23670,23671,23672,23673,23711,23712,23713,23714,23715,23716,23717,23718,24094,24095,24096,24126,24127,24128,24129,24130,24142,24143,24144,24145,24146,24147,24358,24359,24400,24656,24657,24704,24855,24856,24859,24860,24861,24862,24908,24909,24911,24915,24916,24917,24941,26280,26411,26413,27591,27592,27593,27594,27595,27596,27833,27834,27835,28211,28212,28213,28214,28215,28228,28229,28230,28231,28232,28233,28245,28248,28249,28251,28252,28253,28254,28255,28256,28257,28258,28259,28260,28261,28262,28263,28464,28465,28466,28475,28476,28477,28483,28484,28485);
--- Remove some class spell books:
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (22890,22891,24102,24101,23320);
--- {Onyxia Head]:
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry in (18422,18423);
--- 1.6 recipes, patterns, plans:
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19447, 19446, 19442, 19216, 19217, 19328, 19329, 19203, 19205, 19204, 19202, 19215, 19327, 19326, 19218, 19445, 22392, 19449, 19448, 19444, 19331, 19332, 19220, 19219, 19330, 19333, 19208, 19211, 19209, 19207, 19206, 19210, 19212, 20761);
--- [Twilight Cultist Ring of Lordship]
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20451;
--- 1.8 specific recipes
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (20382, 20509, 20511, 20508, 20507, 20510, 20506);
--- Thorium brotherhood pattern pre-1.04
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (19206,19207,20039,20040,18945,18263,18265,19219,19220,19330,19331,19332,19333);
--- Snowblind Shoes: Azuregos loot added in 1.5 -- Source: http://wowwiki.wikia.com/Snowblind_Shoes
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19131;
--- Idols, totems & librams 
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (23198, 22397, 22398, 23197, 23201, 23203, 22401, 22400, 22395, 22345, 23200, 23199, 22891, 22890, 22891, 22306, 22311, 22313, 22302, 22304, 22305, 22303, 22301, 22722, 22721, 22714, 22204, 22257, 23320, 22720, 22718, 22711, 22712, 22715, 22713);
--- Items that were released after patch 1.9
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (24102, 23320, 24101, 22890, 22384, 22390, 22390, 22384, 22406, 22403, 22405, 22407, 22404, 22234, 22412, 22049, 22050, 22051, 22052, 22056, 22389, 22329, 22433, 21547, 22402,22408, 22409, 22410, 22411, 22242, 22241, 22240, 22275, 22232, 22231, 22223, 22212, 22208, 22207, 22205, 22204, 22256, 22255, 22254, 22394, 22311, 22305, 22313, 22321, 22225, 22269, 22268, 22267, 22266, 22271, 22253, 22306, 22311, 22313, 22302, 22304, 22305, 22303, 22301, 22247, 22270, 22245);
--- Zul'Gurub patch 1.11 drop
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (22637, 22722, 22721, 22720, 22718, 22711, 22712, 22715, 22714, 22716, 22713);
--- 1.11 relics
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (23198, 22397, 22398, 22399, 23197, 23201, 23203, 22401, 22400, 22395, 22396, 22345, 23200, 23199);
--- Thunderfury Bindings
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (18563, 18564);
--- Arathi Basin Epic Rewards
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN  (20214, 20220, 20212, 20203, 20175, 20194, 20176, 20158, 20068);
--- Rest in piece:
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=1215;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=1677;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=2715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=2899;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=5975;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6118;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6119;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6129;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6136;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6833;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=7809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=10768;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=11662;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=11703;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12422;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12424;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12772;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12947;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13075;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13262;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13956;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14811;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14815;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15968;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16165;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16409;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16410;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16413;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16414;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16415;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16416;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16417;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16418;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16419;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16420;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16421;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16422;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16423;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16424;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16432;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16433;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16434;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16435;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16440;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16441;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16442;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16443;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16444;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16446;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16448;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16449;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16450;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16451;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16453;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16455;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16456;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16457;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16459;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16462;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16463;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16465;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16473;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16474;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16475;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16483;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16484;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16485;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16487;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16489;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16492;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16496;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16498;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16499;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16501;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16502;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16508;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16509;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16513;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16514;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16515;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16516;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16518;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16519;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16523;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16525;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16526;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16527;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16528;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16531;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16533;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16534;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16535;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16540;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16541;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16542;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16545;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16548;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16549;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16550;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16551;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16552;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16554;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16555;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16558;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16560;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16561;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16574;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17063;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17067;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17076;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17182;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17193;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17572;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17576;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17586;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17588;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17590;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17591;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17592;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17593;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17594;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17596;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17598;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17601;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17603;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17604;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17605;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17607;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17612;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17613;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17622;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17623;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17624;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17900;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17901;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17902;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17903;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17904;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17905;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17906;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17907;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17908;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17909;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17982;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18022;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18103;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18202;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18305;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18306;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18309;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18313;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18323;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18325;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18326;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18327;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18339;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18340;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18349;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18350;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18352;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18368;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18371;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18373;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18374;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18377;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18378;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18381;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18383;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18386;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18387;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18388;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18404;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18420;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18421;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18432;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18448;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18450;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18451;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18470;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18475;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18485;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18493;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18528;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18535;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18537;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18545;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18609;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18612;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18634;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18637;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18638;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18639;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18646;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18671;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18673;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18674;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18676;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18677;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18678;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18679;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18680;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18681;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18683;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18686;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18692;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18696;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18698;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18709;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18710;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18711;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18716;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18717;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18718;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18720;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18721;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18722;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18723;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18725;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18726;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18727;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18728;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18729;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18730;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18734;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18735;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18736;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18737;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18738;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18739;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18740;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18741;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18742;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18743;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18744;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18745;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18754;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18755;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18756;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18757;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18758;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18759;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18760;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18761;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18762;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18803;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18805;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18806;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18807;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18808;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18810;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18811;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18813;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18814;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18815;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18816;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18817;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18820;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18821;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18822;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18823;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18824;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18825;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18826;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18827;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18828;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18829;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18830;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18831;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18832;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18833;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18834;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18835;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18837;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18838;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18840;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18842;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18843;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18844;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18845;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18846;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18847;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18848;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18849;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18850;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18851;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18852;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18853;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18854;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18855;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18857;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18858;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18859;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18860;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18861;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18862;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18863;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18864;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18865;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18866;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18867;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18868;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18869;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18870;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18871;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18872;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18873;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18874;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18875;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18876;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18877;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18878;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18879;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18948;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18957;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18970;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18984;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18986;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19019;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19022;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19024;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19028;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19031;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19032;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19037;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19038;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19039;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19040;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19041;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19042;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19043;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19044;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19047;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19048;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19049;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19050;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19051;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19052;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19056;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19057;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19058;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19059;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19084;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19085;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19086;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19087;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19094;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19095;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19096;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19097;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19098;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19099;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19100;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19101;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19103;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19105;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19108;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19109;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19110;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19112;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19113;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19114;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19115;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19116;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19117;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19118;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19119;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19120;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19121;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19123;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19124;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19125;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19127;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19130;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19131;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19132;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19133;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19134;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19135;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19136;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19137;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19138;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19139;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19140;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19141;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19142;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19143;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19144;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19145;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19146;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19147;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19148;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19149;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19156;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19157;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19159;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19160;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19162;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19163;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19164;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19165;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19166;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19167;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19169;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19170;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19287;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19288;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19289;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19290;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19292;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19293;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19295;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19303;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19308;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19309;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19310;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19312;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19321;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19323;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19324;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19325;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19334;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19336;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19339;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19340;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19341;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19342;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19344;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19346;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19347;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19348;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19349;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19350;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19351;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19352;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19353;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19354;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19355;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19356;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19357;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19358;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19360;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19361;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19362;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19363;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19364;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19365;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19366;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19367;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19368;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19370;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19371;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19372;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19373;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19374;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19375;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19376;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19377;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19378;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19379;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19381;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19382;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19383;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19385;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19386;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19387;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19388;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19389;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19390;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19394;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19399;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19402;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19432;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19433;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19434;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19435;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19438;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19439;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19508;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19509;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19511;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19512;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19513;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19514;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19515;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19516;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19518;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19519;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19520;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19523;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19525;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19526;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19527;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19528;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19529;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19531;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19532;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19533;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19534;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19535;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19537;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19538;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19540;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19541;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19542;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19545;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19546;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19547;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19548;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19549;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19550;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19551;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19552;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19553;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19554;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19555;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19556;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19557;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19558;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19559;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19560;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19561;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19572;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19574;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19575;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19576;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19585;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19586;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19587;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19588;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19589;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19590;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19591;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19592;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19593;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19594;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19595;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19596;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19597;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19598;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19601;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19603;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19604;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19605;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19606;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19607;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19609;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19612;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19613;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19614;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19615;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19621;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19683;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19684;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19685;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19686;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19687;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19692;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19760;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19808;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19822;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19823;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19824;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19825;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19826;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19827;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19828;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19829;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19830;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19831;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19832;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19833;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19834;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19835;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19838;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19839;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19840;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19841;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19842;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19843;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19845;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19846;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19848;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19849;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19852;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19853;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19854;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19855;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19857;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19859;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19861;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19862;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19863;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19864;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19865;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19866;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19867;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19869;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19870;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19871;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19873;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19874;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19875;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19876;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19877;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19878;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19879;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19884;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19885;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19886;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19887;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19888;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19889;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19890;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19891;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19892;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19893;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19894;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19895;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19896;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19897;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19898;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19899;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19900;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19901;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19903;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19904;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19905;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19906;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19907;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19908;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19909;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19910;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19912;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19913;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19915;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19918;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19919;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19920;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19922;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19923;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19925;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19927;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19928;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19929;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19930;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19944;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19945;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19946;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19947;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19948;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19949;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19950;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19951;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19952;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19953;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19954;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19955;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19956;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19957;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19958;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19959;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19961;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19962;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19963;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19964;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19965;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19967;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19968;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19969;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19970;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19972;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19979;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19982;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19984;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19990;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19991;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19992;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19993;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19998;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19999;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20006;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20032;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20033;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20034;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20035;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20036;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20037;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20038;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20041;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20042;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20043;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20044;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20045;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20046;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20047;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20048;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20049;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20050;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20051;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20052;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20053;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20054;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20055;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20056;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20057;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20058;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20059;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20060;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20068;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20069;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20070;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20071;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20072;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20073;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20082;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20086;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20094;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20095;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20096;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20097;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20098;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20099;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20100;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20101;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20103;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20105;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20108;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20109;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20110;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20112;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20113;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20114;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20115;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20116;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20117;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20124;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20125;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20127;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20129;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20130;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20131;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20132;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20134;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20150;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20151;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20152;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20153;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20154;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20155;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20156;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20157;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20158;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20159;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20160;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20161;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20162;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20163;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20164;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20165;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20166;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20167;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20169;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20170;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20171;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20172;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20173;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20174;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20175;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20176;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20177;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20181;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20184;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20186;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20187;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20188;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20189;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20190;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20191;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20192;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20193;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20194;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20195;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20200;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20201;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20202;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20208;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20209;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20210;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20211;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20212;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20213;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20214;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20215;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20216;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20217;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20218;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20219;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20220;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20255;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20257;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20258;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20259;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20260;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20261;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20262;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20263;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20264;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20265;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20266;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20295;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20296;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20408;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20434;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20438;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20439;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20440;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20441;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20442;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20443;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20444;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20481;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20487;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20488;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20512;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20534;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20537;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20538;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20549;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20550;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20551;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20556;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20561;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20572;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20574;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20575;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20615;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20621;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20622;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20623;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20624;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20626;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20627;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20628;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20629;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20630;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20631;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20632;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20633;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20634;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20635;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20636;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20637;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20638;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20639;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20640;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20641;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20642;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20643;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20645;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20646;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20647;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20648;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20649;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20650;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20654;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20657;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20660;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20669;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20675;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20685;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20696;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20698;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20703;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20704;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20705;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20706;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20707;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20710;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20711;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20714;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20716;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20717;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20720;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20721;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20722;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20723;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20724;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21039;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21040;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21115;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21116;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21117;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21118;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21119;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21120;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21134;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21154;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21157;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21178;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21179;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21180;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21181;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21182;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21183;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21184;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21185;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21186;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21187;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21188;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21189;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21190;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21200;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21201;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21202;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21208;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21209;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21210;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21242;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21244;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21268;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21269;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21272;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21273;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21275;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21278;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21312;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21316;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21317;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21318;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21319;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21320;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21322;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21326;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21329;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21330;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21331;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21332;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21333;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21334;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21336;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21338;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21344;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21346;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21347;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21348;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21349;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21350;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21351;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21352;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21353;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21354;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21355;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21356;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21357;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21359;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21360;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21361;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21362;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21364;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21365;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21366;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21367;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21368;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21370;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21372;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21373;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21374;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21375;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21376;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21387;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21388;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21389;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21390;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21394;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21399;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21402;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21404;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21408;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21409;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21410;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21411;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21412;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21413;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21414;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21415;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21416;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21417;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21418;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21453;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21455;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21456;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21457;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21458;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21459;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21460;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21461;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21462;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21463;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21469;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21470;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21473;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21474;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21475;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21481;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21482;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21483;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21484;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21485;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21486;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21487;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21488;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21489;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21492;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21493;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21495;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21496;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21497;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21498;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21499;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21500;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21501;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21502;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21520;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21523;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21525;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21526;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21527;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21529;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21531;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21532;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21538;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21541;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21542;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21585;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21586;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21587;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21596;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21597;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21598;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21601;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21603;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21604;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21605;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21606;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21607;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21609;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21615;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21621;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21622;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21623;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21624;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21626;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21627;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21635;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21639;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21645;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21647;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21648;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21650;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21651;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21652;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21664;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21667;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21668;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21669;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21670;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21671;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21673;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21674;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21675;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21676;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21677;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21678;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21679;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21680;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21681;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21683;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21684;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21685;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21686;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21687;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21692;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21696;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21698;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21703;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21704;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21705;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21706;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21707;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21708;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21709;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21710;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21800;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21801;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21802;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21803;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21804;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21805;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21806;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21810;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21814;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21837;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21838;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21839;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21888;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21889;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21891;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21994;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21995;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21996;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21997;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21998;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21999;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22000;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22001;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22002;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22003;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22004;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22005;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22006;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22007;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22008;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22009;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22010;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22011;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22013;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22015;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22016;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22017;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22060;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22062;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22063;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22064;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22065;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22066;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22067;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22068;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22069;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22070;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22071;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22072;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22073;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22074;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22075;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22076;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22077;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22078;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22079;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22080;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22081;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22082;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22084;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22085;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22086;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22087;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22095;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22096;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22097;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22098;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22099;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22100;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22101;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22108;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22109;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22110;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22112;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22113;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22149;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22150;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22191;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22194;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22195;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22208;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22212;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22223;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22231;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22232;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22234;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22240;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22241;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22242;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22245;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22247;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22253;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22254;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22255;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22256;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22257;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22266;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22267;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22268;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22269;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22270;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22271;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22272;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22274;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22275;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22276;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22277;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22278;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22279;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22280;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22281;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22282;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22301;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22303;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22304;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22305;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22306;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22313;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22314;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22317;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22318;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22319;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22321;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22322;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22325;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22326;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22327;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22328;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22329;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22330;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22331;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22332;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22333;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22334;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22336;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22339;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22340;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22342;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22347;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22348;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22377;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22378;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22379;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22383;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22385;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22394;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22399;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22402;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22404;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22408;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22409;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22410;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22411;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22412;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22416;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22417;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22418;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22419;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22420;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22421;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22422;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22423;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22424;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22433;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22438;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22439;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22440;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22441;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22442;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22443;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22458;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22465;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22469;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22470;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22481;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22482;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22483;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22488;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22489;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22492;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22493;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22495;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22496;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22497;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22498;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22499;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22500;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22501;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22502;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22508;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22509;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22511;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22512;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22513;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22514;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22515;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22516;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22518;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22519;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22589;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22630;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22631;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22632;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22651;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22652;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22654;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22655;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22656;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22657;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22658;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22659;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22660;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22661;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22662;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22664;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22667;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22668;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22669;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22670;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22671;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22673;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22676;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22678;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22680;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22681;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22707;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22711;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22714;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22716;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22718;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22720;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22721;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22722;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22725;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22730;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22731;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22732;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22736;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22740;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22741;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22742;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22744;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22745;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22747;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22748;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22749;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22750;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22752;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22753;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22756;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22757;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22758;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22759;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22760;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22761;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22762;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22763;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22764;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22798;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22799;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22800;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22801;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22802;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22803;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22804;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22806;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22807;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22808;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22810;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22811;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22813;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22815;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22816;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22818;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22819;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22820;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22821;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22843;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22852;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22855;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22857;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22858;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22859;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22860;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22862;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22863;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22864;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22865;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22867;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22868;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22869;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22870;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22872;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22873;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22874;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22875;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22876;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22877;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22878;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22879;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22880;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22881;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22882;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22883;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22884;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22885;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22886;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22887;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22935;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22936;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22937;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22938;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22939;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22940;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22941;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22942;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22943;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22947;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22954;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22960;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22961;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22967;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22968;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22981;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22983;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22988;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22994;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22999;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23000;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23001;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23004;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23005;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23006;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23009;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23014;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23017;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23018;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23019;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23020;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23021;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23023;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23025;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23027;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23028;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23029;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23030;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23031;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23032;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23033;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23035;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23036;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23037;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23038;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23039;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23040;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23041;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23042;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23043;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23044;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23045;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23046;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23047;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23048;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23049;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23050;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23051;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23053;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23054;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23056;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23057;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23059;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23060;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23062;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23063;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23064;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23065;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23066;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23067;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23068;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23069;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23070;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23071;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23073;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23075;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23078;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23081;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23082;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23084;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23085;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23087;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23124;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23125;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23127;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23129;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23132;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23139;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23156;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23169;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23170;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23171;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23173;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23177;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23178;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23200;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23201;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23219;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23220;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23221;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23226;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23237;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23238;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23242;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23243;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23244;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23251;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23252;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23253;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23254;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23255;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23256;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23257;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23258;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23259;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23260;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23261;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23262;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23263;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23264;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23272;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23273;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23274;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23275;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23276;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23277;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23278;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23279;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23280;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23281;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23282;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23283;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23284;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23285;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23286;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23287;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23288;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23289;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23290;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23291;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23292;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23293;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23294;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23295;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23296;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23297;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23298;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23299;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23300;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23301;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23303;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23304;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23305;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23306;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23307;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23308;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23309;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23310;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23312;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23313;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23314;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23316;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23317;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23318;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23319;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23323;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23324;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23451;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23453;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23455;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23456;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23465;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23469;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23557;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23558;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23664;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23667;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23668;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=24222;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=1215;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=1677;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=2715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=2899;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=5975;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6118;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6119;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6129;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6136;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6833;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=6836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=7809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=10768;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=11662;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=11703;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12422;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12424;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12772;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=12947;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13075;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13262;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=13956;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14811;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=14815;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=15968;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16165;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16409;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16410;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16413;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16414;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16415;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16416;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16417;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16418;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16419;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16420;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16421;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16422;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16423;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16424;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16432;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16433;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16434;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16435;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16440;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16441;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16442;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16443;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16444;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16446;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16448;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16449;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16450;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16451;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16453;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16455;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16456;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16457;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16459;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16462;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16463;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16465;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16473;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16474;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16475;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16483;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16484;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16485;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16487;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16489;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16492;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16496;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16498;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16499;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16501;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16502;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16508;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16509;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16513;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16514;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16515;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16516;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16518;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16519;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16523;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16525;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16526;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16527;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16528;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16531;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16533;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16534;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16535;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16540;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16541;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16542;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16545;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16548;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16549;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16550;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16551;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16552;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16554;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16555;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16558;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16560;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16561;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16574;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=16580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17063;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17067;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17076;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17182;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17193;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17572;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17576;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17586;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17588;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17590;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17591;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17592;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17593;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17594;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17596;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17598;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17601;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17603;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17604;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17605;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17607;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17612;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17613;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17622;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17623;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17624;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17900;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17901;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17902;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17903;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17904;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17905;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17906;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17907;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17908;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17909;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=17982;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18022;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18103;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18202;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18305;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18306;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18309;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18313;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18323;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18325;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18326;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18327;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18339;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18340;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18349;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18350;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18352;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18368;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18371;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18373;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18374;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18377;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18378;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18381;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18383;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18386;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18387;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18388;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18404;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18420;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18421;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18432;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18448;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18450;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18451;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18470;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18475;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18485;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18493;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18528;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18535;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18537;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18545;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18609;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18612;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18634;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18637;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18638;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18639;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18646;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18671;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18673;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18674;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18676;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18677;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18678;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18679;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18680;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18681;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18683;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18686;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18692;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18696;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18698;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18709;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18710;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18711;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18716;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18717;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18718;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18720;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18721;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18722;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18723;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18725;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18726;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18727;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18728;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18729;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18730;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18734;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18735;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18736;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18737;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18738;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18739;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18740;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18741;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18742;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18743;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18744;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18745;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18754;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18755;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18756;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18757;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18758;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18759;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18760;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18761;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18762;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18803;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18805;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18806;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18807;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18808;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18810;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18811;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18813;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18814;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18815;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18816;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18817;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18820;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18821;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18822;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18823;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18824;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18825;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18826;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18827;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18828;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18829;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18830;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18831;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18832;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18833;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18834;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18835;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18837;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18838;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18840;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18842;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18843;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18844;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18845;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18846;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18847;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18848;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18849;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18850;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18851;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18852;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18853;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18854;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18855;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18857;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18858;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18859;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18860;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18861;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18862;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18863;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18864;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18865;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18866;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18867;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18868;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18869;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18870;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18871;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18872;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18873;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18874;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18875;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18876;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18877;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18878;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18879;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18948;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18957;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18970;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18984;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=18986;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19019;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19022;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19024;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19028;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19031;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19032;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19037;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19038;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19039;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19040;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19041;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19042;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19043;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19044;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19047;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19048;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19049;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19050;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19051;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19052;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19056;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19057;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19058;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19059;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19084;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19085;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19086;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19087;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19094;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19095;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19096;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19097;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19098;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19099;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19100;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19101;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19103;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19105;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19108;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19109;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19110;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19112;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19113;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19114;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19115;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19116;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19117;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19118;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19119;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19120;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19121;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19123;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19124;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19125;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19127;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19130;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19131;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19132;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19133;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19134;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19135;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19136;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19137;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19138;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19139;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19140;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19141;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19142;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19143;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19144;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19145;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19146;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19147;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19148;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19149;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19156;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19157;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19159;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19160;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19162;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19163;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19164;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19165;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19166;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19167;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19169;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19170;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19287;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19288;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19289;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19290;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19292;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19293;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19295;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19303;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19308;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19309;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19310;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19312;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19321;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19323;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19324;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19325;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19334;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19336;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19339;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19340;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19341;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19342;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19344;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19346;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19347;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19348;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19349;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19350;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19351;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19352;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19353;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19354;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19355;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19356;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19357;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19358;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19360;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19361;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19362;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19363;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19364;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19365;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19366;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19367;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19368;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19370;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19371;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19372;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19373;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19374;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19375;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19376;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19377;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19378;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19379;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19381;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19382;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19383;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19385;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19386;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19387;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19388;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19389;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19390;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19394;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19399;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19402;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19432;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19433;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19434;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19435;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19438;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19439;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19508;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19509;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19511;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19512;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19513;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19514;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19515;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19516;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19518;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19519;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19520;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19523;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19525;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19526;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19527;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19528;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19529;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19531;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19532;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19533;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19534;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19535;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19537;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19538;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19540;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19541;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19542;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19545;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19546;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19547;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19548;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19549;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19550;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19551;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19552;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19553;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19554;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19555;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19556;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19557;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19558;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19559;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19560;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19561;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19572;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19574;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19575;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19576;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19584;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19585;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19586;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19587;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19588;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19589;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19590;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19591;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19592;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19593;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19594;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19595;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19596;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19597;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19598;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19601;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19603;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19604;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19605;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19606;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19607;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19609;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19612;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19613;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19614;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19615;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19621;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19683;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19684;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19685;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19686;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19687;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19692;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19760;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19808;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19822;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19823;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19824;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19825;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19826;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19827;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19828;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19829;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19830;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19831;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19832;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19833;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19834;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19835;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19838;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19839;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19840;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19841;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19842;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19843;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19845;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19846;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19848;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19849;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19852;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19853;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19854;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19855;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19857;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19859;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19861;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19862;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19863;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19864;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19865;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19866;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19867;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19869;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19870;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19871;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19873;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19874;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19875;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19876;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19877;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19878;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19879;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19884;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19885;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19886;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19887;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19888;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19889;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19890;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19891;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19892;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19893;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19894;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19895;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19896;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19897;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19898;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19899;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19900;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19901;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19903;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19904;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19905;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19906;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19907;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19908;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19909;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19910;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19912;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19913;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19915;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19918;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19919;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19920;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19922;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19923;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19925;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19927;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19928;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19929;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19930;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19944;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19945;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19946;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19947;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19948;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19949;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19950;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19951;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19952;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19953;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19954;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19955;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19956;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19957;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19958;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19959;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19961;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19962;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19963;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19964;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19965;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19967;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19968;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19969;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19970;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19972;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19979;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19982;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19984;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19990;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19991;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19992;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19993;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19998;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=19999;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20006;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20032;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20033;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20034;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20035;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20036;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20037;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20038;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20041;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20042;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20043;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20044;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20045;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20046;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20047;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20048;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20049;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20050;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20051;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20052;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20053;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20054;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20055;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20056;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20057;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20058;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20059;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20060;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20068;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20069;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20070;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20071;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20072;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20073;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20082;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20086;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20094;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20095;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20096;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20097;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20098;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20099;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20100;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20101;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20103;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20104;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20105;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20108;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20109;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20110;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20112;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20113;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20114;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20115;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20116;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20117;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20124;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20125;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20127;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20129;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20130;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20131;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20132;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20134;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20150;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20151;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20152;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20153;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20154;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20155;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20156;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20157;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20158;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20159;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20160;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20161;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20162;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20163;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20164;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20165;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20166;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20167;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20169;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20170;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20171;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20172;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20173;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20174;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20175;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20176;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20177;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20181;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20184;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20186;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20187;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20188;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20189;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20190;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20191;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20192;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20193;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20194;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20195;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20200;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20201;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20202;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20208;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20209;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20210;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20211;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20212;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20213;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20214;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20215;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20216;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20217;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20218;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20219;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20220;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20255;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20257;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20258;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20259;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20260;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20261;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20262;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20263;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20264;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20265;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20266;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20295;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20296;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20369;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20408;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20434;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20438;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20439;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20440;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20441;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20442;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20443;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20444;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20481;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20487;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20488;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20512;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20534;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20536;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20537;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20538;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20549;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20550;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20551;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20556;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20561;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20562;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20564;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20569;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20571;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20572;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20573;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20574;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20575;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20578;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20580;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20615;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20621;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20622;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20623;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20624;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20626;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20627;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20628;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20629;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20630;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20631;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20632;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20633;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20634;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20635;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20636;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20637;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20638;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20639;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20640;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20641;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20642;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20643;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20645;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20646;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20647;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20648;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20649;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20650;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20654;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20657;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20660;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20669;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20675;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20685;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20696;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20698;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20703;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20704;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20705;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20706;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20707;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20710;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20711;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20714;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20716;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20717;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20720;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20721;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20722;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20723;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=20724;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21039;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21040;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21115;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21116;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21117;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21118;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21119;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21120;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21134;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21154;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21157;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21178;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21179;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21180;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21181;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21182;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21183;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21184;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21185;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21186;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21187;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21188;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21189;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21190;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21200;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21201;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21202;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21208;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21209;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21210;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21242;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21244;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21268;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21269;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21272;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21273;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21275;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21278;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21312;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21316;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21317;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21318;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21319;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21320;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21322;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21326;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21329;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21330;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21331;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21332;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21333;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21334;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21336;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21338;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21344;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21346;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21347;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21348;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21349;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21350;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21351;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21352;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21353;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21354;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21355;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21356;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21357;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21359;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21360;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21361;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21362;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21364;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21365;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21366;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21367;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21368;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21370;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21372;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21373;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21374;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21375;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21376;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21387;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21388;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21389;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21390;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21391;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21392;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21393;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21394;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21399;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21402;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21404;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21408;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21409;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21410;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21411;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21412;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21413;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21414;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21415;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21416;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21417;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21418;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21453;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21455;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21456;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21457;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21458;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21459;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21460;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21461;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21462;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21463;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21469;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21470;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21473;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21474;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21475;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21481;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21482;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21483;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21484;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21485;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21486;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21487;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21488;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21489;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21492;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21493;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21495;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21496;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21497;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21498;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21499;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21500;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21501;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21502;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21520;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21521;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21522;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21523;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21524;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21525;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21526;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21527;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21529;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21530;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21531;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21532;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21538;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21539;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21541;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21542;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21543;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21544;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21563;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21565;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21566;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21567;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21568;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21579;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21581;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21582;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21583;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21585;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21586;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21587;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21596;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21597;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21598;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21599;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21600;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21601;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21602;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21603;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21604;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21605;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21606;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21607;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21608;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21609;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21610;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21611;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21615;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21616;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21617;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21618;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21619;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21620;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21621;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21622;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21623;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21624;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21625;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21626;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21627;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21635;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21639;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21645;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21647;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21648;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21650;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21651;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21652;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21664;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21667;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21668;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21669;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21670;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21671;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21673;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21674;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21675;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21676;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21677;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21678;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21679;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21680;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21681;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21682;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21683;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21684;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21685;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21686;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21687;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21692;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21693;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21694;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21695;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21696;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21697;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21698;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21703;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21704;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21705;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21706;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21707;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21708;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21709;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21710;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21800;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21801;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21802;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21803;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21804;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21805;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21806;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21810;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21814;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21836;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21837;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21838;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21839;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21888;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21889;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21891;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21994;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21995;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21996;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21997;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21998;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=21999;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22000;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22001;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22002;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22003;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22004;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22005;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22006;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22007;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22008;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22009;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22010;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22011;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22013;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22015;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22016;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22017;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22060;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22062;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22063;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22064;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22065;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22066;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22067;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22068;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22069;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22070;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22071;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22072;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22073;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22074;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22075;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22076;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22077;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22078;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22079;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22080;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22081;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22082;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22083;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22084;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22085;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22086;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22087;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22095;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22096;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22097;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22098;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22099;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22100;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22101;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22102;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22106;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22107;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22108;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22109;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22110;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22111;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22112;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22113;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22149;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22150;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22191;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22194;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22195;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22196;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22204;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22205;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22208;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22212;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22223;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22231;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22232;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22234;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22240;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22241;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22242;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22245;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22247;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22253;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22254;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22255;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22256;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22257;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22266;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22267;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22268;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22269;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22270;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22271;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22272;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22274;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22275;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22276;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22277;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22278;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22279;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22280;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22281;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22282;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22301;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22303;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22304;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22305;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22306;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22313;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22314;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22317;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22318;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22319;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22321;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22322;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22325;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22326;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22327;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22328;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22329;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22330;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22331;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22332;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22333;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22334;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22335;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22336;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22337;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22339;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22340;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22342;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22343;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22345;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22347;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22348;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22377;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22378;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22379;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22380;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22383;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22384;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22385;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22394;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22395;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22396;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22397;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22398;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22399;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22400;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22401;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22402;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22403;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22404;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22405;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22406;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22407;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22408;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22409;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22410;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22411;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22412;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22416;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22417;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22418;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22419;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22420;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22421;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22422;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22423;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22424;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22425;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22426;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22427;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22428;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22429;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22430;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22431;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22433;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22436;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22437;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22438;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22439;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22440;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22441;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22442;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22443;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22458;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22465;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22469;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22470;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22471;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22472;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22476;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22477;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22478;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22479;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22480;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22481;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22482;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22483;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22488;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22489;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22490;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22491;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22492;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22493;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22494;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22495;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22496;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22497;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22498;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22499;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22500;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22501;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22502;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22503;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22504;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22505;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22506;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22507;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22508;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22509;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22510;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22511;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22512;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22513;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22514;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22515;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22516;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22517;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22518;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22519;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22589;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22630;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22631;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22632;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22651;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22652;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22654;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22655;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22656;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22657;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22658;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22659;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22660;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22661;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22662;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22664;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22667;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22668;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22669;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22670;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22671;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22672;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22673;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22676;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22678;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22680;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22681;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22688;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22689;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22690;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22691;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22699;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22700;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22701;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22702;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22707;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22711;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22712;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22713;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22714;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22715;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22716;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22718;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22720;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22721;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22722;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22725;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22730;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22731;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22732;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22736;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22740;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22741;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22742;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22744;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22745;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22747;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22748;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22749;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22750;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22752;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22753;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22756;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22757;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22758;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22759;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22760;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22761;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22762;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22763;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22764;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22798;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22799;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22800;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22801;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22802;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22803;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22804;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22806;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22807;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22808;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22809;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22810;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22811;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22812;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22813;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22815;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22816;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22818;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22819;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22820;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22821;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22843;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22852;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22855;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22856;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22857;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22858;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22859;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22860;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22862;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22863;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22864;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22865;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22867;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22868;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22869;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22870;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22872;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22873;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22874;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22875;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22876;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22877;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22878;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22879;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22880;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22881;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22882;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22883;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22884;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22885;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22886;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22887;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22935;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22936;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22937;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22938;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22939;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22940;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22941;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22942;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22943;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22947;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22954;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22960;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22961;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22967;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22968;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22981;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22983;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22988;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22994;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=22999;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23000;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23001;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23004;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23005;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23006;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23009;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23014;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23017;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23018;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23019;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23020;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23021;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23023;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23025;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23027;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23028;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23029;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23030;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23031;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23032;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23033;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23035;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23036;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23037;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23038;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23039;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23040;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23041;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23042;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23043;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23044;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23045;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23046;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23047;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23048;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23049;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23050;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23051;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23053;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23054;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23056;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23057;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23059;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23060;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23061;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23062;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23063;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23064;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23065;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23066;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23067;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23068;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23069;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23070;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23071;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23073;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23075;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23078;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23081;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23082;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23084;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23085;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23087;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23088;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23089;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23090;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23091;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23092;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23093;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23124;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23125;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23126;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23127;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23128;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23129;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23132;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23139;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23156;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23168;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23169;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23170;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23171;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23173;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23177;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23178;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23197;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23198;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23199;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23200;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23201;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23203;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23206;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23207;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23219;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23220;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23221;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23226;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23237;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23238;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23242;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23243;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23244;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23251;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23252;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23253;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23254;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23255;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23256;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23257;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23258;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23259;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23260;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23261;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23262;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23263;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23264;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23272;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23273;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23274;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23275;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23276;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23277;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23278;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23279;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23280;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23281;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23282;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23283;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23284;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23285;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23286;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23287;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23288;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23289;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23290;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23291;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23292;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23293;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23294;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23295;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23296;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23297;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23298;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23299;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23300;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23301;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23302;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23303;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23304;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23305;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23306;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23307;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23308;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23309;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23310;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23311;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23312;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23313;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23314;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23315;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23316;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23317;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23318;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23319;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23323;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23324;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23451;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23452;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23453;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23454;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23455;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23456;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23464;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23465;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23466;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23467;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23468;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23469;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23557;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23558;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23570;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23577;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23663;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23664;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23665;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23666;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23667;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=23668;
-REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry=24222;
+REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
+1215,   -- Support Girdle
+1677,   -- Drake-scale Vest
+2715,   -- Monster - Item, Lantern - Round
+2899,   -- Wendigo Collar
+5975,   -- Ruffian Belt
+6118,   -- Squire's Pants
+6119,   -- Neophyte's Robe
+6129,   -- Acolyte's Robe
+6136,   -- Thug Shirt
+6833,   -- White Tuxedo Shirt
+6836,   -- Dress Shoes
+7809,   -- Easter Dress
+10768,   -- Boar Champion's Belt
+11662,   -- Ban'thok Sash
+11703,   -- Stonewall Girdle
+12422,   -- Imperial Plate Chest
+12424,   -- Imperial Plate Belt
+12425,   -- Imperial Plate Bracers
+12426,   -- Imperial Plate Boots
+12427,   -- Imperial Plate Helm
+12428,   -- Imperial Plate Shoulders
+12429,   -- Imperial Plate Leggings
+12471,   -- Desertwalker Cane
+12584,   -- Grand Marshal's Longsword
+12618,   -- Enchanted Thorium Breastplate
+12619,   -- Enchanted Thorium Leggings
+12620,   -- Enchanted Thorium Helm
+12625,   -- Dawnbringer Shoulders
+12772,   -- Inlaid Thorium Hammer
+12947,   -- Alex's Ring of Audacity
+13075,   -- Direwing Legguards
+13262,   -- Ashbringer
+13384,   -- Rainbow Girdle
+13956,   -- Clutch of Andros
+14464,   -- Elunarian Silk Robes
+14539,   -- Bone Ring Helm
+14811,   -- Warstrike Chestguard
+14812,   -- Warstrike Buckler
+14815,   -- Warstrike Gauntlets
+15196,   -- Private's Tabard
+15198,   -- Knight's Colors
+15199,   -- Stone Guard's Herald
+15405,   -- Shucking Gloves
+15410,   -- Scale of Onyxia
+15968,   -- Elunarian Sphere
+16165,   -- Test Arcane Res Legs Mail
+16335,   -- Senior Sergeant's Insignia
+16345,   -- High Warlord's Blade
+16369,   -- Knight-Lieutenant's Silk Boots
+16391,   -- Knight-Lieutenant's Silk Gloves
+16392,   -- Knight-Lieutenant's Leather Boots
+16393,   -- Knight-Lieutenant's Dragonhide Footwraps
+16396,   -- Knight-Lieutenant's Leather Gauntlets
+16397,   -- Knight-Lieutenant's Dragonhide Gloves
+16401,   -- Knight-Lieutenant's Chain Boots
+16403,   -- Knight-Lieutenant's Chain Gauntlets
+16405,   -- Knight-Lieutenant's Plate Boots
+16406,   -- Knight-Lieutenant's Plate Gauntlets
+16409,   -- Knight-Lieutenant's Lamellar Sabatons
+16410,   -- Knight-Lieutenant's Lamellar Gauntlets
+16413,   -- Knight-Captain's Silk Raiment
+16414,   -- Knight-Captain's Silk Leggings
+16415,   -- Lieutenant Commander's Silk Spaulders
+16416,   -- Lieutenant Commander's Crown
+16417,   -- Knight-Captain's Leather Armor
+16418,   -- Lieutenant Commander's Leather Veil
+16419,   -- Knight-Captain's Leather Legguards
+16420,   -- Lieutenant Commander's Leather Spaulders
+16421,   -- Knight-Captain's Dragonhide Tunic
+16422,   -- Knight-Captain's Dragonhide Leggings
+16423,   -- Lieutenant Commander's Dragonhide Epaulets
+16424,   -- Lieutenant Commander's Dragonhide Shroud
+16425,   -- Knight-Captain's Chain Hauberk
+16426,   -- Knight-Captain's Chain Leggings
+16427,   -- Lieutenant Commander's Chain Pauldrons
+16428,   -- Lieutenant Commander's Chain Helmet
+16429,   -- Lieutenant Commander's Plate Helm
+16430,   -- Knight-Captain's Plate Chestguard
+16431,   -- Knight-Captain's Plate Leggings
+16432,   -- Lieutenant Commander's Plate Pauldrons
+16433,   -- Knight-Captain's Lamellar Breastplate
+16434,   -- Lieutenant Commander's Lamellar Headguard
+16435,   -- Knight-Captain's Lamellar Leggings
+16436,   -- Lieutenant Commander's Lamellar Shoulders
+16437,   -- Marshal's Silk Footwraps
+16440,   -- Marshal's Silk Gloves
+16441,   -- Field Marshal's Coronet
+16442,   -- Marshal's Silk Leggings
+16443,   -- Field Marshal's Silk Vestments
+16444,   -- Field Marshal's Silk Spaulders
+16446,   -- Marshal's Leather Footguards
+16448,   -- Marshal's Dragonhide Gauntlets
+16449,   -- Field Marshal's Dragonhide Spaulders
+16450,   -- Marshal's Dragonhide Legguards
+16451,   -- Field Marshal's Dragonhide Helmet
+16452,   -- Field Marshal's Dragonhide Breastplate
+16453,   -- Field Marshal's Leather Chestpiece
+16454,   -- Marshal's Leather Handgrips
+16455,   -- Field Marshal's Leather Mask
+16456,   -- Marshal's Leather Leggings
+16457,   -- Field Marshal's Leather Epaulets
+16459,   -- Marshal's Dragonhide Boots
+16462,   -- Marshal's Chain Boots
+16463,   -- Marshal's Chain Grips
+16465,   -- Field Marshal's Chain Helm
+16466,   -- Field Marshal's Chain Breastplate
+16467,   -- Marshal's Chain Legguards
+16468,   -- Field Marshal's Chain Spaulders
+16471,   -- Marshal's Lamellar Gloves
+16472,   -- Marshal's Lamellar Boots
+16473,   -- Field Marshal's Lamellar Chestplate
+16474,   -- Field Marshal's Lamellar Faceguard
+16475,   -- Marshal's Lamellar Legplates
+16476,   -- Field Marshal's Lamellar Pauldrons
+16477,   -- Field Marshal's Plate Armor
+16478,   -- Field Marshal's Plate Helm
+16479,   -- Marshal's Plate Legguards
+16480,   -- Field Marshal's Plate Shoulderguards
+16483,   -- Marshal's Plate Boots
+16484,   -- Marshal's Plate Gauntlets
+16485,   -- Blood Guard's Silk Footwraps
+16487,   -- Blood Guard's Silk Gloves
+16489,   -- Champion's Silk Hood
+16490,   -- Legionnaire's Silk Pants
+16491,   -- Legionnaire's Silk Robes
+16492,   -- Champion's Silk Shoulderpads
+16494,   -- Blood Guard's Dragonhide Boots
+16496,   -- Blood Guard's Dragonhide Gauntlets
+16498,   -- Blood Guard's Leather Treads
+16499,   -- Blood Guard's Leather Vices
+16501,   -- Champion's Dragonhide Spaulders
+16502,   -- Legionnaire's Dragonhide Trousers
+16503,   -- Champion's Dragonhide Helm
+16504,   -- Legionnaire's Dragonhide Breastplate
+16505,   -- Legionnaire's Leather Hauberk
+16506,   -- Champion's Leather Headguard
+16507,   -- Champion's Leather Mantle
+16508,   -- Legionnaire's Leather Leggings
+16509,   -- Blood Guard's Plate Boots
+16510,   -- Blood Guard's Plate Gloves
+16513,   -- Legionnaire's Plate Armor
+16514,   -- Champion's Plate Headguard
+16515,   -- Legionnaire's Plate Legguards
+16516,   -- Champion's Plate Pauldrons
+16518,   -- Blood Guard's Mail Walkers
+16519,   -- Blood Guard's Mail Grips
+16521,   -- Champion's Mail Helm
+16522,   -- Legionnaire's Mail Chestpiece
+16523,   -- Legionnaire's Mail Leggings
+16524,   -- Champion's Mail Shoulders
+16525,   -- Legionnaire's Chain Breastplate
+16526,   -- Champion's Chain Headguard
+16527,   -- Legionnaire's Chain Leggings
+16528,   -- Champion's Chain Pauldrons
+16530,   -- Blood Guard's Chain Gauntlets
+16531,   -- Blood Guard's Chain Boots
+16533,   -- Warlord's Silk Cowl
+16534,   -- General's Silk Trousers
+16535,   -- Warlord's Silk Raiment
+16536,   -- Warlord's Silk Amice
+16539,   -- General's Silk Boots
+16540,   -- General's Silk Handguards
+16541,   -- Warlord's Plate Armor
+16542,   -- Warlord's Plate Headpiece
+16543,   -- General's Plate Leggings
+16544,   -- Warlord's Plate Shoulders
+16545,   -- General's Plate Boots
+16548,   -- General's Plate Gauntlets
+16549,   -- Warlord's Dragonhide Hauberk
+16550,   -- Warlord's Dragonhide Helmet
+16551,   -- Warlord's Dragonhide Epaulets
+16552,   -- General's Dragonhide Leggings
+16554,   -- General's Dragonhide Boots
+16555,   -- General's Dragonhide Gloves
+16558,   -- General's Leather Treads
+16560,   -- General's Leather Mitts
+16561,   -- Warlord's Leather Helm
+16562,   -- Warlord's Leather Spaulders
+16563,   -- Warlord's Leather Breastplate
+16564,   -- General's Leather Legguards
+16565,   -- Warlord's Chain Chestpiece
+16566,   -- Warlord's Chain Helmet
+16567,   -- General's Chain Legguards
+16568,   -- Warlord's Chain Shoulders
+16569,   -- General's Chain Boots
+16571,   -- General's Chain Gloves
+16573,   -- General's Mail Boots
+16574,   -- General's Mail Gauntlets
+16577,   -- Warlord's Mail Armor
+16578,   -- Warlord's Mail Helm
+16579,   -- General's Mail Leggings
+16580,   -- Warlord's Mail Spaulders
+17061,   -- Juno's Shadow
+17063,   -- Band of Accuria
+17067,   -- Ancient Cornerstone Grimoire
+17076,   -- Bonereaver's Edge
+17102,   -- Cloak of the Shrouded Mists
+17104,   -- Spinal Reaper
+17106,   -- Malistar's Defender
+17107,   -- Dragon's Blood Cape
+17111,   -- Blazefury Medallion
+17182,   -- Sulfuras, Hand of Ragnaros
+17193,   -- Sulfuron Hammer
+17203,   -- Sulfuron Ingot
+17204,   -- Eye of Sulfuras
+17562,   -- Knight-Lieutenant's Dreadweave Boots
+17564,   -- Knight-Lieutenant's Dreadweave Gloves
+17566,   -- Lieutenant Commander's Headguard
+17567,   -- Knight-Captain's Dreadweave Leggings
+17568,   -- Knight-Captain's Dreadweave Robe
+17569,   -- Lieutenant Commander's Dreadweave Mantle
+17570,   -- Champion's Dreadweave Hood
+17571,   -- Legionnaire's Dreadweave Leggings
+17572,   -- Legionnaire's Dreadweave Robe
+17573,   -- Champion's Dreadweave Shoulders
+17576,   -- Blood Guard's Dreadweave Boots
+17577,   -- Blood Guard's Dreadweave Gloves
+17578,   -- Field Marshal's Coronal
+17579,   -- Marshal's Dreadweave Leggings
+17580,   -- Field Marshal's Dreadweave Shoulders
+17581,   -- Field Marshal's Dreadweave Robe
+17583,   -- Marshal's Dreadweave Boots
+17584,   -- Marshal's Dreadweave Gloves
+17586,   -- General's Dreadweave Boots
+17588,   -- General's Dreadweave Gloves
+17590,   -- Warlord's Dreadweave Mantle
+17591,   -- Warlord's Dreadweave Hood
+17592,   -- Warlord's Dreadweave Robe
+17593,   -- General's Dreadweave Pants
+17594,   -- Knight-Lieutenant's Satin Boots
+17596,   -- Knight-Lieutenant's Satin Gloves
+17598,   -- Lieutenant Commander's Diadem
+17599,   -- Knight-Captain's Satin Leggings
+17600,   -- Knight-Captain's Satin Robes
+17601,   -- Lieutenant Commander's Satin Amice
+17602,   -- Field Marshal's Headdress
+17603,   -- Marshal's Satin Pants
+17604,   -- Field Marshal's Satin Mantle
+17605,   -- Field Marshal's Satin Vestments
+17607,   -- Marshal's Satin Sandals
+17608,   -- Marshal's Satin Gloves
+17610,   -- Champion's Satin Cowl
+17611,   -- Legionnaire's Satin Trousers
+17612,   -- Legionnaire's Satin Vestments
+17613,   -- Champion's Satin Shoulderpads
+17616,   -- Blood Guard's Satin Boots
+17617,   -- Blood Guard's Satin Gloves
+17618,   -- General's Satin Boots
+17620,   -- General's Satin Gloves
+17622,   -- Warlord's Satin Mantle
+17623,   -- Warlord's Satin Cowl
+17624,   -- Warlord's Satin Robes
+17625,   -- General's Satin Leggings
+17690,   -- Frostwolf Insignia Rank 1
+17691,   -- Stormpike Insignia Rank 1
+17900,   -- Stormpike Insignia Rank 2
+17901,   -- Stormpike Insignia Rank 3
+17902,   -- Stormpike Insignia Rank 4
+17903,   -- Stormpike Insignia Rank 5
+17904,   -- Stormpike Insignia Rank 6
+17905,   -- Frostwolf Insignia Rank 2
+17906,   -- Frostwolf Insignia Rank 3
+17907,   -- Frostwolf Insignia Rank 4
+17908,   -- Frostwolf Insignia Rank 5
+17909,   -- Frostwolf Insignia Rank 6
+17982,   -- Ragnaros Core
+18022,   -- Royal Seal of Alexis
+18083,   -- Jumanza Grips
+18103,   -- Band of Rumination
+18104,   -- Feralsurge Girdle
+18168,   -- Force Reactive Disk
+18202,   -- Eskhandar's Left Claw
+18203,   -- Eskhandar's Right Claw
+18204,   -- Eskhandar's Pelt
+18205,   -- Eskhandar's Collar
+18252,   -- Pattern: Core Armor Kit
+18257,   -- Recipe: Major Rejuvenation Potion
+18259,   -- Formula: Enchant Weapon - Spell Power
+18260,   -- Formula: Enchant Weapon - Healing Power
+18263,   -- Flarecore Wraps
+18264,   -- Plans: Elemental Sharpening Stone
+18265,   -- Pattern: Flarecore Wraps
+18290,   -- Schematic: Biznicks 247x128 Accurascope
+18291,   -- Schematic: Force Reactive Disk
+18292,   -- Schematic: Core Marksman Rifle
+18302,   -- Band of Vigor
+18305,   -- Breakwater Legguards
+18306,   -- Gloves of Shadowy Mist
+18309,   -- Gloves of Restoration
+18313,   -- Helm of Awareness
+18315,   -- Ring of Demonic Potency
+18323,   -- Satyr's Bow
+18325,   -- Felhide Cap
+18326,   -- Razor Gauntlets
+18327,   -- Whipvine Cord
+18337,   -- Orphic Bracers
+18339,   -- Eidolon Cloak
+18340,   -- Eidolon Talisman
+18343,   -- Petrified Band
+18349,   -- Gauntlets of Accuracy
+18350,   -- Amplifying Cloak
+18352,   -- Petrified Bark Shield
+18368,   -- Gordok's Gloves
+18369,   -- Gordok's Handwraps
+18371,   -- Mindtap Talisman
+18373,   -- Chestplate of Tranquility
+18374,   -- Flamescarred Shoulders
+18377,   -- Quickdraw Gloves
+18378,   -- Silvermoon Leggings
+18380,   -- Eldritch Reinforced Legplates
+18381,   -- Evil Eye Pendant
+18383,   -- Force Imbued Gauntlets
+18384,   -- Bile-etched Spaulders
+18386,   -- Padre's Trousers
+18387,   -- Brightspark Gloves
+18388,   -- Stoneshatter
+18393,   -- Warpwood Binding
+18395,   -- Emerald Flame Ring
+18398,   -- Tidal Loop
+18400,   -- Ring of Living Stone
+18404,   -- Onyxia Tooth Pendant
+18420,   -- Bonecrusher
+18421,   -- Backwood Helm
+18422,   -- Head of Onyxia
+18423,   -- Head of Onyxia
+18425,   -- Kreeg's Mug
+18427,   -- Sergeant's Cloak
+18428,   -- Senior Sergeant's Insignia
+18430,   -- First Sergeant's Plate Bracers
+18432,   -- First Sergeant's Mail Wristguards
+18436,   -- First Sergeant's Dragonhide Armguards
+18437,   -- First Sergeant's Silk Cuffs
+18448,   -- Sergeant Major's Chain Armguards
+18450,   -- Robe of Combustion
+18451,   -- Hyena Hide Belt
+18452,   -- Sergeant Major's Leather Armsplints
+18454,   -- Sergeant Major's Dragonhide Armsplints
+18464,   -- Gordok Nose Ring
+18466,   -- Royal Seal of Eldre'Thalas
+18468,   -- Royal Seal of Eldre'Thalas
+18470,   -- Royal Seal of Eldre'Thalas
+18472,   -- Royal Seal of Eldre'Thalas
+18475,   -- Oddly Magical Belt
+18480,   -- Scarab Plate Helm
+18485,   -- Observer's Shield
+18490,   -- Insightful Hood
+18493,   -- Bulky Iron Spaulders
+18494,   -- Denwatcher's Shoulders
+18505,   -- Mugger's Belt
+18510,   -- Hide of the Wild
+18518,   -- Pattern: Hide of the Wild
+18522,   -- Band of the Ogre King
+18524,   -- Leggings of Destruction
+18528,   -- Cyclone Spaulders
+18535,   -- Milli's Shield
+18536,   -- Milli's Lexicon
+18537,   -- Counterattack Lodestone
+18543,   -- Ring of Entropy
+18544,   -- Doomhide Gauntlets
+18545,   -- Leggings of Arcane Supremacy
+18563,   -- Bindings of the Windseeker
+18564,   -- Bindings of the Windseeker
+18582,   -- The Twin Blades of Azzinoth
+18583,   -- Warglaive of Azzinoth (Right)
+18584,   -- Warglaive of Azzinoth (Left)
+18592,   -- Plans: Sulfuron Hammer
+18602,   -- Tome of Sacrifice
+18608,   -- Benediction
+18609,   -- Anathema
+18610,   -- Keen Machete
+18611,   -- Gnarlpine Leggings
+18612,   -- Bloody Chain Boots
+18634,   -- Gyrofreeze Ice Reflector
+18637,   -- Major Recombobulator
+18638,   -- Hyper-Radiant Flame Reflector
+18639,   -- Ultra-Flash Shadow Reflector
+18646,   -- The Eye of Divinity
+18652,   -- Schematic: Gyrofreeze Ice Reflector
+18655,   -- Schematic: Major Recombobulator
+18657,   -- Schematic: Hyper-Radiant Flame Reflector
+18658,   -- Schematic: Ultra-Flash Shadow Reflector
+18665,   -- The Eye of Shadow
+18671,   -- Baron Charr's Sceptre
+18672,   -- Elemental Ember
+18673,   -- Avalanchion's Stony Hide
+18674,   -- Hardened Stone Band
+18676,   -- Sash of the Windreaver
+18677,   -- Zephyr Cloak
+18678,   -- Tempestria's Frozen Necklace
+18679,   -- Frigid Ring
+18680,   -- Ancient Bone Bow
+18681,   -- Burial Shawl
+18682,   -- Ghoul Skin Leggings
+18683,   -- Hammer of the Vesper
+18686,   -- Bone Golem Shoulders
+18689,   -- Phantasmal Cloak
+18690,   -- Wraithplate Leggings
+18691,   -- Dark Advisor's Pendant
+18692,   -- Death Knight Sabatons
+18693,   -- Shivery Handwraps
+18694,   -- Shadowy Mail Greaves
+18695,   -- Spellbound Tome
+18696,   -- Intricately Runed Shield
+18697,   -- Coldstone Slippers
+18698,   -- Tattered Leather Hood
+18699,   -- Icy Tomb Spaulders
+18700,   -- Malefic Bracers
+18701,   -- Innervating Band
+18702,   -- Belt of the Ordained
+18703,   -- Ancient Petrified Leaf
+18704,   -- Mature Blue Dragon Sinew
+18705,   -- Mature Black Dragon Sinew
+18709,   -- Arena Wristguards
+18710,   -- Arena Bracers
+18711,   -- Arena Bands
+18712,   -- Arena Vambraces
+18713,   -- Rhok'delar, Longbow of the Ancient Keepers
+18715,   -- Lok'delar, Stave of the Ancient Keepers
+18716,   -- Ash Covered Boots
+18717,   -- Hammer of the Grand Crusader
+18718,   -- Grand Crusader's Helm
+18720,   -- Shroud of the Nathrezim
+18721,   -- Barrage Girdle
+18722,   -- Death Grips
+18723,   -- Animated Chain Necklace
+18725,   -- Peacemaker
+18726,   -- Magistrate's Cuffs
+18727,   -- Crimson Felt Hat
+18728,   -- Anastari Heirloom
+18729,   -- Screeching Bow
+18730,   -- Shadowy Laced Handwraps
+18734,   -- Pale Moon Cloak
+18735,   -- Maleki's Footwraps
+18736,   -- Plaguehound Leggings
+18737,   -- Bone Slicing Hatchet
+18738,   -- Carapace Spine Crossbow
+18739,   -- Chitinous Plate Legguards
+18740,   -- Thuzadin Sash
+18741,   -- Morlune's Bracer
+18742,   -- Stratholme Militia Shoulderguard
+18743,   -- Gracious Cape
+18744,   -- Plaguebat Fur Gloves
+18745,   -- Sacred Cloth Leggings
+18754,   -- Fel Hardened Bracers
+18755,   -- Xorothian Firestick
+18756,   -- Dreadguard's Protector
+18757,   -- Diabolic Mantle
+18758,   -- Specter's Blade
+18759,   -- Malicious Axe
+18760,   -- Necromantic Band
+18761,   -- Oblivion's Touch
+18762,   -- Shard of the Green Flame
+18803,   -- Finkle's Lava Dredger
+18805,   -- Core Hound Tooth
+18806,   -- Core Forged Greaves
+18807,   -- Helm of Latent Power
+18808,   -- Gloves of the Hypnotic Flame
+18809,   -- Sash of Whispered Secrets
+18810,   -- Wild Growth Spaulders
+18811,   -- Fireproof Cloak
+18812,   -- Wristguards of True Flight
+18813,   -- Ring of Binding
+18814,   -- Choker of the Fire Lord
+18815,   -- Essence of the Pure Flame
+18816,   -- Perdition's Blade
+18817,   -- Crown of Destruction
+18820,   -- Talisman of Ephemeral Power
+18821,   -- Quick Strike Ring
+18822,   -- Obsidian Edged Blade
+18823,   -- Aged Core Leather Gloves
+18824,   -- Magma Tempered Boots
+18825,   -- Grand Marshal's Aegis
+18826,   -- High Warlord's Shield Wall
+18827,   -- Grand Marshal's Handaxe
+18828,   -- High Warlord's Cleaver
+18829,   -- Deep Earth Spaulders
+18830,   -- Grand Marshal's Sunderer
+18831,   -- High Warlord's Battle Axe
+18832,   -- Brutality Blade
+18833,   -- Grand Marshal's Bullseye
+18834,   -- Insignia of the Horde
+18835,   -- High Warlord's Recurve
+18836,   -- Grand Marshal's Repeater
+18837,   -- High Warlord's Crossbow
+18838,   -- Grand Marshal's Dirk
+18840,   -- High Warlord's Razor
+18842,   -- Staff of Dominance
+18843,   -- Grand Marshal's Right Hand Blade
+18844,   -- High Warlord's Right Claw
+18845,   -- Insignia of the Horde
+18846,   -- Insignia of the Horde
+18847,   -- Grand Marshal's Left Hand Blade
+18848,   -- High Warlord's Left Claw
+18849,   -- Insignia of the Horde
+18850,   -- Insignia of the Horde
+18851,   -- Insignia of the Horde
+18852,   -- Insignia of the Horde
+18853,   -- Insignia of the Horde
+18854,   -- Insignia of the Alliance
+18855,   -- Grand Marshal's Hand Cannon
+18856,   -- Insignia of the Alliance
+18857,   -- Insignia of the Alliance
+18858,   -- Insignia of the Alliance
+18859,   -- Insignia of the Alliance
+18860,   -- High Warlord's Street Sweeper
+18861,   -- Flamewaker Legplates
+18862,   -- Insignia of the Alliance
+18863,   -- Insignia of the Alliance
+18864,   -- Insignia of the Alliance
+18865,   -- Grand Marshal's Punisher
+18866,   -- High Warlord's Bludgeon
+18867,   -- Grand Marshal's Battle Hammer
+18868,   -- High Warlord's Pulverizer
+18869,   -- Grand Marshal's Glaive
+18870,   -- Helm of the Lifegiver
+18871,   -- High Warlord's Pig Sticker
+18872,   -- Manastorm Leggings
+18873,   -- Grand Marshal's Stave
+18874,   -- High Warlord's War Staff
+18875,   -- Salamander Scale Pants
+18876,   -- Grand Marshal's Claymore
+18877,   -- High Warlord's Greatsword
+18878,   -- Sorcerous Dagger
+18879,   -- Heavy Dark Iron Ring
+18945,   -- Dark Iron Residue
+18948,   -- Barbaric Bracers
+18949,   -- Pattern: Barbaric Bracers
+18957,   -- Brushwood Blade
+18970,   -- Ring of Critical Testing 2
+18984,   -- Dimensional Ripper - Everlook
+18986,   -- Ultrasafe Transporter: Gadgetzan
+19019,   -- Thunderfury, Blessed Blade of the Windseeker
+19022,   -- Nat Pagle's Extreme Angler FC-5000
+19024,   -- Arena Grand Master
+19028,   -- Elegant Dress
+19031,   -- Frostwolf Battle Tabard
+19032,   -- Stormpike Battle Tabard
+19037,   -- Emerald Peak Spaulders
+19038,   -- Ring of Subtlety
+19039,   -- Zorbin's Water Resistant Hat
+19040,   -- Zorbin's Mega-Slicer
+19041,   -- Pratt's Handcrafted Tunic
+19042,   -- Jangdor's Handcrafted Tunic
+19043,   -- Heavy Timbermaw Belt
+19044,   -- Might of the Timbermaw
+19047,   -- Wisdom of the Timbermaw
+19048,   -- Heavy Timbermaw Boots
+19049,   -- Timbermaw Brawlers
+19050,   -- Mantle of the Timbermaw
+19051,   -- Girdle of the Dawn
+19052,   -- Dawn Treaders
+19056,   -- Argent Boots
+19057,   -- Gloves of the Dawn
+19058,   -- Golden Mantle of the Dawn
+19059,   -- Argent Shoulders
+19083,   -- Frostwolf Legionnaire's Cloak
+19084,   -- Stormpike Soldier's Cloak
+19085,   -- Frostwolf Advisor's Cloak
+19086,   -- Stormpike Sage's Cloak
+19087,   -- Frostwolf Plate Belt
+19088,   -- Frostwolf Mail Belt
+19089,   -- Frostwolf Leather Belt
+19090,   -- Frostwolf Cloth Belt
+19091,   -- Stormpike Plate Girdle
+19092,   -- Stormpike Mail Girdle
+19093,   -- Stormpike Leather Girdle
+19094,   -- Stormpike Cloth Girdle
+19095,   -- Frostwolf Legionnaire's Pendant
+19096,   -- Frostwolf Advisor's Pendant
+19097,   -- Stormpike Soldier's Pendant
+19098,   -- Stormpike Sage's Pendant
+19099,   -- Glacial Blade
+19100,   -- Electrified Dagger
+19101,   -- Whiteout Staff
+19102,   -- Crackling Staff
+19103,   -- Frostbite
+19104,   -- Stormstrike Hammer
+19105,   -- Frost Runed Headdress
+19106,   -- Ice Barbed Spear
+19107,   -- Bloodseeker
+19108,   -- Wand of Biting Cold
+19109,   -- Deep Rooted Ring
+19110,   -- Cold Forged Blade
+19111,   -- Winteraxe Epaulets
+19112,   -- Frozen Steel Vambraces
+19113,   -- Yeti Hide Bracers
+19114,   -- Highland Bow
+19115,   -- Flask of Forest Mojo
+19116,   -- Greenleaf Handwraps
+19117,   -- Laquered Wooden Plate Legplates
+19118,   -- Nature's Breath
+19119,   -- Owlbeast Hide Gloves
+19120,   -- Rune of the Guard Captain
+19121,   -- Deep Woodlands Cloak
+19123,   -- Everwarm Handwraps
+19124,   -- Slagplate Leggings
+19125,   -- Seared Mail Girdle
+19126,   -- Slagplate Gauntlets
+19127,   -- Charred Leather Tunic
+19128,   -- Seared Mail Vest
+19130,   -- Cold Snap
+19131,   -- Snowblind Shoes
+19132,   -- Crystal Adorned Crown
+19133,   -- Fel Infused Leggings
+19134,   -- Flayed Doomguard Belt
+19135,   -- Blacklight Bracer
+19136,   -- Mana Igniting Cord
+19137,   -- Onslaught Girdle
+19138,   -- Band of Sulfuras
+19139,   -- Fireguard Shoulders
+19140,   -- Cauterizing Band
+19141,   -- Luffa
+19142,   -- Fire Runed Grimoire
+19143,   -- Flameguard Gauntlets
+19144,   -- Sabatons of the Flamewalker
+19145,   -- Robe of Volatile Power
+19146,   -- Wristguards of Stability
+19147,   -- Ring of Spell Power
+19148,   -- Dark Iron Helm
+19149,   -- Lava Belt
+19156,   -- Flarecore Robe
+19157,   -- Chromatic Gauntlets
+19159,   -- Woven Ivy Necklace
+19160,   -- Contest Winner's Tabard
+19162,   -- Corehound Belt
+19163,   -- Molten Belt
+19164,   -- Dark Iron Gauntlets
+19165,   -- Flarecore Leggings
+19166,   -- Black Amnesty
+19167,   -- Blackfury
+19168,   -- Blackguard
+19169,   -- Nightfall
+19170,   -- Ebon Hand
+19202,   -- Plans: Heavy Timbermaw Belt
+19203,   -- Plans: Girdle of the Dawn
+19204,   -- Plans: Heavy Timbermaw Boots
+19205,   -- Plans: Gloves of the Dawn
+19206,   -- Plans: Dark Iron Helm
+19207,   -- Plans: Dark Iron Gauntlets
+19208,   -- Plans: Black Amnesty
+19209,   -- Plans: Blackfury
+19210,   -- Plans: Ebon Hand
+19211,   -- Plans: Blackguard
+19212,   -- Plans: Nightfall
+19215,   -- Pattern: Wisdom of the Timbermaw
+19216,   -- Pattern: Argent Boots
+19217,   -- Pattern: Argent Shoulders
+19218,   -- Pattern: Mantle of the Timbermaw
+19219,   -- Pattern: Flarecore Robe
+19220,   -- Pattern: Flarecore Leggings
+19287,   -- Darkmoon Card: Heroism
+19288,   -- Darkmoon Card: Blue Dragon
+19289,   -- Darkmoon Card: Maelstrom
+19290,   -- Darkmoon Card: Twisting Nether
+19292,   -- Last Month's Mutton
+19293,   -- Last Year's Mutton
+19295,   -- Darkmoon Flower
+19302,   -- Darkmoon Ring
+19303,   -- Darkmoon Necklace
+19308,   -- Tome of Arcane Domination
+19309,   -- Tome of Shadow Force
+19310,   -- Tome of the Ice Lord
+19311,   -- Tome of Fiery Arcana
+19312,   -- Lei of the Lifegiver
+19315,   -- Therazane's Touch
+19321,   -- The Immovable Object
+19323,   -- The Unstoppable Force
+19324,   -- The Lobotomizer
+19325,   -- Don Julio's Band
+19326,   -- Pattern: Might of the Timbermaw
+19327,   -- Pattern: Timbermaw Brawlers
+19328,   -- Pattern: Dawn Treaders
+19329,   -- Pattern: Golden Mantle of the Dawn
+19330,   -- Pattern: Lava Belt
+19331,   -- Pattern: Chromatic Gauntlets
+19332,   -- Pattern: Corehound Belt
+19333,   -- Pattern: Molten Belt
+19334,   -- The Untamed Blade
+19335,   -- Spineshatter
+19336,   -- Arcane Infused Gem
+19337,   -- The Black Book
+19339,   -- Mind Quickening Gem
+19340,   -- Rune of Metamorphosis
+19341,   -- Lifegiving Gem
+19342,   -- Venomous Totem
+19343,   -- Scrolls of Blinding Light
+19344,   -- Natural Alignment Crystal
+19345,   -- Aegis of Preservation
+19346,   -- Dragonfang Blade
+19347,   -- Claw of Chromaggus
+19348,   -- Red Dragonscale Protector
+19349,   -- Elementium Reinforced Bulwark
+19350,   -- Heartstriker
+19351,   -- Maladath, Runed Blade of the Black Flight
+19352,   -- Chromatically Tempered Sword
+19353,   -- Drake Talon Cleaver
+19354,   -- Draconic Avenger
+19355,   -- Shadow Wing Focus Staff
+19356,   -- Staff of the Shadow Flame
+19357,   -- Herald of Woe
+19358,   -- Draconic Maul
+19360,   -- Lok'amir il Romathis
+19361,   -- Ashjre'thul, Crossbow of Smiting
+19362,   -- Doom's Edge
+19363,   -- Crul'shorukh, Edge of Chaos
+19364,   -- Ashkandi, Greatsword of the Brotherhood
+19365,   -- Claw of the Black Drake
+19366,   -- Master Dragonslayer's Orb
+19367,   -- Dragon's Touch
+19368,   -- Dragonbreath Hand Cannon
+19369,   -- Gloves of Rapid Evolution
+19370,   -- Mantle of the Blackwing Cabal
+19371,   -- Pendant of the Fallen Dragon
+19372,   -- Helm of Endless Rage
+19373,   -- Black Brood Pauldrons
+19374,   -- Bracers of Arcane Accuracy
+19375,   -- Mish'undare, Circlet of the Mind Flayer
+19376,   -- Archimtiros' Ring of Reckoning
+19377,   -- Prestor's Talisman of Connivery
+19378,   -- Cloak of the Brood Lord
+19379,   -- Neltharion's Tear
+19380,   -- Therazane's Link
+19381,   -- Boots of the Shadow Flame
+19382,   -- Pure Elementium Band
+19383,   -- Master Dragonslayer's Medallion
+19384,   -- Master Dragonslayer's Ring
+19385,   -- Empowered Leggings
+19386,   -- Elementium Threaded Cloak
+19387,   -- Chromatic Boots
+19388,   -- Angelista's Grasp
+19389,   -- Taut Dragonhide Shoulderpads
+19390,   -- Taut Dragonhide Gloves
+19391,   -- Shimmering Geta
+19392,   -- Girdle of the Fallen Crusader
+19393,   -- Primalist's Linked Waistguard
+19394,   -- Drake Talon Pauldrons
+19395,   -- Rejuvenating Gem
+19396,   -- Taut Dragonhide Belt
+19397,   -- Ring of Blackrock
+19398,   -- Cloak of Firemaw
+19399,   -- Black Ash Robe
+19400,   -- Firemaw's Clutch
+19401,   -- Primalist's Linked Legguards
+19402,   -- Legguards of the Fallen Crusader
+19403,   -- Band of Forced Concentration
+19405,   -- Malfurion's Blessed Bulwark
+19406,   -- Drake Fang Talisman
+19407,   -- Ebony Flame Gloves
+19426,   -- Orb of the Darkmoon
+19430,   -- Shroud of Pure Thought
+19431,   -- Styleen's Impeding Scarab
+19432,   -- Circle of Applied Force
+19433,   -- Emberweave Leggings
+19434,   -- Band of Dark Dominion
+19435,   -- Essence Gatherer
+19436,   -- Cloak of Draconic Might
+19437,   -- Boots of Pure Thought
+19438,   -- Ringo's Blizzard Boots
+19439,   -- Interlaced Shadow Jerkin
+19442,   -- Formula: Powerful Anti-Venom
+19444,   -- Formula: Enchant Weapon - Strength
+19445,   -- Formula: Enchant Weapon - Agility
+19446,   -- Formula: Enchant Bracer - Mana Regeneration
+19447,   -- Formula: Enchant Bracer - Healing
+19448,   -- Formula: Enchant Weapon - Mighty Spirit
+19449,   -- Formula: Enchant Weapon - Mighty Intellect
+19491,   -- Amulet of the Darkmoon
+19505,   -- Warsong Battle Tabard
+19506,   -- Silverwing Battle Tabard
+19507,   -- Inquisitor's Shawl
+19508,   -- Branded Leather Bracers
+19509,   -- Dusty Mail Boots
+19510,   -- Legionnaire's Band
+19511,   -- Legionnaire's Band
+19512,   -- Legionnaire's Band
+19513,   -- Legionnaire's Band
+19514,   -- Protector's Band
+19515,   -- Protector's Band
+19516,   -- Protector's Band
+19517,   -- Protector's Band
+19518,   -- Advisor's Ring
+19519,   -- Advisor's Ring
+19520,   -- Advisor's Ring
+19521,   -- Advisor's Ring
+19522,   -- Lorekeeper's Ring
+19523,   -- Lorekeeper's Ring
+19524,   -- Lorekeeper's Ring
+19525,   -- Lorekeeper's Ring
+19526,   -- Battle Healer's Cloak
+19527,   -- Battle Healer's Cloak
+19528,   -- Battle Healer's Cloak
+19529,   -- Battle Healer's Cloak
+19530,   -- Caretaker's Cape
+19531,   -- Caretaker's Cape
+19532,   -- Caretaker's Cape
+19533,   -- Caretaker's Cape
+19534,   -- Scout's Medallion
+19535,   -- Scout's Medallion
+19536,   -- Scout's Medallion
+19537,   -- Scout's Medallion
+19538,   -- Sentinel's Medallion
+19539,   -- Sentinel's Medallion
+19540,   -- Sentinel's Medallion
+19541,   -- Sentinel's Medallion
+19542,   -- Scout's Blade
+19543,   -- Scout's Blade
+19544,   -- Scout's Blade
+19545,   -- Scout's Blade
+19546,   -- Sentinel's Blade
+19547,   -- Sentinel's Blade
+19548,   -- Sentinel's Blade
+19549,   -- Sentinel's Blade
+19550,   -- Legionnaire's Sword
+19551,   -- Legionnaire's Sword
+19552,   -- Legionnaire's Sword
+19553,   -- Legionnaire's Sword
+19554,   -- Protector's Sword
+19555,   -- Protector's Sword
+19556,   -- Protector's Sword
+19557,   -- Protector's Sword
+19558,   -- Outrider's Bow
+19559,   -- Outrider's Bow
+19560,   -- Outrider's Bow
+19561,   -- Outrider's Bow
+19562,   -- Outrunner's Bow
+19563,   -- Outrunner's Bow
+19564,   -- Outrunner's Bow
+19565,   -- Outrunner's Bow
+19566,   -- Advisor's Gnarled Staff
+19567,   -- Advisor's Gnarled Staff
+19568,   -- Advisor's Gnarled Staff
+19569,   -- Advisor's Gnarled Staff
+19570,   -- Lorekeeper's Staff
+19571,   -- Lorekeeper's Staff
+19572,   -- Lorekeeper's Staff
+19573,   -- Lorekeeper's Staff
+19574,   -- Strength of Mugamba
+19575,   -- Strength of Mugamba
+19576,   -- Strength of Mugamba
+19577,   -- Rage of Mugamba
+19578,   -- Berserker Bracers
+19579,   -- Heathen's Brand
+19580,   -- Berserker Bracers
+19581,   -- Berserker Bracers
+19582,   -- Windtalker's Wristguards
+19583,   -- Windtalker's Wristguards
+19584,   -- Windtalker's Wristguards
+19585,   -- Heathen's Brand
+19586,   -- Heathen's Brand
+19587,   -- Forest Stalker's Bracers
+19588,   -- Hero's Brand
+19589,   -- Forest Stalker's Bracers
+19590,   -- Forest Stalker's Bracers
+19591,   -- The Eye of Zuldazar
+19592,   -- The Eye of Zuldazar
+19593,   -- The Eye of Zuldazar
+19594,   -- The All-Seeing Eye of Zuldazar
+19595,   -- Dryad's Wrist Bindings
+19596,   -- Dryad's Wrist Bindings
+19597,   -- Dryad's Wrist Bindings
+19598,   -- Pebble of Kajaro
+19599,   -- Pebble of Kajaro
+19600,   -- Pebble of Kajaro
+19601,   -- Jewel of Kajaro
+19602,   -- Kezan's Taint
+19603,   -- Kezan's Taint
+19604,   -- Kezan's Taint
+19605,   -- Kezan's Unstoppable Taint
+19606,   -- Vision of Voodress
+19607,   -- Vision of Voodress
+19608,   -- Vision of Voodress
+19609,   -- Unmarred Vision of Voodress
+19610,   -- Enchanted South Seas Kelp
+19611,   -- Enchanted South Seas Kelp
+19612,   -- Enchanted South Seas Kelp
+19613,   -- Pristine Enchanted South Seas Kelp
+19614,   -- Zandalarian Shadow Talisman
+19615,   -- Zandalarian Shadow Talisman
+19616,   -- Zandalarian Shadow Talisman
+19617,   -- Zandalarian Shadow Mastery Talisman
+19618,   -- Maelstrom's Tendril
+19619,   -- Maelstrom's Tendril
+19620,   -- Maelstrom's Tendril
+19621,   -- Maelstrom's Wrath
+19682,   -- Bloodvine Vest
+19683,   -- Bloodvine Leggings
+19684,   -- Bloodvine Boots
+19685,   -- Primal Batskin Jerkin
+19686,   -- Primal Batskin Gloves
+19687,   -- Primal Batskin Bracers
+19688,   -- Blood Tiger Breastplate
+19689,   -- Blood Tiger Shoulders
+19690,   -- Bloodsoul Breastplate
+19691,   -- Bloodsoul Shoulders
+19692,   -- Bloodsoul Gauntlets
+19693,   -- Darksoul Breastplate
+19694,   -- Darksoul Leggings
+19695,   -- Darksoul Shoulders
+19697,   -- Bounty of the Harvest
+19760,   -- Overlord's Embrace
+19764,   -- Pattern: Bloodvine Vest
+19765,   -- Pattern: Bloodvine Leggings
+19766,   -- Pattern: Bloodvine Boots
+19769,   -- Pattern: Primal Batskin Jerkin
+19770,   -- Pattern: Primal Batskin Gloves
+19771,   -- Pattern: Primal Batskin Bracers
+19772,   -- Pattern: Blood Tiger Breastplate
+19773,   -- Pattern: Blood Tiger Shoulders
+19776,   -- Plans: Bloodsoul Breastplate
+19777,   -- Plans: Bloodsoul Shoulders
+19778,   -- Plans: Bloodsoul Gauntlets
+19779,   -- Plans: Darksoul Breastplate
+19780,   -- Plans: Darksoul Leggings
+19781,   -- Plans: Darksoul Shoulders
+19808,   -- Rockhide Strongfish
+19812,   -- Rune of the Dawn
+19822,   -- Zandalar Vindicator's Breastplate
+19823,   -- Zandalar Vindicator's Belt
+19824,   -- Zandalar Vindicator's Armguards
+19825,   -- Zandalar Freethinker's Breastplate
+19826,   -- Zandalar Freethinker's Belt
+19827,   -- Zandalar Freethinker's Armguards
+19828,   -- Zandalar Augur's Hauberk
+19829,   -- Zandalar Augur's Belt
+19830,   -- Zandalar Augur's Bracers
+19831,   -- Zandalar Predator's Mantle
+19832,   -- Zandalar Predator's Belt
+19833,   -- Zandalar Predator's Bracers
+19834,   -- Zandalar Madcap's Tunic
+19835,   -- Zandalar Madcap's Mantle
+19836,   -- Zandalar Madcap's Bracers
+19838,   -- Zandalar Haruspex's Tunic
+19839,   -- Zandalar Haruspex's Belt
+19840,   -- Zandalar Haruspex's Bracers
+19841,   -- Zandalar Confessor's Mantle
+19842,   -- Zandalar Confessor's Bindings
+19843,   -- Zandalar Confessor's Wraps
+19845,   -- Zandalar Illusionist's Mantle
+19846,   -- Zandalar Illusionist's Wraps
+19848,   -- Zandalar Demoniac's Wraps
+19849,   -- Zandalar Demoniac's Mantle
+19852,   -- Ancient Hakkari Manslayer
+19853,   -- Gurubashi Dwarf Destroyer
+19854,   -- Zin'rokh, Destroyer of Worlds
+19855,   -- Bloodsoaked Legplates
+19856,   -- The Eye of Hakkar
+19857,   -- Cloak of Consumption
+19859,   -- Fang of the Faceless
+19861,   -- Touch of Chaos
+19862,   -- Aegis of the Blood God
+19863,   -- Primalist's Seal
+19864,   -- Bloodcaller
+19865,   -- Warblade of the Hakkari
+19866,   -- Warblade of the Hakkari
+19867,   -- Bloodlord's Defender
+19869,   -- Blooddrenched Grips
+19870,   -- Hakkari Loa Cloak
+19871,   -- Talisman of Protection
+19873,   -- Overlord's Crimson Band
+19874,   -- Halberd of Smiting
+19875,   -- Bloodstained Coif
+19876,   -- Soul Corrupter's Necklace
+19877,   -- Animist's Leggings
+19878,   -- Bloodsoaked Pauldrons
+19879,   -- Alex's Test Beatdown Staff
+19884,   -- Jin'do's Judgement
+19885,   -- Jin'do's Evil Eye
+19886,   -- The Hexxer's Cover
+19887,   -- Bloodstained Legplates
+19888,   -- Overlord's Embrace
+19889,   -- Blooddrenched Leggings
+19890,   -- Jin'do's Hexxer
+19891,   -- Jin'do's Bag of Whammies
+19892,   -- Animist's Boots
+19893,   -- Zanzil's Seal
+19894,   -- Bloodsoaked Gauntlets
+19895,   -- Bloodtinged Kilt
+19896,   -- Thekal's Grasp
+19897,   -- Betrayer's Boots
+19898,   -- Seal of Jin
+19899,   -- Ritualistic Legguards
+19900,   -- Zulian Stone Axe
+19901,   -- Zulian Slicer
+19903,   -- Fang of Venoxis
+19904,   -- Runed Bloodstained Hauberk
+19905,   -- Zanzil's Band
+19906,   -- Blooddrenched Footpads
+19907,   -- Zulian Tigerhide Cloak
+19908,   -- Sceptre of Smiting
+19909,   -- Will of Arlokk
+19910,   -- Arlokk's Grasp
+19912,   -- Overlord's Onyx Band
+19913,   -- Bloodsoaked Greaves
+19915,   -- Zulian Defender
+19918,   -- Jeklik's Crusher
+19919,   -- Bloodstained Greaves
+19920,   -- Primalist's Band
+19922,   -- Arlokk's Hoodoo Stick
+19923,   -- Jeklik's Opaline Talisman
+19925,   -- Band of Jin
+19927,   -- Mar'li's Touch
+19928,   -- Animist's Spaulders
+19929,   -- Bloodtinged Gloves
+19930,   -- Mar'li's Eye
+19944,   -- Nat Pagle's Fish Terminator
+19945,   -- Foror's Eyepatch
+19946,   -- Tigule's Harpoon
+19947,   -- Nat Pagle's Broken Reel
+19948,   -- Zandalarian Hero Badge
+19949,   -- Zandalarian Hero Medallion
+19950,   -- Zandalarian Hero Charm
+19951,   -- Gri'lek's Charm of Might
+19952,   -- Gri'lek's Charm of Valor
+19953,   -- Renataki's Charm of Beasts
+19954,   -- Renataki's Charm of Trickery
+19955,   -- Wushoolay's Charm of Nature
+19956,   -- Wushoolay's Charm of Spirits
+19957,   -- Hazza'rah's Charm of Destruction
+19958,   -- Hazza'rah's Charm of Healing
+19959,   -- Hazza'rah's Charm of Magic
+19961,   -- Gri'lek's Grinder
+19962,   -- Gri'lek's Carver
+19963,   -- Pitchfork of Madness
+19964,   -- Renataki's Soul Conduit
+19965,   -- Wushoolay's Poker
+19967,   -- Thoughtblighter
+19968,   -- Fiery Retributer
+19969,   -- Nat Pagle's Extreme Anglin' Boots
+19970,   -- Arcanite Fishing Pole
+19972,   -- Lucky Fishing Hat
+19979,   -- Hook of the Master Angler
+19982,   -- Duskbat Drape
+19984,   -- Ebon Mask
+19990,   -- Blessed Prayer Beads
+19991,   -- Devilsaur Eye
+19992,   -- Devilsaur Tooth
+19993,   -- Hoodoo Hunting Bow
+19998,   -- Bloodvine Lens
+19999,   -- Bloodvine Goggles
+20000,   -- Schematic: Bloodvine Goggles
+20001,   -- Schematic: Bloodvine Lens
+20006,   -- Circle of Hope
+20032,   -- Flowing Ritual Robes
+20033,   -- Zandalar Demoniac's Robe
+20034,   -- Zandalar Illusionist's Robe
+20035,   -- Glacial Spike
+20036,   -- Fire Ruby
+20037,   -- Arcane Crystal Pendant
+20038,   -- Mandokir's Sting
+20039,   -- Dark Iron Boots
+20040,   -- Plans: Dark Iron Boots
+20041,   -- Highlander's Plate Girdle
+20042,   -- Highlander's Lamellar Girdle
+20043,   -- Highlander's Chain Girdle
+20044,   -- Highlander's Mail Girdle
+20045,   -- Highlander's Leather Girdle
+20046,   -- Highlander's Lizardhide Girdle
+20047,   -- Highlander's Cloth Girdle
+20048,   -- Highlander's Plate Greaves
+20049,   -- Highlander's Lamellar Greaves
+20050,   -- Highlander's Chain Greaves
+20051,   -- Highlander's Mail Greaves
+20052,   -- Highlander's Leather Boots
+20053,   -- Highlander's Lizardhide Boots
+20054,   -- Highlander's Cloth Boots
+20055,   -- Highlander's Chain Pauldrons
+20056,   -- Highlander's Mail Pauldrons
+20057,   -- Highlander's Plate Spaulders
+20058,   -- Highlander's Lamellar Spaulders
+20059,   -- Highlander's Leather Shoulders
+20060,   -- Highlander's Lizardhide Shoulders
+20061,   -- Highlander's Epaulets
+20068,   -- Deathguard's Cloak
+20069,   -- Ironbark Staff
+20070,   -- Sageclaw
+20071,   -- Talisman of Arathor
+20072,   -- Defiler's Talisman
+20073,   -- Cloak of the Honor Guard
+20082,   -- Woestave
+20083,   -- Hunting Spear
+20086,   -- Dusksteel Throwing Knife
+20088,   -- Highlander's Chain Girdle
+20089,   -- Highlander's Chain Girdle
+20090,   -- Highlander's Chain Girdle
+20091,   -- Highlander's Chain Greaves
+20092,   -- Highlander's Chain Greaves
+20093,   -- Highlander's Chain Greaves
+20094,   -- Highlander's Cloth Boots
+20095,   -- Highlander's Cloth Boots
+20096,   -- Highlander's Cloth Boots
+20097,   -- Highlander's Cloth Girdle
+20098,   -- Highlander's Cloth Girdle
+20099,   -- Highlander's Cloth Girdle
+20100,   -- Highlander's Lizardhide Boots
+20101,   -- Highlander's Lizardhide Boots
+20102,   -- Highlander's Lizardhide Boots
+20103,   -- Highlander's Lizardhide Girdle
+20104,   -- Highlander's Lizardhide Girdle
+20105,   -- Highlander's Lizardhide Girdle
+20106,   -- Highlander's Lamellar Girdle
+20107,   -- Highlander's Lamellar Girdle
+20108,   -- Highlander's Lamellar Girdle
+20109,   -- Highlander's Lamellar Greaves
+20110,   -- Highlander's Lamellar Greaves
+20111,   -- Highlander's Lamellar Greaves
+20112,   -- Highlander's Leather Boots
+20113,   -- Highlander's Leather Boots
+20114,   -- Highlander's Leather Boots
+20115,   -- Highlander's Leather Girdle
+20116,   -- Highlander's Leather Girdle
+20117,   -- Highlander's Leather Girdle
+20124,   -- Highlander's Plate Girdle
+20125,   -- Highlander's Plate Girdle
+20126,   -- Highlander's Plate Girdle
+20127,   -- Highlander's Plate Greaves
+20128,   -- Highlander's Plate Greaves
+20129,   -- Highlander's Plate Greaves
+20130,   -- Diamond Flask
+20131,   -- Battle Tabard of the Defilers
+20132,   -- Arathor Battle Tabard
+20134,   -- Skyfury Helm
+20150,   -- Defiler's Chain Girdle
+20151,   -- Defiler's Chain Girdle
+20152,   -- Defiler's Chain Girdle
+20153,   -- Defiler's Chain Girdle
+20154,   -- Defiler's Chain Greaves
+20155,   -- Defiler's Chain Greaves
+20156,   -- Defiler's Chain Greaves
+20157,   -- Defiler's Chain Greaves
+20158,   -- Defiler's Chain Pauldrons
+20159,   -- Defiler's Cloth Boots
+20160,   -- Defiler's Cloth Boots
+20161,   -- Defiler's Cloth Boots
+20162,   -- Defiler's Cloth Boots
+20163,   -- Defiler's Cloth Girdle
+20164,   -- Defiler's Cloth Girdle
+20165,   -- Defiler's Cloth Girdle
+20166,   -- Defiler's Cloth Girdle
+20167,   -- Defiler's Lizardhide Boots
+20168,   -- Defiler's Lizardhide Boots
+20169,   -- Defiler's Lizardhide Boots
+20170,   -- Defiler's Lizardhide Boots
+20171,   -- Defiler's Lizardhide Girdle
+20172,   -- Defiler's Lizardhide Girdle
+20173,   -- Defiler's Lizardhide Girdle
+20174,   -- Defiler's Lizardhide Girdle
+20175,   -- Defiler's Lizardhide Shoulders
+20176,   -- Defiler's Epaulets
+20177,   -- Defiler's Lamellar Girdle
+20181,   -- Defiler's Lamellar Greaves
+20184,   -- Defiler's Lamellar Spaulders
+20186,   -- Defiler's Leather Boots
+20187,   -- Defiler's Leather Boots
+20188,   -- Defiler's Leather Boots
+20189,   -- Defiler's Leather Boots
+20190,   -- Defiler's Leather Girdle
+20191,   -- Defiler's Leather Girdle
+20192,   -- Defiler's Leather Girdle
+20193,   -- Defiler's Leather Girdle
+20194,   -- Defiler's Leather Shoulders
+20195,   -- Defiler's Mail Girdle
+20196,   -- Defiler's Mail Girdle
+20197,   -- Defiler's Mail Girdle
+20198,   -- Defiler's Mail Girdle
+20199,   -- Defiler's Mail Greaves
+20200,   -- Defiler's Mail Greaves
+20201,   -- Defiler's Mail Greaves
+20202,   -- Defiler's Mail Greaves
+20203,   -- Defiler's Mail Pauldrons
+20204,   -- Defiler's Plate Girdle
+20205,   -- Defiler's Plate Girdle
+20206,   -- Defiler's Plate Girdle
+20207,   -- Defiler's Plate Girdle
+20208,   -- Defiler's Plate Greaves
+20209,   -- Defiler's Plate Greaves
+20210,   -- Defiler's Plate Greaves
+20211,   -- Defiler's Plate Greaves
+20212,   -- Defiler's Plate Spaulders
+20213,   -- Belt of Shrunken Heads
+20214,   -- Mindfang
+20215,   -- Belt of Shriveled Heads
+20216,   -- Belt of Preserved Heads
+20217,   -- Belt of Tiny Heads
+20218,   -- Faded Hakkari Cloak
+20219,   -- Tattered Hakkari Cape
+20220,   -- Ironbark Staff
+20255,   -- Whisperwalk Boots
+20257,   -- Seafury Gauntlets
+20258,   -- Zulian Ceremonial Staff
+20259,   -- Shadow Panther Hide Gloves
+20260,   -- Seafury Leggings
+20261,   -- Shadow Panther Hide Belt
+20262,   -- Seafury Boots
+20263,   -- Gurubashi Helm
+20264,   -- Peacekeeper Gauntlets
+20265,   -- Peacekeeper Boots
+20266,   -- Peacekeeper Leggings
+20295,   -- Blue Dragonscale Leggings
+20296,   -- Green Dragonscale Gauntlets
+20369,   -- Azurite Fists
+20380,   -- Dreamscale Breastplate
+20382,   -- Pattern: Dreamscale Breastplate
+20391,   -- Flimsy Male Gnome Mask
+20392,   -- Flimsy Female Gnome Mask
+20406,   -- Twilight Cultist Mantle
+20407,   -- Twilight Cultist Robe
+20408,   -- Twilight Cultist Cowl
+20425,   -- Advisor's Gnarled Staff
+20426,   -- Advisor's Ring
+20427,   -- Battle Healer's Cloak
+20428,   -- Caretaker's Cape
+20429,   -- Legionnaire's Band
+20430,   -- Legionnaire's Sword
+20431,   -- Lorekeeper's Ring
+20434,   -- Lorekeeper's Staff
+20437,   -- Outrider's Bow
+20438,   -- Outrunner's Bow
+20439,   -- Protector's Band
+20440,   -- Protector's Sword
+20441,   -- Scout's Blade
+20442,   -- Scout's Medallion
+20443,   -- Sentinel's Blade
+20444,   -- Sentinel's Medallion
+20451,   -- Twilight Cultist Ring of Lordship
+20476,   -- Sandstalker Bracers
+20477,   -- Sandstalker Gauntlets
+20478,   -- Sandstalker Breastplate
+20479,   -- Spitfire Breastplate
+20480,   -- Spitfire Gauntlets
+20481,   -- Spitfire Bracers
+20487,   -- Lok'delar, Stave of the Ancient Keepers DEP
+20488,   -- Rhok'delar, Longbow of the Ancient Keepers DEP
+20503,   -- Enamored Water Spirit
+20504,   -- Lightforged Blade
+20505,   -- Chivalrous Signet
+20506,   -- Pattern: Spitfire Bracers
+20507,   -- Pattern: Spitfire Gauntlets
+20508,   -- Pattern: Spitfire Breastplate
+20509,   -- Pattern: Sandstalker Bracers
+20510,   -- Pattern: Sandstalker Gauntlets
+20511,   -- Pattern: Sandstalker Breastplate
+20512,   -- Sanctified Orb
+20517,   -- Razorsteel Shoulders
+20521,   -- Fury Visor
+20530,   -- Robes of Servitude
+20534,   -- Abyss Shard
+20536,   -- Soul Harvester
+20537,   -- Runed Stygian Boots
+20538,   -- Runed Stygian Leggings
+20539,   -- Runed Stygian Belt
+20546,   -- Pattern: Runed Stygian Leggings
+20547,   -- Pattern: Runed Stygian Boots
+20548,   -- Pattern: Runed Stygian Belt
+20549,   -- Darkrune Gauntlets
+20550,   -- Darkrune Breastplate
+20551,   -- Darkrune Helm
+20553,   -- Plans: Darkrune Gauntlets
+20554,   -- Plans: Darkrune Breastplate
+20555,   -- Plans: Darkrune Helm
+20556,   -- Wildstaff
+20561,   -- Flimsy Male Dwarf Mask
+20562,   -- Flimsy Female Dwarf Mask
+20563,   -- Flimsy Female Nightelf Mask
+20564,   -- Flimsy Male Nightelf Mask
+20565,   -- Flimsy Female Human Mask
+20566,   -- Flimsy Male Human Mask
+20567,   -- Flimsy Female Troll Mask
+20568,   -- Flimsy Male Troll Mask
+20569,   -- Flimsy Female Orc Mask
+20570,   -- Flimsy Male Orc Mask
+20571,   -- Flimsy Female Tauren Mask
+20572,   -- Flimsy Male Tauren Mask
+20573,   -- Flimsy Male Undead Mask
+20574,   -- Flimsy Female Undead Mask
+20575,   -- Black Whelp Tunic
+20576,   -- Pattern: Black Whelp Tunic
+20577,   -- Nightmare Blade
+20578,   -- Emerald Dragonfang
+20579,   -- Green Dragonskin Cloak
+20580,   -- Hammer of Bestial Fury
+20581,   -- Staff of Rampant Growth
+20582,   -- Trance Stone
+20599,   -- Polished Ironwood Crossbow
+20600,   -- Malfurion's Signet Ring
+20615,   -- Dragonspur Wraps
+20616,   -- Dragonbone Wristguards
+20617,   -- Ancient Corroded Leggings
+20618,   -- Gloves of Delusional Power
+20619,   -- Acid Inscribed Greaves
+20621,   -- Boots of the Endless Moor
+20622,   -- Dragonheart Necklace
+20623,   -- Circlet of Restless Dreams
+20624,   -- Ring of the Unliving
+20625,   -- Belt of the Dark Bog
+20626,   -- Black Bark Wristbands
+20627,   -- Dark Heart Pants
+20628,   -- Deviate Growth Cap
+20629,   -- Malignant Footguards
+20630,   -- Gauntlets of the Shining Light
+20631,   -- Mendicant's Slippers
+20632,   -- Mindtear Band
+20633,   -- Unnatural Leather Spaulders
+20634,   -- Boots of Fright
+20635,   -- Jade Inlaid Vestments
+20636,   -- Hibernation Crystal
+20637,   -- Acid Inscribed Pauldrons
+20638,   -- Leggings of the Demented Mind
+20639,   -- Strangely Glyphed Legplates
+20640,   -- Southsea Head Bucket
+20641,   -- Southsea Mojo Boots
+20642,   -- Antiquated Nobleman's Tunic
+20643,   -- Undercity Reservist's Cap
+20645,   -- Nature's Whisper
+20646,   -- Sandstrider's Mark
+20647,   -- Black Crystal Dagger
+20648,   -- Cold Forged Hammer
+20649,   -- Sunprism Pendant
+20650,   -- Desert Wind Gauntlets
+20654,   -- Amethyst War Staff
+20657,   -- Crystal Tipped Stiletto
+20660,   -- Stonecutting Glaive
+20663,   -- Deep Strike Bow
+20666,   -- Hardened Steel Warhammer
+20669,   -- Darkstone Claymore
+20672,   -- Sparkling Crystal Wand
+20675,   -- Soulrender
+20682,   -- Elemental Focus Band
+20685,   -- Wavefront Necklace
+20688,   -- Earthen Guard
+20691,   -- Windshear Cape
+20693,   -- Weighted Cloak
+20694,   -- Glowing Black Orb
+20695,   -- Abyssal War Beads
+20696,   -- Crystal Spiked Maul
+20697,   -- Crystalline Threaded Cape
+20698,   -- Elemental Attuned Blade
+20699,   -- Cenarion Reservist's Legplates
+20700,   -- Cenarion Reservist's Legplates
+20701,   -- Cenarion Reservist's Legguards
+20702,   -- Cenarion Reservist's Legguards
+20703,   -- Cenarion Reservist's Leggings
+20704,   -- Cenarion Reservist's Leggings
+20705,   -- Cenarion Reservist's Pants
+20706,   -- Cenarion Reservist's Pants
+20707,   -- Cenarion Reservist's Pants
+20710,   -- Crystal Encrusted Greaves
+20711,   -- Crystal Lined Greaves
+20712,   -- Wastewalker's Gauntlets
+20713,   -- Desertstalkers's Gauntlets
+20714,   -- Sandstorm Boots
+20715,   -- Dunestalker's Boots
+20716,   -- Sandworm Skin Gloves
+20717,   -- Desert Bloom Gloves
+20720,   -- Dark Whisper Blade
+20721,   -- Band of the Cultist
+20722,   -- Crystal Slugthrower
+20723,   -- Brann's Trusty Pick
+20724,   -- Corrupted Blackwood Staff
+20761,   -- Recipe: Transmute Elemental Fire
+21039,   -- Narain's Turban
+21040,   -- Narain's Robe
+21115,   -- Defiler's Talisman
+21116,   -- Defiler's Talisman
+21117,   -- Talisman of Arathor
+21118,   -- Talisman of Arathor
+21119,   -- Talisman of Arathor
+21120,   -- Defiler's Talisman
+21126,   -- Death's Sting
+21128,   -- Staff of the Qiraji Prophets
+21134,   -- Dark Edge of Insanity
+21154,   -- Festival Dress
+21157,   -- Festive Green Dress
+21178,   -- Gloves of Earthen Power
+21179,   -- Band of Earthen Wrath
+21180,   -- Earthstrike
+21181,   -- Grace of Earth
+21182,   -- Band of Earthen Might
+21183,   -- Earthpower Vest
+21184,   -- Deeprock Bracers
+21185,   -- Earthcalm Orb
+21186,   -- Rockfury Bracers
+21187,   -- Earthweave Cloak
+21188,   -- Fist of Cenarius
+21189,   -- Might of Cenarius
+21190,   -- Wrath of Cenarius
+21196,   -- Signet Ring of the Bronze Dragonflight
+21197,   -- Signet Ring of the Bronze Dragonflight
+21198,   -- Signet Ring of the Bronze Dragonflight
+21199,   -- Signet Ring of the Bronze Dragonflight
+21200,   -- Signet Ring of the Bronze Dragonflight
+21201,   -- Signet Ring of the Bronze Dragonflight
+21202,   -- Signet Ring of the Bronze Dragonflight
+21203,   -- Signet Ring of the Bronze Dragonflight
+21204,   -- Signet Ring of the Bronze Dragonflight
+21205,   -- Signet Ring of the Bronze Dragonflight
+21206,   -- Signet Ring of the Bronze Dragonflight
+21207,   -- Signet Ring of the Bronze Dragonflight
+21208,   -- Signet Ring of the Bronze Dragonflight
+21209,   -- Signet Ring of the Bronze Dragonflight
+21210,   -- Signet Ring of the Bronze Dragonflight
+21242,   -- Blessed Qiraji War Axe
+21244,   -- Blessed Qiraji Pugio
+21268,   -- Blessed Qiraji War Hammer
+21269,   -- Blessed Qiraji Bulwark
+21272,   -- Blessed Qiraji Musket
+21273,   -- Blessed Qiraji Acolyte Staff
+21275,   -- Blessed Qiraji Augur Staff
+21278,   -- Stormshroud Gloves
+21311,   -- Earth Warder's Vest
+21312,   -- Belt of the Den Watcher
+21316,   -- Leggings of the Ursa
+21317,   -- Helm of the Pathfinder
+21318,   -- Earth Warder's Gloves
+21319,   -- Gloves of the Pathfinder
+21320,   -- Vest of the Den Watcher
+21322,   -- Ursa's Embrace
+21326,   -- Defender of the Timbermaw
+21329,   -- Conqueror's Crown
+21330,   -- Conqueror's Spaulders
+21331,   -- Conqueror's Breastplate
+21332,   -- Conqueror's Legguards
+21333,   -- Conqueror's Greaves
+21334,   -- Doomcaller's Robes
+21335,   -- Doomcaller's Mantle
+21336,   -- Doomcaller's Trousers
+21337,   -- Doomcaller's Circlet
+21338,   -- Doomcaller's Footwraps
+21343,   -- Enigma Robes
+21344,   -- Enigma Boots
+21345,   -- Enigma Shoulderpads
+21346,   -- Enigma Leggings
+21347,   -- Enigma Circlet
+21348,   -- Tiara of the Oracle
+21349,   -- Footwraps of the Oracle
+21350,   -- Mantle of the Oracle
+21351,   -- Vestments of the Oracle
+21352,   -- Trousers of the Oracle
+21353,   -- Genesis Helm
+21354,   -- Genesis Shoulderpads
+21355,   -- Genesis Boots
+21356,   -- Genesis Trousers
+21357,   -- Genesis Vest
+21359,   -- Deathdealer's Boots
+21360,   -- Deathdealer's Helm
+21361,   -- Deathdealer's Spaulders
+21362,   -- Deathdealer's Leggings
+21364,   -- Deathdealer's Vest
+21365,   -- Striker's Footguards
+21366,   -- Striker's Diadem
+21367,   -- Striker's Pauldrons
+21368,   -- Striker's Leggings
+21370,   -- Striker's Hauberk
+21372,   -- Stormcaller's Diadem
+21373,   -- Stormcaller's Footguards
+21374,   -- Stormcaller's Hauberk
+21375,   -- Stormcaller's Leggings
+21376,   -- Stormcaller's Pauldrons
+21387,   -- Avenger's Crown
+21388,   -- Avenger's Greaves
+21389,   -- Avenger's Breastplate
+21390,   -- Avenger's Legguards
+21391,   -- Avenger's Pauldrons
+21392,   -- Sickle of Unyielding Strength
+21393,   -- Signet of Unyielding Strength
+21394,   -- Drape of Unyielding Strength
+21395,   -- Blade of Eternal Justice
+21396,   -- Ring of Eternal Justice
+21397,   -- Cape of Eternal Justice
+21398,   -- Hammer of the Gathering Storm
+21399,   -- Ring of the Gathering Storm
+21400,   -- Cloak of the Gathering Storm
+21401,   -- Scythe of the Unseen Path
+21402,   -- Signet of the Unseen Path
+21403,   -- Cloak of the Unseen Path
+21404,   -- Dagger of Veiled Shadows
+21405,   -- Band of Veiled Shadows
+21406,   -- Cloak of Veiled Shadows
+21407,   -- Mace of Unending Life
+21408,   -- Band of Unending Life
+21409,   -- Cloak of Unending Life
+21410,   -- Gavel of Infinite Wisdom
+21411,   -- Ring of Infinite Wisdom
+21412,   -- Shroud of Infinite Wisdom
+21413,   -- Blade of Vaulted Secrets
+21414,   -- Band of Vaulted Secrets
+21415,   -- Drape of Vaulted Secrets
+21416,   -- Kris of Unspoken Names
+21417,   -- Ring of Unspoken Names
+21418,   -- Shroud of Unspoken Names
+21452,   -- Staff of the Ruins
+21453,   -- Mantle of the Horusath
+21454,   -- Runic Stone Shoulders
+21455,   -- Southwind Helm
+21456,   -- Sandstorm Cloak
+21457,   -- Bracers of Brutality
+21458,   -- Gauntlets of New Life
+21459,   -- Crossbow of Imminent Doom
+21460,   -- Helm of Domination
+21461,   -- Leggings of the Black Blizzard
+21462,   -- Gloves of Dark Wisdom
+21463,   -- Ossirian's Binding
+21464,   -- Shackles of the Unscarred
+21466,   -- Stinger of Ayamiss
+21467,   -- Thick Silithid Chestguard
+21468,   -- Mantle of Maz'Nadir
+21469,   -- Gauntlets of Southwind
+21470,   -- Cloak of the Savior
+21471,   -- Talon of Furious Concentration
+21472,   -- Dustwind Turban
+21473,   -- Eye of Moam
+21474,   -- Chitinous Shoulderguards
+21475,   -- Legplates of the Destroyer
+21476,   -- Obsidian Scaled Leggings
+21477,   -- Ring of Fury
+21478,   -- Bow of Taut Sinew
+21479,   -- Gauntlets of the Immovable
+21480,   -- Scaled Silithid Gauntlets
+21481,   -- Boots of the Desert Protector
+21482,   -- Boots of the Fiery Sands
+21483,   -- Ring of the Desert Winds
+21484,   -- Helm of Regrowth
+21485,   -- Buru's Skull Fragment
+21486,   -- Gloves of the Swarm
+21487,   -- Slimy Scaled Gauntlets
+21488,   -- Fetish of Chitinous Spikes
+21489,   -- Quicksand Waders
+21490,   -- Slime Kickers
+21491,   -- Scaled Bracers of the Gorger
+21492,   -- Manslayer of the Qiraji
+21493,   -- Boots of the Vanguard
+21494,   -- Southwind's Grasp
+21495,   -- Legplates of the Qiraji Command
+21496,   -- Bracers of Qiraji Command
+21497,   -- Boots of the Qiraji General
+21498,   -- Qiraji Sacrificial Dagger
+21499,   -- Vestments of the Shifting Sands
+21500,   -- Belt of the Inquisition
+21501,   -- Toughened Silithid Hide Gloves
+21502,   -- Sand Reaver Wristguards
+21503,   -- Belt of the Sand Reaver
+21504,   -- Charm of the Shifting Sands
+21505,   -- Choker of the Shifting Sands
+21506,   -- Pendant of the Shifting Sands
+21507,   -- Amulet of the Shifting Sands
+21517,   -- Gnomish Turban of Psychic Might
+21520,   -- Ravencrest's Legacy
+21521,   -- Runesword of the Red
+21522,   -- Shadowsong's Sorrow
+21523,   -- Fang of Korialstrasz
+21524,   -- Red Winter Hat
+21525,   -- Green Winter Hat
+21526,   -- Band of Icy Depths
+21527,   -- Darkwater Robes
+21529,   -- Amulet of Shadow Shielding
+21530,   -- Onyx Embedded Leggings
+21531,   -- Drake Tooth Necklace
+21532,   -- Drudge Boots
+21538,   -- Festive Pink Dress
+21539,   -- Festive Purple Dress
+21541,   -- Festive Black Pant Suit
+21542,   -- Festival Suit
+21543,   -- Festive Teal Pant Suit
+21544,   -- Festive Blue Pant Suit
+21547,   -- Recipe: Elixir of Greater Firepower
+21548,   -- Pattern: Stormshroud Gloves
+21563,   -- Don Rodrigo's Band
+21565,   -- Rune of Perfection
+21566,   -- Rune of Perfection
+21567,   -- Rune of Duty
+21568,   -- Rune of Duty
+21579,   -- Vanquished Tentacle of C'Thun
+21581,   -- Gauntlets of Annihilation
+21582,   -- Grasp of the Old God
+21583,   -- Cloak of Clarity
+21585,   -- Dark Storm Gauntlets
+21586,   -- Belt of Never-ending Agony
+21587,   -- Wristguards of Castigation
+21596,   -- Ring of the Godslayer
+21597,   -- Royal Scepter of Vek'lor
+21598,   -- Royal Qiraji Belt
+21599,   -- Vek'lor's Gloves of Devastation
+21600,   -- Boots of Epiphany
+21601,   -- Ring of Emperor Vek'lor
+21602,   -- Qiraji Execution Bracers
+21603,   -- Wand of Qiraji Nobility
+21604,   -- Bracelets of Royal Redemption
+21605,   -- Gloves of the Hidden Temple
+21606,   -- Belt of the Fallen Emperor
+21607,   -- Grasp of the Fallen Emperor
+21608,   -- Amulet of Vek'nilash
+21609,   -- Regenerating Belt of Vek'nilash
+21610,   -- Wormscale Blocker
+21611,   -- Burrower Bracers
+21615,   -- Don Rigoberto's Lost Hat
+21616,   -- Huhuran's Stinger
+21617,   -- Wasphide Gauntlets
+21618,   -- Hive Defiler Wristguards
+21619,   -- Gloves of the Messiah
+21620,   -- Ring of the Martyr
+21621,   -- Cloak of the Golden Hive
+21622,   -- Sharpened Silithid Femur
+21623,   -- Gauntlets of the Righteous Champion
+21624,   -- Gauntlets of Kalimdor
+21625,   -- Scarab Brooch
+21626,   -- Slime-coated Leggings
+21627,   -- Cloak of Untold Secrets
+21635,   -- Barb of the Sand Reaver
+21639,   -- Pauldrons of the Unrelenting
+21645,   -- Hive Tunneler's Boots
+21647,   -- Fetish of the Sand Reaver
+21648,   -- Recomposed Boots
+21650,   -- Ancient Qiraji Ripper
+21651,   -- Scaled Sand Reaver Leggings
+21652,   -- Silithid Carapace Chestguard
+21663,   -- Robes of the Guardian Saint
+21664,   -- Barbed Choker
+21665,   -- Mantle of Wicked Revenge
+21666,   -- Sartura's Might
+21667,   -- Legplates of Blazing Light
+21668,   -- Scaled Leggings of Qiraji Fury
+21669,   -- Creeping Vine Helm
+21670,   -- Badge of the Swarmguard
+21671,   -- Robes of the Battleguard
+21672,   -- Gloves of Enforcement
+21673,   -- Silithid Claw
+21674,   -- Gauntlets of Steadfast Determination
+21675,   -- Thick Qirajihide Belt
+21676,   -- Leggings of the Festering Swarm
+21677,   -- Ring of the Qiraji Fury
+21678,   -- Necklace of Purity
+21679,   -- Kalimdor's Revenge
+21680,   -- Vest of Swift Execution
+21681,   -- Ring of the Devoured
+21682,   -- Bile-Covered Gauntlets
+21683,   -- Mantle of the Desert Crusade
+21684,   -- Mantle of the Desert's Fury
+21685,   -- Petrified Scarab
+21686,   -- Mantle of Phrenic Power
+21687,   -- Ukko's Ring of Darkness
+21688,   -- Boots of the Fallen Hero
+21689,   -- Gloves of Ebru
+21690,   -- Angelista's Charm
+21691,   -- Ooze-ridden Gauntlets
+21692,   -- Triad Girdle
+21693,   -- Guise of the Devourer
+21694,   -- Ternary Mantle
+21695,   -- Angelista's Touch
+21696,   -- Robes of the Triumvirate
+21697,   -- Cape of the Trinity
+21698,   -- Leggings of Immersion
+21699,   -- Barrage Shoulders
+21700,   -- Pendant of the Qiraji Guardian
+21701,   -- Cloak of Concentrated Hatred
+21702,   -- Amulet of Foul Warding
+21703,   -- Hammer of Ji'zhi
+21704,   -- Boots of the Redeemed Prophecy
+21705,   -- Boots of the Fallen Prophet
+21706,   -- Boots of the Unwavering Will
+21707,   -- Ring of Swarming Thought
+21708,   -- Beetle Scaled Wristguards
+21709,   -- Ring of the Fallen God
+21710,   -- Cloak of the Fallen God
+21712,   -- Amulet of the Fallen God
+21713,   -- Elune's Candle
+21715,   -- Sand Polished Hammer
+21722,   -- Pattern: Festival Dress
+21723,   -- Pattern: Festive Red Pant Suit
+21800,   -- Silithid Husked Launcher
+21801,   -- Antenna of Invigoration
+21802,   -- The Lost Kris of Zedd
+21803,   -- Helm of the Holy Avenger
+21804,   -- Coif of Elemental Fury
+21805,   -- Polished Obsidian Pauldrons
+21806,   -- Gavel of Qiraji Authority
+21809,   -- Fury of the Forgotten Swarm
+21810,   -- Treads of the Wandering Nomad
+21814,   -- Breastplate of Annihilation
+21836,   -- Ritssyn's Ring of Chaos
+21837,   -- Anubisath Warhammer
+21838,   -- Garb of Royal Ascension
+21839,   -- Scepter of the False Prophet
+21856,   -- Neretzek, The Blood Drinker
+21888,   -- Gloves of the Immortal
+21889,   -- Gloves of the Redeemed Prophecy
+21891,   -- Shard of the Fallen Star
+21994,   -- Belt of Heroism
+21995,   -- Boots of Heroism
+21996,   -- Bracers of Heroism
+21997,   -- Breastplate of Heroism
+21998,   -- Gauntlets of Heroism
+21999,   -- Helm of Heroism
+22000,   -- Legplates of Heroism
+22001,   -- Spaulders of Heroism
+22002,   -- Darkmantle Belt
+22003,   -- Darkmantle Boots
+22004,   -- Darkmantle Bracers
+22005,   -- Darkmantle Cap
+22006,   -- Darkmantle Gloves
+22007,   -- Darkmantle Pants
+22008,   -- Darkmantle Spaulders
+22009,   -- Darkmantle Tunic
+22010,   -- Beastmaster's Belt
+22011,   -- Beastmaster's Bindings
+22013,   -- Beastmaster's Cap
+22015,   -- Beastmaster's Gloves
+22016,   -- Beastmaster's Mantle
+22017,   -- Beastmaster's Pants
+22049,   -- Brazier of Beckoning
+22050,   -- Brazier of Beckoning
+22051,   -- Brazier of Beckoning
+22052,   -- Brazier of Beckoning
+22056,   -- Brazier of Beckoning
+22060,   -- Beastmaster's Tunic
+22061,   -- Beastmaster's Boots
+22062,   -- Sorcerer's Belt
+22063,   -- Sorcerer's Bindings
+22064,   -- Sorcerer's Boots
+22065,   -- Sorcerer's Crown
+22066,   -- Sorcerer's Gloves
+22067,   -- Sorcerer's Leggings
+22068,   -- Sorcerer's Mantle
+22069,   -- Sorcerer's Robes
+22070,   -- Deathmist Belt
+22071,   -- Deathmist Bracers
+22072,   -- Deathmist Leggings
+22073,   -- Deathmist Mantle
+22074,   -- Deathmist Mask
+22075,   -- Deathmist Robe
+22076,   -- Deathmist Sandals
+22077,   -- Deathmist Wraps
+22078,   -- Virtuous Belt
+22079,   -- Virtuous Bracers
+22080,   -- Virtuous Crown
+22081,   -- Virtuous Gloves
+22082,   -- Virtuous Mantle
+22083,   -- Virtuous Robe
+22084,   -- Virtuous Sandals
+22085,   -- Virtuous Skirt
+22086,   -- Soulforge Belt
+22087,   -- Soulforge Boots
+22088,   -- Soulforge Bracers
+22089,   -- Soulforge Breastplate
+22090,   -- Soulforge Gauntlets
+22091,   -- Soulforge Helm
+22092,   -- Soulforge Legplates
+22093,   -- Soulforge Spaulders
+22095,   -- Bindings of The Five Thunders
+22096,   -- Boots of The Five Thunders
+22097,   -- Coif of The Five Thunders
+22098,   -- Cord of The Five Thunders
+22099,   -- Gauntlets of The Five Thunders
+22100,   -- Kilt of The Five Thunders
+22101,   -- Pauldrons of The Five Thunders
+22102,   -- Vest of The Five Thunders
+22106,   -- Feralheart Belt
+22107,   -- Feralheart Boots
+22108,   -- Feralheart Bracers
+22109,   -- Feralheart Cowl
+22110,   -- Feralheart Gloves
+22111,   -- Feralheart Kilt
+22112,   -- Feralheart Spaulders
+22113,   -- Feralheart Vest
+22149,   -- Beads of Ogre Mojo
+22150,   -- Beads of Ogre Might
+22191,   -- Obsidian Mail Tunic
+22194,   -- Black Grasp of the Destroyer
+22195,   -- Light Obsidian Belt
+22196,   -- Thick Obsidian Breastplate
+22197,   -- Heavy Obsidian Belt
+22198,   -- Jagged Obsidian Shield
+22204,   -- Wristguards of Renown
+22205,   -- Black Steel Bindings
+22206,   -- Bouquet of Red Roses
+22207,   -- Sash of the Grand Hunt
+22208,   -- Lavastone Hammer
+22209,   -- Plans: Heavy Obsidian Belt
+22212,   -- Golem Fitted Pauldrons
+22214,   -- Plans: Light Obsidian Belt
+22219,   -- Plans: Jagged Obsidian Shield
+22220,   -- Plans: Black Grasp of the Destroyer
+22221,   -- Plans: Obsidian Mail Tunic
+22222,   -- Plans: Thick Obsidian Breastplate
+22223,   -- Foreman's Head Protector
+22225,   -- Dragonskin Cowl
+22231,   -- Kayser's Boots of Precision
+22232,   -- Marksman's Girdle
+22234,   -- Mantle of Lost Hope
+22240,   -- Greaves of Withering Despair
+22241,   -- Dark Warder's Pauldrons
+22242,   -- Verek's Leash
+22245,   -- Soot Encrusted Footwear
+22247,   -- Faith Healer's Boots
+22253,   -- Tome of the Lost
+22254,   -- Wand of Eternal Light
+22255,   -- Magma Forged Band
+22256,   -- Mana Shaping Handwraps
+22257,   -- Bloodclot Band
+22266,   -- Flarethorn
+22267,   -- Spellweaver's Turban
+22268,   -- Draconic Infused Emblem
+22269,   -- Shadow Prowler's Cloak
+22270,   -- Entrenching Boots
+22271,   -- Leggings of Frenzied Magic
+22272,   -- Forest's Embrace
+22274,   -- Grizzled Pelt
+22275,   -- Firemoss Boots
+22276,   -- Lovely Red Dress
+22277,   -- Red Dinner Suit
+22278,   -- Lovely Blue Dress
+22279,   -- Lovely Black Dress
+22280,   -- Lovely Purple Dress
+22281,   -- Blue Dinner Suit
+22282,   -- Purple Dinner Suit
+22301,   -- Ironweave Robe
+22302,   -- Ironweave Cowl
+22303,   -- Ironweave Pants
+22304,   -- Ironweave Gloves
+22305,   -- Ironweave Mantle
+22306,   -- Ironweave Belt
+22311,   -- Ironweave Boots
+22313,   -- Ironweave Bracers
+22314,   -- Huntsman's Harpoon
+22315,   -- Hammer of Revitalization
+22317,   -- Lefty's Brass Knuckle
+22318,   -- Malgen's Long Bow
+22319,   -- Tome of Divine Right
+22321,   -- Heart of Wyrmthalak
+22322,   -- The Jaw Breaker
+22325,   -- Belt of the Trickster
+22326,   -- Amalgam's Band
+22327,   -- Amulet of the Redeemed
+22328,   -- Legplates of Vigilance
+22329,   -- Scepter of Interminable Focus
+22330,   -- Shroud of Arcane Mastery
+22331,   -- Band of the Steadfast Hero
+22332,   -- Blade of Necromancy
+22333,   -- Hammer of Divine Might
+22334,   -- Band of Mending
+22335,   -- Lord Valthalak's Staff of Command
+22336,   -- Draconian Aegis of the Legion
+22337,   -- Shroud of Domination
+22339,   -- Rune Band of Wizardry
+22340,   -- Pendant of Celerity
+22342,   -- Leggings of Torment
+22343,   -- Handguards of Savagery
+22345,   -- Totem of Rebirth
+22347,   -- Fahrad's Reloading Repeater
+22348,   -- Doomulus Prime
+22377,   -- The Thunderwood Poker
+22378,   -- Ravenholdt Slicer
+22379,   -- Shivsprocket's Shiv
+22380,   -- Simone's Cultivating Hammer
+22383,   -- Sageblade
+22384,   -- Persuader
+22385,   -- Titanic Leggings
+22388,   -- Plans: Titanic Leggings
+22389,   -- Plans: Sageblade
+22390,   -- Plans: Persuader
+22392,   -- Formula: Enchant 2H Weapon - Agility
+22394,   -- Staff of Metanoia
+22395,   -- Totem of Rage
+22396,   -- Totem of Life
+22397,   -- Idol of Ferocity
+22398,   -- Idol of Rejuvenation
+22399,   -- Idol of Health
+22400,   -- Libram of Truth
+22401,   -- Libram of Hope
+22402,   -- Libram of Grace
+22403,   -- Diana's Pearl Necklace
+22404,   -- Willey's Back Scratcher
+22405,   -- Mantle of the Scarlet Crusade
+22406,   -- Redemption
+22407,   -- Helm of the New Moon
+22408,   -- Ritssyn's Wand of Bad Mojo
+22409,   -- Tunic of the Crescent Moon
+22410,   -- Gauntlets of Deftness
+22411,   -- Helm of the Executioner
+22412,   -- Thuzadin Mantle
+22416,   -- Dreadnaught Breastplate
+22417,   -- Dreadnaught Legplates
+22418,   -- Dreadnaught Helmet
+22419,   -- Dreadnaught Pauldrons
+22420,   -- Dreadnaught Sabatons
+22421,   -- Dreadnaught Gauntlets
+22422,   -- Dreadnaught Waistguard
+22423,   -- Dreadnaught Bracers
+22424,   -- Redemption Wristguards
+22425,   -- Redemption Tunic
+22426,   -- Redemption Handguards
+22427,   -- Redemption Legguards
+22428,   -- Redemption Headpiece
+22429,   -- Redemption Spaulders
+22430,   -- Redemption Boots
+22431,   -- Redemption Girdle
+22433,   -- Don Mauricio's Band of Domination
+22436,   -- Cryptstalker Tunic
+22437,   -- Cryptstalker Legguards
+22438,   -- Cryptstalker Headpiece
+22439,   -- Cryptstalker Spaulders
+22440,   -- Cryptstalker Boots
+22441,   -- Cryptstalker Handguards
+22442,   -- Cryptstalker Girdle
+22443,   -- Cryptstalker Wristguards
+22458,   -- Moonshadow Stave
+22464,   -- Earthshatter Tunic
+22465,   -- Earthshatter Legguards
+22466,   -- Earthshatter Headpiece
+22467,   -- Earthshatter Spaulders
+22468,   -- Earthshatter Boots
+22469,   -- Earthshatter Handguards
+22470,   -- Earthshatter Girdle
+22471,   -- Earthshatter Wristguards
+22472,   -- Boots of Ferocity
+22476,   -- Bonescythe Breastplate
+22477,   -- Bonescythe Legplates
+22478,   -- Bonescythe Helmet
+22479,   -- Bonescythe Pauldrons
+22480,   -- Bonescythe Sabatons
+22481,   -- Bonescythe Gauntlets
+22482,   -- Bonescythe Waistguard
+22483,   -- Bonescythe Bracers
+22488,   -- Dreamwalker Tunic
+22489,   -- Dreamwalker Legguards
+22490,   -- Dreamwalker Headpiece
+22491,   -- Dreamwalker Spaulders
+22492,   -- Dreamwalker Boots
+22493,   -- Dreamwalker Handguards
+22494,   -- Dreamwalker Girdle
+22495,   -- Dreamwalker Wristguards
+22496,   -- Frostfire Robe
+22497,   -- Frostfire Leggings
+22498,   -- Frostfire Circlet
+22499,   -- Frostfire Shoulderpads
+22500,   -- Frostfire Sandals
+22501,   -- Frostfire Gloves
+22502,   -- Frostfire Belt
+22503,   -- Frostfire Bindings
+22504,   -- Plagueheart Robe
+22505,   -- Plagueheart Leggings
+22506,   -- Plagueheart Circlet
+22507,   -- Plagueheart Shoulderpads
+22508,   -- Plagueheart Sandals
+22509,   -- Plagueheart Gloves
+22510,   -- Plagueheart Belt
+22511,   -- Plagueheart Bindings
+22512,   -- Robe of Faith
+22513,   -- Leggings of Faith
+22514,   -- Circlet of Faith
+22515,   -- Shoulderpads of Faith
+22516,   -- Sandals of Faith
+22517,   -- Gloves of Faith
+22518,   -- Belt of Faith
+22519,   -- Bindings of Faith
+22589,   -- Atiesh, Greatstaff of the Guardian
+22630,   -- Atiesh, Greatstaff of the Guardian
+22631,   -- Atiesh, Greatstaff of the Guardian
+22632,   -- Atiesh, Greatstaff of the Guardian
+22637,   -- Primal Hakkari Idol
+22651,   -- Outrider's Plate Legguards
+22652,   -- Glacial Vest
+22654,   -- Glacial Gloves
+22655,   -- Glacial Wrists
+22656,   -- The Purifier
+22657,   -- Amulet of the Dawn
+22658,   -- Glacial Cloak
+22659,   -- Medallion of the Dawn
+22660,   -- Gaea's Embrace
+22661,   -- Polar Tunic
+22662,   -- Polar Gloves
+22663,   -- Polar Bracers
+22664,   -- Icy Scale Breastplate
+22665,   -- Icy Scale Bracers
+22666,   -- Icy Scale Gauntlets
+22667,   -- Bracers of Hope
+22668,   -- Bracers of Subterfuge
+22669,   -- Icebane Breastplate
+22670,   -- Icebane Gauntlets
+22671,   -- Icebane Bracers
+22672,   -- Sentinel's Plate Legguards
+22673,   -- Outrider's Chain Leggings
+22676,   -- Outrider's Mail Leggings
+22678,   -- Talisman of Ascendance
+22680,   -- Band of Resolution
+22681,   -- Band of Piety
+22683,   -- Pattern: Gaea's Embrace
+22688,   -- Verimonde's Last Resort
+22689,   -- Sanctified Leather Helm
+22690,   -- Leggings of the Plague Hunter
+22691,   -- Corrupted Ashbringer
+22699,   -- Icebane Leggings
+22700,   -- Glacial Leggings
+22701,   -- Polar Leggings
+22702,   -- Icy Scale Leggings
+22707,   -- Ramaladni's Icy Grasp
+22711,   -- Cloak of the Hakkari Worshipers
+22712,   -- Might of the Tribe
+22713,   -- Zulian Scepter of Rites
+22714,   -- Sacrificial Gauntlets
+22715,   -- Gloves of the Tormented
+22716,   -- Belt of Untapped Power
+22718,   -- Blooddrenched Mask
+22720,   -- Zulian Headdress
+22721,   -- Band of Servitude
+22722,   -- Seal of the Gurubashi Berserker
+22725,   -- Band of Cenarius
+22730,   -- Eyestalk Waist Cord
+22731,   -- Cloak of the Devoured
+22732,   -- Mark of C'Thun
+22736,   -- Andonisus, Reaper of Souls
+22740,   -- Outrider's Leather Pants
+22741,   -- Outrider's Lizardhide Pants
+22742,   -- Bloodsail Shirt
+22744,   -- Bloodsail Boots
+22745,   -- Bloodsail Pants
+22747,   -- Outrider's Silk Leggings
+22748,   -- Sentinel's Chain Leggings
+22749,   -- Sentinel's Leather Pants
+22750,   -- Sentinel's Lizardhide Pants
+22752,   -- Sentinel's Silk Leggings
+22753,   -- Sentinel's Lamellar Legguards
+22756,   -- Sylvan Vest
+22757,   -- Sylvan Crown
+22758,   -- Sylvan Shoulders
+22759,   -- Bramblewood Helm
+22760,   -- Bramblewood Boots
+22761,   -- Bramblewood Belt
+22762,   -- Ironvine Breastplate
+22763,   -- Ironvine Gloves
+22764,   -- Ironvine Belt
+22766,   -- Plans: Ironvine Breastplate
+22767,   -- Plans: Ironvine Gloves
+22768,   -- Plans: Ironvine Belt
+22769,   -- Pattern: Bramblewood Belt
+22770,   -- Pattern: Bramblewood Boots
+22771,   -- Pattern: Bramblewood Helm
+22772,   -- Pattern: Sylvan Shoulders
+22773,   -- Pattern: Sylvan Crown
+22774,   -- Pattern: Sylvan Vest
+22798,   -- Might of Menethil
+22799,   -- Soulseeker
+22800,   -- Brimstone Staff
+22801,   -- Spire of Twilight
+22802,   -- Kingsfall
+22803,   -- Midnight Haze
+22804,   -- Maexxna's Fang
+22806,   -- Widow's Remorse
+22807,   -- Wraith Blade
+22808,   -- The Castigator
+22809,   -- Maul of the Redeemed Crusader
+22810,   -- Toxin Injector
+22811,   -- Soulstring
+22812,   -- Nerubian Slavemaker
+22813,   -- Claymore of Unholy Might
+22815,   -- Severance
+22816,   -- Hatchet of Sundered Bone
+22818,   -- The Plague Bearer
+22819,   -- Shield of Condemnation
+22820,   -- Wand of Fates
+22821,   -- Doomfinger
+22843,   -- Blood Guard's Chain Greaves
+22852,   -- Blood Guard's Dragonhide Treads
+22855,   -- Blood Guard's Dreadweave Walkers
+22856,   -- Blood Guard's Leather Walkers
+22857,   -- Blood Guard's Mail Greaves
+22858,   -- Blood Guard's Plate Greaves
+22859,   -- Blood Guard's Satin Walkers
+22860,   -- Blood Guard's Silk Walkers
+22862,   -- Blood Guard's Chain Vices
+22863,   -- Blood Guard's Dragonhide Grips
+22864,   -- Blood Guard's Leather Grips
+22865,   -- Blood Guard's Dreadweave Handwraps
+22867,   -- Blood Guard's Mail Vices
+22868,   -- Blood Guard's Plate Gauntlets
+22869,   -- Blood Guard's Satin Handwraps
+22870,   -- Blood Guard's Silk Handwraps
+22872,   -- Legionnaire's Plate Hauberk
+22873,   -- Legionnaire's Plate Leggings
+22874,   -- Legionnaire's Chain Hauberk
+22875,   -- Legionnaire's Chain Legguards
+22876,   -- Legionnaire's Mail Hauberk
+22877,   -- Legionnaire's Dragonhide Chestpiece
+22878,   -- Legionnaire's Dragonhide Leggings
+22879,   -- Legionnaire's Leather Chestpiece
+22880,   -- Legionnaire's Leather Legguards
+22881,   -- Legionnaire's Dreadweave Legguards
+22882,   -- Legionnaire's Satin Legguards
+22883,   -- Legionnaire's Silk Legguards
+22884,   -- Legionnaire's Dreadweave Tunic
+22885,   -- Legionnaire's Satin Tunic
+22886,   -- Legionnaire's Silk Tunic
+22887,   -- Legionnaire's Mail Legguards
+22890,   -- Tome of Frost Ward V
+22891,   -- Grimoire of Shadow Ward IV
+22935,   -- Touch of Frost
+22936,   -- Wristguards of Vengeance
+22937,   -- Gem of Nerubis
+22938,   -- Cryptfiend Silk Cloak
+22939,   -- Band of Unanswered Prayers
+22940,   -- Icebane Pauldrons
+22941,   -- Polar Shoulder Pads
+22942,   -- The Widow's Embrace
+22943,   -- Malice Stone Pendant
+22947,   -- Pendant of Forgotten Names
+22954,   -- Kiss of the Spider
+22960,   -- Cloak of Suturing
+22961,   -- Band of Reanimation
+22967,   -- Icy Scale Spaulders
+22968,   -- Glacial Mantle
+22981,   -- Gluth's Missing Collar
+22983,   -- Rime Covered Mantle
+22988,   -- The End of Dreams
+22994,   -- Digested Hand of Power
+22999,   -- Tabard of the Argent Dawn
+23000,   -- Plated Abomination Ribcage
+23001,   -- Eye of Diminution
+23004,   -- Idol of Longevity
+23005,   -- Totem of Flowing Water
+23006,   -- Libram of Light
+23009,   -- Wand of the Whispering Dead
+23014,   -- Iblis, Blade of the Fallen Seraph
+23017,   -- Veil of Eclipse
+23018,   -- Signet of the Fallen Defender
+23019,   -- Icebane Helmet
+23020,   -- Polar Helmet
+23021,   -- The Soul Harvester's Bindings
+23023,   -- Sadist's Collar
+23025,   -- Seal of the Damned
+23027,   -- Warmth of Forgiveness
+23028,   -- Hailstone Band
+23029,   -- Noth's Frigid Heart
+23030,   -- Cloak of the Scourge
+23031,   -- Band of the Inevitable
+23032,   -- Glacial Headdress
+23033,   -- Icy Scale Coif
+23035,   -- Preceptor's Hat
+23036,   -- Necklace of Necropsy
+23037,   -- Ring of Spiritual Fervor
+23038,   -- Band of Unnatural Forces
+23039,   -- The Eye of Nerub
+23040,   -- Glyph of Deflection
+23041,   -- Slayer's Crest
+23042,   -- Loatheb's Reflection
+23043,   -- The Face of Death
+23044,   -- Harbinger of Doom
+23045,   -- Shroud of Dominion
+23046,   -- The Restrained Essence of Sapphiron
+23047,   -- Eye of the Dead
+23048,   -- Sapphiron's Right Eye
+23049,   -- Sapphiron's Left Eye
+23050,   -- Cloak of the Necropolis
+23051,   -- Glaive of the Defender
+23053,   -- Stormrage's Talisman of Seething
+23054,   -- Gressil, Dawn of Ruin
+23056,   -- Hammer of the Twisting Nether
+23057,   -- Gem of Trapped Innocents
+23059,   -- Ring of the Dreadnaught
+23060,   -- Bonescythe Ring
+23061,   -- Ring of Faith
+23062,   -- Frostfire Ring
+23063,   -- Plagueheart Ring
+23064,   -- Ring of The Dreamwalker
+23065,   -- Ring of the Earthshatterer
+23066,   -- Ring of Redemption
+23067,   -- Ring of  the Cryptstalker
+23068,   -- Legplates of Carnage
+23069,   -- Necro-Knight's Garb
+23070,   -- Leggings of Polarity
+23071,   -- Leggings of Apocalypse
+23073,   -- Boots of Displacement
+23075,   -- Death's Bargain
+23078,   -- Gauntlets of Undead Slaying
+23081,   -- Handwraps of Undead Slaying
+23082,   -- Handguards of Undead Slaying
+23084,   -- Gloves of Undead Cleansing
+23085,   -- Robe of Undead Cleansing
+23087,   -- Breastplate of Undead Slaying
+23088,   -- Chestguard of Undead Slaying
+23089,   -- Tunic of Undead Slaying
+23090,   -- Bracers of Undead Slaying
+23091,   -- Bracers of Undead Cleansing
+23092,   -- Wristguards of Undead Slaying
+23093,   -- Wristwraps of Undead Slaying
+23124,   -- Staff of Balzaphon
+23125,   -- Chains of the Lich
+23126,   -- Waistband of Balzaphon
+23127,   -- Cloak of Revanchion
+23128,   -- The Shadow's Grasp
+23129,   -- Bracers of Mending
+23132,   -- Lord Blackwood's Blade
+23139,   -- Lord Blackwood's Buckler
+23156,   -- Blackwood's Thigh
+23168,   -- Scorn's Focal Dagger
+23169,   -- Scorn's Icy Choker
+23170,   -- The Frozen Clutch
+23171,   -- The Axe of Severing
+23173,   -- Abomination Skin Leggings
+23177,   -- Lady Falther'ess' Finger
+23178,   -- Mantle of Lady Falther'ess
+23197,   -- Idol of the Moon
+23198,   -- Idol of Brutality
+23199,   -- Totem of the Storm
+23200,   -- Totem of Sustaining
+23201,   -- Libram of Divinity
+23203,   -- Libram of Fervor
+23206,   -- Mark of the Champion
+23207,   -- Mark of the Champion
+23219,   -- Girdle of the Mentor
+23220,   -- Crystal Webbed Robe
+23221,   -- Misplaced Servo Arm
+23226,   -- Ghoul Skin Tunic
+23237,   -- Ring of the Eternal Flame
+23238,   -- Stygian Buckler
+23242,   -- Claw of the Frost Wyrm
+23243,   -- Champion's Plate Shoulders
+23244,   -- Champion's Plate Helm
+23251,   -- Champion's Chain Helm
+23252,   -- Champion's Chain Shoulders
+23253,   -- Champion's Dragonhide Headguard
+23254,   -- Champion's Dragonhide Shoulders
+23255,   -- Champion's Dreadweave Cowl
+23256,   -- Champion's Dreadweave Spaulders
+23257,   -- Champion's Leather Helm
+23258,   -- Champion's Leather Shoulders
+23259,   -- Champion's Mail Headguard
+23260,   -- Champion's Mail Pauldrons
+23261,   -- Champion's Satin Hood
+23262,   -- Champion's Satin Mantle
+23263,   -- Champion's Silk Cowl
+23264,   -- Champion's Silk Mantle
+23272,   -- Knight-Captain's Lamellar Breastplate
+23273,   -- Knight-Captain's Lamellar Leggings
+23274,   -- Knight-Lieutenant's Lamellar Gauntlets
+23275,   -- Knight-Lieutenant's Lamellar Sabatons
+23276,   -- Lieutenant Commander's Lamellar Headguard
+23277,   -- Lieutenant Commander's Lamellar Shoulders
+23278,   -- Knight-Lieutenant's Chain Greaves
+23279,   -- Knight-Lieutenant's Chain Vices
+23280,   -- Knight-Lieutenant's Dragonhide Grips
+23281,   -- Knight-Lieutenant's Dragonhide Treads
+23282,   -- Knight-Lieutenant's Dreadweave Handwraps
+23283,   -- Knight-Lieutenant's Dreadweave Walkers
+23284,   -- Knight-Lieutenant's Leather Grips
+23285,   -- Knight-Lieutenant's Leather Walkers
+23286,   -- Knight-Lieutenant's Plate Gauntlets
+23287,   -- Knight-Lieutenant's Plate Greaves
+23288,   -- Knight-Lieutenant's Satin Handwraps
+23289,   -- Knight-Lieutenant's Satin Walkers
+23290,   -- Knight-Lieutenant's Silk Handwraps
+23291,   -- Knight-Lieutenant's Silk Walkers
+23292,   -- Knight-Captain's Chain Hauberk
+23293,   -- Knight-Captain's Chain Legguards
+23294,   -- Knight-Captain's Dragonhide Chestpiece
+23295,   -- Knight-Captain's Dragonhide Leggings
+23296,   -- Knight-Captain's Dreadweave Legguards
+23297,   -- Knight-Captain's Dreadweave Tunic
+23298,   -- Knight-Captain's Leather Chestpiece
+23299,   -- Knight-Captain's Leather Legguards
+23300,   -- Knight-Captain's Plate Hauberk
+23301,   -- Knight-Captain's Plate Leggings
+23302,   -- Knight-Captain's Satin Legguards
+23303,   -- Knight-Captain's Satin Tunic
+23304,   -- Knight-Captain's Silk Legguards
+23305,   -- Knight-Captain's Silk Tunic
+23306,   -- Lieutenant Commander's Chain Helm
+23307,   -- Lieutenant Commander's Chain Shoulders
+23308,   -- Lieutenant Commander's Dragonhide Headguard
+23309,   -- Lieutenant Commander's Dragonhide Shoulders
+23310,   -- Lieutenant Commander's Dreadweave Cowl
+23311,   -- Lieutenant Commander's Dreadweave Spaulders
+23312,   -- Lieutenant Commander's Leather Helm
+23313,   -- Lieutenant Commander's Leather Shoulders
+23314,   -- Lieutenant Commander's Plate Helm
+23315,   -- Lieutenant Commander's Plate Shoulders
+23316,   -- Lieutenant Commander's Satin Hood
+23317,   -- Lieutenant Commander's Satin Mantle
+23318,   -- Lieutenant Commander's Silk Cowl
+23319,   -- Lieutenant Commander's Silk Mantle
+23320,   -- Tablet of Flame Shock VI
+23323,   -- Crown of the Fire Festival
+23324,   -- Mantle of the Fire Festival
+23451,   -- Grand Marshal's Mageblade
+23452,   -- Grand Marshal's Tome of Power
+23453,   -- Grand Marshal's Tome of Restoration
+23454,   -- Grand Marshal's Warhammer
+23455,   -- Grand Marshal's Demolisher
+23456,   -- Grand Marshal's Swiftblade
+23464,   -- High Warlord's Battle Mace
+23465,   -- High Warlord's Destroyer
+23466,   -- High Warlord's Spellblade
+23467,   -- High Warlord's Quickblade
+23468,   -- High Warlord's Tome of Destruction
+23469,   -- High Warlord's Tome of Mending
+23557,   -- Larvae of the Great Worm
+23558,   -- The Burrower's Shell
+23570,   -- Jom Gabbar
+23577,   -- The Hungering Cold
+23663,   -- Girdle of Elemental Fury
+23664,   -- Pauldrons of Elemental Fury
+23665,   -- Leggings of Elemental Fury
+23666,   -- Belt of the Grand Crusader
+23667,   -- Spaulders of the Grand Crusader
+23668,   -- Leggings of the Grand Crusader
+24101,   -- Book of Ferocious Bite V
+24102,   -- Manual of Eviscerate IX
+24222   -- The Shadowfoot Stabber
+);
 
 -- * ITEMS AND LOOT
 
