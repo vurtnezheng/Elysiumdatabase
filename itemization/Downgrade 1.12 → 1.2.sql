@@ -62,6 +62,7 @@ UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (4, 5, 100, 101, 13, 16,
 REPLACE INTO game_event VALUE (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0, 1);
 
 -- * FORBIDDEN ITEMS 
+
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 1215,   -- Support Girdle
 1677,   -- Drake-scale Vest
@@ -9987,43 +9988,601 @@ UPDATE creature SET id=7706 WHERE id=14543;
 -- Pre 1.4 Mount FIX
 UPDATE creature_template SET modelid_1=9695 WHERE entry=10322;
 
--- * QUESTS	
+-- * FORBIDDEN QUESTS
 
--- http://wowwiki.wikia.com/Plans:_Nightfall till patch 1.6
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (19212);
--- [Glyph Chasing], Sunken Temple level 50 quests
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8309, 8418, 8413, 8422, 8425);
--- [Darkmoon Faire] quests
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (7928, 7927, 7929, 7907, 7935, 7932, 7981, 7940, 7933,7930, 7931, 7934, 7936, 7885, 7892, 7881,7882,7889,7894,7884,7903, 8222,7896, 7891,7890,7897, 7941,7943,7939,8223,7942,7893,7899,7901,7946,7883,7898,7900,7902,7895,7937,7938,7944,7945);
--- Cloth donation quartermasters quests
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (14727, 14726, 14728, 14729, 14725, 14723, 14722, 14724);
--- Class quests for the Warrior, Shaman, Paladin, and Warlock
 REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (
--- Warrior:
-8417, -- http://wowwiki.wikia.com/Quest:A_Troubled_Spirit
-8423, -- http://wowwiki.wikia.com/Quest:Warrior_Kinship
-8424, -- http://wowwiki.wikia.com/Quest:War_on_the_Shadowsworn
-8425, -- http://wowwiki.wikia.com/Quest:Voodoo_Feathers
--- Warlock:
-7562, -- Epic Mount Quest
-8419, -- http://wowwiki.wikia.com/Quest:An_Imp%27s_Request
-8421, -- http://wowwiki.wikia.com/Quest:The_Wrong_Stuff
-8422, -- http://wowwiki.wikia.com/Quest:Trolls_of_a_Feather
--- Shaman:
-8410, -- http://wowwiki.wikia.com/Quest:Elemental_Mastery
-8412, -- http://wowwiki.wikia.com/Quest:Spirit_Totem
-8413, -- http://wowwiki.wikia.com/Quest:Da_Voodoo
--- Paladin:
-7638, -- Epic Mount quest
-8415, -- http://wowwiki.wikia.com/Quest:Chillwind_Camp
-8414, -- http://wowwiki.wikia.com/Quest:Dispelling_Evil
-8416, -- http://wowwiki.wikia.com/Quest:Inert_Scourgestones
-8418  -- http://wowwiki.wikia.com/Quest:Forging_the_Mightstone
+1138,   -- Fruit of the Sea
+1318,   -- Unfinished Gordok Business
+2561,   -- Druid of the Claw
+5213,   -- The Active Agent
+5526,   -- Shards of the Felvine
+6131,   -- Timbermaw Ally
+6163,   -- Ramstein
+6241,   -- Winterfall Activity
+6845,   -- Uncovering Past Secrets
+7003,   -- Zapped Giants
+7161,   -- Proving Grounds
+7162,   -- Proving Grounds
+7163,   -- Rise and Be Recognized
+7164,   -- Honored Amongst the Clan
+7165,   -- Earned Reverence
+7166,   -- Legendary Heroes
+7167,   -- The Eye of Command
+7168,   -- Rise and Be Recognized
+7169,   -- Honored Amongst the Guard
+7170,   -- Earned Reverence
+7171,   -- Legendary Heroes
+7172,   -- The Eye of Command
+7181,   -- The Legend of Korrak
+7202,   -- Korrak the Bloodrager
+7462,   -- The Treasure of the Shen'dralar
+7486,   -- A Hero's Reward
+7490,   -- Victory for the Horde
+7491,   -- For All To See
+7495,   -- Victory for the Alliance
+7496,   -- Celebrating Good Times
+7499,   -- Codex of Defense
+7500,   -- The Arcanist's Cookbook
+7501,   -- The Light and How To Swing It
+7506,   -- The Emerald Dream...
+7521,   -- Thunderaan the Windseeker
+7562,   -- Mor'zul Bloodbringer
+7583,   -- Suppression
+7603,   -- Kroshius' Infernal Core
+7604,   -- A Binding Contract
+7632,   -- The Ancient Leaf
+7634,   -- Ancient Sinew Wrapped Lamina
+7635,   -- A Proper String
+7638,   -- Lord Grayson Shadowbreaker
+7701,   -- WANTED: Overseer Maltorius
+7703,   -- Unfinished Gordok Business
+7721,   -- Fuel for the Zapping
+7723,   -- Curse These Fat Fingers
+7724,   -- Fiery Menace!
+7727,   -- Incendosaurs? Whateverosaur is More Like It
+7728,   -- STOLEN: Smithing Tuyere and Lookout's Spyglass
+7732,   -- Zukk'ash Report
+7733,   -- Improved Quality
+7734,   -- Improved Quality
+7737,   -- Gaining Acceptance
+7782,   -- The Lord of Blackrock
+7784,   -- The Lord of Blackrock
+7786,   -- Thunderaan the Windseeker
+7787,   -- Rise, Thunderfury!
+7815,   -- Snapjaws, Mon!
+7838,   -- Arena Grandmaster
+7843,   -- The Final Message to the Wildhammer
+7847,   -- Return to Primal Torntusk
+7849,   -- Separation Anxiety
+7850,   -- Dark Vessels
+7861,   -- Wanted: Vile Priestess Hexx and Her Minions
+7862,   -- Job Opening: Guard Captain of Revantusk Village
+7877,   -- The Treasure of the Shen'dralar
+7881,   -- Carnival Boots
+7882,   -- Carnival Jerkins
+7883,   -- The World's Largest Gnome!
+7884,   -- Crocolisk Boy and the Bearded Murloc
+7885,   -- Armor Kits
+7889,   -- Coarse Weightstone
+7890,   -- Heavy Grinding Stone
+7891,   -- Green Iron Bracers
+7892,   -- Big Black Mace
+7893,   -- Rituals of Strength
+7894,   -- Copper Modulator
+7895,   -- Whirring Bronze Gizmo
+7896,   -- Green Fireworks
+7897,   -- Mechanical Repair Kits
+7898,   -- Thorium Widget
+7899,   -- Small Furry Paws
+7900,   -- Torn Bear Pelts
+7901,   -- Soft Bushy Tails
+7902,   -- Vibrant Plumes
+7903,   -- Evil Bat Eyes
+7907,   -- Darkmoon Beast Deck
+7927,   -- Darkmoon Portals Deck
+7928,   -- Darkmoon Warlords Deck
+7929,   -- Darkmoon Elementals Deck
+7930,   -- 5 Tickets - Darkmoon Flower
+7931,   -- 5 Tickets - Minor Darkmoon Prize
+7932,   -- 12 Tickets - Lesser Darkmoon Prize
+7933,   -- 40 Tickets - Greater Darkmoon Prize
+7934,   -- 50 Tickets - Darkmoon Storage Box
+7935,   -- 10 Tickets - Last Month's Mutton
+7936,   -- 50 Tickets - Last Year's Mutton
+7937,   -- Your Fortune Awaits You...
+7938,   -- Your Fortune Awaits You...
+7939,   -- More Dense Grinding Stones
+7940,   -- 1200 Tickets - Orb of the Darkmoon
+7941,   -- More Armor Kits
+7942,   -- More Thorium Widgets
+7943,   -- More Bat Eyes
+7944,   -- Your Fortune Awaits You...
+7945,   -- Your Fortune Awaits You...
+7946,   -- Spawn of Jubjub
+7981,   -- 1200 Tickets - Amulet of the Darkmoon
+8041,   -- Strength of Mount Mugamba
+8042,   -- Strength of Mount Mugamba
+8043,   -- Strength of Mount Mugamba
+8044,   -- The Rage of Mount Mugamba
+8045,   -- The Heathen's Brand
+8046,   -- The Heathen's Brand
+8047,   -- The Heathen's Brand
+8048,   -- The Hero's Brand
+8049,   -- The Eye of Zuldazar
+8050,   -- The Eye of Zuldazar
+8051,   -- The Eye of Zuldazar
+8052,   -- The All-Seeing Eye of Zuldazar
+8053,   -- Paragons of Power: The Freethinker's Armguards
+8054,   -- Paragons of Power: The Freethinker's Belt
+8055,   -- Paragons of Power: The Freethinker's Breastplate
+8056,   -- Paragons of Power: The Augur's Bracers (Raid)
+8057,   -- Paragons of Power: The Haruspex's Bracers
+8058,   -- Paragons of Power: The Vindicator's Armguards
+8059,   -- Paragons of Power: The Demoniac's Wraps (Raid)
+8060,   -- Paragons of Power: The Illusionist's Wraps
+8061,   -- Paragons of Power: The Confessor's Wraps
+8062,   -- Paragons of Power: The Predator's Bracers
+8063,   -- Paragons of Power: The Madcap's Bracers
+8064,   -- Paragons of Power: The Haruspex's Belt
+8065,   -- Paragons of Power: The Haruspex's Tunic
+8066,   -- Paragons of Power: The Predator's Belt
+8067,   -- Paragons of Power: The Predator's Mantle
+8068,   -- Paragons of Power: The Illusionist's Mantle
+8069,   -- Paragons of Power: The Illusionist's Robes
+8070,   -- Paragons of Power: The Confessor's Bindings
+8071,   -- Paragons of Power: The Confessor's Mantle
+8072,   -- Paragons of Power: The Madcap's Mantle
+8073,   -- Paragons of Power: The Madcap's Tunic
+8074,   -- Paragons of Power: The Augur's Belt
+8075,   -- Paragons of Power: The Augur's Hauberk
+8076,   -- Paragons of Power: The Demoniac's Mantle (Raid)
+8077,   -- Paragons of Power: The Demoniac's Robes (Raid)
+8078,   -- Paragons of Power: The Vindicator's Belt
+8079,   -- Paragons of Power: The Vindicator's Breastplate
+8080,   -- Arathi Basin Mark of Honor!
+8101,   -- The Pebble of Kajaro
+8102,   -- The Pebble of Kajaro
+8103,   -- The Pebble of Kajaro
+8104,   -- The Jewel of Kajaro
+8105,   -- The Battle for Arathi Basin!
+8106,   -- Kezan's Taint
+8107,   -- Kezan's Taint
+8108,   -- Kezan's Taint
+8109,   -- Kezan's Unstoppable Taint
+8110,   -- Enchanted South Seas Kelp
+8111,   -- Enchanted South Seas Kelp
+8112,   -- Enchanted South Seas Kelp
+8113,   -- Pristine Enchanted South Seas Kelp
+8114,   -- Control Four Bases
+8115,   -- Control Five Bases
+8116,   -- Vision of Voodress
+8117,   -- Vision of Voodress
+8118,   -- Vision of Voodress
+8119,   -- The Unmarred Vision of Voodress
+8120,   -- The Battle for Arathi Basin!
+8121,   -- Take Four Bases
+8122,   -- Take Five Bases
+8123,   -- Cut Arathor Supply Lines
+8141,   -- Zandalrian Shadow Talisman
+8142,   -- Zandalrian Shadow Talisman
+8143,   -- Zandalrian Shadow Talisman
+8144,   -- Zandalrian Shadow Mastery Talisman
+8145,   -- The Maelstrom's Tendril
+8146,   -- The Maelstrom's Tendril
+8147,   -- The Maelstrom's Tendril
+8148,   -- The Maelstrom's Wrath
+8149,   -- Honoring a Hero
+8150,   -- Honoring a Hero
+8151,   -- The Hunter's Charm
+8153,   -- Courser Antlers
+8154,   -- Arathi Basin Mark of Honor!
+8155,   -- Arathi Basin Mark of Honor!
+8156,   -- Arathi Basin Mark of Honor!
+8160,   -- Cut Arathor Supply Lines
+8161,   -- Cut Arathor Supply Lines
+8162,   -- Cut Arathor Supply Lines
+8166,   -- The Battle for Arathi Basin!
+8167,   -- The Battle for Arathi Basin!
+8168,   -- The Battle for Arathi Basin!
+8169,   -- The Battle for Arathi Basin!
+8170,   -- The Battle for Arathi Basin!
+8171,   -- The Battle for Arathi Basin!
+8181,   -- Confront Yeh'kinya
+8182,   -- The Hand of Rastakhan
+8183,   -- The Heart of Hakkar
+8184,   -- Presence of Might
+8185,   -- Syncretist's Sigil
+8186,   -- Death's Embrace
+8187,   -- Falcon's Call
+8188,   -- Vodouisant's Vigilant Embrace
+8189,   -- Presence of Sight
+8190,   -- Hoodoo Hex
+8191,   -- Prophetic Aura
+8192,   -- Animist's Caress
+8193,   -- Master Angler
+8194,   -- Apprentice Angler
+8195,   -- Zulian, Razzashi, and Hakkari Coins
+8196,   -- Essence Mangoes
+8201,   -- A Collection of Heads
+8221,   -- Rare Fish - Keefer's Angelfish
+8222,   -- Glowing Scorpid Blood
+8223,   -- More Glowing Scorpid Blood
+8224,   -- Rare Fish - Dezian Queenfish
+8225,   -- Rare Fish - Brownell's Blue Striped Racer
+8227,   -- Nat's Measuring Tape
+8228,   -- Could I get a Fishing Flier?
+8229,   -- Could I get a Fishing Flier?
+8231,   -- Wavethrashing
+8232,   -- The Green Drake
+8233,   -- A Simple Request
+8234,   -- Sealed Azure Bag
+8235,   -- Encoded Fragments
+8236,   -- The Azure Key
+8238,   -- Gurubashi, Vilebranch, and Witherbark Coins
+8239,   -- Sandfury, Skullsplitter, and Bloodscalp Coins
+8240,   -- A Bijou for Zanza
+8241,   -- Restoring Fiery Flux Supplies via Iron
+8242,   -- Restoring Fiery Flux Supplies via Heavy Leather
+8243,   -- Zanza's Potent Potables
+8246,   -- Signets of the Zandalar
+8249,   -- Junkboxes Needed
+8250,   -- Magecraft
+8251,   -- Magic Dust
+8252,   -- The Siren's Coral
+8253,   -- Destroy Morphaz
+8254,   -- Cenarion Aid
+8255,   -- Of Coursers We Know
+8256,   -- The Ichor of Undeath
+8257,   -- Blood of Morphaz
+8258,   -- The Darkreaver Menace
+8260,   -- Arathor Basic Care Package
+8261,   -- Arathor Standard Care Package
+8262,   -- Arathor Advanced Care Package
+8263,   -- Defiler's Basic Care Package
+8264,   -- Defiler's Standard Care Package
+8265,   -- Defiler's Advanced Care Package
+8266,   -- Ribbons of Sacrifice
+8267,   -- Ribbons of Sacrifice
+8268,   -- Ribbons of Sacrifice
+8269,   -- Ribbons of Sacrifice
+8271,   -- Hero of the Stormpike
+8272,   -- Hero of the Frostwolf
+8273,   -- Oran's Gratitude
+8283,   -- Wanted - Deathclasp, Terror of the Sands
+8306,   -- Into The Maw of Madness
+8308,   -- Brann Bronzebeard's Lost Letter
+8309,   -- Glyph Chasing
+8316,   -- Armaments of War
+8321,   -- Vyral the Vile
+8341,   -- Lords of the Council
+8342,   -- Twilight Ring of Lordship
+8366,   -- Southsea Shakedown
+8376,   -- Armaments of War
+8377,   -- Armaments of War
+8378,   -- Armaments of War
+8379,   -- Armaments of War
+8380,   -- Armaments of War
+8381,   -- Armaments of War
+8382,   -- Armaments of War
+8410,   -- Elemental Mastery
+8412,   -- Spirit Totem
+8413,   -- Da Voodoo
+8414,   -- Dispelling Evil
+8415,   -- Chillwind Point
+8416,   -- Inert Scourgestones
+8417,   -- A Troubled Spirit
+8418,   -- Forging the Mightstone
+8419,   -- An Imp's Request
+8421,   -- The Wrong Stuff
+8422,   -- Trolls of a Feather
+8423,   -- Warrior Kinship
+8424,   -- War on the Shadowsworn
+8425,   -- Voodoo Feathers
+8447,   -- Waking Legends
+8461,   -- Deadwood of the North
+8481,   -- The Root of All Evil
+8544,   -- Conqueror's Spaulders
+8548,   -- Volunteer's Battlegear
+8556,   -- Signet of Unyielding Strength
+8557,   -- Drape of Unyielding Strength
+8558,   -- Sickle of Unyielding Strength
+8559,   -- Conqueror's Greaves
+8560,   -- Conqueror's Legguards
+8561,   -- Conqueror's Crown
+8562,   -- Conqueror's Breastplate
+8572,   -- Veteran's Battlegear
+8573,   -- Champion's Battlegear
+8574,   -- Stalwart's Battlegear
+8592,   -- Tiara of the Oracle
+8593,   -- Trousers of the Oracle
+8594,   -- Mantle of the Oracle
+8596,   -- Footwraps of the Oracle
+8602,   -- Stormcaller's Pauldrons
+8603,   -- Vestments of the Oracle
+8620,   -- The Only Prescription
+8621,   -- Stormcaller's Footguards
+8622,   -- Stormcaller's Hauberk
+8623,   -- Stormcaller's Diadem
+8624,   -- Stormcaller's Leggings
+8625,   -- Enigma Shoulderpads
+8626,   -- Striker's Footguards
+8627,   -- Avenger's Breastplate
+8628,   -- Avenger's Crown
+8629,   -- Avenger's Legguards
+8630,   -- Avenger's Pauldrons
+8631,   -- Enigma Leggings
+8632,   -- Enigma Circlet
+8633,   -- Enigma Robes
+8634,   -- Enigma Boots
+8637,   -- Deathdealer's Boots
+8638,   -- Deathdealer's Vest
+8639,   -- Deathdealer's Helm
+8640,   -- Deathdealer's Leggings
+8641,   -- Deathdealer's Spaulders
+8655,   -- Avenger's Greaves
+8656,   -- Striker's Hauberk
+8657,   -- Striker's Diadem
+8658,   -- Striker's Leggings
+8659,   -- Striker's Pauldrons
+8660,   -- Doomcaller's Footwraps
+8661,   -- Doomcaller's Robes
+8662,   -- Doomcaller's Circlet
+8663,   -- Doomcaller's Trousers
+8664,   -- Doomcaller's Mantle
+8665,   -- Genesis Boots
+8666,   -- Genesis Vest
+8667,   -- Genesis Helm
+8668,   -- Genesis Trousers
+8669,   -- Genesis Shoulderpads
+8689,   -- Shroud of Infinite Wisdom
+8690,   -- Cloak of the Gathering Storm
+8691,   -- Drape of Vaulted Secrets
+8692,   -- Cloak of Unending Life
+8693,   -- Cloak of Veiled Shadows
+8694,   -- Shroud of Unspoken Names
+8695,   -- Cape of Eternal Justice
+8696,   -- Cloak of the Unseen Path
+8697,   -- Ring of Infinite Wisdom
+8698,   -- Ring of the Gathering Storm
+8699,   -- Band of Vaulted Secrets
+8700,   -- Band of Unending Life
+8701,   -- Band of Veiled Shadows
+8702,   -- Ring of Unspoken Names
+8703,   -- Ring of Eternal Justice
+8704,   -- Signet of the Unseen Path
+8705,   -- Gavel of Infinite Wisdom
+8706,   -- Hammer of the Gathering Storm
+8707,   -- Blade of Vaulted Secrets
+8708,   -- Mace of Unending Life
+8709,   -- Dagger of Veiled Shadows
+8710,   -- Kris of Unspoken Names
+8711,   -- Blade of Eternal Justice
+8712,   -- Scythe of the Unseen Path
+8729,   -- The Wrath of Neptulon
+8730,   -- Nefarius's Corruption
+8736,   -- The Nightmare Manifests
+8745,   -- Treasure of the Timeless One
+8747,   -- The Path of the Protector
+8748,   -- The Path of the Protector
+8749,   -- The Path of the Protector
+8750,   -- The Path of the Protector
+8751,   -- The Protector of Kalimdor
+8752,   -- The Path of the Conqueror
+8753,   -- The Path of the Conqueror
+8754,   -- The Path of the Conqueror
+8755,   -- The Path of the Conqueror
+8756,   -- The Qiraji Conqueror
+8757,   -- The Path of the Invoker
+8758,   -- The Path of the Invoker
+8759,   -- The Path of the Invoker
+8760,   -- The Path of the Invoker
+8761,   -- The Grand Invoker
+8764,   -- The Changing of Paths - Protector No More
+8765,   -- The Changing of Paths - Invoker No More
+8766,   -- The Changing of Paths - Conqueror No More
+8789,   -- Imperial Qiraji Armaments
+8790,   -- Imperial Qiraji Regalia
+8791,   -- The Fall of Ossirian
+8802,   -- The Savior of Kalimdor
+8829,   -- The Ultimate Deception
+8862,   -- Elune's Candle
+8864,   -- Festive Lunar Dresses
+8865,   -- Festive Lunar Pant Suits
+8878,   -- Festive Recipes
+8905,   -- An Earnest Proposition
+8906,   -- An Earnest Proposition
+8907,   -- An Earnest Proposition
+8908,   -- An Earnest Proposition
+8909,   -- An Earnest Proposition
+8910,   -- An Earnest Proposition
+8911,   -- An Earnest Proposition
+8912,   -- An Earnest Proposition
+8913,   -- An Earnest Proposition
+8914,   -- An Earnest Proposition
+8915,   -- An Earnest Proposition
+8916,   -- An Earnest Proposition
+8917,   -- An Earnest Proposition
+8918,   -- An Earnest Proposition
+8919,   -- An Earnest Proposition
+8920,   -- An Earnest Proposition
+8926,   -- Just Compensation
+8927,   -- Just Compensation
+8931,   -- Just Compensation
+8932,   -- Just Compensation
+8933,   -- Just Compensation
+8934,   -- Just Compensation
+8935,   -- Just Compensation
+8936,   -- Just Compensation
+8937,   -- Just Compensation
+8938,   -- Just Compensation
+8939,   -- Just Compensation
+8940,   -- Just Compensation
+8941,   -- Just Compensation
+8942,   -- Just Compensation
+8943,   -- Just Compensation
+8944,   -- Just Compensation
+8949,   -- Falrin's Vendetta
+8951,   -- Anthion's Parting Words
+8952,   -- Anthion's Parting Words
+8953,   -- Anthion's Parting Words
+8954,   -- Anthion's Parting Words
+8955,   -- Anthion's Parting Words
+8956,   -- Anthion's Parting Words
+8957,   -- Anthion's Parting Words
+8958,   -- Anthion's Parting Words
+8959,   -- Anthion's Parting Words
+8966,   -- The Left Piece of Lord Valthalak's Amulet
+8967,   -- The Left Piece of Lord Valthalak's Amulet
+8968,   -- The Left Piece of Lord Valthalak's Amulet
+8969,   -- The Left Piece of Lord Valthalak's Amulet
+8989,   -- The Right Piece of Lord Valthalak's Amulet
+8990,   -- The Right Piece of Lord Valthalak's Amulet
+8991,   -- The Right Piece of Lord Valthalak's Amulet
+8992,   -- The Right Piece of Lord Valthalak's Amulet
+8996,   -- Return to Bodley
+8999,   -- Saving the Best for Last
+9000,   -- Saving the Best for Last
+9001,   -- Saving the Best for Last
+9002,   -- Saving the Best for Last
+9003,   -- Saving the Best for Last
+9004,   -- Saving the Best for Last
+9005,   -- Saving the Best for Last
+9006,   -- Saving the Best for Last
+9007,   -- Saving the Best for Last
+9008,   -- Saving the Best for Last
+9009,   -- Saving the Best for Last
+9010,   -- Saving the Best for Last
+9011,   -- Saving the Best for Last
+9012,   -- Saving the Best for Last
+9013,   -- Saving the Best for Last
+9014,   -- Saving the Best for Last
+9016,   -- Anthion's Parting Words
+9017,   -- Anthion's Parting Words
+9018,   -- Anthion's Parting Words
+9019,   -- Anthion's Parting Words
+9020,   -- Anthion's Parting Words
+9021,   -- Anthion's Parting Words
+9022,   -- Anthion's Parting Words
+9023,   -- The Perfect Poison
+9029,   -- A Bubbling Cauldron
+9034,   -- Dreadnaught Breastplate
+9036,   -- Dreadnaught Legplates
+9037,   -- Dreadnaught Helmet
+9038,   -- Dreadnaught Pauldrons
+9039,   -- Dreadnaught Sabatons
+9040,   -- Dreadnaught Gauntlets
+9041,   -- Dreadnaught Waistguard
+9042,   -- Dreadnaught Bracers
+9043,   -- Redemption Tunic
+9044,   -- Redemption Legguards
+9045,   -- Redemption Headpiece
+9046,   -- Redemption Spaulders
+9047,   -- Redemption Boots
+9048,   -- Redemption Handguards
+9049,   -- Redemption Girdle
+9050,   -- Redemption Wristguards
+9053,   -- A Better Ingredient
+9054,   -- Cryptstalker Tunic
+9055,   -- Cryptstalker Legguards
+9056,   -- Cryptstalker Headpiece
+9057,   -- Cryptstalker Spaulders
+9058,   -- Cryptstalker Boots
+9059,   -- Cryptstalker Handguards
+9060,   -- Cryptstalker Girdle
+9061,   -- Cryptstalker Wristguards
+9068,   -- Earthshatter Tunic
+9069,   -- Earthshatter Legguards
+9070,   -- Earthshatter Headpiece
+9071,   -- Earthshatter Spaulders
+9072,   -- Earthshatter Boots
+9073,   -- Earthshatter Handguards
+9074,   -- Earthshatter Girdle
+9075,   -- Earthshatter Wristguards
+9077,   -- Bonescythe Breastplate
+9078,   -- Bonescythe Legplates
+9079,   -- Bonescythe Helmet
+9080,   -- Bonescythe Pauldrons
+9081,   -- Bonescythe Sabatons
+9082,   -- Bonescythe Gauntlets
+9083,   -- Bonescythe Waistguard
+9084,   -- Bonescythe Bracers
+9086,   -- Dreamwalker Tunic
+9087,   -- Dreamwalker Legguards
+9088,   -- Dreamwalker Headpiece
+9089,   -- Dreamwalker Spaulders
+9090,   -- Dreamwalker Boots
+9091,   -- Dreamwalker Handguards
+9092,   -- Dreamwalker Girdle
+9093,   -- Dreamwalker Wristguards
+9094,   -- Argent Dawn Gloves
+9095,   -- Frostfire Robe
+9096,   -- Frostfire Leggings
+9097,   -- Frostfire Circlet
+9098,   -- Frostfire Shoulderpads
+9099,   -- Frostfire Sandals
+9100,   -- Frostfire Gloves
+9101,   -- Frostfire Belt
+9102,   -- Frostfire Bindings
+9103,   -- Plagueheart Robe
+9104,   -- Plagueheart Leggings
+9105,   -- Plagueheart Circlet
+9106,   -- Plagueheart Shoulderpads
+9107,   -- Plagueheart Sandals
+9108,   -- Plagueheart Gloves
+9109,   -- Plagueheart Belt
+9110,   -- Plagueheart Bindings
+9111,   -- Robe of Faith
+9112,   -- Leggings of Faith
+9113,   -- Circlet of Faith
+9114,   -- Shoulderpads of Faith
+9115,   -- Sandals of Faith
+9116,   -- Gloves of Faith
+9117,   -- Belt of Faith
+9118,   -- Bindings of Faith
+9120,   -- The Fall of Kel'Thuzad
+9179,   -- Craftsman's Writ - Imperial Plate Chest
+9221,   -- Superior Armaments of Battle - Friend of the Dawn
+9222,   -- Epic Armaments of Battle - Friend of the Dawn
+9223,   -- Superior Armaments of Battle - Honored Amongst the Dawn
+9224,   -- Epic Armaments of Battle - Honored Amongst the Dawn
+9225,   -- Epic Armaments of Battle - Revered Amongst the Dawn
+9226,   -- Superior Armaments of Battle - Revered Amongst the Dawn
+9227,   -- Superior Armaments of Battle - Exalted Amongst the Dawn
+9228,   -- Epic Armaments of Battle - Exalted Amongst the Dawn
+9230,   -- Ramaladni's Icy Grasp
+9232,   -- The Only Song I Know...
+9234,   -- Icebane Gauntlets
+9235,   -- Icebane Bracers
+9236,   -- Icebane Breastplate
+9237,   -- Glacial Cloak
+9238,   -- Glacial Wrists
+9239,   -- Glacial Gloves
+9240,   -- Glacial Vest
+9241,   -- Polar Bracers
+9242,   -- Polar Gloves
+9243,   -- Polar Tunic
+9244,   -- Icy Scale Bracers
+9245,   -- Icy Scale Gauntlets
+9246,   -- Icy Scale Breastplate
+9248,   -- A Humble Offering
+9269,   -- Atiesh, Greatstaff of the Guardian
+9270,   -- Atiesh, Greatstaff of the Guardian
+9271,   -- Atiesh, Greatstaff of the Guardian
+9323,   -- Wild Fires in the Eastern Kingdoms
+9339,   -- A Thief's Reward
+9341,   -- Tabard of the Argent Dawn
+9365,   -- A Thief's Reward
+55101,   -- Retour au pays
+55111,   -- Retour au pays
+55121,   -- Retour au pays
+55131,   -- Retour au pays
+55141,   -- Retour au pays
+55151,   -- Retour au pays
+55161,   -- Retour au pays
+55171   -- Retour au pays
 );
--- Arathi Basin tabard quests
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (8115, 8122);	
--- Patch 1.5+ quest range
-REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry BETWEEN 8041 AND 8273;
+
+-- * QUESTS	
 
 -- Fix Alterac Valley Kazzak quest: non-existant reward removed.
 UPDATE quest_template SET RewChoiceItemId4 = 0 WHERE entry IN (7202, 7181);
