@@ -3,14 +3,16 @@
 -- Apply it on the clean 1.12 DB only, with all latest migrations from /server/sql/migrations
 
 DROP TABLE IF EXISTS `forbidden_items`;
+DROP TABLE IF EXISTS `forbidden_events`;
 DROP TABLE IF EXISTS `forbidden_quests`;
 DROP TABLE IF EXISTS `forbidden_creatures`;
 CREATE TABLE IF NOT EXISTS `forbidden_quests` (entry mediumint PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS forbidden_items (entry mediumint);
+CREATE TABLE IF NOT EXISTS forbidden_events (entry mediumint);
 CREATE TABLE IF NOT EXISTS forbidden_creatures (entry mediumint);
 
 -- * INDEX
--- - 1. ENCOUNTER				 
+-- - 1. FORBIDDEN ENCOUNTER				 
 -- - 2. FORBIDDEN EVENTS 					          
 -- - 3. FORBIDDEN ITEMS 		  
 -- - 4. ITEMS AND LOOT		 	      
@@ -24,7 +26,7 @@ CREATE TABLE IF NOT EXISTS forbidden_creatures (entry mediumint);
 -- - 12. GAMEOBJECTS	
 -- - 13. CLEANUP TOOLS	
 
--- * ENCOUNTER
+-- * FORBIDDEN ENCOUNTER
 
 --   533    -- Naxxramas 1.12
 --   531    -- AQ40 (Temple of AQ) 1.9
@@ -36,31 +38,47 @@ CREATE TABLE IF NOT EXISTS forbidden_creatures (entry mediumint);
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN (533, 531, 509, 429, 309, 469);
 UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 1; -- Alterac Valley (Patch 1.5)
 
--- * EVENTS (need full list)
+-- * FORBIDDEN EVENTS 
 
---   4, 5, 100, 101 	-- DarkMoon Faire 1.6
---   13					-- Elemental Invasion 1.5
---   16, 38, 39			-- Gurubashi Arena 1.5
---   14, 15, 40			-- Stranglethorn Fishing Extravaganza 1.7
---   156, 159			-- Dire Maul extra content(unchecked) 1.3
---   35, 36, 37			-- ??
---   42, 43, 44			-- The Maul 1.3
---   66					-- Dragons of Nightmare 1.8
---   18					-- Call to arms: Alterac Valley 1.5
---   154				-- Silithus @ 1.9
---   155				-- Argent dawn @ 1.11
---   158				-- 1.10 Patch : Recipes
---   160				-- 1.10 Patch : T0.5 Quest Chain 
---   161				-- Patch 1.3 
---   162				-- Patch 1.4 | 1.5
---   163				-- Patch 1.6
---   164				-- Patch 1.7
---   165				-- Patch 1.8
---   166				-- Patch 1.9
---   167				-- Patch 1.10
---   168 				-- Patch 1.11 ? 1.12
+REPLACE INTO forbidden_events SELECT entry FROM game_event WHERE entry IN (
+4,    -- Darkmoon Faire (Elwynn)
+5,    -- Darkmoon Faire (Mulgore)
+13,   -- Elemental Invasion
+14,   -- Stranglethorn Fishing Extravaganza: Announce
+16,   -- Pirate Chest of Gurubashi I
+15,   -- Stranglethorn Fishing Extravaganza: Tournament
+100,  -- Darkmoon Faire Building (Elwynn) (TODO)
+35,   -- The Maul: Mushgog
+36,   -- The Maul: Skarr the Unbreakable
+37,   -- The Maul: Razza
+38,   -- Pirate Chest of Gurubashi II
+39,   -- Arene Gurubashi Short John Mithril
+40,   -- Stranglethorn Fishing Extravaganza: The Crew
+42,   -- The Maul, Grininlix /yell Mushgog
+43,   -- The Maul, Grininlix /yell Skarr the Unbreakable
+44,   -- The Maul, Grininlix /yell The Razza
+54,   -- AQ War Troop Silithus (GO & PNJ) DAY 1
+18,   -- Call to arms: Alterac Valley
+101,   -- Darkmoon Faire Building (Mulgore) (TODO)
+160,   -- 1.10 Patch : t0.5 Quest Chain
+159,   -- DM Release : Cloth turning NPC
+158,   -- 1.10 Patch : Recipes
+156,   -- DM release : Recipes and misc item
+155,   -- Argent dawn @ 1.11
+66,    -- Dragons of Nightmare Spawn
+161,   -- Patch 1.3
+162,   -- Patch 1.4 | 1.5
+163,   -- Patch 1.6
+164,   -- Patch 1.7
+165,   -- Patch 1.8
+166,   -- Patch 1.9
+167,   -- Patch 1.10
+168    -- Patch 1.11
+);
+
+
 UPDATE `game_event` SET `disabled` = 1 WHERE `entry` IN (4, 5, 100, 101, 13, 16, 38, 39, 14, 15, 40, 155, 156, 159, 35, 36, 37,42, 43, 44, 66, 18, 54, 155, 158, 160, 161, 162, 163, 164, 165, 166, 167, 168);
--- Argent Dawn @ (pre-1.11) Hm...?
+-- Argent Dawn @ (pre-1.11) Hm...? No clue what is it.
 REPLACE INTO game_event VALUE (155, "2025-03-30 00:00:00", "2030-03-30 00:00:00", 1, 2, 0, "Argent dawn @ 1.11", 0, 1);
 
 -- * FORBIDDEN ITEMS 
@@ -11253,6 +11271,8 @@ REPLACE INTO `spell_disabled` VALUE (23161);
 DELETE FROM `gameobject` WHERE `id` = 181083;
 
 -- * CLEANUP TOOLS
+
+UPDATE `game_event` SET `disabled` = (`disabled` | 1) WHERE id IN (SELECT * FROM forbidden_events);
 
 DELETE FROM creature_loot_template WHERE item IN (SELECT * FROM `forbidden_items`);
 DELETE FROM reference_loot_template WHERE item IN (SELECT * FROM `forbidden_items`);
