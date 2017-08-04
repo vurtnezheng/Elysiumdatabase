@@ -11,16 +11,18 @@ CREATE TABLE IF NOT EXISTS forbidden_creatures (entry mediumint);
 
 -- * INDEX
 -- - 1. ENCOUNTER				 
--- - 2. EVENTS 					          
+-- - 2. FORBIDDEN EVENTS 					          
 -- - 3. FORBIDDEN ITEMS 		  
 -- - 4. ITEMS AND LOOT		 	      
--- - 5. VENDORS 				
--- - 6. CREATURES				
--- - 7. QUESTS					
--- - 8. PROFESSIONS				
--- - 9. SPELLS			 		
--- - 10. GAMEOBJECTS	
--- - 11. CLEANUP TOOLS	
+-- - 5. VENDORS 
+-- - 6. FORBIDDEN CREATURES			
+-- - 7. CREATURES	
+-- - 8. FORBIDDEN QUESTS			
+-- - 9. QUESTS					
+-- - 10. PROFESSIONS				
+-- - 11. SPELLS			 		
+-- - 12. GAMEOBJECTS	
+-- - 13. CLEANUP TOOLS	
 
 -- * ENCOUNTER
 
@@ -9945,16 +9947,38 @@ INSERT INTO npc_vendor VALUE (12795, 17623, 0, 0);
 INSERT INTO npc_vendor VALUE (12795, 17624, 0, 0);
 INSERT INTO npc_vendor VALUE (12795, 17625, 0, 0);
 		
--- * CREATURES
+-- * FORBIDDEN CREATURES
 
--- Disable [Azuregos and Kazzak till Pacth 1.3
-REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (6109, 12397);
--- Disable Quest NPCs (proper description is needed)
-REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (15189, 15190, 15181, 15183, 15270, 15194, 15070, 14921);
--- Remove post-1.4 mounts related NPCs, need proper description
-REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (14559, 14547, 14602, 14553, 14550, 14541, 14544, 14558);
--- Remove cloth donation quartermasters till Patch 1.4
-REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (14727, 14726, 14728, 14729, 14725, 14723, 14722, 14724);
+REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (
+6109,   -- Azuregos
+12397,   -- Lord Kazzak
+14541,   -- Swift Gray Wolf
+14544,   -- Swift Orange Raptor
+14547,   -- Swift White Ram
+14550,   -- Great Gray Kodo
+14553,   -- Swift Green Mechanostrider
+14558,   -- Purple Skeletal Warhorse
+14559,   -- Swift Palomino
+14602,   -- Swift Stormsaber
+14722,   -- Clavicus Knavingham
+14723,   -- Mistina Steelshield
+14724,   -- Bubulo Acerbus
+14725,   -- Raedon Duskstriker
+14726,   -- Rashona Straglash
+14727,   -- Vehena
+14728,   -- Rumstag Proudstrider
+14729,   -- Ralston Farnsley
+14921,   -- Rin'wosho the Trader
+15070,   -- Vinchaxa
+15181,   -- Commander Mar'alith
+15183,   -- Geologist Larksbane
+15189,   -- Beetix Ficklespragg
+15190,   -- Noggle Ficklespragg
+15194,   -- Hermit Ortell
+15270   -- Huum Wildmane
+);
+
+-- * CREATURES
 
 -- Pre-1.4 Stables
 -- Human
