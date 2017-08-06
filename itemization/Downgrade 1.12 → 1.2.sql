@@ -14,6 +14,38 @@ CREATE TABLE IF NOT EXISTS `forbidden_events` (entry mediumint PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS `forbidden_creatures` (entry mediumint PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS `forbidden_instances` (entry mediumint PRIMARY KEY);
 
+DROP TABLE IF EXISTS creature_loot_template_full;
+DROP TABLE IF EXISTS reference_loot_template_full; 
+DROP TABLE IF EXISTS disenchant_loot_template_full; 
+DROP TABLE IF EXISTS fishing_loot_template_full; 
+DROP TABLE IF EXISTS gameobject_loot_template_full;
+DROP TABLE IF EXISTS item_loot_template_full; 
+DROP TABLE IF EXISTS mail_loot_template_full;
+DROP TABLE IF EXISTS pickpocketing_loot_template_full;
+DROP TABLE IF EXISTS skinning_loot_template_full; 
+DROP TABLE IF EXISTS npc_vendor_full; 
+DROP TABLE IF EXISTS areatrigger_involvedrelation_full; 
+DROP TABLE IF EXISTS creature_involvedrelation_full; 
+DROP TABLE IF EXISTS creature_questrelation_full; 
+DROP TABLE IF EXISTS gameobject_involvedrelation_full; 
+DROP TABLE IF EXISTS gameobject_questrelation_full; 
+
+CREATE TABLE creature_loot_template_full LIKE creature_loot_template; INSERT creature_loot_template_full SELECT * FROM creature_loot_template;
+CREATE TABLE reference_loot_template_full LIKE reference_loot_template; INSERT reference_loot_template_full SELECT * FROM reference_loot_template;
+CREATE TABLE disenchant_loot_template_full LIKE disenchant_loot_template; INSERT disenchant_loot_template_full SELECT * FROM disenchant_loot_template;
+CREATE TABLE fishing_loot_template_full LIKE fishing_loot_template; INSERT fishing_loot_template_full SELECT * FROM fishing_loot_template;
+CREATE TABLE gameobject_loot_template_full LIKE gameobject_loot_template; INSERT gameobject_loot_template_full SELECT * FROM gameobject_loot_template;
+CREATE TABLE item_loot_template_full LIKE item_loot_template; INSERT item_loot_template_full SELECT * FROM item_loot_template;
+CREATE TABLE mail_loot_template_full LIKE mail_loot_template; INSERT mail_loot_template_full SELECT * FROM mail_loot_template;
+CREATE TABLE pickpocketing_loot_template_full LIKE pickpocketing_loot_template; INSERT pickpocketing_loot_template_full SELECT * FROM pickpocketing_loot_template;
+CREATE TABLE skinning_loot_template_full LIKE skinning_loot_template; INSERT skinning_loot_template_full SELECT * FROM skinning_loot_template;
+CREATE TABLE npc_vendor_full LIKE npc_vendor; INSERT npc_vendor_full SELECT * FROM npc_vendor;
+CREATE TABLE areatrigger_involvedrelation_full LIKE areatrigger_involvedrelation; INSERT areatrigger_involvedrelation_full SELECT * FROM areatrigger_involvedrelation;
+CREATE TABLE creature_involvedrelation_full LIKE creature_involvedrelation; INSERT creature_involvedrelation_full SELECT * FROM creature_involvedrelation;
+CREATE TABLE creature_questrelation_full LIKE creature_questrelation; INSERT creature_questrelation_full SELECT * FROM creature_questrelation;
+CREATE TABLE gameobject_involvedrelation_full LIKE gameobject_involvedrelation; INSERT gameobject_involvedrelation_full SELECT * FROM gameobject_involvedrelation;
+CREATE TABLE gameobject_questrelation_full LIKE gameobject_questrelation; INSERT gameobject_questrelation_full SELECT * FROM gameobject_questrelation;
+
 -- * INDEX
 -- - 1.  FORBIDDEN ENCOUNTER				 
 -- - 2.  FORBIDDEN EVENTS 					          
