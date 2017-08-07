@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 
 -- * NEW ENCOUNTER	
 
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 429; -- Dire Maul 1.3
+UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1; -- Alterac Valley (Patch 1.5)
 
 
 -- * NEW EVENTS 	
@@ -62,8 +62,10 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (1
 	
 -- * NEW QUESTS	
 
-REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (1000
-
+REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
+1318,   -- Unfinished Gordok Business
+7562,   -- Mor'zul Bloodbringer
+7638,   -- Lord Grayson Shadowbreaker
 );
 
 -- * QUEST CHANGES	

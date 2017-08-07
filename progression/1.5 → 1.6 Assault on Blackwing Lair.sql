@@ -27,8 +27,7 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 
 -- * NEW ENCOUNTER	
 
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 429; -- Dire Maul 1.3
-
+UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 469; -- Blackwing Lair 1.6
 
 -- * NEW EVENTS 	
 

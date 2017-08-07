@@ -27,8 +27,7 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 
 -- * NEW ENCOUNTER	
 
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 429; -- Dire Maul 1.3
-
+UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 533;  -- Naxxramas 1.12
 
 -- * NEW EVENTS 	
 
@@ -62,7 +61,8 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (1
 	
 -- * NEW QUESTS	
 
-REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (1000
+REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
+
 
 );
 

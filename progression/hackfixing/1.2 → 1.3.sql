@@ -1,22 +1,3 @@
--- [1.3 → 1.4*1.5] 
-
--- * INDEX
--- - 1. ENCOUNTER				 
--- - 2. EVENTS 					          
--- - 3. FORBIDDEN ITEMS 		  
--- - 4. ITEMS AND LOOT		 	      
--- - 5. VENDORS 				
--- - 6. CREATURES				
--- - 7. QUESTS					
--- - 8. PROFESSIONS				
--- - 9. SPELLS			 		
--- - 10. GAMEOBJECTS	
--- - 11. CLEANUP TOOLS		
-
--- Enable Alterac Valley 
-
-UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1; 
-
 -- Upgrade T1/T2 sets to 1.5 stats
 
 INSERT INTO item_template(entry, stat_type1, stat_value1, stat_type2, stat_value2, stat_type3, stat_value3, stat_type4, stat_value4, stat_type5, stat_value5, stat_type6, stat_value6, armor, fire_res, nature_res, frost_res, shadow_res, arcane_res, spellid_1, spelltrigger_1, spellid_2, spelltrigger_2, spellid_3, spelltrigger_3) VALUES

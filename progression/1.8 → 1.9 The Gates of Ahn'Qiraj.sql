@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 
 -- * NEW ENCOUNTER	
 
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 429; -- Dire Maul 1.3
-
+UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 531; -- AQ40 (Temple of Ahn'Qiraj) 1.9
+UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 509; -- AQ20 (Ruins of Ahn'Qiraj) 1.9
 
 -- * NEW EVENTS 	
 
@@ -38,8 +38,8 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (1000
 
 -- * NEW ITEMS 	
 
-REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (1000
-
+REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
+20040,   -- Plans: Dark Iron Boots
 );
  
 -- * ITEM STATS | Items changed: 

@@ -18,27 +18,34 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 -- - 5.  LOOT TABLES	 	      
 -- - 6.  VENDORS 
 -- - 7.  NEW CREATURES			
--- - 8.  CREATURES	
--- - 9.  NEW QUESTS			
--- - 10. QUEST CHANGES					
--- - 11. PROFESSIONS
--- - 12. NEW SPELLS				
--- - 15. NEW GAMEOBJECTS	
+-- - 8.  NEW QUESTS			
+-- - 9.  QUEST CHANGES					
+-- - 10. PROFESSIONS
+-- - 11. NEW SPELLS				
+-- - 12. NEW GAMEOBJECTS	
+-- - 13. RESTORATION TOOLS
 
 -- * NEW ENCOUNTER	
 
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 429; -- Dire Maul 1.3
-
+UPDATE `areatrigger_teleport` SET `required_level` = 45 WHERE `target_map` = 429; -- Dire Maul 1.3
 
 -- * NEW EVENTS 	
 
-REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (1000
-
+REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
+35,   -- The Maul: Mushgog
+36,   -- The Maul: Skarr the Unbreakable
+37,   -- The Maul: Razza
+42,   -- The Maul, Grininlix /yell Mushgog
+43,   -- The Maul, Grininlix /yell Skarr the Unbreakable
+44,   -- The Maul, Grininlix /yell The Razza
+156,  -- DM release : Recipes and misc item
+159,  -- DM Release : Cloth turning NPC
+161,  -- Patch 1.3
 );
 
 -- * NEW ITEMS 	
 
-REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (1000
+REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 
 );
  
@@ -54,15 +61,20 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (1000
 -- * NEW CREATURES
 
 REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (1000
-
+6109,    -- Azuregos
+12397,   -- Lord Kazzak
 );
-		
--- * CREATURES
 
-	
 -- * NEW QUESTS	
 
-REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (1000
+REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
+5526,   -- Shards of the Felvine
+7877,   -- The Treasure of the Shen'dralar	
+7499,   -- Codex of Defense
+7500,   -- The Arcanist's Cookbook
+7500,   -- The Arcanist's Cookbook
+7501,   -- The Light and How To Swing It
+7506,   -- The Emerald Dream...
 
 );
 
@@ -77,6 +89,8 @@ REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (1000
 DELETE FROM spell_disabled WHERE entry IN (1000);
 			
 -- * NEW GAMEOBJECTS	
+
+REPLACE INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (179517, 7877);   -- Add involvedrelation for Treasure of Shen'dralar
 
 -- * RESTORATION TOOLS
 
@@ -95,6 +109,6 @@ REPLACE INTO npc_vendor SELECT * FROM npc_vendor_full WHERE item IN (SELECT entr
 
 UPDATE `quest_template` SET `Method` = (`Method` | 2) WHERE `entry` IN (SELECT * FROM `new_quests`);
 
-UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 0) WHERE id IN (SELECT entry FROM new_creatures);
+UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 1) WHERE id IN (SELECT entry FROM new_creatures);
 
 UPDATE `game_event` SET `disabled` = (`disabled` | 0) WHERE entry IN (SELECT entry FROM new_events);

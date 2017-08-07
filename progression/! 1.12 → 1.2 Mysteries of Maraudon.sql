@@ -60,7 +60,7 @@ CREATE TABLE gameobject_questrelation_full LIKE gameobject_questrelation; INSERT
 -- - 11. PROFESSIONS
 -- - 12. FORBIDDEN SPELLS				
 -- - 13. SPELLS			 		
--- - 14. GAMEOBJECTS	
+-- - 14. FORBIDDEN GAMEOBJECTS	
 -- - 15. CLEANUP TOOLS	
 
 -- * FORBIDDEN ENCOUNTER
@@ -4752,7 +4752,7 @@ INSERT INTO npc_vendor VALUE (12795, 17625, 0, 0);
 -- * FORBIDDEN CREATURES
 
 REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry IN (
-6109,   -- Azuregos
+6109,    -- Azuregos
 12397,   -- Lord Kazzak
 14541,   -- Swift Gray Wolf
 14544,   -- Swift Orange Raptor
@@ -4777,7 +4777,7 @@ REPLACE INTO forbidden_creatures SELECT entry FROM creature_template WHERE entry
 15189,   -- Beetix Ficklespragg
 15190,   -- Noggle Ficklespragg
 15194,   -- Hermit Ortell
-15270   -- Huum Wildmane
+15270    -- Huum Wildmane
 );
 
 -- * CREATURES
@@ -6033,10 +6033,14 @@ REPLACE INTO `spell_mod` (`Id`, `AttributesEx3`, `Comment`) VALUE
 (24417, 1048576, 'Sheen of Zanza - persist through death (before 1.12)'),
 (24383, 1048576, 'Swiftness of Zanza - persist through death (before 1.12)');
 
--- * GAMEOBJECTS
+-- * FORBIDDEN GAMEOBJECTS
 
--- GO "Sothos and Jarien's Heirlooms" Has Been Removed / Need to SET ModelID to somethin invisible instead but not delete.
-DELETE FROM `gameobject` WHERE `id` = 181083;
+UPDATE `gameobject` SET `spawnFlags` =`spawnFlags` | 2 WHERE `id` IN (
+181083,    -- Sothos and Jarien's Heirlooms
+179674,    -- Bell of Dethmoora
+179673,    -- Doomsday Candle
+179672     -- Wheel of the Black March
+);
 
 -- * CLEANUP TOOLS
 

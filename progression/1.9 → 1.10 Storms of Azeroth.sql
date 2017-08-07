@@ -11,24 +11,18 @@ CREATE TABLE IF NOT EXISTS `new_events` (entry mediumint PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 
 -- * INDEX
--- - 1.  NEW ENCOUNTER				 
--- - 2.  NEW EVENTS 					          
--- - 3.  NEW ITEMS 		  
--- - 4.  ITEM STATS	
--- - 5.  LOOT TABLES	 	      
--- - 6.  VENDORS 
--- - 7.  NEW CREATURES			
--- - 8.  CREATURES	
--- - 9.  NEW QUESTS			
--- - 10. QUEST CHANGES					
--- - 11. PROFESSIONS
--- - 12. NEW SPELLS				
--- - 15. NEW GAMEOBJECTS	
-
--- * NEW ENCOUNTER	
-
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 429; -- Dire Maul 1.3
-
+-- - 1.  NEW EVENTS 					          
+-- - 2.  NEW ITEMS 		  
+-- - 3.  ITEM STATS	
+-- - 4.  LOOT TABLES	 	      
+-- - 5.  VENDORS 
+-- - 6.  NEW CREATURES			
+-- - 7.  CREATURES	
+-- - 8.  NEW QUESTS			
+-- - 9. QUEST CHANGES					
+-- - 10. PROFESSIONS
+-- - 11. NEW SPELLS				
+-- - 12. NEW GAMEOBJECTS	
 
 -- * NEW EVENTS 	
 
