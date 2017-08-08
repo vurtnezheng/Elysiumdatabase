@@ -1,5 +1,7 @@
 # Elysium Project - Database
+Elysium's database repository for World of Waracraft (1.12), compatible with the [Elysium server core](https://github.com/elysium-project/server) (based on Mangos). This repository includes the full 1.12 database and  **progression patches** for 1.2 - 1.12, which, when applied, can simulate WoW as if it was at this state.
 
+## Instructions
 There is now a new progression patcher for the database, which should be used from patch 1.7 onwards, for Elysium PvP, and we need more contributors and knowledgeable people to finish the research.
 
 We no longer need to move patches backwards from Patch 1.12 to Patch 1.2, or keep moving them around.
@@ -19,6 +21,7 @@ You can add new items and quests which were added in each patch by simply fill
 * *NEW EVENTS*
 * *NEW CREATURES*
 
+All related information (loot tables, quest relations) will be restored automatically. Be aware that if you need to change an item's stats, you need do it in the *ADDITIONAL FIXES* section, so it will overwrite the imported 1.12 data.
 
 Before you add a new item, quest, creature, event etc. make sure that it's been disabled in the initial downgrading patch. If not, the item is still available in game and you don't need to add it. 
 
