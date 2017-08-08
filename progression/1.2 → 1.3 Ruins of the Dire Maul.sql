@@ -13,17 +13,14 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 -- * INDEX
 -- - 1.  NEW ENCOUNTER				 
 -- - 2.  NEW EVENTS 					          
--- - 3.  NEW ITEMS 		  
--- - 4.  ITEM STATS	
--- - 5.  LOOT TABLES	 	      
--- - 6.  VENDORS 
--- - 7.  NEW CREATURES			
--- - 8.  NEW QUESTS			
--- - 9.  QUEST CHANGES					
--- - 10. PROFESSIONS
--- - 11. NEW SPELLS				
--- - 12. NEW GAMEOBJECTS	
--- - 13. RESTORATION TOOLS
+-- - 3.  NEW ITEMS 	
+-- - 4.  NEW CREATURES			
+-- - 5.  NEW QUESTS	
+-- - 6.  NEW SPELLS				
+-- - 7.  NEW GAMEOBJECTS
+-- - 8.  RESTORATION TOOLS	  
+-- - 9.  ITEM STATS CHANGES
+-- - 10. ADDITIONAL FIXES    
 
 -- * NEW ENCOUNTER	
 
@@ -46,21 +43,11 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
-
 );
- 
--- * ITEM STATS | Items changed: 
-
-	
--- * LOOT TABLES
-
-
--- * VENDORS 
-
 
 -- * NEW CREATURES
 
-REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (1000
+REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 6109,    -- Azuregos
 12397,   -- Lord Kazzak
 );
@@ -72,22 +59,14 @@ REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
 7877,   -- The Treasure of the Shen'dralar	
 7499,   -- Codex of Defense
 7500,   -- The Arcanist's Cookbook
-7500,   -- The Arcanist's Cookbook
 7501,   -- The Light and How To Swing It
 7506,   -- The Emerald Dream...
-
 );
-
--- * QUEST CHANGES	
-
-
--- * PROFESSIONS
-
 
 -- * NEW SPELLS	
 
 DELETE FROM spell_disabled WHERE entry IN (1000);
-			
+
 -- * NEW GAMEOBJECTS	
 
 REPLACE INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (179517, 7877);   -- Add involvedrelation for Treasure of Shen'dralar
@@ -112,3 +91,10 @@ UPDATE `quest_template` SET `Method` = (`Method` | 2) WHERE `entry` IN (SELECT *
 UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 1) WHERE id IN (SELECT entry FROM new_creatures);
 
 UPDATE `game_event` SET `disabled` = (`disabled` | 0) WHERE entry IN (SELECT entry FROM new_events);
+ 
+-- * ITEM STATS | Items changed: 
+
+-- * ADDITIONAL FIXES			
+
+
+
