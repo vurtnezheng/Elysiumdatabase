@@ -122,7 +122,6 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 6833,    -- White Tuxedo Shirt
 6836,    -- Dress Shoes
 7809,    -- Easter Dress
-11703,   -- Stonewall Girdle
 12422,   -- Imperial Plate Chest
 12424,   -- Imperial Plate Belt
 12425,   -- Imperial Plate Bracers

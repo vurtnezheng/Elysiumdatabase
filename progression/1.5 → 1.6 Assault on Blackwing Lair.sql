@@ -227,6 +227,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 19583,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19584,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19587,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19589,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19590,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19595,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19596,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)

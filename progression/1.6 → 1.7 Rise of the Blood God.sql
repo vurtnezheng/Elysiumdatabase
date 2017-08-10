@@ -351,6 +351,30 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 20215,    -- Belt of Shriveled Heads | ZG Quest
 20216,    -- Belt of Preserved Heads | ZG Quest
 20217,    -- Belt of Tiny Heads | ZG Quest
+20038,    -- Mandokir's Sting | ZG Loot
+20039,    -- Dark Iron Boots | New Thorium Brotherhood Reward (wowwiki, github)
+20040,    -- Plans: Dark Iron Boots | New Thorium Brotherhood Reward (wowwiki, github)
+20041,    -- Highlander's Plate Girdle | AB rep rewards (originally patch 1.7)
+20042,    -- Highlander's Lamellar Girdle | AB rep rewards (originally patch 1.7)
+20043,    -- Highlander's Chain Girdle | AB rep rewards (originally patch 1.7)
+20044,    -- Highlander's Mail Girdle | AB rep rewards (originally patch 1.7)
+20045,    -- Highlander's Leather Girdle | AB rep rewards (originally patch 1.7)
+20046,    -- Highlander's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20047,    -- Highlander's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20048,    -- Highlander's Plate Greaves | AB rep rewards (originally patch 1.7)
+20049,    -- Highlander's Lamellar Greaves | AB rep rewards (originally patch 1.7)
+20050,    -- Highlander's Chain Greaves | AB rep rewards (originally patch 1.7)
+20051,    -- Highlander's Mail Greaves | AB rep rewards (originally patch 1.7)
+20052,    -- Highlander's Leather Boots | AB rep rewards (originally patch 1.7)
+20053,    -- Highlander's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20054,    -- Highlander's Cloth Boots | AB rep rewards (originally patch 1.7)
+20055,    -- Highlander's Chain Pauldrons | AB rep rewards (originally patch 1.7)
+20056,    -- Highlander's Mail Pauldrons | AB rep rewards (originally patch 1.7)
+20057,    -- Highlander's Plate Spaulders | AB rep rewards (originally patch 1.7)
+20058,    -- Highlander's Lamellar Spaulders | AB rep rewards (originally patch 1.7)
+20059,    -- Highlander's Leather Shoulders | AB rep rewards (originally patch 1.7)
+20060,    -- Highlander's Lizardhide Shoulders | AB rep rewards (originally patch 1.7)
+20061,    -- Highlander's Epaulets | AB rep rewards (originally patch 1.7)
 );
 	
 -- * NEW CREATURES

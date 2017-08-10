@@ -76,6 +76,25 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 18535,   -- Milli's Shield | Dire Maul Loot
 18536,   -- Milli's Lexicon | Dire Maul Loot
 18537,   -- Counterattack Lodestone | Dire Maul Loot
+18302,   -- Band of Vigor | Dire Maul Loot
+18305,   -- Breakwater Legguards | Dire Maul Loot
+18306,   -- Gloves of Shadowy Mist | Dire Maul Loot
+18313,   -- Helm of Awareness | Dire Maul Loot
+18326,   -- Razor Gauntlets | Dire Maul Loot
+18337,   -- Orphic Bracers | Dire Maul Loot (Random drop off 11480, 14399, 11483, and 11484 only)
+18343,   -- Petrified Band | Dire Maul Loot (Random drop off 11459, 14303, and 11458 only)
+18349,   -- Gauntlets of Accuracy | Dire Maul Loot
+18350,   -- Amplifying Cloak | Dire Maul Loot
+18352,   -- Petrified Bark Shield | Dire Maul Loot
+18373,   -- Chestplate of Tranquility | Dire Maul Loot
+18374,   -- Flamescarred Shoulders | Dire Maul Loot
+18377,   -- Quickdraw Gloves | Dire Maul Loot
+18378,   -- Silvermoon Leggings | Dire Maul Loot
+18381,   -- Evil Eye Pendant | Dire Maul Loot
+18383,   -- Force Imbued Gauntlets | Dire Maul Loot
+18384,   -- Bile-etched Spaulders | Dire Maul Loot
+18387,   -- Brightspark Gloves | Dire Maul Loot
+18388,   -- Stoneshatter | Dire Maul Loot
 );
 
 -- * NEW CREATURES
