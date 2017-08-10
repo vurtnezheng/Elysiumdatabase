@@ -1,5 +1,5 @@
-# Elysium Project - Database
-Elysium's database repository for World of Waracraft (1.12), compatible with the [Elysium server core](https://github.com/elysium-project/server) (based on Mangos). This repository includes the full 1.12 database and  **progression patches** for 1.2 - 1.12, which, when applied, can simulate WoW as if it was at this state.
+# Elysium Project — Progressive DB
+Elysium's database repository for World of Waracraft (1.12), compatible with the [Elysium server core](https://github.com/elysium-project/server) (based on Mangos). This repository includes the full 1.12 database and  **progression patches** for 1.2 → 1.12, which, when applied, can simulate WoW as if it was at this state.
 
 ## Instructions
 There is now a new progression patcher for the database, which should be used from patch 1.7 onwards, for Elysium PvP, and we need more contributors and knowledgeable people to finish the research.
@@ -27,13 +27,14 @@ Before you add a new item, quest, creature, event etc. make sure that it's bee
 
 Please note that queries regarding the restoration tool and clean up tools are extreamly slow. Please feel free to modify it. 
 
-Keep your backup table up to date by applying migrations from the *backup_tables_updates* and [migrations](https://github.com/elysium-project/server/tree/development/sql/migrations) from the server repository. 
+Keep your backup table up to date by applying migrations from the *[updates](https://github.com/elysium-project/database/tree/master/updates)* and [migrations](https://github.com/elysium-project/server/tree/development/sql/migrations) from the server repository. 
 
 It is now extreamly easy for people to contribute now, and this will save us a lot of time in the long run.
 
 ## Tools
 * [Item Template Editor (ITE)](https://github.com/elysium-project/database/tree/master/tools/item_template_editor): GUI to update items in the database. Generates SQL statements.
-* [Commentator](https://github.com/elysium-project/database/tree/master/tools/Commentator): Adds a comment, listing name and stats, above each altered item_template in a SQL file.
+* [Item Template Commentator](https://github.com/elysium-project/database/tree/master/tools/item_template_commentator): Adds a comment, listing name and stats, above each altered item_template in a SQL file.
+* [Commentator](https://github.com/elysium-project/database/tree/master/tools/Commentator): Converts all SQL comments to markdown. 
 
 ## License
 This project is licensed under the GNU GPL 3.0 License - see the [LICENSE](./LICENSE) file for details!

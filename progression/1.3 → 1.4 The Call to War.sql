@@ -32,6 +32,10 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
+12584,   -- Grand Marshal's Longsword | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)												
+15196,   -- Private's Tabard | Added with PvP Honor System (Originally patch 1.4)
+15198,   -- Knight's Colors | Added with PvP Honor System (Originally patch 1.4)
+15199,   -- Stone Guard's Herald | Added with PvP Honor System (Originally patch 1.4)
 16335,   -- Senior Sergeant's Insignia | Added with PvP Honor System (Originally patch 1.4)
 16345,   -- High Warlord's Blade | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
 16369,   -- Knight-Lieutenant's Silk Boots | Added with PvP Honor System (NOTE: Originally patch 1.4, changed to level 60 pvp set in 1.11; different item IDs)

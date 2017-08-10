@@ -73,7 +73,9 @@ REPLACE INTO forbidden_instances SELECT entry FROM areatrigger_teleport WHERE ta
 309,   -- Zul'Gurub 1.7
 469    -- Blackwing Lair 1.6
 );
+UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 2; -- Warsong Gulch (Patch 1.5)
 UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 1; -- Alterac Valley (Patch 1.5)
+UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 3; -- Arathi Basin (Patch 1.7)
 
 -- * FORBIDDEN EVENTS 
 
