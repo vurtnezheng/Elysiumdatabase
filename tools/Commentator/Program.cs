@@ -31,9 +31,11 @@ namespace Commentator
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            var format = true;
+
             if (args.Length < 2)
             {
-                Console.WriteLine("Syntax: Commentator.exe <source file> <destination file>");
+                Console.WriteLine("Syntax: Commentator.exe <source file> <destination file> [-noformat]");
                 return;
             }
 
@@ -45,6 +47,11 @@ namespace Commentator
 
             if (File.Exists(args[1])) File.Delete(args[1]);
 
+            if (args.Length == 3 && args[2] == "-noformat")
+            {
+                format = false;
+            }
+
             Console.WriteLine("Commentator");
             Console.WriteLine("===========");
 
@@ -53,10 +60,17 @@ namespace Commentator
 
             foreach (var comment in comments)
             {
-                var formatted = FormatComment(comment);
-                result.Add(formatted[0]);
-                if (formatted[1] != "") result.Add(formatted[1]);
-                Console.WriteLine(formatted[0]);
+                Console.WriteLine(comment);
+                if (format)
+                {
+                    var formatted = FormatComment(comment);
+                    result.Add(formatted[0]);
+                    if (formatted[1] != "") result.Add(formatted[1]);
+                }
+                else
+                {
+                    result.Add(comment);
+                }
             }
 
             // Saves to file
