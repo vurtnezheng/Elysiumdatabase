@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 -- * NEW ENCOUNTER	
 
 UPDATE `battleground_template` SET `MinLvl` = 51, `MaxLvl` = 60 WHERE `id` = 1; -- Alterac Valley (Patch 1.5)
+UPDATE `battleground_template` SET `MinLvl` = 10, `MaxLvl` = 60 WHERE `id` = 1; -- Warsong Gulch (Patch 1.5)
 
 -- * NEW EVENTS 	
 
