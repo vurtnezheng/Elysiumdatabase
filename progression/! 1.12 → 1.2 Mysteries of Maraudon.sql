@@ -118,20 +118,10 @@ REPLACE INTO forbidden_events SELECT entry FROM game_event WHERE entry IN (
 -- * FORBIDDEN ITEMS 
 
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
-1215,   -- Support Girdle
-1677,   -- Drake-scale Vest
-2715,   -- Monster - Item, Lantern - Round
-2899,   -- Wendigo Collar
-5975,   -- Ruffian Belt
-6118,   -- Squire's Pants
-6119,   -- Neophyte's Robe
-6129,   -- Acolyte's Robe
-6136,   -- Thug Shirt
-6833,   -- White Tuxedo Shirt
-6836,   -- Dress Shoes
-7809,   -- Easter Dress
-10768,   -- Boar Champion's Belt
-11662,   -- Ban'thok Sash
+1215,    -- Support Girdle
+6833,    -- White Tuxedo Shirt
+6836,    -- Dress Shoes
+7809,    -- Easter Dress
 11703,   -- Stonewall Girdle
 12422,   -- Imperial Plate Chest
 12424,   -- Imperial Plate Belt

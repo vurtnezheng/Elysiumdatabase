@@ -43,6 +43,39 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
+6833,    -- White Tuxedo Shirt
+18309,   -- Gloves of Restoration | Dire Maul Loot
+18315,   -- Ring of Demonic Potency | Dire Maul Loot
+18323,   -- Satyr's Bow | Dire Maul Loot
+18325,   -- Felhide Cap | Dire Maul Loot
+18327,   -- Whipvine Cord | Dire Maul Loot
+18339,   -- Eidolon Cloak | Dire Maul Loot
+18340,   -- Eidolon Talisman | Dire Maul Loot
+18368,   -- Gordok's Gloves | Dire Maul Loot
+18369,   -- Gordok's Handwraps | Dire Maul Loot
+18371,   -- Mindtap Talisman | Dire Maul Loot
+18380,   -- Eldritch Reinforced Legplates | Dire Maul Loot
+18386,   -- Padre's Trousers | Dire Maul Loot
+18393,   -- Warpwood Binding | Dire Maul Loot
+18395,   -- Emerald Flame Ring | Dire Maul Loot
+18464,   -- Gordok Nose Ring | Dire Maul Loot
+18466,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18468,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18470,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18472,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18475,   -- Oddly Magical Belt | Dire Maul Loot
+18485,   -- Observer's Shield | Dire Maul Loot
+18490,   -- Insightful Hood | Dire Maul Loot
+18494,   -- Denwatcher's Shoulders | Dire Maul Loot
+18505,   -- Mugger's Belt | Dire Maul Loot
+18510,   -- Hide of the Wild | Dire Maul Loot
+18518,   -- Pattern: Hide of the Wild | Dire Maul Loot
+18522,   -- Band of the Ogre King | Dire Maul Loot
+18524,   -- Leggings of Destruction | Dire Maul Loot
+18528,   -- Cyclone Spaulders | Dire Maul Loot
+18535,   -- Milli's Shield | Dire Maul Loot
+18536,   -- Milli's Lexicon | Dire Maul Loot
+18537,   -- Counterattack Lodestone | Dire Maul Loot
 );
 
 -- * NEW CREATURES

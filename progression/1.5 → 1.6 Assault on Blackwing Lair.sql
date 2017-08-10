@@ -220,6 +220,17 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 19571,   -- Lorekeeper's Staff | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19572,   -- Lorekeeper's Staff | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19573,   -- Lorekeeper's Staff | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19578,    -- Berserker Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19580,    -- Berserker Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19581,    -- Berserker Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19582,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19583,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19584,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19587,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19590,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19595,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19596,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19597,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 );
 
 -- * NEW CREATURES

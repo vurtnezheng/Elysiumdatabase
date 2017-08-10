@@ -32,13 +32,25 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
-20382,   -- Pattern: Dreamscale Breastplate
-20506,   -- Pattern: Spitfire Bracers
-20508,   -- Pattern: Spitfire Breastplate
-20507,   -- Pattern: Spitfire Gauntlets
-20509,   -- Pattern: Sandstalker Bracers
-20511,   -- Pattern: Sandstalker Breastplate
-20510    -- Pattern: Sandstalker Gauntlets
+20406,    -- Twilight Cultist Mantle | Silithus windstone revamp
+20407,    -- Twilight Cultist Robe | Silithus windstone revamp
+20408,    -- Twilight Cultist Cowl | Silithus windstone revamp
+20476,    -- Sandstalker Bracers | Silithus quest revamp
+20477,    -- Sandstalker Gauntlets | Silithus quest revamp
+20478,    -- Sandstalker Breastplate | Silithus quest revamp
+20479,    -- Spitfire Breastplate | Silithus quest revamp
+20480,    -- Spitfire Gauntlets | Silithus quest revamp
+20481,    -- Spitfire Bracers | Silithus quest revamp
+20506,    -- Pattern: Spitfire Bracers | Silithus quest revamp
+20507,    -- Pattern: Spitfire Gauntlets | Silithus quest revamp
+20508,    -- Pattern: Spitfire Breastplate | Silithus quest revamp
+20509,    -- Pattern: Sandstalker Bracers | Silithus quest revamp
+20510,    -- Pattern: Sandstalker Gauntlets | Silithus quest revamp
+20511,    -- Pattern: Sandstalker Breastplate | Silithus quest revamp
+20521,    -- Fury Visor | LVL 50 class quest (warrior), see 1.8 retail patch notes
+20682,    -- Elemental Focus Band | Silithus windstones
+20685,    -- Wavefront Necklace | Silithus windstones
+20688,    -- Earthen Guard | Silithus windstones
 );
  
 -- * NEW CREATURES

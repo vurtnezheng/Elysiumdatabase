@@ -38,367 +38,319 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (14, 15, 40,
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
-19574,   -- Strength of Mugamba
-19575,   -- Strength of Mugamba
-19576,   -- Strength of Mugamba
-19577,   -- Rage of Mugamba
-19578,   -- Berserker Bracers
-19579,   -- Heathen's Brand
-19580,   -- Berserker Bracers
-19581,   -- Berserker Bracers
-19582,   -- Windtalker's Wristguards
-19583,   -- Windtalker's Wristguards
-19584,   -- Windtalker's Wristguards
-19585,   -- Heathen's Brand
-19586,   -- Heathen's Brand
-19587,   -- Forest Stalker's Bracers
-19588,   -- Hero's Brand
-19589,   -- Forest Stalker's Bracers
-19590,   -- Forest Stalker's Bracers
-19591,   -- The Eye of Zuldazar
-19592,   -- The Eye of Zuldazar
-19593,   -- The Eye of Zuldazar
-19594,   -- The All-Seeing Eye of Zuldazar
-19595,   -- Dryad's Wrist Bindings
-19596,   -- Dryad's Wrist Bindings
-19597,   -- Dryad's Wrist Bindings
-19598,   -- Pebble of Kajaro
-19599,   -- Pebble of Kajaro
-19600,   -- Pebble of Kajaro
-19601,   -- Jewel of Kajaro
-19602,   -- Kezan's Taint
-19603,   -- Kezan's Taint
-19604,   -- Kezan's Taint
-19605,   -- Kezan's Unstoppable Taint
-19606,   -- Vision of Voodress
-19607,   -- Vision of Voodress
-19608,   -- Vision of Voodress
-19609,   -- Unmarred Vision of Voodress
-19610,   -- Enchanted South Seas Kelp
-19611,   -- Enchanted South Seas Kelp
-19612,   -- Enchanted South Seas Kelp
-19613,   -- Pristine Enchanted South Seas Kelp
-19614,   -- Zandalarian Shadow Talisman
-19615,   -- Zandalarian Shadow Talisman
-19616,   -- Zandalarian Shadow Talisman
-19617,   -- Zandalarian Shadow Mastery Talisman
-19618,   -- Maelstrom's Tendril
-19619,   -- Maelstrom's Tendril
-19620,   -- Maelstrom's Tendril
-19621,   -- Maelstrom's Wrath
-19682,   -- Bloodvine Vest
-19683,   -- Bloodvine Leggings
-19684,   -- Bloodvine Boots
-19685,   -- Primal Batskin Jerkin
-19686,   -- Primal Batskin Gloves
-19687,   -- Primal Batskin Bracers
-19688,   -- Blood Tiger Breastplate
-19689,   -- Blood Tiger Shoulders
-19690,   -- Bloodsoul Breastplate
-19691,   -- Bloodsoul Shoulders
-19692,   -- Bloodsoul Gauntlets
-19693,   -- Darksoul Breastplate
-19694,   -- Darksoul Leggings
-19695,   -- Darksoul Shoulders
-19697,   -- Bounty of the Harvest
-19760,   -- Overlord's Embrace
-19764,   -- Pattern: Bloodvine Vest
-19765,   -- Pattern: Bloodvine Leggings
-19766,   -- Pattern: Bloodvine Boots
-19769,   -- Pattern: Primal Batskin Jerkin
-19770,   -- Pattern: Primal Batskin Gloves
-19771,   -- Pattern: Primal Batskin Bracers
-19772,   -- Pattern: Blood Tiger Breastplate
-19773,   -- Pattern: Blood Tiger Shoulders
-19776,   -- Plans: Bloodsoul Breastplate
-19777,   -- Plans: Bloodsoul Shoulders
-19778,   -- Plans: Bloodsoul Gauntlets
-19779,   -- Plans: Darksoul Breastplate
-19780,   -- Plans: Darksoul Leggings
-19781,   -- Plans: Darksoul Shoulders
-19808,   -- Rockhide Strongfish
-19812,   -- Rune of the Dawn
-19822,   -- Zandalar Vindicator's Breastplate
-19823,   -- Zandalar Vindicator's Belt
-19824,   -- Zandalar Vindicator's Armguards
-19825,   -- Zandalar Freethinker's Breastplate
-19826,   -- Zandalar Freethinker's Belt
-19827,   -- Zandalar Freethinker's Armguards
-19828,   -- Zandalar Augur's Hauberk
-19829,   -- Zandalar Augur's Belt
-19830,   -- Zandalar Augur's Bracers
-19831,   -- Zandalar Predator's Mantle
-19832,   -- Zandalar Predator's Belt
-19833,   -- Zandalar Predator's Bracers
-19834,   -- Zandalar Madcap's Tunic
-19835,   -- Zandalar Madcap's Mantle
-19836,   -- Zandalar Madcap's Bracers
-19838,   -- Zandalar Haruspex's Tunic
-19839,   -- Zandalar Haruspex's Belt
-19840,   -- Zandalar Haruspex's Bracers
-19841,   -- Zandalar Confessor's Mantle
-19842,   -- Zandalar Confessor's Bindings
-19843,   -- Zandalar Confessor's Wraps
-19845,   -- Zandalar Illusionist's Mantle
-19846,   -- Zandalar Illusionist's Wraps
-19848,   -- Zandalar Demoniac's Wraps
-19849,   -- Zandalar Demoniac's Mantle
-19852,   -- Ancient Hakkari Manslayer
-19853,   -- Gurubashi Dwarf Destroyer
-19854,   -- Zin'rokh, Destroyer of Worlds
-19855,   -- Bloodsoaked Legplates
-19856,   -- The Eye of Hakkar
-19857,   -- Cloak of Consumption
-19859,   -- Fang of the Faceless
-19861,   -- Touch of Chaos
-19862,   -- Aegis of the Blood God
-19863,   -- Primalist's Seal
-19864,   -- Bloodcaller
-19865,   -- Warblade of the Hakkari
-19866,   -- Warblade of the Hakkari
-19867,   -- Bloodlord's Defender
-19869,   -- Blooddrenched Grips
-19870,   -- Hakkari Loa Cloak
-19871,   -- Talisman of Protection
-19873,   -- Overlord's Crimson Band
-19874,   -- Halberd of Smiting
-19875,   -- Bloodstained Coif
-19876,   -- Soul Corrupter's Necklace
-19877,   -- Animist's Leggings
-19878,   -- Bloodsoaked Pauldrons
-19879,   -- Alex's Test Beatdown Staff
-19884,   -- Jin'do's Judgement
-19885,   -- Jin'do's Evil Eye
-19886,   -- The Hexxer's Cover
-19887,   -- Bloodstained Legplates
-19888,   -- Overlord's Embrace
-19889,   -- Blooddrenched Leggings
-19890,   -- Jin'do's Hexxer
-19891,   -- Jin'do's Bag of Whammies
-19892,   -- Animist's Boots
-19893,   -- Zanzil's Seal
-19894,   -- Bloodsoaked Gauntlets
-19895,   -- Bloodtinged Kilt
-19896,   -- Thekal's Grasp
-19897,   -- Betrayer's Boots
-19898,   -- Seal of Jin
-19899,   -- Ritualistic Legguards
-19900,   -- Zulian Stone Axe
-19901,   -- Zulian Slicer
-19903,   -- Fang of Venoxis
-19904,   -- Runed Bloodstained Hauberk
-19905,   -- Zanzil's Band
-19906,   -- Blooddrenched Footpads
-19907,   -- Zulian Tigerhide Cloak
-19908,   -- Sceptre of Smiting
-19909,   -- Will of Arlokk
-19910,   -- Arlokk's Grasp
-19912,   -- Overlord's Onyx Band
-19913,   -- Bloodsoaked Greaves
-19915,   -- Zulian Defender
-19918,   -- Jeklik's Crusher
-19919,   -- Bloodstained Greaves
-19920,   -- Primalist's Band
-19922,   -- Arlokk's Hoodoo Stick
-19923,   -- Jeklik's Opaline Talisman
-19925,   -- Band of Jin
-19927,   -- Mar'li's Touch
-19928,   -- Animist's Spaulders
-19929,   -- Bloodtinged Gloves
-19930,   -- Mar'li's Eye
-19944,   -- Nat Pagle's Fish Terminator
-19945,   -- Foror's Eyepatch
-19946,   -- Tigule's Harpoon
-19947,   -- Nat Pagle's Broken Reel
-19948,   -- Zandalarian Hero Badge
-19949,   -- Zandalarian Hero Medallion
-19950,   -- Zandalarian Hero Charm
-19951,   -- Gri'lek's Charm of Might
-19952,   -- Gri'lek's Charm of Valor
-19953,   -- Renataki's Charm of Beasts
-19954,   -- Renataki's Charm of Trickery
-19955,   -- Wushoolay's Charm of Nature
-19956,   -- Wushoolay's Charm of Spirits
-19957,   -- Hazza'rah's Charm of Destruction
-19958,   -- Hazza'rah's Charm of Healing
-19959,   -- Hazza'rah's Charm of Magic
-19961,   -- Gri'lek's Grinder
-19962,   -- Gri'lek's Carver
-19963,   -- Pitchfork of Madness
-19964,   -- Renataki's Soul Conduit
-19965,   -- Wushoolay's Poker
-19967,   -- Thoughtblighter
-19968,   -- Fiery Retributer
-19969,   -- Nat Pagle's Extreme Anglin' Boots
-19970,   -- Arcanite Fishing Pole
-19972,   -- Lucky Fishing Hat
-19979,   -- Hook of the Master Angler
-19982,   -- Duskbat Drape
-19984,   -- Ebon Mask
-19990,   -- Blessed Prayer Beads
-19991,   -- Devilsaur Eye
-19992,   -- Devilsaur Tooth
-19993,   -- Hoodoo Hunting Bow
-19998,   -- Bloodvine Lens
-19999,   -- Bloodvine Goggles
-20000,   -- Schematic: Bloodvine Goggles
-20001,   -- Schematic: Bloodvine Lens
-20006,   -- Circle of Hope
-20032,   -- Flowing Ritual Robes
-20033,   -- Zandalar Demoniac's Robe
-20034,   -- Zandalar Illusionist's Robe
-20035,   -- Glacial Spike
-20036,   -- Fire Ruby
-20037,   -- Arcane Crystal Pendant
-20038,   -- Mandokir's Sting
-20039,   -- Dark Iron Boots
-20040,   -- Plans: Dark Iron Boots
-20041,   -- Highlander's Plate Girdle
-20042,   -- Highlander's Lamellar Girdle
-20043,   -- Highlander's Chain Girdle
-20044,   -- Highlander's Mail Girdle
-20045,   -- Highlander's Leather Girdle
-20046,   -- Highlander's Lizardhide Girdle
-20047,   -- Highlander's Cloth Girdle
-20048,   -- Highlander's Plate Greaves
-20049,   -- Highlander's Lamellar Greaves
-20050,   -- Highlander's Chain Greaves
-20051,   -- Highlander's Mail Greaves
-20052,   -- Highlander's Leather Boots
-20053,   -- Highlander's Lizardhide Boots
-20054,   -- Highlander's Cloth Boots
-20055,   -- Highlander's Chain Pauldrons
-20056,   -- Highlander's Mail Pauldrons
-20057,   -- Highlander's Plate Spaulders
-20058,   -- Highlander's Lamellar Spaulders
-20059,   -- Highlander's Leather Shoulders
-20060,   -- Highlander's Lizardhide Shoulders
-20061,   -- Highlander's Epaulets
-20068,   -- Deathguard's Cloak
-20069,   -- Ironbark Staff
-20070,   -- Sageclaw
-20071,   -- Talisman of Arathor
-20072,   -- Defiler's Talisman
-20073,   -- Cloak of the Honor Guard
-20082,   -- Woestave
-20083,   -- Hunting Spear
-20086,   -- Dusksteel Throwing Knife
-20088,   -- Highlander's Chain Girdle
-20089,   -- Highlander's Chain Girdle
-20090,   -- Highlander's Chain Girdle
-20091,   -- Highlander's Chain Greaves
-20092,   -- Highlander's Chain Greaves
-20093,   -- Highlander's Chain Greaves
-20094,   -- Highlander's Cloth Boots
-20095,   -- Highlander's Cloth Boots
-20096,   -- Highlander's Cloth Boots
-20097,   -- Highlander's Cloth Girdle
-20098,   -- Highlander's Cloth Girdle
-20099,   -- Highlander's Cloth Girdle
-20100,   -- Highlander's Lizardhide Boots
-20101,   -- Highlander's Lizardhide Boots
-20102,   -- Highlander's Lizardhide Boots
-20103,   -- Highlander's Lizardhide Girdle
-20104,   -- Highlander's Lizardhide Girdle
-20105,   -- Highlander's Lizardhide Girdle
-20106,   -- Highlander's Lamellar Girdle
-20107,   -- Highlander's Lamellar Girdle
-20108,   -- Highlander's Lamellar Girdle
-20109,   -- Highlander's Lamellar Greaves
-20110,   -- Highlander's Lamellar Greaves
-20111,   -- Highlander's Lamellar Greaves
-20112,   -- Highlander's Leather Boots
-20113,   -- Highlander's Leather Boots
-20114,   -- Highlander's Leather Boots
-20115,   -- Highlander's Leather Girdle
-20116,   -- Highlander's Leather Girdle
-20117,   -- Highlander's Leather Girdle
-20124,   -- Highlander's Plate Girdle
-20125,   -- Highlander's Plate Girdle
-20126,   -- Highlander's Plate Girdle
-20127,   -- Highlander's Plate Greaves
-20128,   -- Highlander's Plate Greaves
-20129,   -- Highlander's Plate Greaves
-20130,   -- Diamond Flask
-20131,   -- Battle Tabard of the Defilers
-20132,   -- Arathor Battle Tabard
-20134,   -- Skyfury Helm
-20150,   -- Defiler's Chain Girdle
-20151,   -- Defiler's Chain Girdle
-20152,   -- Defiler's Chain Girdle
-20153,   -- Defiler's Chain Girdle
-20154,   -- Defiler's Chain Greaves
-20155,   -- Defiler's Chain Greaves
-20156,   -- Defiler's Chain Greaves
-20157,   -- Defiler's Chain Greaves
-20158,   -- Defiler's Chain Pauldrons
-20159,   -- Defiler's Cloth Boots
-20160,   -- Defiler's Cloth Boots
-20161,   -- Defiler's Cloth Boots
-20162,   -- Defiler's Cloth Boots
-20163,   -- Defiler's Cloth Girdle
-20164,   -- Defiler's Cloth Girdle
-20165,   -- Defiler's Cloth Girdle
-20166,   -- Defiler's Cloth Girdle
-20167,   -- Defiler's Lizardhide Boots
-20168,   -- Defiler's Lizardhide Boots
-20169,   -- Defiler's Lizardhide Boots
-20170,   -- Defiler's Lizardhide Boots
-20171,   -- Defiler's Lizardhide Girdle
-20172,   -- Defiler's Lizardhide Girdle
-20173,   -- Defiler's Lizardhide Girdle
-20174,   -- Defiler's Lizardhide Girdle
-20175,   -- Defiler's Lizardhide Shoulders
-20176,   -- Defiler's Epaulets
-20177,   -- Defiler's Lamellar Girdle
-20181,   -- Defiler's Lamellar Greaves
-20184,   -- Defiler's Lamellar Spaulders
-20186,   -- Defiler's Leather Boots
-20187,   -- Defiler's Leather Boots
-20188,   -- Defiler's Leather Boots
-20189,   -- Defiler's Leather Boots
-20190,   -- Defiler's Leather Girdle
-20191,   -- Defiler's Leather Girdle
-20192,   -- Defiler's Leather Girdle
-20193,   -- Defiler's Leather Girdle
-20194,   -- Defiler's Leather Shoulders
-20195,   -- Defiler's Mail Girdle
-20196,   -- Defiler's Mail Girdle
-20197,   -- Defiler's Mail Girdle
-20198,   -- Defiler's Mail Girdle
-20199,   -- Defiler's Mail Greaves
-20200,   -- Defiler's Mail Greaves
-20201,   -- Defiler's Mail Greaves
-20202,   -- Defiler's Mail Greaves
-20203,   -- Defiler's Mail Pauldrons
-20204,   -- Defiler's Plate Girdle
-20205,   -- Defiler's Plate Girdle
-20206,   -- Defiler's Plate Girdle
-20207,   -- Defiler's Plate Girdle
-20208,   -- Defiler's Plate Greaves
-20209,   -- Defiler's Plate Greaves
-20210,   -- Defiler's Plate Greaves
-20211,   -- Defiler's Plate Greaves
-20212,   -- Defiler's Plate Spaulders
-20213,   -- Belt of Shrunken Heads
-20214,   -- Mindfang
-20215,   -- Belt of Shriveled Heads
-20216,   -- Belt of Preserved Heads
-20217,   -- Belt of Tiny Heads
-20218,   -- Faded Hakkari Cloak
-20219,   -- Tattered Hakkari Cape
-20220,   -- Ironbark Staff
-20255,   -- Whisperwalk Boots
-20257,   -- Seafury Gauntlets
-20258,   -- Zulian Ceremonial Staff
-20259,   -- Shadow Panther Hide Gloves
-20260,   -- Seafury Leggings
-20261,   -- Shadow Panther Hide Belt
-20262,   -- Seafury Boots
-20263,   -- Gurubashi Helm
-20264,   -- Peacekeeper Gauntlets
-20265,   -- Peacekeeper Boots
-20266,   -- Peacekeeper Leggings
+19574,    -- Strength of Mugamba | ZG Rep Reward
+19575,    -- Strength of Mugamba | ZG Rep Reward
+19576,    -- Strength of Mugamba | ZG Rep Reward
+19577,    -- Rage of Mugamba | ZG Rep Reward
+19579,    -- Heathen's Brand | ZG Rep Reward
+19585,    -- Heathen's Brand | ZG Rep Reward
+19586,    -- Heathen's Brand | ZG Rep Reward
+19588,    -- Hero's Brand | ZG Rep Reward
+19591,    -- The Eye of Zuldazar | ZG Rep Reward
+19592,    -- The Eye of Zuldazar | ZG Rep Reward
+19593,    -- The Eye of Zuldazar | ZG Rep Reward
+19594,    -- The All-Seeing Eye of Zuldazar | ZG Rep Reward
+19598,    -- Pebble of Kajaro | ZG Rep Reward
+19599,    -- Pebble of Kajaro | ZG Rep Reward
+19600,    -- Pebble of Kajaro | ZG Rep Reward
+19601,    -- Jewel of Kajaro | ZG Rep Reward
+19602,    -- Kezan's Taint | ZG Rep Reward
+19603,    -- Kezan's Taint | ZG Rep Reward
+19604,    -- Kezan's Taint | ZG Rep Reward
+19605,    -- Kezan's Unstoppable Taint | ZG Rep Reward
+19606,    -- Vision of Voodress | ZG Rep Reward
+19607,    -- Vision of Voodress | ZG Rep Reward
+19608,    -- Vision of Voodress | ZG Rep Reward
+19609,    -- Unmarred Vision of Voodress | ZG Rep Reward
+19610,    -- Enchanted South Seas Kelp | ZG Rep Reward
+19611,    -- Enchanted South Seas Kelp | ZG Rep Reward
+19612,    -- Enchanted South Seas Kelp | ZG Rep Reward
+19613,    -- Pristine Enchanted South Seas Kelp | ZG Rep Reward
+19614,    -- Zandalarian Shadow Talisman | ZG Rep Reward
+19615,    -- Zandalarian Shadow Talisman | ZG Rep Reward
+19616,    -- Zandalarian Shadow Talisman | ZG Rep Reward
+19617,    -- Zandalarian Shadow Mastery Talisman | ZG Rep Reward
+19618,    -- Maelstrom's Tendril | ZG Rep Reward
+19619,    -- Maelstrom's Tendril | ZG Rep Reward
+19620,    -- Maelstrom's Tendril | ZG Rep Reward
+19621,    -- Maelstrom's Wrath | ZG Rep Reward
+19682,    -- Bloodvine Vest | ZG Rep Reward
+19683,    -- Bloodvine Leggings | ZG Rep Reward
+19684,    -- Bloodvine Boots | ZG Rep Reward
+19685,    -- Primal Batskin Jerkin | ZG Rep Reward
+19686,    -- Primal Batskin Gloves | ZG Rep Reward
+19687,    -- Primal Batskin Bracers | ZG Rep Reward
+19688,    -- Blood Tiger Breastplate | ZG Rep Reward
+19689,    -- Blood Tiger Shoulders | ZG Rep Reward
+19690,    -- Bloodsoul Breastplate | ZG Rep Reward
+19691,    -- Bloodsoul Shoulders | ZG Rep Reward
+19692,    -- Bloodsoul Gauntlets | ZG Rep Reward
+19693,    -- Darksoul Breastplate | ZG Rep Reward
+19694,    -- Darksoul Leggings | ZG Rep Reward
+19695,    -- Darksoul Shoulders | ZG Rep Reward
+19760,    -- Overlord's Embrace | ZG Loot
+19764,    -- Pattern: Bloodvine Vest | ZG Rep Reward
+19765,    -- Pattern: Bloodvine Leggings | ZG Rep Reward
+19766,    -- Pattern: Bloodvine Boots | ZG Rep Reward
+19769,    -- Pattern: Primal Batskin Jerkin | ZG Rep Reward
+19770,    -- Pattern: Primal Batskin Gloves | ZG Rep Reward
+19771,    -- Pattern: Primal Batskin Bracers | ZG Rep Reward
+19772,    -- Pattern: Blood Tiger Breastplate | ZG Rep Reward
+19773,    -- Pattern: Blood Tiger Shoulders | ZG Rep Reward
+19776,    -- Plans: Bloodsoul Breastplate | ZG Rep Reward
+19777,    -- Plans: Bloodsoul Shoulders | ZG Rep Reward
+19778,    -- Plans: Bloodsoul Gauntlets | ZG Rep Reward
+19779,    -- Plans: Darksoul Breastplate | ZG Rep Reward
+19780,    -- Plans: Darksoul Leggings | ZG Rep Reward
+19781,    -- Plans: Darksoul Shoulders | ZG Rep Reward
+19808,    -- Rockhide Strongfish | Fishing contest event
+19812,    -- Rune of the Dawn | New AD trinket reward, 1.7 retail patch notes
+19822,    -- Zandalar Vindicator's Breastplate | ZG Loot
+19823,    -- Zandalar Vindicator's Belt | ZG Loot
+19824,    -- Zandalar Vindicator's Armguards | ZG Loot
+19825,    -- Zandalar Freethinker's Breastplate | ZG Loot
+19826,    -- Zandalar Freethinker's Belt | ZG Loot
+19827,    -- Zandalar Freethinker's Armguards | ZG Loot
+19828,    -- Zandalar Augur's Hauberk | ZG Loot
+19829,    -- Zandalar Augur's Belt | ZG Loot
+19830,    -- Zandalar Augur's Bracers | ZG Loot
+19831,    -- Zandalar Predator's Mantle | ZG Loot
+19832,    -- Zandalar Predator's Belt | ZG Loot
+19833,    -- Zandalar Predator's Bracers | ZG Loot
+19834,    -- Zandalar Madcap's Tunic | ZG Loot
+19835,    -- Zandalar Madcap's Mantle | ZG Loot
+19836,    -- Zandalar Madcap's Bracers | ZG Loot
+19838,    -- Zandalar Haruspex's Tunic | ZG Loot
+19839,    -- Zandalar Haruspex's Belt | ZG Loot
+19840,    -- Zandalar Haruspex's Bracers | ZG Loot
+19841,    -- Zandalar Confessor's Mantle | ZG Loot
+19842,    -- Zandalar Confessor's Bindings | ZG Loot
+19843,    -- Zandalar Confessor's Wraps | ZG Loot
+19845,    -- Zandalar Illusionist's Mantle | ZG Loot
+19846,    -- Zandalar Illusionist's Wraps | ZG Loot
+19848,    -- Zandalar Demoniac's Wraps | ZG Loot
+19849,    -- Zandalar Demoniac's Mantle | ZG Loot
+19852,    -- Ancient Hakkari Manslayer | ZG Loot
+19853,    -- Gurubashi Dwarf Destroyer | ZG Loot
+19854,    -- Zin'rokh, Destroyer of Worlds | ZG Loot
+19855,    -- Bloodsoaked Legplates | ZG Loot
+19856,    -- The Eye of Hakkar | ZG Loot
+19857,    -- Cloak of Consumption | ZG Loot
+19859,    -- Fang of the Faceless | ZG Loot
+19861,    -- Touch of Chaos | ZG Loot
+19862,    -- Aegis of the Blood God | ZG Loot
+19863,    -- Primalist's Seal | ZG Loot
+19864,    -- Bloodcaller | ZG Loot
+19865,    -- Warblade of the Hakkari | ZG Loot
+19866,    -- Warblade of the Hakkari | ZG Loot
+19867,    -- Bloodlord's Defender | ZG Loot
+19869,    -- Blooddrenched Grips | ZG Loot
+19870,    -- Hakkari Loa Cloak | ZG Loot
+19871,    -- Talisman of Protection | ZG Loot
+19873,    -- Overlord's Crimson Band | ZG Loot
+19874,    -- Halberd of Smiting | ZG Loot
+19875,    -- Bloodstained Coif | ZG Loot
+19876,    -- Soul Corrupter's Necklace | ZG Loot
+19877,    -- Animist's Leggings | ZG Loot
+19878,    -- Bloodsoaked Pauldrons | ZG Loot
+19884,    -- Jin'do's Judgement | ZG Loot
+19885,    -- Jin'do's Evil Eye | ZG Loot
+19886,    -- The Hexxer's Cover | ZG Loot
+19887,    -- Bloodstained Legplates | ZG Loot
+19888,    -- Overlord's Embrace | ZG Loot
+19889,    -- Blooddrenched Leggings | ZG Loot
+19890,    -- Jin'do's Hexxer | ZG Loot
+19891,    -- Jin'do's Bag of Whammies | ZG Loot
+19892,    -- Animist's Boots | ZG Loot
+19893,    -- Zanzil's Seal | ZG Loot
+19894,    -- Bloodsoaked Gauntlets | ZG Loot
+19895,    -- Bloodtinged Kilt | ZG Loot
+19896,    -- Thekal's Grasp | ZG Loot
+19897,    -- Betrayer's Boots | ZG Loot
+19898,    -- Seal of Jin | ZG Loot
+19899,    -- Ritualistic Legguards | ZG Loot
+19900,    -- Zulian Stone Axe | ZG Loot
+19901,    -- Zulian Slicer | ZG Loot
+19903,    -- Fang of Venoxis | ZG Loot
+19904,    -- Runed Bloodstained Hauberk | ZG Loot
+19905,    -- Zanzil's Band | ZG Loot
+19906,    -- Blooddrenched Footpads | ZG Loot
+19907,    -- Zulian Tigerhide Cloak | ZG Loot
+19908,    -- Sceptre of Smiting | ZG Loot
+19909,    -- Will of Arlokk | ZG Loot
+19910,    -- Arlokk's Grasp | ZG Loot
+19912,    -- Overlord's Onyx Band | ZG Loot
+19913,    -- Bloodsoaked Greaves | ZG Loot
+19915,    -- Zulian Defender | ZG Loot
+19918,    -- Jeklik's Crusher | ZG Loot
+19919,    -- Bloodstained Greaves | ZG Loot
+19920,    -- Primalist's Band | ZG Loot
+19922,    -- Arlokk's Hoodoo Stick | ZG Loot
+19923,    -- Jeklik's Opaline Talisman | ZG Loot
+19925,    -- Band of Jin | ZG Loot
+19927,    -- Mar'li's Touch | ZG Loot
+19928,    -- Animist's Spaulders | ZG Loot
+19929,    -- Bloodtinged Gloves | ZG Loot
+19930,    -- Mar'li's Eye | ZG Loot
+19944,    -- Nat Pagle's Fish Terminator | ZG Loot
+19945,    -- Foror's Eyepatch | ZG Loot
+19946,    -- Tigule's Harpoon | ZG Loot
+19947,    -- Nat Pagle's Broken Reel | ZG Loot
+19948,    -- Zandalarian Hero Badge | ZG Loot
+19949,    -- Zandalarian Hero Medallion | ZG Loot
+19950,    -- Zandalarian Hero Charm | ZG Loot
+19951,    -- Gri'lek's Charm of Might | ZG Loot
+19952,    -- Gri'lek's Charm of Valor | ZG Loot
+19953,    -- Renataki's Charm of Beasts | ZG Loot
+19954,    -- Renataki's Charm of Trickery | ZG Loot
+19955,    -- Wushoolay's Charm of Nature | ZG Loot
+19956,    -- Wushoolay's Charm of Spirits | ZG Loot
+19957,    -- Hazza'rah's Charm of Destruction | ZG Loot
+19958,    -- Hazza'rah's Charm of Healing | ZG Loot
+19959,    -- Hazza'rah's Charm of Magic | ZG Loot
+19961,    -- Gri'lek's Grinder | ZG Loot
+19962,    -- Gri'lek's Carver | ZG Loot
+19963,    -- Pitchfork of Madness | ZG Loot
+19964,    -- Renataki's Soul Conduit | ZG Loot
+19965,    -- Wushoolay's Poker | ZG Loot
+19969,    -- Nat Pagle's Extreme Anglin' Boots | Fishing contest reward
+19970,    -- Arcanite Fishing Pole | Fishing contest reward
+19972,    -- Lucky Fishing Hat | Fishing contest reward
+19979,    -- Hook of the Master Angler | Fishing contest reward
+19982,    -- Duskbat Drape | LVL 50 class quest (rogue), see retail 1.7 patch notes
+19984,    -- Ebon Mask | LVL 50 class quest (rogue), see retail 1.7 patch notes
+19990,    -- Blessed Prayer Beads | LVL 50 class quest (priest), see retail 1.7 patch notes
+19991,    -- Devilsaur Eye | LVL 50 class quest (hunter), see retail 1.7 patch notes
+19992,    -- Devilsaur Tooth | LVL 50 class quest (hunter), see retail 1.7 patch notes
+19993,    -- Hoodoo Hunting Bow | ZG Loot
+19998,    -- Bloodvine Lens | ZG Rep Reward
+19999,    -- Bloodvine Goggles | ZG Rep Reward
+20000,    -- Schematic: Bloodvine Goggles | ZG Rep Reward
+20001,    -- Schematic: Bloodvine Lens | ZG Rep Reward
+20038,    -- Mandokir's Sting | ZG Loot
+20039,    -- Dark Iron Boots | New Thorium Brotherhood Reward (wowwiki, github)
+20040,    -- Plans: Dark Iron Boots | New Thorium Brotherhood Reward (wowwiki, github)
+20041,    -- Highlander's Plate Girdle | AB rep rewards (originally patch 1.7)
+20042,    -- Highlander's Lamellar Girdle | AB rep rewards (originally patch 1.7)
+20043,    -- Highlander's Chain Girdle | AB rep rewards (originally patch 1.7)
+20044,    -- Highlander's Mail Girdle | AB rep rewards (originally patch 1.7)
+20045,    -- Highlander's Leather Girdle | AB rep rewards (originally patch 1.7)
+20046,    -- Highlander's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20047,    -- Highlander's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20048,    -- Highlander's Plate Greaves | AB rep rewards (originally patch 1.7)
+20049,    -- Highlander's Lamellar Greaves | AB rep rewards (originally patch 1.7)
+20050,    -- Highlander's Chain Greaves | AB rep rewards (originally patch 1.7)
+20051,    -- Highlander's Mail Greaves | AB rep rewards (originally patch 1.7)
+20052,    -- Highlander's Leather Boots | AB rep rewards (originally patch 1.7)
+20053,    -- Highlander's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20054,    -- Highlander's Cloth Boots | AB rep rewards (originally patch 1.7)
+20055,    -- Highlander's Chain Pauldrons | AB rep rewards (originally patch 1.7)
+20056,    -- Highlander's Mail Pauldrons | AB rep rewards (originally patch 1.7)
+20057,    -- Highlander's Plate Spaulders | AB rep rewards (originally patch 1.7)
+20058,    -- Highlander's Lamellar Spaulders | AB rep rewards (originally patch 1.7)
+20059,    -- Highlander's Leather Shoulders | AB rep rewards (originally patch 1.7)
+20060,    -- Highlander's Lizardhide Shoulders | AB rep rewards (originally patch 1.7)
+20061,    -- Highlander's Epaulets | AB rep rewards (originally patch 1.7)
+20088,    -- Highlander's Chain Girdle | AB rep rewards (originally patch 1.7)
+20089,    -- Highlander's Chain Girdle | AB rep rewards (originally patch 1.7)
+20090,    -- Highlander's Chain Girdle | AB rep rewards (originally patch 1.7)
+20091,    -- Highlander's Chain Greaves | AB rep rewards (originally patch 1.7)
+20092,    -- Highlander's Chain Greaves | AB rep rewards (originally patch 1.7)
+20093,    -- Highlander's Chain Greaves | AB rep rewards (originally patch 1.7)
+20094,    -- Highlander's Cloth Boots | AB rep rewards (originally patch 1.7)
+20095,    -- Highlander's Cloth Boots | AB rep rewards (originally patch 1.7)
+20096,    -- Highlander's Cloth Boots | AB rep rewards (originally patch 1.7)
+20097,    -- Highlander's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20098,    -- Highlander's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20099,    -- Highlander's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20100,    -- Highlander's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20101,    -- Highlander's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20102,    -- Highlander's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20103,    -- Highlander's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20104,    -- Highlander's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20105,    -- Highlander's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20106,    -- Highlander's Lamellar Girdle | AB rep rewards (originally patch 1.7)
+20107,    -- Highlander's Lamellar Girdle | AB rep rewards (originally patch 1.7)
+20108,    -- Highlander's Lamellar Girdle | AB rep rewards (originally patch 1.7)
+20109,    -- Highlander's Lamellar Greaves | AB rep rewards (originally patch 1.7)
+20110,    -- Highlander's Lamellar Greaves | AB rep rewards (originally patch 1.7)
+20111,    -- Highlander's Lamellar Greaves | AB rep rewards (originally patch 1.7)
+20112,    -- Highlander's Leather Boots | AB rep rewards (originally patch 1.7)
+20113,    -- Highlander's Leather Boots | AB rep rewards (originally patch 1.7)
+20114,    -- Highlander's Leather Boots | AB rep rewards (originally patch 1.7)
+20115,    -- Highlander's Leather Girdle | AB rep rewards (originally patch 1.7)
+20116,    -- Highlander's Leather Girdle | AB rep rewards (originally patch 1.7)
+20117,    -- Highlander's Leather Girdle | AB rep rewards (originally patch 1.7)
+20124,    -- Highlander's Plate Girdle | AB rep rewards (originally patch 1.7)
+20125,    -- Highlander's Plate Girdle | AB rep rewards (originally patch 1.7)
+20126,    -- Highlander's Plate Girdle | AB rep rewards (originally patch 1.7)
+20127,    -- Highlander's Plate Greaves | AB rep rewards (originally patch 1.7)
+20128,    -- Highlander's Plate Greaves | AB rep rewards (originally patch 1.7)
+20129,    -- Highlander's Plate Greaves | AB rep rewards (originally patch 1.7)
+20131,    -- Battle Tabard of the Defilers | AB rep rewards (originally patch 1.7)
+20132,    -- Arathor Battle Tabard | AB rep rewards (originally patch 1.7)
+20150,    -- Defiler's Chain Girdle | AB rep rewards (originally patch 1.7)
+20151,    -- Defiler's Chain Girdle | AB rep rewards (originally patch 1.7)
+20152,    -- Defiler's Chain Girdle | AB rep rewards (originally patch 1.7)
+20153,    -- Defiler's Chain Girdle | AB rep rewards (originally patch 1.7)
+20154,    -- Defiler's Chain Greaves | AB rep rewards (originally patch 1.7)
+20155,    -- Defiler's Chain Greaves | AB rep rewards (originally patch 1.7)
+20156,    -- Defiler's Chain Greaves | AB rep rewards (originally patch 1.7)
+20157,    -- Defiler's Chain Greaves | AB rep rewards (originally patch 1.7)
+20158,    -- Defiler's Chain Pauldrons | AB rep rewards (originally patch 1.7)
+20159,    -- Defiler's Cloth Boots | AB rep rewards (originally patch 1.7)
+20160,    -- Defiler's Cloth Boots | AB rep rewards (originally patch 1.7)
+20161,    -- Defiler's Cloth Boots | AB rep rewards (originally patch 1.7)
+20162,    -- Defiler's Cloth Boots | AB rep rewards (originally patch 1.7)
+20163,    -- Defiler's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20164,    -- Defiler's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20165,    -- Defiler's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20166,    -- Defiler's Cloth Girdle | AB rep rewards (originally patch 1.7)
+20167,    -- Defiler's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20168,    -- Defiler's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20169,    -- Defiler's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20170,    -- Defiler's Lizardhide Boots | AB rep rewards (originally patch 1.7)
+20171,    -- Defiler's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20172,    -- Defiler's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20173,    -- Defiler's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20174,    -- Defiler's Lizardhide Girdle | AB rep rewards (originally patch 1.7)
+20175,    -- Defiler's Lizardhide Shoulders | AB rep rewards (originally patch 1.7)
+20176,    -- Defiler's Epaulets | AB rep rewards (originally patch 1.7)
+20177,    -- Defiler's Lamellar Girdle | AB rep rewards (originally patch 1.7)
+20181,    -- Defiler's Lamellar Greaves | AB rep rewards (originally patch 1.7)
+20184,    -- Defiler's Lamellar Spaulders | AB rep rewards (originally patch 1.7)
+20186,    -- Defiler's Leather Boots | AB rep rewards (originally patch 1.7)
+20187,    -- Defiler's Leather Boots | AB rep rewards (originally patch 1.7)
+20188,    -- Defiler's Leather Boots | AB rep rewards (originally patch 1.7)
+20189,    -- Defiler's Leather Boots | AB rep rewards (originally patch 1.7)
+20190,    -- Defiler's Leather Girdle | AB rep rewards (originally patch 1.7)
+20191,    -- Defiler's Leather Girdle | AB rep rewards (originally patch 1.7)
+20192,    -- Defiler's Leather Girdle | AB rep rewards (originally patch 1.7)
+20193,    -- Defiler's Leather Girdle | AB rep rewards (originally patch 1.7)
+20194,    -- Defiler's Leather Shoulders | AB rep rewards (originally patch 1.7)
+20195,    -- Defiler's Mail Girdle | AB rep rewards (originally patch 1.7)
+20196,    -- Defiler's Mail Girdle | AB rep rewards (originally patch 1.7)
+20197,    -- Defiler's Mail Girdle | AB rep rewards (originally patch 1.7)
+20198,    -- Defiler's Mail Girdle | AB rep rewards (originally patch 1.7)
+20199,    -- Defiler's Mail Greaves | AB rep rewards (originally patch 1.7)
+20200,    -- Defiler's Mail Greaves | AB rep rewards (originally patch 1.7)
+20201,    -- Defiler's Mail Greaves | AB rep rewards (originally patch 1.7)
+20202,    -- Defiler's Mail Greaves | AB rep rewards (originally patch 1.7)
+20203,    -- Defiler's Mail Pauldrons | AB rep rewards (originally patch 1.7)
+20204,    -- Defiler's Plate Girdle | AB rep rewards (originally patch 1.7)
+20205,    -- Defiler's Plate Girdle | AB rep rewards (originally patch 1.7)
+20206,    -- Defiler's Plate Girdle | AB rep rewards (originally patch 1.7)
+20207,    -- Defiler's Plate Girdle | AB rep rewards (originally patch 1.7)
+20208,    -- Defiler's Plate Greaves | AB rep rewards (originally patch 1.7)
+20209,    -- Defiler's Plate Greaves | AB rep rewards (originally patch 1.7)
+20210,    -- Defiler's Plate Greaves | AB rep rewards (originally patch 1.7)
+20211,    -- Defiler's Plate Greaves | AB rep rewards (originally patch 1.7)
+20212,    -- Defiler's Plate Spaulders | AB rep rewards (originally patch 1.7)
+20213,    -- Belt of Shrunken Heads | ZG Quest
+20214,    -- Mindfang | AB rep rewards (originally patch 1.7)
+20215,    -- Belt of Shriveled Heads | ZG Quest
+20216,    -- Belt of Preserved Heads | ZG Quest
+20217,    -- Belt of Tiny Heads | ZG Quest
 );
 	
 -- * NEW CREATURES
