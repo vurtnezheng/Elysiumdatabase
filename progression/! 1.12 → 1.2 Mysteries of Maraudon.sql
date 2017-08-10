@@ -372,7 +372,6 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 17907,   -- Frostwolf Insignia Rank 4
 17908,   -- Frostwolf Insignia Rank 5
 17909,   -- Frostwolf Insignia Rank 6
-17982,   -- Ragnaros Core
 18022,   -- Royal Seal of Alexis
 18083,   -- Jumanza Grips
 18103,   -- Band of Rumination
@@ -425,9 +424,6 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 18388,   -- Stoneshatter
 18393,   -- Warpwood Binding
 18395,   -- Emerald Flame Ring
-18398,   -- Tidal Loop
-18400,   -- Ring of Living Stone
-18404,   -- Onyxia Tooth Pendant
 18420,   -- Bonecrusher
 18421,   -- Backwood Helm
 18422,   -- Head of Onyxia

@@ -65,7 +65,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 19098,   -- Stormpike Sage's Pendant | AV Rep Rewards
 19100,   -- Electrified Dagger | AV Rep Rewards
 19102,   -- Crackling Staff | AV Rep Rewards,  
-19102,   -- Crackling Staff | AV Rep Rewards,  - 
+19102,   -- Crackling Staff | AV Rep Rewards,   
 19308,   -- Tome of Arcane Domination | AV Rep Rewards
 19309,   -- Tome of Shadow Force | AV Rep Rewards
 19310,   -- Tome of the Ice Lord | AV Rep Rewards
@@ -77,7 +77,9 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 19324,   -- The Lobotomizer | AV Rep Rewards
 19325,   -- Don Julio's Band | AV Rep Rewards,  
 19031,   -- Frostwolf Battle Tabard | AV Rep Rewards
-19032,   -- Stormpike Battle Tabard | AV Rep Rewards,  
+19032,   -- Stormpike Battle Tabard | AV Rep Rewards
+19029,   -- Horn of the Frostwolf Howler | AV Rep Rewards
+18945,   -- Dark Iron Residue | Thorium Brotherhood quests added with 1.5 (see retail patch notes)
 );
  
 -- * NEW CREATURES

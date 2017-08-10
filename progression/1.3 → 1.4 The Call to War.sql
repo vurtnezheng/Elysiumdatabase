@@ -199,7 +199,6 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 17104,   -- Spinal Reaper | Molten Core loot update
 17106,   -- Malistar's Defender | Molten Core loot update
 17107,   -- Dragon's Blood Cape | Molten Core loot update
-17111,   -- Blazefury Medallion | Molten Core loot update
 17182,   -- Sulfuras, Hand of Ragnaros | Molten Core loot update
 17193,   -- Sulfuron Hammer | Molten Core loot update
 17203,   -- Sulfuron Ingot | Molten Core loot update
@@ -364,6 +363,104 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 18822,   -- Obsidian Edged Blade | 1.4 Raid loot table update
 18823,   -- Aged Core Leather Gloves | 1.4 Raid loot table update
 18824,   -- Magma Tempered Boots | 1.4 Raid loot table update
+18563,   -- Bindings of the Windseeker | Raid loot table update (Allakhazam dates, not patch 1.6 like crappy wowwiki says)
+18564,   -- Bindings of the Windseeker | Raid loot table update (Allakhazam dates, not patch 1.6 like crappy wowwiki says)
+18592,   -- Plans: Sulfuron Hammer | Raid loot table update
+18602,   -- Tome of Sacrifice | Added in 1.4 with doomguard summon spell (allakhazam dates)
+18608,   -- Benediction | Raid loot table update
+18609,   -- Anathema | Raid loot table update
+18610,   -- Keen Machete | Possibly added in patch 1.4 along with the rare spawn NPC (Threggil) according to Allakhazam dating
+18611,   -- Gnarlpine Leggings | Possibly added in patch 1.4 along with the rare spawn NPC (Urson) according to Allakhazam dating
+18612,   -- Bloody Chain Boots | Possibly added in patch 1.4 along with the rare spawn NPC (Fury Shelda) according to Allakhazam dating
+18634,   -- Gyrofreeze Ice Reflector | See 1.4 retail patch notes
+18637,   -- Major Recombobulator | See 1.4 retail patch notes
+18638,   -- Hyper-Radiant Flame Reflector | See 1.4 retail patch notes
+18639,   -- Ultra-Flash Shadow Reflector | See 1.4 retail patch notes
+18646,   -- The Eye of Divinity | Raid loot table update
+18652,   -- Schematic: Gyrofreeze Ice Reflector | See 1.4 retail patch notes
+18655,   -- Schematic: Major Recombobulator | See 1.4 retail patch notes
+18657,   -- Schematic: Hyper-Radiant Flame Reflector | See 1.4 retail patch notes
+18658,   -- Schematic: Ultra-Flash Shadow Reflector | See 1.4 retail patch notes
+18665,   -- The Eye of Shadow | Raid loot table update
+18682,   -- Ghoul Skin Leggings | Dungeon loot table update (see retail patch notes)
+18693,   -- Shivery Handwraps | Dungeon loot table update (see retail patch notes)
+18703,   -- Ancient Petrified Leaf | Raid loot table update
+18704,   -- Mature Blue Dragon Sinew | Raid loot table update
+18705,   -- Mature Black Dragon Sinew | Raid loot table update
+18713,   -- Rhok'delar, Longbow of the Ancient Keepers | Raid loot table update
+18715,   -- Lok'delar, Stave of the Ancient Keepers | Raid loot table update
+18716,   -- Ash Covered Boots | Dungeon loot table update (see retail patch notes)
+18717,   -- Hammer of the Grand Crusader | Dungeon loot table update (see retail patch notes)
+18718,   -- Grand Crusader's Helm | Dungeon loot table update (see retail patch notes)
+18720,   -- Shroud of the Nathrezim | Dungeon loot table update (see retail patch notes)
+18721,   -- Barrage Girdle | Dungeon loot table update (see retail patch notes)
+18722,   -- Death Grips | Dungeon loot table update (see retail patch notes)
+18723,   -- Animated Chain Necklace | Dungeon loot table update (see retail patch notes)
+18725,   -- Peacemaker | Dungeon loot table update (see retail patch notes)
+18726,   -- Magistrate's Cuffs | Dungeon loot table update (see retail patch notes)
+18727,   -- Crimson Felt Hat | Dungeon loot table update (see retail patch notes)
+18728,   -- Anastari Heirloom | Dungeon loot table update (see retail patch notes)
+18730,   -- Shadowy Laced Handwraps | Dungeon loot table update (see retail patch notes)
+18734,   -- Pale Moon Cloak | Dungeon loot table update (see retail patch notes)
+18735,   -- Maleki's Footwraps | Dungeon loot table update (see retail patch notes)
+18738,   -- Carapace Spine Crossbow | Dungeon loot table update (see retail patch notes)
+18740,   -- Thuzadin Sash | Dungeon loot table update (see retail patch notes)
+18741,   -- Morlune's Bracer | Dungeon loot table update (see retail patch notes)
+18742,   -- Stratholme Militia Shoulderguard | Dungeon loot table update (see retail patch notes)
+18743,   -- Gracious Cape | Dungeon loot table update (see retail patch notes)
+18744,   -- Plaguebat Fur Gloves | Dungeon loot table update (see retail patch notes)
+18829,   -- Deep Earth Spaulders | Raid loot table update
+18832,   -- Brutality Blade | Raid loot table update
+18842,   -- Staff of Dominance | Raid loot table update
+18861,   -- Flamewaker Legplates | Raid loot table update
+18870,   -- Helm of the Lifegiver | Raid loot table update
+18872,   -- Manastorm Leggings | Raid loot table update
+18875,   -- Salamander Scale Pants | Raid loot table update
+18878,   -- Sorcerous Dagger | Raid loot table update
+18879,   -- Heavy Dark Iron Ring | Raid loot table update
+18671,   -- Baron Charr's Sceptre | Patch 1.4 elemental invasions (see retail patch notes)
+18672,   -- Elemental Ember | Patch 1.4 elemental invasions (see retail patch notes)
+18673,   -- Avalanchion's Stony Hide | Patch 1.4 elemental invasions (see retail patch notes)
+18674,   -- Hardened Stone Band | Patch 1.4 elemental invasions (see retail patch notes)
+18676,   -- Sash of the Windreaver | Patch 1.4 elemental invasions (see retail patch notes)
+18677,   -- Zephyr Cloak | Patch 1.4 elemental invasions (see retail patch notes)
+18678,   -- Tempestria's Frozen Necklace | Patch 1.4 elemental invasions (see retail patch notes)
+18679,   -- Frigid Ring | Patch 1.4 elemental invasions (see retail patch notes)
+18680,   -- Ancient Bone Bow | Dungeon Loot table update (see retail patch notes)
+18681,   -- Burial Shawl | Dungeon Loot table update (see retail patch notes)
+18683,   -- Hammer of the Vesper | Dungeon Loot table update (see retail patch notes)
+18686,   -- Bone Golem Shoulders | Dungeon Loot table update (see retail patch notes)
+18689,   -- Phantasmal Cloak | Dungeon Loot table update (see retail patch notes)
+18690,   -- Wraithplate Leggings | Dungeon Loot table update (see retail patch notes)
+18691,   -- Dark Advisor's Pendant | Dungeon Loot table update (see retail patch notes)
+18692,   -- Death Knight Sabatons | Dungeon Loot table update (see retail patch notes)
+18694,   -- Shadowy Mail Greaves | Dungeon Loot table update (see retail patch notes)
+18695,   -- Spellbound Tome | Dungeon Loot table update (see retail patch notes)
+18696,   -- Intricately Runed Shield | Dungeon Loot table update (see retail patch notes)
+18697,   -- Coldstone Slippers | Dungeon Loot table update (see retail patch notes)
+18698,   -- Tattered Leather Hood | Dungeon Loot table update (see retail patch notes)
+18699,   -- Icy Tomb Spaulders | Dungeon Loot table update (see retail patch notes)
+18700,   -- Malefic Bracers | Dungeon Loot table update (see retail patch notes)
+18701,   -- Innervating Band | Dungeon Loot table update (see retail patch notes)
+18702,   -- Belt of the Ordained | Dungeon Loot table update (see retail patch notes)
+18709,   -- Arena Wristguards | Gurubashi arena event (see patch notes)
+18710,   -- Arena Bracers | Gurubashi arena event (see patch notes)
+18711,   -- Arena Bands | Gurubashi arena event (see patch notes)
+18712,   -- Arena Vambraces | Gurubashi arena event (see patch notes)
+18729,   -- Screeching Bow | Dungeon loot table update (see retail patch notes)
+18736,   -- Plaguehound Leggings | Dungeon loot table update (see retail patch notes)
+18737,   -- Bone Slicing Hatchet | Dungeon loot table update (see retail patch notes)
+18739,   -- Chitinous Plate Legguards | Dungeon loot table update (see retail patch notes)
+18745,   -- Sacred Cloth Leggings | Dungeon loot table update (see retail patch notes)
+18754,   -- Fel Hardened Bracers | Warlock mount quest summon
+18755,   -- Xorothian Firestick | Warlock mount quest summon
+18756,   -- Dreadguard's Protector | Warlock mount quest summon
+18757,   -- Diabolic Mantle | Warlock mount quest summon
+18758,   -- Specter's Blade | Paladin mount quest summon
+18759,   -- Malicious Axe | Paladin mount quest summon
+18760,   -- Necromantic Band | Paladin mount quest summon
+18761,   -- Oblivion's Touch | Paladin mount quest summon
+18762,   -- Shard of the Green Flame | Warlock mount quest chain
 );
  
 -- * NEW CREATURES

@@ -95,6 +95,18 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 18384,   -- Bile-etched Spaulders | Dire Maul Loot
 18387,   -- Brightspark Gloves | Dire Maul Loot
 18388,   -- Stoneshatter | Dire Maul Loot
+18022,   -- Royal Seal of Alexis | 1.3 retail patch notes
+18420,   -- Bonecrusher | Dire Maul Loot
+18421,   -- Backwood Helm | Dire Maul Loot
+18425,   -- Kreeg's Mug | Dire Maul Loot
+18450,   -- Robe of Combustion | Dire Maul Loot
+18451,   -- Hyena Hide Belt | Dire Maul Loot
+18480,   -- Scarab Plate Helm | Dire Maul Loot
+18493,   -- Bulky Iron Spaulders | Dire Maul Loot
+18543,   -- Ring of Entropy | Original Kazzak loot (Allakhazam dates)
+18544,   -- Doomhide Gauntlets | Original Kazzak loot (Allakhazam dates)
+18545,   -- Leggings of Arcane Supremacy | Original Azuregos loot (Allakhazam dates)
+17111,   -- Blazefury Medallion | Original Kazzak Loot
 );
 
 -- * NEW CREATURES
