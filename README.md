@@ -33,7 +33,8 @@ It is now extreamly easy for people to contribute now, and this will save us a l
 
 ## Tools
 * [Item Template Editor (ITE)](https://github.com/elysium-project/database/tree/master/tools/item_template_editor): GUI to update items in the database. Generates SQL statements.
-* [Commentator](https://github.com/elysium-project/database/tree/master/tools/Commentator): Adds a comment, listing name and stats, above each altered item_template in a SQL file.
+* [Item Template Commentator](https://github.com/elysium-project/database/tree/master/tools/item_template_commentator): Adds a comment, listing name and stats, above each altered item_template in a SQL file.
+* [Commentator](https://github.com/elysium-project/database/tree/master/tools/Commentator): Converts all SQL comments to markdown. 
 
 ## License
 This project is licensed under the GNU GPL 3.0 License - see the [LICENSE](./LICENSE) file for details!
