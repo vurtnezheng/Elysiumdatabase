@@ -1,5 +1,5 @@
-* This is supposed to be an initial downgrading patch from 1.12 to 1.2 DB for use with future upgrading transition patches.
-* Apply it on the clean 1.12 DB only, with all latest migrations from /server/sql/migrations
+# 1.12 → 1.2
+<br><font color='yellow'>1.12 → 1.2 Mysteries of Maraudon</font>
 # INDEX
 1. [FORBIDDEN ENCOUNTER](#forbidden-encounter)
 2. [FORBIDDEN EVENTS](#forbidden-events)
@@ -64,8 +64,6 @@
 # FORBIDDEN ITEMS
 * Support Girdle
 * White Tuxedo Shirt
-* Dress Shoes
-* Easter Dress
 * Imperial Plate Chest
 * Imperial Plate Belt
 * Imperial Plate Bracers
@@ -370,7 +368,6 @@
 * Emerald Flame Ring
 * Bonecrusher
 * Backwood Helm
-* Head of Onyxia
 * Head of Onyxia
 * Kreeg's Mug
 * Sergeant's Cloak
@@ -6053,6 +6050,10 @@
 <br><font color='yellow'>Paladin mount quest summon</font>
 * Shard of the Green Flame
 <br><font color='yellow'>Warlock mount quest chain</font>
+* Arena Grand Master
+<br><font color='yellow'>Gurubashi arena event (see patch notes)</font>
+* Contest Winner's Tabard
+<br><font color='yellow'>May 24th 2005 PvP contest prize (http://web.archive.org/web/20080512214719/http://www.worldofwarcraft.com/contests/05-04-19-honorsystem/)</font>
 # NEW CREATURES
 # NEW QUESTS
 * Unfinished Gordok Business
@@ -6106,6 +6107,32 @@
 <br><font color='yellow'>AV Rewards</font>
 * Frostwolf Insignia Rank 6
 <br><font color='yellow'>AV Rewards</font>
+* Barbaric Bracers
+<br><font color='yellow'>See 1.5 retail patch notes</font>
+* Pattern: Barbaric Bracers
+<br><font color='yellow'>See 1.5 retail patch notes</font>
+* Brushwood Blade
+<br><font color='yellow'>Quest reward from 2561 changed from 9602 (2h) to 18957 (1h) sword to reflect night elf starting proficiencies</font>
+* Dimensional Ripper - Everlook
+<br><font color='yellow'>See 1.5 retail patch notes</font>
+* Ultrasafe Transporter: Gadgetzan
+<br><font color='yellow'>See 1.5 retail patch notes</font>
+* Nat Pagle's Extreme Angler FC-5000
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Elegant Dress
+<br><font color='yellow'>Replaces easter dress</font>
+* Emerald Peak Spaulders
+<br><font color='yellow'>Quests added to Feralas (1.5 patch notes)</font>
+* Ring of Subtlety
+<br><font color='yellow'>Quests added to Feralas (1.5 patch notes)</font>
+* Zorbin's Water Resistant Hat
+<br><font color='yellow'>Quests added to Feralas (1.5 patch notes)</font>
+* Zorbin's Mega-Slicer
+<br><font color='yellow'>Quests added to Feralas (1.5 patch notes)</font>
+* Pratt's Handcrafted Tunic
+<br><font color='yellow'>Quest "Improved Quality" added in 1.5 (allakhazam dating and inference from item/quest ID)</font>
+* Jangdor's Handcrafted Tunic
+<br><font color='yellow'>Quest "Improved Quality" added in 1.5 (allakhazam dating and inference from item/quest ID)</font>
 * Frostwolf Legionnaire's Cloak
 <br><font color='yellow'>AV Rep Rewards</font>
 * Stormpike Soldier's Cloak
@@ -6172,6 +6199,92 @@
 <br><font color='yellow'>AV Rep Rewards</font>
 * Dark Iron Residue
 <br><font color='yellow'>Thorium Brotherhood quests added with 1.5 (see retail patch notes)</font>
+* Glacial Blade
+<br><font color='yellow'>AV Rep rewards</font>
+* Whiteout Staff
+<br><font color='yellow'>AV Rep rewards</font>
+* Frostbite
+<br><font color='yellow'>AV Rep rewards</font>
+* Stormstrike Hammer
+<br><font color='yellow'>AV Rep rewards</font>
+* Frost Runed Headdress
+<br><font color='yellow'>Note: Blizzard removed this in patch 1.6 with the AV overhaul (we have AV in pre-nerf state though)</font>
+* Deep Rooted Ring
+<br><font color='yellow'>Note: Blizzard removed this in patch 1.6 with the AV overhaul (we have AV in pre-nerf state though)</font>
+* Cold Forged Blade
+<br><font color='yellow'>Note: Blizzard removed this in patch 1.6 with the AV overhaul (we have AV in pre-nerf state though)</font>
+* Winteraxe Epaulets
+<br><font color='yellow'>Note: Blizzard removed this in patch 1.6 with the AV overhaul (we have AV in pre-nerf state though)</font>
+* Frozen Steel Vambraces
+<br><font color='yellow'>Note: Blizzard removed this in patch 1.6 with the AV overhaul (we have AV in pre-nerf state though)</font>
+* Yeti Hide Bracers
+<br><font color='yellow'>Note: Blizzard removed this in patch 1.6 with the AV overhaul (we have AV in pre-nerf state though)</font>
+* Highland Bow
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Flask of Forest Mojo
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Greenleaf Handwraps
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Laquered Wooden Plate Legplates
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Nature's Breath
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Owlbeast Hide Gloves
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Rune of the Guard Captain
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Deep Woodlands Cloak
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
+* Everwarm Handwraps
+<br><font color='yellow'>Quests added to Thorium Point (See retail patch notes)</font>
+* Slagplate Leggings
+<br><font color='yellow'>Quests added to Thorium Point (See retail patch notes)</font>
+* Seared Mail Girdle
+<br><font color='yellow'>Quests added to Thorium Point (See retail patch notes)</font>
+* Slagplate Gauntlets
+<br><font color='yellow'>Quests added to Thorium Point (See retail patch notes)</font>
+* Charred Leather Tunic
+<br><font color='yellow'>Quests added to Thorium Point (See retail patch notes)</font>
+* Seared Mail Vest
+<br><font color='yellow'>Quests added to Thorium Point (See retail patch notes)</font>
+* Cold Snap
+<br><font color='yellow'>New loot added to Azuregos (1.5 retail patch notes)</font>
+* Snowblind Shoes
+<br><font color='yellow'>New loot added to Azuregos (1.5 retail patch notes)</font>
+* Crystal Adorned Crown
+<br><font color='yellow'>New loot added to Azuregos (1.5 retail patch notes)</font>
+* Fel Infused Leggings
+<br><font color='yellow'>New loot added to Kazzak (1.5 retail patch notes)</font>
+* Flayed Doomguard Belt
+<br><font color='yellow'>New loot added to Kazzak (1.5 retail patch notes)</font>
+* Blacklight Bracer
+<br><font color='yellow'>New loot added to Kazzak (1.5 retail patch notes)</font>
+* Mana Igniting Cord
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Onslaught Girdle
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Band of Sulfuras
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Fireguard Shoulders
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Cauterizing Band
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Luffa
+<br><font color='yellow'>Quests added to Thorium Point (See retail patch notes)</font>
+* Fire Runed Grimoire
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Flameguard Gauntlets
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Sabatons of the Flamewalker
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Robe of Volatile Power
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Wristguards of Stability
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Ring of Spell Power
+<br><font color='yellow'>New loot added to Molten Core bosses (1.5 retail patch notes)</font>
+* Woven Ivy Necklace
+<br><font color='yellow'>Quests added to Revantusk Village (See retail patch notes)</font>
 # NEW CREATURES
 # NEW QUESTS
 * Unfinished Gordok Business
@@ -6200,6 +6313,72 @@
 * Blackwing Lair 1.6
 # NEW EVENTS
 # NEW ITEMS
+* Thunderfury, Blessed Blade of the Windseeker
+<br><font color='yellow'>Quest not completable before 1.6</font>
+* Heavy Timbermaw Belt
+<br><font color='yellow'>Timbermaw rewards added (see retail patch notes)</font>
+* Might of the Timbermaw
+<br><font color='yellow'>Timbermaw rewards added (see retail patch notes)</font>
+* Wisdom of the Timbermaw
+<br><font color='yellow'>Timbermaw rewards added (see retail patch notes)</font>
+* Heavy Timbermaw Boots
+<br><font color='yellow'>Timbermaw rewards added (see retail patch notes)</font>
+* Timbermaw Brawlers
+<br><font color='yellow'>Timbermaw rewards added (see retail patch notes)</font>
+* Mantle of the Timbermaw
+<br><font color='yellow'>Timbermaw rewards added (see retail patch notes)</font>
+* Girdle of the Dawn
+<br><font color='yellow'>Argent dawn patterns added (see 1.6 retail patch notes)</font>
+* Dawn Treaders
+<br><font color='yellow'>Argent dawn patterns added (see 1.6 retail patch notes)</font>
+* Argent Boots
+<br><font color='yellow'>Argent dawn patterns added (see 1.6 retail patch notes)</font>
+* Gloves of the Dawn
+<br><font color='yellow'>Argent dawn patterns added (see 1.6 retail patch notes)</font>
+* Golden Mantle of the Dawn
+<br><font color='yellow'>Argent dawn patterns added (see 1.6 retail patch notes)</font>
+* Argent Shoulders
+<br><font color='yellow'>Argent dawn patterns added (see 1.6 retail patch notes)</font>
+* Dark Iron Helm
+<br><font color='yellow'>See retail 1.6 patch notes</font>
+* Lava Belt
+<br><font color='yellow'>See retail 1.6 patch notes</font>
+* Flarecore Robe
+<br><font color='yellow'>See retail 1.6 patch notes</font>
+* Chromatic Gauntlets
+<br><font color='yellow'>New patterns available in 1.6</font>
+* Corehound Belt
+<br><font color='yellow'>See retail 1.6 patch notes</font>
+* Molten Belt
+<br><font color='yellow'>See retail 1.6 patch notes</font>
+* Girdle of the Fallen Crusader
+<br><font color='yellow'>BWL Loot</font>
+* Primalist's Linked Waistguard
+<br><font color='yellow'>BWL Loot</font>
+* Primalist's Linked Legguards
+<br><font color='yellow'>BWL Loot</font>
+* Formula: Powerful Anti-Venom
+<br><font color='yellow'>1.6 patch notes (new patterns added)</font>
+* Formula: Enchant Weapon - Strength
+<br><font color='yellow'>1.6 patch notes (new patterns added)</font>
+* Formula: Enchant Weapon - Agility
+<br><font color='yellow'>1.6 patch notes (new patterns added)</font>
+* Formula: Enchant Bracer - Mana Regeneration
+<br><font color='yellow'>1.6 patch notes (new patterns added)</font>
+* Formula: Enchant Bracer - Healing
+<br><font color='yellow'>1.6 patch notes (new patterns added)</font>
+* Formula: Enchant Weapon - Mighty Spirit
+<br><font color='yellow'>1.6 patch notes (new patterns added)</font>
+* Formula: Enchant Weapon - Mighty Intellect
+<br><font color='yellow'>1.6 patch notes (new patterns added)</font>
+* Amulet of the Darkmoon
+<br><font color='yellow'>1.6 patch notes (darkmoon faire)</font>
+* Inquisitor's Shawl
+<br><font color='yellow'>New loot added to Fairbanks (Allakhazam & inference dating)</font>
+* Branded Leather Bracers
+<br><font color='yellow'>New loot added to Fairbanks (Allakhazam & inference dating)</font>
+* Dusty Mail Boots
+<br><font color='yellow'>New loot added to Fairbanks (Allakhazam & inference dating)</font>
 * Dark Iron Gauntlets
 <br><font color='yellow'>Retail Patch Notes</font>
 * Flarecore Leggings
@@ -6595,6 +6774,38 @@
 <br><font color='yellow'>WSG rep reward (originally patch 1.6...WSG released patch 1.5)</font>
 * Dryad's Wrist Bindings
 <br><font color='yellow'>WSG rep reward (originally patch 1.6...WSG released patch 1.5)</font>
+* Advisor's Gnarled Staff
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Advisor's Ring
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Battle Healer's Cloak
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Caretaker's Cape
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Legionnaire's Band
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Legionnaire's Sword
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Lorekeeper's Ring
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Lorekeeper's Staff
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Outrider's Bow
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Outrunner's Bow
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Protector's Band
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Protector's Sword
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Scout's Blade
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Scout's Medallion
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Sentinel's Blade
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
+* Sentinel's Medallion
+<br><font color='yellow'>PvP bracket expansion (originally happened with 1.8)</font>
 # NEW CREATURES
 # NEW QUESTS
 # NEW SPELLS
@@ -6998,6 +7209,74 @@
 <br><font color='yellow'>ZG Rep Reward</font>
 * Bloodvine Goggles
 <br><font color='yellow'>ZG Rep Reward</font>
+* Bounty of the Harvest
+<br><font color='yellow'>Horde ONLY reward by mail for completing quest 8150 (Allakhazam dating)</font>
+* Thoughtblighter
+<br><font color='yellow'>ZG Loot</font>
+* Fiery Retributer
+<br><font color='yellow'>ZG Loot</font>
+* Circle of Hope
+<br><font color='yellow'>LVL 50 class quest (priest), see retail 1.7 patch notes</font>
+* Flowing Ritual Robes
+<br><font color='yellow'>ZG Loot</font>
+* Zandalar Demoniac's Robe
+<br><font color='yellow'>ZG Loot</font>
+* Zandalar Illusionist's Robe
+<br><font color='yellow'>ZG Loot</font>
+* Glacial Spike
+<br><font color='yellow'>LVL 50 class quest (mage), see retail 1.7 patch notes</font>
+* Fire Ruby
+<br><font color='yellow'>LVL 50 class quest (mage), see retail 1.7 patch notes</font>
+* Arcane Crystal Pendant
+<br><font color='yellow'>LVL 50 class quest (mage), see retail 1.7 patch notes</font>
+* Deathguard's Cloak
+<br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Ironbark Staff
+<br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Sageclaw
+<br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Talisman of Arathor
+<br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Defiler's Talisman
+<br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Cloak of the Honor Guard
+<br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Woestave
+<br><font color='yellow'>LVL 50 class quest (priest), see retail 1.7 patch notes</font>
+* Hunting Spear
+<br><font color='yellow'>LVL 50 class quest (hunter), see retail 1.7 patch notes</font>
+* Dusksteel Throwing Knife
+<br><font color='yellow'>Ravenholdt repeatable quest added (Allakhazam dating)</font>
+* Skyfury Helm
+<br><font color='yellow'>Quest added for Scholomance (horde) (allakhazam dating)</font>
+* Faded Hakkari Cloak
+<br><font color='yellow'>ZG RP quest added</font>
+* Tattered Hakkari Cape
+<br><font color='yellow'>ZG RP quest added</font>
+* Ironbark Staff
+<br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Whisperwalk Boots
+<br><font color='yellow'>LVL 50 class quest (rogue), see retail 1.7 patch notes</font>
+* Seafury Gauntlets
+<br><font color='yellow'>ZG Loot</font>
+* Zulian Ceremonial Staff
+<br><font color='yellow'>ZG Loot</font>
+* Shadow Panther Hide Gloves
+<br><font color='yellow'>ZG Loot</font>
+* Seafury Leggings
+<br><font color='yellow'>ZG Loot</font>
+* Shadow Panther Hide Belt
+<br><font color='yellow'>ZG Loot</font>
+* Seafury Boots
+<br><font color='yellow'>ZG Loot</font>
+* Gurubashi Helm
+<br><font color='yellow'>ZG Loot</font>
+* Peacekeeper Gauntlets
+<br><font color='yellow'>ZG Loot</font>
+* Peacekeeper Boots
+<br><font color='yellow'>ZG Loot</font>
+* Peacekeeper Leggings
+<br><font color='yellow'>ZG Loot</font>
 * Schematic: Bloodvine Goggles
 <br><font color='yellow'>ZG Rep Reward</font>
 * Schematic: Bloodvine Lens
@@ -7298,6 +7577,18 @@
 <br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
 * Highlander's Epaulets
 <br><font color='yellow'>AB rep rewards (originally patch 1.7)</font>
+* Defiler's Talisman
+<br><font color='yellow'>AB rep rewards (originally patch 1.9 due to bracket expansion)</font>
+* Defiler's Talisman
+<br><font color='yellow'>AB rep rewards (originally patch 1.9 due to bracket expansion)</font>
+* Talisman of Arathor
+<br><font color='yellow'>AB rep rewards (originally patch 1.9 due to bracket expansion)</font>
+* Talisman of Arathor
+<br><font color='yellow'>AB rep rewards (originally patch 1.9 due to bracket expansion)</font>
+* Talisman of Arathor
+<br><font color='yellow'>AB rep rewards (originally patch 1.9 due to bracket expansion)</font>
+* Defiler's Talisman
+<br><font color='yellow'>AB rep rewards (originally patch 1.9 due to bracket expansion)</font>
 # NEW CREATURES
 # NEW QUESTS
 * Strength of Mount Mugamba
@@ -7471,6 +7762,22 @@
 * Dragons of Nightmare Spawn
 * Patch 1.8
 # NEW ITEMS
+* Diamond Flask
+<br><font color='yellow'>LVL 50 class quest (warrior), see 1.8 retail patch notes</font>
+* Blue Dragonscale Leggings
+<br><font color='yellow'>1.8 patch notes</font>
+* Green Dragonscale Gauntlets
+<br><font color='yellow'>1.8 patch notes</font>
+* Azurite Fists
+<br><font color='yellow'>LVL 50 class quest (shaman), see retail 1.8 patch notes</font>
+* Dreamscale Breastplate
+<br><font color='yellow'>New CC rep reward, using emerald dragon loot</font>
+* Pattern: Dreamscale Breastplate
+<br><font color='yellow'>New CC rep reward, using emerald dragon loot</font>
+* Flimsy Male Gnome Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Gnome Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
 * Twilight Cultist Mantle
 <br><font color='yellow'>Silithus windstone revamp</font>
 * Twilight Cultist Robe
@@ -7509,6 +7816,84 @@
 <br><font color='yellow'>Silithus windstones</font>
 * Earthen Guard
 <br><font color='yellow'>Silithus windstones</font>
+* Twilight Cultist Ring of Lordship
+<br><font color='yellow'>Silithus windstones</font>
+* Lok'delar, Stave of the Ancient Keepers DEP
+<br><font color='yellow'>Note: Items were split in two in patch 1.8, which is their current status in game files</font>
+* Rhok'delar, Longbow of the Ancient Keepers DEP
+<br><font color='yellow'>Note: Items were split in two in patch 1.8, which is their current status in game files</font>
+* Enamored Water Spirit
+<br><font color='yellow'>LVL 50 class quest (shaman), see retail 1.8 patch notes</font>
+* Lightforged Blade
+<br><font color='yellow'>LVL 50 class quest (paladin), see retail 1.8 patch notes</font>
+* Chivalrous Signet
+<br><font color='yellow'>LVL 50 class quest (paladin), see retail 1.8 patch notes</font>
+* Sanctified Orb
+<br><font color='yellow'>LVL 50 class quest (paladin), see retail 1.8 patch notes</font>
+* Runed Stygian Boots
+<br><font color='yellow'>Silithus revamp</font>
+* Runed Stygian Leggings
+<br><font color='yellow'>Silithus revamp</font>
+* Runed Stygian Belt
+<br><font color='yellow'>Silithus revamp</font>
+* Pattern: Runed Stygian Leggings
+<br><font color='yellow'>Silithus revamp</font>
+* Pattern: Runed Stygian Boots
+<br><font color='yellow'>Silithus revamp</font>
+* Pattern: Runed Stygian Belt
+<br><font color='yellow'>Silithus revamp</font>
+* Darkrune Gauntlets
+<br><font color='yellow'>Silithus revamp</font>
+* Darkrune Breastplate
+<br><font color='yellow'>Silithus revamp</font>
+* Darkrune Helm
+<br><font color='yellow'>Silithus revamp</font>
+* Plans: Darkrune Gauntlets
+<br><font color='yellow'>Silithus revamp</font>
+* Plans: Darkrune Breastplate
+<br><font color='yellow'>Silithus revamp</font>
+* Plans: Darkrune Helm
+<br><font color='yellow'>Silithus revamp</font>
+* Flimsy Male Dwarf Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Dwarf Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Nightelf Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Male Nightelf Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Human Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Male Human Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Troll Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Male Troll Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Orc Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Male Orc Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Tauren Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Male Tauren Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Male Undead Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Flimsy Female Undead Mask
+<br><font color='yellow'>Hallow's Eve event added (see 1.8 patch notes)</font>
+* Nightmare Blade
+<br><font color='yellow'>Emerald dragon loot</font>
+* Malfurion's Signet Ring
+<br><font color='yellow'>Emerald dragon loot</font>
+* Dragonspur Wraps
+<br><font color='yellow'>Emerald dragon loot</font>
+* Dark Heart Pants
+<br><font color='yellow'>Emerald dragon loot</font>
+* Deviate Growth Cap
+<br><font color='yellow'>Emerald dragon loot</font>
+* Malignant Footguards
+<br><font color='yellow'>Emerald dragon loot</font>
 # NEW CREATURES
 # NEW QUESTS
 * Glyph Chasing
@@ -7957,6 +8342,20 @@
 <br><font color='yellow'>AQ Gates Questline</font>
 * Dark Edge of Insanity
 <br><font color='yellow'>AQ40 Loot</font>
+* Anubisath Warhammer
+<br><font color='yellow'>AQ40 Loot</font>
+* Garb of Royal Ascension
+<br><font color='yellow'>AQ40 Loot</font>
+* Scepter of the False Prophet
+<br><font color='yellow'>AQ40 Loot</font>
+* Shard of the Fallen Star
+<br><font color='yellow'>AQ40 Loot</font>
+* Eyestalk Waist Cord
+<br><font color='yellow'>Looted 4/25/2006, no evidence it wasn't on original C'thun loot tables</font>
+* Cloak of the Devoured
+<br><font color='yellow'>Looted 4/25/2006, no evidence it wasn't on original C'thun loot tables</font>
+* Mark of C'Thun
+<br><font color='yellow'>Looted 4/25/2006, no evidence it wasn't on original C'thun loot tables</font>
 # NEW CREATURES
 # NEW QUESTS
 # NEW SPELLS
@@ -8156,6 +8555,82 @@
 * Libram of Truth
 * Libram of Hope
 * Libram of Grace
+* Dragonskin Cowl
+<br><font color='yellow'>Major loot table update</font>
+* Spellweaver's Turban
+<br><font color='yellow'>Major loot table update</font>
+* Forest's Embrace
+<br><font color='yellow'>LVL 50 class quest (druid), see retail 1.10 patch notes</font>
+* Grizzled Pelt
+<br><font color='yellow'>LVL 50 class quest (druid), see retail 1.10 patch notes</font>
+* Firemoss Boots
+<br><font color='yellow'>Major loot table update</font>
+* Ironweave Robe
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Ironweave Cowl
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Ironweave Pants
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Ironweave Gloves
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Ironweave Mantle
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Ironweave Belt
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Ironweave Boots
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Ironweave Bracers
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Huntsman's Harpoon
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Hammer of Revitalization
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Lefty's Brass Knuckle
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Malgen's Long Bow
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Tome of Divine Right
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Heart of Wyrmthalak
+<br><font color='yellow'>Major loot table update</font>
+* The Jaw Breaker
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Belt of the Trickster
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Amalgam's Band
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Amulet of the Redeemed
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Legplates of Vigilance
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Scepter of Interminable Focus
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Shroud of Arcane Mastery
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Band of the Steadfast Hero
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Blade of Necromancy
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Hammer of Divine Might
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Band of Mending
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Lord Valthalak's Staff of Command
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Draconian Aegis of the Legion
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Shroud of Domination
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Rune Band of Wizardry
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Pendant of Celerity
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Leggings of Torment
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Handguards of Savagery
+<br><font color='yellow'>Tier 0.5 boss loot</font>
+* Totem of Rebirth
+<br><font color='yellow'>Tier 0.5 boss loot</font>
 # ITEM STATS
 <br><font color='yellow'>Items changed:</font>
 # NEW CREATURES
@@ -8817,6 +9292,170 @@
 <br><font color='yellow'>1.11 PvP Item update</font>
 * High Warlord's Tome of Mending
 <br><font color='yellow'>1.11 PvP Item update</font>
+* Pattern: Gaea's Embrace
+<br><font color='yellow'>New CC Nature resist rep rewards added (1.11 patch notes)</font>
+* Verimonde's Last Resort
+<br><font color='yellow'>AD badge quests added (1.11 patch notes)</font>
+* Sanctified Leather Helm
+<br><font color='yellow'>AD badge quests added (1.11 patch notes)</font>
+* Leggings of the Plague Hunter
+<br><font color='yellow'>AD badge quests added (1.11 patch notes)</font>
+* Ramaladni's Icy Grasp
+<br><font color='yellow'>Naxx loot</font>
+* Cloak of the Hakkari Worshipers
+<br><font color='yellow'>ZG Loot update</font>
+* Might of the Tribe
+<br><font color='yellow'>ZG Loot update</font>
+* Zulian Scepter of Rites
+<br><font color='yellow'>ZG Loot update</font>
+* Sacrificial Gauntlets
+<br><font color='yellow'>ZG Loot update</font>
+* Gloves of the Tormented
+<br><font color='yellow'>ZG Loot update</font>
+* Belt of Untapped Power
+<br><font color='yellow'>ZG Loot update</font>
+* Seal of the Gurubashi Berserker
+<br><font color='yellow'>ZG Loot update</font>
+* Andonisus, Reaper of Souls
+<br><font color='yellow'>Atiesh quest summoned weapon</font>
+* Outrider's Leather Pants
+<br><font color='yellow'>WSG rewards added</font>
+* Outrider's Lizardhide Pants
+<br><font color='yellow'>WSG rewards added</font>
+* Soulseeker
+<br><font color='yellow'>Naxx loot</font>
+* Brimstone Staff
+<br><font color='yellow'>Naxx loot</font>
+* Spire of Twilight
+<br><font color='yellow'>Naxx loot</font>
+* Kingsfall
+<br><font color='yellow'>Naxx loot</font>
+* Midnight Haze
+<br><font color='yellow'>Naxx loot</font>
+* Wraith Blade
+<br><font color='yellow'>Naxx loot</font>
+* The Castigator
+<br><font color='yellow'>Naxx loot</font>
+* Maul of the Redeemed Crusader
+<br><font color='yellow'>Naxx loot</font>
+* Toxin Injector
+<br><font color='yellow'>Naxx loot</font>
+* Soulstring
+<br><font color='yellow'>Naxx loot</font>
+* Nerubian Slavemaker
+<br><font color='yellow'>Naxx loot</font>
+* Claymore of Unholy Might
+<br><font color='yellow'>Naxx loot</font>
+* Severance
+<br><font color='yellow'>Naxx loot</font>
+* Hatchet of Sundered Bone
+<br><font color='yellow'>Naxx loot</font>
+* The Plague Bearer
+<br><font color='yellow'>Naxx loot</font>
+* Shield of Condemnation
+<br><font color='yellow'>Naxx loot</font>
+* Wand of Fates
+<br><font color='yellow'>Naxx loot</font>
+* Doomfinger
+<br><font color='yellow'>Naxx loot</font>
+* Boots of Displacement
+<br><font color='yellow'>Naxx loot</font>
+* Death's Bargain
+<br><font color='yellow'>Naxx loot</font>
+* Gauntlets of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Handwraps of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Handguards of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Gloves of Undead Cleansing
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Robe of Undead Cleansing
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Breastplate of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Chestguard of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Tunic of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Bracers of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Bracers of Undead Cleansing
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Wristguards of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Wristwraps of Undead Slaying
+<br><font color='yellow'>Pre-naxx world event reward</font>
+* Staff of Balzaphon
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Chains of the Lich
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Waistband of Balzaphon
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Cloak of Revanchion
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* The Shadow's Grasp
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Bracers of Mending
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Lord Blackwood's Blade
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Lord Blackwood's Buckler
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Blackwood's Thigh
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Scorn's Focal Dagger
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Scorn's Icy Choker
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* The Frozen Clutch
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* The Axe of Severing
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Abomination Skin Leggings
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Lady Falther'ess' Finger
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Mantle of Lady Falther'ess
+<br><font color='yellow'>Pre-naxx world event drop</font>
+* Mark of the Champion
+<br><font color='yellow'>Naxx Loot</font>
+* Mark of the Champion
+<br><font color='yellow'>Naxx Loot</font>
+* Girdle of the Mentor
+<br><font color='yellow'>Naxx Loot</font>
+* Crystal Webbed Robe
+<br><font color='yellow'>Naxx Loot</font>
+* Misplaced Servo Arm
+<br><font color='yellow'>Naxx Loot</font>
+* Ghoul Skin Tunic
+<br><font color='yellow'>Naxx Loot</font>
+* Ring of the Eternal Flame
+<br><font color='yellow'>Naxx Loot</font>
+* Stygian Buckler
+<br><font color='yellow'>Naxx Loot</font>
+* Claw of the Frost Wyrm
+<br><font color='yellow'>Naxx Loot</font>
+* Larvae of the Great Worm
+<br><font color='yellow'>1.11 patch notes: new items for Ouro</font>
+* The Burrower's Shell
+<br><font color='yellow'>1.11 patch notes: new items for Ouro</font>
+* Jom Gabbar
+<br><font color='yellow'>1.11 patch notes: new items for Ouro</font>
+* The Hungering Cold
+<br><font color='yellow'>Naxx Loot</font>
+* Girdle of Elemental Fury
+<br><font color='yellow'>Naxx Loot</font>
+* Pauldrons of Elemental Fury
+<br><font color='yellow'>Naxx Loot</font>
+* Leggings of Elemental Fury
+<br><font color='yellow'>Naxx Loot</font>
+* Belt of the Grand Crusader
+<br><font color='yellow'>Naxx Loot</font>
+* Spaulders of the Grand Crusader
+<br><font color='yellow'>Naxx Loot</font>
+* Leggings of the Grand Crusader
+<br><font color='yellow'>Naxx Loot</font>
 # NEW CREATURES
 # NEW QUESTS
 # NEW SPELLS
@@ -8847,6 +9486,8 @@
 <br><font color='yellow'>1.12</font>
 * Dawnbringer Shoulders
 <br><font color='yellow'>Did not exist until late 2006/2007 (NOTE: Plans are not on this list)</font>
+* The Shadowfoot Stabber
+<br><font color='yellow'>Allakhazam comments</font>
 # NEW CREATURES
 # NEW QUESTS
 # NEW SPELLS

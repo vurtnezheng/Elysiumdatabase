@@ -351,6 +351,88 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 23467,   -- High Warlord's Quickblade | 1.11 PvP Item update
 23468,   -- High Warlord's Tome of Destruction | 1.11 PvP Item update
 23469,   -- High Warlord's Tome of Mending | 1.11 PvP Item update
+22683,   -- Pattern: Gaea's Embrace | New CC Nature resist rep rewards added (1.11 patch notes)
+22688,   -- Verimonde's Last Resort | AD badge quests added (1.11 patch notes)
+22689,   -- Sanctified Leather Helm | AD badge quests added (1.11 patch notes)
+22690,   -- Leggings of the Plague Hunter | AD badge quests added (1.11 patch notes)
+22707,   -- Ramaladni's Icy Grasp | Naxx loot
+22711,   -- Cloak of the Hakkari Worshipers | ZG Loot update
+22712,   -- Might of the Tribe | ZG Loot update
+22713,   -- Zulian Scepter of Rites | ZG Loot update
+22714,   -- Sacrificial Gauntlets | ZG Loot update
+22715,   -- Gloves of the Tormented | ZG Loot update
+22716,   -- Belt of Untapped Power | ZG Loot update
+22722,   -- Seal of the Gurubashi Berserker | ZG Loot update
+22736,   -- Andonisus, Reaper of Souls | Atiesh quest summoned weapon
+22740,   -- Outrider's Leather Pants | WSG rewards added
+22741,   -- Outrider's Lizardhide Pants | WSG rewards added
+22799,   -- Soulseeker | Naxx loot
+22800,   -- Brimstone Staff | Naxx loot
+22801,   -- Spire of Twilight | Naxx loot
+22802,   -- Kingsfall | Naxx loot
+22803,   -- Midnight Haze | Naxx loot
+22807,   -- Wraith Blade | Naxx loot
+22808,   -- The Castigator | Naxx loot
+22809,   -- Maul of the Redeemed Crusader | Naxx loot
+22810,   -- Toxin Injector | Naxx loot
+22811,   -- Soulstring | Naxx loot
+22812,   -- Nerubian Slavemaker | Naxx loot
+22813,   -- Claymore of Unholy Might | Naxx loot
+22815,   -- Severance | Naxx loot
+22816,   -- Hatchet of Sundered Bone | Naxx loot
+22818,   -- The Plague Bearer | Naxx loot
+22819,   -- Shield of Condemnation | Naxx loot
+22820,   -- Wand of Fates | Naxx loot
+22821,   -- Doomfinger | Naxx loot
+23073,   -- Boots of Displacement | Naxx loot
+23075,   -- Death's Bargain | Naxx loot
+23078,   -- Gauntlets of Undead Slaying | Pre-naxx world event reward
+23081,   -- Handwraps of Undead Slaying | Pre-naxx world event reward
+23082,   -- Handguards of Undead Slaying | Pre-naxx world event reward
+23084,   -- Gloves of Undead Cleansing | Pre-naxx world event reward
+23085,   -- Robe of Undead Cleansing | Pre-naxx world event reward
+23087,   -- Breastplate of Undead Slaying | Pre-naxx world event reward
+23088,   -- Chestguard of Undead Slaying | Pre-naxx world event reward
+23089,   -- Tunic of Undead Slaying | Pre-naxx world event reward
+23090,   -- Bracers of Undead Slaying | Pre-naxx world event reward
+23091,   -- Bracers of Undead Cleansing | Pre-naxx world event reward
+23092,   -- Wristguards of Undead Slaying | Pre-naxx world event reward
+23093,   -- Wristwraps of Undead Slaying | Pre-naxx world event reward
+23124,   -- Staff of Balzaphon | Pre-naxx world event drop
+23125,   -- Chains of the Lich | Pre-naxx world event drop
+23126,   -- Waistband of Balzaphon | Pre-naxx world event drop
+23127,   -- Cloak of Revanchion | Pre-naxx world event drop
+23128,   -- The Shadow's Grasp | Pre-naxx world event drop
+23129,   -- Bracers of Mending | Pre-naxx world event drop
+23132,   -- Lord Blackwood's Blade | Pre-naxx world event drop
+23139,   -- Lord Blackwood's Buckler | Pre-naxx world event drop
+23156,   -- Blackwood's Thigh | Pre-naxx world event drop
+23168,   -- Scorn's Focal Dagger | Pre-naxx world event drop
+23169,   -- Scorn's Icy Choker | Pre-naxx world event drop
+23170,   -- The Frozen Clutch | Pre-naxx world event drop
+23171,   -- The Axe of Severing | Pre-naxx world event drop
+23173,   -- Abomination Skin Leggings | Pre-naxx world event drop
+23177,   -- Lady Falther'ess' Finger | Pre-naxx world event drop
+23178,   -- Mantle of Lady Falther'ess | Pre-naxx world event drop
+23206,   -- Mark of the Champion | Naxx Loot
+23207,   -- Mark of the Champion | Naxx Loot
+23219,   -- Girdle of the Mentor | Naxx Loot
+23220,   -- Crystal Webbed Robe | Naxx Loot
+23221,   -- Misplaced Servo Arm | Naxx Loot
+23226,   -- Ghoul Skin Tunic | Naxx Loot
+23237,   -- Ring of the Eternal Flame | Naxx Loot
+23238,   -- Stygian Buckler | Naxx Loot
+23242,   -- Claw of the Frost Wyrm | Naxx Loot
+23557,   -- Larvae of the Great Worm | 1.11 patch notes: new items for Ouro
+23558,   -- The Burrower's Shell | 1.11 patch notes: new items for Ouro
+23570,   -- Jom Gabbar | 1.11 patch notes: new items for Ouro
+23577,   -- The Hungering Cold | Naxx Loot
+23663,   -- Girdle of Elemental Fury | Naxx Loot
+23664,   -- Pauldrons of Elemental Fury | Naxx Loot
+23665,   -- Leggings of Elemental Fury | Naxx Loot
+23666,   -- Belt of the Grand Crusader | Naxx Loot
+23667,   -- Spaulders of the Grand Crusader | Naxx Loot
+23668,   -- Leggings of the Grand Crusader | Naxx Loot
 );
  
 -- * NEW CREATURES

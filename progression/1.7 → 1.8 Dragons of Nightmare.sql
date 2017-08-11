@@ -32,6 +32,14 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
+20130,    -- Diamond Flask | LVL 50 class quest (warrior), see 1.8 retail patch notes
+20295,    -- Blue Dragonscale Leggings | 1.8 patch notes
+20296,    -- Green Dragonscale Gauntlets | 1.8 patch notes
+20369,    -- Azurite Fists | LVL 50 class quest (shaman), see retail 1.8 patch notes
+20380,    -- Dreamscale Breastplate | New CC rep reward, using emerald dragon loot
+20382,    -- Pattern: Dreamscale Breastplate | New CC rep reward, using emerald dragon loot
+20391,    -- Flimsy Male Gnome Mask | Hallow's Eve event added (see 1.8 patch notes)
+20392,    -- Flimsy Female Gnome Mask | Hallow's Eve event added (see 1.8 patch notes)
 20406,    -- Twilight Cultist Mantle | Silithus windstone revamp
 20407,    -- Twilight Cultist Robe | Silithus windstone revamp
 20408,    -- Twilight Cultist Cowl | Silithus windstone revamp
@@ -51,6 +59,45 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 20682,    -- Elemental Focus Band | Silithus windstones
 20685,    -- Wavefront Necklace | Silithus windstones
 20688,    -- Earthen Guard | Silithus windstones
+20451,    -- Twilight Cultist Ring of Lordship | Silithus windstones
+20487,    -- Lok'delar, Stave of the Ancient Keepers DEP | Note: Items were split in two in patch 1.8, which is their current status in game files
+20488,    -- Rhok'delar, Longbow of the Ancient Keepers DEP | Note: Items were split in two in patch 1.8, which is their current status in game files
+20503,    -- Enamored Water Spirit | LVL 50 class quest (shaman), see retail 1.8 patch notes
+20504,    -- Lightforged Blade | LVL 50 class quest (paladin), see retail 1.8 patch notes
+20505,    -- Chivalrous Signet | LVL 50 class quest (paladin), see retail 1.8 patch notes
+20512,    -- Sanctified Orb | LVL 50 class quest (paladin), see retail 1.8 patch notes
+20537,    -- Runed Stygian Boots | Silithus revamp
+20538,    -- Runed Stygian Leggings | Silithus revamp
+20539,    -- Runed Stygian Belt | Silithus revamp
+20546,    -- Pattern: Runed Stygian Leggings | Silithus revamp
+20547,    -- Pattern: Runed Stygian Boots | Silithus revamp
+20548,    -- Pattern: Runed Stygian Belt | Silithus revamp
+20549,    -- Darkrune Gauntlets | Silithus revamp
+20550,    -- Darkrune Breastplate | Silithus revamp
+20551,    -- Darkrune Helm | Silithus revamp
+20553,    -- Plans: Darkrune Gauntlets | Silithus revamp
+20554,    -- Plans: Darkrune Breastplate | Silithus revamp
+20555,    -- Plans: Darkrune Helm | Silithus revamp
+20561,    -- Flimsy Male Dwarf Mask | Hallow's Eve event added (see 1.8 patch notes)
+20562,    -- Flimsy Female Dwarf Mask | Hallow's Eve event added (see 1.8 patch notes)
+20563,    -- Flimsy Female Nightelf Mask | Hallow's Eve event added (see 1.8 patch notes)
+20564,    -- Flimsy Male Nightelf Mask | Hallow's Eve event added (see 1.8 patch notes)
+20565,    -- Flimsy Female Human Mask | Hallow's Eve event added (see 1.8 patch notes)
+20566,    -- Flimsy Male Human Mask | Hallow's Eve event added (see 1.8 patch notes)
+20567,    -- Flimsy Female Troll Mask | Hallow's Eve event added (see 1.8 patch notes)
+20568,    -- Flimsy Male Troll Mask | Hallow's Eve event added (see 1.8 patch notes)
+20569,    -- Flimsy Female Orc Mask | Hallow's Eve event added (see 1.8 patch notes)
+20570,    -- Flimsy Male Orc Mask | Hallow's Eve event added (see 1.8 patch notes)
+20571,    -- Flimsy Female Tauren Mask | Hallow's Eve event added (see 1.8 patch notes)
+20572,    -- Flimsy Male Tauren Mask | Hallow's Eve event added (see 1.8 patch notes)
+20573,    -- Flimsy Male Undead Mask | Hallow's Eve event added (see 1.8 patch notes)
+20574,    -- Flimsy Female Undead Mask | Hallow's Eve event added (see 1.8 patch notes)
+20577,    -- Nightmare Blade | Emerald dragon loot
+20600,    -- Malfurion's Signet Ring | Emerald dragon loot
+20615,    -- Dragonspur Wraps | Emerald dragon loot
+20627,    -- Dark Heart Pants | Emerald dragon loot
+20628,    -- Deviate Growth Cap | Emerald dragon loot
+20629,    -- Malignant Footguards | Emerald dragon loot
 );
  
 -- * NEW CREATURES

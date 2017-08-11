@@ -225,6 +225,40 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 19993,    -- Hoodoo Hunting Bow | ZG Loot
 19998,    -- Bloodvine Lens | ZG Rep Reward
 19999,    -- Bloodvine Goggles | ZG Rep Reward
+19697,   -- Bounty of the Harvest | Horde ONLY reward by mail for completing quest 8150 (Allakhazam dating)
+19967,   -- Thoughtblighter | ZG Loot
+19968,   -- Fiery Retributer | ZG Loot
+20006,   -- Circle of Hope | LVL 50 class quest (priest), see retail 1.7 patch notes
+20032,   -- Flowing Ritual Robes | ZG Loot
+20033,   -- Zandalar Demoniac's Robe | ZG Loot
+20034,   -- Zandalar Illusionist's Robe | ZG Loot
+20035,   -- Glacial Spike | LVL 50 class quest (mage), see retail 1.7 patch notes
+20036,   -- Fire Ruby | LVL 50 class quest (mage), see retail 1.7 patch notes
+20037,   -- Arcane Crystal Pendant | LVL 50 class quest (mage), see retail 1.7 patch notes
+20068,   -- Deathguard's Cloak | AB rep rewards (originally patch 1.7)
+20069,   -- Ironbark Staff | AB rep rewards (originally patch 1.7)
+20070,   -- Sageclaw | AB rep rewards (originally patch 1.7)
+20071,   -- Talisman of Arathor | AB rep rewards (originally patch 1.7)
+20072,   -- Defiler's Talisman | AB rep rewards (originally patch 1.7)
+20073,   -- Cloak of the Honor Guard | AB rep rewards (originally patch 1.7)
+20082,   -- Woestave | LVL 50 class quest (priest), see retail 1.7 patch notes
+20083,   -- Hunting Spear | LVL 50 class quest (hunter), see retail 1.7 patch notes
+20086,   -- Dusksteel Throwing Knife | Ravenholdt repeatable quest added (Allakhazam dating)
+20134,   -- Skyfury Helm | Quest added for Scholomance (horde) (allakhazam dating)
+20218,   -- Faded Hakkari Cloak | ZG RP quest added
+20219,   -- Tattered Hakkari Cape | ZG RP quest added
+20220,   -- Ironbark Staff | AB rep rewards (originally patch 1.7)
+20255,   -- Whisperwalk Boots | LVL 50 class quest (rogue), see retail 1.7 patch notes
+20257,   -- Seafury Gauntlets | ZG Loot
+20258,   -- Zulian Ceremonial Staff | ZG Loot
+20259,   -- Shadow Panther Hide Gloves | ZG Loot
+20260,   -- Seafury Leggings | ZG Loot
+20261,   -- Shadow Panther Hide Belt | ZG Loot
+20262,   -- Seafury Boots | ZG Loot
+20263,   -- Gurubashi Helm | ZG Loot
+20264,   -- Peacekeeper Gauntlets | ZG Loot
+20265,   -- Peacekeeper Boots | ZG Loot
+20266,   -- Peacekeeper Leggings | ZG Loot
 20000,    -- Schematic: Bloodvine Goggles | ZG Rep Reward
 20001,    -- Schematic: Bloodvine Lens | ZG Rep Reward
 20038,    -- Mandokir's Sting | ZG Loot
@@ -375,6 +409,12 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 20059,    -- Highlander's Leather Shoulders | AB rep rewards (originally patch 1.7)
 20060,    -- Highlander's Lizardhide Shoulders | AB rep rewards (originally patch 1.7)
 20061,    -- Highlander's Epaulets | AB rep rewards (originally patch 1.7)
+21115,    -- Defiler's Talisman | AB rep rewards (originally patch 1.9 due to bracket expansion)
+21116,    -- Defiler's Talisman | AB rep rewards (originally patch 1.9 due to bracket expansion)
+21117,    -- Talisman of Arathor | AB rep rewards (originally patch 1.9 due to bracket expansion)
+21118,    -- Talisman of Arathor | AB rep rewards (originally patch 1.9 due to bracket expansion)
+21119,    -- Talisman of Arathor | AB rep rewards (originally patch 1.9 due to bracket expansion)
+21120,    -- Defiler's Talisman | AB rep rewards (originally patch 1.9 due to bracket expansion)
 );
 	
 -- * NEW CREATURES

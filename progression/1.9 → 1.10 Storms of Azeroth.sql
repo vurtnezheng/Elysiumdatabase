@@ -124,6 +124,44 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 22400,   -- Libram of Truth 
 22401,   -- Libram of Hope 
 22402,   -- Libram of Grace 
+22225,   -- Dragonskin Cowl | Major loot table update
+22267,   -- Spellweaver's Turban | Major loot table update
+22272,   -- Forest's Embrace | LVL 50 class quest (druid), see retail 1.10 patch notes
+22274,   -- Grizzled Pelt | LVL 50 class quest (druid), see retail 1.10 patch notes
+22275,   -- Firemoss Boots | Major loot table update
+22301,   -- Ironweave Robe | Tier 0.5 boss loot
+22302,   -- Ironweave Cowl | Tier 0.5 boss loot
+22303,   -- Ironweave Pants | Tier 0.5 boss loot
+22304,   -- Ironweave Gloves | Tier 0.5 boss loot
+22305,   -- Ironweave Mantle | Tier 0.5 boss loot
+22306,   -- Ironweave Belt | Tier 0.5 boss loot
+22311,   -- Ironweave Boots | Tier 0.5 boss loot
+22313,   -- Ironweave Bracers | Tier 0.5 boss loot
+22314,   -- Huntsman's Harpoon | Tier 0.5 boss loot
+22315,   -- Hammer of Revitalization | Tier 0.5 boss loot
+22317,   -- Lefty's Brass Knuckle | Tier 0.5 boss loot
+22318,   -- Malgen's Long Bow | Tier 0.5 boss loot
+22319,   -- Tome of Divine Right | Tier 0.5 boss loot
+22321,   -- Heart of Wyrmthalak | Major loot table update
+22322,   -- The Jaw Breaker | Tier 0.5 boss loot
+22325,   -- Belt of the Trickster | Tier 0.5 boss loot
+22326,   -- Amalgam's Band | Tier 0.5 boss loot
+22327,   -- Amulet of the Redeemed | Tier 0.5 boss loot
+22328,   -- Legplates of Vigilance | Tier 0.5 boss loot
+22329,   -- Scepter of Interminable Focus | Tier 0.5 boss loot
+22330,   -- Shroud of Arcane Mastery | Tier 0.5 boss loot
+22331,   -- Band of the Steadfast Hero | Tier 0.5 boss loot
+22332,   -- Blade of Necromancy | Tier 0.5 boss loot
+22333,   -- Hammer of Divine Might | Tier 0.5 boss loot
+22334,   -- Band of Mending | Tier 0.5 boss loot
+22335,   -- Lord Valthalak's Staff of Command | Tier 0.5 boss loot
+22336,   -- Draconian Aegis of the Legion | Tier 0.5 boss loot
+22337,   -- Shroud of Domination | Tier 0.5 boss loot
+22339,   -- Rune Band of Wizardry | Tier 0.5 boss loot
+22340,   -- Pendant of Celerity | Tier 0.5 boss loot
+22342,   -- Leggings of Torment | Tier 0.5 boss loot
+22343,   -- Handguards of Savagery | Tier 0.5 boss loot
+22345,   -- Totem of Rebirth | Tier 0.5 boss loot
 );
  
 -- * ITEM STATS | Items changed: 

@@ -246,6 +246,13 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 21039,   -- Narain's Turban | AQ Gates Questline
 21040,   -- Narain's Robe | AQ Gates Questline
 21134,   -- Dark Edge of Insanity | AQ40 Loot
+21837,   -- Anubisath Warhammer | AQ40 Loot
+21838,   -- Garb of Royal Ascension | AQ40 Loot
+21839,   -- Scepter of the False Prophet | AQ40 Loot
+21891,   -- Shard of the Fallen Star | AQ40 Loot
+22730,   -- Eyestalk Waist Cord | Looted 4/25/2006, no evidence it wasn't on original C'thun loot tables
+22731,   -- Cloak of the Devoured | Looted 4/25/2006, no evidence it wasn't on original C'thun loot tables
+22732,   -- Mark of C'Thun | Looted 4/25/2006, no evidence it wasn't on original C'thun loot tables
 );
  
 -- * NEW CREATURES
