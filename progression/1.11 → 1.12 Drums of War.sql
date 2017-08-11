@@ -32,10 +32,10 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
-24101,   -- Book of Ferocious Bite V | 1.12
-24102,   -- Manual of Eviscerate IX | 1.12
-12625,   -- Dawnbringer Shoulders | Did not exist until late 2006/2007 (NOTE: Plans are not on this list)
-24222,   -- The Shadowfoot Stabber | Allakhazam comments
+12625, -- Dawnbringer Shoulders | Did not exist until late 2006/2007 (NOTE: Plans are not on this list)
+24101, -- Book of Ferocious Bite V | Allakhazam comments (wowwiki is wrong!)
+24102, -- Manual of Eviscerate IX | Allakhazam comments (wowwiki is wrong!)
+24222; -- The Shadowfoot Stabber | Allakhazam comments
 );
  
 -- * NEW CREATURES

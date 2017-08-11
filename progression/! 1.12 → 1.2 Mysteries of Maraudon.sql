@@ -131,23 +131,15 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 12619,   -- Enchanted Thorium Leggings
 12620,   -- Enchanted Thorium Helm
 12625,   -- Dawnbringer Shoulders
-12772,   -- Inlaid Thorium Hammer
 12947,   -- Alex's Ring of Audacity
 13075,   -- Direwing Legguards
 13262,   -- Ashbringer
-13384,   -- Rainbow Girdle
-13956,   -- Clutch of Andros
-14464,   -- Elunarian Silk Robes
 14539,   -- Bone Ring Helm
-14811,   -- Warstrike Chestguard
-14812,   -- Warstrike Buckler
-14815,   -- Warstrike Gauntlets
 15196,   -- Private's Tabard
 15198,   -- Knight's Colors
 15199,   -- Stone Guard's Herald
 15405,   -- Shucking Gloves
 15410,   -- Scale of Onyxia
-15968,   -- Elunarian Sphere
 16165,   -- Test Arcane Res Legs Mail
 16335,   -- Senior Sergeant's Insignia
 16345,   -- High Warlord's Blade

@@ -43,70 +43,71 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
-6833,    -- White Tuxedo Shirt
-18309,   -- Gloves of Restoration | Dire Maul Loot
-18315,   -- Ring of Demonic Potency | Dire Maul Loot
-18323,   -- Satyr's Bow | Dire Maul Loot
-18325,   -- Felhide Cap | Dire Maul Loot
-18327,   -- Whipvine Cord | Dire Maul Loot
-18339,   -- Eidolon Cloak | Dire Maul Loot
-18340,   -- Eidolon Talisman | Dire Maul Loot
-18368,   -- Gordok's Gloves | Dire Maul Loot
-18369,   -- Gordok's Handwraps | Dire Maul Loot
-18371,   -- Mindtap Talisman | Dire Maul Loot
-18380,   -- Eldritch Reinforced Legplates | Dire Maul Loot
-18386,   -- Padre's Trousers | Dire Maul Loot
-18393,   -- Warpwood Binding | Dire Maul Loot
-18395,   -- Emerald Flame Ring | Dire Maul Loot
-18464,   -- Gordok Nose Ring | Dire Maul Loot
-18466,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
-18468,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
-18470,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
-18472,   -- Royal Seal of Eldre'Thalas | Dire Maul Loot
-18475,   -- Oddly Magical Belt | Dire Maul Loot
-18485,   -- Observer's Shield | Dire Maul Loot
-18490,   -- Insightful Hood | Dire Maul Loot
-18494,   -- Denwatcher's Shoulders | Dire Maul Loot
-18505,   -- Mugger's Belt | Dire Maul Loot
-18510,   -- Hide of the Wild | Dire Maul Loot
-18518,   -- Pattern: Hide of the Wild | Dire Maul Loot
-18522,   -- Band of the Ogre King | Dire Maul Loot
-18524,   -- Leggings of Destruction | Dire Maul Loot
-18528,   -- Cyclone Spaulders | Dire Maul Loot
-18535,   -- Milli's Shield | Dire Maul Loot
-18536,   -- Milli's Lexicon | Dire Maul Loot
-18537,   -- Counterattack Lodestone | Dire Maul Loot
-18302,   -- Band of Vigor | Dire Maul Loot
-18305,   -- Breakwater Legguards | Dire Maul Loot
-18306,   -- Gloves of Shadowy Mist | Dire Maul Loot
-18313,   -- Helm of Awareness | Dire Maul Loot
-18326,   -- Razor Gauntlets | Dire Maul Loot
-18337,   -- Orphic Bracers | Dire Maul Loot (Random drop off 11480, 14399, 11483, and 11484 only)
-18343,   -- Petrified Band | Dire Maul Loot (Random drop off 11459, 14303, and 11458 only)
-18349,   -- Gauntlets of Accuracy | Dire Maul Loot
-18350,   -- Amplifying Cloak | Dire Maul Loot
-18352,   -- Petrified Bark Shield | Dire Maul Loot
-18373,   -- Chestplate of Tranquility | Dire Maul Loot
-18374,   -- Flamescarred Shoulders | Dire Maul Loot
-18377,   -- Quickdraw Gloves | Dire Maul Loot
-18378,   -- Silvermoon Leggings | Dire Maul Loot
-18381,   -- Evil Eye Pendant | Dire Maul Loot
-18383,   -- Force Imbued Gauntlets | Dire Maul Loot
-18384,   -- Bile-etched Spaulders | Dire Maul Loot
-18387,   -- Brightspark Gloves | Dire Maul Loot
-18388,   -- Stoneshatter | Dire Maul Loot
-18022,   -- Royal Seal of Alexis | 1.3 retail patch notes
-18420,   -- Bonecrusher | Dire Maul Loot
-18421,   -- Backwood Helm | Dire Maul Loot
-18425,   -- Kreeg's Mug | Dire Maul Loot
-18450,   -- Robe of Combustion | Dire Maul Loot
-18451,   -- Hyena Hide Belt | Dire Maul Loot
-18480,   -- Scarab Plate Helm | Dire Maul Loot
-18493,   -- Bulky Iron Spaulders | Dire Maul Loot
-18543,   -- Ring of Entropy | Original Kazzak loot (Allakhazam dates)
-18544,   -- Doomhide Gauntlets | Original Kazzak loot (Allakhazam dates)
-18545,   -- Leggings of Arcane Supremacy | Original Azuregos loot (Allakhazam dates)
-17111,   -- Blazefury Medallion | Original Kazzak Loot
+6833,  -- White Tuxedo Shirt
+13075, -- Direwing Legguards | Drops off arena bosses and 1.3 world bosses (originally) per Allakhazam
+17111, -- Blazefury Medallion | Original Kazzak Loot
+18022, -- Royal Seal of Alexis | See 1.3 retail patch notes
+18302, -- Band of Vigor | Dire Maul Loot
+18305, -- Breakwater Legguards | Dire Maul Loot
+18306, -- Gloves of Shadowy Mist | Dire Maul Loot
+18309, -- Gloves of Restoration | Dire Maul Loot
+18313, -- Helm of Awareness | Dire Maul Loot
+18315, -- Ring of Demonic Potency | Dire Maul Loot
+18323, -- Satyr's Bow | Dire Maul Loot
+18325, -- Felhide Cap | Dire Maul Loot
+18326, -- Razor Gauntlets | Dire Maul Loot
+18327, -- Whipvine Cord | Dire Maul Loot
+18337, -- Orphic Bracers | Dire Maul Loot (Random drop off 11480, 14399, 11483, and 11484 only)
+18339, -- Eidolon Cloak | Dire Maul Loot
+18340, -- Eidolon Talisman | Dire Maul Loot
+18343, -- Petrified Band | Dire Maul Loot (Random drop off 11459, 14303, and 11458 only)
+18349, -- Gauntlets of Accuracy | Dire Maul Loot
+18350, -- Amplifying Cloak | Dire Maul Loot
+18352, -- Petrified Bark Shield | Dire Maul Loot
+18368, -- Gordok's Gloves | Dire Maul Loot
+18369, -- Gordok's Handwraps | Dire Maul Loot
+18371, -- Mindtap Talisman | Dire Maul Loot
+18373, -- Chestplate of Tranquility | Dire Maul Loot
+18374, -- Flamescarred Shoulders | Dire Maul Loot
+18377, -- Quickdraw Gloves | Dire Maul Loot
+18378, -- Silvermoon Leggings | Dire Maul Loot
+18380, -- Eldritch Reinforced Legplates | Dire Maul Loot
+18381, -- Evil Eye Pendant | Dire Maul Loot
+18383, -- Force Imbued Gauntlets | Dire Maul Loot
+18384, -- Bile-etched Spaulders | Dire Maul Loot
+18386, -- Padre's Trousers | Dire Maul Loot
+18387, -- Brightspark Gloves | Dire Maul Loot
+18388, -- Stoneshatter | Dire Maul Loot
+18393, -- Warpwood Binding | Dire Maul Loot
+18395, -- Emerald Flame Ring | Dire Maul Loot
+18420, -- Bonecrusher | Dire Maul Loot
+18421, -- Backwood Helm | Dire Maul Loot
+18425, -- Kreeg's Mug | Dire Maul Loot
+18450, -- Robe of Combustion | Dire Maul Loot
+18451, -- Hyena Hide Belt | Dire Maul Loot
+18464, -- Gordok Nose Ring | Dire Maul Loot
+18466, -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18468, -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18470, -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18472, -- Royal Seal of Eldre'Thalas | Dire Maul Loot
+18475, -- Oddly Magical Belt | Dire Maul Loot
+18480, -- Scarab Plate Helm | Dire Maul Loot
+18485, -- Observer's Shield | Dire Maul Loot
+18490, -- Insightful Hood | Dire Maul Loot
+18493, -- Bulky Iron Spaulders | Dire Maul Loot
+18494, -- Denwatcher's Shoulders | Dire Maul Loot
+18505, -- Mugger's Belt | Dire Maul Loot
+18510, -- Hide of the Wild | Dire Maul Loot
+18518, -- Pattern: Hide of the Wild | Dire Maul Loot
+18522, -- Band of the Ogre King | Dire Maul Loot
+18524, -- Leggings of Destruction | Dire Maul Loot
+18528, -- Cyclone Spaulders | Dire Maul Loot
+18535, -- Milli's Shield | Dire Maul Loot
+18536, -- Milli's Lexicon | Dire Maul Loot
+18537, -- Counterattack Lodestone | Dire Maul Loot
+18543, -- Ring of Entropy | Original Kazzak loot (Allakhazam dates)
+18544, -- Doomhide Gauntlets | Original Kazzak loot (Allakhazam dates)
+18545; -- Leggings of Arcane Supremacy | Original Azuregos loot (Allakhazam dates)
 );
 
 -- * NEW CREATURES
