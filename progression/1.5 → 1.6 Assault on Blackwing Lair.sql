@@ -34,6 +34,39 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
+19019,   -- Thunderfury, Blessed Blade of the Windseeker | Quest not completable before 1.6
+19043,   -- Heavy Timbermaw Belt | Timbermaw rewards added (see retail patch notes)
+19044,   -- Might of the Timbermaw | Timbermaw rewards added (see retail patch notes)
+19047,   -- Wisdom of the Timbermaw | Timbermaw rewards added (see retail patch notes)
+19048,   -- Heavy Timbermaw Boots | Timbermaw rewards added (see retail patch notes)
+19049,   -- Timbermaw Brawlers | Timbermaw rewards added (see retail patch notes)
+19050,   -- Mantle of the Timbermaw | Timbermaw rewards added (see retail patch notes)
+19051,   -- Girdle of the Dawn | Argent dawn patterns added (see 1.6 retail patch notes)
+19052,   -- Dawn Treaders | Argent dawn patterns added (see 1.6 retail patch notes)
+19056,   -- Argent Boots | Argent dawn patterns added (see 1.6 retail patch notes)
+19057,   -- Gloves of the Dawn | Argent dawn patterns added (see 1.6 retail patch notes)
+19058,   -- Golden Mantle of the Dawn | Argent dawn patterns added (see 1.6 retail patch notes)
+19059,   -- Argent Shoulders | Argent dawn patterns added (see 1.6 retail patch notes)
+19148,   -- Dark Iron Helm | See retail 1.6 patch notes
+19149,   -- Lava Belt | See retail 1.6 patch notes
+19156,   -- Flarecore Robe | See retail 1.6 patch notes
+19157,   -- Chromatic Gauntlets | New patterns available in 1.6
+19162,   -- Corehound Belt | See retail 1.6 patch notes
+19163,   -- Molten Belt | See retail 1.6 patch notes
+19392,   -- Girdle of the Fallen Crusader | BWL Loot
+19393,   -- Primalist's Linked Waistguard | BWL Loot
+19401,   -- Primalist's Linked Legguards | BWL Loot
+19442,   -- Formula: Powerful Anti-Venom | 1.6 patch notes (new patterns added)
+19444,   -- Formula: Enchant Weapon - Strength | 1.6 patch notes (new patterns added)
+19445,   -- Formula: Enchant Weapon - Agility | 1.6 patch notes (new patterns added)
+19446,   -- Formula: Enchant Bracer - Mana Regeneration | 1.6 patch notes (new patterns added)
+19447,   -- Formula: Enchant Bracer - Healing | 1.6 patch notes (new patterns added)
+19448,   -- Formula: Enchant Weapon - Mighty Spirit | 1.6 patch notes (new patterns added)
+19449,   -- Formula: Enchant Weapon - Mighty Intellect | 1.6 patch notes (new patterns added)
+19491,   -- Amulet of the Darkmoon | 1.6 patch notes (darkmoon faire)
+19507,   -- Inquisitor's Shawl | New loot added to Fairbanks (Allakhazam & inference dating)
+19508,   -- Branded Leather Bracers | New loot added to Fairbanks (Allakhazam & inference dating)
+19509,   -- Dusty Mail Boots | New loot added to Fairbanks (Allakhazam & inference dating)
 19164,   -- Dark Iron Gauntlets | Retail Patch Notes
 19165,   -- Flarecore Leggings | Retail Patch Notes
 19166,   -- Black Amnesty | Retail Patch Notes
@@ -220,6 +253,35 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 19571,   -- Lorekeeper's Staff | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19572,   -- Lorekeeper's Staff | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
 19573,   -- Lorekeeper's Staff | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19578,    -- Berserker Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19580,    -- Berserker Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19581,    -- Berserker Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19582,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19583,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19584,    -- Windtalker's Wristguards | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19587,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19589,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19590,    -- Forest Stalker's Bracers | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19595,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19596,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+19597,    -- Dryad's Wrist Bindings | WSG rep reward (originally patch 1.6...WSG released patch 1.5)
+20425,    -- Advisor's Gnarled Staff | PvP bracket expansion (originally happened with 1.8)
+20426,    -- Advisor's Ring | PvP bracket expansion (originally happened with 1.8)
+20427,    -- Battle Healer's Cloak | PvP bracket expansion (originally happened with 1.8)
+20428,    -- Caretaker's Cape | PvP bracket expansion (originally happened with 1.8)
+20429,    -- Legionnaire's Band | PvP bracket expansion (originally happened with 1.8)
+20430,    -- Legionnaire's Sword | PvP bracket expansion (originally happened with 1.8)
+20431,    -- Lorekeeper's Ring | PvP bracket expansion (originally happened with 1.8)
+20434,    -- Lorekeeper's Staff | PvP bracket expansion (originally happened with 1.8)
+20437,    -- Outrider's Bow | PvP bracket expansion (originally happened with 1.8)
+20438,    -- Outrunner's Bow | PvP bracket expansion (originally happened with 1.8)
+20439,    -- Protector's Band | PvP bracket expansion (originally happened with 1.8)
+20440,    -- Protector's Sword | PvP bracket expansion (originally happened with 1.8)
+20441,    -- Scout's Blade | PvP bracket expansion (originally happened with 1.8)
+20442,    -- Scout's Medallion | PvP bracket expansion (originally happened with 1.8)
+20443,    -- Sentinel's Blade | PvP bracket expansion (originally happened with 1.8)
+20444,    -- Sentinel's Medallion | PvP bracket expansion (originally happened with 1.8)
+
 );
 
 -- * NEW CREATURES

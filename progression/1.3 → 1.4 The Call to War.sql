@@ -1,4 +1,4 @@
--- 1.3 → 1.5 | The Call to War / Battlegrounds
+-- 1.3 → 1.4 | The Call to War
 
 DROP TABLE IF EXISTS `new_items`;
 DROP TABLE IF EXISTS `new_events`;
@@ -32,7 +32,17 @@ REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 -- * NEW ITEMS 	
 
 REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
-12584,   -- Grand Marshal's Longsword | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)												
+12422,   -- Imperial Plate Chest | Added April 2005 with patch
+12424,   -- Imperial Plate Belt | Added April 2005 with patch
+12425,   -- Imperial Plate Bracers | Added April 2005 with patch
+12426,   -- Imperial Plate Boots | Added April 2005 with patch
+12427,   -- Imperial Plate Helm | Added April 2005 with patch
+12428,   -- Imperial Plate Shoulders | Added April 2005 with patch
+12429,   -- Imperial Plate Leggings | Added April 2005 with patch
+12584,   -- Grand Marshal's Longsword | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
+12618,   -- Enchanted Thorium Breastplate | Added April 2005 with patch
+12619,   -- Enchanted Thorium Leggings | Added April 2005 with patch
+12620,   -- Enchanted Thorium Helm | Added April 2005 with patch												
 15196,   -- Private's Tabard | Added with PvP Honor System (Originally patch 1.4)
 15198,   -- Knight's Colors | Added with PvP Honor System (Originally patch 1.4)
 15199,   -- Stone Guard's Herald | Added with PvP Honor System (Originally patch 1.4)
@@ -182,6 +192,17 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 16578,   -- Warlord's Mail Helm | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
 16579,   -- General's Mail Leggings | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
 16580,   -- Warlord's Mail Spaulders | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
+17063,   -- Band of Accuria | Molten Core loot update
+17067,   -- Ancient Cornerstone Grimoire | Molten Core loot update
+17076,   -- Bonereaver's Edge | Note: Proc changed and +16 stamina added in 1.10
+17102,   -- Cloak of the Shrouded Mists | Molten Core loot update
+17104,   -- Spinal Reaper | Molten Core loot update
+17106,   -- Malistar's Defender | Molten Core loot update
+17107,   -- Dragon's Blood Cape | Molten Core loot update
+17182,   -- Sulfuras, Hand of Ragnaros | Molten Core loot update
+17193,   -- Sulfuron Hammer | Molten Core loot update
+17203,   -- Sulfuron Ingot | Molten Core loot update
+17204,   -- Eye of Sulfuras | Molten Core loot update
 17562,   -- Knight-Lieutenant's Dreadweave Boots | Added with PvP Honor System (NOTE: Originally patch 1.4, changed to level 60 pvp set in 1.11; different item IDs)
 17564,   -- Knight-Lieutenant's Dreadweave Gloves | Added with PvP Honor System (NOTE: Originally patch 1.4, changed to level 60 pvp set in 1.11; different item IDs)
 17566,   -- Lieutenant Commander's Headguard | Added with PvP Honor System (NOTE: Originally patch 1.4, changed to level 60 pvp set in 1.11; different item IDs)
@@ -230,6 +251,24 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 17623,   -- Warlord's Satin Cowl | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
 17624,   -- Warlord's Satin Robes | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
 17625,   -- General's Satin Leggings | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
+18083,   -- Jumanza Grips | wowwiki and allakhazam dates
+18103,   -- Band of Rumination | wowwiki and allakhazam dates
+18104,   -- Feralsurge Girdle | wowwiki and allakhazam dates
+18168,   -- Force Reactive Disk | 1.4 Molten Core loot update
+18202,   -- Eskhandar's Left Claw | 1.4 Molten Core loot update
+18203,   -- Eskhandar's Right Claw | 1.4 Molten Core loot update
+18204,   -- Eskhandar's Pelt | 1.4 Molten Core loot update
+18205,   -- Eskhandar's Collar | 1.4 Molten Core loot update
+18252,   -- Pattern: Core Armor Kit | 1.4 Molten Core loot update
+18257,   -- Recipe: Major Rejuvenation Potion | 1.4 Molten Core loot update
+18259,   -- Formula: Enchant Weapon - Spell Power | 1.4 Molten Core loot update
+18260,   -- Formula: Enchant Weapon - Healing Power | 1.4 Molten Core loot update
+18263,   -- Flarecore Wraps | 1.4 Molten Core loot update
+18264,   -- Plans: Elemental Sharpening Stone | 1.4 Molten Core loot update
+18265,   -- Pattern: Flarecore Wraps | 1.4 Molten Core loot update
+18290,   -- Schematic: Biznicks 247x128 Accurascope | 1.4 Molten Core loot update
+18291,   -- Schematic: Force Reactive Disk | 1.4 Molten Core loot update
+18292,   -- Schematic: Core Marksman Rifle | 1.4 Molten Core loot update
 18427,   -- Sergeant's Cloak | Added with PvP Honor System (Originally patch 1.4)
 18428,   -- Senior Sergeant's Insignia | Added with PvP Honor System (Originally patch 1.4)
 18430,   -- First Sergeant's Plate Bracers | Added with PvP Honor System (Originally patch 1.4)
@@ -283,6 +322,148 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 18874,   -- High Warlord's War Staff | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
 18876,   -- Grand Marshal's Claymore | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
 18877,   -- High Warlord's Greatsword | Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11; same item ID)
+18766,   -- Reins of the Swift Frostsaber | 1.4 Mount model update
+18767,   -- Reins of the Swift Mistsaber | 1.4 Mount model update
+18772,   -- Swift Green Mechanostrider | 1.4 Mount model update
+18773,   -- Swift White Mechanostrider | 1.4 Mount model update
+18774,   -- Swift Yellow Mechanostrider | 1.4 Mount model update
+18776,   -- Swift Palomino | 1.4 Mount model update
+18777,   -- Swift Brown Steed | 1.4 Mount model update
+18778,   -- Swift White Steed | 1.4 Mount model update
+18785,   -- Swift White Ram | 1.4 Mount model update
+18786,   -- Swift Brown Ram | 1.4 Mount model update
+18787,   -- Swift Gray Ram | 1.4 Mount model update
+18788,   -- Swift Blue Raptor | 1.4 Mount model update
+18789,   -- Swift Olive Raptor | 1.4 Mount model update
+18790,   -- Swift Orange Raptor | 1.4 Mount model update
+18791,   -- Purple Skeletal Warhorse | 1.4 Mount model update
+18793,   -- Great White Kodo | 1.4 Mount model update
+18794,   -- Great Brown Kodo | 1.4 Mount model update
+18795,   -- Great Gray Kodo | 1.4 Mount model update
+18796,   -- Horn of the Swift Brown Wolf | 1.4 Mount model update
+18797,   -- Horn of the Swift Timber Wolf | 1.4 Mount model update
+18798,   -- Horn of the Swift Gray Wolf | 1.4 Mount model update
+18902,   -- Reins of the Swift Stormsaber | 1.4 Mount model update
+18803,   -- Finkle's Lava Dredger | 1.4 Raid loot table update
+18805,   -- Core Hound Tooth | 1.4 Raid loot table update
+18806,   -- Core Forged Greaves | 1.4 Raid loot table update
+18807,   -- Helm of Latent Power | 1.4 Paladin mount quest
+18808,   -- Gloves of the Hypnotic Flame | 1.4 Raid loot table update
+18809,   -- Sash of Whispered Secrets | 1.4 Raid loot table update
+18810,   -- Wild Growth Spaulders | 1.4 Raid loot table update
+18811,   -- Fireproof Cloak | 1.4 Raid loot table update
+18812,   -- Wristguards of True Flight | 1.4 Raid loot table update
+18813,   -- Ring of Binding | 1.4 Raid loot table update
+18814,   -- Choker of the Fire Lord | 1.4 Raid loot table update
+18815,   -- Essence of the Pure Flame | 1.4 Raid loot table update
+18816,   -- Perdition's Blade | 1.4 Raid loot table update
+18817,   -- Crown of Destruction | 1.4 Raid loot table update
+18820,   -- Talisman of Ephemeral Power | 1.4 Raid loot table update
+18821,   -- Quick Strike Ring | 1.4 Raid loot table update
+18822,   -- Obsidian Edged Blade | 1.4 Raid loot table update
+18823,   -- Aged Core Leather Gloves | 1.4 Raid loot table update
+18824,   -- Magma Tempered Boots | 1.4 Raid loot table update
+18563,   -- Bindings of the Windseeker | Raid loot table update (Allakhazam dates, not patch 1.6 like crappy wowwiki says)
+18564,   -- Bindings of the Windseeker | Raid loot table update (Allakhazam dates, not patch 1.6 like crappy wowwiki says)
+18592,   -- Plans: Sulfuron Hammer | Raid loot table update
+18602,   -- Tome of Sacrifice | Added in 1.4 with doomguard summon spell (allakhazam dates)
+18608,   -- Benediction | Raid loot table update
+18609,   -- Anathema | Raid loot table update
+18610,   -- Keen Machete | Possibly added in patch 1.4 along with the rare spawn NPC (Threggil) according to Allakhazam dating
+18611,   -- Gnarlpine Leggings | Possibly added in patch 1.4 along with the rare spawn NPC (Urson) according to Allakhazam dating
+18612,   -- Bloody Chain Boots | Possibly added in patch 1.4 along with the rare spawn NPC (Fury Shelda) according to Allakhazam dating
+18634,   -- Gyrofreeze Ice Reflector | See 1.4 retail patch notes
+18637,   -- Major Recombobulator | See 1.4 retail patch notes
+18638,   -- Hyper-Radiant Flame Reflector | See 1.4 retail patch notes
+18639,   -- Ultra-Flash Shadow Reflector | See 1.4 retail patch notes
+18646,   -- The Eye of Divinity | Raid loot table update
+18652,   -- Schematic: Gyrofreeze Ice Reflector | See 1.4 retail patch notes
+18655,   -- Schematic: Major Recombobulator | See 1.4 retail patch notes
+18657,   -- Schematic: Hyper-Radiant Flame Reflector | See 1.4 retail patch notes
+18658,   -- Schematic: Ultra-Flash Shadow Reflector | See 1.4 retail patch notes
+18665,   -- The Eye of Shadow | Raid loot table update
+18682,   -- Ghoul Skin Leggings | Dungeon loot table update (see retail patch notes)
+18693,   -- Shivery Handwraps | Dungeon loot table update (see retail patch notes)
+18703,   -- Ancient Petrified Leaf | Raid loot table update
+18704,   -- Mature Blue Dragon Sinew | Raid loot table update
+18705,   -- Mature Black Dragon Sinew | Raid loot table update
+18713,   -- Rhok'delar, Longbow of the Ancient Keepers | Raid loot table update
+18715,   -- Lok'delar, Stave of the Ancient Keepers | Raid loot table update
+18716,   -- Ash Covered Boots | Dungeon loot table update (see retail patch notes)
+18717,   -- Hammer of the Grand Crusader | Dungeon loot table update (see retail patch notes)
+18718,   -- Grand Crusader's Helm | Dungeon loot table update (see retail patch notes)
+18720,   -- Shroud of the Nathrezim | Dungeon loot table update (see retail patch notes)
+18721,   -- Barrage Girdle | Dungeon loot table update (see retail patch notes)
+18722,   -- Death Grips | Dungeon loot table update (see retail patch notes)
+18723,   -- Animated Chain Necklace | Dungeon loot table update (see retail patch notes)
+18725,   -- Peacemaker | Dungeon loot table update (see retail patch notes)
+18726,   -- Magistrate's Cuffs | Dungeon loot table update (see retail patch notes)
+18727,   -- Crimson Felt Hat | Dungeon loot table update (see retail patch notes)
+18728,   -- Anastari Heirloom | Dungeon loot table update (see retail patch notes)
+18730,   -- Shadowy Laced Handwraps | Dungeon loot table update (see retail patch notes)
+18734,   -- Pale Moon Cloak | Dungeon loot table update (see retail patch notes)
+18735,   -- Maleki's Footwraps | Dungeon loot table update (see retail patch notes)
+18738,   -- Carapace Spine Crossbow | Dungeon loot table update (see retail patch notes)
+18740,   -- Thuzadin Sash | Dungeon loot table update (see retail patch notes)
+18741,   -- Morlune's Bracer | Dungeon loot table update (see retail patch notes)
+18742,   -- Stratholme Militia Shoulderguard | Dungeon loot table update (see retail patch notes)
+18743,   -- Gracious Cape | Dungeon loot table update (see retail patch notes)
+18744,   -- Plaguebat Fur Gloves | Dungeon loot table update (see retail patch notes)
+18829,   -- Deep Earth Spaulders | Raid loot table update
+18832,   -- Brutality Blade | Raid loot table update
+18842,   -- Staff of Dominance | Raid loot table update
+18861,   -- Flamewaker Legplates | Raid loot table update
+18870,   -- Helm of the Lifegiver | Raid loot table update
+18872,   -- Manastorm Leggings | Raid loot table update
+18875,   -- Salamander Scale Pants | Raid loot table update
+18878,   -- Sorcerous Dagger | Raid loot table update
+18879,   -- Heavy Dark Iron Ring | Raid loot table update
+18671,   -- Baron Charr's Sceptre | Patch 1.4 elemental invasions (see retail patch notes)
+18672,   -- Elemental Ember | Patch 1.4 elemental invasions (see retail patch notes)
+18673,   -- Avalanchion's Stony Hide | Patch 1.4 elemental invasions (see retail patch notes)
+18674,   -- Hardened Stone Band | Patch 1.4 elemental invasions (see retail patch notes)
+18676,   -- Sash of the Windreaver | Patch 1.4 elemental invasions (see retail patch notes)
+18677,   -- Zephyr Cloak | Patch 1.4 elemental invasions (see retail patch notes)
+18678,   -- Tempestria's Frozen Necklace | Patch 1.4 elemental invasions (see retail patch notes)
+18679,   -- Frigid Ring | Patch 1.4 elemental invasions (see retail patch notes)
+18680,   -- Ancient Bone Bow | Dungeon Loot table update (see retail patch notes)
+18681,   -- Burial Shawl | Dungeon Loot table update (see retail patch notes)
+18683,   -- Hammer of the Vesper | Dungeon Loot table update (see retail patch notes)
+18686,   -- Bone Golem Shoulders | Dungeon Loot table update (see retail patch notes)
+18689,   -- Phantasmal Cloak | Dungeon Loot table update (see retail patch notes)
+18690,   -- Wraithplate Leggings | Dungeon Loot table update (see retail patch notes)
+18691,   -- Dark Advisor's Pendant | Dungeon Loot table update (see retail patch notes)
+18692,   -- Death Knight Sabatons | Dungeon Loot table update (see retail patch notes)
+18694,   -- Shadowy Mail Greaves | Dungeon Loot table update (see retail patch notes)
+18695,   -- Spellbound Tome | Dungeon Loot table update (see retail patch notes)
+18696,   -- Intricately Runed Shield | Dungeon Loot table update (see retail patch notes)
+18697,   -- Coldstone Slippers | Dungeon Loot table update (see retail patch notes)
+18698,   -- Tattered Leather Hood | Dungeon Loot table update (see retail patch notes)
+18699,   -- Icy Tomb Spaulders | Dungeon Loot table update (see retail patch notes)
+18700,   -- Malefic Bracers | Dungeon Loot table update (see retail patch notes)
+18701,   -- Innervating Band | Dungeon Loot table update (see retail patch notes)
+18702,   -- Belt of the Ordained | Dungeon Loot table update (see retail patch notes)
+18709,   -- Arena Wristguards | Gurubashi arena event (see patch notes)
+18710,   -- Arena Bracers | Gurubashi arena event (see patch notes)
+18711,   -- Arena Bands | Gurubashi arena event (see patch notes)
+18712,   -- Arena Vambraces | Gurubashi arena event (see patch notes)
+18729,   -- Screeching Bow | Dungeon loot table update (see retail patch notes)
+18736,   -- Plaguehound Leggings | Dungeon loot table update (see retail patch notes)
+18737,   -- Bone Slicing Hatchet | Dungeon loot table update (see retail patch notes)
+18739,   -- Chitinous Plate Legguards | Dungeon loot table update (see retail patch notes)
+18745,   -- Sacred Cloth Leggings | Dungeon loot table update (see retail patch notes)
+18754,   -- Fel Hardened Bracers | Warlock mount quest summon
+18755,   -- Xorothian Firestick | Warlock mount quest summon
+18756,   -- Dreadguard's Protector | Warlock mount quest summon
+18757,   -- Diabolic Mantle | Warlock mount quest summon
+18758,   -- Specter's Blade | Paladin mount quest summon
+18759,   -- Malicious Axe | Paladin mount quest summon
+18760,   -- Necromantic Band | Paladin mount quest summon
+18761,   -- Oblivion's Touch | Paladin mount quest summon
+18762,   -- Shard of the Green Flame | Warlock mount quest chain
+19024,   -- Arena Grand Master | Gurubashi arena event (see patch notes)
+19160,   -- Contest Winner's Tabard | May 24th 2005 PvP contest prize (http://web.archive.org/web/20080512214719/http://www.worldofwarcraft.com/contests/05-04-19-honorsystem/)
+
 );
  
 -- * NEW CREATURES

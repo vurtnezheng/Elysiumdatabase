@@ -1,6 +1,4 @@
-
--- This is supposed to be an initial downgrading patch from 1.12 to 1.2 DB for use with future upgrading transition patches.
--- Apply it on the clean 1.12 DB only, with all latest migrations from /server/sql/migrations
+-- * 1.12 → 1.2 | 1.12 → 1.2 Mysteries of Maraudon
 
 DROP TABLE IF EXISTS `forbidden_items`;
 DROP TABLE IF EXISTS `forbidden_events`;
@@ -118,21 +116,8 @@ REPLACE INTO forbidden_events SELECT entry FROM game_event WHERE entry IN (
 -- * FORBIDDEN ITEMS 
 
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
-1215,   -- Support Girdle
-1677,   -- Drake-scale Vest
-2715,   -- Monster - Item, Lantern - Round
-2899,   -- Wendigo Collar
-5975,   -- Ruffian Belt
-6118,   -- Squire's Pants
-6119,   -- Neophyte's Robe
-6129,   -- Acolyte's Robe
-6136,   -- Thug Shirt
-6833,   -- White Tuxedo Shirt
-6836,   -- Dress Shoes
-7809,   -- Easter Dress
-10768,   -- Boar Champion's Belt
-11662,   -- Ban'thok Sash
-11703,   -- Stonewall Girdle
+1215,    -- Support Girdle
+6833,    -- White Tuxedo Shirt
 12422,   -- Imperial Plate Chest
 12424,   -- Imperial Plate Belt
 12425,   -- Imperial Plate Bracers
@@ -383,7 +368,6 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 17907,   -- Frostwolf Insignia Rank 4
 17908,   -- Frostwolf Insignia Rank 5
 17909,   -- Frostwolf Insignia Rank 6
-17982,   -- Ragnaros Core
 18022,   -- Royal Seal of Alexis
 18083,   -- Jumanza Grips
 18103,   -- Band of Rumination
@@ -436,13 +420,8 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 18388,   -- Stoneshatter
 18393,   -- Warpwood Binding
 18395,   -- Emerald Flame Ring
-18398,   -- Tidal Loop
-18400,   -- Ring of Living Stone
-18404,   -- Onyxia Tooth Pendant
 18420,   -- Bonecrusher
 18421,   -- Backwood Helm
-18422,   -- Head of Onyxia
-18423,   -- Head of Onyxia
 18425,   -- Kreeg's Mug
 18427,   -- Sergeant's Cloak
 18428,   -- Senior Sergeant's Insignia
