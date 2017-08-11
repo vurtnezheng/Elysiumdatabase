@@ -145,7 +145,7 @@ namespace Commentator
         static string FormatExtraData(string extra)
         {
             if (extra == "") return "";
-            return extra.Replace(" | ", ", ");
+            return $"<br/>*NOTE*: {extra.Replace(" | ", ", ")}";
         }
     }
 }
