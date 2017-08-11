@@ -2,13 +2,13 @@
 Creates a markdown document from SQL comments.
 
 ## Syntax
-`Commentator <source file> <destination file> [-noformat]`
+`Commentator [-getall] <source file> <destination file>`
 
 * source file = Source SQL file
 * destination file = Destination file (a new file will be created; existing file will be removed)
 
 ### OPTIONAL
-* -noformat = saves the comments without any formatting
+* -getall = Goes through all SQL files in the same folder and creates a Markdown-file for each.
 
 ## Format
 * All normal SQL comments `-- ` will create a bullet point. 

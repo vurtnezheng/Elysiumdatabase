@@ -31,52 +31,60 @@ namespace Commentator
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            var format = true;
-
-            if (args.Length < 2)
+            if (args.Length < 1)
             {
-                Console.WriteLine("Syntax: Commentator.exe <source file> <destination file> [-noformat]");
+                Console.WriteLine("Syntax: Commentator.exe <source file> <destination file>");
+                Console.WriteLine("OR: Commentator.exe -getall");
                 return;
-            }
-
-            if (!File.Exists(args[0]))
-            {
-                Console.WriteLine($"{args[0]} doesn't exist!");
-                return;
-            }
-
-            if (File.Exists(args[1])) File.Delete(args[1]);
-
-            if (args.Length == 3 && args[2] == "-noformat")
-            {
-                format = false;
-            }
+            }            
 
             Console.WriteLine("Commentator");
             Console.WriteLine("===========");
 
-            var comments = GetAllComments(File.ReadAllLines(args[0]));
+            if(args[0] != "-getall")
+            {
+                if (!File.Exists(args[0]))
+                {
+                    Console.WriteLine($"{args[0]} doesn't exist!");
+                    return;
+                }
+                if (File.Exists(args[1])) File.Delete(args[1]);
+                SaveComments(args[0], args[1]);
+            }
+            else
+            {
+                var path = System.Reflection.Assembly.GetEntryAssembly().Location;
+                var files = Directory.GetFiles(Path.GetDirectoryName(path), "*.sql");
+                foreach (var file in files)
+                {
+                    var newFile = file.Replace(".sql", ".md");
+                    if (File.Exists(newFile)) File.Delete(newFile);
+                    SaveComments(file, newFile);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets all comments from a file and stores it into a new file
+        /// </summary>
+        /// <param name="path">SQL source file</param>
+        /// <param name="saveToPath">Destionation file</param>
+        static void SaveComments(string path, string saveToPath)
+        {
+            var comments = GetAllComments(File.ReadAllLines(path));
             var result = new List<string>();
 
             foreach (var comment in comments)
             {
                 Console.WriteLine(comment);
-                if (format)
-                {
-                    var formatted = FormatComment(comment);
-                    result.Add(formatted[0]);
-                    if (formatted[1] != "") result.Add(formatted[1]);
-                }
-                else
-                {
-                    result.Add(comment);
-                }
+                var formatted = FormatComment(comment);
+                result.Add(formatted[0]);
+                if (formatted[1] != "") result.Add(formatted[1]);
             }
 
             // Saves to file
-            File.AppendAllLines(args[1], result);
-            Console.WriteLine($"Finished saving to: {args[1]}");
-            Console.WriteLine("DONE!");
+            File.AppendAllLines(saveToPath, result);
+            Console.WriteLine($"Finished saving to: {saveToPath}");
         }
 
         /// <summary>
@@ -111,7 +119,7 @@ namespace Commentator
             // Create headers
             if (main.StartsWith("*"))
             {
-                return new string[] { "# " + main.Remove(0, 1).Trim(), FormatExtraData(extra) };
+                return new string[] { main.Replace("*", "#").Trim(), FormatExtraData(extra) };
             }
 
             // Create lists with reference
@@ -129,10 +137,15 @@ namespace Commentator
             return main.StartsWith("^ ") ? new string[] { main.Replace("^ ", ""), FormatExtraData(extra) } : new string[] { "* " + main, FormatExtraData(extra) };
         }
 
+        /// <summary>
+        /// Format the extra data
+        /// </summary>
+        /// <param name="extra"></param>
+        /// <returns></returns>
         static string FormatExtraData(string extra)
         {
             if (extra == "") return "";
-            return "<br><font color='yellow'>" + extra.Replace(" | ", ", ") + "</font>";
+            return extra.Replace(" | ", ", ");
         }
     }
 }
