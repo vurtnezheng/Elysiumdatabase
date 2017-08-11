@@ -422,7 +422,6 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 18395,   -- Emerald Flame Ring
 18420,   -- Bonecrusher
 18421,   -- Backwood Helm
-18423,   -- Head of Onyxia
 18425,   -- Kreeg's Mug
 18427,   -- Sergeant's Cloak
 18428,   -- Senior Sergeant's Insignia
