@@ -63,7 +63,7 @@ CREATE TABLE gameobject_questrelation_full LIKE gameobject_questrelation; INSERT
 
 -- * FORBIDDEN ENCOUNTER
 
-REPLACE INTO forbidden_instances SELECT entry FROM areatrigger_teleport WHERE target_map IN (
+REPLACE INTO forbidden_instances SELECT id FROM areatrigger_teleport WHERE target_map IN (
 533,   -- Naxxramas 1.12
 531,   -- AQ40 (Temple of AQ) 1.9
 509,   -- AQ20 (Ruins of AQ) 1.9
@@ -5810,7 +5810,7 @@ UPDATE item_enchantment_template SET chance = 4.88 * 100 / (100 - 6.05) WHERE en
 UPDATE item_enchantment_template SET chance = 2.3 * 100 / (100 - 6.1) WHERE entry=1098;
 UPDATE item_enchantment_template SET chance = 2.85 * 100 / (100 - 6.6) WHERE entry=1099;
 UPDATE item_enchantment_template SET chance = 3.1 * 100 / (100 - 5.52) WHERE entry=1100;
-UPDATE item_enchantment_template SET chance = 6.8 * 100 / (100 - 5.13) WHERE entry=1101;,
+UPDATE item_enchantment_template SET chance = 6.8 * 100 / (100 - 5.13) WHERE entry=1101;
 UPDATE item_enchantment_template SET chance = 4.93 * 100 / (100 - 0.56) WHERE entry=1115;
 UPDATE item_enchantment_template SET chance = 10.17 * 100 / (100 - 0.67) WHERE entry=1116;
 UPDATE item_enchantment_template SET chance = 9.4 * 100 / (100 - 0.45) WHERE entry=1117;
@@ -5962,7 +5962,8 @@ UPDATE item_enchantment_template SET chance = 3.58 * 100 / (100 - 23.14) WHERE e
 UPDATE item_enchantment_template SET chance = 7.8 * 100 / (100 - 26.55) WHERE entry=6273;
 UPDATE item_enchantment_template SET chance = 9.1 * 100 / (100 - 0.1) WHERE entry=6278;
 UPDATE item_enchantment_template SET chance = 4.7 * 100 / (100 - 0.1) WHERE entry=6279;
-REPLACE INTO item_enchantment_template VALUE (8652, 341, 10); -- Pre-1.04 Green Lens (Clank)
+REPLACE INTO item_enchantment_template VALUES
+(8652, 341, 10), -- Pre-1.04 Green Lens (Clank)
 (8652, 342, 10),
 (8652, 392, 10),
 (8652, 393, 10),
@@ -6051,7 +6052,7 @@ UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 2) WHERE id IN (SELECT * FR
 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN (SELECT * FROM forbidden_instances);
 
-UPDATE `game_event` SET `disabled` = (`disabled` | 1) WHERE id IN (SELECT * FROM forbidden_events);
+UPDATE `game_event` SET `disabled` = (`disabled` | 1) WHERE entry IN (SELECT * FROM forbidden_events);
 
 -- TODO: Would be nice to have something like `DropDisable` field aka LootMode of TrinityCore to avoid any deletions from *loot_templates: A special parameter used for separating conditional loot, such as Hard Mode loot. A lootmode of 0 will effectively disable a loot entry (its roll will always fail). This column is a bitmask, so you shouldn't duplicate loot across lootmodes. The active lootmode(s) can be changed at any time by the core. This column should only be used if required, in most cases it should be left as 1. Valid lootmodes include: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 16384, 32768.
 -- https://trinitycore.atlassian.net/wiki/display/tc/loot_template#loot_template-ChanceOrQuestChance
