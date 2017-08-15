@@ -28,7 +28,7 @@ UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 309
 
 -- * NEW EVENTS 	
 
-REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (14, 15, 40, 164
+REPLACE INTO new_events SELECT entry FROM game_event WHERE entry IN (
 14,   -- Stranglethorn Fishing Extravaganza: Announce
 15,   -- Stranglethorn Fishing Extravaganza: Tournament
 40,   -- Stranglethorn Fishing Extravaganza: The Crew
