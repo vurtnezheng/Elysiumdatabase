@@ -138,7 +138,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 19321, -- The Immovable Object | AV Rep Rewards
 19323, -- The Unstoppable Force | AV Rep Rewards
 19324, -- The Lobotomizer | AV Rep Rewards
-19325; -- Don Julio's Band | AV Rep Rewards
+19325 -- Don Julio's Band | AV Rep Rewards
 );
  
 -- * NEW CREATURES

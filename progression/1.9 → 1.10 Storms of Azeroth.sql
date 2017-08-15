@@ -230,7 +230,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 22412, -- Thuzadin Mantle | Major loot table update
 22433, -- Don Mauricio's Band of Domination | Major loot table update (Allakhazam comment dates)
 22458, -- Moonshadow Stave | LVL 50 class quest (druid), see retail 1.10 patch notes
-22472; -- Boots of Ferocity | Tier 0.5 boss loot
+22472 -- Boots of Ferocity | Tier 0.5 boss loot
 );
  
 -- * ITEM STATS | Items changed: 

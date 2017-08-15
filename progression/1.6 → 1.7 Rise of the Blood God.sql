@@ -384,7 +384,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 20263, -- Gurubashi Helm | ZG Loot
 20264, -- Peacekeeper Gauntlets | ZG Loot
 20265, -- Peacekeeper Boots | ZG Loot
-20266; -- Peacekeeper Leggings | ZG Loot
+20266 -- Peacekeeper Leggings | ZG Loot
 );
 	
 -- * NEW CREATURES

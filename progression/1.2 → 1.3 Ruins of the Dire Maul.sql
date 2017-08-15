@@ -107,7 +107,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 18537, -- Counterattack Lodestone | Dire Maul Loot
 18543, -- Ring of Entropy | Original Kazzak loot (Allakhazam dates)
 18544, -- Doomhide Gauntlets | Original Kazzak loot (Allakhazam dates)
-18545; -- Leggings of Arcane Supremacy | Original Azuregos loot (Allakhazam dates)
+18545 -- Leggings of Arcane Supremacy | Original Azuregos loot (Allakhazam dates)
 );
 
 -- * NEW CREATURES

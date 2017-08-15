@@ -451,7 +451,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 23665, -- Leggings of Elemental Fury | Naxx Loot
 23666, -- Belt of the Grand Crusader | Naxx Loot
 23667, -- Spaulders of the Grand Crusader | Naxx Loot
-23668; -- Leggings of the Grand Crusader | Naxx Loot
+23668 -- Leggings of the Grand Crusader | Naxx Loot
 );
  
 -- * NEW CREATURES
