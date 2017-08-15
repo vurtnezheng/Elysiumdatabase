@@ -462,7 +462,7 @@ REPLACE INTO new_items SELECT entry FROM item_template WHERE entry IN (
 18878, -- Sorcerous Dagger | 1.4 Raid loot table update
 18879, -- Heavy Dark Iron Ring | 1.4 Raid loot table update
 19024, -- Arena Grand Master | 1.4 Gurubashi arena event (see patch notes)
-19160; -- Contest Winner's Tabard | May 24th 2005 PvP contest prize (http://web.archive.org/web/20080512214719/http://www.worldofwarcraft.com/contests/05-04-19-honorsystem/)
+19160 -- Contest Winner's Tabard | May 24th 2005 PvP contest prize (http://web.archive.org/web/20080512214719/http://www.worldofwarcraft.com/contests/05-04-19-honorsystem/)
 );
  
 -- * NEW CREATURES
