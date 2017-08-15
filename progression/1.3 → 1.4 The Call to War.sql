@@ -473,9 +473,76 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
-1318,   -- Unfinished Gordok Business
-7562,   -- Mor'zul Bloodbringer
-7638,   -- Lord Grayson Shadowbreaker
+171,  -- A Warden of the Alliance | Childrens Week added (1.4 patch notes)
+172,  -- Children's Week | Childrens Week added (1.4 patch notes)
+7487, -- Attunement to the Core | Molten core discovery quest changed to attunement (1.4 patch notes)
+7541, -- Service to the Horde | Minor questline added
+7562, -- Mor'zul Bloodbringer | 1.4 Warlock mount quest
+7563, -- Rage of Blood | 1.4 Warlock mount quest
+7564, -- Wildeyes | 1.4 Warlock mount quest
+7581, -- The Prison's Bindings | 1.4 Warlock mount quest
+7582, -- The Prison's Casing | 1.4 Warlock mount quest
+7583, -- Suppression | 1.4 Warlock mount quest
+7601, -- What Niby Commands | 1.4 Warlock mount quest
+7602, -- Flawless Fel Essence | 1.4 Warlock mount quest
+7603, -- Kroshius' Infernal Core | 1.4 Warlock mount quest
+7604, -- A Binding Contract | 1.4 Raid loot table update (Sulfuras)
+7621, -- A Warning | 1.4 Raid loot table update (Benediction)
+7622, -- The Balance of Light and Shadow | 1.4 Raid loot table update (Benediction)
+7623, -- Lord Banehollow | 1.4 Warlock mount quest
+7624, -- Ulathek the Traitor | 1.4 Warlock mount quest
+7625, -- Xorothian Stardust | 1.4 Warlock mount quest
+7626, -- Bell of Dethmoora | 1.4 Warlock mount quest
+7627, -- Wheel of the Black March | 1.4 Warlock mount quest
+7628, -- Doomsday Candle | 1.4 Warlock mount quest
+7629, -- Imp Delivery | 1.4 Warlock mount quest
+7630, -- Arcanite | 1.4 Warlock mount quest
+7631, -- Dreadsteed of Xoroth | 1.4 Warlock mount quest
+7632, -- The Ancient Leaf | 1.4 Raid loot table update (hunter leaf quest)
+7633, -- An Introduction | 1.4 Raid loot table update (hunter leaf quest)
+7634, -- Ancient Sinew Wrapped Lamina | 1.4 Raid loot table update (hunter leaf quest)
+7635, -- A Proper String | 1.4 Raid loot table update (hunter leaf quest)
+7636, -- Stave of the Ancients | 1.4 Raid loot table update (hunter leaf quest)
+7637, -- Emphasis on Sacrifice | 1.4 Paladin mount quest
+7638, -- Lord Grayson Shadowbreaker | 1.4 Paladin mount quest
+7639, -- To Show Due Judgment | 1.4 Paladin mount quest
+7640, -- Exorcising Terrordale | 1.4 Paladin mount quest
+7641, -- The Work of Grimand Elmore | 1.4 Paladin mount quest
+7642, -- Collection of Goods | 1.4 Paladin mount quest
+7643, -- Ancient Equine Spirit | 1.4 Paladin mount quest
+7644, -- Blessed Arcanite Barding | 1.4 Paladin mount quest
+7645, -- Manna-Enriched Horse Feed | 1.4 Paladin mount quest
+7646, -- The Divination Scryer | 1.4 Paladin mount quest
+7647, -- Judgment and Redemption | 1.4 Paladin mount quest
+7648, -- Grimand's Finest Work | 1.4 Paladin mount quest
+7649, -- Enchanted Thorium Platemail: Volume I | Added April 2005 with patch
+7650, -- Enchanted Thorium Platemail: Volume II | Added April 2005 with patch
+7651, -- Enchanted Thorium Platemail: Volume III | Added April 2005 with patch
+7652, -- A Blue Light Bargain | Added April 2005 with patch
+7653, -- Imperial Plate Belt | Added April 2005 with patch
+7654, -- Imperial Plate Boots | Added April 2005 with patch
+7655, -- Imperial Plate Bracer | Added April 2005 with patch
+7656, -- Imperial Plate Chest | Added April 2005 with patch
+7657, -- Imperial Plate Helm | Added April 2005 with patch
+7658, -- Imperial Plate Leggings | Added April 2005 with patch
+7659, -- Imperial Plate Shoulders | Added April 2005 with patch
+7660, -- Wolf Swapping - Arctic Wolf | New mount models (1.4 patch notes)
+7661, -- Wolf Swapping - Red Wolf | New mount models (1.4 patch notes)
+7662, -- New Kodo - Teal | New mount models (1.4 patch notes)
+7663, -- New Kodo - Green | New mount models (1.4 patch notes)
+7664, -- Ivory Raptor Replacement | New mount models (1.4 patch notes)
+7665, -- Red Raptor Replacement | New mount models (1.4 patch notes)
+7666, -- Again Into the Great Ossuary | 1.4 Paladin mount quest
+7671, -- Frostsaber Replacement | New mount models (1.4 patch notes)
+7672, -- Nightsaber Replacement | New mount models (1.4 patch notes)
+7673, -- Frost Ram Exchange | New mount models (1.4 patch notes)
+7674, -- Black Ram Exchange | New mount models (1.4 patch notes)
+7675, -- Icy Blue Mechanostrider Replacement | New mount models (1.4 patch notes)
+7676, -- White Mechanostrider Replacement | New mount models (1.4 patch notes)
+7677, -- White Stallion Exchange | New mount models (1.4 patch notes)
+7678, -- Palomino Exchange | New mount models (1.4 patch notes)
+7810, -- Arena Master | 1.4 Gurubashi arena event (see patch notes)
+7838  -- Arena Grandmaster | 1.4 Gurubashi arena event (see patch notes)
 );
 
 -- * NEW SPELLS	

@@ -46,6 +46,12 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
+9415, -- Report to Marshal Bluewall | World pvp objectives added to EPL & Silithus
+9416, -- Report to General Kirika | World pvp objectives added to EPL & Silithus
+9419, -- Scouring the Desert | World pvp objectives added to EPL & Silithus
+9422, -- Scouring the Desert | World pvp objectives added to EPL & Silithus
+9664, -- Establishing New Outposts | World pvp objectives added to EPL & Silithus
+9665  -- Bolstering Our Defenses | World pvp objectives added to EPL & Silithus
 );
 
 -- * NEW SPELLS	

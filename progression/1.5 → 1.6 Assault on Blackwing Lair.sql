@@ -275,6 +275,61 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
+7521, -- Thunderaan the Windseeker | Quest not completable before 1.6
+7761, -- Blackhand's Command | BWL Quest
+7781, -- The Lord of Blackrock | BWL Quest
+7782, -- The Lord of Blackrock | BWL Quest
+7783, -- The Lord of Blackrock | BWL Quest
+7784, -- The Lord of Blackrock | BWL Quest
+7785, -- Examine the Vessel | Quest not completable before 1.6
+7786, -- Thunderaan the Windseeker | Quest not completable before 1.6
+7787, -- Rise, Thunderfury! | Quest not completable before 1.6
+7881, -- Carnival Boots | 1.6 Retail Patch Notes (Darkmoon Faire)
+7882, -- Carnival Jerkins | 1.6 Retail Patch Notes (Darkmoon Faire)
+7883, -- The World's Largest Gnome! | 1.6 Retail Patch Notes (Darkmoon Faire)
+7884, -- Crocolisk Boy and the Bearded Murloc | 1.6 Retail Patch Notes (Darkmoon Faire)
+7885, -- Armor Kits | 1.6 Retail Patch Notes (Darkmoon Faire)
+7889, -- Coarse Weightstone | 1.6 Retail Patch Notes (Darkmoon Faire)
+7890, -- Heavy Grinding Stone | 1.6 Retail Patch Notes (Darkmoon Faire)
+7891, -- Green Iron Bracers | 1.6 Retail Patch Notes (Darkmoon Faire)
+7892, -- Big Black Mace | 1.6 Retail Patch Notes (Darkmoon Faire)
+7893, -- Rituals of Strength | 1.6 Retail Patch Notes (Darkmoon Faire)
+7894, -- Copper Modulator | 1.6 Retail Patch Notes (Darkmoon Faire)
+7895, -- Whirring Bronze Gizmo | 1.6 Retail Patch Notes (Darkmoon Faire)
+7896, -- Green Fireworks | 1.6 Retail Patch Notes (Darkmoon Faire)
+7897, -- Mechanical Repair Kits | 1.6 Retail Patch Notes (Darkmoon Faire)
+7898, -- Thorium Widget | 1.6 Retail Patch Notes (Darkmoon Faire)
+7899, -- Small Furry Paws | 1.6 Retail Patch Notes (Darkmoon Faire)
+7900, -- Torn Bear Pelts | 1.6 Retail Patch Notes (Darkmoon Faire)
+7901, -- Soft Bushy Tails | 1.6 Retail Patch Notes (Darkmoon Faire)
+7902, -- Vibrant Plumes | 1.6 Retail Patch Notes (Darkmoon Faire)
+7903, -- Evil Bat Eyes | 1.6 Retail Patch Notes (Darkmoon Faire)
+7905, -- The Darkmoon Faire | 1.6 Retail Patch Notes (Darkmoon Faire)
+7907, -- Darkmoon Beast Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7926, -- The Darkmoon Faire | 1.6 Retail Patch Notes (Darkmoon Faire)
+7927, -- Darkmoon Portals Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7928, -- Darkmoon Warlords Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7929, -- Darkmoon Elementals Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7930, -- 5 Tickets - Darkmoon Flower | 1.6 Retail Patch Notes (Darkmoon Faire)
+7931, -- 5 Tickets - Minor Darkmoon Prize | 1.6 Retail Patch Notes (Darkmoon Faire)
+7932, -- 12 Tickets - Lesser Darkmoon Prize | 1.6 Retail Patch Notes (Darkmoon Faire)
+7933, -- 40 Tickets - Greater Darkmoon Prize | 1.6 Retail Patch Notes (Darkmoon Faire)
+7934, -- 50 Tickets - Darkmoon Storage Box | 1.6 Retail Patch Notes (Darkmoon Faire)
+7935, -- 10 Tickets - Last Month's Mutton | 1.6 Retail Patch Notes (Darkmoon Faire)
+7936, -- 50 Tickets - Last Year's Mutton | 1.6 Retail Patch Notes (Darkmoon Faire)
+7937, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7938, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7939, -- More Dense Grinding Stones | 1.6 Retail Patch Notes (Darkmoon Faire)
+7940, -- 1200 Tickets - Orb of the Darkmoon | 1.6 Retail Patch Notes (Darkmoon Faire)
+7941, -- More Armor Kits | 1.6 Retail Patch Notes (Darkmoon Faire)
+7942, -- More Thorium Widgets | 1.6 Retail Patch Notes (Darkmoon Faire)
+7943, -- More Bat Eyes | 1.6 Retail Patch Notes (Darkmoon Faire)
+7944, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7945, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7946, -- Spawn of Jubjub | 1.6 Retail Patch Notes (Darkmoon Faire)
+7981, -- 1200 Tickets - Amulet of the Darkmoon | 1.6 Retail Patch Notes (Darkmoon Faire)
+8222, -- Glowing Scorpid Blood | Darkmoon Faire (Patch 1.6)
+8223  -- More Glowing Scorpid Blood | Darkmoon Faire (Patch 1.6)
 );
 
 -- * NEW SPELLS	

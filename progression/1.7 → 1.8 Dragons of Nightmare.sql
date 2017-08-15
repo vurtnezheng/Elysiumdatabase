@@ -206,7 +206,165 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
-8309,   -- Glyph Chasing
+8149, -- Honoring a Hero | Hallow's Eve event added (see 1.8 patch notes)
+8150, -- Honoring a Hero | Hallow's Eve event added (see 1.8 patch notes)
+8271, -- Hero of the Stormpike | AV overhaul in patch 1.8
+8272, -- Hero of the Frostwolf | AV overhaul in patch 1.8
+8273, -- Oran's Gratitude | See 1.8 patch notes
+8275, -- Taking Back Silithus | Silithus quest revamp
+8276, -- Taking Back Silithus | Silithus quest revamp
+8277, -- Deadly Desert Venom | Silithus quest revamp
+8278, -- Noggle's Last Hope | Silithus quest revamp
+8279, -- The Twilight Lexicon | Silithus quest revamp
+8280, -- Securing the Supply Lines | Silithus quest revamp
+8281, -- Stepping Up Security | Silithus quest revamp
+8282, -- Noggle's Lost Satchel | Silithus quest revamp
+8283, -- Wanted - Deathclasp, Terror of the Sands | Silithus quest revamp
+8284, -- The Twilight Mystery | Silithus quest revamp
+8285, -- The Deserter | Silithus quest revamp
+8287, -- A Terrible Purpose | Silithus quest revamp
+8291, -- Vanquish the Invaders! | Battleground mark turnin system added (1.8 patch notes)
+8292, -- Marks of Honor | Deprecated mark turnin quest
+8293, -- Marks of Honor | Deprecated mark turnin quest
+8294, -- Quell the Silverwing Usurpers | Battleground mark turnin system added (1.8 patch notes)
+8297, -- Arathi Basin Mark of Honor! | Battleground mark turnin system added (1.8 patch notes)
+8298, -- More Arathi Basin Marks of Honor | Battleground mark turnin system added (1.8 patch notes)
+8299, -- Cut Arathor Supply Lines | Battleground mark turnin system added (1.8 patch notes)
+8300, -- More Arathi Basin Marks of Honor | Battleground mark turnin system added (1.8 patch notes)
+8304, -- Dearest Natalia | Silithus quest revamp
+8306, -- Into The Maw of Madness | Silithus quest revamp
+8307, -- Desert Recipe | Silithus quest revamp
+8308, -- Brann Bronzebeard's Lost Letter | Silithus quest revamp
+8309, -- Glyph Chasing | Silithus quest revamp
+8310, -- Breaking the Code | Silithus quest revamp
+8311, -- Hallow's End Treats for Jesper! | Hallow's Eve event added (see 1.8 patch notes)
+8312, -- Hallow's End Treats for Spoops! | Hallow's Eve event added (see 1.8 patch notes)
+8313, -- Sharing the Knowledge | Silithus quest revamp
+8314, -- Unraveling the Mystery (Elite) | Silithus quest revamp
+8315, -- The Calling | Silithus quest revamp
+8316, -- Armaments of War | Silithus quest revamp
+8317, -- Kitchen Assistance | Silithus quest revamp
+8318, -- Secret Communication | Silithus quest revamp
+8319, -- Encrypted Twilight Texts | Silithus quest revamp
+8320, -- Twilight Geolords | Silithus quest revamp
+8321, -- Vyral the Vile | Silithus quest revamp
+8322, -- Rotten Eggs | Hallow's Eve event added (see 1.8 patch notes)
+8323, -- True Believers | Silithus quest revamp
+8324, -- Still Believing | Silithus quest revamp
+8331, -- Aurel Goldleaf | Silithus quest revamp
+8332, -- Dukes of the Council | Silithus windstones
+8333, -- Medallion of Station | Silithus windstones
+8341, -- Lords of the Council | Silithus windstones
+8342, -- Twilight Ring of Lordship | Silithus windstones
+8343, -- Goldleaf's Discovery | Silithus quest revamp
+8348, -- Signet of the Dukes | Silithus windstones
+8349, -- Bor Wildmane | Silithus quest revamp
+8351, -- Bor Wishes to Speak | Silithus quest revamp
+8352, -- Scepter of the Council | Silithus windstones
+8353, -- Chicken Clucking for a Mint | Hallow's Eve event added (see 1.8 patch notes)
+8354, -- Chicken Clucking for a Mint | Hallow's Eve event added (see 1.8 patch notes)
+8355, -- Incoming Gumdrop | Hallow's Eve event added (see 1.8 patch notes)
+8356, -- Flexing for Nougat | Hallow's Eve event added (see 1.8 patch notes)
+8357, -- Dancing for Marzipan | Hallow's Eve event added (see 1.8 patch notes)
+8358, -- Incoming Gumdrop | Hallow's Eve event added (see 1.8 patch notes)
+8359, -- Flexing for Nougat | Hallow's Eve event added (see 1.8 patch notes)
+8360, -- Dancing for Marzipan | Hallow's Eve event added (see 1.8 patch notes)
+8361, -- Abyssal Contacts | Silithus windstones
+8362, -- Abyssal Crests | Silithus windstones
+8363, -- Abyssal Signets | Silithus windstones
+8364, -- Abyssal Scepters | Silithus windstones
+8365, -- Pirate Hats Ahoy! | New Tanaris quests added (Allakhazam comment dates)
+8366, -- Southsea Shakedown | New Tanaris quests added (Allakhazam comment dates)
+8367, -- For Great Honor | Battleground mark turnin system added (1.8 patch notes)
+8368, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8369, -- Invaders of Alterac Valley | Battleground mark turnin system added (1.8 patch notes)
+8370, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8371, -- Concerted Efforts | Battleground mark turnin system added (1.8 patch notes)
+8372, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8373, -- The Power of Pine | Hallow's Eve event added (see 1.8 patch notes)
+8374, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8375, -- Remember Alterac Valley! | Battleground mark turnin system added (1.8 patch notes)
+8376, -- Armaments of War | Silithus quest revamp
+8377, -- Armaments of War | Silithus quest revamp
+8378, -- Armaments of War | Silithus quest revamp
+8379, -- Armaments of War | Silithus quest revamp
+8380, -- Armaments of War | Silithus quest revamp
+8381, -- Armaments of War | Silithus quest revamp
+8382, -- Armaments of War | Silithus quest revamp
+8383, -- Remember Alterac Valley! | Battleground mark turnin system added (1.8 patch notes)
+8384, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8385, -- Concerted Efforts | Battleground mark turnin system added (1.8 patch notes)
+8386, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8387, -- Invaders of Alterac Valley | Battleground mark turnin system added (1.8 patch notes)
+8388, -- For Great Honor | Battleground mark turnin system added (1.8 patch notes)
+8389, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8390, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8391, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8392, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8393, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8394, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8395, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8396, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8397, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8398, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8399, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8400, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8401, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8402, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8403, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8404, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8405, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8406, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8407, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8408, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8409, -- Ruined Kegs | Hallow's Eve event added (see 1.8 patch notes)
+8410, -- Elemental Mastery | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8411, -- Mastering the Elements | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8412, -- Spirit Totem | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8413, -- Da Voodoo | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8414, -- Dispelling Evil | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8415, -- Chillwind Point | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8416, -- Inert Scourgestones | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8417, -- A Troubled Spirit | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8418, -- Forging the Mightstone | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8419, -- An Imp's Request | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8420, -- Hot and Itchy | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8421, -- The Wrong Stuff | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8422, -- Trolls of a Feather | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8423, -- Warrior Kinship | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8424, -- War on the Shadowsworn | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8425, -- Voodoo Feathers | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8426, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8427, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8428, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8429, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8430, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8431, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8432, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8433, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8434, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8435, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8436, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8437, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8438, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8439, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8440, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8441, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8442, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8443, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8446, -- Shrouded in Nightmare | Emerald dragon loot
+8447, -- Waking Legends | Emerald dragon loot
+8744, -- A Carefully Wrapped Present | Quest added for Christmas 2005
+8746, -- Metzen the Reindeer | Quest added for Christmas 2005
+8762, -- Metzen the Reindeer | Quest added for Christmas 2005
+8763, -- The Hero of the Day | Quest added for Christmas 2005
+8767, -- A Gently Shaken Gift | Quest added for Christmas 2005
+8768, -- A Gaily Wrapped Present | Quest added for Christmas 2005
+8769, -- A Ticking Present | Quest added for Christmas 2005
+8803, -- A Festive Gift | Quest added for Christmas 2005
+8827, -- Winter's Presents | Quest added for Christmas 2005
+8860, -- New Year Celebrations! | New years quest added at end of 2005 (just before 1.9 released)
+8861  -- New Year Celebrations! | New years quest added at end of 2005 (just before 1.9 released)
 );
 
 -- * NEW SPELLS	

@@ -120,12 +120,54 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
-5526,   -- Shards of the Felvine
-7877,   -- The Treasure of the Shen'dralar	
-7499,   -- Codex of Defense
-7500,   -- The Arcanist's Cookbook
-7501,   -- The Light and How To Swing It
-7506,   -- The Emerald Dream...
+1318, -- Unfinished Gordok Business | Dire Maul quest
+5504, -- Mantles of the Dawn | New AD rewards added (1.3 patch notes)
+5507, -- Mantles of the Dawn | New AD rewards added (1.3 patch notes)
+5513, -- Mantles of the Dawn | New AD rewards added (1.3 patch notes)
+5517, -- Chromatic Mantle of the Dawn | New AD rewards added (1.3 patch notes)
+5518, -- The Gordok Ogre Suit | Dire Maul Quest
+5519, -- The Gordok Ogre Suit | Dire Maul Quest
+5521, -- Chromatic Mantle of the Dawn | New AD rewards added (1.3 patch notes)
+5524, -- Chromatic Mantle of the Dawn | New AD rewards added (1.3 patch notes)
+5525, -- Free Knot! | Dire Maul Quest (duplicate?)
+5526, -- Shards of the Felvine | Dire Maul Quest (duplicate?)
+5527, -- A Reliquary of Purity | Dire Maul Quest (duplicate?)
+5528, -- The Gordok Taste Test | Dire Maul Quest
+6221, -- Deadwood of the North | Timbermaw Hold. Replaced in 1.9 by ID: 8461
+6241, -- Winterfall Activity | Timbermaw Hold, repeatable quest. Replaced in 1.9 by ID: 8464
+7341, -- A Fair Trade | Patch 1.3 retail notes
+7342, -- Arrows Are For Sissies | Patch 1.3 retail notes
+7429, -- Free Knot! | Dire Maul quest
+7441, -- Pusillin and the Elder Azj'Tordin | Dire Maul quest
+7461, -- The Madness Within | Dire Maul quest
+7462, -- The Treasure of the Shen'dralar | Dire Maul quest (NOTE: Duplicate with 7877)
+7463, -- Arcane Refreshment | Dire Maul quest
+7478, -- Libram of Rapidity | Dire Maul quest
+7479, -- Libram of Focus | Dire Maul quest
+7480, -- Libram of Protection | Dire Maul quest
+7481, -- Elven Legends | Dire Maul quest
+7482, -- Elven Legends | Dire Maul quest
+7483, -- Libram of Rapidity | Dire Maul quest
+7484, -- Libram of Focus | Dire Maul quest
+7485, -- Libram of Protection | Dire Maul quest
+7488, -- Lethtendris's Web | Dire Maul quest
+7489, -- Lethtendris's Web | Dire Maul quest
+7492, -- Camp Mojache | Dire Maul quest
+7494, -- Feathermoon Stronghold | Dire Maul quest
+7498, -- Garona: A Study on Stealth and Treachery | Dire Maul quest
+7499, -- Codex of Defense | Dire Maul quest
+7500, -- The Arcanist's Cookbook | Dire Maul quest
+7501, -- The Light and How To Swing It | Dire Maul quest
+7502, -- Harnessing Shadows | Dire Maul quest
+7503, -- The Greatest Race of Hunters | Dire Maul quest
+7504, -- Holy Bologna: What the Light Won't Tell You | Dire Maul quest
+7505, -- Frost Shock and You | Dire Maul quest
+7506, -- The Emerald Dream... | Dire Maul quest
+7507, -- Foror's Compendium | Dire Maul quest
+7508, -- The Forging of Quel'Serrar | Dire Maul quest
+7509, -- The Forging of Quel'Serrar | Dire Maul quest
+7703, -- Unfinished Gordok Business | Dire Maul quest
+7877  -- The Treasure of the Shen'dralar | Dire Maul quest (NOTE: Duplicate with 7462)
 );
 
 -- * NEW SPELLS	

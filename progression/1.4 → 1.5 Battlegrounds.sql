@@ -149,9 +149,177 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
-1318,   -- Unfinished Gordok Business
-7562,   -- Mor'zul Bloodbringer
-7638,   -- Lord Grayson Shadowbreaker
+5892, -- Irondeep Supplies | AV Quest (duplicate?)
+5893, -- Coldtooth Supplies | AV Quest (duplicate?)
+6741, -- More Booty! | AV Quest
+6781, -- More Armor Scraps | AV Quest
+6801, -- Lokholar the Ice Lord | AV Quest
+6825, -- Call of Air - Guse's Fleet | AV Quest
+6826, -- Call of Air - Jeztor's Fleet | AV Quest
+6827, -- Call of Air - Mulverick's Fleet | AV Quest
+6846, -- Begin the Attack! | AV Quest
+6847, -- Master Ryson's All Seeing Eye | AV Quest
+6848, -- Master Ryson's All Seeing Eye | AV Quest
+6861, -- Zinfizzlex's Portable Shredder Unit | AV Quest
+6862, -- Zinfizzlex's Portable Shredder Unit | AV Quest
+6881, -- Ivus the Forest Lord | AV Quest
+6901, -- Launch the Attack! | AV Quest
+6941, -- Call of Air - Vipore's Fleet | AV Quest
+6942, -- Call of Air - Slidore's Fleet | AV Quest
+6943, -- Call of Air - Ichman's Fleet | AV Quest
+6982, -- Coldtooth Supplies | AV Quest
+6985, -- Irondeep Supplies | AV Quest
+7001, -- Empty Stables | AV Quest
+7002, -- Ram Hide Harnesses | AV Quest
+7003, -- Zapped Giants | Quests added to Feralas (1.5 patch notes)
+7026, -- Ram Riding Harnesses | AV Quest
+7027, -- Empty Stables | AV Quest
+7081, -- Alterac Valley Graveyards | AV Quest
+7082, -- The Graveyards of Alterac | AV Quest
+7101, -- Towers and Bunkers | AV Quest
+7102, -- Towers and Bunkers | AV Quest
+7121, -- The Quartermaster | AV Quest
+7122, -- Capture a Mine | AV Quest
+7123, -- Speak with our Quartermaster | AV Quest
+7124, -- Capture a Mine | AV Quest
+7141, -- The Battle of Alterac | AV Quest
+7142, -- The Battle for Alterac | AV Quest
+7161, -- Proving Grounds | AV Quest
+7162, -- Proving Grounds | AV Quest
+7163, -- Rise and Be Recognized | AV Quest
+7164, -- Honored Amongst the Clan | AV Quest
+7165, -- Earned Reverence | AV Quest
+7166, -- Legendary Heroes | AV Quest
+7167, -- The Eye of Command | AV Quest
+7168, -- Rise and Be Recognized | AV Quest
+7169, -- Honored Amongst the Guard | AV Quest
+7170, -- Earned Reverence | AV Quest
+7171, -- Legendary Heroes | AV Quest
+7172, -- The Eye of Command | AV Quest
+7181, -- The Legend of Korrak | AV Quest
+7202, -- Korrak the Bloodrager | AV Quest
+7223, -- Armor Scraps | AV Quest
+7224, -- Enemy Booty | AV Quest
+7241, -- In Defense of Frostwolf | AV Quest
+7261, -- The Sovereign Imperative | AV Quest
+7281, -- Brotherly Love | AV Quest
+7282, -- Brotherly Love | AV Quest
+7301, -- Fallen Sky Lords | AV Quest
+7302, -- Fallen Sky Lords | AV Quest
+7361, -- Favor Amongst the Darkspear | AV Quest
+7362, -- Ally of the Tauren | AV Quest
+7363, -- The Human Condition | AV Quest
+7364, -- Gnomeregan Bounty | AV Quest
+7365, -- Staghelm's Requiem | AV Quest
+7366, -- The Archbishop's Mercy | AV Quest
+7367, -- Defusing the Threat | AV Quest
+7368, -- Defusing the Threat | AV Quest
+7381, -- The Return of Korrak | AV Quest
+7382, -- Korrak the Everliving | AV Quest
+7385, -- A Gallon of Blood | AV Quest
+7386, -- Crystal Cluster | AV Quest
+7401, -- Wanted: DWARVES! | AV Quest
+7402, -- Wanted: ORCS! | AV Quest
+7421, -- Darkspear Defense | AV Quest
+7422, -- Tuft it Out | AV Quest
+7423, -- I've Got A Fever For More Bone Chips | AV Quest
+7424, -- What the Hoof? | AV Quest
+7425, -- Staghelm's Mojo Jamboree | AV Quest
+7426, -- One Man's Love | AV Quest
+7427, -- Wanted: MORE DWARVES! | AV Quest
+7428, -- Wanted: MORE ORCS! | AV Quest
+7701, -- WANTED: Overseer Maltorius | Quests added to Thorium Point (See retail patch notes)
+7721, -- Fuel for the Zapping | Quests added to Feralas (1.5 patch notes)
+7722, -- What the Flux? | Quests added to Thorium Point (See retail patch notes)
+7723, -- Curse These Fat Fingers | Quests added to Thorium Point (See retail patch notes)
+7724, -- Fiery Menace! | Quests added to Thorium Point (See retail patch notes)
+7725, -- Again With the Zapped Giants | Quests added to Feralas (1.5 patch notes)
+7726, -- Refuel for the Zapping | Quests added to Feralas (1.5 patch notes)
+7727, -- Incendosaurs? Whateverosaur is More Like It | Quests added to Thorium Point (See retail patch notes)
+7728, -- STOLEN: Smithing Tuyere and Lookout's Spyglass | Quests added to Thorium Point (See retail patch notes)
+7729, -- JOB OPPORTUNITY: Culling the Competition | Quests added to Thorium Point (See retail patch notes)
+7730, -- Zukk'ash Infestation | Quests added to Feralas (1.5 patch notes)
+7731, -- Stinglasher | Quests added to Feralas (1.5 patch notes)
+7732, -- Zukk'ash Report | Quests added to Feralas (1.5 patch notes)
+7733, -- Improved Quality | "Quest ""Improved Quality"" added in 1.5 (allakhazam dating and inference from item/quest ID)"
+7734, -- Improved Quality | "Quest ""Improved Quality"" added in 1.5 (allakhazam dating and inference from item/quest ID)"
+7735, -- Pristine Yeti Hide | Quests added to Feralas (1.5 patch notes)
+7736, -- Restoring Fiery Flux Supplies via Kingsblood | Quests added to Thorium Point (See retail patch notes)
+7737, -- Gaining Acceptance | Quests added to Thorium Point (See retail patch notes)
+7738, -- Perfect Yeti Hide | Quests added to Feralas (1.5 patch notes)
+7788, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7789, -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
+7791, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7793, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7794, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7795, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7796, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7797, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7798, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7799, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7800, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7801, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7802, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7803, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7804, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7805, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7806, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7807, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7808, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7809, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7811, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7812, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7813, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7814, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7815, -- Snapjaws, Mon! | Quests added to Revantusk Village (See retail patch notes)
+7816, -- Gammerita, Mon! | Quests added to Revantusk Village (See retail patch notes)
+7817, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7818, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7819, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7820, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7821, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7822, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7823, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7824, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7825, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7826, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7827, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7828, -- Stalking the Stalkers | Quests added to Revantusk Village (See retail patch notes)
+7829, -- Hunt the Savages | Quests added to Revantusk Village (See retail patch notes)
+7830, -- Avenging the Fallen | Quests added to Revantusk Village (See retail patch notes)
+7831, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7832, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7833, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7834, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7835, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7836, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7837, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7839, -- Vilebranch Hooligans | Quests added to Revantusk Village (See retail patch notes)
+7840, -- Lard Lost His Lunch | Quests added to Revantusk Village (See retail patch notes)
+7841, -- Message to the Wildhammer | Quests added to Revantusk Village (See retail patch notes)
+7842, -- Another Message to the Wildhammer | Quests added to Revantusk Village (See retail patch notes)
+7843, -- The Final Message to the Wildhammer | Quests added to Revantusk Village (See retail patch notes)
+7844, -- Cannibalistic Cousins | Quests added to Revantusk Village (See retail patch notes)
+7845, -- Kidnapped Elder Torntusk! | Quests added to Revantusk Village (See retail patch notes)
+7846, -- Recover the Key! | Quests added to Revantusk Village (See retail patch notes)
+7847, -- Return to Primal Torntusk | Quests added to Revantusk Village (See retail patch notes)
+7848, -- Attunement to the Core | NOTE: This replaces 7487 to allow Dwarf priests to complete it
+7849, -- Separation Anxiety | Quests added to Revantusk Village (See retail patch notes)
+7850, -- Dark Vessels | Quests added to Revantusk Village (See retail patch notes)
+7861, -- Wanted: Vile Priestess Hexx and Her Minions | Quests added to Revantusk Village (See retail patch notes)
+7862, -- Job Opening: Guard Captain of Revantusk Village | Quests added to Revantusk Village (See retail patch notes)
+7863, -- Sentinel Basic Care Package | WSG quest available on release (Allakhazam dating)
+7864, -- Sentinel Standard Care Package | WSG quest available on release (Allakhazam dating)
+7865, -- Sentinel Advanced Care Package | WSG quest available on release (Allakhazam dating)
+7866, -- Outrider Basic Care Package | WSG quest available on release (Allakhazam dating)
+7867, -- Outrider Standard Care Package | WSG quest available on release (Allakhazam dating)
+7868, -- Outrider Advanced Care Package | WSG quest available on release (Allakhazam dating)
+7871, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7872, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7873, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7874, -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
+7875, -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
+7876  -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
 );
 
 -- * NEW SPELLS	

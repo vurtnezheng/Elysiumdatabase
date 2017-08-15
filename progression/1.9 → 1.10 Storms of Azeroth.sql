@@ -243,6 +243,136 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
+8893, -- The Super Egg-O-Matic | Quest added in 1.10 (inferred from Allakhazam comment dates)
+8897, -- Dearest Colara, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8898, -- Dearest Colara, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8899, -- Dearest Colara, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8900, -- Dearest Elenia, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8901, -- Dearest Elenia, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8902, -- Dearest Elenia, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8903, -- Dangerous Love | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8905, -- An Earnest Proposition | Tier 0.5 questline
+8906, -- An Earnest Proposition | Tier 0.5 questline
+8907, -- An Earnest Proposition | Tier 0.5 questline
+8908, -- An Earnest Proposition | Tier 0.5 questline
+8909, -- An Earnest Proposition | Tier 0.5 questline
+8910, -- An Earnest Proposition | Tier 0.5 questline
+8911, -- An Earnest Proposition | Tier 0.5 questline
+8912, -- An Earnest Proposition | Tier 0.5 questline
+8913, -- An Earnest Proposition | Tier 0.5 questline
+8914, -- An Earnest Proposition | Tier 0.5 questline
+8915, -- An Earnest Proposition | Tier 0.5 questline
+8916, -- An Earnest Proposition | Tier 0.5 questline
+8917, -- An Earnest Proposition | Tier 0.5 questline
+8918, -- An Earnest Proposition | Tier 0.5 questline
+8919, -- An Earnest Proposition | Tier 0.5 questline
+8920, -- An Earnest Proposition | Tier 0.5 questline
+8921, -- The Ectoplasmic Distiller | Tier 0.5 questline
+8922, -- A Supernatural Device | Tier 0.5 questline
+8923, -- A Supernatural Device | Tier 0.5 questline
+8924, -- Hunting for Ectoplasm | Tier 0.5 questline
+8925, -- A Portable Power Source | Tier 0.5 questline
+8926, -- Just Compensation | Tier 0.5 questline
+8927, -- Just Compensation | Tier 0.5 questline
+8928, -- A Shifty Merchant | Tier 0.5 questline
+8929, -- In Search of Anthion | Tier 0.5 questline
+8930, -- In Search of Anthion | Tier 0.5 questline
+8931, -- Just Compensation | Tier 0.5 questline
+8932, -- Just Compensation | Tier 0.5 questline
+8933, -- Just Compensation | Tier 0.5 questline
+8934, -- Just Compensation | Tier 0.5 questline
+8935, -- Just Compensation | Tier 0.5 questline
+8936, -- Just Compensation | Tier 0.5 questline
+8937, -- Just Compensation | Tier 0.5 questline
+8938, -- Just Compensation | Tier 0.5 questline
+8939, -- Just Compensation | Tier 0.5 questline
+8940, -- Just Compensation | Tier 0.5 questline
+8941, -- Just Compensation | Tier 0.5 questline
+8942, -- Just Compensation | Tier 0.5 questline
+8943, -- Just Compensation | Tier 0.5 questline
+8944, -- Just Compensation | Tier 0.5 questline
+8945, -- Dead Man's Plea | Tier 0.5 questline
+8946, -- Proof of Life | Tier 0.5 questline
+8947, -- Anthion's Strange Request | Tier 0.5 questline
+8948, -- Anthion's Old Friend | Tier 0.5 questline
+8949, -- Falrin's Vendetta | Tier 0.5 questline
+8950, -- The Instigator's Enchantment | Tier 0.5 questline
+8951, -- Anthion's Parting Words | Tier 0.5 questline
+8952, -- Anthion's Parting Words | Tier 0.5 questline
+8953, -- Anthion's Parting Words | Tier 0.5 questline
+8954, -- Anthion's Parting Words | Tier 0.5 questline
+8955, -- Anthion's Parting Words | Tier 0.5 questline
+8956, -- Anthion's Parting Words | Tier 0.5 questline
+8957, -- Anthion's Parting Words | Tier 0.5 questline
+8958, -- Anthion's Parting Words | Tier 0.5 questline
+8959, -- Anthion's Parting Words | Tier 0.5 questline
+8960, -- Bodley's Unfortunate Fate | Tier 0.5 questline
+8961, -- Three Kings of Flame | Tier 0.5 questline
+8962, -- Components of Importance | Tier 0.5 questline
+8963, -- Components of Importance | Tier 0.5 questline
+8964, -- Components of Importance | Tier 0.5 questline
+8965, -- Components of Importance | Tier 0.5 questline
+8966, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8967, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8968, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8969, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8970, -- I See Alcaz Island In Your Future... | Tier 0.5 questline
+8977, -- Return to Deliana | Tier 0.5 questline
+8978, -- Return to Mokvar | Tier 0.5 questline
+8979, -- Fenstad's Hunch | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8980, -- Zinge's Assessment | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8981, -- Gift Giving | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8982, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8983, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8984, -- The Source Revealed | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8985, -- More Components of Importance | Tier 0.5 questline
+8986, -- More Components of Importance | Tier 0.5 questline
+8987, -- More Components of Importance | Tier 0.5 questline
+8988, -- More Components of Importance | Tier 0.5 questline
+8989, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8990, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8991, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8992, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8994, -- Final Preparations | Tier 0.5 questline
+8995, -- Mea Culpa, Lord Valthalak | Tier 0.5 questline
+8996, -- Return to Bodley | Tier 0.5 questline
+8997, -- Back to the Beginning | Tier 0.5 questline
+8998, -- Back to the Beginning | Tier 0.5 questline
+8999, -- Saving the Best for Last | Tier 0.5 questline
+9000, -- Saving the Best for Last | Tier 0.5 questline
+9001, -- Saving the Best for Last | Tier 0.5 questline
+9002, -- Saving the Best for Last | Tier 0.5 questline
+9003, -- Saving the Best for Last | Tier 0.5 questline
+9004, -- Saving the Best for Last | Tier 0.5 questline
+9005, -- Saving the Best for Last | Tier 0.5 questline
+9006, -- Saving the Best for Last | Tier 0.5 questline
+9007, -- Saving the Best for Last | Tier 0.5 questline
+9008, -- Saving the Best for Last | Tier 0.5 questline
+9009, -- Saving the Best for Last | Tier 0.5 questline
+9010, -- Saving the Best for Last | Tier 0.5 questline
+9011, -- Saving the Best for Last | Tier 0.5 questline
+9012, -- Saving the Best for Last | Tier 0.5 questline
+9013, -- Saving the Best for Last | Tier 0.5 questline
+9014, -- Saving the Best for Last | Tier 0.5 questline
+9015, -- The Challenge | Tier 0.5 questline
+9016, -- Anthion's Parting Words | Tier 0.5 questline
+9017, -- Anthion's Parting Words | Tier 0.5 questline
+9018, -- Anthion's Parting Words | Tier 0.5 questline
+9019, -- Anthion's Parting Words | Tier 0.5 questline
+9020, -- Anthion's Parting Words | Tier 0.5 questline
+9021, -- Anthion's Parting Words | Tier 0.5 questline
+9022, -- Anthion's Parting Words | Tier 0.5 questline
+9023, -- The Perfect Poison | The Perfect Poison quest added (Allakhazam comment dates)
+9024, -- Aristan's Hunch | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9025, -- Morgan's Discovery | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9026, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9027, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9028, -- The Source Revealed | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9029, -- A Bubbling Cauldron | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9032, -- Bodleys Unfortunate Fate | Tier 0.5 questline
+9051, -- Toxic Test | LVL 50 class quest (druid), see retail 1.10 patch notes
+9052, -- Bloodpetal Poison | LVL 50 class quest (druid), see retail 1.10 patch notes
+9063  -- Torwa Pathfinder | LVL 50 class quest (druid), see retail 1.10 patch notes
 );
 
 -- * NEW SPELLS	

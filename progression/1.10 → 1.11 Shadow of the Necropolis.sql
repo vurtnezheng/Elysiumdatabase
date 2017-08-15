@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `new_creatures` (entry mediumint PRIMARY KEY);
 
 -- * NEW ENCOUNTER	
 
-UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` = 533;  -- Naxxramas 1.12
+UPDATE `areatrigger_teleport` SET `required_level` = 60 WHERE `target_map` = 533;  -- Naxxramas 1.12
 
 -- * NEW EVENTS 	
 
@@ -462,6 +462,201 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
+9033, -- Echoes of War | Naxx quest
+9034, -- Dreadnaught Breastplate | Naxx quest
+9036, -- Dreadnaught Legplates | Naxx quest
+9037, -- Dreadnaught Helmet | Naxx quest
+9038, -- Dreadnaught Pauldrons | Naxx quest
+9039, -- Dreadnaught Sabatons | Naxx quest
+9040, -- Dreadnaught Gauntlets | Naxx quest
+9041, -- Dreadnaught Waistguard | Naxx quest
+9042, -- Dreadnaught Bracers | Naxx quest
+9043, -- Redemption Tunic | Naxx quest
+9044, -- Redemption Legguards | Naxx quest
+9045, -- Redemption Headpiece | Naxx quest
+9046, -- Redemption Spaulders | Naxx quest
+9047, -- Redemption Boots | Naxx quest
+9048, -- Redemption Handguards | Naxx quest
+9049, -- Redemption Girdle | Naxx quest
+9050, -- Redemption Wristguards | Naxx quest
+9053, -- A Better Ingredient | Naxx quest
+9054, -- Cryptstalker Tunic | Naxx quest
+9055, -- Cryptstalker Legguards | Naxx quest
+9056, -- Cryptstalker Headpiece | Naxx quest
+9057, -- Cryptstalker Spaulders | Naxx quest
+9058, -- Cryptstalker Boots | Naxx quest
+9059, -- Cryptstalker Handguards | Naxx quest
+9060, -- Cryptstalker Girdle | Naxx quest
+9061, -- Cryptstalker Wristguards | Naxx quest
+9068, -- Earthshatter Tunic | Naxx quest
+9069, -- Earthshatter Legguards | Naxx quest
+9070, -- Earthshatter Headpiece | Naxx quest
+9071, -- Earthshatter Spaulders | Naxx quest
+9072, -- Earthshatter Boots | Naxx quest
+9073, -- Earthshatter Handguards | Naxx quest
+9074, -- Earthshatter Girdle | Naxx quest
+9075, -- Earthshatter Wristguards | Naxx quest
+9077, -- Bonescythe Breastplate | Naxx quest
+9078, -- Bonescythe Legplates | Naxx quest
+9079, -- Bonescythe Helmet | Naxx quest
+9080, -- Bonescythe Pauldrons | Naxx quest
+9081, -- Bonescythe Sabatons | Naxx quest
+9082, -- Bonescythe Gauntlets | Naxx quest
+9083, -- Bonescythe Waistguard | Naxx quest
+9084, -- Bonescythe Bracers | Naxx quest
+9085, -- Shadows of Doom | Naxx invasion event
+9086, -- Dreamwalker Tunic | Naxx quest
+9087, -- Dreamwalker Legguards | Naxx quest
+9088, -- Dreamwalker Headpiece | Naxx quest
+9089, -- Dreamwalker Spaulders | Naxx quest
+9090, -- Dreamwalker Boots | Naxx quest
+9091, -- Dreamwalker Handguards | Naxx quest
+9092, -- Dreamwalker Girdle | Naxx quest
+9093, -- Dreamwalker Wristguards | Naxx quest
+9094, -- Argent Dawn Gloves | Naxx quest
+9095, -- Frostfire Robe | Naxx quest
+9096, -- Frostfire Leggings | Naxx quest
+9097, -- Frostfire Circlet | Naxx quest
+9098, -- Frostfire Shoulderpads | Naxx quest
+9099, -- Frostfire Sandals | Naxx quest
+9100, -- Frostfire Gloves | Naxx quest
+9101, -- Frostfire Belt | Naxx quest
+9102, -- Frostfire Bindings | Naxx quest
+9103, -- Plagueheart Robe | Naxx quest
+9104, -- Plagueheart Leggings | Naxx quest
+9105, -- Plagueheart Circlet | Naxx quest
+9106, -- Plagueheart Shoulderpads | Naxx quest
+9107, -- Plagueheart Sandals | Naxx quest
+9108, -- Plagueheart Gloves | Naxx quest
+9109, -- Plagueheart Belt | Naxx quest
+9110, -- Plagueheart Bindings | Naxx quest
+9111, -- Robe of Faith | Naxx quest
+9112, -- Leggings of Faith | Naxx quest
+9113, -- Circlet of Faith | Naxx quest
+9114, -- Shoulderpads of Faith | Naxx quest
+9115, -- Sandals of Faith | Naxx quest
+9116, -- Gloves of Faith | Naxx quest
+9117, -- Belt of Faith | Naxx quest
+9118, -- Bindings of Faith | Naxx quest
+9120, -- The Fall of Kel'Thuzad | Naxx quest
+9121, -- The Dread Citadel - Naxxramas | Naxx quest
+9122, -- The Dread Citadel - Naxxramas | Naxx quest
+9123, -- The Dread Citadel - Naxxramas | Naxx quest
+9124, -- Cryptstalker Armor Doesn't Make Itself... | Naxx quest
+9125, -- Crypt Fiend Parts | AD badge quests with 1.11
+9126, -- Bonescythe Digs | AD badge quests with 1.11
+9127, -- Bone Fragments | AD badge quests with 1.11
+9128, -- The Elemental Equation | AD badge quests with 1.11
+9129, -- Core of Elements | AD badge quests with 1.11
+9131, -- Binding the Dreadnaught | Naxx quest
+9132, -- Dark Iron Scraps | AD badge quests with 1.11
+9136, -- Savage Fronds | AD badge quests with 1.11
+9137, -- Savage Fronds | AD badge quests with 1.11
+9141, -- "They Call Me ""The Rooster""" | AD badge quests with 1.11
+9142, -- Craftsman's Writ | AD badge quests with 1.11
+9153, -- Under the Shadow | Naxx invasion event
+9154, -- Light's Hope Chapel | Naxx invasion event
+9165, -- Writ of Safe Passage | AD badge quests with 1.11
+9178, -- Craftsman's Writ - Dense Weightstone | AD badge quests with 1.11
+9179, -- Craftsman's Writ - Imperial Plate Chest | AD badge quests with 1.11
+9181, -- Craftsman's Writ - Volcanic Hammer | AD badge quests with 1.11
+9182, -- Craftsman's Writ - Huge Thorium Battleaxe | AD badge quests with 1.11
+9183, -- Craftsman's Writ - Radiant Circlet | AD badge quests with 1.11
+9184, -- Craftsman's Writ - Wicked Leather Headband | AD badge quests with 1.11
+9185, -- Craftsman's Writ - Rugged Armor Kit | AD badge quests with 1.11
+9186, -- Craftsman's Writ - Wicked Leather Belt | AD badge quests with 1.11
+9187, -- Craftsman's Writ - Runic Leather Pants | AD badge quests with 1.11
+9188, -- Craftsman's Writ - Brightcloth Pants | AD badge quests with 1.11
+9190, -- Craftsman's Writ - Runecloth Boots | AD badge quests with 1.11
+9191, -- Craftsman's Writ - Runecloth Bag | AD badge quests with 1.11
+9194, -- Craftsman's Writ - Runecloth Robe | AD badge quests with 1.11
+9195, -- Craftsman's Writ - Goblin Sapper Charge | AD badge quests with 1.11
+9196, -- Craftsman's Writ - Thorium Grenade | AD badge quests with 1.11
+9197, -- Craftsman's Writ - Gnomish Battle Chicken | AD badge quests with 1.11
+9198, -- Craftsman's Writ - Thorium Tube | AD badge quests with 1.11
+9200, -- Craftsman's Writ - Major Mana Potion | AD badge quests with 1.11
+9201, -- Craftsman's Writ - Greater Arcane Protection Potion | AD badge quests with 1.11
+9202, -- Craftsman's Writ - Major Healing Potion | AD badge quests with 1.11
+9203, -- Craftsman's Writ - Flask of Petrification | AD badge quests with 1.11
+9204, -- Craftsman's Writ - Stonescale Eel | AD badge quests with 1.11
+9205, -- Craftsman's Writ - Plated Armorfish | AD badge quests with 1.11
+9206, -- Craftsman's Writ - Lightning Eel | AD badge quests with 1.11
+9208, -- The Savage Guard - Arcanum of Protection | New nature resist ZG enchants added
+9209, -- The Savage Guard - Arcanum of Rapidity | New nature resist ZG enchants added
+9210, -- The Savage Guard - Arcanum of Focus | New nature resist ZG enchants added
+9211, -- The Ice Guard | AD badge quests with 1.11
+9213, -- The Shadow Guard | AD badge quests with 1.11
+9221, -- Superior Armaments of Battle - Friend of the Dawn | AD badge quests with 1.11
+9222, -- Epic Armaments of Battle - Friend of the Dawn | AD badge quests with 1.11
+9223, -- Superior Armaments of Battle - Honored Amongst the Dawn | AD badge quests with 1.11
+9224, -- Epic Armaments of Battle - Honored Amongst the Dawn | AD badge quests with 1.11
+9225, -- Epic Armaments of Battle - Revered Amongst the Dawn | AD badge quests with 1.11
+9226, -- Superior Armaments of Battle - Revered Amongst the Dawn | AD badge quests with 1.11
+9227, -- Superior Armaments of Battle - Exalted Amongst the Dawn | AD badge quests with 1.11
+9228, -- Epic Armaments of Battle - Exalted Amongst the Dawn | AD badge quests with 1.11
+9229, -- The Fate of Ramaladni | Naxx quest
+9230, -- Ramaladni's Icy Grasp | Naxx quest
+9232, -- The Only Song I Know... | Naxx quest
+9233, -- Omarion's Handbook | Naxx quest
+9234, -- Icebane Gauntlets | Naxx quest
+9235, -- Icebane Bracers | Naxx quest
+9236, -- Icebane Breastplate | Naxx quest
+9237, -- Glacial Cloak | Naxx quest
+9238, -- Glacial Wrists | Naxx quest
+9239, -- Glacial Gloves | Naxx quest
+9240, -- Glacial Vest | Naxx quest
+9241, -- Polar Bracers | Naxx quest
+9242, -- Polar Gloves | Naxx quest
+9243, -- Polar Tunic | Naxx quest
+9244, -- Icy Scale Bracers | Naxx quest
+9245, -- Icy Scale Gauntlets | Naxx quest
+9246, -- Icy Scale Breastplate | Naxx quest
+9247, -- The Keeper's Call | Naxx invasion event
+9248, -- A Humble Offering | New Cenarion Circle nature resist items
+9250, -- Frame of Atiesh | Naxx quest
+9251, -- Atiesh, the Befouled Greatstaff | Naxx quest
+9259, -- Traitor to the Bloodsail | New Bloodsail quest added in 1.11 per Allakhazam comment dates
+9260, -- Investigate the Scourge of Stormwind | Naxx invasion event
+9261, -- Investigate the Scourge of Ironforge | Naxx invasion event
+9262, -- Investigate the Scourge of Darnassus | Naxx invasion event
+9263, -- Investigate the Scourge of Orgrimmar | Naxx invasion event
+9264, -- Investigate the Scourge of Thunder Bluff | Naxx invasion event
+9265, -- Investigate the Scourge of Undercity | Naxx invasion event
+9267, -- Mending Old Wounds | New cloth turnin quests added to goblin faction per 1.11 patch notes
+9268, -- War at Sea | New cloth turnin quests added to goblin faction per 1.11 patch notes
+9269, -- Atiesh, Greatstaff of the Guardian | Naxx quest
+9270, -- Atiesh, Greatstaff of the Guardian | Naxx quest
+9271, -- Atiesh, Greatstaff of the Guardian | Naxx quest
+9272, -- Dressing the Part | New Bloodsail quest added in 1.11 per Allakhazam comment dates
+9292, -- Cracked Necrotic Crystal | Naxx invasion event
+9295, -- Letter from the Front | Naxx invasion event
+9299, -- Note from the Front | Naxx invasion event
+9300, -- Page from the Front | Naxx invasion event
+9301, -- Envelope from the Front | Naxx invasion event
+9302, -- Missive from the Front | Naxx invasion event
+9304, -- Document from the Front | Naxx invasion event
+9310, -- Faint Necrotic Crystal | Naxx invasion event
+9317, -- Consecrated Sharpening Stones | Naxx invasion event
+9318, -- Blessed Wizard Oil | Naxx invasion event
+9319, -- A Light in Dark Places | Midsummer Fire festival added in patch 1.11
+9320, -- Major Mana Potion | Naxx invasion event
+9321, -- Super Healing Potion | Naxx invasion event
+9322, -- Wild Fires in Kalimdor | Midsummer Fire festival added in patch 1.11
+9323, -- Wild Fires in the Eastern Kingdoms | Midsummer Fire festival added in patch 1.11
+9324, -- Stealing Orgrimmar's Flame | Midsummer Fire festival added in patch 1.11
+9325, -- Stealing Thunder Bluff's Flame | Midsummer Fire festival added in patch 1.11
+9326, -- Stealing the Undercity's Flame | Midsummer Fire festival added in patch 1.11
+9330, -- Stealing Stormwind's Flame | Midsummer Fire festival added in patch 1.11
+9331, -- Stealing Ironforge's Flame | Midsummer Fire festival added in patch 1.11
+9332, -- Stealing Darnassus's Flame | Midsummer Fire festival added in patch 1.11
+9338, -- Allegiance to Cenarion Circle | Added in 1.11 per Allakhazam comments and dates
+9339, -- A Thief's Reward | Midsummer Fire festival added in patch 1.11
+9341, -- Tabard of the Argent Dawn | Naxx invasion event
+9362, -- Warlord Krellian | New mage quest added to Xylem (1.11 patch notes)
+9364, -- Fragmented Magic | New mage quest added to Xylem (1.11 patch notes)
+9365, -- A Thief's Reward | Midsummer Fire festival added in patch 1.11
+9368, -- The Festival of Fire | Midsummer Fire festival added in patch 1.11
+9386  -- A Light in Dark Places | Midsummer Fire festival added in patch 1.11
 );
 
 -- * NEW SPELLS	

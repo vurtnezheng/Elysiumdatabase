@@ -395,154 +395,149 @@ REPLACE INTO new_creatures SELECT entry FROM creature_template WHERE entry IN (1
 -- * NEW QUESTS	
 
 REPLACE INTO new_quests SELECT entry FROM quest_template WHERE entry IN (
-8041,   -- Strength of Mount Mugamba
-8042,   -- Strength of Mount Mugamba
-8043,   -- Strength of Mount Mugamba
-8044,   -- The Rage of Mount Mugamba
-8045,   -- The Heathen's Brand
-8046,   -- The Heathen's Brand
-8047,   -- The Heathen's Brand
-8048,   -- The Hero's Brand
-8049,   -- The Eye of Zuldazar
-8050,   -- The Eye of Zuldazar
-8051,   -- The Eye of Zuldazar
-8052,   -- The All-Seeing Eye of Zuldazar
-8053,   -- Paragons of Power: The Freethinker's Armguards
-8054,   -- Paragons of Power: The Freethinker's Belt
-8055,   -- Paragons of Power: The Freethinker's Breastplate
-8056,   -- Paragons of Power: The Augur's Bracers (Raid)
-8057,   -- Paragons of Power: The Haruspex's Bracers
-8058,   -- Paragons of Power: The Vindicator's Armguards
-8059,   -- Paragons of Power: The Demoniac's Wraps (Raid)
-8060,   -- Paragons of Power: The Illusionist's Wraps
-8061,   -- Paragons of Power: The Confessor's Wraps
-8062,   -- Paragons of Power: The Predator's Bracers
-8063,   -- Paragons of Power: The Madcap's Bracers
-8064,   -- Paragons of Power: The Haruspex's Belt
-8065,   -- Paragons of Power: The Haruspex's Tunic
-8066,   -- Paragons of Power: The Predator's Belt
-8067,   -- Paragons of Power: The Predator's Mantle
-8068,   -- Paragons of Power: The Illusionist's Mantle
-8069,   -- Paragons of Power: The Illusionist's Robes
-8070,   -- Paragons of Power: The Confessor's Bindings
-8071,   -- Paragons of Power: The Confessor's Mantle
-8072,   -- Paragons of Power: The Madcap's Mantle
-8073,   -- Paragons of Power: The Madcap's Tunic
-8074,   -- Paragons of Power: The Augur's Belt
-8075,   -- Paragons of Power: The Augur's Hauberk
-8076,   -- Paragons of Power: The Demoniac's Mantle (Raid)
-8077,   -- Paragons of Power: The Demoniac's Robes (Raid)
-8078,   -- Paragons of Power: The Vindicator's Belt
-8079,   -- Paragons of Power: The Vindicator's Breastplate
-8080,   -- Arathi Basin Mark of Honor!
-8101,   -- The Pebble of Kajaro
-8102,   -- The Pebble of Kajaro
-8103,   -- The Pebble of Kajaro
-8104,   -- The Jewel of Kajaro
-8105,   -- The Battle for Arathi Basin!
-8106,   -- Kezan's Taint
-8107,   -- Kezan's Taint
-8108,   -- Kezan's Taint
-8109,   -- Kezan's Unstoppable Taint
-8110,   -- Enchanted South Seas Kelp
-8111,   -- Enchanted South Seas Kelp
-8112,   -- Enchanted South Seas Kelp
-8113,   -- Pristine Enchanted South Seas Kelp
-8114,   -- Control Four Bases
-8115,   -- Control Five Bases
-8116,   -- Vision of Voodress
-8117,   -- Vision of Voodress
-8118,   -- Vision of Voodress
-8119,   -- The Unmarred Vision of Voodress
-8120,   -- The Battle for Arathi Basin!
-8121,   -- Take Four Bases
-8122,   -- Take Five Bases
-8123,   -- Cut Arathor Supply Lines
-8141,   -- Zandalrian Shadow Talisman
-8142,   -- Zandalrian Shadow Talisman
-8143,   -- Zandalrian Shadow Talisman
-8144,   -- Zandalrian Shadow Mastery Talisman
-8145,   -- The Maelstrom's Tendril
-8146,   -- The Maelstrom's Tendril
-8147,   -- The Maelstrom's Tendril
-8148,   -- The Maelstrom's Wrath
-8149,   -- Honoring a Hero
-8150,   -- Honoring a Hero
-8151,   -- The Hunter's Charm
-8153,   -- Courser Antlers
-8154,   -- Arathi Basin Mark of Honor!
-8155,   -- Arathi Basin Mark of Honor!
-8156,   -- Arathi Basin Mark of Honor!
-8160,   -- Cut Arathor Supply Lines
-8161,   -- Cut Arathor Supply Lines
-8162,   -- Cut Arathor Supply Lines
-8166,   -- The Battle for Arathi Basin!
-8167,   -- The Battle for Arathi Basin!
-8168,   -- The Battle for Arathi Basin!
-8169,   -- The Battle for Arathi Basin!
-8170,   -- The Battle for Arathi Basin!
-8171,   -- The Battle for Arathi Basin!
-8181,   -- Confront Yeh'kinya
-8182,   -- The Hand of Rastakhan
-8183,   -- The Heart of Hakkar
-8184,   -- Presence of Might
-8185,   -- Syncretist's Sigil
-8186,   -- Death's Embrace
-8187,   -- Falcon's Call
-8188,   -- Vodouisant's Vigilant Embrace
-8189,   -- Presence of Sight
-8190,   -- Hoodoo Hex
-8191,   -- Prophetic Aura
-8192,   -- Animist's Caress
-8193,   -- Master Angler
-8194,   -- Apprentice Angler
-8195,   -- Zulian, Razzashi, and Hakkari Coins
-8196,   -- Essence Mangoes
-8201,   -- A Collection of Heads
-8221,   -- Rare Fish - Keefer's Angelfish
-8222,   -- Glowing Scorpid Blood
-8223,   -- More Glowing Scorpid Blood
-8224,   -- Rare Fish - Dezian Queenfish
-8225,   -- Rare Fish - Brownell's Blue Striped Racer
-8227,   -- Nat's Measuring Tape
-8228,   -- Could I get a Fishing Flier?
-8229,   -- Could I get a Fishing Flier?
-8231,   -- Wavethrashing
-8232,   -- The Green Drake
-8233,   -- A Simple Request
-8234,   -- Sealed Azure Bag
-8235,   -- Encoded Fragments
-8236,   -- The Azure Key
-8238,   -- Gurubashi, Vilebranch, and Witherbark Coins
-8239,   -- Sandfury, Skullsplitter, and Bloodscalp Coins
-8240,   -- A Bijou for Zanza
-8241,   -- Restoring Fiery Flux Supplies via Iron
-8242,   -- Restoring Fiery Flux Supplies via Heavy Leather
-8243,   -- Zanza's Potent Potables
-8246,   -- Signets of the Zandalar
-8249,   -- Junkboxes Needed
-8250,   -- Magecraft
-8251,   -- Magic Dust
-8252,   -- The Siren's Coral
-8253,   -- Destroy Morphaz
-8254,   -- Cenarion Aid
-8255,   -- Of Coursers We Know
-8256,   -- The Ichor of Undeath
-8257,   -- Blood of Morphaz
-8258,   -- The Darkreaver Menace
-8260,   -- Arathor Basic Care Package
-8261,   -- Arathor Standard Care Package
-8262,   -- Arathor Advanced Care Package
-8263,   -- Defiler's Basic Care Package
-8264,   -- Defiler's Standard Care Package
-8265,   -- Defiler's Advanced Care Package
-8266,   -- Ribbons of Sacrifice
-8267,   -- Ribbons of Sacrifice
-8268,   -- Ribbons of Sacrifice
-8269,   -- Ribbons of Sacrifice
-8271,   -- Hero of the Stormpike
-8272,   -- Hero of the Frostwolf
-8273,   -- Oran's Gratitude
+7667, -- Material Assistance | Quest added for Scholomance (horde) (allakhazam dating)
+8001, -- Zombie Cleansing | Deprecated quest, possibly related to unintentional ZG release zombie event
+8041, -- Strength of Mount Mugamba | ZG Quest
+8042, -- Strength of Mount Mugamba | ZG Quest
+8043, -- Strength of Mount Mugamba | ZG Quest
+8044, -- The Rage of Mount Mugamba | ZG Quest
+8045, -- The Heathen's Brand | ZG Quest
+8046, -- The Heathen's Brand | ZG Quest
+8047, -- The Heathen's Brand | ZG Quest
+8048, -- The Hero's Brand | ZG Quest
+8049, -- The Eye of Zuldazar | ZG Quest
+8050, -- The Eye of Zuldazar | ZG Quest
+8051, -- The Eye of Zuldazar | ZG Quest
+8052, -- The All-Seeing Eye of Zuldazar | ZG Quest
+8053, -- Paragons of Power: The Freethinker's Armguards | ZG Quest
+8054, -- Paragons of Power: The Freethinker's Belt | ZG Quest
+8055, -- Paragons of Power: The Freethinker's Breastplate | ZG Quest
+8056, -- Paragons of Power: The Augur's Bracers (Raid) | ZG Quest
+8057, -- Paragons of Power: The Haruspex's Bracers | ZG Quest
+8058, -- Paragons of Power: The Vindicator's Armguards | ZG Quest
+8059, -- Paragons of Power: The Demoniac's Wraps (Raid) | ZG Quest
+8060, -- Paragons of Power: The Illusionist's Wraps | ZG Quest
+8061, -- Paragons of Power: The Confessor's Wraps | ZG Quest
+8062, -- Paragons of Power: The Predator's Bracers | ZG Quest
+8063, -- Paragons of Power: The Madcap's Bracers | ZG Quest
+8064, -- Paragons of Power: The Haruspex's Belt | ZG Quest
+8065, -- Paragons of Power: The Haruspex's Tunic | ZG Quest
+8066, -- Paragons of Power: The Predator's Belt | ZG Quest
+8067, -- Paragons of Power: The Predator's Mantle | ZG Quest
+8068, -- Paragons of Power: The Illusionist's Mantle | ZG Quest
+8069, -- Paragons of Power: The Illusionist's Robes | ZG Quest
+8070, -- Paragons of Power: The Confessor's Bindings | ZG Quest
+8071, -- Paragons of Power: The Confessor's Mantle | ZG Quest
+8072, -- Paragons of Power: The Madcap's Mantle | ZG Quest
+8073, -- Paragons of Power: The Madcap's Tunic | ZG Quest
+8074, -- Paragons of Power: The Augur's Belt | ZG Quest
+8075, -- Paragons of Power: The Augur's Hauberk | ZG Quest
+8076, -- Paragons of Power: The Demoniac's Mantle (Raid) | ZG Quest
+8077, -- Paragons of Power: The Demoniac's Robes (Raid) | ZG Quest
+8078, -- Paragons of Power: The Vindicator's Belt | ZG Quest
+8079, -- Paragons of Power: The Vindicator's Breastplate | ZG Quest
+8080, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8101, -- The Pebble of Kajaro | ZG Quest
+8102, -- The Pebble of Kajaro | ZG Quest
+8103, -- The Pebble of Kajaro | ZG Quest
+8104, -- The Jewel of Kajaro | ZG Quest
+8105, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8106, -- Kezan's Taint | ZG Quest
+8107, -- Kezan's Taint | ZG Quest
+8108, -- Kezan's Taint | ZG Quest
+8109, -- Kezan's Unstoppable Taint | ZG Quest
+8110, -- Enchanted South Seas Kelp | ZG Quest
+8111, -- Enchanted South Seas Kelp | ZG Quest
+8112, -- Enchanted South Seas Kelp | ZG Quest
+8113, -- Pristine Enchanted South Seas Kelp | ZG Quest
+8114, -- Control Four Bases | Arathi Basin Quest
+8115, -- Control Five Bases | Arathi Basin Quest
+8116, -- Vision of Voodress | ZG Quest
+8117, -- Vision of Voodress | ZG Quest
+8118, -- Vision of Voodress | ZG Quest
+8119, -- The Unmarred Vision of Voodress | ZG Quest
+8120, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8121, -- Take Four Bases | Arathi Basin Quest
+8122, -- Take Five Bases | Arathi Basin Quest
+8123, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8141, -- Zandalrian Shadow Talisman | ZG Quest
+8142, -- Zandalrian Shadow Talisman | ZG Quest
+8143, -- Zandalrian Shadow Talisman | ZG Quest
+8144, -- Zandalrian Shadow Mastery Talisman | ZG Quest
+8145, -- The Maelstrom's Tendril | ZG Quest
+8146, -- The Maelstrom's Tendril | ZG Quest
+8147, -- The Maelstrom's Tendril | ZG Quest
+8148, -- The Maelstrom's Wrath | ZG Quest
+8151, -- The Hunter's Charm | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8153, -- Courser Antlers | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8154, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8155, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8156, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8160, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8161, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8162, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8166, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8167, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8168, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8169, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8170, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8171, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8181, -- Confront Yeh'kinya | ZG lore quest added
+8182, -- The Hand of Rastakhan | ZG lore quest added
+8183, -- The Heart of Hakkar | ZG Quest
+8184, -- Presence of Might | ZG Quest
+8185, -- Syncretist's Sigil | ZG Quest
+8186, -- Death's Embrace | ZG Quest
+8187, -- Falcon's Call | ZG Quest
+8188, -- Vodouisant's Vigilant Embrace | ZG Quest
+8189, -- Presence of Sight | ZG Quest
+8190, -- Hoodoo Hex | ZG Quest
+8191, -- Prophetic Aura | ZG Quest
+8192, -- Animist's Caress | ZG Quest
+8193, -- Master Angler | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8194, -- Apprentice Angler | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8195, -- Zulian, Razzashi, and Hakkari Coins | ZG Quest
+8196, -- Essence Mangoes | ZG Quest
+8201, -- A Collection of Heads | ZG Quest
+8221, -- Rare Fish - Keefer's Angelfish | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8224, -- Rare Fish - Dezian Queenfish | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8225, -- Rare Fish - Brownell's Blue Striped Racer | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8227, -- Nat's Measuring Tape | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8228, -- Could I get a Fishing Flier? | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8229, -- Could I get a Fishing Flier? | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8231, -- Wavethrashing | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8232, -- The Green Drake | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8233, -- A Simple Request | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8234, -- Sealed Azure Bag | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8235, -- Encoded Fragments | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8236, -- The Azure Key | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8238, -- Gurubashi, Vilebranch, and Witherbark Coins | ZG Quest
+8239, -- Sandfury, Skullsplitter, and Bloodscalp Coins | ZG Quest
+8240, -- A Bijou for Zanza | ZG Quest
+8241, -- Restoring Fiery Flux Supplies via Iron | 1.7 retail patch notes
+8242, -- Restoring Fiery Flux Supplies via Heavy Leather | 1.7 retail patch notes
+8243, -- Zanza's Potent Potables | ZG Quest
+8246, -- Signets of the Zandalar | ZG Quest
+8249, -- Junkboxes Needed | Inferred from allakhazam comment dates
+8250, -- Magecraft | LVL 50 class quest (mage), see retail 1.7 patch notes
+8251, -- Magic Dust | LVL 50 class quest (mage), see retail 1.7 patch notes
+8252, -- The Siren's Coral | LVL 50 class quest (mage), see retail 1.7 patch notes
+8253, -- Destroy Morphaz | LVL 50 class quest (mage), see retail 1.7 patch notes
+8254, -- Cenarion Aid | LVL 50 class quest (priest), see retail 1.7 patch notes
+8255, -- Of Coursers We Know | LVL 50 class quest (priest), see retail 1.7 patch notes
+8256, -- The Ichor of Undeath | LVL 50 class quest (priest), see retail 1.7 patch notes
+8257, -- Blood of Morphaz | LVL 50 class quest (priest), see retail 1.7 patch notes
+8258, -- The Darkreaver Menace | Quest added for Scholomance (horde) (allakhazam dating)
+8260, -- Arathor Basic Care Package | Arathi Basin Quest
+8261, -- Arathor Standard Care Package | Arathi Basin Quest
+8262, -- Arathor Advanced Care Package | Arathi Basin Quest
+8263, -- Defiler's Basic Care Package | Arathi Basin Quest
+8264, -- Defiler's Standard Care Package | Arathi Basin Quest
+8265, -- Defiler's Advanced Care Package | Arathi Basin Quest
+8266, -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
+8267, -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
+8268, -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
+8269  -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
 );
 
 -- * NEW SPELLS	
