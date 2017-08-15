@@ -1,4 +1,4 @@
--- 1.2 → 1.3 | Rise of the Blood God
+-- 1.6 → 1.7 | Rise of the Blood God
 
 DROP TABLE IF EXISTS `new_items`;
 DROP TABLE IF EXISTS `new_events`;
