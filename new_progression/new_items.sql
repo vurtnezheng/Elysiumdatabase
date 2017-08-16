@@ -1,18 +1,4 @@
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `1215`; -- Support Girdle
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `1677`; -- Drake-scale Vest
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `2715`; -- Monster - Item, Lantern - Round
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `2899`; -- Wendigo Collar
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `5975`; -- Ruffian Belt
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `6118`; -- Squire's Pants
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `6119`; -- Neophyte's Robe
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `6129`; -- Acolyte's Robe
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `6136`; -- Thug Shirt
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `6833`; -- White Tuxedo Shirt
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `6836`; -- Dress Shoes | NOTE: Deprecated Item
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `7809`; -- Easter Dress | NOTE: Replaced by Easter Dress in 1.5
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `10768`; -- Boar Champion's Belt | NOTE: Stats changed some time after 1.1
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `11662`; -- Ban'thok Sash | NOTE: Stats and quality updated in 1.10
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `11703`; -- Stonewall Girdle | NOTE: Stats and quality updated in 1.10
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `12422`; -- Imperial Plate Chest | NOTE: Added April 2005 with patch
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `12424`; -- Imperial Plate Belt | NOTE: Added April 2005 with patch
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `12425`; -- Imperial Plate Bracers | NOTE: Added April 2005 with patch
@@ -26,24 +12,10 @@ UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `12618`; -- Enchanted Tho
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `12619`; -- Enchanted Thorium Leggings | NOTE: Added April 2005 with patch
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `12620`; -- Enchanted Thorium Helm | NOTE: Added April 2005 with patch
 UPDATE `item_template` SET `patch`= `10` WHERE `entry`= `12625`; -- Dawnbringer Shoulders | NOTE: Did not exist until late 2006/2007 (NOTE: Plans are not on this list)
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `12772`; -- Inlaid Thorium Hammer | NOTE: Deprecated item (not in game)
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `12947`; -- Alex's Ring of Audacity | NOTE: GM Item
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `13075`; -- Direwing Legguards | NOTE: Drops off arena bosses and 1.3 world bosses (originally) per Allakhazam
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `13262`; -- Ashbringer | NOTE: Should not be on loot tables, obviously
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `13384`; -- Rainbow Girdle | NOTE: On loot tables in 2004 Allakhazam
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `13956`; -- Clutch of Andros | NOTE: No evidence Kirtonos didn't exist before
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `14464`; -- Elunarian Silk Robes | NOTE: Unknown
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `14539`; -- Bone Ring Helm | NOTE: Quality changed at some point, but on loot tables per Allakhazam
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `14811`; -- Warstrike Chestguard | NOTE: Allakhazam comments March 2, 2005
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `14812`; -- Warstrike Buckler | NOTE: Allakhazam comments March 2, 2005
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `14815`; -- Warstrike Gauntlets | NOTE: Allakhazam comments March 2, 2005
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `15196`; -- Private's Tabard | NOTE: Added with PvP Honor System (Originally patch 1.4)
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `15198`; -- Knight's Colors | NOTE: Added with PvP Honor System (Originally patch 1.4)
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `15199`; -- Stone Guard's Herald | NOTE: Added with PvP Honor System (Originally patch 1.4)
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `15405`; -- Shucking Gloves | NOTE: Allakhazam comments before patch 1.3
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `15410`; -- Scale of Onyxia | NOTE: Originally white quality, used for crafted cloak and breastplate (Allakhazam dates)
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `15968`; -- Elunarian Sphere | NOTE: Inconclusive
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `16165`; -- Test Arcane Res Legs Mail | NOTE: TEST ITEM, NOT IN GAME
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `16335`; -- Senior Sergeant's Insignia | NOTE: Added with PvP Honor System (Originally patch 1.4)
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `16345`; -- High Warlord's Blade | NOTE: "Added with PvP Honor System (NOTE: Originally patch 1.4, stats updated in 1.11
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `16369`; -- Knight-Lieutenant's Silk Boots | NOTE: "Added with PvP Honor System (NOTE: Originally patch 1.4, changed to level 60 pvp set in 1.11
@@ -263,7 +235,6 @@ UPDATE `item_template` SET `patch`= `3` WHERE `entry`= `17906`; -- Frostwolf Ins
 UPDATE `item_template` SET `patch`= `3` WHERE `entry`= `17907`; -- Frostwolf Insignia Rank 4 | NOTE: AV Rewards
 UPDATE `item_template` SET `patch`= `3` WHERE `entry`= `17908`; -- Frostwolf Insignia Rank 5 | NOTE: AV Rewards
 UPDATE `item_template` SET `patch`= `3` WHERE `entry`= `17909`; -- Frostwolf Insignia Rank 6 | NOTE: AV Rewards
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `17982`; -- Ragnaros Core | NOTE: Note: Removed in 1.4, had random stats +17 fire resist http://www.wowhead.com/item=17982/ragnaros-core#comments:id=1539581
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18022`; -- Royal Seal of Alexis | NOTE: See 1.3 retail patch notes
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18083`; -- Jumanza Grips | NOTE: wowwiki and allakhazam dates
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18103`; -- Band of Rumination | NOTE: wowwiki and allakhazam dates
@@ -316,13 +287,8 @@ UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18387`; -- Brightspark G
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18388`; -- Stoneshatter | NOTE: Dire Maul Loot
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18393`; -- Warpwood Binding | NOTE: Dire Maul Loot
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18395`; -- Emerald Flame Ring | NOTE: Dire Maul Loot
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18398`; -- Tidal Loop | NOTE: Hydraxian quests available since at least Feb 2005 (NOTE: Ocean's Breeze is other reward and not on this list)
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18400`; -- Ring of Living Stone | NOTE: In since at least March 2005
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18404`; -- Onyxia Tooth Pendant | NOTE: Available from start (world first kill ~1.3)
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18420`; -- Bonecrusher | NOTE: Dire Maul Loot
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18421`; -- Backwood Helm | NOTE: Dire Maul Loot
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18422`; -- Head of Onyxia | NOTE: Available from start (world first kill ~1.3)
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18423`; -- Head of Onyxia | NOTE: Available from start (world first kill ~1.3)
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18425`; -- Kreeg's Mug | NOTE: Dire Maul Loot
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18427`; -- Sergeant's Cloak | NOTE: Added with PvP Honor System (Originally patch 1.4)
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18428`; -- Senior Sergeant's Insignia | NOTE: Added with PvP Honor System (Originally patch 1.4)
@@ -360,9 +326,6 @@ UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18544`; -- Doomhide Gaun
 UPDATE `item_template` SET `patch`= `1` WHERE `entry`= `18545`; -- Leggings of Arcane Supremacy | NOTE: Original Azuregos loot (Allakhazam dates)
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18563`; -- Bindings of the Windseeker | NOTE: 1.4 Raid loot table update (Allakhazam dates, not patch 1.6 like crappy wowwiki says)
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18564`; -- Bindings of the Windseeker | NOTE: 1.4 Raid loot table update (Allakhazam dates, not patch 1.6 like crappy wowwiki says)
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18582`; -- The Twin Blades of Azzinoth | NOTE: Not on loot tables, obviously
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18583`; -- Warglaive of Azzinoth (Right) | NOTE: Not on loot tables, obviously
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `18584`; -- Warglaive of Azzinoth (Left) | NOTE: Not on loot tables, obviously
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18592`; -- Plans: Sulfuron Hammer | NOTE: 1.4 Raid loot table update
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18602`; -- Tome of Sacrifice | NOTE: Added in 1.4 with doomguard summon spell (allakhazam dates)
 UPDATE `item_template` SET `patch`= `2` WHERE `entry`= `18608`; -- Benediction | NOTE: 1.4 Raid loot table update
@@ -985,7 +948,6 @@ UPDATE `item_template` SET `patch`= `5` WHERE `entry`= `19875`; -- Bloodstained 
 UPDATE `item_template` SET `patch`= `5` WHERE `entry`= `19876`; -- Soul Corrupter's Necklace | NOTE: ZG Loot
 UPDATE `item_template` SET `patch`= `5` WHERE `entry`= `19877`; -- Animist's Leggings | NOTE: ZG Loot
 UPDATE `item_template` SET `patch`= `5` WHERE `entry`= `19878`; -- Bloodsoaked Pauldrons | NOTE: ZG Loot
-UPDATE `item_template` SET `patch`= `0` WHERE `entry`= `19879`; -- Alex's Test Beatdown Staff | NOTE: Should not be on loot tables
 UPDATE `item_template` SET `patch`= `5` WHERE `entry`= `19884`; -- Jin'do's Judgement | NOTE: ZG Loot
 UPDATE `item_template` SET `patch`= `5` WHERE `entry`= `19885`; -- Jin'do's Evil Eye | NOTE: ZG Loot
 UPDATE `item_template` SET `patch`= `5` WHERE `entry`= `19886`; -- The Hexxer's Cover | NOTE: ZG Loot
