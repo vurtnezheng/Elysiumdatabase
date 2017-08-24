@@ -199,7 +199,8 @@ UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 1) WHERE id IN (SELECT entr
 
 UPDATE `game_event` SET `disabled` = (`disabled` | 0) WHERE entry IN (SELECT entry FROM new_events);
  
--- * ITEM STATS | Items changed: 
+-- * ITEM STATS
+-- ^ Items changed: 
 
 -- * ADDITIONAL FIXES			
 
