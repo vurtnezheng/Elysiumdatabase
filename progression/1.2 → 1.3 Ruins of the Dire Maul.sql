@@ -200,8 +200,11 @@ UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 1) WHERE id IN (SELECT entr
 UPDATE `game_event` SET `disabled` = (`disabled` | 0) WHERE entry IN (SELECT entry FROM new_events);
  
 -- * ITEM STATS
--- ^ Items changed: 
+-- ^ Items changed: 1
 
+-- Shadowcraft Boots | Armor: 115 | Agility: 21 | Stamina: 9
+(16711, 4, 2, 'Shadowcraft Boots', 28162, 3, 0, 1, 87528, 17505, 8, -1, -1, 59, 54, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 21, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 1, '', 0, 0, 0, 0, 0, 8, 0, 0, 0, 184, 50, 0, 0, 0, '', 48, 0, 0, 0, 0, 0, 1),
+	
 -- * ADDITIONAL FIXES			
 
 
