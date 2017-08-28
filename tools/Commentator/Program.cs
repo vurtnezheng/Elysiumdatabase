@@ -20,152 +20,132 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace Commentator
 {
     class Program
     {
         /// <summary>
-        /// Adds a comment to each statement
+        /// Gets all SQL comments and formats them as markdown
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            if (args.Length < 2)
+            if (args.Length < 1)
             {
                 Console.WriteLine("Syntax: Commentator.exe <source file> <destination file>");
+                Console.WriteLine("OR: Commentator.exe -getall");
                 return;
-            }
-
-            if (!File.Exists(args[0]))
-            {
-                Console.WriteLine($"{args[0]} doesn't exist!");
-                return;
-            }
-
-            if (File.Exists(args[1])) File.Delete(args[1]);
+            }            
 
             Console.WriteLine("Commentator");
             Console.WriteLine("===========");
 
-            var result = new List<string>();
-            var file = File.ReadAllLines(args[0]);
-            foreach (var line in file)
+            if(args[0] != "-getall")
             {
-                // First, we save all the item's stats inside a dictionary
-                var item = GetItemTemplate(line);
+                if (!File.Exists(args[0]))
+                {
+                    Console.WriteLine($"{args[0]} doesn't exist!");
+                    return;
+                }
+                if (File.Exists(args[1])) File.Delete(args[1]);
+                SaveComments(args[0], args[1]);
+            }
+            else
+            {
+                var path = System.Reflection.Assembly.GetEntryAssembly().Location;
+                var files = Directory.GetFiles(Path.GetDirectoryName(path), "*.sql");
+                foreach (var file in files)
+                {
+                    var newFile = file.Replace(".sql", ".md");
+                    if (File.Exists(newFile)) File.Delete(newFile);
+                    SaveComments(file, newFile);
+                }
+            }
+        }
 
-                // Finally, we create the comment and add it AND the SQL statement to the list
-                var resultString = new StringBuilder();
+        /// <summary>
+        /// Gets all comments from a file and stores it into a new file
+        /// </summary>
+        /// <param name="path">SQL source file</param>
+        /// <param name="saveToPath">Destionation file</param>
+        static void SaveComments(string path, string saveToPath)
+        {
+            var comments = GetAllComments(File.ReadAllLines(path));
+            var result = new List<string>();
 
-                // Name
-                resultString.Append($"{item["name"]}");
-
-                // Armor
-                resultString.Append(item["armor"] != "0" ? $" | Armor: {item["armor"]}" : "");
-
-                // Stats
-                resultString.Append(item["stat_value1"] != "0" ? $" | {item["stat_type1"]}: {item["stat_value1"]}" : "");
-                resultString.Append(item["stat_value2"] != "0" ? $" | {item["stat_type2"]}: {item["stat_value2"]}" : "");
-                resultString.Append(item["stat_value3"] != "0" ? $" | {item["stat_type3"]}: {item["stat_value3"]}" : "");
-                resultString.Append(item["stat_value4"] != "0" ? $" | {item["stat_type4"]}: {item["stat_value4"]}" : "");
-                resultString.Append(item["stat_value5"] != "0" ? $" | {item["stat_type5"]}: {item["stat_value5"]}" : "");
-                resultString.Append(item["stat_value6"] != "0" ? $" | {item["stat_type6"]}: {item["stat_value6"]}" : "");
-                resultString.Append(item["stat_value7"] != "0" ? $" | {item["stat_type7"]}: {item["stat_value7"]}" : "");
-                resultString.Append(item["stat_value8"] != "0" ? $" | {item["stat_type8"]}: {item["stat_value8"]}" : "");
-                resultString.Append(item["stat_value9"] != "0" ? $" | {item["stat_type9"]}: {item["stat_value9"]}" : "");
-                resultString.Append(item["stat_value10"] != "0" ? $" | {item["stat_type10"]}: {item["stat_value10"]}" : ""); 
-
-                // Resistances
-                resultString.Append(item["holy_res"] != "0" ? $" | Holy Resistance: {item["holy_res"]}" : "");
-                resultString.Append(item["fire_res"] != "0" ? $" | Fire Resistance: {item["fire_res"]}" : "");
-                resultString.Append(item["nature_res"] != "0" ? $" | Nature Resistance: {item["nature_res"]}" : "");
-                resultString.Append(item["frost_res"] != "0" ? $" | Frost Resistance: {item["frost_res"]}" : "");
-                resultString.Append(item["shadow_res"] != "0" ? $" | Shadow Resistance: {item["shadow_res"]}" : "");
-                resultString.Append(item["arcane_res"] != "0" ? $" | Arcane Resistance: {item["arcane_res"]}" : "");
-
-                // SpellID
-                resultString.Append(item["spellid_1"] != "0" ? $" | SpellID 1: {item["spellid_1"]}" : "");
-                resultString.Append(item["spellid_2"] != "0" ? $" | SpellID 2: {item["spellid_2"]}" : "");
-                resultString.Append(item["spellid_3"] != "0" ? $" | SpellID 3: {item["spellid_3"]}" : "");
-                resultString.Append(item["spellid_4"] != "0" ? $" | SpellID 4: {item["spellid_4"]}" : "");
-                resultString.Append(item["spellid_5"] != "0" ? $" | SpellID 5: {item["spellid_5"]}" : "");
-
-                result.Add("-- " + resultString.ToString());
-                result.Add(line);
-                Console.WriteLine(resultString);
+            foreach (var comment in comments)
+            {
+                Console.WriteLine(comment);
+                var formatted = FormatComment(comment);
+                result.Add(formatted[0]);
+                if (formatted[1] != "") result.Add(formatted[1]);
             }
 
             // Saves to file
-            Console.WriteLine($"Finished saving to: {args[1]}");
-            File.AppendAllLines(args[1], result);
-            Console.WriteLine("DONE!");
+            File.AppendAllLines(saveToPath, result);
+            Console.WriteLine($"Finished saving to: {saveToPath}");
         }
 
-        public static Dictionary<string, string> GetItemTemplate(string line)
+        /// <summary>
+        /// Gets all SQL comments
+        /// </summary>
+        /// <param name="lines">Array of all lines of a SQL file</param>
+        /// <returns>List of comments</returns>
+        static IEnumerable<string> GetAllComments(string[] lines)
         {
-            var item = new Dictionary<string, string>();
-            var split = line.Split(new string[] { ") VALUES (" }, StringSplitOptions.None);
-            var keys = split[0]
-                .Replace("REPLACE INTO `item_template` (", "")
-                .Replace("`", "").Split(new string[] { ", " }, StringSplitOptions.None);
-            var values = Regex.Replace(split[1]
-                .Replace(");", "")
-                .Replace("'", "")
-                .Replace(@"\", ""), "[a-zA-Z], [a-zA-Z]", delegate (Match match) 
-                {
-                    return match.ToString().Replace(" ", "<REGEX>");
-                })
-                .Split(new string[] { ", " }, StringSplitOptions.None);
-            values[3] = values[3].Replace("<REGEX>", " ");
-
-            for (int i = 0; i < keys.Length; i++)
+            var list = new List<string>();
+            foreach (var line in lines)
             {
-                var value = values[i];
-                if (keys[i].StartsWith("stat_type"))
-                {
-                    value = StatTypeToString((StatType)Convert.ToInt32(values[i]));
-                }
-                item.Add(keys[i], value);
+                if (!line.Contains("-- ")) continue;
+                var split = line.Split(new string[] { "-- " }, StringSplitOptions.RemoveEmptyEntries);
+                list.Add(split.Length > 1 ? split[1].Trim() : split[0].Trim());
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// Formats the comment for markdown
+        /// </summary>
+        /// <param name="comment">The comment</param>
+        /// <returns>Formatted comment</returns>
+        static string[] FormatComment(string comment)
+        {
+            // Seperate extra data
+            var datasplit = comment.Split(new char[] { '|' }, 2);
+            var main = datasplit[0].Trim();
+            var extra = datasplit.Length > 1 ? datasplit[1].Trim() : "";
+
+            // Create headers
+            if (main.StartsWith("*"))
+            {
+                return new string[] { main.Replace("*", "#").Trim(), FormatExtraData(extra) };
             }
 
-            return item;
-        }
-
-        public enum StatType
-        {
-            ITEM_MOD_MANA = 0,
-            ITEM_MOD_HEALTH = 1,
-            ITEM_MOD_AGILITY = 3,
-            ITEM_MOD_STRENGTH = 4,
-            ITEM_MOD_INTELLECT = 5,
-            ITEM_MOD_SPIRIT = 6,
-            ITEM_MOD_STAMINA = 7
-        }
-
-        public static string StatTypeToString(StatType e)
-        {
-            switch (e)
+            // Create lists with reference
+            if (main.StartsWith("-"))
             {
-                case StatType.ITEM_MOD_MANA:
-                    return "No Stats";
-                case StatType.ITEM_MOD_HEALTH:
-                    return "Health";
-                case StatType.ITEM_MOD_AGILITY:
-                    return "Agility";
-                case StatType.ITEM_MOD_STRENGTH:
-                    return "Strength";
-                case StatType.ITEM_MOD_INTELLECT:
-                    return "Intellect";
-                case StatType.ITEM_MOD_SPIRIT:
-                    return "Spirit";
-                case StatType.ITEM_MOD_STAMINA:
-                    return "Stamina";
-                default:
-                    return "";
+                var split = main.Remove(0, 2).Split(new char[] { '.' }, 2);
+                var index = split[0].Trim() + ".";
+                var text = split[1].Trim();
+                var reference = "[" + text + "](" + "#" + text.ToLower().Replace(" ", "-") + ")";
+
+                return new string[] { index + " " + reference, FormatExtraData(extra) };
             }
+
+            // No bullet point if ^
+            return main.StartsWith("^ ") ? new string[] { main.Replace("^ ", ""), FormatExtraData(extra) } : new string[] { "* " + main, FormatExtraData(extra) };
+        }
+
+        /// <summary>
+        /// Format the extra data
+        /// </summary>
+        /// <param name="extra"></param>
+        /// <returns></returns>
+        static string FormatExtraData(string extra)
+        {
+            if (extra == "") return "";
+            return $"<br/>*NOTE*: {extra.Replace(" | ", ", ")}";
         }
     }
 }

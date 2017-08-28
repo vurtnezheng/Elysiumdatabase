@@ -1,6 +1,4 @@
-
--- This is supposed to be an initial downgrading patch from 1.12 to 1.2 DB for use with future upgrading transition patches.
--- Apply it on the clean 1.12 DB only, with all latest migrations from /server/sql/migrations
+-- * 1.12 → 1.2 | 1.12 → 1.2 Mysteries of Maraudon
 
 DROP TABLE IF EXISTS `forbidden_items`;
 DROP TABLE IF EXISTS `forbidden_events`;
@@ -65,7 +63,7 @@ CREATE TABLE gameobject_questrelation_full LIKE gameobject_questrelation; INSERT
 
 -- * FORBIDDEN ENCOUNTER
 
-REPLACE INTO forbidden_instances SELECT entry FROM areatrigger_teleport WHERE target_map IN (
+REPLACE INTO forbidden_instances SELECT id FROM areatrigger_teleport WHERE target_map IN (
 533,   -- Naxxramas 1.12
 531,   -- AQ40 (Temple of AQ) 1.9
 509,   -- AQ20 (Ruins of AQ) 1.9
@@ -73,7 +71,9 @@ REPLACE INTO forbidden_instances SELECT entry FROM areatrigger_teleport WHERE ta
 309,   -- Zul'Gurub 1.7
 469    -- Blackwing Lair 1.6
 );
+UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 2; -- Warsong Gulch (Patch 1.5)
 UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 1; -- Alterac Valley (Patch 1.5)
+UPDATE `battleground_template` SET `MinLvl` = 61, `MaxLvl` = 61 WHERE `id` = 3; -- Arathi Basin (Patch 1.7)
 
 -- * FORBIDDEN EVENTS 
 
@@ -116,21 +116,8 @@ REPLACE INTO forbidden_events SELECT entry FROM game_event WHERE entry IN (
 -- * FORBIDDEN ITEMS 
 
 REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
-1215,   -- Support Girdle
-1677,   -- Drake-scale Vest
-2715,   -- Monster - Item, Lantern - Round
-2899,   -- Wendigo Collar
-5975,   -- Ruffian Belt
-6118,   -- Squire's Pants
-6119,   -- Neophyte's Robe
-6129,   -- Acolyte's Robe
-6136,   -- Thug Shirt
-6833,   -- White Tuxedo Shirt
-6836,   -- Dress Shoes
-7809,   -- Easter Dress
-10768,   -- Boar Champion's Belt
-11662,   -- Ban'thok Sash
-11703,   -- Stonewall Girdle
+1215,    -- Support Girdle
+6833,    -- White Tuxedo Shirt
 12422,   -- Imperial Plate Chest
 12424,   -- Imperial Plate Belt
 12425,   -- Imperial Plate Bracers
@@ -144,23 +131,15 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 12619,   -- Enchanted Thorium Leggings
 12620,   -- Enchanted Thorium Helm
 12625,   -- Dawnbringer Shoulders
-12772,   -- Inlaid Thorium Hammer
 12947,   -- Alex's Ring of Audacity
 13075,   -- Direwing Legguards
 13262,   -- Ashbringer
-13384,   -- Rainbow Girdle
-13956,   -- Clutch of Andros
-14464,   -- Elunarian Silk Robes
 14539,   -- Bone Ring Helm
-14811,   -- Warstrike Chestguard
-14812,   -- Warstrike Buckler
-14815,   -- Warstrike Gauntlets
 15196,   -- Private's Tabard
 15198,   -- Knight's Colors
 15199,   -- Stone Guard's Herald
 15405,   -- Shucking Gloves
 15410,   -- Scale of Onyxia
-15968,   -- Elunarian Sphere
 16165,   -- Test Arcane Res Legs Mail
 16335,   -- Senior Sergeant's Insignia
 16345,   -- High Warlord's Blade
@@ -381,7 +360,6 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 17907,   -- Frostwolf Insignia Rank 4
 17908,   -- Frostwolf Insignia Rank 5
 17909,   -- Frostwolf Insignia Rank 6
-17982,   -- Ragnaros Core
 18022,   -- Royal Seal of Alexis
 18083,   -- Jumanza Grips
 18103,   -- Band of Rumination
@@ -434,13 +412,8 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 18388,   -- Stoneshatter
 18393,   -- Warpwood Binding
 18395,   -- Emerald Flame Ring
-18398,   -- Tidal Loop
-18400,   -- Ring of Living Stone
-18404,   -- Onyxia Tooth Pendant
 18420,   -- Bonecrusher
 18421,   -- Backwood Helm
-18422,   -- Head of Onyxia
-18423,   -- Head of Onyxia
 18425,   -- Kreeg's Mug
 18427,   -- Sergeant's Cloak
 18428,   -- Senior Sergeant's Insignia
@@ -2446,7 +2419,8 @@ REPLACE INTO forbidden_items SELECT entry FROM item_template WHERE entry IN (
 24222   -- The Shadowfoot Stabber
 );
 
--- * ITEM STATS | Items changed: 1962 
+-- * ITEM STATS
+-- ^ Items changed: 981 
 
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `dmg_min3`, `dmg_max3`, `dmg_type3`, `dmg_min4`, `dmg_max4`, `dmg_type4`, `dmg_min5`, `dmg_max5`, `dmg_type5`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `Duration`, `ExtraFlags`, `OtherTeamEntry`) VALUES 
 -- Ardent Custodian | Armor: 100 | SpellID 1: 13386
@@ -2474,7 +2448,7 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 -- Tanglewood Staff | Spirit: 18 | Strength: 9 | SpellID 1: 7696
 (1720, 2, 10, 'Tanglewood Staff', 21460, 3, 0, 1, 131048, 26209, 17, -1, -1, 46, 41, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 6, 18, 4, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 109, 165, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3400, 0, 0, 7696, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 2, '', 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 100, 0, 0, 0, '', 46, 0, 0, 0, 0, 0, 1),
 -- Underworld Band | Stamina: 10 | Spirit: 6 | SpellID 1: 7709
-(1980, 4, 0, 'Underworld Band', 9840, 4, 0, 1, 24800, 6200, 11, -1, -1, 43, 38, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 7, 10, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7709, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 2, '', 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, '', 61, 0, 0, 0, 0, 0, 1),
+(1980, 4, 0, 'Underworld Band', 9840, 4, 0, 1, 24800, 6200, 11, -1, -1, 43, 38, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 7, 10, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7709, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 2, '', 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, '', 61, 0, 0, 0, 0, 0, 1),
 -- Swampchill Fetish | Frost Resistance: 5 | Shadow Resistance: 5 | SpellID 1: 7701 | SpellID 2: 7708
 (1992, 4, 0, 'Swampchill Fetish', 21612, 3, 0, 1, 27340, 5468, 23, -1, -1, 38, 33, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 0, 7701, 1, 0, 0, 0, 0, 0, 7708, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 44, 0, 0, 0, 0, 0, 1),
 -- Voodoo Band | Intellect: 7 | Spirit: 2
@@ -3529,8 +3503,8 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 (16699, 4, 1, 'Dreadmist Leggings', 29797, 3, 0, 1, 106014, 21202, 7, -1, -1, 61, 56, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 6, 21, 7, 15, 5, 12, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 1, '', 0, 0, 0, 0, 0, 7, 0, 0, 0, 183, 65, 0, 0, 0, '', 49, 0, 0, 0, 0, 0, 1),
 -- Dreadmist Wraps | Armor: 52 | Spirit: 14 | Intellect: 9 | Stamina: 9 | Agility: 8
 (16705, 4, 1, 'Dreadmist Wraps', 29800, 3, 0, 1, 45639, 9127, 10, -1, -1, 59, 54, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 6, 14, 5, 9, 7, 9, 3, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 2, '', 0, 0, 0, 0, 0, 7, 0, 0, 0, 183, 30, 0, 0, 0, '', 48, 0, 0, 0, 0, 0, 1),
--- Shadowcraft Boots | Armor: 115 | Agility: 3 | Stamina: 9
-(16711, 4, 2, 'Shadowcraft Boots', 28162, 3, 0, 1, 87528, 17505, 8, -1, -1, 59, 54, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 3, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 1, '', 0, 0, 0, 0, 0, 8, 0, 0, 0, 184, 50, 0, 0, 0, '', 48, 0, 0, 0, 0, 0, 1),
+-- Shadowcraft Boots | Armor: 115 | Intellect: 21 | Stamina: 9
+(16711, 4, 2, 'Shadowcraft Boots', 28162, 3, 0, 1, 87528, 17505, 8, -1, -1, 59, 54, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 21, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 1, '', 0, 0, 0, 0, 0, 8, 0, 0, 0, 184, 50, 0, 0, 0, '', 48, 0, 0, 0, 0, 0, 1),
 -- Arcanist Crown | Armor: 83 | Stamina: 10 | Intellect: 35 | Spirit: 13 | Fire Resistance: 4 | Nature Resistance: 4 | Frost Resistance: 4 | SpellID 1: 18384 | SpellID 2: 7685
 (16795, 4, 1, 'Arcanist Crown', 31517, 4, 0, 1, 136797, 27359, 1, 128, -1, 66, 60, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 7, 10, 5, 35, 6, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 83, 0, 4, 4, 4, 0, 0, 0, 0, 0, 18384, 1, 0, 0, -1, 0, -1, 7685, 1, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 1, '', 0, 0, 0, 0, 0, 7, 0, 0, 0, 201, 60, 0, 0, 0, '', 65, 0, 0, 0, 0, 0, 1),
 -- Arcanist Leggings | Armor: 89 | Intellect: 20 | Spirit: 24 | Stamina: 12 | Agility: 5 | Fire Resistance: 5 | Nature Resistance: 7 | Frost Resistance: 5 | Shadow Resistance: 13 | SpellID 1: 13592 | SpellID 2: 23480
@@ -4817,595 +4791,1394 @@ UPDATE creature_template SET modelid_1=9695 WHERE entry=10322;
 -- * FORBIDDEN QUESTS
 
 REPLACE INTO forbidden_quests SELECT entry FROM quest_template WHERE entry IN (
-1138,   -- Fruit of the Sea
-1318,   -- Unfinished Gordok Business
-2561,   -- Druid of the Claw
-5213,   -- The Active Agent
-5526,   -- Shards of the Felvine
-6131,   -- Timbermaw Ally
-6163,   -- Ramstein
-6241,   -- Winterfall Activity
-6845,   -- Uncovering Past Secrets
-7003,   -- Zapped Giants
-7161,   -- Proving Grounds
-7162,   -- Proving Grounds
-7163,   -- Rise and Be Recognized
-7164,   -- Honored Amongst the Clan
-7165,   -- Earned Reverence
-7166,   -- Legendary Heroes
-7167,   -- The Eye of Command
-7168,   -- Rise and Be Recognized
-7169,   -- Honored Amongst the Guard
-7170,   -- Earned Reverence
-7171,   -- Legendary Heroes
-7172,   -- The Eye of Command
-7181,   -- The Legend of Korrak
-7202,   -- Korrak the Bloodrager
-7462,   -- The Treasure of the Shen'dralar
-7486,   -- A Hero's Reward
-7490,   -- Victory for the Horde
-7491,   -- For All To See
-7495,   -- Victory for the Alliance
-7496,   -- Celebrating Good Times
-7499,   -- Codex of Defense
-7500,   -- The Arcanist's Cookbook
-7501,   -- The Light and How To Swing It
-7506,   -- The Emerald Dream...
-7521,   -- Thunderaan the Windseeker
-7562,   -- Mor'zul Bloodbringer
-7583,   -- Suppression
-7603,   -- Kroshius' Infernal Core
-7604,   -- A Binding Contract
-7632,   -- The Ancient Leaf
-7634,   -- Ancient Sinew Wrapped Lamina
-7635,   -- A Proper String
-7638,   -- Lord Grayson Shadowbreaker
-7701,   -- WANTED: Overseer Maltorius
-7703,   -- Unfinished Gordok Business
-7721,   -- Fuel for the Zapping
-7723,   -- Curse These Fat Fingers
-7724,   -- Fiery Menace!
-7727,   -- Incendosaurs? Whateverosaur is More Like It
-7728,   -- STOLEN: Smithing Tuyere and Lookout's Spyglass
-7732,   -- Zukk'ash Report
-7733,   -- Improved Quality
-7734,   -- Improved Quality
-7737,   -- Gaining Acceptance
-7782,   -- The Lord of Blackrock
-7784,   -- The Lord of Blackrock
-7786,   -- Thunderaan the Windseeker
-7787,   -- Rise, Thunderfury!
-7815,   -- Snapjaws, Mon!
-7838,   -- Arena Grandmaster
-7843,   -- The Final Message to the Wildhammer
-7847,   -- Return to Primal Torntusk
-7849,   -- Separation Anxiety
-7850,   -- Dark Vessels
-7861,   -- Wanted: Vile Priestess Hexx and Her Minions
-7862,   -- Job Opening: Guard Captain of Revantusk Village
-7877,   -- The Treasure of the Shen'dralar
-7881,   -- Carnival Boots
-7882,   -- Carnival Jerkins
-7883,   -- The World's Largest Gnome!
-7884,   -- Crocolisk Boy and the Bearded Murloc
-7885,   -- Armor Kits
-7889,   -- Coarse Weightstone
-7890,   -- Heavy Grinding Stone
-7891,   -- Green Iron Bracers
-7892,   -- Big Black Mace
-7893,   -- Rituals of Strength
-7894,   -- Copper Modulator
-7895,   -- Whirring Bronze Gizmo
-7896,   -- Green Fireworks
-7897,   -- Mechanical Repair Kits
-7898,   -- Thorium Widget
-7899,   -- Small Furry Paws
-7900,   -- Torn Bear Pelts
-7901,   -- Soft Bushy Tails
-7902,   -- Vibrant Plumes
-7903,   -- Evil Bat Eyes
-7907,   -- Darkmoon Beast Deck
-7927,   -- Darkmoon Portals Deck
-7928,   -- Darkmoon Warlords Deck
-7929,   -- Darkmoon Elementals Deck
-7930,   -- 5 Tickets - Darkmoon Flower
-7931,   -- 5 Tickets - Minor Darkmoon Prize
-7932,   -- 12 Tickets - Lesser Darkmoon Prize
-7933,   -- 40 Tickets - Greater Darkmoon Prize
-7934,   -- 50 Tickets - Darkmoon Storage Box
-7935,   -- 10 Tickets - Last Month's Mutton
-7936,   -- 50 Tickets - Last Year's Mutton
-7937,   -- Your Fortune Awaits You...
-7938,   -- Your Fortune Awaits You...
-7939,   -- More Dense Grinding Stones
-7940,   -- 1200 Tickets - Orb of the Darkmoon
-7941,   -- More Armor Kits
-7942,   -- More Thorium Widgets
-7943,   -- More Bat Eyes
-7944,   -- Your Fortune Awaits You...
-7945,   -- Your Fortune Awaits You...
-7946,   -- Spawn of Jubjub
-7981,   -- 1200 Tickets - Amulet of the Darkmoon
-8041,   -- Strength of Mount Mugamba
-8042,   -- Strength of Mount Mugamba
-8043,   -- Strength of Mount Mugamba
-8044,   -- The Rage of Mount Mugamba
-8045,   -- The Heathen's Brand
-8046,   -- The Heathen's Brand
-8047,   -- The Heathen's Brand
-8048,   -- The Hero's Brand
-8049,   -- The Eye of Zuldazar
-8050,   -- The Eye of Zuldazar
-8051,   -- The Eye of Zuldazar
-8052,   -- The All-Seeing Eye of Zuldazar
-8053,   -- Paragons of Power: The Freethinker's Armguards
-8054,   -- Paragons of Power: The Freethinker's Belt
-8055,   -- Paragons of Power: The Freethinker's Breastplate
-8056,   -- Paragons of Power: The Augur's Bracers (Raid)
-8057,   -- Paragons of Power: The Haruspex's Bracers
-8058,   -- Paragons of Power: The Vindicator's Armguards
-8059,   -- Paragons of Power: The Demoniac's Wraps (Raid)
-8060,   -- Paragons of Power: The Illusionist's Wraps
-8061,   -- Paragons of Power: The Confessor's Wraps
-8062,   -- Paragons of Power: The Predator's Bracers
-8063,   -- Paragons of Power: The Madcap's Bracers
-8064,   -- Paragons of Power: The Haruspex's Belt
-8065,   -- Paragons of Power: The Haruspex's Tunic
-8066,   -- Paragons of Power: The Predator's Belt
-8067,   -- Paragons of Power: The Predator's Mantle
-8068,   -- Paragons of Power: The Illusionist's Mantle
-8069,   -- Paragons of Power: The Illusionist's Robes
-8070,   -- Paragons of Power: The Confessor's Bindings
-8071,   -- Paragons of Power: The Confessor's Mantle
-8072,   -- Paragons of Power: The Madcap's Mantle
-8073,   -- Paragons of Power: The Madcap's Tunic
-8074,   -- Paragons of Power: The Augur's Belt
-8075,   -- Paragons of Power: The Augur's Hauberk
-8076,   -- Paragons of Power: The Demoniac's Mantle (Raid)
-8077,   -- Paragons of Power: The Demoniac's Robes (Raid)
-8078,   -- Paragons of Power: The Vindicator's Belt
-8079,   -- Paragons of Power: The Vindicator's Breastplate
-8080,   -- Arathi Basin Mark of Honor!
-8101,   -- The Pebble of Kajaro
-8102,   -- The Pebble of Kajaro
-8103,   -- The Pebble of Kajaro
-8104,   -- The Jewel of Kajaro
-8105,   -- The Battle for Arathi Basin!
-8106,   -- Kezan's Taint
-8107,   -- Kezan's Taint
-8108,   -- Kezan's Taint
-8109,   -- Kezan's Unstoppable Taint
-8110,   -- Enchanted South Seas Kelp
-8111,   -- Enchanted South Seas Kelp
-8112,   -- Enchanted South Seas Kelp
-8113,   -- Pristine Enchanted South Seas Kelp
-8114,   -- Control Four Bases
-8115,   -- Control Five Bases
-8116,   -- Vision of Voodress
-8117,   -- Vision of Voodress
-8118,   -- Vision of Voodress
-8119,   -- The Unmarred Vision of Voodress
-8120,   -- The Battle for Arathi Basin!
-8121,   -- Take Four Bases
-8122,   -- Take Five Bases
-8123,   -- Cut Arathor Supply Lines
-8141,   -- Zandalrian Shadow Talisman
-8142,   -- Zandalrian Shadow Talisman
-8143,   -- Zandalrian Shadow Talisman
-8144,   -- Zandalrian Shadow Mastery Talisman
-8145,   -- The Maelstrom's Tendril
-8146,   -- The Maelstrom's Tendril
-8147,   -- The Maelstrom's Tendril
-8148,   -- The Maelstrom's Wrath
-8149,   -- Honoring a Hero
-8150,   -- Honoring a Hero
-8151,   -- The Hunter's Charm
-8153,   -- Courser Antlers
-8154,   -- Arathi Basin Mark of Honor!
-8155,   -- Arathi Basin Mark of Honor!
-8156,   -- Arathi Basin Mark of Honor!
-8160,   -- Cut Arathor Supply Lines
-8161,   -- Cut Arathor Supply Lines
-8162,   -- Cut Arathor Supply Lines
-8166,   -- The Battle for Arathi Basin!
-8167,   -- The Battle for Arathi Basin!
-8168,   -- The Battle for Arathi Basin!
-8169,   -- The Battle for Arathi Basin!
-8170,   -- The Battle for Arathi Basin!
-8171,   -- The Battle for Arathi Basin!
-8181,   -- Confront Yeh'kinya
-8182,   -- The Hand of Rastakhan
-8183,   -- The Heart of Hakkar
-8184,   -- Presence of Might
-8185,   -- Syncretist's Sigil
-8186,   -- Death's Embrace
-8187,   -- Falcon's Call
-8188,   -- Vodouisant's Vigilant Embrace
-8189,   -- Presence of Sight
-8190,   -- Hoodoo Hex
-8191,   -- Prophetic Aura
-8192,   -- Animist's Caress
-8193,   -- Master Angler
-8194,   -- Apprentice Angler
-8195,   -- Zulian, Razzashi, and Hakkari Coins
-8196,   -- Essence Mangoes
-8201,   -- A Collection of Heads
-8221,   -- Rare Fish - Keefer's Angelfish
-8222,   -- Glowing Scorpid Blood
-8223,   -- More Glowing Scorpid Blood
-8224,   -- Rare Fish - Dezian Queenfish
-8225,   -- Rare Fish - Brownell's Blue Striped Racer
-8227,   -- Nat's Measuring Tape
-8228,   -- Could I get a Fishing Flier?
-8229,   -- Could I get a Fishing Flier?
-8231,   -- Wavethrashing
-8232,   -- The Green Drake
-8233,   -- A Simple Request
-8234,   -- Sealed Azure Bag
-8235,   -- Encoded Fragments
-8236,   -- The Azure Key
-8238,   -- Gurubashi, Vilebranch, and Witherbark Coins
-8239,   -- Sandfury, Skullsplitter, and Bloodscalp Coins
-8240,   -- A Bijou for Zanza
-8241,   -- Restoring Fiery Flux Supplies via Iron
-8242,   -- Restoring Fiery Flux Supplies via Heavy Leather
-8243,   -- Zanza's Potent Potables
-8246,   -- Signets of the Zandalar
-8249,   -- Junkboxes Needed
-8250,   -- Magecraft
-8251,   -- Magic Dust
-8252,   -- The Siren's Coral
-8253,   -- Destroy Morphaz
-8254,   -- Cenarion Aid
-8255,   -- Of Coursers We Know
-8256,   -- The Ichor of Undeath
-8257,   -- Blood of Morphaz
-8258,   -- The Darkreaver Menace
-8260,   -- Arathor Basic Care Package
-8261,   -- Arathor Standard Care Package
-8262,   -- Arathor Advanced Care Package
-8263,   -- Defiler's Basic Care Package
-8264,   -- Defiler's Standard Care Package
-8265,   -- Defiler's Advanced Care Package
-8266,   -- Ribbons of Sacrifice
-8267,   -- Ribbons of Sacrifice
-8268,   -- Ribbons of Sacrifice
-8269,   -- Ribbons of Sacrifice
-8271,   -- Hero of the Stormpike
-8272,   -- Hero of the Frostwolf
-8273,   -- Oran's Gratitude
-8283,   -- Wanted - Deathclasp, Terror of the Sands
-8306,   -- Into The Maw of Madness
-8308,   -- Brann Bronzebeard's Lost Letter
-8309,   -- Glyph Chasing
-8316,   -- Armaments of War
-8321,   -- Vyral the Vile
-8341,   -- Lords of the Council
-8342,   -- Twilight Ring of Lordship
-8366,   -- Southsea Shakedown
-8376,   -- Armaments of War
-8377,   -- Armaments of War
-8378,   -- Armaments of War
-8379,   -- Armaments of War
-8380,   -- Armaments of War
-8381,   -- Armaments of War
-8382,   -- Armaments of War
-8410,   -- Elemental Mastery
-8412,   -- Spirit Totem
-8413,   -- Da Voodoo
-8414,   -- Dispelling Evil
-8415,   -- Chillwind Point
-8416,   -- Inert Scourgestones
-8417,   -- A Troubled Spirit
-8418,   -- Forging the Mightstone
-8419,   -- An Imp's Request
-8421,   -- The Wrong Stuff
-8422,   -- Trolls of a Feather
-8423,   -- Warrior Kinship
-8424,   -- War on the Shadowsworn
-8425,   -- Voodoo Feathers
-8447,   -- Waking Legends
-8461,   -- Deadwood of the North
-8481,   -- The Root of All Evil
-8544,   -- Conqueror's Spaulders
-8548,   -- Volunteer's Battlegear
-8556,   -- Signet of Unyielding Strength
-8557,   -- Drape of Unyielding Strength
-8558,   -- Sickle of Unyielding Strength
-8559,   -- Conqueror's Greaves
-8560,   -- Conqueror's Legguards
-8561,   -- Conqueror's Crown
-8562,   -- Conqueror's Breastplate
-8572,   -- Veteran's Battlegear
-8573,   -- Champion's Battlegear
-8574,   -- Stalwart's Battlegear
-8592,   -- Tiara of the Oracle
-8593,   -- Trousers of the Oracle
-8594,   -- Mantle of the Oracle
-8596,   -- Footwraps of the Oracle
-8602,   -- Stormcaller's Pauldrons
-8603,   -- Vestments of the Oracle
-8620,   -- The Only Prescription
-8621,   -- Stormcaller's Footguards
-8622,   -- Stormcaller's Hauberk
-8623,   -- Stormcaller's Diadem
-8624,   -- Stormcaller's Leggings
-8625,   -- Enigma Shoulderpads
-8626,   -- Striker's Footguards
-8627,   -- Avenger's Breastplate
-8628,   -- Avenger's Crown
-8629,   -- Avenger's Legguards
-8630,   -- Avenger's Pauldrons
-8631,   -- Enigma Leggings
-8632,   -- Enigma Circlet
-8633,   -- Enigma Robes
-8634,   -- Enigma Boots
-8637,   -- Deathdealer's Boots
-8638,   -- Deathdealer's Vest
-8639,   -- Deathdealer's Helm
-8640,   -- Deathdealer's Leggings
-8641,   -- Deathdealer's Spaulders
-8655,   -- Avenger's Greaves
-8656,   -- Striker's Hauberk
-8657,   -- Striker's Diadem
-8658,   -- Striker's Leggings
-8659,   -- Striker's Pauldrons
-8660,   -- Doomcaller's Footwraps
-8661,   -- Doomcaller's Robes
-8662,   -- Doomcaller's Circlet
-8663,   -- Doomcaller's Trousers
-8664,   -- Doomcaller's Mantle
-8665,   -- Genesis Boots
-8666,   -- Genesis Vest
-8667,   -- Genesis Helm
-8668,   -- Genesis Trousers
-8669,   -- Genesis Shoulderpads
-8689,   -- Shroud of Infinite Wisdom
-8690,   -- Cloak of the Gathering Storm
-8691,   -- Drape of Vaulted Secrets
-8692,   -- Cloak of Unending Life
-8693,   -- Cloak of Veiled Shadows
-8694,   -- Shroud of Unspoken Names
-8695,   -- Cape of Eternal Justice
-8696,   -- Cloak of the Unseen Path
-8697,   -- Ring of Infinite Wisdom
-8698,   -- Ring of the Gathering Storm
-8699,   -- Band of Vaulted Secrets
-8700,   -- Band of Unending Life
-8701,   -- Band of Veiled Shadows
-8702,   -- Ring of Unspoken Names
-8703,   -- Ring of Eternal Justice
-8704,   -- Signet of the Unseen Path
-8705,   -- Gavel of Infinite Wisdom
-8706,   -- Hammer of the Gathering Storm
-8707,   -- Blade of Vaulted Secrets
-8708,   -- Mace of Unending Life
-8709,   -- Dagger of Veiled Shadows
-8710,   -- Kris of Unspoken Names
-8711,   -- Blade of Eternal Justice
-8712,   -- Scythe of the Unseen Path
-8729,   -- The Wrath of Neptulon
-8730,   -- Nefarius's Corruption
-8736,   -- The Nightmare Manifests
-8745,   -- Treasure of the Timeless One
-8747,   -- The Path of the Protector
-8748,   -- The Path of the Protector
-8749,   -- The Path of the Protector
-8750,   -- The Path of the Protector
-8751,   -- The Protector of Kalimdor
-8752,   -- The Path of the Conqueror
-8753,   -- The Path of the Conqueror
-8754,   -- The Path of the Conqueror
-8755,   -- The Path of the Conqueror
-8756,   -- The Qiraji Conqueror
-8757,   -- The Path of the Invoker
-8758,   -- The Path of the Invoker
-8759,   -- The Path of the Invoker
-8760,   -- The Path of the Invoker
-8761,   -- The Grand Invoker
-8764,   -- The Changing of Paths - Protector No More
-8765,   -- The Changing of Paths - Invoker No More
-8766,   -- The Changing of Paths - Conqueror No More
-8789,   -- Imperial Qiraji Armaments
-8790,   -- Imperial Qiraji Regalia
-8791,   -- The Fall of Ossirian
-8802,   -- The Savior of Kalimdor
-8829,   -- The Ultimate Deception
-8862,   -- Elune's Candle
-8864,   -- Festive Lunar Dresses
-8865,   -- Festive Lunar Pant Suits
-8878,   -- Festive Recipes
-8905,   -- An Earnest Proposition
-8906,   -- An Earnest Proposition
-8907,   -- An Earnest Proposition
-8908,   -- An Earnest Proposition
-8909,   -- An Earnest Proposition
-8910,   -- An Earnest Proposition
-8911,   -- An Earnest Proposition
-8912,   -- An Earnest Proposition
-8913,   -- An Earnest Proposition
-8914,   -- An Earnest Proposition
-8915,   -- An Earnest Proposition
-8916,   -- An Earnest Proposition
-8917,   -- An Earnest Proposition
-8918,   -- An Earnest Proposition
-8919,   -- An Earnest Proposition
-8920,   -- An Earnest Proposition
-8926,   -- Just Compensation
-8927,   -- Just Compensation
-8931,   -- Just Compensation
-8932,   -- Just Compensation
-8933,   -- Just Compensation
-8934,   -- Just Compensation
-8935,   -- Just Compensation
-8936,   -- Just Compensation
-8937,   -- Just Compensation
-8938,   -- Just Compensation
-8939,   -- Just Compensation
-8940,   -- Just Compensation
-8941,   -- Just Compensation
-8942,   -- Just Compensation
-8943,   -- Just Compensation
-8944,   -- Just Compensation
-8949,   -- Falrin's Vendetta
-8951,   -- Anthion's Parting Words
-8952,   -- Anthion's Parting Words
-8953,   -- Anthion's Parting Words
-8954,   -- Anthion's Parting Words
-8955,   -- Anthion's Parting Words
-8956,   -- Anthion's Parting Words
-8957,   -- Anthion's Parting Words
-8958,   -- Anthion's Parting Words
-8959,   -- Anthion's Parting Words
-8966,   -- The Left Piece of Lord Valthalak's Amulet
-8967,   -- The Left Piece of Lord Valthalak's Amulet
-8968,   -- The Left Piece of Lord Valthalak's Amulet
-8969,   -- The Left Piece of Lord Valthalak's Amulet
-8989,   -- The Right Piece of Lord Valthalak's Amulet
-8990,   -- The Right Piece of Lord Valthalak's Amulet
-8991,   -- The Right Piece of Lord Valthalak's Amulet
-8992,   -- The Right Piece of Lord Valthalak's Amulet
-8996,   -- Return to Bodley
-8999,   -- Saving the Best for Last
-9000,   -- Saving the Best for Last
-9001,   -- Saving the Best for Last
-9002,   -- Saving the Best for Last
-9003,   -- Saving the Best for Last
-9004,   -- Saving the Best for Last
-9005,   -- Saving the Best for Last
-9006,   -- Saving the Best for Last
-9007,   -- Saving the Best for Last
-9008,   -- Saving the Best for Last
-9009,   -- Saving the Best for Last
-9010,   -- Saving the Best for Last
-9011,   -- Saving the Best for Last
-9012,   -- Saving the Best for Last
-9013,   -- Saving the Best for Last
-9014,   -- Saving the Best for Last
-9016,   -- Anthion's Parting Words
-9017,   -- Anthion's Parting Words
-9018,   -- Anthion's Parting Words
-9019,   -- Anthion's Parting Words
-9020,   -- Anthion's Parting Words
-9021,   -- Anthion's Parting Words
-9022,   -- Anthion's Parting Words
-9023,   -- The Perfect Poison
-9029,   -- A Bubbling Cauldron
-9034,   -- Dreadnaught Breastplate
-9036,   -- Dreadnaught Legplates
-9037,   -- Dreadnaught Helmet
-9038,   -- Dreadnaught Pauldrons
-9039,   -- Dreadnaught Sabatons
-9040,   -- Dreadnaught Gauntlets
-9041,   -- Dreadnaught Waistguard
-9042,   -- Dreadnaught Bracers
-9043,   -- Redemption Tunic
-9044,   -- Redemption Legguards
-9045,   -- Redemption Headpiece
-9046,   -- Redemption Spaulders
-9047,   -- Redemption Boots
-9048,   -- Redemption Handguards
-9049,   -- Redemption Girdle
-9050,   -- Redemption Wristguards
-9053,   -- A Better Ingredient
-9054,   -- Cryptstalker Tunic
-9055,   -- Cryptstalker Legguards
-9056,   -- Cryptstalker Headpiece
-9057,   -- Cryptstalker Spaulders
-9058,   -- Cryptstalker Boots
-9059,   -- Cryptstalker Handguards
-9060,   -- Cryptstalker Girdle
-9061,   -- Cryptstalker Wristguards
-9068,   -- Earthshatter Tunic
-9069,   -- Earthshatter Legguards
-9070,   -- Earthshatter Headpiece
-9071,   -- Earthshatter Spaulders
-9072,   -- Earthshatter Boots
-9073,   -- Earthshatter Handguards
-9074,   -- Earthshatter Girdle
-9075,   -- Earthshatter Wristguards
-9077,   -- Bonescythe Breastplate
-9078,   -- Bonescythe Legplates
-9079,   -- Bonescythe Helmet
-9080,   -- Bonescythe Pauldrons
-9081,   -- Bonescythe Sabatons
-9082,   -- Bonescythe Gauntlets
-9083,   -- Bonescythe Waistguard
-9084,   -- Bonescythe Bracers
-9086,   -- Dreamwalker Tunic
-9087,   -- Dreamwalker Legguards
-9088,   -- Dreamwalker Headpiece
-9089,   -- Dreamwalker Spaulders
-9090,   -- Dreamwalker Boots
-9091,   -- Dreamwalker Handguards
-9092,   -- Dreamwalker Girdle
-9093,   -- Dreamwalker Wristguards
-9094,   -- Argent Dawn Gloves
-9095,   -- Frostfire Robe
-9096,   -- Frostfire Leggings
-9097,   -- Frostfire Circlet
-9098,   -- Frostfire Shoulderpads
-9099,   -- Frostfire Sandals
-9100,   -- Frostfire Gloves
-9101,   -- Frostfire Belt
-9102,   -- Frostfire Bindings
-9103,   -- Plagueheart Robe
-9104,   -- Plagueheart Leggings
-9105,   -- Plagueheart Circlet
-9106,   -- Plagueheart Shoulderpads
-9107,   -- Plagueheart Sandals
-9108,   -- Plagueheart Gloves
-9109,   -- Plagueheart Belt
-9110,   -- Plagueheart Bindings
-9111,   -- Robe of Faith
-9112,   -- Leggings of Faith
-9113,   -- Circlet of Faith
-9114,   -- Shoulderpads of Faith
-9115,   -- Sandals of Faith
-9116,   -- Gloves of Faith
-9117,   -- Belt of Faith
-9118,   -- Bindings of Faith
-9120,   -- The Fall of Kel'Thuzad
-9179,   -- Craftsman's Writ - Imperial Plate Chest
-9221,   -- Superior Armaments of Battle - Friend of the Dawn
-9222,   -- Epic Armaments of Battle - Friend of the Dawn
-9223,   -- Superior Armaments of Battle - Honored Amongst the Dawn
-9224,   -- Epic Armaments of Battle - Honored Amongst the Dawn
-9225,   -- Epic Armaments of Battle - Revered Amongst the Dawn
-9226,   -- Superior Armaments of Battle - Revered Amongst the Dawn
-9227,   -- Superior Armaments of Battle - Exalted Amongst the Dawn
-9228,   -- Epic Armaments of Battle - Exalted Amongst the Dawn
-9230,   -- Ramaladni's Icy Grasp
-9232,   -- The Only Song I Know...
-9234,   -- Icebane Gauntlets
-9235,   -- Icebane Bracers
-9236,   -- Icebane Breastplate
-9237,   -- Glacial Cloak
-9238,   -- Glacial Wrists
-9239,   -- Glacial Gloves
-9240,   -- Glacial Vest
-9241,   -- Polar Bracers
-9242,   -- Polar Gloves
-9243,   -- Polar Tunic
-9244,   -- Icy Scale Bracers
-9245,   -- Icy Scale Gauntlets
-9246,   -- Icy Scale Breastplate
-9248,   -- A Humble Offering
-9269,   -- Atiesh, Greatstaff of the Guardian
-9270,   -- Atiesh, Greatstaff of the Guardian
-9271,   -- Atiesh, Greatstaff of the Guardian
-9323,   -- Wild Fires in the Eastern Kingdoms
-9339,   -- A Thief's Reward
-9341,   -- Tabard of the Argent Dawn
-9365,   -- A Thief's Reward
-55101,   -- Retour au pays
-55111,   -- Retour au pays
-55121,   -- Retour au pays
-55131,   -- Retour au pays
-55141,   -- Retour au pays
-55151,   -- Retour au pays
-55161,   -- Retour au pays
-55171   -- Retour au pays
+19999, -- Ca passe ou �a casse ! | [DEPRECATED] useless
+55001, -- The Alliance needs you! | [DEPRECATED] useless
+55002, -- The Alliance needs you! | [DEPRECATED] useless
+55003, -- The Alliance needs you! | [DEPRECATED] useless
+55011, -- The Horde needs you! | [DEPRECATED] useless
+55012, -- The Horde needs you! | [DEPRECATED] useless
+55013, -- The Horde needs you! | [DEPRECATED] useless
+55021, -- The Alliance needs you! | [DEPRECATED] useless
+55022, -- The Alliance needs you! | [DEPRECATED] useless
+55023, -- The Alliance needs you! | [DEPRECATED] useless
+55031, -- The Alliance needs you! | [DEPRECATED] useless
+55032, -- The Alliance needs you! | [DEPRECATED] useless
+55033, -- The Alliance needs you! | [DEPRECATED] useless
+55041, -- The Horde needs you! | [DEPRECATED] useless
+55042, -- The Horde needs you! | [DEPRECATED] useless
+55043, -- The Horde needs you! | [DEPRECATED] useless
+55051, -- The Horde needs you! | [DEPRECATED] useless
+55052, -- The Horde needs you! | [DEPRECATED] useless
+55053, -- The Horde needs you! | [DEPRECATED] useless
+55061, -- The Alliance needs you! | [DEPRECATED] useless
+55062, -- The Alliance needs you! | [DEPRECATED] useless
+55063, -- The Alliance needs you! | [DEPRECATED] useless
+55071, -- The Horde needs you! | [DEPRECATED] useless
+55072, -- The Horde needs you! | [DEPRECATED] useless
+55073, -- The Horde needs you! | [DEPRECATED] useless
+55101, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+55111, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+55121, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+55131, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+55141, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+55151, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+55161, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+55171, -- Retour au pays | [DEPRECATED] Rewards Contest Winners Tabard
+137701, -- Rapport de reconnaissance de la Ruche Ashi | [DEPRECATED] useless
+137702, -- Rapport de reconnaissance de la Ruche Zora | [DEPRECATED] useless
+137703, -- Rapport de reconnaissance de la Ruche Regal | [DEPRECATED] useless
+137705, -- Quete Arena | [DEPRECATED] useless
+137706, -- A Strange Journey | [DEPRECATED] Zeth'Kur merge
+1318, -- Unfinished Gordok Business | Dire Maul quest
+5504, -- Mantles of the Dawn | New AD rewards added (1.3 patch notes)
+5507, -- Mantles of the Dawn | New AD rewards added (1.3 patch notes)
+5513, -- Mantles of the Dawn | New AD rewards added (1.3 patch notes)
+5517, -- Chromatic Mantle of the Dawn | New AD rewards added (1.3 patch notes)
+5518, -- The Gordok Ogre Suit | Dire Maul Quest
+5519, -- The Gordok Ogre Suit | Dire Maul Quest
+5521, -- Chromatic Mantle of the Dawn | New AD rewards added (1.3 patch notes)
+5524, -- Chromatic Mantle of the Dawn | New AD rewards added (1.3 patch notes)
+5525, -- Free Knot! | Dire Maul Quest (duplicate?)
+5526, -- Shards of the Felvine | Dire Maul Quest (duplicate?)
+5527, -- A Reliquary of Purity | Dire Maul Quest (duplicate?)
+5528, -- The Gordok Taste Test | Dire Maul Quest
+6221, -- Deadwood of the North | Timbermaw Hold. Replaced in 1.9 by ID: 8461
+6241, -- Winterfall Activity | Timbermaw Hold, repeatable quest. Replaced in 1.9 by ID: 8464
+7341, -- A Fair Trade | Patch 1.3 retail notes
+7342, -- Arrows Are For Sissies | Patch 1.3 retail notes
+7429, -- Free Knot! | Dire Maul quest
+7441, -- Pusillin and the Elder Azj'Tordin | Dire Maul quest
+7461, -- The Madness Within | Dire Maul quest
+7462, -- The Treasure of the Shen'dralar | Dire Maul quest (NOTE: Duplicate with 7877)
+7463, -- Arcane Refreshment | Dire Maul quest
+7478, -- Libram of Rapidity | Dire Maul quest
+7479, -- Libram of Focus | Dire Maul quest
+7480, -- Libram of Protection | Dire Maul quest
+7481, -- Elven Legends | Dire Maul quest
+7482, -- Elven Legends | Dire Maul quest
+7483, -- Libram of Rapidity | Dire Maul quest
+7484, -- Libram of Focus | Dire Maul quest
+7485, -- Libram of Protection | Dire Maul quest
+7488, -- Lethtendris's Web | Dire Maul quest
+7489, -- Lethtendris's Web | Dire Maul quest
+7492, -- Camp Mojache | Dire Maul quest
+7494, -- Feathermoon Stronghold | Dire Maul quest
+7498, -- Garona: A Study on Stealth and Treachery | Dire Maul quest
+7499, -- Codex of Defense | Dire Maul quest
+7500, -- The Arcanist's Cookbook | Dire Maul quest
+7501, -- The Light and How To Swing It | Dire Maul quest
+7502, -- Harnessing Shadows | Dire Maul quest
+7503, -- The Greatest Race of Hunters | Dire Maul quest
+7504, -- Holy Bologna: What the Light Won't Tell You | Dire Maul quest
+7505, -- Frost Shock and You | Dire Maul quest
+7506, -- The Emerald Dream... | Dire Maul quest
+7507, -- Foror's Compendium | Dire Maul quest
+7508, -- The Forging of Quel'Serrar | Dire Maul quest
+7509, -- The Forging of Quel'Serrar | Dire Maul quest
+7703, -- Unfinished Gordok Business | Dire Maul quest
+7877, -- The Treasure of the Shen'dralar | Dire Maul quest (NOTE: Duplicate with 7462)
+171, -- A Warden of the Alliance | Childrens Week added (1.4 patch notes)
+172, -- Children's Week | Childrens Week added (1.4 patch notes)
+7487, -- Attunement to the Core | Molten core discovery quest changed to attunement (1.4 patch notes)
+7541, -- Service to the Horde | Minor questline added
+7562, -- Mor'zul Bloodbringer | 1.4 Warlock mount quest
+7563, -- Rage of Blood | 1.4 Warlock mount quest
+7564, -- Wildeyes | 1.4 Warlock mount quest
+7581, -- The Prison's Bindings | 1.4 Warlock mount quest
+7582, -- The Prison's Casing | 1.4 Warlock mount quest
+7583, -- Suppression | 1.4 Warlock mount quest
+7601, -- What Niby Commands | 1.4 Warlock mount quest
+7602, -- Flawless Fel Essence | 1.4 Warlock mount quest
+7603, -- Kroshius' Infernal Core | 1.4 Warlock mount quest
+7604, -- A Binding Contract | 1.4 Raid loot table update (Sulfuras)
+7621, -- A Warning | 1.4 Raid loot table update (Benediction)
+7622, -- The Balance of Light and Shadow | 1.4 Raid loot table update (Benediction)
+7623, -- Lord Banehollow | 1.4 Warlock mount quest
+7624, -- Ulathek the Traitor | 1.4 Warlock mount quest
+7625, -- Xorothian Stardust | 1.4 Warlock mount quest
+7626, -- Bell of Dethmoora | 1.4 Warlock mount quest
+7627, -- Wheel of the Black March | 1.4 Warlock mount quest
+7628, -- Doomsday Candle | 1.4 Warlock mount quest
+7629, -- Imp Delivery | 1.4 Warlock mount quest
+7630, -- Arcanite | 1.4 Warlock mount quest
+7631, -- Dreadsteed of Xoroth | 1.4 Warlock mount quest
+7632, -- The Ancient Leaf | 1.4 Raid loot table update (hunter leaf quest)
+7633, -- An Introduction | 1.4 Raid loot table update (hunter leaf quest)
+7634, -- Ancient Sinew Wrapped Lamina | 1.4 Raid loot table update (hunter leaf quest)
+7635, -- A Proper String | 1.4 Raid loot table update (hunter leaf quest)
+7636, -- Stave of the Ancients | 1.4 Raid loot table update (hunter leaf quest)
+7637, -- Emphasis on Sacrifice | 1.4 Paladin mount quest
+7638, -- Lord Grayson Shadowbreaker | 1.4 Paladin mount quest
+7639, -- To Show Due Judgment | 1.4 Paladin mount quest
+7640, -- Exorcising Terrordale | 1.4 Paladin mount quest
+7641, -- The Work of Grimand Elmore | 1.4 Paladin mount quest
+7642, -- Collection of Goods | 1.4 Paladin mount quest
+7643, -- Ancient Equine Spirit | 1.4 Paladin mount quest
+7644, -- Blessed Arcanite Barding | 1.4 Paladin mount quest
+7645, -- Manna-Enriched Horse Feed | 1.4 Paladin mount quest
+7646, -- The Divination Scryer | 1.4 Paladin mount quest
+7647, -- Judgment and Redemption | 1.4 Paladin mount quest
+7648, -- Grimand's Finest Work | 1.4 Paladin mount quest
+7649, -- Enchanted Thorium Platemail: Volume I | Added April 2005 with patch
+7650, -- Enchanted Thorium Platemail: Volume II | Added April 2005 with patch
+7651, -- Enchanted Thorium Platemail: Volume III | Added April 2005 with patch
+7652, -- A Blue Light Bargain | Added April 2005 with patch
+7653, -- Imperial Plate Belt | Added April 2005 with patch
+7654, -- Imperial Plate Boots | Added April 2005 with patch
+7655, -- Imperial Plate Bracer | Added April 2005 with patch
+7656, -- Imperial Plate Chest | Added April 2005 with patch
+7657, -- Imperial Plate Helm | Added April 2005 with patch
+7658, -- Imperial Plate Leggings | Added April 2005 with patch
+7659, -- Imperial Plate Shoulders | Added April 2005 with patch
+7660, -- Wolf Swapping - Arctic Wolf | New mount models (1.4 patch notes)
+7661, -- Wolf Swapping - Red Wolf | New mount models (1.4 patch notes)
+7662, -- New Kodo - Teal | New mount models (1.4 patch notes)
+7663, -- New Kodo - Green | New mount models (1.4 patch notes)
+7664, -- Ivory Raptor Replacement | New mount models (1.4 patch notes)
+7665, -- Red Raptor Replacement | New mount models (1.4 patch notes)
+7666, -- Again Into the Great Ossuary | 1.4 Paladin mount quest
+7671, -- Frostsaber Replacement | New mount models (1.4 patch notes)
+7672, -- Nightsaber Replacement | New mount models (1.4 patch notes)
+7673, -- Frost Ram Exchange | New mount models (1.4 patch notes)
+7674, -- Black Ram Exchange | New mount models (1.4 patch notes)
+7675, -- Icy Blue Mechanostrider Replacement | New mount models (1.4 patch notes)
+7676, -- White Mechanostrider Replacement | New mount models (1.4 patch notes)
+7677, -- White Stallion Exchange | New mount models (1.4 patch notes)
+7678, -- Palomino Exchange | New mount models (1.4 patch notes)
+7810, -- Arena Master | 1.4 Gurubashi arena event (see patch notes)
+7838, -- Arena Grandmaster | 1.4 Gurubashi arena event (see patch notes)
+5892, -- Irondeep Supplies | AV Quest (duplicate?)
+5893, -- Coldtooth Supplies | AV Quest (duplicate?)
+6741, -- More Booty! | AV Quest
+6781, -- More Armor Scraps | AV Quest
+6801, -- Lokholar the Ice Lord | AV Quest
+6825, -- Call of Air - Guse's Fleet | AV Quest
+6826, -- Call of Air - Jeztor's Fleet | AV Quest
+6827, -- Call of Air - Mulverick's Fleet | AV Quest
+6846, -- Begin the Attack! | AV Quest
+6847, -- Master Ryson's All Seeing Eye | AV Quest
+6848, -- Master Ryson's All Seeing Eye | AV Quest
+6861, -- Zinfizzlex's Portable Shredder Unit | AV Quest
+6862, -- Zinfizzlex's Portable Shredder Unit | AV Quest
+6881, -- Ivus the Forest Lord | AV Quest
+6901, -- Launch the Attack! | AV Quest
+6941, -- Call of Air - Vipore's Fleet | AV Quest
+6942, -- Call of Air - Slidore's Fleet | AV Quest
+6943, -- Call of Air - Ichman's Fleet | AV Quest
+6982, -- Coldtooth Supplies | AV Quest
+6985, -- Irondeep Supplies | AV Quest
+7001, -- Empty Stables | AV Quest
+7002, -- Ram Hide Harnesses | AV Quest
+7003, -- Zapped Giants | Quests added to Feralas (1.5 patch notes)
+7026, -- Ram Riding Harnesses | AV Quest
+7027, -- Empty Stables | AV Quest
+7081, -- Alterac Valley Graveyards | AV Quest
+7082, -- The Graveyards of Alterac | AV Quest
+7101, -- Towers and Bunkers | AV Quest
+7102, -- Towers and Bunkers | AV Quest
+7121, -- The Quartermaster | AV Quest
+7122, -- Capture a Mine | AV Quest
+7123, -- Speak with our Quartermaster | AV Quest
+7124, -- Capture a Mine | AV Quest
+7141, -- The Battle of Alterac | AV Quest
+7142, -- The Battle for Alterac | AV Quest
+7161, -- Proving Grounds | AV Quest
+7162, -- Proving Grounds | AV Quest
+7163, -- Rise and Be Recognized | AV Quest
+7164, -- Honored Amongst the Clan | AV Quest
+7165, -- Earned Reverence | AV Quest
+7166, -- Legendary Heroes | AV Quest
+7167, -- The Eye of Command | AV Quest
+7168, -- Rise and Be Recognized | AV Quest
+7169, -- Honored Amongst the Guard | AV Quest
+7170, -- Earned Reverence | AV Quest
+7171, -- Legendary Heroes | AV Quest
+7172, -- The Eye of Command | AV Quest
+7181, -- The Legend of Korrak | AV Quest
+7202, -- Korrak the Bloodrager | AV Quest
+7223, -- Armor Scraps | AV Quest
+7224, -- Enemy Booty | AV Quest
+7241, -- In Defense of Frostwolf | AV Quest
+7261, -- The Sovereign Imperative | AV Quest
+7281, -- Brotherly Love | AV Quest
+7282, -- Brotherly Love | AV Quest
+7301, -- Fallen Sky Lords | AV Quest
+7302, -- Fallen Sky Lords | AV Quest
+7361, -- Favor Amongst the Darkspear | AV Quest
+7362, -- Ally of the Tauren | AV Quest
+7363, -- The Human Condition | AV Quest
+7364, -- Gnomeregan Bounty | AV Quest
+7365, -- Staghelm's Requiem | AV Quest
+7366, -- The Archbishop's Mercy | AV Quest
+7367, -- Defusing the Threat | AV Quest
+7368, -- Defusing the Threat | AV Quest
+7381, -- The Return of Korrak | AV Quest
+7382, -- Korrak the Everliving | AV Quest
+7385, -- A Gallon of Blood | AV Quest
+7386, -- Crystal Cluster | AV Quest
+7401, -- Wanted: DWARVES! | AV Quest
+7402, -- Wanted: ORCS! | AV Quest
+7421, -- Darkspear Defense | AV Quest
+7422, -- Tuft it Out | AV Quest
+7423, -- I've Got A Fever For More Bone Chips | AV Quest
+7424, -- What the Hoof? | AV Quest
+7425, -- Staghelm's Mojo Jamboree | AV Quest
+7426, -- One Man's Love | AV Quest
+7427, -- Wanted: MORE DWARVES! | AV Quest
+7428, -- Wanted: MORE ORCS! | AV Quest
+7701, -- WANTED: Overseer Maltorius | Quests added to Thorium Point (See retail patch notes)
+7721, -- Fuel for the Zapping | Quests added to Feralas (1.5 patch notes)
+7722, -- What the Flux? | Quests added to Thorium Point (See retail patch notes)
+7723, -- Curse These Fat Fingers | Quests added to Thorium Point (See retail patch notes)
+7724, -- Fiery Menace! | Quests added to Thorium Point (See retail patch notes)
+7725, -- Again With the Zapped Giants | Quests added to Feralas (1.5 patch notes)
+7726, -- Refuel for the Zapping | Quests added to Feralas (1.5 patch notes)
+7727, -- Incendosaurs? Whateverosaur is More Like It | Quests added to Thorium Point (See retail patch notes)
+7728, -- STOLEN: Smithing Tuyere and Lookout's Spyglass | Quests added to Thorium Point (See retail patch notes)
+7729, -- JOB OPPORTUNITY: Culling the Competition | Quests added to Thorium Point (See retail patch notes)
+7730, -- Zukk'ash Infestation | Quests added to Feralas (1.5 patch notes)
+7731, -- Stinglasher | Quests added to Feralas (1.5 patch notes)
+7732, -- Zukk'ash Report | Quests added to Feralas (1.5 patch notes)
+7733, -- Improved Quality | "Quest ""Improved Quality"" added in 1.5 (allakhazam dating and inference from item/quest ID)"
+7734, -- Improved Quality | "Quest ""Improved Quality"" added in 1.5 (allakhazam dating and inference from item/quest ID)"
+7735, -- Pristine Yeti Hide | Quests added to Feralas (1.5 patch notes)
+7736, -- Restoring Fiery Flux Supplies via Kingsblood | Quests added to Thorium Point (See retail patch notes)
+7737, -- Gaining Acceptance | Quests added to Thorium Point (See retail patch notes)
+7738, -- Perfect Yeti Hide | Quests added to Feralas (1.5 patch notes)
+7788, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7789, -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
+7791, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7793, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7794, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7795, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7796, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7797, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7798, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7799, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7800, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7801, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7802, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7803, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7804, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7805, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7806, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7807, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7808, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7809, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7811, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7812, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7813, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7814, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7815, -- Snapjaws, Mon! | Quests added to Revantusk Village (See retail patch notes)
+7816, -- Gammerita, Mon! | Quests added to Revantusk Village (See retail patch notes)
+7817, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7818, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7819, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7820, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7821, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7822, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7823, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7824, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7825, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7826, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7827, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7828, -- Stalking the Stalkers | Quests added to Revantusk Village (See retail patch notes)
+7829, -- Hunt the Savages | Quests added to Revantusk Village (See retail patch notes)
+7830, -- Avenging the Fallen | Quests added to Revantusk Village (See retail patch notes)
+7831, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7832, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7833, -- A Donation of Wool | Cloth quartermasters added (see 1.5 patch notes)
+7834, -- A Donation of Silk | Cloth quartermasters added (see 1.5 patch notes)
+7835, -- A Donation of Mageweave | Cloth quartermasters added (see 1.5 patch notes)
+7836, -- A Donation of Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7837, -- Additional Runecloth | Cloth quartermasters added (see 1.5 patch notes)
+7839, -- Vilebranch Hooligans | Quests added to Revantusk Village (See retail patch notes)
+7840, -- Lard Lost His Lunch | Quests added to Revantusk Village (See retail patch notes)
+7841, -- Message to the Wildhammer | Quests added to Revantusk Village (See retail patch notes)
+7842, -- Another Message to the Wildhammer | Quests added to Revantusk Village (See retail patch notes)
+7843, -- The Final Message to the Wildhammer | Quests added to Revantusk Village (See retail patch notes)
+7844, -- Cannibalistic Cousins | Quests added to Revantusk Village (See retail patch notes)
+7845, -- Kidnapped Elder Torntusk! | Quests added to Revantusk Village (See retail patch notes)
+7846, -- Recover the Key! | Quests added to Revantusk Village (See retail patch notes)
+7847, -- Return to Primal Torntusk | Quests added to Revantusk Village (See retail patch notes)
+7848, -- Attunement to the Core | NOTE: This replaces 7487 to allow Dwarf priests to complete it
+7849, -- Separation Anxiety | Quests added to Revantusk Village (See retail patch notes)
+7850, -- Dark Vessels | Quests added to Revantusk Village (See retail patch notes)
+7861, -- Wanted: Vile Priestess Hexx and Her Minions | Quests added to Revantusk Village (See retail patch notes)
+7862, -- Job Opening: Guard Captain of Revantusk Village | Quests added to Revantusk Village (See retail patch notes)
+7863, -- Sentinel Basic Care Package | WSG quest available on release (Allakhazam dating)
+7864, -- Sentinel Standard Care Package | WSG quest available on release (Allakhazam dating)
+7865, -- Sentinel Advanced Care Package | WSG quest available on release (Allakhazam dating)
+7866, -- Outrider Basic Care Package | WSG quest available on release (Allakhazam dating)
+7867, -- Outrider Standard Care Package | WSG quest available on release (Allakhazam dating)
+7868, -- Outrider Advanced Care Package | WSG quest available on release (Allakhazam dating)
+7871, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7872, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7873, -- Vanquish the Invaders! | Deprecated WSG quest for Silverwing/Warsong talismans
+7874, -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
+7875, -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
+7876, -- Quell the Silverwing Usurpers | Deprecated WSG quest for Silverwing/Warsong talismans
+7521, -- Thunderaan the Windseeker | Quest not completable before 1.6
+7761, -- Blackhand's Command | BWL Quest
+7781, -- The Lord of Blackrock | BWL Quest
+7782, -- The Lord of Blackrock | BWL Quest
+7783, -- The Lord of Blackrock | BWL Quest
+7784, -- The Lord of Blackrock | BWL Quest
+7785, -- Examine the Vessel | Quest not completable before 1.6
+7786, -- Thunderaan the Windseeker | Quest not completable before 1.6
+7787, -- Rise, Thunderfury! | Quest not completable before 1.6
+7881, -- Carnival Boots | 1.6 Retail Patch Notes (Darkmoon Faire)
+7882, -- Carnival Jerkins | 1.6 Retail Patch Notes (Darkmoon Faire)
+7883, -- The World's Largest Gnome! | 1.6 Retail Patch Notes (Darkmoon Faire)
+7884, -- Crocolisk Boy and the Bearded Murloc | 1.6 Retail Patch Notes (Darkmoon Faire)
+7885, -- Armor Kits | 1.6 Retail Patch Notes (Darkmoon Faire)
+7889, -- Coarse Weightstone | 1.6 Retail Patch Notes (Darkmoon Faire)
+7890, -- Heavy Grinding Stone | 1.6 Retail Patch Notes (Darkmoon Faire)
+7891, -- Green Iron Bracers | 1.6 Retail Patch Notes (Darkmoon Faire)
+7892, -- Big Black Mace | 1.6 Retail Patch Notes (Darkmoon Faire)
+7893, -- Rituals of Strength | 1.6 Retail Patch Notes (Darkmoon Faire)
+7894, -- Copper Modulator | 1.6 Retail Patch Notes (Darkmoon Faire)
+7895, -- Whirring Bronze Gizmo | 1.6 Retail Patch Notes (Darkmoon Faire)
+7896, -- Green Fireworks | 1.6 Retail Patch Notes (Darkmoon Faire)
+7897, -- Mechanical Repair Kits | 1.6 Retail Patch Notes (Darkmoon Faire)
+7898, -- Thorium Widget | 1.6 Retail Patch Notes (Darkmoon Faire)
+7899, -- Small Furry Paws | 1.6 Retail Patch Notes (Darkmoon Faire)
+7900, -- Torn Bear Pelts | 1.6 Retail Patch Notes (Darkmoon Faire)
+7901, -- Soft Bushy Tails | 1.6 Retail Patch Notes (Darkmoon Faire)
+7902, -- Vibrant Plumes | 1.6 Retail Patch Notes (Darkmoon Faire)
+7903, -- Evil Bat Eyes | 1.6 Retail Patch Notes (Darkmoon Faire)
+7905, -- The Darkmoon Faire | 1.6 Retail Patch Notes (Darkmoon Faire)
+7907, -- Darkmoon Beast Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7926, -- The Darkmoon Faire | 1.6 Retail Patch Notes (Darkmoon Faire)
+7927, -- Darkmoon Portals Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7928, -- Darkmoon Warlords Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7929, -- Darkmoon Elementals Deck | 1.6 Retail Patch Notes (Darkmoon Faire)
+7930, -- 5 Tickets - Darkmoon Flower | 1.6 Retail Patch Notes (Darkmoon Faire)
+7931, -- 5 Tickets - Minor Darkmoon Prize | 1.6 Retail Patch Notes (Darkmoon Faire)
+7932, -- 12 Tickets - Lesser Darkmoon Prize | 1.6 Retail Patch Notes (Darkmoon Faire)
+7933, -- 40 Tickets - Greater Darkmoon Prize | 1.6 Retail Patch Notes (Darkmoon Faire)
+7934, -- 50 Tickets - Darkmoon Storage Box | 1.6 Retail Patch Notes (Darkmoon Faire)
+7935, -- 10 Tickets - Last Month's Mutton | 1.6 Retail Patch Notes (Darkmoon Faire)
+7936, -- 50 Tickets - Last Year's Mutton | 1.6 Retail Patch Notes (Darkmoon Faire)
+7937, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7938, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7939, -- More Dense Grinding Stones | 1.6 Retail Patch Notes (Darkmoon Faire)
+7940, -- 1200 Tickets - Orb of the Darkmoon | 1.6 Retail Patch Notes (Darkmoon Faire)
+7941, -- More Armor Kits | 1.6 Retail Patch Notes (Darkmoon Faire)
+7942, -- More Thorium Widgets | 1.6 Retail Patch Notes (Darkmoon Faire)
+7943, -- More Bat Eyes | 1.6 Retail Patch Notes (Darkmoon Faire)
+7944, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7945, -- Your Fortune Awaits You... | 1.6 Retail Patch Notes (Darkmoon Faire)
+7946, -- Spawn of Jubjub | 1.6 Retail Patch Notes (Darkmoon Faire)
+7981, -- 1200 Tickets - Amulet of the Darkmoon | 1.6 Retail Patch Notes (Darkmoon Faire)
+8222, -- Glowing Scorpid Blood | Darkmoon Faire (Patch 1.6)
+8223, -- More Glowing Scorpid Blood | Darkmoon Faire (Patch 1.6)
+7667, -- Material Assistance | Quest added for Scholomance (horde) (allakhazam dating)
+8001, -- Zombie Cleansing | Deprecated quest, possibly related to unintentional ZG release zombie event
+8041, -- Strength of Mount Mugamba | ZG Quest
+8042, -- Strength of Mount Mugamba | ZG Quest
+8043, -- Strength of Mount Mugamba | ZG Quest
+8044, -- The Rage of Mount Mugamba | ZG Quest
+8045, -- The Heathen's Brand | ZG Quest
+8046, -- The Heathen's Brand | ZG Quest
+8047, -- The Heathen's Brand | ZG Quest
+8048, -- The Hero's Brand | ZG Quest
+8049, -- The Eye of Zuldazar | ZG Quest
+8050, -- The Eye of Zuldazar | ZG Quest
+8051, -- The Eye of Zuldazar | ZG Quest
+8052, -- The All-Seeing Eye of Zuldazar | ZG Quest
+8053, -- Paragons of Power: The Freethinker's Armguards | ZG Quest
+8054, -- Paragons of Power: The Freethinker's Belt | ZG Quest
+8055, -- Paragons of Power: The Freethinker's Breastplate | ZG Quest
+8056, -- Paragons of Power: The Augur's Bracers (Raid) | ZG Quest
+8057, -- Paragons of Power: The Haruspex's Bracers | ZG Quest
+8058, -- Paragons of Power: The Vindicator's Armguards | ZG Quest
+8059, -- Paragons of Power: The Demoniac's Wraps (Raid) | ZG Quest
+8060, -- Paragons of Power: The Illusionist's Wraps | ZG Quest
+8061, -- Paragons of Power: The Confessor's Wraps | ZG Quest
+8062, -- Paragons of Power: The Predator's Bracers | ZG Quest
+8063, -- Paragons of Power: The Madcap's Bracers | ZG Quest
+8064, -- Paragons of Power: The Haruspex's Belt | ZG Quest
+8065, -- Paragons of Power: The Haruspex's Tunic | ZG Quest
+8066, -- Paragons of Power: The Predator's Belt | ZG Quest
+8067, -- Paragons of Power: The Predator's Mantle | ZG Quest
+8068, -- Paragons of Power: The Illusionist's Mantle | ZG Quest
+8069, -- Paragons of Power: The Illusionist's Robes | ZG Quest
+8070, -- Paragons of Power: The Confessor's Bindings | ZG Quest
+8071, -- Paragons of Power: The Confessor's Mantle | ZG Quest
+8072, -- Paragons of Power: The Madcap's Mantle | ZG Quest
+8073, -- Paragons of Power: The Madcap's Tunic | ZG Quest
+8074, -- Paragons of Power: The Augur's Belt | ZG Quest
+8075, -- Paragons of Power: The Augur's Hauberk | ZG Quest
+8076, -- Paragons of Power: The Demoniac's Mantle (Raid) | ZG Quest
+8077, -- Paragons of Power: The Demoniac's Robes (Raid) | ZG Quest
+8078, -- Paragons of Power: The Vindicator's Belt | ZG Quest
+8079, -- Paragons of Power: The Vindicator's Breastplate | ZG Quest
+8080, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8101, -- The Pebble of Kajaro | ZG Quest
+8102, -- The Pebble of Kajaro | ZG Quest
+8103, -- The Pebble of Kajaro | ZG Quest
+8104, -- The Jewel of Kajaro | ZG Quest
+8105, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8106, -- Kezan's Taint | ZG Quest
+8107, -- Kezan's Taint | ZG Quest
+8108, -- Kezan's Taint | ZG Quest
+8109, -- Kezan's Unstoppable Taint | ZG Quest
+8110, -- Enchanted South Seas Kelp | ZG Quest
+8111, -- Enchanted South Seas Kelp | ZG Quest
+8112, -- Enchanted South Seas Kelp | ZG Quest
+8113, -- Pristine Enchanted South Seas Kelp | ZG Quest
+8114, -- Control Four Bases | Arathi Basin Quest
+8115, -- Control Five Bases | Arathi Basin Quest
+8116, -- Vision of Voodress | ZG Quest
+8117, -- Vision of Voodress | ZG Quest
+8118, -- Vision of Voodress | ZG Quest
+8119, -- The Unmarred Vision of Voodress | ZG Quest
+8120, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8121, -- Take Four Bases | Arathi Basin Quest
+8122, -- Take Five Bases | Arathi Basin Quest
+8123, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8141, -- Zandalrian Shadow Talisman | ZG Quest
+8142, -- Zandalrian Shadow Talisman | ZG Quest
+8143, -- Zandalrian Shadow Talisman | ZG Quest
+8144, -- Zandalrian Shadow Mastery Talisman | ZG Quest
+8145, -- The Maelstrom's Tendril | ZG Quest
+8146, -- The Maelstrom's Tendril | ZG Quest
+8147, -- The Maelstrom's Tendril | ZG Quest
+8148, -- The Maelstrom's Wrath | ZG Quest
+8151, -- The Hunter's Charm | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8153, -- Courser Antlers | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8154, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8155, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8156, -- Arathi Basin Mark of Honor! | Arathi Basin Quest
+8160, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8161, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8162, -- Cut Arathor Supply Lines | Arathi Basin Quest
+8166, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8167, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8168, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8169, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8170, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8171, -- The Battle for Arathi Basin! | Arathi Basin Quest
+8181, -- Confront Yeh'kinya | ZG lore quest added
+8182, -- The Hand of Rastakhan | ZG lore quest added
+8183, -- The Heart of Hakkar | ZG Quest
+8184, -- Presence of Might | ZG Quest
+8185, -- Syncretist's Sigil | ZG Quest
+8186, -- Death's Embrace | ZG Quest
+8187, -- Falcon's Call | ZG Quest
+8188, -- Vodouisant's Vigilant Embrace | ZG Quest
+8189, -- Presence of Sight | ZG Quest
+8190, -- Hoodoo Hex | ZG Quest
+8191, -- Prophetic Aura | ZG Quest
+8192, -- Animist's Caress | ZG Quest
+8193, -- Master Angler | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8194, -- Apprentice Angler | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8195, -- Zulian, Razzashi, and Hakkari Coins | ZG Quest
+8196, -- Essence Mangoes | ZG Quest
+8201, -- A Collection of Heads | ZG Quest
+8221, -- Rare Fish - Keefer's Angelfish | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8224, -- Rare Fish - Dezian Queenfish | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8225, -- Rare Fish - Brownell's Blue Striped Racer | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8227, -- Nat's Measuring Tape | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8228, -- Could I get a Fishing Flier? | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8229, -- Could I get a Fishing Flier? | Stranglethorn fishing extravaganza added (see retail 1.7 patch notes)
+8231, -- Wavethrashing | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8232, -- The Green Drake | LVL 50 class quest (hunter), see retail 1.7 patch notes
+8233, -- A Simple Request | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8234, -- Sealed Azure Bag | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8235, -- Encoded Fragments | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8236, -- The Azure Key | LVL 50 class quest (rogue), see retail 1.7 patch notes
+8238, -- Gurubashi, Vilebranch, and Witherbark Coins | ZG Quest
+8239, -- Sandfury, Skullsplitter, and Bloodscalp Coins | ZG Quest
+8240, -- A Bijou for Zanza | ZG Quest
+8241, -- Restoring Fiery Flux Supplies via Iron | 1.7 retail patch notes
+8242, -- Restoring Fiery Flux Supplies via Heavy Leather | 1.7 retail patch notes
+8243, -- Zanza's Potent Potables | ZG Quest
+8246, -- Signets of the Zandalar | ZG Quest
+8249, -- Junkboxes Needed | Inferred from allakhazam comment dates
+8250, -- Magecraft | LVL 50 class quest (mage), see retail 1.7 patch notes
+8251, -- Magic Dust | LVL 50 class quest (mage), see retail 1.7 patch notes
+8252, -- The Siren's Coral | LVL 50 class quest (mage), see retail 1.7 patch notes
+8253, -- Destroy Morphaz | LVL 50 class quest (mage), see retail 1.7 patch notes
+8254, -- Cenarion Aid | LVL 50 class quest (priest), see retail 1.7 patch notes
+8255, -- Of Coursers We Know | LVL 50 class quest (priest), see retail 1.7 patch notes
+8256, -- The Ichor of Undeath | LVL 50 class quest (priest), see retail 1.7 patch notes
+8257, -- Blood of Morphaz | LVL 50 class quest (priest), see retail 1.7 patch notes
+8258, -- The Darkreaver Menace | Quest added for Scholomance (horde) (allakhazam dating)
+8260, -- Arathor Basic Care Package | Arathi Basin Quest
+8261, -- Arathor Standard Care Package | Arathi Basin Quest
+8262, -- Arathor Advanced Care Package | Arathi Basin Quest
+8263, -- Defiler's Basic Care Package | Arathi Basin Quest
+8264, -- Defiler's Standard Care Package | Arathi Basin Quest
+8265, -- Defiler's Advanced Care Package | Arathi Basin Quest
+8266, -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
+8267, -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
+8268, -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
+8269, -- Ribbons of Sacrifice | Deprecated WSG quest (patch 1.7 notes)
+8149, -- Honoring a Hero | Hallow's Eve event added (see 1.8 patch notes)
+8150, -- Honoring a Hero | Hallow's Eve event added (see 1.8 patch notes)
+8271, -- Hero of the Stormpike | AV overhaul in patch 1.8
+8272, -- Hero of the Frostwolf | AV overhaul in patch 1.8
+8273, -- Oran's Gratitude | See 1.8 patch notes
+8275, -- Taking Back Silithus | Silithus quest revamp
+8276, -- Taking Back Silithus | Silithus quest revamp
+8277, -- Deadly Desert Venom | Silithus quest revamp
+8278, -- Noggle's Last Hope | Silithus quest revamp
+8279, -- The Twilight Lexicon | Silithus quest revamp
+8280, -- Securing the Supply Lines | Silithus quest revamp
+8281, -- Stepping Up Security | Silithus quest revamp
+8282, -- Noggle's Lost Satchel | Silithus quest revamp
+8283, -- Wanted - Deathclasp, Terror of the Sands | Silithus quest revamp
+8284, -- The Twilight Mystery | Silithus quest revamp
+8285, -- The Deserter | Silithus quest revamp
+8287, -- A Terrible Purpose | Silithus quest revamp
+8291, -- Vanquish the Invaders! | Battleground mark turnin system added (1.8 patch notes)
+8292, -- Marks of Honor | Deprecated mark turnin quest
+8293, -- Marks of Honor | Deprecated mark turnin quest
+8294, -- Quell the Silverwing Usurpers | Battleground mark turnin system added (1.8 patch notes)
+8297, -- Arathi Basin Mark of Honor! | Battleground mark turnin system added (1.8 patch notes)
+8298, -- More Arathi Basin Marks of Honor | Battleground mark turnin system added (1.8 patch notes)
+8299, -- Cut Arathor Supply Lines | Battleground mark turnin system added (1.8 patch notes)
+8300, -- More Arathi Basin Marks of Honor | Battleground mark turnin system added (1.8 patch notes)
+8304, -- Dearest Natalia | Silithus quest revamp
+8306, -- Into The Maw of Madness | Silithus quest revamp
+8307, -- Desert Recipe | Silithus quest revamp
+8308, -- Brann Bronzebeard's Lost Letter | Silithus quest revamp
+8309, -- Glyph Chasing | Silithus quest revamp
+8310, -- Breaking the Code | Silithus quest revamp
+8311, -- Hallow's End Treats for Jesper! | Hallow's Eve event added (see 1.8 patch notes)
+8312, -- Hallow's End Treats for Spoops! | Hallow's Eve event added (see 1.8 patch notes)
+8313, -- Sharing the Knowledge | Silithus quest revamp
+8314, -- Unraveling the Mystery (Elite) | Silithus quest revamp
+8315, -- The Calling | Silithus quest revamp
+8316, -- Armaments of War | Silithus quest revamp
+8317, -- Kitchen Assistance | Silithus quest revamp
+8318, -- Secret Communication | Silithus quest revamp
+8319, -- Encrypted Twilight Texts | Silithus quest revamp
+8320, -- Twilight Geolords | Silithus quest revamp
+8321, -- Vyral the Vile | Silithus quest revamp
+8322, -- Rotten Eggs | Hallow's Eve event added (see 1.8 patch notes)
+8323, -- True Believers | Silithus quest revamp
+8324, -- Still Believing | Silithus quest revamp
+8331, -- Aurel Goldleaf | Silithus quest revamp
+8332, -- Dukes of the Council | Silithus windstones
+8333, -- Medallion of Station | Silithus windstones
+8341, -- Lords of the Council | Silithus windstones
+8342, -- Twilight Ring of Lordship | Silithus windstones
+8343, -- Goldleaf's Discovery | Silithus quest revamp
+8348, -- Signet of the Dukes | Silithus windstones
+8349, -- Bor Wildmane | Silithus quest revamp
+8351, -- Bor Wishes to Speak | Silithus quest revamp
+8352, -- Scepter of the Council | Silithus windstones
+8353, -- Chicken Clucking for a Mint | Hallow's Eve event added (see 1.8 patch notes)
+8354, -- Chicken Clucking for a Mint | Hallow's Eve event added (see 1.8 patch notes)
+8355, -- Incoming Gumdrop | Hallow's Eve event added (see 1.8 patch notes)
+8356, -- Flexing for Nougat | Hallow's Eve event added (see 1.8 patch notes)
+8357, -- Dancing for Marzipan | Hallow's Eve event added (see 1.8 patch notes)
+8358, -- Incoming Gumdrop | Hallow's Eve event added (see 1.8 patch notes)
+8359, -- Flexing for Nougat | Hallow's Eve event added (see 1.8 patch notes)
+8360, -- Dancing for Marzipan | Hallow's Eve event added (see 1.8 patch notes)
+8361, -- Abyssal Contacts | Silithus windstones
+8362, -- Abyssal Crests | Silithus windstones
+8363, -- Abyssal Signets | Silithus windstones
+8364, -- Abyssal Scepters | Silithus windstones
+8365, -- Pirate Hats Ahoy! | New Tanaris quests added (Allakhazam comment dates)
+8366, -- Southsea Shakedown | New Tanaris quests added (Allakhazam comment dates)
+8367, -- For Great Honor | Battleground mark turnin system added (1.8 patch notes)
+8368, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8369, -- Invaders of Alterac Valley | Battleground mark turnin system added (1.8 patch notes)
+8370, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8371, -- Concerted Efforts | Battleground mark turnin system added (1.8 patch notes)
+8372, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8373, -- The Power of Pine | Hallow's Eve event added (see 1.8 patch notes)
+8374, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8375, -- Remember Alterac Valley! | Battleground mark turnin system added (1.8 patch notes)
+8376, -- Armaments of War | Silithus quest revamp
+8377, -- Armaments of War | Silithus quest revamp
+8378, -- Armaments of War | Silithus quest revamp
+8379, -- Armaments of War | Silithus quest revamp
+8380, -- Armaments of War | Silithus quest revamp
+8381, -- Armaments of War | Silithus quest revamp
+8382, -- Armaments of War | Silithus quest revamp
+8383, -- Remember Alterac Valley! | Battleground mark turnin system added (1.8 patch notes)
+8384, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8385, -- Concerted Efforts | Battleground mark turnin system added (1.8 patch notes)
+8386, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8387, -- Invaders of Alterac Valley | Battleground mark turnin system added (1.8 patch notes)
+8388, -- For Great Honor | Battleground mark turnin system added (1.8 patch notes)
+8389, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8390, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8391, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8392, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8393, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8394, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8395, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8396, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8397, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8398, -- Claiming Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8399, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8400, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8401, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8402, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8403, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8404, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8405, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8406, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8407, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8408, -- Fight for Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8409, -- Ruined Kegs | Hallow's Eve event added (see 1.8 patch notes)
+8410, -- Elemental Mastery | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8411, -- Mastering the Elements | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8412, -- Spirit Totem | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8413, -- Da Voodoo | LVL 50 class quest (shaman), see retail 1.8 patch notes
+8414, -- Dispelling Evil | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8415, -- Chillwind Point | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8416, -- Inert Scourgestones | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8417, -- A Troubled Spirit | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8418, -- Forging the Mightstone | LVL 50 class quest (paladin), see retail 1.8 patch notes
+8419, -- An Imp's Request | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8420, -- Hot and Itchy | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8421, -- The Wrong Stuff | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8422, -- Trolls of a Feather | LVL 50 class quest (warlock), see 1.8 retail patch notes
+8423, -- Warrior Kinship | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8424, -- War on the Shadowsworn | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8425, -- Voodoo Feathers | LVL 50 class quest (warrior), see 1.8 retail patch notes
+8426, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8427, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8428, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8429, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8430, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8431, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8432, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8433, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8434, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8435, -- Battle of Warsong Gulch | Battleground mark turnin system added (1.8 patch notes)
+8436, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8437, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8438, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8439, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8440, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8441, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8442, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8443, -- Conquering Arathi Basin | Battleground mark turnin system added (1.8 patch notes)
+8446, -- Shrouded in Nightmare | Emerald dragon loot
+8447, -- Waking Legends | Emerald dragon loot
+8744, -- A Carefully Wrapped Present | Quest added for Christmas 2005
+8746, -- Metzen the Reindeer | Quest added for Christmas 2005
+8762, -- Metzen the Reindeer | Quest added for Christmas 2005
+8763, -- The Hero of the Day | Quest added for Christmas 2005
+8767, -- A Gently Shaken Gift | Quest added for Christmas 2005
+8768, -- A Gaily Wrapped Present | Quest added for Christmas 2005
+8769, -- A Ticking Present | Quest added for Christmas 2005
+8803, -- A Festive Gift | Quest added for Christmas 2005
+8827, -- Winter's Presents | Quest added for Christmas 2005
+8860, -- New Year Celebrations! | New years quest added at end of 2005 (just before 1.9 released)
+8861, -- New Year Celebrations! | New years quest added at end of 2005 (just before 1.9 released)
+6131, -- Timbermaw Ally | Timbermaw Hold quest revamp
+8286, -- What Tomorrow Brings | AQ gate questline
+8288, -- Only One May Rise | AQ gate questline
+8301, -- The Path of the Righteous | AQ gate questline
+8302, -- The Hand of the Righteous | AQ gate questline
+8303, -- Anachronos | AQ gate questline
+8305, -- Long Forgotten Memories | AQ gate questline
+8461, -- Deadwood of the North | Timbermaw Hold quest revamp. Replaces ID: 6221
+8462, -- Speak to Nafien | Timbermaw Hold quest revamp
+8464, -- Winterfall Activity | Timbermaw Hold quest revamp. Replaces ID: 6421
+8465, -- Speak to Salfa | Timbermaw Hold quest revamp
+8466, -- Feathers for Grazle | Timbermaw Hold quest revamp
+8467, -- Feathers for Nafien | Timbermaw Hold quest revamp
+8469, -- Beads for Salfa | Timbermaw Hold quest revamp
+8470, -- Deadwood Ritual Totem | Timbermaw Hold quest revamp
+8471, -- Winterfall Ritual Totem | Timbermaw Hold quest revamp
+8481, -- The Root of All Evil | Timbermaw Hold quest revamp
+8484, -- The Brokering of Peace | Timbermaw Hold quest revamp
+8485, -- The Brokering of Peace | Timbermaw Hold quest revamp
+8492, -- The Alliance Needs Copper Bars! | AQ40 war effort quest
+8493, -- The Alliance Needs More Copper Bars! | AQ40 war effort quest
+8494, -- The Alliance Needs Iron Bars! | AQ40 war effort quest
+8495, -- The Alliance Needs More Iron Bars! | AQ40 war effort quest
+8496, -- Bandages for the Field | Silithus badge quests
+8497, -- Desert Survival Kits | Silithus badge quests
+8498, -- Twilight Battle Orders | Silithus badge quests
+8499, -- The Alliance Needs Thorium Bars! | AQ40 war effort quest
+8500, -- The Alliance Needs More Thorium Bars! | AQ40 war effort quest
+8501, -- Target: Hive'Ashi Stingers | Silithus badge quests
+8502, -- Target: Hive'Ashi Workers | Silithus badge quests
+8503, -- The Alliance Needs Stranglekelp! | AQ40 war effort quest
+8504, -- The Alliance Needs More Stranglekelp! | AQ40 war effort quest
+8505, -- The Alliance Needs Purple Lotus! | AQ40 war effort quest
+8506, -- The Alliance Needs More Purple Lotus! | AQ40 war effort quest
+8507, -- Field Duty | Silithus badge quests
+8508, -- Field Duty Papers | Silithus badge quests
+8509, -- The Alliance Needs Arthas' Tears! | AQ40 war effort quest
+8510, -- The Alliance Needs More Arthas' Tears! | AQ40 war effort quest
+8511, -- The Alliance Needs Light Leather! | AQ40 war effort quest
+8512, -- The Alliance Needs More Light Leather! | AQ40 war effort quest
+8513, -- The Alliance Needs Medium Leather! | AQ40 war effort quest
+8514, -- The Alliance Needs More Medium Leather! | AQ40 war effort quest
+8515, -- The Alliance Needs Thick Leather! | AQ40 war effort quest
+8516, -- The Alliance Needs More Thick Leather! | AQ40 war effort quest
+8517, -- The Alliance Needs Linen Bandages! | AQ40 war effort quest
+8518, -- The Alliance Needs More Linen Bandages! | AQ40 war effort quest
+8519, -- A Pawn on the Eternal Board | AQ gate questline
+8520, -- The Alliance Needs Silk Bandages! | AQ40 war effort quest
+8521, -- The Alliance Needs More Silk Bandages! | AQ40 war effort quest
+8522, -- The Alliance Needs Runecloth Bandages! | AQ40 war effort quest
+8523, -- The Alliance Needs More Runecloth Bandages! | AQ40 war effort quest
+8524, -- The Alliance Needs Rainbow Fin Albacore! | AQ40 war effort quest
+8525, -- The Alliance Needs More Rainbow Fin Albacore! | AQ40 war effort quest
+8526, -- The Alliance Needs Roast Raptor! | AQ40 war effort quest
+8527, -- The Alliance Needs More Roast Raptor! | AQ40 war effort quest
+8528, -- The Alliance Needs Spotted Yellowtail! | AQ40 war effort quest
+8529, -- The Alliance Needs More Spotted Yellowtail! | AQ40 war effort quest
+8532, -- The Horde Needs Copper Bars! | AQ40 war effort quest
+8533, -- The Horde Needs More Copper Bars! | AQ40 war effort quest
+8534, -- Hive'Zora Scout Report | Silithus badge quests
+8535, -- Hoary Templar | Silithus badge quests
+8536, -- Earthen Templar | Silithus badge quests
+8537, -- Crimson Templar | Silithus badge quests
+8538, -- The Four Dukes | Silithus badge quests
+8539, -- Target: Hive'Zora Hive Sisters | Silithus badge quests
+8540, -- Boots for the Guard | Silithus badge quests
+8541, -- Grinding Stones for the Guard | Silithus badge quests
+8542, -- The Horde Needs Tin Bars! | AQ40 war effort quest
+8543, -- The Horde Needs More Tin Bars! | AQ40 war effort quest
+8544, -- Conqueror's Spaulders | AQ40 Loot
+8545, -- The Horde Needs Mithril Bars! | AQ40 war effort quest
+8546, -- The Horde Needs More Mithril Bars! | AQ40 war effort quest
+8548, -- Volunteer's Battlegear | Silithus badge quests
+8549, -- The Horde Needs Peacebloom! | AQ40 war effort quest
+8550, -- The Horde Needs More Peacebloom! | AQ40 war effort quest
+8555, -- The Charge of the Dragonflights | AQ40 gate quest
+8556, -- Signet of Unyielding Strength | AQ20 Loot
+8557, -- Drape of Unyielding Strength | AQ20 Loot
+8558, -- Sickle of Unyielding Strength | AQ20 Loot
+8559, -- Conqueror's Greaves | AQ40 Loot
+8560, -- Conqueror's Legguards | AQ40 Loot
+8561, -- Conqueror's Crown | AQ40 Loot
+8562, -- Conqueror's Breastplate | AQ40 Loot
+8572, -- Veteran's Battlegear | Silithus badge quests
+8573, -- Champion's Battlegear | Silithus badge quests
+8574, -- Stalwart's Battlegear | Silithus badge quests
+8575, -- Azuregos's Magical Ledger | AQ40 gate quest
+8576, -- Translating the Ledger | AQ40 gate quest
+8577, -- Stewvul, Ex-B.F.F. | AQ40 gate quest
+8578, -- Scrying Goggles? No Problem! | AQ40 gate quest
+8579, -- Mortal Champions | AQ40 quest
+8580, -- The Horde Needs Firebloom! | AQ40 war effort quest
+8581, -- The Horde Needs More Firebloom! | AQ40 war effort quest
+8582, -- The Horde Needs Purple Lotus! | AQ40 war effort quest
+8583, -- The Horde Needs More Purple Lotus! | AQ40 war effort quest
+8584, -- Never Ask Me About My Business | AQ40 gate quest
+8585, -- The Isle of Dread! | AQ40 gate quest
+8586, -- Dirge's Kickin' Chimaerok Chops | AQ40 gate quest
+8587, -- Return to Narain | AQ40 gate quest
+8588, -- The Horde Needs Heavy Leather! | AQ40 war effort quest
+8589, -- The Horde Needs More Heavy Leather! | AQ40 war effort quest
+8590, -- The Horde Needs Thick Leather! | AQ40 war effort quest
+8591, -- The Horde Needs More Thick Leather! | AQ40 war effort quest
+8592, -- Tiara of the Oracle | AQ40 Loot
+8593, -- Trousers of the Oracle | AQ40 Loot
+8594, -- Mantle of the Oracle | AQ40 Loot
+8595, -- Mortal Champions | AQ40 quest
+8596, -- Footwraps of the Oracle | AQ40 Loot
+8597, -- Draconic for Dummies | AQ40 gate quest
+8598, -- rAnS0m | AQ40 gate quest
+8599, -- Love Song for Narain | AQ40 gate quest
+8600, -- The Horde Needs Rugged Leather! | AQ40 war effort quest
+8601, -- The Horde Needs More Rugged Leather! | AQ40 war effort quest
+8602, -- Stormcaller's Pauldrons | AQ40 Loot
+8603, -- Vestments of the Oracle | AQ40 Loot
+8604, -- The Horde Needs Wool Bandages! | AQ40 war effort quest
+8605, -- The Horde Needs More Wool Bandages! | AQ40 war effort quest
+8606, -- Decoy! | AQ40 gate quest
+8607, -- The Horde Needs Mageweave Bandages! | AQ40 war effort quest
+8608, -- The Horde Needs More Mageweave Bandages! | AQ40 war effort quest
+8609, -- The Horde Needs Runecloth Bandages! | AQ40 war effort quest
+8610, -- The Horde Needs More Runecloth Bandages! | AQ40 war effort quest
+8611, -- The Horde Needs Lean Wolf Steaks! | AQ40 war effort quest
+8612, -- The Horde Needs More Lean Wolf Steaks! | AQ40 war effort quest
+8613, -- The Horde Needs Spotted Yellowtail! | AQ40 war effort quest
+8614, -- The Horde Needs More Spotted Yellowtail! | AQ40 war effort quest
+8615, -- The Horde Needs Baked Salmon! | AQ40 war effort quest
+8616, -- The Horde Needs More Baked Salmon! | AQ40 war effort quest
+8619, -- Morndeep the Elder | Allakhazam dates for Festival of Elune
+8620, -- The Only Prescription | AQ40 gate quest
+8621, -- Stormcaller's Footguards | AQ40 Loot
+8622, -- Stormcaller's Hauberk | AQ40 Loot
+8623, -- Stormcaller's Diadem | AQ40 Loot
+8624, -- Stormcaller's Leggings | AQ40 Loot
+8625, -- Enigma Shoulderpads | AQ40 Loot
+8626, -- Striker's Footguards | AQ40 Loot
+8627, -- Avenger's Breastplate | AQ40 Loot
+8628, -- Avenger's Crown | AQ40 Loot
+8629, -- Avenger's Legguards | AQ40 Loot
+8630, -- Avenger's Pauldrons | AQ40 Loot
+8631, -- Enigma Leggings | AQ40 Loot
+8632, -- Enigma Circlet | AQ40 Loot
+8633, -- Enigma Robes | AQ40 Loot
+8634, -- Enigma Boots | AQ40 Loot
+8635, -- Splitrock the Elder | Allakhazam dates for Festival of Elune
+8636, -- Rumblerock the Elder | Allakhazam dates for Festival of Elune
+8637, -- Deathdealer's Boots | AQ40 Loot
+8638, -- Deathdealer's Vest | AQ40 Loot
+8639, -- Deathdealer's Helm | AQ40 Loot
+8640, -- Deathdealer's Leggings | AQ40 Loot
+8641, -- Deathdealer's Spaulders | AQ40 Loot
+8642, -- Silvervein the Elder | Allakhazam dates for Festival of Elune
+8643, -- Highpeak the Elder | Allakhazam dates for Festival of Elune
+8644, -- Stonefort the Elder | Allakhazam dates for Festival of Elune
+8645, -- Obsidian the Elder | Allakhazam dates for Festival of Elune
+8646, -- Hammershout the Elder | Allakhazam dates for Festival of Elune
+8647, -- Bellowrage the Elder | Allakhazam dates for Festival of Elune
+8648, -- Darkcore the Elder | Allakhazam dates for Festival of Elune
+8649, -- Stormbrow the Elder | Allakhazam dates for Festival of Elune
+8650, -- Snowcrown the Elder | Allakhazam dates for Festival of Elune
+8651, -- Ironband the Elder | Allakhazam dates for Festival of Elune
+8652, -- Graveborn the Elder | Allakhazam dates for Festival of Elune
+8653, -- Goldwell the Elder | Allakhazam dates for Festival of Elune
+8654, -- Primestone the Elder | Allakhazam dates for Festival of Elune
+8655, -- Avenger's Greaves | AQ40 Loot
+8656, -- Striker's Hauberk | AQ40 Loot
+8657, -- Striker's Diadem | AQ40 Loot
+8658, -- Striker's Leggings | AQ40 Loot
+8659, -- Striker's Pauldrons | AQ40 Loot
+8660, -- Doomcaller's Footwraps | AQ40 Loot
+8661, -- Doomcaller's Robes | AQ40 Loot
+8662, -- Doomcaller's Circlet | AQ40 Loot
+8663, -- Doomcaller's Trousers | AQ40 Loot
+8664, -- Doomcaller's Mantle | AQ40 Loot
+8665, -- Genesis Boots | AQ40 Loot
+8666, -- Genesis Vest | AQ40 Loot
+8667, -- Genesis Helm | AQ40 Loot
+8668, -- Genesis Trousers | AQ40 Loot
+8669, -- Genesis Shoulderpads | AQ40 Loot
+8670, -- Runetotem the Elder | Allakhazam dates for Festival of Elune
+8671, -- Ragetotem the Elder | Allakhazam dates for Festival of Elune
+8672, -- Stonespire the Elder | Allakhazam dates for Festival of Elune
+8673, -- Bloodhoof the Elder | Allakhazam dates for Festival of Elune
+8674, -- Winterhoof the Elder | Allakhazam dates for Festival of Elune
+8675, -- Skychaser the Elder | Allakhazam dates for Festival of Elune
+8676, -- Wildmane the Elder | Allakhazam dates for Festival of Elune
+8677, -- Darkhorn the Elder | Allakhazam dates for Festival of Elune
+8679, -- Grimtotem the Elder | Allakhazam dates for Festival of Elune
+8680, -- Windtotem the Elder | Allakhazam dates for Festival of Elune
+8681, -- Thunderhorn the Elder | Allakhazam dates for Festival of Elune
+8682, -- Skyseer the Elder | Allakhazam dates for Festival of Elune
+8683, -- Dawnstrider the Elder | Allakhazam dates for Festival of Elune
+8684, -- Dreamseer the Elder | Allakhazam dates for Festival of Elune
+8685, -- Mistwalker the Elder | Allakhazam dates for Festival of Elune
+8686, -- High Mountain the Elder | Allakhazam dates for Festival of Elune
+8687, -- Target: Hive'Zora Tunnelers | Silithus badge quests
+8688, -- Windrun the Elder | Allakhazam dates for Festival of Elune
+8689, -- Shroud of Infinite Wisdom | AQ20 Loot
+8690, -- Cloak of the Gathering Storm | AQ20 Loot
+8691, -- Drape of Vaulted Secrets | AQ20 Loot
+8692, -- Cloak of Unending Life | AQ20 Loot
+8693, -- Cloak of Veiled Shadows | AQ20 Loot
+8694, -- Shroud of Unspoken Names | AQ20 Loot
+8695, -- Cape of Eternal Justice | AQ20 Loot
+8696, -- Cloak of the Unseen Path | AQ20 Loot
+8697, -- Ring of Infinite Wisdom | AQ20 Loot
+8698, -- Ring of the Gathering Storm | AQ20 Loot
+8699, -- Band of Vaulted Secrets | AQ20 Loot
+8700, -- Band of Unending Life | AQ20 Loot
+8701, -- Band of Veiled Shadows | AQ20 Loot
+8702, -- Ring of Unspoken Names | AQ20 Loot
+8703, -- Ring of Eternal Justice | AQ20 Loot
+8704, -- Signet of the Unseen Path | AQ20 Loot
+8705, -- Gavel of Infinite Wisdom | AQ20 Loot
+8706, -- Hammer of the Gathering Storm | AQ20 Loot
+8707, -- Blade of Vaulted Secrets | AQ20 Loot
+8708, -- Mace of Unending Life | AQ20 Loot
+8709, -- Dagger of Veiled Shadows | AQ20 Loot
+8710, -- Kris of Unspoken Names | AQ20 Loot
+8711, -- Blade of Eternal Justice | AQ20 Loot
+8712, -- Scythe of the Unseen Path | AQ20 Loot
+8713, -- Starsong the Elder | Allakhazam dates for Festival of Elune
+8714, -- Moonstrike the Elder | Allakhazam dates for Festival of Elune
+8715, -- Bladeleaf the Elder | Allakhazam dates for Festival of Elune
+8716, -- Starglade the Elder | Allakhazam dates for Festival of Elune
+8717, -- Moonwarden the Elder | Allakhazam dates for Festival of Elune
+8718, -- Bladeswift the Elder | Allakhazam dates for Festival of Elune
+8719, -- Bladesing the Elder | Allakhazam dates for Festival of Elune
+8720, -- Skygleam the Elder | Allakhazam dates for Festival of Elune
+8721, -- Starweave the Elder | Allakhazam dates for Festival of Elune
+8722, -- Meadowrun the Elder | Allakhazam dates for Festival of Elune
+8723, -- Nightwind the Elder | Allakhazam dates for Festival of Elune
+8724, -- Morningdew the Elder | Allakhazam dates for Festival of Elune
+8725, -- Riversong the Elder | Allakhazam dates for Festival of Elune
+8726, -- Brightspear the Elder | Allakhazam dates for Festival of Elune
+8727, -- Farwhisper the Elder | Allakhazam dates for Festival of Elune
+8728, -- The Good News and The Bad News | AQ40 gate quest
+8729, -- The Wrath of Neptulon | AQ40 gate quest
+8730, -- Nefarius's Corruption | AQ40 gate quest
+8731, -- Field Duty | Silithus badge quests
+8732, -- Field Duty Papers | Silithus badge quests
+8733, -- Eranikus, Tyrant of the Dream | AQ40 gate quest
+8734, -- Tyrande and Remulos | AQ40 gate quest
+8735, -- The Nightmare's Corruption | AQ40 gate quest
+8736, -- The Nightmare Manifests | AQ40 gate quest
+8737, -- Azure Templar | Silithus badge quests
+8738, -- Hive'Regal Scout Report | Silithus badge quests
+8739, -- Hive'Ashi Scout Report | Silithus badge quests
+8740, -- Twilight Marauders | Silithus badge quests
+8741, -- The Champion Returns | AQ40 gate quest
+8742, -- The Might of Kalimdor | AQ40 gate quest
+8743, -- Bang a Gong! | AQ40 gate quest
+8745, -- Treasure of the Timeless One | AQ40 gate quest
+8747, -- The Path of the Protector | AQ40 quest
+8748, -- The Path of the Protector | AQ40 quest
+8749, -- The Path of the Protector | AQ40 quest
+8750, -- The Path of the Protector | AQ40 quest
+8751, -- The Protector of Kalimdor | AQ40 quest
+8752, -- The Path of the Conqueror | AQ40 quest
+8753, -- The Path of the Conqueror | AQ40 quest
+8754, -- The Path of the Conqueror | AQ40 quest
+8755, -- The Path of the Conqueror | AQ40 quest
+8756, -- The Qiraji Conqueror | AQ40 quest
+8757, -- The Path of the Invoker | AQ40 quest
+8758, -- The Path of the Invoker | AQ40 quest
+8759, -- The Path of the Invoker | AQ40 quest
+8760, -- The Path of the Invoker | AQ40 quest
+8761, -- The Grand Invoker | AQ40 quest
+8764, -- The Changing of Paths - Protector No More | AQ40 quest
+8765, -- The Changing of Paths - Invoker No More | AQ40 quest
+8766, -- The Changing of Paths - Conqueror No More | AQ40 quest
+8770, -- Target: Hive'Ashi Defenders | Silithus badge quests
+8771, -- Target: Hive'Ashi Sandstalkers | Silithus badge quests
+8772, -- Target: Hive'Zora Waywatchers | Silithus badge quests
+8773, -- Target: Hive'Zora Reavers | Silithus badge quests
+8774, -- Target: Hive'Regal Ambushers | Silithus badge quests
+8775, -- Target: Hive'Regal Spitfires | Silithus badge quests
+8776, -- Target: Hive'Regal Slavemakers | Silithus badge quests
+8777, -- Target: Hive'Regal Burrowers | Silithus badge quests
+8778, -- The Ironforge Brigade Needs Explosives! | Silithus badge quests
+8779, -- Scrying Materials | Silithus badge quests
+8780, -- Armor Kits for the Field | Silithus badge quests
+8781, -- Arms for the Field | Silithus badge quests
+8782, -- Uniform Supplies | Silithus badge quests
+8783, -- Extraordinary Materials | Silithus badge quests
+8784, -- Secrets of the Qiraji | AQ40 quest
+8785, -- The Orgrimmar Legion Needs Mojo! | Silithus badge quests
+8786, -- Arms for the Field | Silithus badge quests
+8787, -- Armor Kits for the Field | Silithus badge quests
+8789, -- Imperial Qiraji Armaments | AQ40 quest
+8790, -- Imperial Qiraji Regalia | AQ40 quest
+8791, -- The Fall of Ossirian | AQ20 quest
+8792, -- The Horde Needs Your Help! | AQ40 war effort quest
+8793, -- The Horde Needs Your Help! | AQ40 war effort quest
+8794, -- The Horde Needs Your Help! | AQ40 war effort quest
+8795, -- The Alliance Needs Your Help! | AQ40 war effort quest
+8798, -- A Yeti of Your Own | Inferred from Allakhazam comment dates
+8800, -- Cenarion Battlegear | Silithus badge quests
+8801, -- C'Thun's Legacy | AQ40 quest
+8802, -- The Savior of Kalimdor | AQ40 quest
+8804, -- Desert Survival Kits | Silithus badge quests
+8805, -- Boots for the Guard | Silithus badge quests
+8806, -- Grinding Stones for the Guard | Silithus badge quests
+8807, -- Scrying Materials | Silithus badge quests
+8808, -- Uniform Supplies | Silithus badge quests
+8809, -- Extraordinary Materials | Silithus badge quests
+8810, -- Bandages for the Field | Silithus badge quests
+8811, -- One Commendation Signet | AQ40 war effort quest
+8812, -- One Commendation Signet | AQ40 war effort quest
+8813, -- One Commendation Signet | AQ40 war effort quest
+8814, -- One Commendation Signet | AQ40 war effort quest
+8815, -- One Commendation Signet | AQ40 war effort quest
+8816, -- One Commendation Signet | AQ40 war effort quest
+8817, -- One Commendation Signet | AQ40 war effort quest
+8818, -- One Commendation Signet | AQ40 war effort quest
+8819, -- Ten Commendation Signets | AQ40 war effort quest
+8820, -- Ten Commendation Signets | AQ40 war effort quest
+8821, -- Ten Commendation Signets | AQ40 war effort quest
+8822, -- Ten Commendation Signets | AQ40 war effort quest
+8823, -- Ten Commendation Signets | AQ40 war effort quest
+8824, -- Ten Commendation Signets | AQ40 war effort quest
+8825, -- Ten Commendation Signets | AQ40 war effort quest
+8826, -- Ten Commendation Signets | AQ40 war effort quest
+8829, -- The Ultimate Deception | Silithus badge quests
+8830, -- One Commendation Signet | AQ40 war effort quest
+8831, -- Ten Commendation Signets | AQ40 war effort quest
+8832, -- One Commendation Signet | AQ40 war effort quest
+8833, -- Ten Commendation Signets | AQ40 war effort quest
+8834, -- One Commendation Signet | AQ40 war effort quest
+8835, -- Ten Commendation Signets | AQ40 war effort quest
+8836, -- One Commendation Signet | AQ40 war effort quest
+8837, -- Ten Commendation Signets | AQ40 war effort quest
+8838, -- One Commendation Signet | AQ40 war effort quest
+8839, -- Ten Commendation Signets | AQ40 war effort quest
+8840, -- One Commendation Signet | AQ40 war effort quest
+8841, -- Ten Commendation Signets | AQ40 war effort quest
+8842, -- One Commendation Signet | AQ40 war effort quest
+8843, -- Ten Commendation Signets | AQ40 war effort quest
+8844, -- One Commendation Signet | AQ40 war effort quest
+8845, -- Ten Commendation Signets | AQ40 war effort quest
+8846, -- Five Signets for War Supplies | AQ40 war effort quest
+8847, -- Ten Signets for War Supplies | AQ40 war effort quest
+8848, -- Fifteen Signets for War Supplies | AQ40 war effort quest
+8849, -- Twenty Signets for War Supplies | AQ40 war effort quest
+8850, -- Thirty Signets for War Supplies | AQ40 war effort quest
+8851, -- Five Signets for War Supplies | AQ40 war effort quest
+8852, -- Ten Signets for War Supplies | AQ40 war effort quest
+8853, -- Fifteen Signets for War Supplies | AQ40 war effort quest
+8854, -- Twenty Signets for War Supplies | AQ40 war effort quest
+8855, -- Thirty Signets for War Supplies | AQ40 war effort quest
+8857, -- Secrets of the Colossus - Ashi | AQ40 gate event quest
+8858, -- Secrets of the Colossus - Regal | AQ40 gate event quest
+8859, -- Secrets of the Colossus - Zora | AQ40 gate event quest
+8862, -- Elune's Candle | Allakhazam dates for Festival of Elune
+8863, -- Festival Dumplings | Allakhazam dates for Festival of Elune
+8864, -- Festive Lunar Dresses | Allakhazam dates for Festival of Elune
+8865, -- Festive Lunar Pant Suits | Allakhazam dates for Festival of Elune
+8866, -- Bronzebeard the Elder | Allakhazam dates for Festival of Elune
+8867, -- Lunar Fireworks | Allakhazam dates for Festival of Elune
+8868, -- Elune's Blessing | Allakhazam dates for Festival of Elune
+8870, -- The Lunar Festival | Allakhazam dates for Festival of Elune
+8871, -- The Lunar Festival | Allakhazam dates for Festival of Elune
+8872, -- The Lunar Festival | Allakhazam dates for Festival of Elune
+8873, -- The Lunar Festival | Allakhazam dates for Festival of Elune
+8875, -- The Lunar Festival | Allakhazam dates for Festival of Elune
+8876, -- Small Rockets | Allakhazam dates for Festival of Elune
+8877, -- Firework Launcher | Allakhazam dates for Festival of Elune
+8878, -- Festive Recipes | Allakhazam dates for Festival of Elune
+8879, -- Large Rockets | Allakhazam dates for Festival of Elune
+8880, -- Cluster Rockets | Allakhazam dates for Festival of Elune
+8881, -- Large Cluster Rockets | Allakhazam dates for Festival of Elune
+8882, -- Cluster Launcher | Allakhazam dates for Festival of Elune
+8883, -- Valadar Starsong | Allakhazam dates for Festival of Elune
+8893, -- The Super Egg-O-Matic | Quest added in 1.10 (inferred from Allakhazam comment dates)
+8897, -- Dearest Colara, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8898, -- Dearest Colara, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8899, -- Dearest Colara, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8900, -- Dearest Elenia, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8901, -- Dearest Elenia, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8902, -- Dearest Elenia, | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8903, -- Dangerous Love | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8905, -- An Earnest Proposition | Tier 0.5 questline
+8906, -- An Earnest Proposition | Tier 0.5 questline
+8907, -- An Earnest Proposition | Tier 0.5 questline
+8908, -- An Earnest Proposition | Tier 0.5 questline
+8909, -- An Earnest Proposition | Tier 0.5 questline
+8910, -- An Earnest Proposition | Tier 0.5 questline
+8911, -- An Earnest Proposition | Tier 0.5 questline
+8912, -- An Earnest Proposition | Tier 0.5 questline
+8913, -- An Earnest Proposition | Tier 0.5 questline
+8914, -- An Earnest Proposition | Tier 0.5 questline
+8915, -- An Earnest Proposition | Tier 0.5 questline
+8916, -- An Earnest Proposition | Tier 0.5 questline
+8917, -- An Earnest Proposition | Tier 0.5 questline
+8918, -- An Earnest Proposition | Tier 0.5 questline
+8919, -- An Earnest Proposition | Tier 0.5 questline
+8920, -- An Earnest Proposition | Tier 0.5 questline
+8921, -- The Ectoplasmic Distiller | Tier 0.5 questline
+8922, -- A Supernatural Device | Tier 0.5 questline
+8923, -- A Supernatural Device | Tier 0.5 questline
+8924, -- Hunting for Ectoplasm | Tier 0.5 questline
+8925, -- A Portable Power Source | Tier 0.5 questline
+8926, -- Just Compensation | Tier 0.5 questline
+8927, -- Just Compensation | Tier 0.5 questline
+8928, -- A Shifty Merchant | Tier 0.5 questline
+8929, -- In Search of Anthion | Tier 0.5 questline
+8930, -- In Search of Anthion | Tier 0.5 questline
+8931, -- Just Compensation | Tier 0.5 questline
+8932, -- Just Compensation | Tier 0.5 questline
+8933, -- Just Compensation | Tier 0.5 questline
+8934, -- Just Compensation | Tier 0.5 questline
+8935, -- Just Compensation | Tier 0.5 questline
+8936, -- Just Compensation | Tier 0.5 questline
+8937, -- Just Compensation | Tier 0.5 questline
+8938, -- Just Compensation | Tier 0.5 questline
+8939, -- Just Compensation | Tier 0.5 questline
+8940, -- Just Compensation | Tier 0.5 questline
+8941, -- Just Compensation | Tier 0.5 questline
+8942, -- Just Compensation | Tier 0.5 questline
+8943, -- Just Compensation | Tier 0.5 questline
+8944, -- Just Compensation | Tier 0.5 questline
+8945, -- Dead Man's Plea | Tier 0.5 questline
+8946, -- Proof of Life | Tier 0.5 questline
+8947, -- Anthion's Strange Request | Tier 0.5 questline
+8948, -- Anthion's Old Friend | Tier 0.5 questline
+8949, -- Falrin's Vendetta | Tier 0.5 questline
+8950, -- The Instigator's Enchantment | Tier 0.5 questline
+8951, -- Anthion's Parting Words | Tier 0.5 questline
+8952, -- Anthion's Parting Words | Tier 0.5 questline
+8953, -- Anthion's Parting Words | Tier 0.5 questline
+8954, -- Anthion's Parting Words | Tier 0.5 questline
+8955, -- Anthion's Parting Words | Tier 0.5 questline
+8956, -- Anthion's Parting Words | Tier 0.5 questline
+8957, -- Anthion's Parting Words | Tier 0.5 questline
+8958, -- Anthion's Parting Words | Tier 0.5 questline
+8959, -- Anthion's Parting Words | Tier 0.5 questline
+8960, -- Bodley's Unfortunate Fate | Tier 0.5 questline
+8961, -- Three Kings of Flame | Tier 0.5 questline
+8962, -- Components of Importance | Tier 0.5 questline
+8963, -- Components of Importance | Tier 0.5 questline
+8964, -- Components of Importance | Tier 0.5 questline
+8965, -- Components of Importance | Tier 0.5 questline
+8966, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8967, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8968, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8969, -- The Left Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8970, -- I See Alcaz Island In Your Future... | Tier 0.5 questline
+8977, -- Return to Deliana | Tier 0.5 questline
+8978, -- Return to Mokvar | Tier 0.5 questline
+8979, -- Fenstad's Hunch | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8980, -- Zinge's Assessment | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8981, -- Gift Giving | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8982, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8983, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8984, -- The Source Revealed | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+8985, -- More Components of Importance | Tier 0.5 questline
+8986, -- More Components of Importance | Tier 0.5 questline
+8987, -- More Components of Importance | Tier 0.5 questline
+8988, -- More Components of Importance | Tier 0.5 questline
+8989, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8990, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8991, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8992, -- The Right Piece of Lord Valthalak's Amulet | Tier 0.5 questline
+8994, -- Final Preparations | Tier 0.5 questline
+8995, -- Mea Culpa, Lord Valthalak | Tier 0.5 questline
+8996, -- Return to Bodley | Tier 0.5 questline
+8997, -- Back to the Beginning | Tier 0.5 questline
+8998, -- Back to the Beginning | Tier 0.5 questline
+8999, -- Saving the Best for Last | Tier 0.5 questline
+9000, -- Saving the Best for Last | Tier 0.5 questline
+9001, -- Saving the Best for Last | Tier 0.5 questline
+9002, -- Saving the Best for Last | Tier 0.5 questline
+9003, -- Saving the Best for Last | Tier 0.5 questline
+9004, -- Saving the Best for Last | Tier 0.5 questline
+9005, -- Saving the Best for Last | Tier 0.5 questline
+9006, -- Saving the Best for Last | Tier 0.5 questline
+9007, -- Saving the Best for Last | Tier 0.5 questline
+9008, -- Saving the Best for Last | Tier 0.5 questline
+9009, -- Saving the Best for Last | Tier 0.5 questline
+9010, -- Saving the Best for Last | Tier 0.5 questline
+9011, -- Saving the Best for Last | Tier 0.5 questline
+9012, -- Saving the Best for Last | Tier 0.5 questline
+9013, -- Saving the Best for Last | Tier 0.5 questline
+9014, -- Saving the Best for Last | Tier 0.5 questline
+9015, -- The Challenge | Tier 0.5 questline
+9016, -- Anthion's Parting Words | Tier 0.5 questline
+9017, -- Anthion's Parting Words | Tier 0.5 questline
+9018, -- Anthion's Parting Words | Tier 0.5 questline
+9019, -- Anthion's Parting Words | Tier 0.5 questline
+9020, -- Anthion's Parting Words | Tier 0.5 questline
+9021, -- Anthion's Parting Words | Tier 0.5 questline
+9022, -- Anthion's Parting Words | Tier 0.5 questline
+9023, -- The Perfect Poison | The Perfect Poison quest added (Allakhazam comment dates)
+9024, -- Aristan's Hunch | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9025, -- Morgan's Discovery | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9026, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9027, -- Tracing the Source | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9028, -- The Source Revealed | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9029, -- A Bubbling Cauldron | Note: Valentine's Day event added with patch 1.10, but wasn't available until the next year
+9032, -- Bodleys Unfortunate Fate | Tier 0.5 questline
+9051, -- Toxic Test | LVL 50 class quest (druid), see retail 1.10 patch notes
+9052, -- Bloodpetal Poison | LVL 50 class quest (druid), see retail 1.10 patch notes
+9063, -- Torwa Pathfinder | LVL 50 class quest (druid), see retail 1.10 patch notes
+9033, -- Echoes of War | Naxx quest
+9034, -- Dreadnaught Breastplate | Naxx quest
+9036, -- Dreadnaught Legplates | Naxx quest
+9037, -- Dreadnaught Helmet | Naxx quest
+9038, -- Dreadnaught Pauldrons | Naxx quest
+9039, -- Dreadnaught Sabatons | Naxx quest
+9040, -- Dreadnaught Gauntlets | Naxx quest
+9041, -- Dreadnaught Waistguard | Naxx quest
+9042, -- Dreadnaught Bracers | Naxx quest
+9043, -- Redemption Tunic | Naxx quest
+9044, -- Redemption Legguards | Naxx quest
+9045, -- Redemption Headpiece | Naxx quest
+9046, -- Redemption Spaulders | Naxx quest
+9047, -- Redemption Boots | Naxx quest
+9048, -- Redemption Handguards | Naxx quest
+9049, -- Redemption Girdle | Naxx quest
+9050, -- Redemption Wristguards | Naxx quest
+9053, -- A Better Ingredient | Naxx quest
+9054, -- Cryptstalker Tunic | Naxx quest
+9055, -- Cryptstalker Legguards | Naxx quest
+9056, -- Cryptstalker Headpiece | Naxx quest
+9057, -- Cryptstalker Spaulders | Naxx quest
+9058, -- Cryptstalker Boots | Naxx quest
+9059, -- Cryptstalker Handguards | Naxx quest
+9060, -- Cryptstalker Girdle | Naxx quest
+9061, -- Cryptstalker Wristguards | Naxx quest
+9068, -- Earthshatter Tunic | Naxx quest
+9069, -- Earthshatter Legguards | Naxx quest
+9070, -- Earthshatter Headpiece | Naxx quest
+9071, -- Earthshatter Spaulders | Naxx quest
+9072, -- Earthshatter Boots | Naxx quest
+9073, -- Earthshatter Handguards | Naxx quest
+9074, -- Earthshatter Girdle | Naxx quest
+9075, -- Earthshatter Wristguards | Naxx quest
+9077, -- Bonescythe Breastplate | Naxx quest
+9078, -- Bonescythe Legplates | Naxx quest
+9079, -- Bonescythe Helmet | Naxx quest
+9080, -- Bonescythe Pauldrons | Naxx quest
+9081, -- Bonescythe Sabatons | Naxx quest
+9082, -- Bonescythe Gauntlets | Naxx quest
+9083, -- Bonescythe Waistguard | Naxx quest
+9084, -- Bonescythe Bracers | Naxx quest
+9085, -- Shadows of Doom | Naxx invasion event
+9086, -- Dreamwalker Tunic | Naxx quest
+9087, -- Dreamwalker Legguards | Naxx quest
+9088, -- Dreamwalker Headpiece | Naxx quest
+9089, -- Dreamwalker Spaulders | Naxx quest
+9090, -- Dreamwalker Boots | Naxx quest
+9091, -- Dreamwalker Handguards | Naxx quest
+9092, -- Dreamwalker Girdle | Naxx quest
+9093, -- Dreamwalker Wristguards | Naxx quest
+9094, -- Argent Dawn Gloves | Naxx quest
+9095, -- Frostfire Robe | Naxx quest
+9096, -- Frostfire Leggings | Naxx quest
+9097, -- Frostfire Circlet | Naxx quest
+9098, -- Frostfire Shoulderpads | Naxx quest
+9099, -- Frostfire Sandals | Naxx quest
+9100, -- Frostfire Gloves | Naxx quest
+9101, -- Frostfire Belt | Naxx quest
+9102, -- Frostfire Bindings | Naxx quest
+9103, -- Plagueheart Robe | Naxx quest
+9104, -- Plagueheart Leggings | Naxx quest
+9105, -- Plagueheart Circlet | Naxx quest
+9106, -- Plagueheart Shoulderpads | Naxx quest
+9107, -- Plagueheart Sandals | Naxx quest
+9108, -- Plagueheart Gloves | Naxx quest
+9109, -- Plagueheart Belt | Naxx quest
+9110, -- Plagueheart Bindings | Naxx quest
+9111, -- Robe of Faith | Naxx quest
+9112, -- Leggings of Faith | Naxx quest
+9113, -- Circlet of Faith | Naxx quest
+9114, -- Shoulderpads of Faith | Naxx quest
+9115, -- Sandals of Faith | Naxx quest
+9116, -- Gloves of Faith | Naxx quest
+9117, -- Belt of Faith | Naxx quest
+9118, -- Bindings of Faith | Naxx quest
+9120, -- The Fall of Kel'Thuzad | Naxx quest
+9121, -- The Dread Citadel - Naxxramas | Naxx quest
+9122, -- The Dread Citadel - Naxxramas | Naxx quest
+9123, -- The Dread Citadel - Naxxramas | Naxx quest
+9124, -- Cryptstalker Armor Doesn't Make Itself... | Naxx quest
+9125, -- Crypt Fiend Parts | AD badge quests with 1.11
+9126, -- Bonescythe Digs | AD badge quests with 1.11
+9127, -- Bone Fragments | AD badge quests with 1.11
+9128, -- The Elemental Equation | AD badge quests with 1.11
+9129, -- Core of Elements | AD badge quests with 1.11
+9131, -- Binding the Dreadnaught | Naxx quest
+9132, -- Dark Iron Scraps | AD badge quests with 1.11
+9136, -- Savage Fronds | AD badge quests with 1.11
+9137, -- Savage Fronds | AD badge quests with 1.11
+9141, -- "They Call Me ""The Rooster""" | AD badge quests with 1.11
+9142, -- Craftsman's Writ | AD badge quests with 1.11
+9153, -- Under the Shadow | Naxx invasion event
+9154, -- Light's Hope Chapel | Naxx invasion event
+9165, -- Writ of Safe Passage | AD badge quests with 1.11
+9178, -- Craftsman's Writ - Dense Weightstone | AD badge quests with 1.11
+9179, -- Craftsman's Writ - Imperial Plate Chest | AD badge quests with 1.11
+9181, -- Craftsman's Writ - Volcanic Hammer | AD badge quests with 1.11
+9182, -- Craftsman's Writ - Huge Thorium Battleaxe | AD badge quests with 1.11
+9183, -- Craftsman's Writ - Radiant Circlet | AD badge quests with 1.11
+9184, -- Craftsman's Writ - Wicked Leather Headband | AD badge quests with 1.11
+9185, -- Craftsman's Writ - Rugged Armor Kit | AD badge quests with 1.11
+9186, -- Craftsman's Writ - Wicked Leather Belt | AD badge quests with 1.11
+9187, -- Craftsman's Writ - Runic Leather Pants | AD badge quests with 1.11
+9188, -- Craftsman's Writ - Brightcloth Pants | AD badge quests with 1.11
+9190, -- Craftsman's Writ - Runecloth Boots | AD badge quests with 1.11
+9191, -- Craftsman's Writ - Runecloth Bag | AD badge quests with 1.11
+9194, -- Craftsman's Writ - Runecloth Robe | AD badge quests with 1.11
+9195, -- Craftsman's Writ - Goblin Sapper Charge | AD badge quests with 1.11
+9196, -- Craftsman's Writ - Thorium Grenade | AD badge quests with 1.11
+9197, -- Craftsman's Writ - Gnomish Battle Chicken | AD badge quests with 1.11
+9198, -- Craftsman's Writ - Thorium Tube | AD badge quests with 1.11
+9200, -- Craftsman's Writ - Major Mana Potion | AD badge quests with 1.11
+9201, -- Craftsman's Writ - Greater Arcane Protection Potion | AD badge quests with 1.11
+9202, -- Craftsman's Writ - Major Healing Potion | AD badge quests with 1.11
+9203, -- Craftsman's Writ - Flask of Petrification | AD badge quests with 1.11
+9204, -- Craftsman's Writ - Stonescale Eel | AD badge quests with 1.11
+9205, -- Craftsman's Writ - Plated Armorfish | AD badge quests with 1.11
+9206, -- Craftsman's Writ - Lightning Eel | AD badge quests with 1.11
+9208, -- The Savage Guard - Arcanum of Protection | New nature resist ZG enchants added
+9209, -- The Savage Guard - Arcanum of Rapidity | New nature resist ZG enchants added
+9210, -- The Savage Guard - Arcanum of Focus | New nature resist ZG enchants added
+9211, -- The Ice Guard | AD badge quests with 1.11
+9213, -- The Shadow Guard | AD badge quests with 1.11
+9221, -- Superior Armaments of Battle - Friend of the Dawn | AD badge quests with 1.11
+9222, -- Epic Armaments of Battle - Friend of the Dawn | AD badge quests with 1.11
+9223, -- Superior Armaments of Battle - Honored Amongst the Dawn | AD badge quests with 1.11
+9224, -- Epic Armaments of Battle - Honored Amongst the Dawn | AD badge quests with 1.11
+9225, -- Epic Armaments of Battle - Revered Amongst the Dawn | AD badge quests with 1.11
+9226, -- Superior Armaments of Battle - Revered Amongst the Dawn | AD badge quests with 1.11
+9227, -- Superior Armaments of Battle - Exalted Amongst the Dawn | AD badge quests with 1.11
+9228, -- Epic Armaments of Battle - Exalted Amongst the Dawn | AD badge quests with 1.11
+9229, -- The Fate of Ramaladni | Naxx quest
+9230, -- Ramaladni's Icy Grasp | Naxx quest
+9232, -- The Only Song I Know... | Naxx quest
+9233, -- Omarion's Handbook | Naxx quest
+9234, -- Icebane Gauntlets | Naxx quest
+9235, -- Icebane Bracers | Naxx quest
+9236, -- Icebane Breastplate | Naxx quest
+9237, -- Glacial Cloak | Naxx quest
+9238, -- Glacial Wrists | Naxx quest
+9239, -- Glacial Gloves | Naxx quest
+9240, -- Glacial Vest | Naxx quest
+9241, -- Polar Bracers | Naxx quest
+9242, -- Polar Gloves | Naxx quest
+9243, -- Polar Tunic | Naxx quest
+9244, -- Icy Scale Bracers | Naxx quest
+9245, -- Icy Scale Gauntlets | Naxx quest
+9246, -- Icy Scale Breastplate | Naxx quest
+9247, -- The Keeper's Call | Naxx invasion event
+9248, -- A Humble Offering | New Cenarion Circle nature resist items
+9250, -- Frame of Atiesh | Naxx quest
+9251, -- Atiesh, the Befouled Greatstaff | Naxx quest
+9259, -- Traitor to the Bloodsail | New Bloodsail quest added in 1.11 per Allakhazam comment dates
+9260, -- Investigate the Scourge of Stormwind | Naxx invasion event
+9261, -- Investigate the Scourge of Ironforge | Naxx invasion event
+9262, -- Investigate the Scourge of Darnassus | Naxx invasion event
+9263, -- Investigate the Scourge of Orgrimmar | Naxx invasion event
+9264, -- Investigate the Scourge of Thunder Bluff | Naxx invasion event
+9265, -- Investigate the Scourge of Undercity | Naxx invasion event
+9267, -- Mending Old Wounds | New cloth turnin quests added to goblin faction per 1.11 patch notes
+9268, -- War at Sea | New cloth turnin quests added to goblin faction per 1.11 patch notes
+9269, -- Atiesh, Greatstaff of the Guardian | Naxx quest
+9270, -- Atiesh, Greatstaff of the Guardian | Naxx quest
+9271, -- Atiesh, Greatstaff of the Guardian | Naxx quest
+9272, -- Dressing the Part | New Bloodsail quest added in 1.11 per Allakhazam comment dates
+9292, -- Cracked Necrotic Crystal | Naxx invasion event
+9295, -- Letter from the Front | Naxx invasion event
+9299, -- Note from the Front | Naxx invasion event
+9300, -- Page from the Front | Naxx invasion event
+9301, -- Envelope from the Front | Naxx invasion event
+9302, -- Missive from the Front | Naxx invasion event
+9304, -- Document from the Front | Naxx invasion event
+9310, -- Faint Necrotic Crystal | Naxx invasion event
+9317, -- Consecrated Sharpening Stones | Naxx invasion event
+9318, -- Blessed Wizard Oil | Naxx invasion event
+9319, -- A Light in Dark Places | Midsummer Fire festival added in patch 1.11
+9320, -- Major Mana Potion | Naxx invasion event
+9321, -- Super Healing Potion | Naxx invasion event
+9322, -- Wild Fires in Kalimdor | Midsummer Fire festival added in patch 1.11
+9323, -- Wild Fires in the Eastern Kingdoms | Midsummer Fire festival added in patch 1.11
+9324, -- Stealing Orgrimmar's Flame | Midsummer Fire festival added in patch 1.11
+9325, -- Stealing Thunder Bluff's Flame | Midsummer Fire festival added in patch 1.11
+9326, -- Stealing the Undercity's Flame | Midsummer Fire festival added in patch 1.11
+9330, -- Stealing Stormwind's Flame | Midsummer Fire festival added in patch 1.11
+9331, -- Stealing Ironforge's Flame | Midsummer Fire festival added in patch 1.11
+9332, -- Stealing Darnassus's Flame | Midsummer Fire festival added in patch 1.11
+9338, -- Allegiance to Cenarion Circle | Added in 1.11 per Allakhazam comments and dates
+9339, -- A Thief's Reward | Midsummer Fire festival added in patch 1.11
+9341, -- Tabard of the Argent Dawn | Naxx invasion event
+9362, -- Warlord Krellian | New mage quest added to Xylem (1.11 patch notes)
+9364, -- Fragmented Magic | New mage quest added to Xylem (1.11 patch notes)
+9365, -- A Thief's Reward | Midsummer Fire festival added in patch 1.11
+9368, -- The Festival of Fire | Midsummer Fire festival added in patch 1.11
+9386, -- A Light in Dark Places | Midsummer Fire festival added in patch 1.11
+9415, -- Report to Marshal Bluewall | World pvp objectives added to EPL & Silithus
+9416, -- Report to General Kirika | World pvp objectives added to EPL & Silithus
+9419, -- Scouring the Desert | World pvp objectives added to EPL & Silithus
+9422, -- Scouring the Desert | World pvp objectives added to EPL & Silithus
+9664, -- Establishing New Outposts | World pvp objectives added to EPL & Silithus
+9665  -- Bolstering Our Defenses | World pvp objectives added to EPL & Silithus
 );
 
 -- * QUESTS	
@@ -5837,7 +6610,7 @@ UPDATE item_enchantment_template SET chance = 4.88 * 100 / (100 - 6.05) WHERE en
 UPDATE item_enchantment_template SET chance = 2.3 * 100 / (100 - 6.1) WHERE entry=1098;
 UPDATE item_enchantment_template SET chance = 2.85 * 100 / (100 - 6.6) WHERE entry=1099;
 UPDATE item_enchantment_template SET chance = 3.1 * 100 / (100 - 5.52) WHERE entry=1100;
-UPDATE item_enchantment_template SET chance = 6.8 * 100 / (100 - 5.13) WHERE entry=1101;,
+UPDATE item_enchantment_template SET chance = 6.8 * 100 / (100 - 5.13) WHERE entry=1101;
 UPDATE item_enchantment_template SET chance = 4.93 * 100 / (100 - 0.56) WHERE entry=1115;
 UPDATE item_enchantment_template SET chance = 10.17 * 100 / (100 - 0.67) WHERE entry=1116;
 UPDATE item_enchantment_template SET chance = 9.4 * 100 / (100 - 0.45) WHERE entry=1117;
@@ -5989,7 +6762,8 @@ UPDATE item_enchantment_template SET chance = 3.58 * 100 / (100 - 23.14) WHERE e
 UPDATE item_enchantment_template SET chance = 7.8 * 100 / (100 - 26.55) WHERE entry=6273;
 UPDATE item_enchantment_template SET chance = 9.1 * 100 / (100 - 0.1) WHERE entry=6278;
 UPDATE item_enchantment_template SET chance = 4.7 * 100 / (100 - 0.1) WHERE entry=6279;
-REPLACE INTO item_enchantment_template VALUE (8652, 341, 10); -- Pre-1.04 Green Lens (Clank)
+REPLACE INTO item_enchantment_template VALUES
+(8652, 341, 10), -- Pre-1.04 Green Lens (Clank)
 (8652, 342, 10),
 (8652, 392, 10),
 (8652, 393, 10),
@@ -6078,7 +6852,8 @@ UPDATE `creature` SET `spawnFlags` = (`spawnFlags` | 2) WHERE id IN (SELECT * FR
 
 UPDATE `areatrigger_teleport` SET `required_level` = 61 WHERE `target_map` IN (SELECT * FROM forbidden_instances);
 
-UPDATE `game_event` SET `disabled` = (`disabled` | 1) WHERE id IN (SELECT * FROM forbidden_events);
+UPDATE `game_event` SET `disabled` = (`disabled` | 1) WHERE entry IN (SELECT * FROM forbidden_events);
 
 -- TODO: Would be nice to have something like `DropDisable` field aka LootMode of TrinityCore to avoid any deletions from *loot_templates: A special parameter used for separating conditional loot, such as Hard Mode loot. A lootmode of 0 will effectively disable a loot entry (its roll will always fail). This column is a bitmask, so you shouldn't duplicate loot across lootmodes. The active lootmode(s) can be changed at any time by the core. This column should only be used if required, in most cases it should be left as 1. Valid lootmodes include: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 16384, 32768.
--- https://trinitycore.atlassian.net/wiki/display/tc/loot_template#loot_template-ChanceOrQuestChance
+-- https://trinitycore.atlassian.net/wiki/display/tc/loot_template#loot_template-ChanceOrQuestChance
+
